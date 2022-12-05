@@ -1,26 +1,23 @@
 ---
+description: "LOCALDB_ERROR_VERSION_REQUESTED_NOT_INSTALLED"
 title: "LOCALDB_ERROR_VERSION_REQUESTED_NOT_INSTALLED | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: performance
 ms.topic: "reference"
 ms.assetid: 12adc059-ad8e-4bc9-9693-79cc3e7eaff0
-caps.latest.revision: 9
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # LOCALDB_ERROR_VERSION_REQUESTED_NOT_INSTALLED
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |
+| --------- | ----- |
 |Product Name|SQL Server|  
 |Event ID|273|  
 |Event Source|SQL Server Local Database Runtime 12.0|  

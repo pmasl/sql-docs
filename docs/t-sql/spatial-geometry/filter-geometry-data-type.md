@@ -1,14 +1,9 @@
 ---
-title: "Filter (geometry Data Type) | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+title: Filter (geometry Data Type)
+description: "Filter (geometry Data Type)"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "Filter"
   - "Filter_TSQL"
@@ -17,14 +12,16 @@ dev_langs:
   - "TSQL"
 helpviewer_keywords: 
   - "Filter method"
-ms.assetid: 3d629a39-157e-4159-a3ca-a3c2e0ed4160
-caps.latest.revision: 10
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "08/03/2017"
 ---
+
 # Filter (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 A method that offers a fast, index-only intersection method to determine if a **geometry** instance intersects another **geometry** instance, assuming an index is available.
   
@@ -39,7 +36,9 @@ In cases where an index is not available, or is not used, the method will return
 .Filter ( other_geometry )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *other_geometry*  
  Is another **geometry** instance to compare against the instance on which Filter() is invoked.  
   
@@ -54,7 +53,7 @@ In cases where an index is not available, or is not used, the method will return
 ## Examples  
  The following example uses `Filter()` to determine if two `geometry` instances intersect each other.  
   
-```  
+```sql
 CREATE TABLE sample (id int primary key, g geometry);  
 GO  
 INSERT INTO sample VALUES  

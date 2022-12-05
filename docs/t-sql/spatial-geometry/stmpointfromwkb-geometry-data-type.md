@@ -1,14 +1,12 @@
 ---
+description: "STMPointFromWKB (geometry Data Type)"
 title: "STMPointFromWKB (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "STMPointFromWKB (geometry Data Type)"
   - "STMPointFromWKB_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "STMPointFromWKB (geometry Data Type)"
 ms.assetid: 01d4117f-01a0-4bc3-8762-7382a1cdbd6c
-caps.latest.revision: 17
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # STMPointFromWKB (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns a **geometryMultiPoint** instance from an Open Geospatial Consortium (OGC) Well-Known Binary (WKB) representation.
   
@@ -34,7 +30,9 @@ Returns a **geometryMultiPoint** instance from an Open Geospatial Consortium (OG
 STMPointFromWKB ( 'WKB_multipoint' , SRID )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *WKB_multipoint*  
  Is the WKB representation of the **geometryMultiPoint** instance you wish to return. *WKB_multipoint* is a **varbinary(max)** expression.  
   
@@ -54,7 +52,7 @@ STMPointFromWKB ( 'WKB_multipoint' , SRID )
 ## Examples  
  The following example uses `STMPointFromWKB()` to create a `geometry` instance.  
   
-```  
+```sql
 DECLARE @g geometry;   
 SET @g = geometry::STMPointFromWKB(0x010400000002000000010100000000000000000059400000000000005940010100000000000000000069400000000000006940, 0);  
 SELECT @g.STAsText();  

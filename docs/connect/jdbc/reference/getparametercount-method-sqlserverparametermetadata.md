@@ -1,24 +1,15 @@
 ---
-title: "getParameterCount Method (SQLServerParameterMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getParameterCount Method (SQLServerParameterMetaData)"
+description: "getParameterCount Method (SQLServerParameterMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerParameterMetaData.getParameterCount"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerParameterMetaData.getParameterCount"
 apitype: "Assembly"
-ms.assetid: 7dbbdacb-74ef-42e7-9bdc-a3229505dad8
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getParameterCount Method (SQLServerParameterMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

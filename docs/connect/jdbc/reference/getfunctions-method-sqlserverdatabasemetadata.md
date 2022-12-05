@@ -1,19 +1,12 @@
 ---
-title: "getFunctions Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getFunctions Method (SQLServerDatabaseMetaData)"
+description: "getFunctions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 44335cbd-c84d-4ef3-a6a1-fca7eb7ec768
-caps.latest.revision: 20
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getFunctions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

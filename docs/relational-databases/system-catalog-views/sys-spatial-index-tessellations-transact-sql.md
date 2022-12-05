@@ -1,31 +1,25 @@
 ---
-title: "sys.spatial_index_tessellations (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.spatial_index_tessellations (Transact-SQL)"
+description: sys.spatial_index_tessellations (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "spatial_index_tessellations"
   - "sys.spatial_index_tessellations_TSQL"
   - "spatial_index_tessellations_TSQL"
   - "sys.spatial_index_tessellations"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.spatial_index_tessellations catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 8b17a9a4-b57f-4220-8138-fc73581b1670
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.spatial_index_tessellations (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
  Represents the information about the tessellation scheme and parameters of each of the spatial indexes.  
   

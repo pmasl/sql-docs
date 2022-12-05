@@ -1,22 +1,15 @@
 ---
-title: "Tune compression for availability group | Microsoft Docs"
-ms.custom: ""
+title: "Tune compression for availability group"
+description: Learn how SQL Server compresses data streams for availability groups, which reduces network traffic, increases CPU load, and may induce latency.
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "06/22/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7632769c-b246-4766-886f-7c60ec540be8
-caps.latest.revision: 12
-author: "MikeRayMSFT"
-ms.author: "v-saume"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: conceptual
 ---
 # Tune compression for availability group
-
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 By default, SQL Server compresses data streams where appropriate for availability groups. Compression reduces network traffic, increases CPU load, and may induce latency. You must be a member of the sysadmin fixed server role to enable compression. The following table shows when SQL Server uses compression for availability group log streams:
 
 | Scenario | Compression Setting
@@ -24,6 +17,7 @@ By default, SQL Server compresses data streams where appropriate for availabilit
 | Synchronous-commit replica | Not compressed
 | Asynchronous- commit replicas | Compressed
 | During automatic seeding | Not compressed
+| TDE enabled in database  | Not compressed
 
 ## Trace flags for availability group compression 
 
@@ -43,6 +37,6 @@ Trace flag | Description
 
 [Database Engine Startup Options](../../../database-engine/configure-windows/database-engine-service-startup-options.md)
 
-[Automatic Seeding](https://msdn.microsoft.com/library/mt735149(SQL.130).aspx)
+[Automatic Seeding](./automatically-initialize-always-on-availability-group.md)
 
-[Always On Prerequisites](https://msdn.microsoft.com/library/ff878487.aspx) 
+[Always On Prerequisites](prereqs-restrictions-recommendations-always-on-availability.md)

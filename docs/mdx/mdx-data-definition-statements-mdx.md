@@ -1,29 +1,17 @@
 ---
+description: "MDX Data Definition Statements (MDX)"
 title: "MDX Data Definition Statements (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "MDX [Analysis Services], data manipulation"
-  - "data manipulation [MDX]"
-  - "data definition statements [MDX]"
-  - "Multidimensional Expressions [Analysis Services], data manipulation"
-ms.assetid: 1f975d7f-8875-43b6-a571-9d5cd7c70217
-caps.latest.revision: 33
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # MDX Data Definition Statements (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   In Multidimensional Expressions (MDX), data definition statements create, drop, and manipulate multidimensional objects. The following table lists the available data definition statements.  
   

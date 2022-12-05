@@ -1,24 +1,17 @@
 ---
-title: "Parameter (Visual C++ Syntax Index with #import) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Parameter (Visual C++ Syntax Index with #import)"
+description: "Parameter (Visual C++ Syntax Index with #import)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Parameter collection [ADO], Visual C++ syntax index with #import"
-ms.assetid: 6b43cf70-9695-47b0-9e68-f36898859b6b
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
+apitype: "COM"
 ---
 # Parameter (Visual C++ Syntax Index with #import)
 ## Methods  
@@ -68,4 +61,4 @@ __declspec(property(get=GetValue,put=PutValue)) _variant_t Value;
 ```  
   
 ## See Also  
- [Parameter Object](../../../ado/reference/ado-api/parameter-object.md)
+ [Parameter Object](./parameter-object.md)

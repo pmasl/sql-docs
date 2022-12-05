@@ -1,164 +1,229 @@
 ---
-# required metadata
-
-title: Install SQL Server Integration Services on Linux | Microsoft Docs
-description: This topic describes how to install SQL Server Integration Services on Linux.
-author: leolimsft 
-ms.author: lle 
-manager: craigg
-ms.date: 07/17/2017
-ms.topic: article
-ms.prod: sql-linux
-ms.technology: integration-services
-ms.assetid: 
-
-# optional metadata
-
-# keywords: ""
-# ROBOTS: ""
-# audience: ""
-# ms.devlang: ""
-# ms.reviewer: ""
-# ms.suite: ""
-# ms.tgt_pltfrm: ""
-# ms.custom: ""
+title: Install SQL Server Integration Services on Linux
+description: This article describes how to install SQL Server Integration Services (SSIS) on Linux. You can install SSIS on Ubuntu 16.04 and Red Hat Enterprise Linux.
+author: lrtoyou1223
+ms.author: lle
+ms.reviewer: maghan
+ms.date: 01/09/2018
+ms.topic: conceptual
+ms.service: sql
+ms.subservice: linux
+ms.custom:
+  - intro-installation
 ---
 # Install SQL Server Integration Services (SSIS) on Linux
 
+[!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
 
-Follow the steps in this article to install SQL Server Integration Services (`mssql-server-is`) on Linux. For info about the features supported in this release of Integration Services for Linux, see the [Release Notes](sql-server-linux-release-notes.md).
+Follow the steps in this article to install SQL Server Integration Services (**mssql-server-is**) on Linux. For info about the features that are supported in this release of Integration Services for Linux, see the [Release Notes](sql-server-linux-release-notes-2017.md).
 
-Install SQL Server Integration Servers for your platform:
+You can install SQL Server Integration Services on these platforms:
 
-- [Ubuntu](#ubuntu)
+- [Ubuntu 16.04](#ubuntu)
 - [Red Hat Enterprise Linux](#RHEL)
 
-
-
 ## <a name="ubuntu"></a> Install SSIS on Ubuntu
-To install the `mssql-server-is` package on Ubuntu, follow these steps:
 
+To install the **mssql-server-is** package on Ubuntu, follow these steps:
 
-1.  Import the public repository GPG keys.
+<!--SQL Server 2017 on Linux-->
+::: moniker range="= sql-server-linux-2017 || = sql-server-2017"
 
-    ```bash
-    curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add –
-    ```
+1. Import the public repository GPG keys.
 
+   ```bash
+   curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+   ```
 
-2.  Register the Microsoft SQL Server Ubuntu repository.
+1. Register the SQL Server Ubuntu repository.
 
-    ```bash
-    curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server.list | sudo tee /etc/apt/sources.list.d/mssql-server.list
-    ```
+   ```bash
+   sudo add-apt-repository "$(curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017.list)"
+   ```
 
+1. Run the following commands to install SQL Server Integration Services.
 
-3.  Run the following commands to install SQL Server Integration Services.
+   ```bash
+   sudo apt-get update
+   sudo apt-get install -y mssql-server-is
+   ```
 
-    ```bash
-    sudo apt-get update
-    sudo apt-get install -y mssql-server-is
-    ```
+1. After installing Integration Services, run **ssis-conf**. For more info, see [Configure SSIS on Linux with ssis-conf](sql-server-linux-configure-ssis.md).
 
+   ```bash
+   sudo /opt/ssis/bin/ssis-conf setup
+   ```
 
-4.  After installing Integration Services, run `ssis-conf`.
+1. After the configuration is done, set the PATH environment variable.
 
-    ```bash
-    sudo /opt/ssis/bin/ssis-conf setup
-    ```
+   ```bash
+   export PATH=/opt/ssis/bin:$PATH
+   ```
 
+::: moniker-end
 
-5.  After the configuration is done, set the path.
+<!--SQL Server 2019 on Linux-->
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-    ```bash
-    export PATH=/opt/ssis/bin:$PATH
-    ```
+1. Import the public repository GPG keys.
 
+   ```bash
+   curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+   ```
 
-If you already have `mssql-server-is` installed, you can update to the latest version with the following command:
+1. Register the SQL Server Ubuntu repository.
+
+   ```bash
+   sudo add-apt-repository "$(curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2019.list)"
+   ```
+
+1. Run the following commands to install SQL Server Integration Services.
+
+   ```bash
+   sudo apt-get update
+   sudo apt-get install -y mssql-server-is
+   ```
+
+1. After installing Integration Services, run **ssis-conf**. For more info, see [Configure SSIS on Linux with ssis-conf](sql-server-linux-configure-ssis.md).
+
+   ```bash
+   sudo /opt/ssis/bin/ssis-conf setup
+   ```
+
+1. After the configuration is done, set the PATH environment variable.
+
+   ```bash
+   export PATH=/opt/ssis/bin:$PATH
+   ```
+
+::: moniker-end
+
+### Update SSIS
+
+If you already have **mssql-server-is** installed, update to the latest version with the following command:
 
 ```bash
 sudo apt-get install mssql-server-is
 ```
 
+### Remove SSIS
 
-To remove `mssql-server-is`, you can run following command:
+To remove **mssql-server-is**, run the following command:
+
 ```bash
-sudo apt-get remove msssql-server-is
+sudo apt-get remove mssql-server-is
 ```
 
-
-
 ## <a name="RHEL"></a> Install SSIS on RHEL
-To install the `mssql-server-is` package on RHEL, follow these steps:
+To install the **mssql-server-is** package on RHEL, follow these steps:
 
+<!--SQL Server 2017 on Linux-->
+::: moniker range="= sql-server-linux-2017 || = sql-server-2017"
 
-1.  Enter superuser mode.
+1. Download the SQL Server Red Hat repository configuration file.
 
-    ```bash
-    sudo su
-    ```
+   ```bash
+   sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
+   ```
 
+1. Run the following command to install SQL Server Integration Services.
 
-2.  Download the Microsoft SQL Server Red Hat repository configuration file.
+   ```bash
+   sudo yum install -y mssql-server-is
+   ```
 
-    ```bash
-    curl https://packages.microsoft.com/config/rhel/7/mssql-server.repo > /etc/yum.repos.d/mssql-server.repo
-    ```
+1. After installation, run **ssis-conf**. For more info, see [Configure SSIS on Linux with ssis-conf](sql-server-linux-configure-ssis.md).
 
+   ```bash
+   sudo /opt/ssis/bin/ssis-conf setup
+   ```
 
-3.  Exit superuser mode.
+1. After the configuration is done, set the PATH environment variable.
 
-    ```bash
-    exit
-    ```
+   ```bash
+   export PATH=/opt/ssis/bin:$PATH
+   ```
 
+::: moniker-end
 
-4.  Run the following commands to install SQL Server Integration Services.
+<!--SQL Server 2019 on Linux-->
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-    ```bash
-    sudo yum install -y mssql-server-is
-    ```
+1. Download the SQL Server Red Hat repository configuration file.
 
+   ```bash
+   sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2019.repo
+   ```
 
-5.  After installation, please run `ssis-conf`.
+1. Run the following command to install SQL Server Integration Services.
 
-    ```bash
-    sudo /opt/ssis/bin/ssis-conf setup
-    ```
+   ```bash
+   sudo yum install -y mssql-server-is
+   ```
 
+1. After installation, run **ssis-conf**. For more info, see [Configure SSIS on Linux with ssis-conf](sql-server-linux-configure-ssis.md).
 
-6.  Once the configuration is done, set path.
+   ```bash
+   sudo /opt/ssis/bin/ssis-conf setup
+   ```
 
-    ```bash
-    export PATH=/opt/ssis/bin:$PATH
-    ```
+1. After the configuration is done, set the PATH environment variable.
 
+   ```bash
+   export PATH=/opt/ssis/bin:$PATH
+   ```
 
-If you already have `mssql-server-is` installed, you can update to the latest version with the following command:
+::: moniker-end
+
+### Update SSIS
+
+If you already have **mssql-server-is** installed, update to the latest version by using the following command:
 
 ```bash
 sudo yum update mssql-server-is
 ```
 
-
-To remove `mssql-server-is`, you can run following command:
-```bash
-sudo yum remove msssql-server-is
-```
-
-
-
-
-## Run a package
-Copy the SSIS package to the Linux computer. Then use the following command to run the package.
+### Remove SSIS
+To remove **mssql-server-is**, run the following command:
 
 ```bash
-dtexec /F <package name> /DE <protection password>
+sudo yum remove mssql-server-is
 ```
 
+## Unattended installation
 
+To run **ssis-conf setup** as an unattended installation, do the following steps:
+
+1. Specify the **-n** (no prompt) option.
+1. Provide required values by setting environment variables.
+
+The following example does these actions:
+
+- Installs SSIS
+- Specifies the Developer edition by providing a value for the SSIS_PID environment variable
+- Accepts the Microsoft Software License Terms by providing a value for the ACCEPT_EULA environment variable
+- Runs an unattended installation by specifying the **-n** (no prompt) option
+
+```
+sudo SSIS_PID=Developer ACCEPT_EULA=Y /opt/ssis/bin/ssis-conf -n setup 
+```
+
+### Environment variables for unattended installation
+
+| Environment variable | Description |
+|---|---|
+| ACCEPT_EULA | Accepts the SQL Server license terms when set to any value like "Y".|
+| SSIS_PID | Sets the SQL Server edition or product key. Here are the possible values:<ul><li>Evaluation</li><li>Developer</li><li>Express</li><li>Web</li><li>Standard</li><li>Enterprise</li><li>A product key</li></ul>If you specify a product key, it must be in the form *#####*-*#####*-*#####*-*#####*-*#####*, where *#* is a letter or a digit.  |
 
 ## Next steps
 
-For more information about how to use SSIS on Linux to extract, transform, and load data, see [Extract, transform, and load data for SQL Server on Linux with SSIS](sql-server-linux-migrate-ssis.md).
+To run SSIS packages on Linux, see [Extract, transform, and load data for SQL Server on Linux with SSIS](sql-server-linux-migrate-ssis.md).
+
+To configure additional SSIS settings on Linux, see [Configure SQL Server Integration Services on Linux with ssis-conf](sql-server-linux-configure-ssis.md).
+
+## Related content about SSIS on Linux
+
+- [Extract, transform, and load data on Linux with SSIS](sql-server-linux-migrate-ssis.md)
+- [Configure SQL Server Integration Services on Linux with ssis-conf](sql-server-linux-configure-ssis.md)
+- [Limitations and known issues for SSIS on Linux](sql-server-linux-ssis-known-issues.md)
+- [Schedule SQL Server Integration Services package execution on Linux with cron](sql-server-linux-schedule-ssis-packages.md)

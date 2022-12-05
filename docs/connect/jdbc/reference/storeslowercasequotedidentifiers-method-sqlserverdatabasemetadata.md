@@ -1,24 +1,15 @@
 ---
-title: "storesLowerCaseQuotedIdentifiers Method | Microsoft Docs"
-ms.custom: ""
+title: "storesLowerCaseQuotedIdentifiers Method"
+description: "storesLowerCaseQuotedIdentifiers Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.storesLowerCaseQuotedIdentifiers"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.storesLowerCaseQuotedIdentifiers"
 apitype: "Assembly"
-ms.assetid: 3e104c9e-66d4-436b-8b5b-a00ff667c95b
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # storesLowerCaseQuotedIdentifiers Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

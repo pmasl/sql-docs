@@ -1,26 +1,19 @@
 ---
-title: "Cancel Method Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Cancel Method Example (VC++)"
+description: "Cancel Method Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Cancel method [ADO], VC++ example"
-ms.assetid: 7e0eaa39-0c24-4d8c-87e8-f9c4fd3455e7
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Cancel Method Example (VC++)
-This example uses the [Cancel](../../../ado/reference/ado-api/cancel-method-ado.md) method to cancel a command executing on a [Connection](../../../ado/reference/ado-api/connection-object-ado.md) object if the connection is busy.  
+This example uses the [Cancel](./cancel-method-ado.md) method to cancel a command executing on a [Connection](./connection-object-ado.md) object if the connection is busy.  
   
 ```  
 // CancelMethodExample.cpp  
@@ -139,5 +132,5 @@ void PrintComError(_com_error &e) {
 ```  
   
 ## See Also  
- [Cancel Method (ADO)](../../../ado/reference/ado-api/cancel-method-ado.md)   
- [Connection Object (ADO)](../../../ado/reference/ado-api/connection-object-ado.md)
+ [Cancel Method (ADO)](./cancel-method-ado.md)   
+ [Connection Object (ADO)](./connection-object-ado.md)

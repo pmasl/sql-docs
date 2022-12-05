@@ -1,22 +1,18 @@
 ---
+description: "SQLStatistics (Text File Driver)"
 title: "SQLStatistics (Text File Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "text file driver [ODBC], SQLStatistics"
   - "SQLStatistics function [ODBC], Text File Driver"
 ms.assetid: 311afc01-d656-425f-be43-4a8e7cbc9a97
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLStatistics (Text File Driver)
 > [!NOTE]  

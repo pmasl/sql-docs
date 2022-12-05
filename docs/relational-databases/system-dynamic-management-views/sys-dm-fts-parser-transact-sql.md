@@ -1,32 +1,28 @@
 ---
-title: "sys.dm_fts_parser (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_fts_parser (Transact-SQL)"
+description: sys.dm_fts_parser (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_fts_parser_TSQL"
   - "dm_fts_parser"
   - "dm_fts_parser_TSQL"
   - "sys.dm_fts_parser"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_fts_parser dynamic management function"
   - "troubleshooting [SQL Server], full-text search"
+dev_langs:
+  - "TSQL"
 ms.assetid: 2736d376-fb9d-4b28-93ef-472b7a27623a
-caps.latest.revision: 37
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
 ---
 # sys.dm_fts_parser (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns the final tokenization result after applying a given [word breaker](../../relational-databases/search/configure-and-manage-word-breakers-and-stemmers-for-search.md), [thesaurus](../../relational-databases/search/configure-and-manage-thesaurus-files-for-full-text-search.md), and [stoplist](../../relational-databases/search/configure-and-manage-stopwords-and-stoplists-for-full-text-search.md) combination to a query string input. The tokenization result is equivalent to the output of the Full-Text Engine for the specified query string.  
   
@@ -35,7 +31,6 @@ manager: "jhubbard"
 ## Syntax  
   
 ```  
-  
 sys.dm_fts_parser('query_string', lcid, stoplist_id, accent_sensitivity)  
 ```  
   
@@ -54,7 +49,7 @@ sys.dm_fts_parser('query_string', lcid, stoplist_id, accent_sensitivity)
  *accent_sensitivity*  
  Boolean value that controls whether full-text search is sensitive or insensitive to diacritics. *accent_sensitivity* is **bit**, with one of the following values:  
   
-|Value|Accent sensitivity is…|  
+|Value|Accent sensitivity is...|  
 |-----------|----------------------------|  
 |0|Insensitive<br /><br /> Words such as "café" and "cafe" are treated identically.|  
 |1|Sensitive<br /><br /> Words such as "café" and "cafe" are treated differently.|  
@@ -134,7 +129,7 @@ sys.dm_fts_parser('query_string', lcid, stoplist_id, accent_sensitivity)
   
  Accent sensitivity is disabled.  
   
-```  
+```sql
 SELECT * FROM sys.dm_fts_parser (' "The Microsoft business analysis" ', 1033, 0, 0);  
 ```  
   
@@ -145,7 +140,7 @@ SELECT * FROM sys.dm_fts_parser (' "The Microsoft business analysis" ', 1033, 0,
   
  Accent sensitivity is disabled.  
   
-```  
+```sql
 SELECT * FROM sys.dm_fts_parser (' "The Microsoft business analysis"  OR " MS revenue" ', 1033, 77, 0);  
 ```  
   
@@ -156,7 +151,7 @@ SELECT * FROM sys.dm_fts_parser (' "The Microsoft business analysis"  OR " MS re
   
  The example specifies the LCID for the French language, `1036`, and the ID of a user-defined stoplist, `5`. Accent sensitivity is enabled.  
   
-```  
+```sql
 SELECT * FROM sys.dm_fts_parser(N'français', 1036, 5, 1);  
 ```  
   

@@ -1,13 +1,11 @@
 ---
-title: "SetCurrentCertificate Method (SInstance Class) | Microsoft Docs"
-ms.custom: ""
+description: "SetCurrentCertificate Method (SInstance Class)"
+title: "SetCurrentCertificate Method (SInstance)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "SetCurrentCertificate Method (SInstance Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "SetCurrentCertificate method"
 ms.assetid: 7349fb87-b973-4160-a2be-cab73abf5b31
-caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SetCurrentCertificate Method (SInstance Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Sets the current security certificate.  
   
 ## Syntax  
@@ -48,6 +45,6 @@ object.SetCurrentCertificate(SHA)
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

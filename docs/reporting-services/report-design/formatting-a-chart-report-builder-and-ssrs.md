@@ -1,15 +1,13 @@
 ---
-title: "Formatting a Chart (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Formatting a chart in a paginated report | Microsoft Docs"
+
+description:  Improve the appearance of your paginated report chart and highlight data points using the formatting options found in the properties of each chart element in Report Builder.
+ms.date: 03/03/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 f1_keywords: 
   - "10214"
   - "sql13.rtp.rptdesigner.charttitleproperties.shadow.f1"
@@ -52,13 +50,15 @@ f1_keywords:
   - "sql13.rtp.rptdesigner.chartproperties.border.f1"
   - "10247"
 ms.assetid: d3984300-c766-42f8-b7c4-863123d67c99
-caps.latest.revision: 7
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Formatting a Chart (Report Builder and SSRS)
-  After you have defined the data for your chart and it is appearing the way you want, you can add formatting to improve the overall appearance and highlight key data points. The most common formatting options can be modified from the Properties dialog box that are found when you right-click a chart element to display its shortcut menu. Each chart element has its own dialog box. For more information about chart elements, see [Charts &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/charts-report-builder-and-ssrs.md).  
+# Formatting a chart in a paginated report (Report Builder)
+
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+  After you have defined the data for your paginated report chart and it is appearing the way you want, you can add formatting to improve the overall appearance and highlight key data points. The most common formatting options can be modified from the Properties dialog box that are found when you right-click a chart element to display its shortcut menu. Each chart element has its own dialog box. For more information about chart elements, see [Charts &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/charts-report-builder-and-ssrs.md).  
   
  All properties that relate to the chart are located in the Properties pane, but many of these properties can also be set from a dialog box. If you are formatting the series, you can specify series-specific properties using custom attributes, which can only be found in the **CustomAttributes** category of properties, located in the Properties pane.  
   

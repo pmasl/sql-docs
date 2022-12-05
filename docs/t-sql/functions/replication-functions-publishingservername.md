@@ -1,30 +1,25 @@
 ---
-title: "PUBLISHINGSERVERNAME (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+title: "PUBLISHINGSERVERNAME (Transact-SQL)"
+description: "Replication Functions - PUBLISHINGSERVERNAME"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/14/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "PUBLISHINGSERVERNAME_TSQL"
   - "PUBLISHINGSERVERNAME"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "PUBLISHINGSERVERNAME function"
   - "Publishers [SQL Server replication], names"
-ms.assetid: e7c278e5-ab23-419e-ab3e-3bb20b0636df
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # Replication Functions - PUBLISHINGSERVERNAME
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Returns the name of the originating Publisher for a published database participating in a database mirroring session. This function is executed at a Publisher instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] on the publication database. Use it to determine the original Publisher of the published database.  
   
@@ -32,12 +27,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 PUBLISHINGSERVERNAME()  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **nvarchar**  
   
 ## Remarks  
@@ -49,6 +45,5 @@ PUBLISHINGSERVERNAME()
   
 ## See Also  
  [Database Mirroring and Replication &#40;SQL Server&#41;](../../database-engine/database-mirroring/database-mirroring-and-replication-sql-server.md)   
- [Replication Functions &#40;Transact-SQL&#41;](http://msdn.microsoft.com/library/53702dee-de58-47d5-a552-7f32000f77d4)  
-  
+ [Replication Functions &#40;Transact-SQL&#41;]()  
   

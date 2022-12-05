@@ -1,23 +1,21 @@
 ---
+description: "Missing Column Statistics Event Class"
 title: "Missing Column Statistics Event Class | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: reference
 helpviewer_keywords: 
   - "Missing Column Statistics event class"
 ms.assetid: b9321143-3f29-4a19-8471-7085669282ef
-caps.latest.revision: 29
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Missing Column Statistics Event Class
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
   The Missing Column Statistics event class indicates that column statistics that could have been useful for the optimizer are not available.  
   
  By monitoring the Missing Column Statistics event class, you can determine if there are statistics missing for a column used by a query. This can cause the optimizer to choose a less efficient query plan than expected.  
@@ -51,6 +49,6 @@ manager: "jhubbard"
 ## See Also  
  [sp_trace_setevent &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-setevent-transact-sql.md)   
  [CREATE STATISTICS &#40;Transact-SQL&#41;](../../t-sql/statements/create-statistics-transact-sql.md)   
- [Monitor and Respond to Events](http://msdn.microsoft.com/library/f7fbe155-5b68-4777-bc71-a47637471f32)  
+ [Monitor and Respond to Events](../../ssms/agent/monitor-and-respond-to-events.md)  
   
   

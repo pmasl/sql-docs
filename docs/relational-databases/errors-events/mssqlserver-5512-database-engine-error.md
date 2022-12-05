@@ -1,29 +1,24 @@
 ---
+description: "MSSQLSERVER_5512"
 title: "MSSQLSERVER_5512 | Microsoft Docs"
 ms.custom: ""
-ms.date: "2016-06-02"
-ms.prod: "sql-server-2016"
+ms.date: "05/25/2022"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 helpviewer_keywords: 
   - "5512 (Database Engine error)"
-ms.assetid: 64e01ddc-fb74-4af0-88cf-9402a6900cb0
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
-robots: noindex,nofollow
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_5512
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|MSSQLSERVER|  
 |Event ID|5512|  
 |Event Source|MSSQLSERVER|  

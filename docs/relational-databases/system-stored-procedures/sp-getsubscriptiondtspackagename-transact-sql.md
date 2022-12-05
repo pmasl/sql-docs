@@ -1,29 +1,25 @@
 ---
+description: "sp_getsubscriptiondtspackagename (Transact-SQL)"
 title: "sp_getsubscriptiondtspackagename (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_getsubscriptiondtspackagename"
   - "sp_getsubscriptiondtspackagename_TSQL"
 helpviewer_keywords: 
   - "sp_getsubscriptiondtspackagename"
 ms.assetid: 606c40aa-2593-43af-9762-0f260bbb51f2
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_getsubscriptiondtspackagename (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns the name of the Data Transformation Services (DTS) package used to transform data before they are sent to a Subscriber. This stored procedure is executed at the Publisher on any database.  
   
@@ -38,10 +34,10 @@ sp_getsubscriptiondtspackagename [ @publication = ] 'publication'
 ```  
   
 ## Arguments  
- [ **@publication**= ] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication. **'***publication***'** is **sysname**, with no default.  
   
- [ **@subscriber=**] **'***subscriber***'**  
+`[ @subscriber = ] 'subscriber'`
  Is the name of the Subscriber. *subscriber* is sysname, with a default of NULL.  
   
 ## Return Code Values  

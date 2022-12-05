@@ -1,23 +1,21 @@
 ---
-title: "Define Colors on a Chart Using a Palette (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Define colors on a paginated report chart using a palette | Microsoft Docs"
+description: Change the color palette for a paginated report chart by selecting a pre-defined palette or by defining a custom palette. 
+ms.date: 03/03/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: d95efc22-5a32-43d4-9bd2-12753e7fd395
-caps.latest.revision: 6
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Define Colors on a Chart Using a Palette (Report Builder and SSRS)
-  You can change the color palette for a chart by selecting a pre-defined palette or defining a custom palette. Custom palettes are report-specific.  
+# Define colors on a paginated report chart using a palette (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+  You can change the color palette for a paginated report chart by selecting a pre-defined palette or defining a custom palette. Custom palettes are chart-specific.  
   
 > [!NOTE]  
 >  [!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]  
@@ -43,11 +41,11 @@ manager: "erikre"
   
 3.  In the **Chart** section, for the **Palette** property, select **Custom**.  
   
-4.  In the CustomPaletteColors property, click the Edit Collection (**…**) button. The **ReportColorExpression Collection Editor** opens.  
+4.  In the CustomPaletteColors property, click the Edit Collection (**...**) button. The **ReportColorExpression Collection Editor** opens.  
   
 5.  Click **Add** to add a color. Select a color from the drop-down list or select Expression and specify a hex value for a specific color, such as ff6600 for "Orange".  
   
-     For more information about hex values, see [Color Table](http://go.microsoft.com/fwlink/?linkid=9258) on MSDN.  
+     For more information about hex values, see [Color Table](https://go.microsoft.com/fwlink/?linkid=9258) on MSDN.  
   
 6.  Click **Add** to add more colors to the palette.  
   

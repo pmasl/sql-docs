@@ -1,24 +1,15 @@
 ---
-title: "truncate Method (SQLServerClob) | Microsoft Docs"
-ms.custom: ""
+title: "truncate Method (SQLServerClob)"
+description: "truncate Method (SQLServerClob)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerClob.truncate"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerClob.truncate"
 apitype: "Assembly"
-ms.assetid: ea3b2a03-387e-49d7-a4d6-ca6a6a354c90
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # truncate Method (SQLServerClob)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

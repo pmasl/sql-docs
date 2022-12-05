@@ -1,32 +1,32 @@
 ---
+description: "Connect to Azure Blob Storage (SQL Server Import and Export Wizard)"
 title: "Connect to Azure Blob Storage (SQL Server Import and Export Wizard) | Microsoft Docs"
 ms.custom: ""
 ms.date: "02/17/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: e2e482b8-5f90-48c5-93fb-b412ed52659f
-caps.latest.revision: 8
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Connect to Azure Blob Storage (SQL Server Import and Export Wizard)
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
 This topic shows you how to connect to an **Azure Blob Storage** data source from the **Choose a Data Source** or **Choose a Destination** page of the SQL Server Import and Export Wizard.
 
->   [!NOTE]
+> [!NOTE]
 > To use the Azure Blob Source or Destination, you have to install the Azure Feature Pack for SQL Server Integration Services.
 > - To download the Feature Pack, see [Microsoft SQL Server 2016 Integration Services Feature Pack for Azure](https://www.microsoft.com/download/details.aspx?id=49492).
->
+> 
 > - For more info, see [Azure Feature Pack for Integration Services &#40;SSIS&#41;](../../integration-services/azure-feature-pack-for-integration-services-ssis.md).
 
 The following screen shot shows the options to configure for a connection to Azure Blob Storage.
 
-![Azure blob storage connection](../../integration-services/import-export-data/media/azure-blob-storage-connection.png)
+![Azure Blob Storage connection](../../integration-services/import-export-data/media/azure-blob-storage-connection.png)
 
 ## Options to specify
 
@@ -46,7 +46,7 @@ Enter the key for the Azure storage account.
  Specify whether to use HTTP or HTTPS to connect to the storage account.  
   
  **Use local developer account**  
- Specify whether to use the storage emulator on the local computer.  
+ Specify whether to use the Azure Storage Emulator on the local computer.  
   
  **Blob container name**  
  Select from the list of storage containers available in the specified storage account.  

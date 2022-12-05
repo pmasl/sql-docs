@@ -1,24 +1,15 @@
 ---
-title: "supportsLimitedOuterJoins Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "supportsLimitedOuterJoins Method (SQLServerDatabaseMetaData)"
+description: "supportsLimitedOuterJoins Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsLimitedOuterJoins"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsLimitedOuterJoins"
 apitype: "Assembly"
-ms.assetid: 06225a1a-a58d-4bff-b2ef-be303f051644
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsLimitedOuterJoins Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

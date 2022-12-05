@@ -1,23 +1,17 @@
 ---
-title: "Database Mirroring Operating Modes | Microsoft Docs"
-ms.custom: ""
+title: "Database Mirroring Operating Modes"
+description: Learn about the synchronous and asynchronous operating modes for database mirroring sessions in SQL Server.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+helpviewer_keywords:
   - "database mirroring [SQL Server], operating modes"
-ms.assetid: f8a579c2-55d7-4278-8088-f1da1de5b2e6
-caps.latest.revision: 22
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Database Mirroring Operating Modes
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This topic describes the synchronous and asynchronous operating modes for database mirroring sessions.  
   
 > [!NOTE]  
@@ -43,9 +37,9 @@ manager: "jhubbard"
  This section describes how asynchronous database mirroring works, when it is appropriate to use high-performance mode, and how to respond if the principal server fails.  
   
 > [!NOTE]  
->  Most editions of [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] support only synchronous database mirroring ("Safety Full Only"). For information about editions that fully support database mirroring, see "High Availability (Always On)" in [Editions and Supported Features for SQL Server 2016](../../sql-server/editions-and-supported-features-for-sql-server-2016.md).
+>  Most editions of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] support only synchronous database mirroring ("Safety Full Only"). For information about editions that fully support database mirroring, see "High Availability (Always On)" in [Editions and supported features of SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md).
   
- When transaction safety is set to OFF, the database mirroring session operates asynchronously. Asynchronous operation supports only one operating mode—high-performance mode. This mode enhances performance at the expense of high availability. High-performance mode uses just the principal server and the mirror server. Problems on the mirror server never impact the principal server. On the loss of the principal server, the mirror database is marked DISCONNECTED but is available as a warm standby.  
+ When transaction safety is set to OFF, the database mirroring session operates asynchronously. Asynchronous operation supports only one operating mode-high-performance mode. This mode enhances performance at the expense of high availability. High-performance mode uses just the principal server and the mirror server. Problems on the mirror server never impact the principal server. On the loss of the principal server, the mirror database is marked DISCONNECTED but is available as a warm standby.  
   
  High-performance mode, supports only one form of role switching: forced service (with possible data loss), which uses the mirror server as a warm standby server. Forced service is one of the possible responses to the failure of the principal server. Because data loss is possible, you should consider other alternatives before forcing service to the mirror. For more information, see [Responding to Failure of the Principal](#WhenPrincipalFails), later in this topic.  
   
@@ -69,7 +63,7 @@ manager: "jhubbard"
  High-performance mode can be useful in a disaster-recovery scenario in which the principal and mirror servers are separated by a significant distance and where you do not want small errors to impact the principal server.  
   
 > [!NOTE]  
->  Log shipping can be a supplement to database mirroring and is a favorable alternative to asynchronous database mirroring. For information about the advantages of log shipping, see [High Availability Solutions &#40;SQL Server&#41;](../../sql-server/failover-clusters/high-availability-solutions-sql-server.md). For information on using log shipping with database mirroring, see [Database Mirroring and Log Shipping &#40;SQL Server&#41;](../../database-engine/database-mirroring/database-mirroring-and-log-shipping-sql-server.md).  
+>  Log shipping can be a supplement to database mirroring and is a favorable alternative to asynchronous database mirroring. For information about the advantages of log shipping, see [High Availability Solutions &#40;SQL Server&#41;](../sql-server-business-continuity-dr.md). For information on using log shipping with database mirroring, see [Database Mirroring and Log Shipping &#40;SQL Server&#41;](../../database-engine/database-mirroring/database-mirroring-and-log-shipping-sql-server.md).  
   
 ###  <a name="WitnessImpactOnHighPerf"></a> The Impact of a Witness on High-Performance Mode  
  If you use Transact-SQL to configure high-performance mode, whenever the SAFETY property is set to OFF, we strongly recommend that the WITNESS property also be set to OFF. A witness can coexist with high-performance mode, but the witness provides no benefit and introduces risk.  
@@ -153,7 +147,7 @@ manager: "jhubbard"
   
  Unlike the two partners, the witness does not serve the database. The witness simply supports automatic failover by verifying whether the principal server is up and functioning. The mirror server initiates automatic failover only if the mirror and the witness remain connected to each other after both have been disconnected from the principal server.  
   
- When a witness is set, the session requires *quorum*—a relationship between at least two server instances that allows the database to be made available. For more information, see [Database Mirroring Witness](../../database-engine/database-mirroring/database-mirroring-witness.md) and [Quorum: How a Witness Affects Database Availability &#40;Database Mirroring&#41;](../../database-engine/database-mirroring/quorum-how-a-witness-affects-database-availability-database-mirroring.md).  
+ When a witness is set, the session requires *quorum*-a relationship between at least two server instances that allows the database to be made available. For more information, see [Database Mirroring Witness](../../database-engine/database-mirroring/database-mirroring-witness.md) and [Quorum: How a Witness Affects Database Availability &#40;Database Mirroring&#41;](../../database-engine/database-mirroring/quorum-how-a-witness-affects-database-availability-database-mirroring.md).  
   
  Automatic failover requires the following conditions:  
   
@@ -283,5 +277,4 @@ SELECT mirroring_safety_level_desc, mirroring_witness_name, mirroring_witness_st
 ## See Also  
  [Monitoring Database Mirroring &#40;SQL Server&#41;](../../database-engine/database-mirroring/monitoring-database-mirroring-sql-server.md)   
  [Database Mirroring Witness](../../database-engine/database-mirroring/database-mirroring-witness.md)  
-  
   

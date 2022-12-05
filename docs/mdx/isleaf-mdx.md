@@ -1,28 +1,17 @@
 ---
+description: "IsLeaf (MDX)"
 title: "IsLeaf (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "ISLEAF"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "IsLeaf function"
-ms.assetid: 54862bb3-acc2-4711-ac5a-faa9e9de3721
-caps.latest.revision: 30
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # IsLeaf (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Returns whether a specified member is a leaf member.  
   

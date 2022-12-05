@@ -1,25 +1,24 @@
 ---
-title: "Explicit Hierarchies (Master Data Services) | Microsoft Docs"
+title: Explicit Hierarchies
+description: Use an explicit hierarchy to organize members from a Master Data Services entity any way you want, instead of based on domain-based attribute relationships.
 ms.custom: ""
 ms.date: "04/01/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "explicit hierarchies, about explicit hierarchies"
   - "hierarchies [Master Data Services], explicit hierarchies"
   - "explicit hierarchies"
 ms.assetid: e6f44e37-e1f0-4c38-a816-1935a856d5a4
-caps.latest.revision: 10
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Explicit Hierarchies (Master Data Services)
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   In [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)], an explicit hierarchy organizes members from a single entity in any way you specify. The structure can be ragged and unlike derived hierarchies, explicit hierarchies are not based on domain-based attribute relationships.  
   
 > [!NOTE]  
@@ -85,7 +84,6 @@ manager: "jhubbard"
 |Create a new explicit hierarchy.|[Create an Explicit Hierarchy &#40;Master Data Services&#41;](../master-data-services/create-an-explicit-hierarchy-master-data-services.md)|  
 |Change the name of an existing explicity hierarchy.|[Change an Explicit Hierarchy Name &#40;Master Data Services&#41;](../master-data-services/change-an-explicit-hierarchy-name-master-data-services.md)|  
 |Delete an existing explicit hierarchy.|[Delete an Explicit Hierarchy &#40;Master Data Services&#41;](../master-data-services/delete-an-explicit-hierarchy-master-data-services.md)|  
-|||  
   
 ## Related Content  
   

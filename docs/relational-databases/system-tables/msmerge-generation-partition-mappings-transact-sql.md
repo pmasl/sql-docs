@@ -1,31 +1,24 @@
 ---
-title: "MSmerge_generation_partition_mappings (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSmerge_generation_partition_mappings (T-SQL)"
+description: Describes the MSmerge_generation_partition_mappings stored procedure used to track changes to partitions in a merge publication.
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+ms.custom: seo-lt-2019
+f1_keywords:
   - "MSmerge_generation_partition_mappings_TSQL"
   - "MSmerge_generation_partition_mappings"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSmerge_generation_partition_mappings system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 443a4024-ce48-4772-9ee5-95bd6fb6476b
-caps.latest.revision: 24
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSmerge_generation_partition_mappings (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSmerge_generation_partition_mappings** table is used to track changes to partitions in a merge publication. This table is stored in the publication and scubscription databases.  
   

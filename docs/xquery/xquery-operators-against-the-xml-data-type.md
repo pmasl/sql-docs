@@ -1,16 +1,12 @@
 ---
 title: "XQuery Operators Against the xml Data Type | Microsoft Docs"
+description: Learn about the XQuery operators that can be used against the xml data type. 
 ms.custom: ""
 ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: xml
 ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
 dev_langs: 
   - "XML"
 helpviewer_keywords: 
@@ -18,13 +14,11 @@ helpviewer_keywords:
   - "operators [XQuery]"
   - "xml data type [SQL Server], XQuery"
 ms.assetid: 39ca3d2e-e928-4333-872b-75c4ccde8e79
-caps.latest.revision: 23
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: rothja
+ms.author: jroth
 ---
 # XQuery Operators Against the xml Data Type
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
 
   XQuery supports the following operators:  
   
@@ -43,10 +37,10 @@ manager: "jhubbard"
   
  The query uses the **=** comparison operator. Each node in the sequence on the right side of the **=** operator is compared with each node in the sequence on the left side. If the nodes match, the node comparison is **TRUE**. It is then converted to an int and compared with 1, and the query returns the customer ID.  
   
-```  
+```sql
 WITH XMLNAMESPACES (  
-'http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactInfo' AS ACI,  
-'http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactTypes' AS ACT)  
+'https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactInfo' AS ACI,  
+'https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ContactTypes' AS ACT)  
 SELECT ContactID   
 FROM   Person.Contact  
 WHERE  AdditionalContactInfo.value('  
@@ -60,10 +54,10 @@ WHERE  AdditionalContactInfo.value('
 ### B. Using a numeric operator  
  The + operator in this query is a value operator, because it applies to a single item. For example, value 1 is added to a lot size that is returned by the query:  
   
-```  
+```sql
 SELECT ProductModelID, Instructions.query('  
      declare namespace   
- AWMI="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
+ AWMI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
      for $i in (/AWMI:root/AWMI:Location)[1]  
      return   
        <Location LocationID="{ ($i/@LocationID) }"  
@@ -80,9 +74,9 @@ where ProductModelID=7
 ### C. Using a value operator  
  The following query retrieves the <`Picture`> elements for a product model where the picture size is "small":  
   
-```  
+```sql
 SELECT CatalogDescription.query('  
-     declare namespace PD="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelDescription";  
+     declare namespace PD="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelDescription";  
      for $P in /PD:ProductDescription/PD:Picture[PD:Size eq "small"]  
      return  
            $P  

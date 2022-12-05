@@ -1,14 +1,12 @@
 ---
+description: "Integration Services Paths"
 title: "Integration Services Paths | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.designer.patheditor.general.f1"
   - "sql13.dts.designer.patheditor.metadata.f1"
@@ -20,12 +18,14 @@ helpviewer_keywords:
   - "destinations [Integration Services], paths"
   - "sources [Integration Services], paths"
 ms.assetid: 6c4629a9-2ede-4011-9101-3b342249640e
-caps.latest.revision: 41
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Integration Services Paths
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   A path connects two components in a data flow by connecting the output of one data flow component to the input of another component. A path has a source and a destination. For example, if a path connects an OLE DB source and a Sort transformation, the OLE DB source is the source of the path, and the Sort transformation is the destination of the path. The source is the component where the path starts, and the destination is the component where the path ends.  
   
  If you run a package in [!INCLUDE[ssIS](../../includes/ssis-md.md)] Designer, you can view the data in a data flow by attaching data viewers to a path. A data viewer can be configured to display data in a grid. A data viewer is a useful debugging tool. For more information, see [Debugging Data Flow](../../integration-services/troubleshooting/debugging-data-flow.md).  

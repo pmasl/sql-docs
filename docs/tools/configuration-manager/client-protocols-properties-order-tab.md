@@ -1,24 +1,22 @@
 ---
-title: "Client Protocols Properties (Order Tab) | Microsoft Docs"
-ms.custom: ""
+title: "Client Protocols Properties (Order Tab)"
+description: Discover how to enable or disable client protocols. See how to rearrange the order in which protocols are used when clients try to connect to SQL Server.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: tools-other
+ms.topic: conceptual
 helpviewer_keywords: 
   - "client protocols [SQL Server]"
 ms.assetid: 64fd7135-1756-4885-bed9-9ab8997ecc6c
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=sql-server-2016"
 ---
 # Client Protocols Properties (Order Tab)
-  Use the **Order**page on the **Client Protocols Properties** dialog box to view and enable the client protocols.  
+[!INCLUDE [SQL Server Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
+  Use the **Order** page on the **Client Protocols Properties** dialog box to view and enable the client protocols.  
   
  Click a protocol, and then click **Enable** or **Disable** to move the selected protocol to the **Disabled Protocols** or **Enabled Protocols** list.  
   
@@ -29,10 +27,10 @@ manager: "jhubbard"
   
 ## Options  
  **Disabled Protocols**  
- Lists protocols which are installed but are not currently used.  
+ Lists the protocols that are installed but are not currently used.  
   
  **Enabled Protocols**  
- Lists protocols which are available for [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] clients on this computer.  
+ Lists the protocols that are available for [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] clients on this computer.  
   
  **>**  
  Enables the currently highlighted protocol in the **Disabled Protocols** box, moving it to the **Enabled Protocols** box.  
@@ -53,6 +51,5 @@ manager: "jhubbard"
 >  If the protocol is specified through a prefix or as part of the connection string, only the specified protocol is attempted.  
   
 ## See Also  
- [Choosing a Network Protocol](http://msdn.microsoft.com/library/6565fb7d-b076-4447-be90-e10d0dec359a)  
-  
+ [Choosing a Network Protocol](/previous-versions/sql/sql-server-2016/ms187892(v=sql.130))  
   

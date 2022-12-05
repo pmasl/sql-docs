@@ -1,24 +1,22 @@
 ---
-title: "SQL Syntax Errors Encountered Dialog Box (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "SQL Syntax Errors Encountered Dialog Box (Visual Database Tools)"
+title: SQL Syntax Errors Encountered Dialog Box
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vdt.dlgbox.sqlsyntaxerrorsencountered"
   - "vdtsql.chm:69641"
 ms.assetid: bc9e5784-227e-4c5d-8084-24274fa6c14a
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # SQL Syntax Errors Encountered Dialog Box (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 This dialog box notifies you that the designer cannot parse the SQL statement in the SQL pane.  
   
 This dialog box appears when you enter or edit an SQL statement in the SQL pane; then either switch to another pane, verify the query, or attempt to execute the query; and one of the following conditions applies:  

@@ -1,30 +1,23 @@
 ---
-title: "Stored Procedure Properties Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Stored Procedure Properties Example (VC++)"
+description: "ActiveConnection, CommandText, CommandTimeout, CommandType, Size, and Direction Properties Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "CommandTimeout property [ADO], VC++ example"
   - "CommandText property [ADO], VC++ example"
   - "CommandType property [ADO], VC++ example"
   - "Direction property [ADO], VC++ example"
   - "ActiveConnection property [ADO], VC++ example"
-ms.assetid: 0d9917c4-9ef0-4d7a-b4ce-4f1fa6ce1817
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # ActiveConnection, CommandText, CommandTimeout, CommandType, Size, and Direction Properties Example (VC++)
-This example uses the [ActiveConnection](../../../ado/reference/ado-api/activeconnection-property-ado.md), [CommandText](../../../ado/reference/ado-api/commandtext-property-ado.md), [CommandTimeout](../../../ado/reference/ado-api/commandtimeout-property-ado.md), [CommandType](../../../ado/reference/ado-api/commandtype-property-ado.md), [Size](../../../ado/reference/ado-api/size-property-ado-parameter.md), and [Direction](../../../ado/reference/ado-api/direction-property.md) properties to execute a stored procedure.  
+This example uses the [ActiveConnection](./activeconnection-property-ado.md), [CommandText](./commandtext-property-ado.md), [CommandTimeout](./commandtimeout-property-ado.md), [CommandType](./commandtype-property-ado.md), [Size](./size-property-ado-parameter.md), and [Direction](./direction-property.md) properties to execute a stored procedure.  
   
 ## Example  
   
@@ -209,9 +202,9 @@ Authors With  25  Percent Royalty
 ```  
   
 ## See Also  
- [ActiveConnection Property (ADO)](../../../ado/reference/ado-api/activeconnection-property-ado.md)   
- [CommandText Property (ADO)](../../../ado/reference/ado-api/commandtext-property-ado.md)   
- [CommandTimeout Property (ADO)](../../../ado/reference/ado-api/commandtimeout-property-ado.md)   
- [CommandType Property (ADO)](../../../ado/reference/ado-api/commandtype-property-ado.md)   
- [Direction Property](../../../ado/reference/ado-api/direction-property.md)   
- [Size Property (ADO Parameter)](../../../ado/reference/ado-api/size-property-ado-parameter.md)
+ [ActiveConnection Property (ADO)](./activeconnection-property-ado.md)   
+ [CommandText Property (ADO)](./commandtext-property-ado.md)   
+ [CommandTimeout Property (ADO)](./commandtimeout-property-ado.md)   
+ [CommandType Property (ADO)](./commandtype-property-ado.md)   
+ [Direction Property](./direction-property.md)   
+ [Size Property (ADO Parameter)](./size-property-ado-parameter.md)

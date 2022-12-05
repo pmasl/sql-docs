@@ -1,14 +1,12 @@
 ---
+description: "sp_revoke_proxy_from_subsystem (Transact-SQL)"
 title: "sp_revoke_proxy_from_subsystem (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_revoke_login_from_subsystem"
   - "sp_revoke_login_from_subsystem_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_revoke_proxy_from_subsystem"
 ms.assetid: b87bc8ba-3ea8-4aed-b54b-32c3d82d9d2a
-caps.latest.revision: 37
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # sp_revoke_proxy_from_subsystem (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Revokes access to a subsystem from a proxy.  
   
@@ -41,18 +37,18 @@ sp_revoke_proxy_from_subsystem
 ```  
   
 ## Arguments  
- [ **@proxy_id** = ] *id*  
+`[ @proxy_id = ] id`
  The proxy identification number of the proxy to revoke access from. The *proxy_id* is **int**, with a default of NULL. Either *proxy_id* or *proxy_name* must be specified, but both cannot be specified.  
   
- [ **@proxy_name** = ] **'***proxy_name***'**  
+`[ @proxy_name = ] 'proxy_name'`
  The name of the proxy to revoke access from. The *proxy_name* is **sysname**, with a default of NULL. Either *proxy_id* or *proxy_name* must be specified, but both cannot be specified.  
   
- [ **@subsystem_id** = ] *id*  
+`[ @subsystem_id = ] id`
  The id number of the subsystem to revoke access to. The *subsystem_id* is **int**, with a default of NULL. Either *subsystem_id* or *subsystem_name* must be specified, but both cannot be specified. The following table lists the values for each subsystem.  
   
 |Value|Description|  
 |-----------|-----------------|  
-|**2**|ActiveX Script<br /><br /> **\*\* Important \*\*** The ActiveX Scripting subsystem will be removed from [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent in a future version of [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Avoid using this feature in new development work, and plan to modify applications that currently use this feature.|  
+|**2**|ActiveX Script<br /><br /> **\*\* Important \*\*** The ActiveX Scripting subsystem will be removed from [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent in a future version of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Avoid using this feature in new development work, and plan to modify applications that currently use this feature.|  
 |**3**|Operating System (CmdExec)|  
 |**4**|Replication Snapshot Agent|  
 |**5**|Replication Log Reader Agent|  
@@ -64,7 +60,7 @@ sp_revoke_proxy_from_subsystem
 |**11**|[!INCLUDE[ssIS](../../includes/ssis-md.md)] package execution|  
 |**12**|PowerShell Script|  
   
- [ **@subsystem_name**= ] **'***subsystem_name***'**  
+`[ @subsystem_name = ] 'subsystem_name'`
  The name of the subsystem to revoke access to. The *subsystem_name* is **sysname**, with a default of NULL. Either *subsystem_id* or *subsystem_name* must be specified, but both cannot be specified. The following table lists the values for each subsystem.  
   
 |Value|Description|  
@@ -104,7 +100,7 @@ EXEC dbo.sp_revoke_proxy_from_subsystem
   
 ## See Also  
  [SQL Server Agent Stored Procedures &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sql-server-agent-stored-procedures-transact-sql.md)   
- [Implement SQL Server Agent Security](http://msdn.microsoft.com/library/d770d35c-c8de-4e00-9a85-7d03f45a0f0d)   
+ [Implement SQL Server Agent Security](../../ssms/agent/implement-sql-server-agent-security.md)   
  [sp_grant_proxy_to_subsystem &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-grant-proxy-to-subsystem-transact-sql.md)  
   
   

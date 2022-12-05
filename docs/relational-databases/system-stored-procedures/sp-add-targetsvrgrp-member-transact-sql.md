@@ -1,14 +1,12 @@
 ---
+description: "sp_add_targetsvrgrp_member (Transact-SQL)"
 title: "sp_add_targetsvrgrp_member (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_add_targetsvrgrp_member"
   - "sp_add_targetsvrgrp_member_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_add_targetsvrgrp_member"
 ms.assetid: 5021ed5b-acca-4f8b-b9db-18733059c359
-caps.latest.revision: 31
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_add_targetsvrgrp_member (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Adds the specified target server to the specified target server group.  
    
@@ -37,10 +33,10 @@ sp_add_targetsvrgrp_member [ @group_name = ] 'group_name' , [ @server_name = ] '
 ```  
   
 ## Arguments  
- [ **@group_name=** ] **'***group_name***'**  
+`[ @group_name = ] 'group_name'`
  The name of the group. *group_name* is **sysname**, with no default.  
   
- [ **@server_name=** ] **'***server_name***'**  
+`[ @server_name = ] 'server_name'`
  The name of the server that should be added to the specified group. *server_name* is **nvarchar(30)**, with no default.  
   
 ## Return Code Values  

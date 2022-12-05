@@ -1,24 +1,17 @@
 ---
-title: "Asynchronous Execution (Notification Method) Sample | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 55c51fff-119d-445f-8732-c1569966e559
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+title: "Asynchronous Execution (Notification Method) Sample"
+description: "Example code demonstrating how to use asynchronous execution (using the notification method) in the Microsoft ODBC Driver for SQL Server."
+author: David-Engel
+ms.author: v-davidengel
+ms.date: 09/01/2020
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: conceptual
 ---
 # Asynchronous Execution (Notification Method) Sample
 [!INCLUDE[Driver_ODBC_Download](../../../includes/driver_odbc_download.md)]
 
-  The code samples in this topic demonstrate how to use the [Asynchronous Execution (Notification Method)](http://msdn.microsoft.com/library/hh405038(VS.85).aspx).  
+  The code samples in this topic demonstrate how to use the [Asynchronous Execution (Notification Method)](../../../odbc/reference/develop-app/asynchronous-execution-notification-method.md).  
   
  This function uses asynchronous notification to open five connections, and executes one query on a statement of each connection.  
   
@@ -315,7 +308,7 @@ int _tmain(int argc, _TCHAR* argv[])
     for(int i = 0; i < g_nConnection; i++)  
     {  
         SQLDriverConnect(g_hDbcs[i],NULL,
-            (SQLCHAR*)"DRIVER={ODBC Driver 13 for SQL Server};Server=your_server;database=your_database;uid=usr;pwd=your_password",
+            (SQLCHAR*)"DRIVER={ODBC Driver 18 for SQL Server};Server=your_server;Encrypt=yes;database=your_database;uid=usr;pwd=your_password",
             SQL_NTS, (SQLCHAR*)g_connOut[i].szOutConnectionString, 500, &g_connOut[i].iLen, SQL_DRIVER_NOPROMPT);  
     }
 

@@ -1,29 +1,25 @@
 ---
+description: "sp_helpmergearticlecolumn (Transact-SQL)"
 title: "sp_helpmergearticlecolumn (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_helpmergearticlecolumn"
   - "sp_helpmergearticlecolumn_TSQL"
 helpviewer_keywords: 
   - "sp_helpmergearticlecolumn"
 ms.assetid: 651c017b-9e9a-48f2-a0bd-6fc896eab334
-caps.latest.revision: 27
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_helpmergearticlecolumn (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns the list of columns in the specified table or view article for a merge publication. Because stored procedures do not have columns, this stored procedure returns an error if a stored procedure is specified as the article. This stored procedure is executed at the Publisher on the publication database.  
   
@@ -38,10 +34,10 @@ sp_helpmergearticlecolumn [ @publication = ] 'publication' ]
 ```  
   
 ## Arguments  
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication.*publication* is **sysname**, with no default.  
   
- [ **@article=**] **'***article***'**  
+`[ @article = ] 'article'`
  Is the name of a table or view that is the article to retrieve information on.*article* is **sysname**, with no default.  
   
 ## Result Sets  

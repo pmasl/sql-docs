@@ -1,24 +1,15 @@
 ---
-title: "getURL Method (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getURL Method (SQLServerCallableStatement)"
+description: "getURL Method (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.getURL"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.getURL"
 apitype: "Assembly"
-ms.assetid: 700f54ab-58c1-4e5f-a188-818366a119c0
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getURL Method (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,26 +1,19 @@
 ---
-title: "AddNew Method Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "AddNew Method Example (VB)"
+description: "AddNew Method Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "AddNew method [ADO], Visual Basic example"
-ms.assetid: d439e097-65f3-471d-8799-5a1263beb3c1
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # AddNew Method Example (VB)
-This example uses the [AddNew](../../../ado/reference/ado-api/addnew-method-ado.md) method to create a new record with the specified name.  
+This example uses the [AddNew](./addnew-method-ado.md) method to create a new record with the specified name.  
   
 ```  
 'BeginAddNewVB  
@@ -106,5 +99,5 @@ End Sub
 ```  
   
 ## See Also  
- [AddNew Method (ADO)](../../../ado/reference/ado-api/addnew-method-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [AddNew Method (ADO)](./addnew-method-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

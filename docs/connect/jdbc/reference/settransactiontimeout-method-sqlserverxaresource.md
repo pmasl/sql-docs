@@ -1,24 +1,15 @@
 ---
-title: "setTransactionTimeout Method (SQLServerXAResource) | Microsoft Docs"
-ms.custom: ""
+title: "setTransactionTimeout Method (SQLServerXAResource)"
+description: "setTransactionTimeout Method (SQLServerXAResource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerXAResource.setTransactionTimeout"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerXAResource.setTransactionTimeout"
 apitype: "Assembly"
-ms.assetid: 38bf4a1a-6ad3-437c-b9ed-8792ab6dde7e
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setTransactionTimeout Method (SQLServerXAResource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

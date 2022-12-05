@@ -1,29 +1,20 @@
 ---
-title: "getHostNameInCertificate Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "getHostNameInCertificate Method (SQLServerDataSource)"
+description: "getHostNameInCertificate Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "getHostNameInCertificate Method (SQLServerDataSource)"
-apilocation: 
-  - "getHostNameInCertificate Method (SQLServerDataSource)"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "getHostNameInCertificate Method (SQLServerDataSource)"
+apiname: "getHostNameInCertificate Method (SQLServerDataSource)"
 apitype: "Assembly"
-ms.assetid: 45ea04e2-9ea5-4171-9136-d09f8a95e128
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getHostNameInCertificate Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
 
-  Returns the host name used in validating the SQL Server Secure Sockets Layer (SSL) certificate.  
+  Returns the host name used in validating the SQL Server Transport Layer Security (TLS), previously known as Secure Sockets Layer (SSL), certificate.  
   
 ## Syntax  
   
@@ -36,7 +27,7 @@ public java.lang.String getHostNameInCertificate()
  A **String** that contains the host name, or null if no value is set.  
   
 ## Remarks  
- The host name is used to validate the SQL Server SSL certificate value when the communication layer is encrypted using SSL.  
+ The host name is used to validate the SQL Server TLS/SSL certificate value when the communication layer is encrypted using TLS/SSL.  
   
  If the host name is not set, the [getHostNameInCertificate](../../../connect/jdbc/reference/gethostnameincertificate-method-sqlserverdatasource.md) method returns null.  
   

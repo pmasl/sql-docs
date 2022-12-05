@@ -1,24 +1,15 @@
 ---
-title: "getTime Method (java.lang.String, java.util.Calendar) | Microsoft Docs"
-ms.custom: ""
+title: "getTime Method (java.lang.String, java.util.Calendar)"
+description: "getTime Method (java.lang.String, java.util.Calendar)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.getTime (java.lang.String, java.util.Calendar)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.getTime (java.lang.String, java.util.Calendar)"
 apitype: "Assembly"
-ms.assetid: 3d4c67c2-a3c8-4a26-a159-89c5d63fda0b
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getTime Method (java.lang.String, java.util.Calendar)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -51,7 +42,7 @@ public java.sql.Time getTime(java.lang.String sCol,
 ## Remarks  
  This getTime method is specified by the getTime method in the java.sql.CallableStatement interface.  
   
- See the chart titled "Getter Method Conversions" in [Understanding Data Type Conversions](../../../connect/jdbc/understanding-data-type-conversions.md) to see which [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] data types can be retrieved with this method.  
+ See the chart titled "Getter Method Conversions" in [Understanding Data Type Conversions](../../../connect/jdbc/understanding-data-type-conversions.md) to see which [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] data types can be retrieved with this method.  
   
 ## See Also  
  [getTime Method &#40;SQLServerCallableStatement&#41;](../../../connect/jdbc/reference/gettime-method-sqlservercallablestatement.md)   

@@ -1,25 +1,22 @@
 ---
+description: "catalog.effective_object_permissions (SSISDB Database)"
 title: "catalog.effective_object_permissions (SSISDB Database) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "language-reference"
 helpviewer_keywords: 
   - "catalog.effective_object_permissions views [Integration Services]"
   - "effective_object_permissions view [Integration Services]"
 ms.assetid: e70c4ce9-79f5-44df-ac75-6c29b6e38776
-caps.latest.revision: 26
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # catalog.effective_object_permissions (SSISDB Database)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
 
   Displays the effective permissions for the current principal for all objects in the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] catalog.  
   

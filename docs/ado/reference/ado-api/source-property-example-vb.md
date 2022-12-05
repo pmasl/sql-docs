@@ -1,26 +1,19 @@
 ---
-title: "Source Property Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Source Property Example (VB)"
+description: "Source Property Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Source property [ADO], Visual Basic example"
-ms.assetid: 7c83eb01-71c7-4c5d-9778-6270471c8164
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Source Property Example (VB)
-This example demonstrates the [Source](../../../ado/reference/ado-api/source-property-ado-recordset.md) property by opening three [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) objects based on different data sources.  
+This example demonstrates the [Source](./source-property-ado-recordset.md) property by opening three [Recordset](./recordset-object-ado.md) objects based on different data sources.  
   
 ```  
 'BeginSourceVB  
@@ -125,5 +118,5 @@ End Sub
 ```  
   
 ## See Also  
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)   
- [Source Property (ADO Recordset)](../../../ado/reference/ado-api/source-property-ado-recordset.md)
+ [Recordset Object (ADO)](./recordset-object-ado.md)   
+ [Source Property (ADO Recordset)](./source-property-ado-recordset.md)

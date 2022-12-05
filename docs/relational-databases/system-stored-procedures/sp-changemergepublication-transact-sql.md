@@ -1,29 +1,25 @@
 ---
+description: "sp_changemergepublication (Transact-SQL)"
 title: "sp_changemergepublication (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_changemergepublication_TSQL"
   - "sp_changemergepublication"
 helpviewer_keywords: 
   - "sp_changemergepublication"
 ms.assetid: 81fe1994-7678-4852-980b-e02fedf1e796
-caps.latest.revision: 44
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_changemergepublication (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Changes the properties of a merge publication. This stored procedure is executed at the Publisher on the publication database.  
   
@@ -41,13 +37,13 @@ sp_changemergepublication [ @publication= ] 'publication'
 ```  
   
 ## Arguments  
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  The name of the publication. *publication* is **sysname**, with no default.  
   
- [ **@property=**] **'***property***'**  
+`[ @property = ] 'property'`
  The property to change for the given publication. *property* is **sysname**, and can be one of the values listed in the table that follows.  
   
- [ **@value=**]  **'***value***'**  
+`[ @value = ] 'value'`
  The new value for the specified property. *value* is **nvarchar(255)**, and can be one of the values listed in the table that follows.  
   
  This table describes the properties of the publication that can be changed, and describes restrictions on the values for those properties.  
@@ -123,7 +119,7 @@ sp_changemergepublication [ @publication= ] 'publication'
 |**web_synchronization_url**||Default value of the Internet URL used for Web synchronization.|  
 |NULL (default)||Returns the list of supported values for *property*.|  
   
- [ **@force_invalidate_snapshot =** ] *force_invalidate_snapshot*  
+`[ @force_invalidate_snapshot = ] force_invalidate_snapshot`
  Acknowledges that the action taken by this stored procedure might invalidate an existing snapshot. *force_invalidate_snapshot* is a **bit**, with a default of **0**.  
   
  **0** specifies that changing the publication does not invalidate the snapshot. If the stored procedure detects that the change does require a new snapshot, an error occurs and no changes are made.  
@@ -132,7 +128,7 @@ sp_changemergepublication [ @publication= ] 'publication'
   
  See the Remarks section for the properties that, when changed, require a new snapshot to be generated.  
   
- [ **@force_reinit_subscription =** ] *force_reinit_subscription*  
+`[ @force_reinit_subscription = ] force_reinit_subscription`
  Acknowledges that the action taken by this stored procedure might require existing subscriptions to be reinitialized. *force_reinit_subscription* is a **bit** with a default of **0**.  
   
  **0** specifies that changing the publication does not require that subscriptions be reinitialized. If the stored procedure detects that the change would require existing subscriptions to be reinitialized, an error occurs and no changes are made.  
@@ -147,7 +143,7 @@ sp_changemergepublication [ @publication= ] 'publication'
 ## Remarks  
  **sp_changemergepublication** is used in merge replication.  
   
- Changing the following properties requires that a new snapshot be generated. You you must specify a value of **1** for the *force_invalidate_snapshot* parameter.  
+ Changing the following properties requires that a new snapshot be generated. You must specify a value of **1** for the *force_invalidate_snapshot* parameter.  
   
 -   **alt_snapshot_folder**  
   

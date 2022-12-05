@@ -1,31 +1,25 @@
 ---
-title: "sys.server_trigger_events (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.server_trigger_events (Transact-SQL)"
+description: sys.server_trigger_events (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.server_trigger_events_TSQL"
   - "server_trigger_events_TSQL"
   - "sys.server_trigger_events"
   - "server_trigger_events"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.server_trigger_events catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: be7d8a59-3c00-4f1b-b4b0-3dcd5572e002
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.server_trigger_events (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row for each event for which a server-level (synchronous) trigger fires.  
   

@@ -1,24 +1,19 @@
 ---
-title: "sys.dm_pdw_query_stats_xe (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_pdw_query_stats_xe (Transact-SQL)"
+description: sys.dm_pdw_query_stats_xe (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+dev_langs:
   - "TSQL"
 ms.assetid: 5d551241-db35-4958-b60f-55e996f95c1f
-caps.latest.revision: 7
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016"
 ---
 # sys.dm_pdw_query_stats_xe (Transact-SQL)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]
 
   This DMV is deprecated and will be removed in a future release. In this release, it returns 0 rows.  
   
@@ -37,6 +32,6 @@ manager: "jhubbard"
 |pdw_node_id|**int**|Node on which this Xevent instance is running.|  
   
 ## See Also  
- [SQL Data Warehouse and Parallel Data Warehouse Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
+ [Azure Synapse Analytics and Parallel Data Warehouse Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
   
   

@@ -1,22 +1,18 @@
 ---
+description: "Table Names"
 title: "Table Names | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQL grammar [ODBC], table names"
   - "table names [ODBC]"
 ms.assetid: f7a5cb0a-3be7-4f46-82f9-64ffdbceaa9b
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Table Names
 When the dBASE, Microsoft Excel, Paradox, or Text driver is used, table names that occur in the FROM clause of SELECT or DELETE, after the INTO clause in INSERT, and after UPDATE, CREATE TABLE, and DROP TABLE can contain a valid path, primary name, and file name extension.  

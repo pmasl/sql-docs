@@ -1,34 +1,27 @@
 ---
-title: "CreateRecordset Method (RDS) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "CreateRecordset Method (RDS)"
+description: "CreateRecordset Method (RDS)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "DataControl::CreateRecordset"
   - "RDS.DataControl::CreateRecordset"
   - "CreateRecordset"
   - "RDSServer.DataFactory::CreateRecordset"
   - "DataFactory::CreateRecordset"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "CreateRecordset method [RDS]"
-ms.assetid: 6840b1e5-c04d-4d3e-9dcc-42128c83492f
-caps.latest.revision: 17
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # CreateRecordset Method (RDS)
-Creates an empty, disconnected [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md).  
+Creates an empty, disconnected [Recordset](../ado-api/recordset-object-ado.md).  
   
 > [!IMPORTANT]
->  Beginning with Windows 8 and Windows Server 2012, RDS server components are no longer included in the Windows operating system (see Windows 8 and [Windows Server 2012 Compatibility Cookbook](https://www.microsoft.com/en-us/download/details.aspx?id=27416) for more detail). RDS client components will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Applications that use RDS should migrate to [WCF Data Service](http://go.microsoft.com/fwlink/?LinkId=199565).  
+>  Beginning with Windows 8 and Windows Server 2012, RDS server components are no longer included in the Windows operating system (see Windows 8 and [Windows Server 2012 Compatibility Cookbook](https://www.microsoft.com/download/details.aspx?id=27416) for more detail). RDS client components will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Applications that use RDS should migrate to [WCF Data Service](/dotnet/framework/wcf/).  
   
 ## Syntax  
   
@@ -39,7 +32,7 @@ object.CreateRecordset(ColumnInfos)
   
 #### Parameters  
  *Object*  
- An object variable that represents an [RDSServer.DataFactory](../../../ado/reference/rds-api/datafactory-object-rdsserver.md) or [RDS.DataControl](../../../ado/reference/rds-api/datacontrol-object-rds.md) object.  
+ An object variable that represents an [RDSServer.DataFactory](./datafactory-object-rdsserver.md) or [RDS.DataControl](./datacontrol-object-rds.md) object.  
   
  *ColumnsInfos*  
  A **Variant** array of attributes that defines each column in the **Recordset** created. Each column definition contains an array of four required attributes and one optional attribute.  
@@ -57,9 +50,9 @@ object.CreateRecordset(ColumnInfos)
 ## Remarks  
  The server-side business object can populate the resulting **Recordset** with data from a non-OLE DB data provider, such as an operating system file containing stock quotes.  
   
- The following table lists the [DataTypeEnum](../../../ado/reference/ado-api/datatypeenum.md) values supported by the **CreateRecordset** method. The number listed is the reference number used to define fields.  
+ The following table lists the [DataTypeEnum](../ado-api/datatypeenum.md) values supported by the **CreateRecordset** method. The number listed is the reference number used to define fields.  
   
- Each of the data types is either fixed length or variable length. Fixed-length types should be defined with a size of –1, because the size is predetermined and a size definition is still required. Variable-length data types allow a size from 1 to 32767.  
+ Each of the data types is either fixed length or variable length. Fixed-length types should be defined with a size of -1, because the size is predetermined and a size definition is still required. Variable-length data types allow a size from 1 to 32767.  
   
  For some of the variable data types, the type can be coerced to the type noted in the Substitution column. You will not see the substitutions until after the **Recordset** is created and filled. Then you can check for the actual data type, if necessary.  
   
@@ -97,15 +90,17 @@ object.CreateRecordset(ColumnInfos)
 |Variable|**adLongVarBinary**|205|204|  
   
 ## Applies To  
-  
-|||  
-|-|-|  
-|[DataControl Object (RDS)](../../../ado/reference/rds-api/datacontrol-object-rds.md)|[DataFactory Object (RDSServer)](../../../ado/reference/rds-api/datafactory-object-rdsserver.md)|  
-  
+
+:::row:::
+    :::column:::
+        [DataControl Object (RDS)](./datacontrol-object-rds.md)  
+    :::column-end:::
+    :::column:::
+        [DataFactory Object (RDSServer)](./datafactory-object-rdsserver.md)  
+    :::column-end:::
+:::row-end:::
+
 ## See Also  
- [CreateRecordset Method Example (VB)](../../../ado/reference/ado-api/createrecordset-method-example-vb.md)   
- [CreateRecordset Method Example (VBScript)](../../../ado/reference/rds-api/createrecordset-method-example-vbscript.md)   
- [CreateObject Method (RDS)](../../../ado/reference/rds-api/createobject-method-rds.md)
-
-
-
+ [CreateRecordset Method Example (VB)](../ado-api/createrecordset-method-example-vb.md)   
+ [CreateRecordset Method Example (VBScript)](./createrecordset-method-example-vbscript.md)   
+ [CreateObject Method (RDS)](./createobject-method-rds.md)

@@ -1,28 +1,24 @@
 ---
-title: "Backing Up and Restoring DQS Databases | Microsoft Docs"
-ms.custom: ""
+title: "Backing Up and Restoring DQS Databases"
+description: "Backing Up and Restoring DQS Databases"
+author: swinarko
+ms.author: sawinark
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f3091f62-2234-4a80-a615-cf14c2a1da85
-caps.latest.revision: 12
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
 ---
 # Backing Up and Restoring DQS Databases
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
   This topic describes how to back up and restore the DQS databases.  
   
 ##  <a name="BeforeYouBegin"></a> Before You Begin  
   
 ###  <a name="Prerequisites"></a> Prerequisites  
   
--   You must know or remember the password for the database master key that that you provided during the DQS server installation.  
+-   You must know or remember the password for the database master key that you provided during the DQS server installation.  
   
 -   Ensure that there are no running activities or processes in DQS. This can be verified using the **Activity Monitoring** screen. For detailed information about working in this screen, see [Monitor DQS Activities](../data-quality-services/monitor-dqs-activities.md).  
   

@@ -1,25 +1,21 @@
 ---
+description: "Data Migration Report (AccessToSQL)"
 title: "Data Migration Report (AccessToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: b090b327-cec6-4d9a-a670-8f96e8ff0046
-caps.latest.revision: 4
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
+f1_keywords: 
+  - "ssma.access.datamigrationreport.f1"
+
 ---
 # Data Migration Report (AccessToSQL)
-The **Data Migration Report** dialog box appears after you migrate data to [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)].  
+The **Data Migration Report** dialog box appears after you migrate data to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
 ## Options  
 **Status**  

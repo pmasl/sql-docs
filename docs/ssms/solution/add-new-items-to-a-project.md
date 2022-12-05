@@ -1,27 +1,24 @@
 ---
-title: "Add New Items to a Project | Microsoft Docs"
-ms.custom: ""
+description: "Add New Items to a Project"
+title: "Add New Items to a Project"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "projects [SQL Server Management Studio], item additions"
   - "adding project items"
 ms.assetid: 76af8692-324f-4f5e-b1a0-d72ca8a107e3
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Add New Items to a Project
-Add new items to a project to extend application functionality. A new item can be a query or a connection. [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)] has two project types: [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Script Project, and Analysis Services Script Project. The project type determines the items that you can add to the project. For example, you can add a [!INCLUDE[tsql](../../includes/tsql_md.md)] query (a file with a .sql extension) to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Script project, but you cannot add it to an Analysis Services Script Project.  
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+Add new items to a project to extend application functionality. A new item can be a query or a connection. [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] has two project types: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Script Project, and Analysis Services Script Project. The project type determines the items that you can add to the project. For example, you can add a [!INCLUDE[tsql](../../includes/tsql-md.md)] query (a file with a .sql extension) to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Script project, but you cannot add it to an Analysis Services Script Project.  
   
-[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)] does not allow you to create folders within projects. To organize your work, create multiple projects within the solution.  
+SQL Server Management Studio does not allow you to create folders within projects. To organize your work, create multiple projects within the solution.  
   
 ### To add a new query to an existing project  
   
@@ -51,7 +48,6 @@ Add new items to a project to extend application functionality. A new item can b
   
 ## See Also  
 [Solution Explorer](../../ssms/solution/solution-explorer.md)  
-[Associating File Extensions to a Code Editor](http://msdn.microsoft.com/en-us/193630f4-93de-4950-8f36-68702531f925)  
+[Associating File Extensions to a Code Editor](../scripting/associate-file-extensions-to-a-code-editor.md)  
 [Add Existing Items to a Project](../../ssms/solution/add-existing-items-to-a-project.md)  
 [Remove or Delete an Item or Project](../../ssms/solution/remove-or-delete-an-item-or-project.md)  
-  

@@ -1,21 +1,18 @@
 ---
-title: "Atomic Blocks | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine-imoltp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Atomic Blocks"
+description: Learn about BEGIN ATOMIC, part of the ANSI SQL standard. SQL Server supports atomic blocks in native procedures.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: "10/26/2017"
+ms.service: sql
+ms.subservice: in-memory-oltp
+ms.topic: conceptual
 ms.assetid: 40e0e749-260c-4cfc-a848-444d30c09d85
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Atomic Blocks in Native Procedures
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+
   **BEGIN ATOMIC** is part of the ANSI SQL standard. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] supports atomic blocks at the top-level of natively compiled stored procedures, as well as for natively compiled, scalar user-defined functions. For more information about these functions, see [Scalar User-Defined Functions for In-Memory OLTP](../../relational-databases/in-memory-oltp/scalar-user-defined-functions-for-in-memory-oltp.md).  
   
 -   Every natively compiled stored procedure contains exactly one block of [!INCLUDE[tsql](../../includes/tsql-md.md)] statements. This is an ATOMIC block.  
@@ -33,7 +30,7 @@ manager: "jhubbard"
   
  The following example illustrates the error handling behavior with atomic blocks and natively compiled stored procedures:  
   
-```tsql  
+```sql  
 -- sample table  
 CREATE TABLE dbo.t1 (  
   c1 int not null primary key nonclustered  
@@ -121,7 +118,7 @@ ORDER BY c1
 GO  
 ```  
   
- The following error messages specific to memory-optimized tables are transaction dooming. If they occur in the scope of an atomic block, they will cause the transaction to abort: 10772, 41301, 41302, 41305, 41325, 41332, and 41333.  
+ The following error messages specific to memory-optimized tables are transaction dooming. If they occur in the scope of an atomic block, they will cause the transaction to abort: 10772, 41301, 41302, 41305, 41325, 41332, 41333, and 41839.  
   
 ## Session Settings  
  The session settings in atomic blocks are fixed when the stored procedure is compiled. Some settings can be specified with **BEGIN ATOMIC** while other settings are always fixed to the same value.  
@@ -160,6 +157,5 @@ GO
 |XACT_ABORT|OFF<br /><br /> Uncaught exceptions cause the atomic block to roll back, but not cause the transaction to abort unless the error is transaction dooming.|  
   
 ## See Also  
- [Natively Compiled Stored Procedures](../../relational-databases/in-memory-oltp/natively-compiled-stored-procedures.md)  
-  
+ [Natively Compiled Stored Procedures](./a-guide-to-query-processing-for-memory-optimized-tables.md)  
   

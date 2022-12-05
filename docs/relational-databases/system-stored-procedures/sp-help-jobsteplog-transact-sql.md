@@ -1,14 +1,12 @@
 ---
+description: "sp_help_jobsteplog (Transact-SQL)"
 title: "sp_help_jobsteplog (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_help_jobsteplog_TSQL"
   - "sp_help_jobsteplog"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_help_jobsteplog"
 ms.assetid: 1a0be7b1-8f31-4b4c-aadb-586c0e00ed04
-caps.latest.revision: 18
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_help_jobsteplog (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns metadata about a specific [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent job step log. **sp_help_jobsteplog** does not return the actual log.  
 
@@ -40,19 +36,19 @@ sp_help_jobsteplog { [ @job_id = ] 'job_id' | [ @job_name = ] 'job_name' }
 ```  
   
 ## Arguments  
- [ **@job_id =**] **'***job_id***'**  
+`[ @job_id = ] 'job_id'`
  The job identification number for which to return job step log information. *job_id* is **int**, with a default of NULL.  
   
- [ **@job_name =**] **'***job_name***'**  
+`[ @job_name = ] 'job_name'`
  The name of the job. *job_name* is **sysname**, with a default NULL.  
   
 > [!NOTE]  
 >  Either *job_id* or *job_name* must be specified, but both cannot be specified.  
   
- [ **@step_id =**] *step_id*  
+`[ @step_id = ] step_id`
  The identification number of the step in the job. If not included, all steps in the job are included. *step_id* is **int**, with a default of NULL.  
   
- [ **@step_name =**] **'***step_name***'**  
+`[ @step_name = ] 'step_name'`
  The name of the step in the job. *step_name* is **sysname**, with a default of NULL.  
   
 ## Return Code Values  
@@ -84,7 +80,7 @@ sp_help_jobsteplog { [ @job_id = ] 'job_id' | [ @job_name = ] 'job_name' }
   
 -   **SQLAgentOperatorRole**  
   
- For details about the permissions of these roles, see [SQL Server Agent Fixed Database Roles](http://msdn.microsoft.com/library/719ce56b-d6b2-414a-88a8-f43b725ebc79).  
+ For details about the permissions of these roles, see [SQL Server Agent Fixed Database Roles](../../ssms/agent/sql-server-agent-fixed-database-roles.md).  
   
  Members of **SQLAgentUserRole** can only view job step log metadata for job steps that they own.  
   

@@ -1,14 +1,12 @@
 ---
+description: "STEquals (geometry Data Type)"
 title: "STEquals (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "STEquals (geometry Data Type)"
   - "STEquals_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "STEquals (geometry Data Type)"
 ms.assetid: 808f0e25-9e68-4ba7-9329-07ec950698f3
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # STEquals (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns 1 if a **geometry** instance represents the same point set as another **geometry** instance. Returns 0 if it does not.
   
@@ -34,7 +30,9 @@ Returns 1 if a **geometry** instance represents the same point set as another **
 .STEquals ( other_geometry )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *other_geometry*  
  Is another **geometry** instance to compare against the instance on which `STEquals()` is invoked.  
   

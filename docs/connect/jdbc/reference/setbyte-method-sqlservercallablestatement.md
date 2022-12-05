@@ -1,24 +1,15 @@
 ---
-title: "setByte Method (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setByte Method (SQLServerCallableStatement)"
+description: "setByte Method (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.setByte"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.setByte"
 apitype: "Assembly"
-ms.assetid: 0fbb03a5-61ee-4fb8-9dea-dce5cb1a367e
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setByte Method (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

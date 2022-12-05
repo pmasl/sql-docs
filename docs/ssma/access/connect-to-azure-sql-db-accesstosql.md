@@ -1,27 +1,19 @@
 ---
-title: "Connect To Azure SQL DB (AccessToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.custom: ""
+description: "Connect To Azure SQL Database (AccessToSQL)"
+title: "Connect To Azure SQL Database (AccessToSQL) | Microsoft Docs"
+ms.service: sql
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
-helpviewer_keywords: 
+ms.subservice: ssma
+ms.topic: conceptual
+helpviewer_keywords:
   - "Connect to SQL Azure dialog box"
 ms.assetid: bf44b236-d9be-41ae-a5fd-bd73038e505f
-caps.latest.revision: 17
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka
+ms.author: cpichuka
 ---
-# Connect To Azure SQL DB (AccessToSQL)
-Use the Connect to SQL Azure dialog box to connect to the SQL Azure database that you want to migrate.  
+# Connect To Azure SQL Database (AccessToSQL)
+Use the Connect to SQL Azure dialog box to connect to the database in Azure SQL Database that you want to migrate.  
   
 To access this dialog box, on the **File** menu, select **Connect to SQL Azure**. If you have previously connected, the command is **Reconnect to SQL Azure.**  
   
@@ -39,7 +31,7 @@ Select, enter or **Browse** the Database name.
   
 **User name**  
   
-Enter the user name that SSMA will use to connect to the SQL Azure database  
+Enter the user name that SSMA will use to connect to Azure SQL Database  
   
 **Password**  
   
@@ -49,8 +41,8 @@ Enter the password for the user name.
   
 SSMA recommends encrypted connection to SQL Azure.  
   
-## Create Azure Database  
-To create a new azure database, follow the following steps  
+## Create database  
+To create a new database, follow the following steps  
   
 1.  click on browse button that is present in the Connect to SQL Azure dialog box  
   
@@ -58,7 +50,7 @@ To create a new azure database, follow the following steps
   
     1.  **(no databases found)** which is disabled and grayed out all the time  
   
-    2.  **Create new database** which is always enabled, enabling the user to create a new azure database on SQL Azure account. Upon clicking this menu item, create azure database dialog box is present with database name and size.  
+    2.  **Create new database** which is always enabled, enabling the user to create a new database. Upon clicking this menu item, create database dialog box is present with database name and size.  
   
 3.  At the time of database creation, these two parameters is given as input.  
   

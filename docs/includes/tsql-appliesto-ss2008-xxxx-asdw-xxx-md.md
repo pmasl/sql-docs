@@ -1,2 +1,10 @@
-<Token>**THIS TOPIC APPLIES TO:**![yes](media/yes.png)SQL Server (starting with 2008)![no](media/no.png)Azure SQL Database![yes](media/yes.png)Azure SQL Data Warehouse ![no](media/no.png)Parallel Data Warehouse </Token>
+---
+author: MikeRayMSFT
+ms.service: sql
+ms.topic: include
+ms.date: 01/13/2020
+ms.author: mikeray
+---
+
+[!INCLUDE [applies-md](applies-md.md)] :::image type="icon" source="media/yes-icon.svg"::: SQL Server :::image type="content" source="media/no-icon.svg" alt-text="Not supported" border="false"::: Azure SQL Database :::image type="icon" source="media/yes-icon.svg"::: Azure Synapse Analytics :::image type="content" source="media/no-icon.svg" alt-text="Not supported" border="false"::: Analytics Platform System (PDW)
 

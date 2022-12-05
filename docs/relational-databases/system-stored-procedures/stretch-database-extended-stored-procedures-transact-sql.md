@@ -1,29 +1,28 @@
 ---
-title: "Stretch Database Extended Stored Procedures (Transact-SQL) | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-stretch"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+title: "Extended Stored Procedures (Transact-SQL)"
+description: Learn about extended stored procedures that you can use when you work with Stretch-enabled databases. See how to reconcile columns and perform other tasks.
+titleSuffix: SQL Server Stretch Database
+ms.custom: seo-dt-2019
+ms.date: 07/25/2022
+ms.service: sql
+ms.reviewer: randolphwest
+ms.subservice: stored-procedures
+ms.topic: "reference"
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
   - "Stretch Database, stored procedures"
 ms.assetid: bda29952-4b8b-4295-ab78-f24dcb0b03c6
-caps.latest.revision: 11
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Stretch Database Extended Stored Procedures (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
  This section describes the extended stored procedures that are related to Stretch Database.  
+
+> [!IMPORTANT]  
+> Stretch Database is deprecated in [!INCLUDE [sssql22-md](../../includes/sssql22-md.md)]. [!INCLUDE [ssNoteDepFutureAvoid-md](../../includes/ssnotedepfutureavoid-md.md)]
   
 ## In This Section  
 [sys.sp_rda_deauthorize_db](../../relational-databases/system-stored-procedures/sys-sp-rda-deauthorize-db-transact-sql.md) 
@@ -39,7 +38,7 @@ Removes the authenticated connection between a local Stretch-enabled database an
  Reconciles the batch ID stored in the Stretch-enabled SQL Server table for the most recently migrated data with the batch ID stored in the remote Azure table. 
  
 [sys.sp_rda_reconcile_columns](../../relational-databases/system-stored-procedures/sys-sp-rda-reconcile-columns-transact-sql.md) 
- Reconciles the columns in the remote Azure table to the columns in the the Stretch-enabled SQL Server table.
+ Reconciles the columns in the remote Azure table to the columns in the Stretch-enabled SQL Server table.
  
  [sys.sp_rda_reconcile_indexes](../../relational-databases/system-stored-procedures/sys-sp-rda-reconcile-indexes-transact-sql.md) 
  Queues a schema task to reconcile indexes on the remote table.

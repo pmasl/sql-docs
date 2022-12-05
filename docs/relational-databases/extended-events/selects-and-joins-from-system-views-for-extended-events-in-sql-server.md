@@ -1,26 +1,22 @@
 ---
-title: "SELECTs and JOINs From System Views for Extended Events in SQL Server | Microsoft Docs"
-ms.custom: ""
+title: "SELECTs and JOINs from system views for Extended Events"
+description: There are system views of Extended Events in SQL Server and Azure SQL Database. Learn how event session information is represented in different perspectives.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "08/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-  - "xevents"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: xevents
+ms.topic: tutorial
+ms.custom: seo-lt-2019
 ms.assetid: 04521d7f-588c-4259-abc2-1a2857eb05ec
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # SELECTs and JOINs From System Views for Extended Events in SQL Server
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 
-This article explains the two sets of system views that relate to extended events in Microsoft SQL Server, and in the Azure SQL Database cloud service. The article illustrates:
+This article explains the two sets of system views that relate to Extended Events in SQL Server and in Azure SQL Database. The article illustrates:
 
 - How to JOIN various system views.
 - How to SELECT particular kinds of information from the system views.
@@ -34,7 +30,7 @@ Most of the examples are written for SQL Server. But with minor edits they would
 ## A. Foundational information
 
 
-There are two sets of system views for extended events:
+There are two sets of system views for Extended Events:
 
 
 #### Catalog views:
@@ -55,7 +51,7 @@ There are two sets of system views for extended events:
     - For the same reason, *sys.dm_xe_objects* *sys.dm_xe_object_columns* would also still return rows.
 
 
-- Name prefix for extended events DMVs is:
+- Name prefix for Extended Events DMVs is:
     - *sys.dm\_xe\_\** is the name prefix on SQL Server.
     - *sys.dm\_xe\_database\_\** is generally the name prefix on SQL Database.
 
@@ -76,10 +72,10 @@ To SELECT from the system views, the following permission is necessary:
 
 This section matches and correlates three different technological perspectives on the same defined event session. The session has been defined and is visible in the **Object Explorer** of SQL Server Management Studio (SSMS.exe), but the session is not currently running.
 
-Every month it is wise to [install the latest update of SSMS](http://msdn.microsoft.com/library/mt238290.aspx), to avoid unexpected failures.
+Every month it is wise to [install the latest update of SSMS](../../ssms/download-sql-server-management-studio-ssms.md), to avoid unexpected failures.
 
 
-Reference documentation about the catalog views for extended events is at [Extended Events Catalog Views (Transact-SQL)](../../relational-databases/system-catalog-views/extended-events-catalog-views-transact-sql.md).
+Reference documentation about the catalog views for Extended Events is at [Extended Events Catalog Views (Transact-SQL)](../../relational-databases/system-catalog-views/extended-events-catalog-views-transact-sql.md).
 
 
 &nbsp;
@@ -156,7 +152,7 @@ To reverse engineer an event session, in the **Object Explorer** you can right-c
 The following T-SQL script was created by reverse engineering with SSMS. Then the script was manually prettified by strategic manipulation of white space only.
 
 
-```tsql
+```sql
 CREATE EVENT SESSION [event_session_test3]
 	ON SERVER  -- Or, if on Azure SQL Database, ON DATABASE.
 
@@ -210,7 +206,7 @@ This completes the T-SQL perspective.
 Do not be afraid! The following T-SQL SELECT statement is long only because it UNIONs several small SELECTs together. Any of the small SELECTs can be run on its own. The small SELECTs show how the various system cataloging views should be JOINed together.
 
 
-```tsql
+```sql
 SELECT
 		s.name        AS [Session-Name],
 		'1_EVENT'     AS [Clause-Type],
@@ -248,7 +244,7 @@ SELECT
 		s.name              AS [Session-Name],
 		'3_EVENT_ACTION'    AS [Clause-Type],
 
-		e.package + '.' + a.name
+		a.package + '.' + a.name
 		                    AS [Parameter-Name],
 
 		'(Not_Applicable)'  AS [Parameter-Value]
@@ -345,28 +341,24 @@ ORDER BY
 #### Output
 
 
-Next is the actual output from running the preceding SELECT JOIN UNION. The output parameter names and values map to what is plainly visible in the preceding CREATE EVENT SESSION statement.
+The following table shows the output from running the preceding SELECT JOIN UNION. The output parameter names and values map to what is plainly visible in the preceding CREATE EVENT SESSION statement.
 
+| Session-Name | Clause-Type | Parameter-Name | Parameter-Value |
+|---|---|---|---|
+|event_session_test3  | 1_EVENT |                Event-Name |                       lock_deadlock |
+|event_session_test3  |  2_EVENT_SET |             collect_database_name |            1 |
+|event_session_test3  |  3_EVENT_ACTION |          sqlserver.client_hostname |       (Not_Applicable) |
+|event_session_test3  |  3_EVENT_ACTION |         sqlserver.collect_system_time |   (Not_Applicable) |
+|event_session_test3  |  3_EVENT_ACTION |         sqlserver.event_sequence |        (Not_Applicable) |
+|event_session_test3  |  4_EVENT_PREDICATES |     (\[sqlserver\].\[equal_i_sql_unicode_string\]\(\[database_name\],N'InMemTest2'\) AND \[package0\].\[counter\]<=\(16\)\) |   (Not_Applicable) |
+|event_session_test3  |  5_TARGET |               event_file |                      (Not_Applicable) |
+|event_session_test3  |  6_TARGET_SET |           filename  |                       C:\Junk\event_session_test3_EF.xel |
+|event_session_test3  |  6_TARGET_SET |           max_file_size |                   20 |
+|event_session_test3  |  6_TARGET_SET |           max_rollover_files |              2 |
+|event_session_test3  |  7_WITH_MAX_MEMORY |      max_memory |                      4096 |
+|event_session_test3  |  7_WITH_STARTUP_STATE |   startup_state |                   1 |
 
-```
-Session-Name          Clause-Type            Parameter-Name                  Parameter-Value
-------------          -----------            --------------                  ---------------
-event_session_test3   1_EVENT                Event-Name                      lock_deadlock
-event_session_test3   2_EVENT_SET            collect_database_name           1
-event_session_test3   3_EVENT_ACTION         sqlserver.client_hostname       (Not_Applicable)
-event_session_test3   3_EVENT_ACTION         sqlserver.collect_system_time   (Not_Applicable)
-event_session_test3   3_EVENT_ACTION         sqlserver.event_sequence        (Not_Applicable)
-event_session_test3   4_EVENT_PREDICATES     ([sqlserver].[equal_i_sql_unicode_string]([database_name],N'InMemTest2') AND [package0].[counter]<=(16))   (Not_Applicable)
-event_session_test3   5_TARGET               event_file                      (Not_Applicable)
-event_session_test3   6_TARGET_SET           filename                        C:\Junk\event_session_test3_EF.xel
-event_session_test3   6_TARGET_SET           max_file_size                   20
-event_session_test3   6_TARGET_SET           max_rollover_files              2
-event_session_test3   7_WITH_MAX_MEMORY      max_memory                      4096
-event_session_test3   7_WITH_STARTUP_STATE   startup_state                   1
-```
-
-
-This completes the the section on catalog views.
+This completes the section on catalog views.
 
 
 
@@ -405,7 +397,7 @@ Here is list of the SELECTs in this DMV section C:
 All the objects you can use in area of extended events come from packages which are loaded into the system. This section lists all the packages and their descriptions.
 
 
-```tsql
+```sql
 SELECT  --C.1
 		p.name         AS [Package],
 		p.description  AS [Package-Description]
@@ -420,28 +412,23 @@ SELECT  --C.1
 
 Here is the list of packages.
 
-
-```
-/***  (The unique p.guid values are not shown.)
-Package        Package-Description
--------        -------------------
-filestream     Extended events for SQL Server FILESTREAM and FileTable
-package0       Default package. Contains all standard types, maps, compare operators, actions and targets
-qds            Extended events for Query Store
-SecAudit       Security Audit Events
-sqlclr         Extended events for SQL CLR
-sqlos          Extended events for SQL Operating System
-SQLSatellite   Extended events for SQL Satellite
-sqlserver      Extended events for Microsoft SQL Server
-sqlserver      Extended events for Microsoft SQL Server
-sqlserver      Extended events for Microsoft SQL Server
-sqlsni         Extended events for Microsoft SQL Server
-ucs            Extended events for Unified Communications Stack
-XtpCompile     Extended events for the XTP Compile
-XtpEngine      Extended events for the XTP Engine
-XtpRuntime     Extended events for the XTP Runtime
-***/
-```
+| Package        |Package-Description|
+|---|---|
+|filestream|     Extended events for SQL Server FILESTREAM and FileTable |
+|package0   |    Default package. Contains all standard types, maps, compare operators, actions and targets |
+|qds         |   Extended events for Query Store |
+|SecAudit     |  Security Audit Events |
+|sqlclr        | Extended events for SQL CLR |
+|sqlos         | Extended events for SQL Operating System |
+|SQLSatellite |  Extended events for SQL Satellite |
+|sqlserver   |   Extended events for Microsoft SQL Server |
+|sqlserver  |    Extended events for Microsoft SQL Server |
+|sqlserver  |    Extended events for Microsoft SQL Server |
+|sqlsni     |    Extended events for Microsoft SQL Server |
+|ucs        |    Extended events for Unified Communications Stack |
+|XtpCompile |    Extended events for the XTP Compile |
+|XtpEngine  |    Extended events for the XTP Engine |
+|XtpRuntime |    Extended events for the XTP Runtime |
 
 
 *Definitions of the preceding initialisms:*
@@ -461,7 +448,7 @@ XtpRuntime     Extended events for the XTP Runtime
 This section tells us about the type of objects that event packages contain. A complete list is displayed of all object types that are in *sys.dm\_xe\_objects*, along with the count for each type.
 
 
-```tsql
+```sql
 SELECT  --C.2
 		Count(*)  AS [Count-of-Type],
 		o.object_type
@@ -478,23 +465,16 @@ SELECT  --C.2
 
 Here is the count of objects per object type. There are about 1915 objects.
 
-
-```
-/***  Actual output, sum is about 1915:
-
-Count-of-Type   object_type
--------------   -----------
-1303            event
-351             map
-84              message
-77              pred_compare
-53              action
-46              pred_source
-28              type
-17              target
-***/
-```
-
+|Count-of-Type |   object_type |
+|---|---|
+|1303|            event |
+|351  |           map |
+|84    |          message |
+|77     |         pred_compare |
+|53     |        action |
+|46     |         pred_source |
+|28     |         type |
+|17     |         target |
 
 <a name="section_C_3_select_all_available_objects"></a>
 
@@ -505,7 +485,7 @@ The following SELECT returns about 1915 rows, one for each object.
 
 
 
-```tsql
+```sql
 SELECT  --C.3
 		o.object_type  AS [Type-of-Item],
 		p.name         AS [Package],
@@ -534,34 +514,28 @@ SELECT  --C.3
 To whet your appetite, next is an arbitrary sampling of the objects returned by the preceding SELECT.
 
 
-```
-/***
-Type-of-Item   Package        Item                          Item-Description
-------------   -------        ----                          ----------------
-action         package0       callstack                     Collect the current call stack
-action         package0       debug_break                   Break the process in the default debugger
-action         sqlos          task_time                     Collect current task execution time
-action         sqlserver      sql_text                      Collect SQL text
-event          qds            query_store_aprc_regression   Fired when Query Store detects regression in query plan performance
-event          SQLSatellite   connection_accept             Occurs when a new connection is accepted. This event serves to log all connection attempts.
-event          XtpCompile     cgen                          Occurs at start of C code generation.
-map            qds            aprc_state                    Query Store Automatic Plan Regression Correction state
-message        package0       histogram_event_required      A value is required for the parameter 'filtering_event_name' when source type is 0.
-pred_compare   package0       equal_ansi_string             Equality operator between two ANSI string values
-pred_compare   sqlserver      equal_i_sql_ansi_string       Equality operator between two SQL ANSI string values
-pred_source    sqlos          task_execution_time           Get current task execution time
-pred_source    sqlserver      client_app_name               Get the current client application name
-target         package0       etw_classic_sync_target       Event Tracing for Windows (ETW) Synchronous Target
-target         package0       event_counter                 Use the event_counter target to count the number of occurrences of each event in the event session.
-target         package0       event_file                    Use the event_file target to save the event data to an XEL file, which can be archived and used for later analysis and review. You can merge multiple XEL files to view the combined data from separate event sessions.
-target         package0       histogram                     Use the histogram target to aggregate event data based on a specific event data field or action associated with the event. The histogram allows you to analyze distribution of the event data over the period of the event session.
-target         package0       pair_matching                 Pairing target
-target         package0       ring_buffer                   Asynchronous ring buffer target.
-type           package0       xml                           Well formed XML fragment
-***/
-```
-
-
+|Type-of-Item|   Package|        Item|                          Item-Description|
+|---|---|---|---|
+|action|         package0  |     callstack                     |Collect the current call stack|
+|action |        package0  |     debug_break                   |Break the process in the default debugger|
+|action |       sqlos      |    task_time                     |Collect current task execution time|
+|action |        sqlserver |     sql_text                     | Collect SQL text|
+|event  |        qds       |     query_store_aprc_regression  | Fired when Query Store detects regression in query plan performance|
+|event  |        SQLSatellite |  connection_accept            | Occurs when a new connection is accepted. This event serves to log all connection attempts.|
+|event  |        XtpCompile  |   cgen                          |Occurs at start of C code generation.|
+|map    |        qds         |   aprc_state                    |Query Store Automatic Plan Regression Correction state|
+|message |       package0    |   histogram_event_required      |A value is required for the parameter 'filtering_event_name' when source type is 0.|
+|pred_compare |  package0   |    equal_ansi_string             |Equality operator between two ANSI string values|
+|pred_compare |  sqlserver  |    equal_i_sql_ansi_string       |Equality operator between two SQL ANSI string values|
+|pred_source |   sqlos      |    task_execution_time           |Get current task execution time|
+|pred_source |   sqlserver  |    client_app_name               |Get the current client application name|
+|target |        package0   |    etw_classic_sync_target       |Event Tracing for Windows (ETW) Synchronous Target|
+|target |        package0   |    event_counter                 |Use the event_counter target to count the number of occurrences of each event in the event session.|
+|target  |       package0  |     event_file                    |Use the event_file target to save the event data to an XEL file, which can be archived and used for later analysis and review. You can merge multiple XEL files to view the combined data from separate event sessions.|
+|target  |       package0   |    histogram                     |Use the histogram target to aggregate event data based on a specific event data field or action associated with the event. The histogram allows you to analyze distribution of the event data over the period of the event session.|
+|target   |      package0  |     pair_matching                 |Pairing target|
+|target   |      package0  |     ring_buffer                   |Asynchronous ring buffer target|
+|type     |      package0  |     xml                           |Well formed XML fragment|
 
 <a name="section_C_4_data_fields"></a>
 
@@ -574,7 +548,7 @@ The following SELECT returns all the data fields that are particular to your eve
 - Also, you would need to edit the WHERE clause value for *o.name =*.
 
 
-```tsql
+```sql
 SELECT  -- C.4
 		p.name         AS [Package],
 		c.object_name  AS [Event],
@@ -608,34 +582,29 @@ The following rows were returned by the preceding SELECT, WHERE `o.name = 'lock_
 
 - Each row represents an optional filter for the *sqlserver.lock_deadlock* event.
 - The *\[Column-Description\]* column is omitted from the following display. Its value is often NULL.
+- This is actual output, except for the omitted Description column which is often NULL.
+- These rows are where object_type = 'lock_deadlock'.
 
+|Package|     Event|           Column-for-Predicate-Data|
+|---|---|---|
+|sqlserver|   lock_deadlock|   associated_object_id|
+|sqlserver|  lock_deadlock |  database_id|
+|sqlserver|  lock_deadlock |  database_name|
+|sqlserver|   lock_deadlock|   deadlock_id|
+|sqlserver|   lock_deadlock|   duration|
+|sqlserver|   lock_deadlock|   lockspace_nest_id|
+|sqlserver|   lock_deadlock|   lockspace_sub_id|
+|sqlserver|   lock_deadlock|   lockspace_workspace_id|
+|sqlserver|   lock_deadlock|   mode|
+|sqlserver|   lock_deadlock|   object_id|
+|sqlserver|   lock_deadlock|   owner_type|
+|sqlserver|   lock_deadlock|   resource_0|
+|sqlserver|   lock_deadlock|  resource_1|
+|sqlserver|   lock_deadlock|   resource_2|
+|sqlserver|   lock_deadlock|   resource_description|
+|sqlserver|   lock_deadlock|   resource_type|
+|sqlserver|   lock_deadlock|   transaction_id|
 
-```
-/***
-Actual output, except for the omitted Description column which is often NULL.
-These rows are where object_type = 'lock_deadlock'.
-
-Package     Event           Column-for-Predicate-Data
--------     -----           -------------------------
-sqlserver   lock_deadlock   associated_object_id
-sqlserver   lock_deadlock   database_id
-sqlserver   lock_deadlock   database_name
-sqlserver   lock_deadlock   deadlock_id
-sqlserver   lock_deadlock   duration
-sqlserver   lock_deadlock   lockspace_nest_id
-sqlserver   lock_deadlock   lockspace_sub_id
-sqlserver   lock_deadlock   lockspace_workspace_id
-sqlserver   lock_deadlock   mode
-sqlserver   lock_deadlock   object_id
-sqlserver   lock_deadlock   owner_type
-sqlserver   lock_deadlock   resource_0
-sqlserver   lock_deadlock   resource_1
-sqlserver   lock_deadlock   resource_2
-sqlserver   lock_deadlock   resource_description
-sqlserver   lock_deadlock   resource_type
-sqlserver   lock_deadlock   transaction_id
-***/
-```
 
 
 
@@ -652,7 +621,7 @@ The purpose of the SELECT display the numerous fields that you can choose from f
 - To filter which event occurrences will be sent to versus kept from your target.
 
 
-```tsql
+```sql
 SELECT  --C.5
 		dp.name         AS [Package],
 		do.name         AS [Object],
@@ -727,7 +696,7 @@ The following SELECT returns every parameter for your target. Each parameter is 
 - Also, you would need to edit the WHERE clause value for *o.name =*.
 
 
-```tsql
+```sql
 SELECT  --C.6
 		p.name        AS [Package],
 		o.name        AS [Target],
@@ -792,7 +761,7 @@ This DMV SELECT returns data rows from the target of your active event session. 
 - You would need to edit the WHERE clause value for *s.name =*.
 
 
-```tsql
+```sql
 SELECT  --C.7
 		s.name,
 		t.target_name,
@@ -860,7 +829,7 @@ Suppose your event session gathered some data and later was stopped. If your ses
     - Pay no attention to the extra digits that SQL system embeds into your actual .XEL file names each time you restart your session. Just give the normal root name and extension.
 
 
-```tsql
+```sql
 SELECT  --C.8
 		f.module_guid,
 		f.package_guid,
@@ -914,5 +883,3 @@ Here is the contents of the first XML cell, from the preceding returned rowset.
   </action>
 </event>
 ```
-
-

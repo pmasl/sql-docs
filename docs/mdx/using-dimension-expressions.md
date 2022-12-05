@@ -1,27 +1,17 @@
 ---
+description: "Using Dimension Expressions"
 title: "Using Dimension Expressions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "expressions [MDX], dimensions"
-  - "dimensions [Analysis Services], MDX"
-ms.assetid: 1d40cffb-e88f-4284-93cf-d62ab4f08395
-caps.latest.revision: 28
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # Using Dimension Expressions
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../includes/tsql-appliesto-ss2008-all-md.md)]
+
 
   You typically use dimension and hierarchy expressions when passing parameters to functions in Multidimensional Expressions (MDX) to return members, sets, or tuples from a hierarchy.  
   
@@ -63,7 +53,7 @@ manager: "erikre"
   
  `FROM [Adventure Works]`  
   
- A hierarchy identifier appears as *Dimension_Name**.**Hierarchy_Name* in the BNF notation used to describe MDX statements.  
+ A hierarchy identifier appears as *Dimension_Name.Hierarchy_Name* in the BNF notation used to describe MDX statements.  
   
 ## See Also  
  [Expressions &#40;MDX&#41;](../mdx/expressions-mdx.md)  

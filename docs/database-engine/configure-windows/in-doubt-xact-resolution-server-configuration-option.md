@@ -1,26 +1,19 @@
 ---
-title: "in-doubt xact resolution Server Configuration Option | Microsoft Docs"
-ms.custom: ""
+title: "in-doubt xact resolution Server Configuration Option"
+description: "Become familiar with the in-doubt xact resolution option. See how it determines the default outcome for in-doubt transactions in SQL Server."
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/02/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: configuration
+ms.topic: conceptual
+helpviewer_keywords:
   - "distributed transactions [SQL Server], unresolved transactions"
   - "unresolved transactions"
   - "in-doubt xact resolution option"
-ms.assetid: 3426fd32-cad2-4f2f-8ca9-e0296cc12703
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # in-doubt xact resolution Server Configuration Option
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Use the **in-doubt xact resolution** option to control the default outcome of transactions that the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Distributed Transaction Coordinator (MS DTC) is unable to resolve. Inability to resolve transactions may be related to the MS DTC down time or an unknown transaction outcome at the time of recovery.  
   
@@ -39,7 +32,7 @@ sp_configure 'show advanced options', 1
 GO  
 RECONFIGURE  
 GO  
-sp_configure 'in-doubt xact resolution', 2 -– presume abort  
+sp_configure 'in-doubt xact resolution', 2 -- presume abort  
 GO  
 RECONFIGURE  
 GO  
@@ -57,13 +50,13 @@ sp_configure 'show advanced options', 1
 GO  
 RECONFIGURE  
 GO  
-sp_configure 'in-doubt xact resolution', 1 -– presume commit  
+sp_configure 'in-doubt xact resolution', 1 -- presume commit  
 GO  
 reconfigure  
 GO  
-ALTER DATABASE pubs SET ONLINE –- run recovery again  
+ALTER DATABASE pubs SET ONLINE -- run recovery again  
 GO  
-sp_configure 'in-doubt xact resolution', 0 –- back to no assumptions  
+sp_configure 'in-doubt xact resolution', 0 -- back to no assumptions  
 GO  
 sp_configure 'show advanced options', 0  
 GO  
@@ -74,8 +67,8 @@ GO
   
  The **in-doubt xact resolution** option is an advanced option. If you are using the **sp_configure** system stored procedure to change the setting, you can change **in-doubt xact resolution** only when **show advanced options** is set to 1. The setting takes effect immediately without a server restart.  
   
-> [!NOTE]  
->  Consistent configuration of this option across all [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instances involved in any distributed transactions will help avoid data inconsistencies.  
+> [!NOTE]
+>  Consistent configuration of this option across all [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instances involved in any distributed transactions will help avoid data inconsistencies.  
   
 ## See Also  
  [RECONFIGURE &#40;Transact-SQL&#41;](../../t-sql/language-elements/reconfigure-transact-sql.md)   

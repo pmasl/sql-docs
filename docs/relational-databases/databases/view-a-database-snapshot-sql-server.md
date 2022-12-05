@@ -1,25 +1,22 @@
 ---
 title: "View a Database Snapshot (SQL Server) | Microsoft Docs"
+description: Learn how to view a SQL Server database snapshot using SQL Server Management Studio or Transact-SQL.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: conceptual
 helpviewer_keywords: 
   - "database snapshots [SQL Server], viewing"
   - "displaying database snapshots"
   - "viewing database snapshots"
 ms.assetid: 123f19b2-0850-4033-8507-59ebdfb368ee
-caps.latest.revision: 22
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # View a Database Snapshot (SQL Server)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This topic explains how to view a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database snapshot using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)].  
   
 > [!NOTE]  
@@ -41,7 +38,7 @@ manager: "jhubbard"
 2.  Expand **Databases.**  
   
 3.  Expand **Database Snapshots**, and select the snapshot you want to view.  
-  
+
 ##  <a name="TsqlProcedure"></a> Using Transact-SQL  
  **To view a database snapshot**  
   

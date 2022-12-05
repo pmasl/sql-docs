@@ -1,34 +1,29 @@
 ---
-title: "@@PACK_SENT (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+title: "@@PACK_SENT (Transact-SQL)"
+description: "&#x40;&#x40;PACK_SENT (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "09/18/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "@@PACK_SENT"
   - "@@PACK_SENT_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "number of output packets written"
   - "@@PACK_SENT function"
-  - "packets [SQL Server], ouput"
+  - "packets [SQL Server], output"
   - "networking [SQL Server], output packets"
   - "connections [SQL Server], packets"
   - "output packets written to network [SQL Server]"
-ms.assetid: 8a322162-24c9-48e9-bfa4-c060e4e11dba
-caps.latest.revision: 23
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@PACK_SENT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+# &#x40;&#x40;PACK_SENT (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Returns the number of output packets written to the network by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] since it was last started.  
   
@@ -36,12 +31,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 @@PACK_SENT  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **integer**  
   
 ## Remarks  
@@ -50,7 +46,7 @@ manager: "jhubbard"
 ## Examples  
  The following example shows the usage of `@@PACK_SENT`.  
   
-```  
+```sql
 SELECT @@PACK_SENT AS 'Pack Sent';  
 ```  
   

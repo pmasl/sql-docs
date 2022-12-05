@@ -1,14 +1,12 @@
 ---
+description: "SQLRemoveDriver Function"
 title: "SQLRemoveDriver Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLRemoveDriver"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLRemoveDriver function [ODBC]"
 ms.assetid: 9a3b4f8b-982b-44b9-ade6-754ff026dc90
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLRemoveDriver Function
 **Conformance**  
@@ -33,12 +29,12 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 BOOL SQLRemoveDriver(  
-     LPCSTR   lpszDriver,  
-     BOOL     fRemoveDSN,  
-     LPDWORD  lpdwUsageCount);  
+     LPCSTR   lpszDriver,  
+     BOOL     fRemoveDSN,  
+     LPDWORD  lpdwUsageCount);  
 ```  
   
 ## Arguments  

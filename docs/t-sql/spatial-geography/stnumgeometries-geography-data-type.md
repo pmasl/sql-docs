@@ -1,14 +1,12 @@
 ---
+description: "STNumGeometries (geography Data Type)"
 title: "STNumGeometries (geography Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "STNumGeometries (geography Data Type)"
   - "STNumGeometries_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "STNumGeometries method"
 ms.assetid: 6ae7fac2-62f1-420f-9fc9-a09606be9605
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # STNumGeometries (geography Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns the number of **geometries** that make up a **geography** instance.  
   
@@ -34,7 +30,9 @@ manager: "jhubbard"
 .STNumGeometries ( )  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] return type: **int**  
   
  CLR return type: **SqlInt32**  
@@ -45,7 +43,7 @@ manager: "jhubbard"
 ## Examples  
  The following example creates a `MultiPoint` instance and uses `STNumGeometries()` to find out how many **geometries** the instance contains.  
   
-```  
+```sql
 DECLARE @g geography;  
 SET @g = geography::STGeomFromText('MULTIPOINT((-122.360 47.656), (-122.343 47.656))', 4326);  
 SELECT @g.STNumGeometries();  

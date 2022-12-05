@@ -1,19 +1,12 @@
 ---
-title: "SQLServerParameterMetaData Members | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerParameterMetaData Members"
+description: "SQLServerParameterMetaData Members"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f9ebb203-2013-4feb-94f5-494b7f098f9a
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerParameterMetaData Members
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

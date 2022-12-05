@@ -1,16 +1,12 @@
 ---
+description: "sys.fn_cdc_get_column_ordinal (Transact-SQL)"
 title: "sys.fn_cdc_get_column_ordinal (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/25/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server (starting with 2008)"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sys.fn_cdc_get_column_ordinal"
   - "fn_cdc_get_column_ordinal_TSQL"
@@ -22,13 +18,11 @@ helpviewer_keywords:
   - "fn_cdc_get_column_ordinal"
   - "sys.fn_cdc_get_column_ordinal"
 ms.assetid: 4bb21a57-2b94-4208-8bdf-6a3e2681d881
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
 ---
 # sys.fn_cdc_get_column_ordinal (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns the column ordinal of the specified column as it appears in the [change table](../../relational-databases/system-tables/cdc-capture-instance-ct-transact-sql.md) associated with the specified capture instance.  
   
@@ -55,7 +49,7 @@ sys.fn_cdc_get_column_ordinal ( 'capture_instance','column_name')
  This function is used to identify the ordinal position of a captured column within the change data capture update mask. It is principally used in conjunction with the function [sys.fn_cdc_is_bit_set](../../relational-databases/system-functions/sys-fn-cdc-is-bit-set-transact-sql.md) to extract information from the update mask when querying for change data.  
   
 ## Permissions  
- Requires SELECT permission on on all captured columns of the source table. If a database role for the change data capture component is specified for the capture instance, membership in that role is also required.  
+ Requires SELECT permission on all captured columns of the source table. If a database role for the change data capture component is specified for the capture instance, membership in that role is also required.  
   
 ## Examples  
  The following example obtains the ordinal position of the `VacationHours` column in the update mask for the `HumanResources_Employee` capture instance. That value is then used in the call to `sys.fn_cdc_is_bit_set` to extract information from the returned update mask.  

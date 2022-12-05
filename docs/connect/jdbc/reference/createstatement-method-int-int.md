@@ -1,24 +1,15 @@
 ---
-title: "createStatement Method (int, int) | Microsoft Docs"
-ms.custom: ""
+title: "createStatement Method (int, int)"
+description: "createStatement Method (int, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.createStatement (int, int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.createStatement (int, int)"
 apitype: "Assembly"
-ms.assetid: 90dbf639-c3d8-4519-9300-5447c79aec17
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # createStatement Method (int, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

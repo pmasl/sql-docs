@@ -1,31 +1,23 @@
 ---
-title: "MSrepl_originators (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSrepl_originators (Transact-SQL)"
+description: MSrepl_originators (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSrepl_originators_TSQL"
   - "MSrepl_originators"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSrepl_originators system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: a3ac20a6-73f6-4fdc-ad5f-5f72746c9871
-caps.latest.revision: 26
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSrepl_originators (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSrepl_originators** table contains one row for each updatable Subscriber from which the transaction originated. This table is stored in the distribution database.  
   

@@ -1,14 +1,12 @@
 ---
+description: "sp_helplogins (Transact-SQL)"
 title: "sp_helplogins (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_helplogins_TSQL"
   - "sp_helplogins"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_helplogins"
 ms.assetid: f9ad3767-5b9f-420d-8922-b637811404f7
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_helplogins (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Provides information about logins and the users associated with them in each database.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -41,7 +33,7 @@ sp_helplogins [ [ @LoginNamePattern = ] 'login' ]
 ```  
   
 ## Arguments  
- [ **@LoginNamePattern =** ] **'***login***'**  
+`[ @LoginNamePattern = ] 'login'`
  Is a login name. *login* is **sysname**, with a default of NULL. *login* must exist if specified. If *login* is not specified, information about all logins is returned.  
   
 ## Return Code Values  

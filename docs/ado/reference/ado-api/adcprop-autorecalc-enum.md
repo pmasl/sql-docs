@@ -1,29 +1,22 @@
 ---
-title: "ADCPROP_AUTORECALC_ENUM | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ADCPROP_AUTORECALC_ENUM"
+description: "ADCPROP_AUTORECALC_ENUM"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "ADCPROP_AUTORECALC_ENUM"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ADCPROP_AUTORECALC_ENUM [ADO]"
-ms.assetid: ded4f087-87b9-4efa-8026-bde53d3e9e8a
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ADCPROP_AUTORECALC_ENUM
-Specifies when the [MSDataShape](../../../ado/guide/appendixes/microsoft-data-shaping-service-for-ole-db-ado-service-provider.md) provider re-calculates aggregate and calculated columns in a hierarchical Recordset.  
+Specifies when the [MSDataShape](../../guide/appendixes/microsoft-data-shaping-service-for-ole-db-ado-service-provider.md) provider re-calculates aggregate and calculated columns in a hierarchical Recordset.  
   
- These constants are only used with the **MSDataShape** provider and the **Recordset** "**Auto Recalc**" dynamic property, which is referenced in the [ADO Dynamic Property Index](../../../ado/reference/ado-api/ado-dynamic-property-index.md) and documented in the [Microsoft Cursor Service for OLE DB](../../../ado/guide/appendixes/microsoft-cursor-service-for-ole-db-ado-service-component.md) or [Microsoft Data Shaping Service for OLE DB](../../../ado/guide/appendixes/microsoft-data-shaping-service-for-ole-db-ado-service-provider.md) documentation.  
+ These constants are only used with the **MSDataShape** provider and the **Recordset** "**Auto Recalc**" dynamic property, which is referenced in the [ADO Dynamic Property Index](./ado-dynamic-property-index.md) and documented in the [Microsoft Cursor Service for OLE DB](../../guide/appendixes/microsoft-cursor-service-for-ole-db-ado-service-component.md) or [Microsoft Data Shaping Service for OLE DB](../../guide/appendixes/microsoft-data-shaping-service-for-ole-db-ado-service-provider.md) documentation.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  

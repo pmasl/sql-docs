@@ -1,28 +1,25 @@
 ---
+description: "MSSQLSERVER_10520"
 title: "MSSQLSERVER_10520 | Microsoft Docs"
 ms.custom: ""
 ms.date: "04/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 helpviewer_keywords: 
   - "10520 (Database Engine error)"
 ms.assetid: cc8799f1-5b90-4248-b209-e1d5087f9529
-caps.latest.revision: 9
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_10520
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|SQL Server|  
 |Event ID|10520|  
 |Event Source|MSSQLSERVER|  

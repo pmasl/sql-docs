@@ -1,24 +1,15 @@
 ---
-title: "getURL Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "getURL Method (SQLServerDataSource)"
+description: "getURL Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDataSource.getURL"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDataSource.getURL"
 apitype: "Assembly"
-ms.assetid: dd0d5d2c-91fe-4b0f-a162-69d898ba176e
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getURL Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

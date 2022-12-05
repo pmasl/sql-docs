@@ -1,35 +1,21 @@
 ---
-title: "Hiding Elements and Attributes by Using sql:hide | Microsoft Docs"
-ms.custom: ""
+title: "Hiding Elements and Attributes by Using sql:hide"
+description: "Learn how to use the sql:hide annotation to hide elements and attributes when executing an XPath query against an XSD schema."
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "hiding elements"
   - "element mapping [SQLXML], hiding attributes and elements"
   - "hide annotation"
-  - "sql:hide"
-  - "table/view mapping [SQLXML], hiding attributes and elements"
-  - "table mapping [SQLXML], hiding attributes and elements"
-  - "hiding attributes"
-  - "annotated XSD schemas, hiding attributes and elements"
-  - "attribute mapping [SQLXML], hiding attributes and elements"
-  - "column mapping [SQLXML]"
-  - "element hiding [SQLXML]"
-  - "XSD schemas [SQLXML], hiding attributes and elements"
-  - "attribute hiding [SQLXML]"
 ms.assetid: 0978301b-f068-46b6-82b9-dc555161f52e
-caps.latest.revision: 27
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Hiding Elements and Attributes by Using sql:hide
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   When an XPath query is executed against an XSD schema, the resulting XML document has elements and attributes that are specified in the schema. You can specify that some elements and attributes be hidden in the schema by using the **sql:hide** annotation. This is useful when the selection criteria of the query require particular elements or attributes in the schema, but you do not want them returned in the XML document that is generated.  
   
  The **sql:hide** annotation takes a Boolean value (0=false, 1=true). The acceptable values are 0, 1, true, and false.  

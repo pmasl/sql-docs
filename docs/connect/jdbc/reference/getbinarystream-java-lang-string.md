@@ -1,24 +1,15 @@
 ---
-title: "getBinaryStream (java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "getBinaryStream (java.lang.String)"
+description: "getBinaryStream (java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.getBinaryStream(String paramName)"
-apilocation: 
-  - "SQLServerCallableStatement.getBinaryStream(String paramName)"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "SQLServerCallableStatement.getBinaryStream(String paramName)"
+apiname: "SQLServerCallableStatement.getBinaryStream(String paramName)"
 apitype: "Assembly"
-ms.assetid: 17f1ea5d-47f8-4a66-a0fc-d6554b8e3866
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getBinaryStream (java.lang.String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

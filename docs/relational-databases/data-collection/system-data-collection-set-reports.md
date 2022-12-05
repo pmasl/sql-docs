@@ -1,14 +1,12 @@
 ---
 title: "System Data Collection Set Reports | Microsoft Docs"
+description: The data collector provides a report for each of the System Data collection sets for monitoring system capacity and system performance in SQL Server.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: conceptual
 helpviewer_keywords: 
   - "data collector [SQL Server], server activity"
   - "server activity [SQL Server]"
@@ -20,12 +18,11 @@ helpviewer_keywords:
   - "query statistics reports [SQL Server]"
   - "disk usage reports [SQL Server]"
 ms.assetid: 0b126b8d-4fe7-443d-8a9a-c266350181e5
-caps.latest.revision: 24
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # System Data Collection Set Reports
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   The data collector provides an historical report for each of the System Data collection sets. Each of the following reports uses data that is stored in the management data warehouse:  
   
 -   [Disk Usage Summary](#Disk)  
@@ -54,7 +51,7 @@ manager: "jhubbard"
  The table below the graph lists data collection times and corresponding usage data.  
   
 #### Disk Usage for Database: <database_name> Subreport  
- The **Disk usage for database:***<database_name>* subreport is displayed when you click a database name in the summary table of the Disk Usage Collection Set report. This report provides a numerical and graphical breakdown of space usage by the data and transaction log files of the database. Space usage for data files is categorized as a percentage allocated to index pages, unallocated space, data pages, and unused space. These categories are defined as follows:  
+ The **Disk usage for database:**_<database_name>_ subreport is displayed when you click a database name in the summary table of the Disk Usage Collection Set report. This report provides a numerical and graphical breakdown of space usage by the data and transaction log files of the database. Space usage for data files is categorized as a percentage allocated to index pages, unallocated space, data pages, and unused space. These categories are defined as follows:  
   
 |Category|Definition|  
 |--------------|----------------|  

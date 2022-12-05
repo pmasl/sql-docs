@@ -1,24 +1,15 @@
 ---
-title: "updateAsciiStream Method (java.io.InputStream, int) | Microsoft Docs"
-ms.custom: ""
+title: updateAsciiStream method (int, java.io.InputStream, int)
+description: "updateAsciiStream Method (int, java.io.InputStream, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateAsciiStream (int, java.io.InputStream.int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateAsciiStream (int, java.io.InputStream.int)"
 apitype: "Assembly"
-ms.assetid: d07944b8-7001-49b5-b3b3-0676f71e17cf
-caps.latest.revision: 27
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateAsciiStream Method (int, java.io.InputStream, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -53,7 +44,7 @@ public void updateAsciiStream(int index,
 ## Remarks  
  This updateAsciiStream method is specified by the updateAsciiStream method in the java.sql.ResultSet interface.  
   
- This method passes ASCII characters (bytes) from an InputStream object to convertible character columns, which are the ASCII range [0x00 – 0x7F] of Unicode, and 874, 932, 936, 949, 950, and 1250 through 1258 code pages. This method performs a conversion to the destination collation page. Trying to update an unconvertible destination column will cause an exception to be thrown. For binary columns, raw bytes are passed.  
+ This method passes ASCII characters (bytes) from an InputStream object to convertible character columns, which are the ASCII range [0x00 - 0x7F] of Unicode, and 874, 932, 936, 949, 950, and 1250 through 1258 code pages. This method performs a conversion to the destination collation page. Trying to update an unconvertible destination column will cause an exception to be thrown. For binary columns, raw bytes are passed.  
   
  If the length of the stream is different than what is specified in the *length* parameter, the JDBC driver throws an exception when the row is updated or inserted.  
   

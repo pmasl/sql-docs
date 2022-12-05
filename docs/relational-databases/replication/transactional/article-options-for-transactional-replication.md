@@ -1,24 +1,22 @@
 ---
+description: "Article Options for Transactional Replication"
 title: "Article Options for Transactional Replication | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "articles [SQL Server replication], transactional replication options"
   - "transactional replication, article options"
 ms.assetid: 3469b185-0ea5-4690-a71c-717230d886b6
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # Article Options for Transactional Replication
+[!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
   There are a number of options for articles in transactional publications. With transactional replication, you can do the following:  
   
 -   Specify how changes are propagated from the Publisher to Subscribers. For more information, see [Specify How Changes Are Propagated for Transactional Articles](../../../relational-databases/replication/transactional/transactional-articles-specify-how-changes-are-propagated.md).  

@@ -1,27 +1,20 @@
 ---
-title: "AppendChunk and GetChunk Methods Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "AppendChunk and GetChunk Methods Example (VC++)"
+description: "AppendChunk and GetChunk Methods Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "GetChunk method [ADO], VC++ example"
   - "AppendChunk method [ADO], VC++ example"
-ms.assetid: 51aa99be-d5ca-46ac-8b3f-1b03ce4f0b2a
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # AppendChunk and GetChunk Methods Example (VC++)
-This example uses the [AppendChunk](../../../ado/reference/ado-api/appendchunk-method-ado.md) and [GetChunk](../../../ado/reference/ado-api/getchunk-method-ado.md) methods to fill an image field with data from another record.  
+This example uses the [AppendChunk](./appendchunk-method-ado.md) and [GetChunk](./getchunk-method-ado.md) methods to fill an image field with data from another record.  
   
 ```  
 // BeginAppendChunkCpp.cpp  
@@ -181,7 +174,7 @@ void AppendChunkX() {
       while (lngOffSet < lngLogoSize) {  
          varChunk = pRstPubInfo->Fields->Item["logo"]->GetChunk(ChunkSize);  
   
-         // Copy the data only upto the Actual Size of Field.    
+         // Copy the data only up to the Actual Size of Field.    
          for (long index = 0 ; index <= (ChunkSize - 1) ; index++) {  
             hr = SafeArrayGetElement(varChunk.parray, &index, &chData);  
             if (SUCCEEDED(hr)) {  
@@ -264,6 +257,6 @@ void PrintProviderError(_ConnectionPtr pConnection) {
 ```  
   
 ## See Also  
- [AppendChunk Method (ADO)](../../../ado/reference/ado-api/appendchunk-method-ado.md)   
- [Field Object](../../../ado/reference/ado-api/field-object.md)   
- [GetChunk Method (ADO)](../../../ado/reference/ado-api/getchunk-method-ado.md)
+ [AppendChunk Method (ADO)](./appendchunk-method-ado.md)   
+ [Field Object](./field-object.md)   
+ [GetChunk Method (ADO)](./getchunk-method-ado.md)

@@ -1,14 +1,12 @@
 ---
+description: "Transformation Custom Properties"
 title: "Transformation Custom Properties | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -41,32 +39,57 @@ helpviewer_keywords:
   - "Copy Column transformation custom properties [Integration Services]"
   - "Character Map transformation custom properties [Integration Services]"
 ms.assetid: 56f5df6a-56f6-43df-bca9-08476a3bd931
-caps.latest.revision: 72
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Transformation Custom Properties
+
+[!INCLUDE[sqlserver-ssis](../../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   In addition to the properties that are common to most data flow objects in the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] object model, many data flow objects have custom properties that are specific to the object. These custom properties are available only at run time, and are not documented in the [!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] Managed Programming Reference Documentation.  
   
- This topic lists and describes the custom properties of the various data flow transformations. For information about the properties common to most data flow objects, see [Common Properties](http://msdn.microsoft.com/library/51973502-5cc6-4125-9fce-e60fa1b7b796).  
+ This topic lists and describes the custom properties of the various data flow transformations. For information about the properties common to most data flow objects, see [Common Properties](../set-the-properties-of-a-data-flow-component.md).  
   
- Some properties of transformations can be set by using property expressions. For more information, see [Data Flow Properties that Can Be Set by Using Expressions](http://msdn.microsoft.com/library/cd0e171a-08be-45d6-81dc-ed94f37698b8).  
+ Some properties of transformations can be set by using property expressions. For more information, see [Data Flow Properties that Can Be Set by Using Expressions](/previous-versions/sql/sql-server-2016/ms136104(v=sql.130)).  
   
 ## Transformations with Custom Properties  
-  
-||||  
-|-|-|-|  
-|[Aggregate](#aggregate)|[Export Column](#extract)|[Row Count](#rowcount)|  
-|[Audit](#audit)|[Fuzzy Grouping](#fgroup)|[Row Sampling](#rowsamp)|  
-|[Cache Transform](#cachetransform)|[Fuzzy Lookup](#flookup)|[Script Component](#script)|  
-|[Character Map](#charmap)|[Import Column](#insert)|[Slowly Changing Dimension](#scd)|  
-|[Conditional Split](#condsplit)|[Lookup](#lookup)|[Sort](#sort)|  
-|[Copy Column](#copymap)|[Merge Join](#mjoin)|[Term Extraction](#textract)|  
-|[Data Conversion](#dataconv)|[OLE DB Command](#oledbcmd)|[Term Lookup](#tlookup)|  
-|[Data Mining Query](#dmquery)|[Percentage Sampling](#percent)|[Unpivot](#unpivot)|  
-|[Derived Column](#derived)|[Pivot](#pivot)||  
-  
+
+:::row:::
+    :::column:::
+        [Aggregate](#aggregate)  
+        [Audit](#audit)  
+        [Cache Transform](#cachetransform)  
+        [Character Map](#charmap)  
+        [Conditional Split](#condsplit)  
+        [Copy Column](#copymap)  
+        [Data Conversion](#dataconv)  
+        [Data Mining Query](#dmquery)  
+        [Derived Column](#derived)  
+    :::column-end:::
+    :::column:::
+        [Export Column](#extract)  
+        [Fuzzy Grouping](#fgroup)  
+        [Fuzzy Lookup](#flookup)  
+        [Import Column](#insert)  
+        [Lookup](#lookup)  
+        [Merge Join](#mjoin)  
+        [OLE DB Command](#oledbcmd)  
+        [Percentage Sampling](#percent)  
+        [Pivot](#pivot)  
+    :::column-end:::
+    :::column:::
+        [Row Count](#rowcount)  
+        [Row Sampling](#rowsamp)  
+        [Script Component](#script)  
+        [Slowly Changing Dimension](#scd)  
+        [Sort](#sort)  
+        [Term Extraction](#textract)  
+        [Term Lookup](#tlookup)  
+        [Unpivot](#unpivot)  
+    :::column-end:::
+:::row-end:::
+
 ### Transformations Without Custom Properties  
  The following transformations have no custom properties at the component, input, or output levels: [Merge Transformation](../../../integration-services/data-flow/transformations/merge-transformation.md), [Multicast Transformation](../../../integration-services/data-flow/transformations/multicast-transformation.md), and [Union All Transformation](../../../integration-services/data-flow/transformations/union-all-transformation.md). They use only the properties common to all data flow components.  
   
@@ -79,16 +102,16 @@ manager: "jhubbard"
 |--------------|---------------|-----------------|  
 |AutoExtendFactor|Integer|A value between 1 and 100 that specifies the percentage by which memory can be extended during the aggregation. The default value of this property is **25**.|  
 |CountDistinctKeys|Integer|A value that specifies the exact number of distinct counts that the aggregation can write. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence.|  
-|CountDistinctScale|Integer (enumeration)|A value that describes the approximate number of distinct values in a column that the aggregation can count. This property can have one of the following values:<br /><br /> **Low** (1)—indicates up to 500,000 key values<br /><br /> **Medium** (2)—indicates up to 5 million key values<br /><br /> **High** (3)—indicates more than 25 million key values.<br /><br /> **Unspecified** (0)—indicates no CountDistinctScale value is used. Using the **Unspecified** (0) option may affect performance in large data sets.|  
+|CountDistinctScale|Integer (enumeration)|A value that describes the approximate number of distinct values in a column that the aggregation can count. This property can have one of the following values:<br /><br /> **Low** (1)-indicates up to 500,000 key values<br /><br /> **Medium** (2)-indicates up to 5 million key values<br /><br /> **High** (3)-indicates more than 25 million key values.<br /><br /> **Unspecified** (0)-indicates no CountDistinctScale value is used. Using the **Unspecified** (0) option may affect performance in large data sets.|  
 |Keys|Integer|A value that specifies the exact number of Group By keys that the aggregation writes. If a KeyScalevalue is specified, the value in Keys takes precedence.|  
-|KeyScale|Integer (enumeration)|A value that describes approximately how many Group By key values the aggregation can write. This property can have one of the following values:<br /><br /> **Low** (1)—indicates up to 500,000 key values.<br /><br /> **Medium** (2)—indicates up to 5 million key values.<br /><br /> **High** (3)—indicates more than 25 million key values.<br /><br /> **Unspecified** (0)—indicates that no KeyScale value is used.|  
+|KeyScale|Integer (enumeration)|A value that describes approximately how many Group By key values the aggregation can write. This property can have one of the following values:<br /><br /> **Low** (1)-indicates up to 500,000 key values.<br /><br /> **Medium** (2)-indicates up to 5 million key values.<br /><br /> **High** (3)-indicates more than 25 million key values.<br /><br /> **Unspecified** (0)-indicates that no KeyScale value is used.|  
   
  The following table describes the custom properties of the output of the Aggregate transformation. All properties are read/write.  
   
 |Property|Data type|Description|  
 |--------------|---------------|-----------------|  
 |Keys|Integer|A value that specifies the exact number of Group By keys that the aggregation can write. If a KeyScale value is specified, the value in Keys takes precedence.|  
-|KeyScale|Integer (enumeration)|A value that describes approximately how many Group By key values the aggregation can write. This property can have one of the following values:<br /><br /> **Low** (1)—indicates up to 500,000 key values,<br /><br /> **Medium** (2)—indicates up to 5 million key values,<br /><br /> **High** (3)—indicates more than 25 million key values.<br /><br /> **Unspecified** (0)—indicates no KeyScale value is used.|  
+|KeyScale|Integer (enumeration)|A value that describes approximately how many Group By key values the aggregation can write. This property can have one of the following values:<br /><br /> **Low** (1)-indicates up to 500,000 key values,<br /><br /> **Medium** (2)-indicates up to 5 million key values,<br /><br /> **High** (3)-indicates more than 25 million key values.<br /><br /> **Unspecified** (0)-indicates no KeyScale value is used.|  
   
  The following table describes the custom properties of the output columns of the Aggregate transformation. All properties are read/write.  
   
@@ -98,7 +121,7 @@ manager: "jhubbard"
 |AggregationComparisonFlags|Integer|A value that specifies how the Aggregate transformation compares string data in a column. For more information, see [Comparing String Data](../../../integration-services/data-flow/comparing-string-data.md).|  
 |AggregationType|Integer (enumeration)|A value that specifies the aggregation operation to be performed on the column. This property can have one of the following values:<br /><br /> **Group by** (0)<br /><br /> **Count** (1)<br /><br /> **Count all** (2)<br /><br /> **Countdistinct** (3)<br /><br /> **Sum** (4)<br /><br /> **Average** (5)<br /><br /> **Maximum** (7)<br /><br /> **Minimum** (6)|  
 |CountDistinctKeys|Integer|When the aggregation type is **Count distinct**, a value that specifies the exact number of keys that the aggregation can write. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence.|  
-|CountDistinctScale|Integer (enumeration)|When the aggregation type is **Count distinct**, a value that describes approximately how many key values the aggregation can write. This property can have one of the following values:<br /><br /> **Low** (1)—indicates up to 500,000 key values,<br /><br /> **Medium** (2)—indicates up to 5 million key values,<br /><br /> **High** (3)—indicates more than 25 million key values.<br /><br /> **Unspecified** (0)—indicates no CountDistinctScale value is used.|  
+|CountDistinctScale|Integer (enumeration)|When the aggregation type is **Count distinct**, a value that describes approximately how many key values the aggregation can write. This property can have one of the following values:<br /><br /> **Low** (1)-indicates up to 500,000 key values,<br /><br /> **Medium** (2)-indicates up to 5 million key values,<br /><br /> **High** (3)-indicates more than 25 million key values.<br /><br /> **Unspecified** (0)-indicates no CountDistinctScale value is used.|  
 |IsBig|Boolean|A value that indicates whether the column contains a value larger than 4 billion or a value with more precision than a double-precision floating-point value. The value can be 0 or 1. 0 indicates that IsBig is **False** and the column does not contain a large value or precise value. The default value of this property is 1.|  
   
  The input and the input columns of the Aggregate transformation have no custom properties.  
@@ -129,7 +152,7 @@ manager: "jhubbard"
 |ValidateExternalMetadata|Boolean|Indicates whether the Cache Transform is validated by using external data sources at design time. If the property is set to **False**, validation against external data sources occurs at run time.<br /><br /> The default value it **True**.|  
 |AvailableInputColumns|String|A list of the available input columns.|  
 |InputColumns|String|A list of the selected input columns.|  
-|CacheColumnName|String|Specifies the name of the column that is mapped to a selected input column.<br /><br /> The name of the column in the CacheColumnName property must match the name of the corresponding column listed on the **Columns** page of the **Cache Connection Manager Editor**.<br /><br /> For more information, see [Cache Connection Manager Editor](../../../integration-services/data-flow/transformations/cache-connection-manager-editor.md)|  
+|CacheColumnName|String|Specifies the name of the column that is mapped to a selected input column.<br /><br /> The name of the column in the CacheColumnName property must match the name of the corresponding column listed on the **Columns** page of the **Cache Connection Manager Editor**.<br /><br /> For more information, see [Cache Connection Manager Editor](../../connection-manager/cache-connection-manager.md)|  
   
 ##  <a name="charmap"></a> Character Map Transformation Custom Properties  
  The Character Map transformation has only the properties common to all data flow components at the component level.  
@@ -181,7 +204,7 @@ manager: "jhubbard"
   
 |Property|Data type|Description|  
 |--------------|---------------|-----------------|  
-|FastParse|Boolean|A value that indicates whether the column uses the quicker, but locale-insensitive, fast parsing routines that [!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] provides, or the locale-sensitive standard parsing routines. The default value of this property is **False**. For more information, see [Fast Parse](http://msdn.microsoft.com/library/6688707d-3c5b-404e-aa2f-e13092ac8d95) and [Standard Parse](http://msdn.microsoft.com/library/dfe835b1-ea52-4e18-a23a-5188c5b6f013). .<br /><br /> Note: This property is not available in the **Data Conversion Transformation Editor**, but can be set by using the **Advanced Editor**.|  
+|FastParse|Boolean|A value that indicates whether the column uses the quicker, but locale-insensitive, fast parsing routines that [!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] provides, or the locale-sensitive standard parsing routines. The default value of this property is **False**. For more information, see [Fast Parse](../parsing-data.md) and [Standard Parse](../parsing-data.md). .<br /><br /> Note: This property is not available in the **Data Conversion Transformation Editor**, but can be set by using the **Advanced Editor**.|  
 |SourceInputColumnLineageId|Integer|The **LineageID** of the input column that is the source of the output column.|  
   
  The input, the input columns, and the output of the Data Conversion transformation have no custom properties.  
@@ -269,7 +292,7 @@ manager: "jhubbard"
 |--------------|---------------|-----------------|  
 |ExactFuzzy|Integer (enumeration)|A value that specifies whether the transformation performs a fuzzy match or an exact match. The valid values are **Exact** and **Fuzzy**. The default value for this property is **Fuzzy**.|  
 |FuzzyComparisonFlags|Integer (enumeration)|A value that specifies how the transformation compares the string data in a column. This property can have one of the following values:<br /><br /> **FullySensitive**<br /><br /> **IgnoreCase**<br /><br /> **IgnoreKanaType**<br /><br /> **IgnoreNonSpace**<br /><br /> **IgnoreSymbols**<br /><br /> **IgnoreWidth**<br /><br /> <br /><br /> For more information, see [Comparing String Data](../../../integration-services/data-flow/comparing-string-data.md).|  
-|LeadingTrailingNumeralsSignificant|Integer (enumeration)|A value that specifies the significance of numerals. This property can have one of the following values:<br /><br /> **NumeralsNotSpecial** (0)—use if numerals are not significant.<br /><br /> **LeadingNumeralsSignificant** (1)—use if leading numerals are significant.<br /><br /> **TrailingNumeralsSignificant** (2)—use if trailing numerals are significant.<br /><br /> **LeadingAndTrailingNumeralsSignificant** (3)—use if both leading and trailing numerals are significant.|  
+|LeadingTrailingNumeralsSignificant|Integer (enumeration)|A value that specifies the significance of numerals. This property can have one of the following values:<br /><br /> **NumeralsNotSpecial** (0)-use if numerals are not significant.<br /><br /> **LeadingNumeralsSignificant** (1)-use if leading numerals are significant.<br /><br /> **TrailingNumeralsSignificant** (2)-use if trailing numerals are significant.<br /><br /> **LeadingAndTrailingNumeralsSignificant** (3)-use if both leading and trailing numerals are significant.|  
 |MinSimilarity|Double|The similarity threshold used for the join on the column, specified as a value between 0 and 1. Only rows greater than the threshold qualify as matches.|  
 |ToBeCleaned|Boolean|A value that specifies whether the column is used to identify duplicates; that is, whether this is a column on which you are grouping. The default value of this property is **False**.|  
   
@@ -340,7 +363,7 @@ manager: "jhubbard"
 |DefaultCodePage|Integer|The default code page to use when code page information is not available from the data source.|  
 |MaxMemoryUsage|Integer|The maximum cache size for the lookup table. The default value of this property is **25**, which means that the cache size has no limit.|  
 |MaxMemoryUsage64|Integer|The maximum cache size for the lookup table on a 64-bit computer.|  
-|NoMatchBehavior|Integer (enumeration)|A value that specifies whether rows without matching entries in the reference dataset are treated as errors.<br /><br /> When the property is set to **Treat rows with no matching entries as errors** (0), the rows without matching entries are treated as errors. You can specify what should happen when this type of error occurs by using the **Error Output** page of the **Lookup Transformation Editor** dialog box. For more information, see [Lookup Transformation Editor &#40;Error Output Page&#41;](../../../integration-services/data-flow/transformations/lookup-transformation-editor-error-output-page.md).<br /><br /> When the property is set to **Send rows with no matching entries to the no match output** (1), the rows are not treaded as errors.<br /><br /> The default value is **Treat rows with no matching entries as errors** (0).|  
+|NoMatchBehavior|Integer (enumeration)|A value that specifies whether rows without matching entries in the reference dataset are treated as errors.<br /><br /> When the property is set to **Treat rows with no matching entries as errors** (0), the rows without matching entries are treated as errors. You can specify what should happen when this type of error occurs by using the **Error Output** page of the **Lookup Transformation Editor** dialog box. For more information, see [Lookup Transformation Editor &#40;Error Output Page&#41;](./lookup-transformation.md).<br /><br /> When the property is set to **Send rows with no matching entries to the no match output** (1), the rows are not treaded as errors.<br /><br /> The default value is **Treat rows with no matching entries as errors** (0).|  
 |ParameterMap|String|A semicolon-delimited list of lineage IDs that map to the parameters used in the **SqlCommand** statement.|  
 |ReferenceMetaDataXML|String|Metadata for the columns in the lookup table that the transformation copies to its output.|  
 |SqlCommand|String|The SELECT statement that populates the lookup table.|  
@@ -626,8 +649,7 @@ manager: "jhubbard"
   
 ## See Also  
  [Integration Services Transformations](../../../integration-services/data-flow/transformations/integration-services-transformations.md)   
- [Common Properties](http://msdn.microsoft.com/library/51973502-5cc6-4125-9fce-e60fa1b7b796)   
- [Path Properties](http://msdn.microsoft.com/library/89b1e347-9579-4f6b-af74-c6519ea08eea)   
- [Data Flow Properties that Can Be Set by Using Expressions](http://msdn.microsoft.com/library/cd0e171a-08be-45d6-81dc-ed94f37698b8)  
-  
+ [Common Properties](../set-the-properties-of-a-data-flow-component.md)   
+ [Path Properties](../integration-services-paths.md)   
+ [Data Flow Properties that Can Be Set by Using Expressions](/previous-versions/sql/sql-server-2016/ms136104(v=sql.130))  
   

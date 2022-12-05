@@ -1,33 +1,26 @@
 ---
-title: "RESTORE LABELONLY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "RESTORE LABELONLY (Transact-SQL)"
+description: RESTORE Statements - LABELONLY (Transact-SQL)
+author: MikeRayMSFT
+ms.author: mikeray
+ms.date: "03/30/2018"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "LABELONLY"
   - "RESTORE_LABELONLY_TSQL"
   - "LABELONLY_TSQL"
   - "RESTORE LABELONLY"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "RESTORE LABELONLY statement"
   - "backup media [SQL Server], content information"
-ms.assetid: 7cf0641e-0d55-4ffb-9500-ecd6ede85ae5
-caps.latest.revision: 46
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017"
 ---
 # RESTORE Statements - LABELONLY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
-
+[!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2012-asdbmi-xxxx-xxx-md.md)]
   Returns a result set containing information about the backup media identified by the given backup device.  
   
 > [!NOTE]  
@@ -37,7 +30,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 RESTORE LABELONLY   
 FROM <backup_device>   
@@ -62,11 +55,13 @@ FROM <backup_device>
 {   
    { logical_backup_device_name |  
       @logical_backup_device_name_var }  
-   | { DISK | TAPE } = { 'physical_backup_device_name' |  
+   | { DISK | TAPE | URL } = { 'physical_backup_device_name' |  
        @physical_backup_device_name_var }   
 }  
   
 ```  
+> [!NOTE] 
+> URL is the format used to specify the location and the file name for  Microsoft Azure Blob Storage and is supported starting with [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU2. Although Microsoft Azure storage is a service, the implementation is similar to disk and tape to allow for a consistent and seamless restore experience for all the three devices.
   
 ## Arguments  
  For descriptions of the RESTORE LABELONLY arguments, see [RESTORE Arguments &#40;Transact-SQL&#41;](../../t-sql/statements/restore-statements-arguments-transact-sql.md).  

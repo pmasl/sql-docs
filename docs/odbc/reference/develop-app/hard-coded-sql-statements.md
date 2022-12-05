@@ -1,23 +1,19 @@
 ---
+description: "Hard-Coded SQL Statements"
 title: "Hard-Coded SQL Statements | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQL statements [ODBC], hard-coded"
   - "hard-coded SQL statements [ODBC]"
   - "SQL statements [ODBC], constructing"
 ms.assetid: e355f5f1-4f1a-4933-8c74-ee73e90d2d19
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Hard-Coded SQL Statements
 Applications that perform a fixed task usually contain hard-coded SQL statements. For example, an order entry system might use the following call to list open sales orders:  

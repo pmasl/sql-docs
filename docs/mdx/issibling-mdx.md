@@ -1,28 +1,17 @@
 ---
+description: "IsSibling (MDX)"
 title: "IsSibling (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "ISSIBLING"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "IsSibling function"
-ms.assetid: 12f302f0-141e-4ec0-ad5f-329aade17a4d
-caps.latest.revision: 31
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # IsSibling (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Returns whether a specified member is a sibling of another specified member.  
   

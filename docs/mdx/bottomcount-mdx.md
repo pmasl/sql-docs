@@ -1,28 +1,17 @@
 ---
+description: "BottomCount (MDX)"
 title: "BottomCount (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "BOTTOMCOUNT"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "BottomCount function"
-ms.assetid: 1441dab3-7885-4e92-9d48-21d832286677
-caps.latest.revision: 39
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # BottomCount (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Sorts a set in ascending order, and returns the specified number of tuples in the specified set with the lowest values.  
   

@@ -1,13 +1,11 @@
 ---
-title: "ServiceName Property (SqlServiceAdvancedProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "ServiceName Property (SqlServiceAdvancedProperty Class)"
+title: "ServiceName Property (SqlServiceAdvancedProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "ServiceName Property (SqlServiceAdvancedProperty Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "ServiceName property"
 ms.assetid: 6d857b8d-77ed-4014-b1b0-e0e3d5e943c8
-caps.latest.revision: 34
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # ServiceName Property (SqlServiceAdvancedProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the name of the managed service that is associated with the advanced property.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.ServiceName [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

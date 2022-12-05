@@ -1,26 +1,19 @@
 ---
-title: "Resync Method Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Resync Method Example (VC++)"
+description: "Resync Method Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Resync method [ADO], VC++ example"
-ms.assetid: d34dfd26-9ca7-4c9c-a918-396f05fecca9
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Resync Method Example (VC++)
-This example demonstrates using the [Resync](../../../ado/reference/ado-api/resync-method.md) method to refresh data in a static recordset.  
+This example demonstrates using the [Resync](./resync-method.md) method to refresh data in a static recordset.  
   
 ```  
 // Resync_Method_Sample.cpp  
@@ -141,4 +134,4 @@ void PrintComError(_com_error &e) {
 ```  
   
 ## See Also  
- [Resync Method](../../../ado/reference/ado-api/resync-method.md)
+ [Resync Method](./resync-method.md)

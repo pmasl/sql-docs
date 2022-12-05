@@ -1,21 +1,14 @@
 ---
-title: "Data Types with Stream Support Using the SQLSRV Driver | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "Data types with stream support using the SQLSRV driver"
+description: "This topic lists the SQL Server data types which can be retrieved as streams when using the Microsoft SQLSRV Driver for PHP for SQL Server"
+author: David-Engel
+ms.author: v-davidengel
+ms.date: "08/10/2020"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: conceptual
+helpviewer_keywords:
   - "streaming data"
-ms.assetid: a16fe7da-e4c8-45f5-be54-aad03c4fa168
-caps.latest.revision: 19
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Data Types with Stream Support Using the SQLSRV Driver
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -47,7 +40,9 @@ The following SQL Server data types can be retrieved as streams with the SQLSRV 
 -   XML  
   
 ## See Also  
-[Retrieving Data as a Stream Using the SQLSRV Driver](../../connect/php/retrieving-data-as-a-stream-using-the-sqlsrv-driver.md)  
-[Default PHP Data Types](../../connect/php/default-php-data-types.md)  
+[Retrieving Data as a Stream Using the SQLSRV Driver](../../connect/php/retrieving-data-as-a-stream-using-the-sqlsrv-driver.md)
+
+[Default PHP Data Types](../../connect/php/default-php-data-types.md)
+
 [How to: Specify PHP Data Types](../../connect/php/how-to-specify-php-data-types.md)  
   

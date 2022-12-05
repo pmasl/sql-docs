@@ -1,14 +1,12 @@
 ---
 title: "Estimate the Size of a Database | Microsoft Docs"
+description: When you design a database in SQL Server, estimating its size can help you determine the hardware configuration you need for performance and disk space.
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: conceptual
 helpviewer_keywords: 
   - "space allocation [SQL Server], database size"
   - "calculating database size"
@@ -19,12 +17,12 @@ helpviewer_keywords:
   - "estimating database size"
   - "designing databases [SQL Server], estimating size"
 ms.assetid: 5b240161-eba4-44b0-946c-61a8fc00fc8c
-caps.latest.revision: 20
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Estimate the Size of a Database
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
   When you design a database, you may have to estimate how large the database will be when filled with data. Estimating the size of the database can help you determine the hardware configuration you will require to do the following:  
   
 -   Achieve the performance required by your applications.  

@@ -1,23 +1,21 @@
 ---
-title: "XML Indexes Dialog Box (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "XML Indexes Dialog Box (Visual Database Tools)"
+title: XML Indexes Dialog Box
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vdt.dlgbox.xmlindexes"
 ms.assetid: eef38310-4498-4ccc-bb77-5bbd1c7cc477
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # XML Indexes Dialog Box (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 Use the **XML Indexes** dialog box to create indexes for columns of the data type XML, which cannot be indexed using the **Index/Keys** dialog box. Each XML column can have more than one XML Index, but the first one created (primary) will be the basis of the others (secondary). If you delete the primary XML index, the secondary indexes will also be deleted.  
   
 ## Options  
@@ -55,7 +53,7 @@ When expanded, shows the **Name** and **Description** property fields.
 Shows the name of the XML index. When a new one is created, it is given a default name based on the table in the active window in Table Designer. You can change the name at any time.  
   
 **Description**  
-Describe the index. To write a more detailed description, click **Description** and then click the ellipsis button (**…**) that appears to the right of the property field. This provides a larger area in which to write text.  
+Describe the index. To write a more detailed description, click **Description** and then click the ellipsis button (**...**) that appears to the right of the property field. This provides a larger area in which to write text.  
   
 **Table Designer Category**  
 When expanded, shows information about the properties of this XML index.  
@@ -86,5 +84,5 @@ Compute new statistics when the index is created. Re-computing statistics slows 
 Specify whether row-level locking is allowed on this index. Allowing or disallowing row-level locking affects database performance.  
   
 ## See Also  
-[Create XML Indexes](http://msdn.microsoft.com/en-us/6ecac598-355d-4408-baf7-1b2e8d4cf7c1)  
+[Create XML Indexes](../../relational-databases/xml/create-xml-indexes.md)  
   

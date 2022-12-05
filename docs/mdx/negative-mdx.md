@@ -1,29 +1,17 @@
 ---
+description: "- (Negative) (MDX)"
 title: "- (Negative) (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "-"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "- (negative)"
-  - "negative operator (-)"
-ms.assetid: 7fbe83ed-aaa5-41f6-a17c-bfc2e1bffa77
-caps.latest.revision: 39
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # - (Negative) (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Performs a unary operation that returns the negative value of a numeric expression.  
   

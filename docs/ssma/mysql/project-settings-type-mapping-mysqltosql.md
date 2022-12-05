@@ -1,22 +1,17 @@
 ---
+description: "Project Settings (Type Mapping) (MySQLToSQL)"
 title: "Project Settings (Type Mapping) (MySQLToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 136fdf6d-657f-447b-af41-49bbc6e0e93e
-caps.latest.revision: 13
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
+f1_keywords: 
+    - "ssma.mysql.projectsettingtypemapping.f1"
 ---
 # Project Settings (Type Mapping) (MySQLToSQL)
 The Type Mapping project settings let you set default type mappings for the SSMA project.  
@@ -50,9 +45,8 @@ Click to reset the type mapping list to the SSMA defaults.
 ## Type Mappings  
 The following table shows the default mapping between source and target data types  
   
-|||  
+|MySQL Data Type|SQL Server Data Type|  
 |-|-|  
-|**MySQL Data Type**|**SQL Server Data Type**|  
 |bigint|bigint|  
 |bigint[*..255]|bigint|  
 |binary|binary[1]|  

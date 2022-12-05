@@ -1,23 +1,20 @@
 ---
-title: "Options (Designers - Analysis Services Designers - General) | Microsoft Docs"
-ms.custom: ""
+description: "Options (Designers - Analysis Services Designers - General)"
+title: "Options (Designers - Analysis Services Designers - General)"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: ui-reference
 f1_keywords: 
   - "VS.ToolsOptionsPages.Designers.Analysis_Services_Designers.General"
 ms.assetid: 7f976d2b-1a16-47f8-85e6-d7c2bf6a84b8
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Options (Designers - Analysis Services Designers - General)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 Use the **Designers**, **Maintenance Plans**, **Analysis Services**, **General** page to determine the default behavior of the Analysis Services Designers.  
   
 ## Connectivity  

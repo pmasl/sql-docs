@@ -1,24 +1,23 @@
 ---
-title: "Collections (Master Data Services) | Microsoft Docs"
+description: "Collections (Master Data Services)"
+title: Collections
 ms.custom: ""
 ms.date: "04/01/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "collections [Master Data Services]"
   - "collections [Master Data Services], about collections"
 ms.assetid: 5aa1d1e0-b4e5-4897-8e74-01dcf418df73
-caps.latest.revision: 14
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Collections (Master Data Services)
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   A collection is a group of leaf and consolidated members from a single entity. Use collections when you do not need a complete hierarchy and you want to view different groupings of members for reporting or analysis, or when you need to create a taxonomy.  
   
 > [!NOTE]  

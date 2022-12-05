@@ -1,24 +1,15 @@
 ---
-title: "supportsDataManipulationTransactionsOnly Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsDataManipulationTransactionsOnly Method"
+description: "supportsDataManipulationTransactionsOnly Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsDataManipulationTransactionsOnly"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsDataManipulationTransactionsOnly"
 apitype: "Assembly"
-ms.assetid: bdc182db-4518-4bf2-b63a-05f58fdb4eb8
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsDataManipulationTransactionsOnly Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

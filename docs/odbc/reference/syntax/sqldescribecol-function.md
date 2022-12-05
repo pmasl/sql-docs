@@ -1,14 +1,12 @@
 ---
+description: "SQLDescribeCol Function"
 title: "SQLDescribeCol Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLDescribeCol"
 apilocation: 
@@ -19,21 +17,19 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLDescribeCol function [ODBC]"
 ms.assetid: eddef353-83f3-4a3c-8f24-f9ed888890a4
-caps.latest.revision: 35
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLDescribeCol Function
 **Conformance**  
  Version Introduced: ODBC 1.0 Standards Compliance: ISO 92  
   
  **Summary**  
- **SQLDescribeCol** returns the result descriptor — column name,type, column size, decimal digits, and nullability — for one column in the result set. This information also is available in the fields of the IRD.  
+ **SQLDescribeCol** returns the result descriptor - column name,type, column size, decimal digits, and nullability - for one column in the result set. This information also is available in the fields of the IRD.  
   
 ## Syntax  
   
-```  
+```cpp  
   
 SQLRETURN SQLDescribeCol(  
       SQLHSTMT       StatementHandle,  

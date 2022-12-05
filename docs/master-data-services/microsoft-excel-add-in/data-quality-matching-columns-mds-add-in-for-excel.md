@@ -1,21 +1,20 @@
 ---
-title: "Data Quality Matching Columns (MDS Add-in for Excel) | Microsoft Docs"
-ms.custom: ""
+description: "Data Quality Matching Columns (MDS Add-in for Excel)"
+title: Data Quality Matching Columns
+ms.custom: microsoft-excel-add-in
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 ms.assetid: f683fdc6-0d4c-4793-8143-567616cb2094
-caps.latest.revision: 9
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Data Quality Matching Columns (MDS Add-in for Excel)
+
+[!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   In the [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)][!INCLUDE[ssMDSXLS](../../includes/ssmdsxls-md.md)], after you match data, in the **Data Quality** group on the ribbon, you can click **Show Details** to display columns that provide matching details.  
   
  The following table shows the columns that are displayed when matching data.  

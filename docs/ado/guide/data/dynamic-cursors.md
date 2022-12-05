@@ -1,22 +1,15 @@
 ---
-title: "Dynamic Cursors | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Dynamic Cursors"
+description: "Dynamic Cursors"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "cursors [ADO], dynamic"
   - "dynamic cursors [ADO]"
-ms.assetid: 00460f30-8cf7-494e-82df-41012f40ae51
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Dynamic Cursors
 Dynamic cursors detect all changes made to the rows in the result set, regardless of whether the changes occur from inside the cursor or by other users outside the cursor. All insert, update, and delete statements made by all users are visible through the cursor. The dynamic cursor can detect any changes made to the rows, order, and values in the result set after the cursor is opened. Updates made outside the cursor are not visible until they are committed (unless the cursor transaction isolation level is set to "uncommitted").  
@@ -26,6 +19,6 @@ Dynamic cursors detect all changes made to the rows in the result set, regardles
  The dynamic cursor is a good choice if your application must detect all concurrent updates made by other users. Use the **adOpenDynamic CursorTypeEnum** to indicate that you want to use a dynamic cursor in ADO.  
   
 ## See Also  
- [Forward-Only Cursors](../../../ado/guide/data/forward-only-cursors.md)   
- [Static Cursors](../../../ado/guide/data/static-cursors.md)   
- [Keyset Cursors](../../../ado/guide/data/keyset-cursors.md)
+ [Forward-Only Cursors](./forward-only-cursors.md)   
+ [Static Cursors](./static-cursors.md)   
+ [Keyset Cursors](./keyset-cursors.md)

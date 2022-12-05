@@ -1,15 +1,14 @@
 ---
-title: "Examples of Bulk Import and Export of XML Documents (SQL Server) | Microsoft Docs"
-ms.custom: ""
+title: "Bulk import & export of XML documents"
+description: "Examples of bulk importing and exporting of XML documents with SQL Server"
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "10/24/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-bulk-import-export"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: data-movement
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "field terminators [SQL Server]"
   - "bulk importing [SQL Server], data formats"
   - "row terminators [SQL Server]"
@@ -17,33 +16,29 @@ helpviewer_keywords:
   - "terminators [SQL Server]"
   - "bulk exporting [SQL Server], data formats"
   - "XML bulk load [SQL Server]"
-ms.assetid: dff99404-a002-48ee-910e-f37f013d946d
-caps.latest.revision: 65
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
-# Examples of Bulk Import and Export of XML Documents (SQL Server)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# Examples of bulk import and export of XML documents (SQL Server)
 
-    
-##  <a name="top"></a>
- You can bulk import XML documents into a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database or bulk export them from a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database. This topic provides examples of both.  
+[!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
+
+## <a name="top"></a>
+
+You can bulk import XML documents into a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database or bulk export them from a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database. This topic provides examples of both.
+
+To bulk import data from a data file into a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] table or non-partitioned view, you can use the following:  
   
- To bulk import data from a data file into a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] table or non-partitioned view, you can use the following:  
+- **bcp** utility  
+   You can also use the **bcp** utility to export data from anywhere in a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database that a SELECT statement works, including partitioned views.  
+
+- BULK INSERT  
   
--   **bcp** utility  
- You can also use the **bcp** utility to export data from anywhere in a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database that a SELECT statement works, including partitioned views.  
-  
--   BULK INSERT  
-  
--   INSERT ... SELECT * FROM OPENROWSET(BULK...)  
-  
- **Note:** For more information, see 
-  - [Import and Export Bulk Data by Using the bcp Utility (SQL Server).](../../relational-databases/import-export/import-and-export-bulk-data-by-using-the-bcp-utility-sql-server.md)
-   - [Import Bulk Data by Using BULK INSERT or OPENROWSET (BULK...)(SQL Server).](../../relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server.md) 
-    - [How to import XML into SQL Server with the XML Bulk Load component.](https://support.microsoft.com/en-us/kb/316005)
-     - [XML Schema Collections (SQL Server)](https://msdn.microsoft.com/library/ms187856.aspx)
+- INSERT ... SELECT * FROM OPENROWSET(BULK...)  
+
+For more information, see the following topics.
+- [Import and Export Bulk Data by Using the bcp Utility (SQL Server).](../../relational-databases/import-export/import-and-export-bulk-data-by-using-the-bcp-utility-sql-server.md)
+- [Import Bulk Data by Using BULK INSERT or OPENROWSET (BULK...)(SQL Server).](../../relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server.md) 
+- [How to import XML into SQL Server with the XML Bulk Load component.](https://mskb.pkisolutions.com/kb/316005)
+- [XML Schema Collections (SQL Server)](../xml/xml-schema-collections-sql-server.md)
   
 ## Examples  
  The examples are the following:  
@@ -59,12 +54,12 @@ manager: "jhubbard"
 -  [E. Bulk exporting XML data](#bulk_export_xml_data)  
   
 ## <a name="binary_byte_stream"></a>Bulk importing XML data as a binary byte stream  
- When you bulk import XML data from a file that contains an encoding declaration that you want to apply, specify the SINGLE_BLOB option in the OPENROWSET(BULK…) clause. The SINGLE_BLOB option ensures that the XML parser in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] imports the data according to the encoding scheme specified in the XML declaration.  
+ When you bulk import XML data from a file that contains an encoding declaration that you want to apply, specify the SINGLE_BLOB option in the OPENROWSET(BULK...) clause. The SINGLE_BLOB option ensures that the XML parser in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] imports the data according to the encoding scheme specified in the XML declaration.  
   
 #### Sample Table  
  To test example A below, create sample table `T`.  
   
-```  
+```sql
 USE tempdb  
 CREATE TABLE T (IntCol int, XmlCol xml);  
 GO  
@@ -73,8 +68,8 @@ GO
 #### Sample Data File  
  Before you can run example A, you must create a UTF-8 encoded file (`C:\SampleFolder\SampleData3.txt`) that contains the following sample instance that specifies the `UTF-8` encoding scheme.  
   
-```  
-\<?xml version="1.0" encoding="UTF-8"?>  
+```xml  
+<?xml version="1.0" encoding="UTF-8"?>  
 <Root>  
           <ProductDescription ProductModelID="5">  
              <Summary>Some Text</Summary>  
@@ -85,7 +80,7 @@ GO
 #### Example A  
  This example uses the `SINGLE_BLOB` option in an `INSERT ... SELECT * FROM OPENROWSET(BULK...)` statement to import data from a file named `SampleData3.txt` and insert an XML instance in the single-column table, sample table `T`.  
   
-```  
+```sql
 INSERT INTO T(XmlCol)  
 SELECT * FROM OPENROWSET(  
    BULK 'c:\SampleFolder\SampleData3.txt',  
@@ -114,7 +109,7 @@ SELECT * FROM OPENROWSET(
 #### Sample Data File  
  Example B uses a modified version of the `SampleData3.txt` sample data file from the preceding example. To run this example, modify the content of this file as follows:  
   
-```  
+```xml
 <Root>  
           <ProductDescription ProductModelID="10">  
              <Summary>Some New Text</Summary>  
@@ -124,7 +119,7 @@ SELECT * FROM OPENROWSET(
   
 #### Example B  
   
-```  
+```sql  
 -- Query before update shows initial state of XmlCol values.  
 SELECT * FROM T  
 UPDATE T  
@@ -155,19 +150,19 @@ GO
   
  To work around this problem, you can import XML data from a data file that contains a DTD by using the `OPENROWSET(BULK...)` function and then specifying the `CONVERT` option in the `SELECT` clause of the command. The basic syntax for the command is:  
   
- `INSERT ... SELECT CONVERT(…) FROM OPENROWSET(BULK...)`  
+ `INSERT ... SELECT CONVERT(...) FROM OPENROWSET(BULK...)`  
   
 #### Sample Data File  
  Before you can test this bulk import example, create a file (`C:\temp\Dtdfile.xml`) that contains the following sample instance:  
   
-```  
+```xml 
 <!DOCTYPE DOC [<!ATTLIST elem1 attr1 CDATA "defVal1">]><elem1>January</elem1>  
 ```  
   
 #### Sample Table  
  Example C uses the `T1` sample table that is created by the following `CREATE TABLE` statement:  
   
-```  
+```sql  
 USE tempdb;  
 CREATE TABLE T1(XmlCol xml);  
 GO  
@@ -176,7 +171,7 @@ GO
 #### Example C  
  This example uses `OPENROWSET(BULK...)` and specifies the `CONVERT` option in the `SELECT` clause to import the XML data from `Dtdfile.xml` into sample table `T1`.  
   
-```  
+```sql
 INSERT T1  
   SELECT CONVERT(xml, BulkColumn, 2) FROM   
     OPENROWSET(Bulk 'c:\temp\Dtdfile.xml', SINGLE_BLOB) [rowsetresults];  
@@ -220,7 +215,7 @@ B7 EF BA B7 EF BF B8 C3-B8 3C 2F 72 6F 6F 74 3E  *.........</root>*
   
  This example shows how to use this field terminator for the `xTable` sample table. To create this sample table, use the following `CREATE TABLE` statement:  
   
-```  
+```sql
 USE tempdb;  
 CREATE TABLE xTable (xCol xml);  
 GO  
@@ -240,7 +235,7 @@ GO
 #### Example D  
  This example uses the `Xmltable.fmt` format file in a `BULK INSERT` statement to import the contents of an XML data file named `Xmltable.dat`.  
   
-```  
+```sql
 BULK INSERT xTable   
 FROM 'C:\Xmltable.dat'  
 WITH (FORMATFILE = 'C:\Xmltable.fmt');  
@@ -250,9 +245,9 @@ GO
  [&#91;Top&#93;](#top)  
   
 ## <a name="bulk_export_xml_data"></a> Bulk exporting XML data  
- The following example uses `bcp` to bulk export XML data from the table that is created in the preceding example by using the same XML format file. In the following `bcp` command, `<server_name>` and `<instance_name>` represent placeholders that must be replaced with appropriate values:  
+ The following example uses [bcp](../../tools/bcp-utility.md) to bulk export XML data from the table that is created in the preceding example by using the same XML format file. In the following `bcp` command, `<server_name>` and `<instance_name>` represent placeholders that must be replaced with appropriate values:  
   
-```  
+```cmd
 bcp bulktest..xTable out a-wn.out -N -T -S<server_name>\<instance_name>  
 ```  
   

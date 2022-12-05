@@ -1,34 +1,27 @@
 ---
-title: "DROP CREDENTIAL (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP CREDENTIAL (Transact-SQL)"
+description: DROP CREDENTIAL (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "08/19/2015"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DROP CREDENTIAL"
   - "DROP_CREDENTIAL_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "removing credentials"
   - "DROP CREDENTIAL statement"
   - "credentials [SQL Server], DROP CREDENTIAL statement"
   - "authentication [SQL Server], credentials"
   - "deleting credentials"
   - "dropping credentials"
-ms.assetid: df22c826-317d-45a6-b078-186acb65f71e
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DROP CREDENTIAL (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Removes a credential from the server.  
   
@@ -36,12 +29,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 DROP CREDENTIAL credential_name  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *credential_name*  
  Is the name of the credential to remove from the server.  
   
@@ -59,7 +53,7 @@ DROP CREDENTIAL credential_name
 ## Examples  
  The following example removes the credential called `Saddles`.  
   
-```  
+```sql  
 DROP CREDENTIAL Saddles;  
 GO  
 ```  

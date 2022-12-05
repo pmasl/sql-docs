@@ -1,24 +1,17 @@
 ---
-title: "BookmarkEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "BookmarkEnum"
+description: "BookmarkEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "BookmarkEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "BookMarkEnum enumeration [ADO]"
-ms.assetid: 55d273c4-ccee-48ef-ba90-8893d04313c8
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # BookmarkEnum
 Specifies a bookmark indicating where the operation should begin.  
@@ -39,7 +32,12 @@ Specifies a bookmark indicating where the operation should begin.
 |AdoEnums.Bookmark.LAST|  
   
 ## Applies To  
-  
-|||  
-|-|-|  
-|[GetRows Method (ADO)](../../../ado/reference/ado-api/getrows-method-ado.md)|[Move Method (ADO)](../../../ado/reference/ado-api/move-method-ado.md)|
+
+:::row:::
+    :::column:::
+        [GetRows Method (ADO)](./getrows-method-ado.md)  
+    :::column-end:::
+    :::column:::
+        [Move Method (ADO)](./move-method-ado.md)  
+    :::column-end:::
+:::row-end:::

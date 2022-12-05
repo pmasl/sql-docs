@@ -1,28 +1,21 @@
 ---
-title: "BeginTrans, CommitTrans, and RollbackTrans Methods Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "BeginTrans, CommitTrans, and RollbackTrans Methods Example (VC++)"
+description: "BeginTrans, CommitTrans, and RollbackTrans Methods Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "BeginTrans method [ADO], VC++ example"
   - "RollbackTrans method [ADO], VC++ example"
   - "CommitTrans method [ADO], VC++ example"
-ms.assetid: 4ac19647-73e7-4edf-9913-25c8fd927e36
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # BeginTrans, CommitTrans, and RollbackTrans Methods Example (VC++)
-This example changes the book type of all psychology books in the ***Titles*** table of the database. After the [BeginTrans](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md) method starts a transaction that isolates all the changes made to the ***Titles*** table, the [CommitTrans](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md) method saves the changes. You can use the [Rollback](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md) method to undo changes that you saved using the [Update](../../../ado/reference/ado-api/update-method.md) method.  
+This example changes the book type of all psychology books in the ***Titles*** table of the database. After the [BeginTrans](./begintrans-committrans-and-rollbacktrans-methods-ado.md) method starts a transaction that isolates all the changes made to the ***Titles*** table, the [CommitTrans](./begintrans-committrans-and-rollbacktrans-methods-ado.md) method saves the changes. You can use the [Rollback](./begintrans-committrans-and-rollbacktrans-methods-ado.md) method to undo changes that you saved using the [Update](./update-method.md) method.  
   
 ## Example  
   
@@ -194,7 +187,7 @@ void BeginTransX() {
          printf("%s -  %s\n", titlrs.m_szT_title, titlrs.m_szT_type);  
          rstTitles->MoveNext();  
       }  
-      // Restore original data becasue this is a demonstration.  
+      // Restore original data because this is a demonstration.  
       rstTitles->MoveFirst();  
   
       while (VARIANT_FALSE == rstTitles->EndOfFile) {  
@@ -265,5 +258,5 @@ void PrintProviderError(_ConnectionPtr pConnection) {
 ```  
   
 ## See Also  
- [BeginTrans, CommitTrans, and RollbackTrans Methods (ADO)](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md)   
- [Update Method](../../../ado/reference/ado-api/update-method.md)
+ [BeginTrans, CommitTrans, and RollbackTrans Methods (ADO)](./begintrans-committrans-and-rollbacktrans-methods-ado.md)   
+ [Update Method](./update-method.md)

@@ -1,30 +1,27 @@
 ---
 title: "MSSQLSERVER_233 | Microsoft Docs"
+description: The SQL Server client cannot connect to the server. See an explanation of error 233 and possible resolutions.
 ms.custom: ""
 ms.date: "04/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 f1_keywords: 
   - "233"
 helpviewer_keywords: 
   - "233 (Database Engine error)"
 ms.assetid: 201665dc-7ac8-4c19-90d3-33354c5caa72
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_233
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|SQL Server|  
 |Event ID|233|  
 |Event Source|MSSQLSERVER|  

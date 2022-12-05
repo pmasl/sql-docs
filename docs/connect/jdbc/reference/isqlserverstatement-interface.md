@@ -1,24 +1,17 @@
 ---
-title: "ISQLServerStatement Interface | Microsoft Docs"
-ms.custom: ""
+title: "ISQLServerStatement Interface"
+description: "ISQLServerStatement Interface"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 7f83b514-6e76-4f37-baf3-a10db2010e7c
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # ISQLServerStatement Interface
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
 
-  Represents the basic implementation of JDBC statement functionality. This interface was added in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] JDBC Driver 3.0.  
+  Represents the basic implementation of JDBC statement functionality. This interface was added in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] JDBC Driver 3.0.  
   
  **Package:** com.microsoft.sqlserver.jdbc  
   

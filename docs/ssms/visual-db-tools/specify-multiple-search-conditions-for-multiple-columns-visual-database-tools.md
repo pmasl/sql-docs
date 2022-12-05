@@ -1,14 +1,11 @@
 ---
-title: "Specify Multiple Search Conditions for Multiple Columns | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Specify Multiple Search Conditions for Multiple Columns (Visual Database Tools)"
+title: Specify Multiple Search Conditions for Multiple Columns
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "search criteria [SQL Server], multiple conditions"
   - "multiple search conditions"
@@ -16,12 +13,13 @@ helpviewer_keywords:
   - "OR operator"
   - "AND, Criteria pane"
 ms.assetid: 06617729-0d0b-4da2-9890-b7e2f5cdbc7b
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Specify Multiple Search Conditions for Multiple Columns (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 You can expand or narrow the scope of your query by including several data columns as part of your search condition. For example, you might want to:  
   
 -   Search for employees who either have worked more than five years at the company or who hold certain jobs.  
@@ -74,8 +72,8 @@ To search different data columns using conditions linked with AND, you put all t
 4.  Repeat Steps 2 and 3 for each additional condition you want to add.  
   
 ## See Also  
-[Combine Conditions When AND Has Precedence (Visual Database Tools)](../../ssms/visual-db-tools/combine-conditions-when-and-has-precedence-visual-database-tools.md)  
-[Combine Conditions When OR Has Precedence (Visual Database Tools)](../../ssms/visual-db-tools/combine-conditions-when-or-has-precedence-visual-database-tools.md)  
-[Conventions for Combining Search Conditions in the Criteria Pane (Visual Database Tools)](../../ssms/visual-db-tools/conventions-combine-search-conditions-in-criteria-pane-visual-db-tools.md)  
-[Specify Search Criteria (Visual Database Tools)](../../ssms/visual-db-tools/specify-search-criteria-visual-database-tools.md)  
+[Combine Conditions When AND Has Precedence](../../ssms/visual-db-tools/combine-conditions-when-and-has-precedence-visual-database-tools.md)  
+[Combine Conditions When OR Has Precedence](../../ssms/visual-db-tools/combine-conditions-when-or-has-precedence-visual-database-tools.md)  
+[Conventions for Combining Search Conditions in the Criteria Pane](../../ssms/visual-db-tools/conventions-combine-search-conditions-in-criteria-pane-visual-db-tools.md)  
+[Specify Search Criteria](../../ssms/visual-db-tools/specify-search-criteria-visual-database-tools.md)  
   

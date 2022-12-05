@@ -1,23 +1,16 @@
 ---
-title: "Calling a Stored Procedure with a Command | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Calling a Stored Procedure with a Command"
+description: "Calling a Stored Procedure with a Command"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "calling stored procedures [ADO]"
   - "stored procedures [ADO]"
   - "commands [ADO]"
-ms.assetid: 685f7652-2271-4ede-b552-2eeb8c756b4c
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Calling a Stored Procedure with a Command
 You can use a command to call a stored procedure. The code sample at the end of this topic refers to a stored procedure in the Northwind sample database, called CustOrdersOrders, which is defined as follows.  
@@ -32,13 +25,13 @@ ORDER BY OrderID
   
  See your SQL Server documentation for more information about how to define and call stored procedures.  
   
- This stored procedure is similar to the command used in [Command Object Parameters](../../../ado/guide/data/command-object-parameters.md). It takes a customer ID parameter and returns information about that customer's orders. The following code sample uses this stored procedure as the source for an ADO **Recordset**.  
+ This stored procedure is similar to the command used in [Command Object Parameters](./command-object-parameters.md). It takes a customer ID parameter and returns information about that customer's orders. The following code sample uses this stored procedure as the source for an ADO **Recordset**.  
   
  Using the stored procedure allows you to access another capability of ADO: the **Parameters** collection **Refresh** method. By using this method, ADO can automatically fill in all information about the parameters required by the command at run time. There is a performance penalty in using this technique, because ADO must query the data source for the information about the parameters.  
   
- Other important differences exist between the following code sample and the code in [Command Object Parameters](../../../ado/guide/data/command-object-parameters.md), where the parameters were entered manually. First, this code does not set the **Prepared** property to **True** because it is a SQL Server stored procedure and is precompiled by definition. Second, the **CommandType** property of the **Command** object changed to **adCmdStoredProc** in the second example to inform ADO that the command was a stored procedure.  
+ Other important differences exist between the following code sample and the code in [Command Object Parameters](./command-object-parameters.md), where the parameters were entered manually. First, this code does not set the **Prepared** property to **True** because it is a SQL Server stored procedure and is precompiled by definition. Second, the **CommandType** property of the **Command** object changed to **adCmdStoredProc** in the second example to inform ADO that the command was a stored procedure.  
   
- Finally, in the second example the parameter must be referred to by index when setting the value, because you might not know the name of the parameter at design time. If you do know the name of the parameter, you can set the new [NamedParameters](../../../ado/reference/ado-api/namedparameters-property-ado.md) property of the **Command** object to True and refer to the property's name. You might wonder why the position of the first parameter mentioned in the stored procedure (@CustomerID) is 1 instead of 0 (`objCmd(1) = "ALFKI"`). This is because parameter 0 contains a return value from the SQL Server stored procedure.  
+ Finally, in the second example the parameter must be referred to by index when setting the value, because you might not know the name of the parameter at design time. If you do know the name of the parameter, you can set the new [NamedParameters](../../reference/ado-api/namedparameters-property-ado.md) property of the **Command** object to True and refer to the property's name. You might wonder why the position of the first parameter mentioned in the stored procedure (@CustomerID) is 1 instead of 0 (`objCmd(1) = "ALFKI"`). This is because parameter 0 contains a return value from the SQL Server stored procedure.  
   
 ```  
 'BeginAutoParamCmd  
@@ -131,4 +124,4 @@ End Function
 ```  
   
 ## See Also  
- [Knowledge Base article 117500](http://go.microsoft.com/fwlink/?LinkId=117500)
+ [Knowledge Base article 117500](https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/185125)

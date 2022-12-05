@@ -1,24 +1,23 @@
 ---
+description: "Hadoop Hive Task"
 title: "Hadoop Hive Task | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
+ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.ssis.designer.hadoophivetask.f1"
 ms.assetid: 10ff37c0-9f3f-442a-889b-c351afbdc74c
-caps.latest.revision: 6
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Hadoop Hive Task
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Use the Hadoop Hive Task to run Hive script on a Hadoop cluster.  
   
  To add a Hadoop Hive Task, drag and drop it to the designer. Then double-click on the task, or right-click and click **Edit**, to open the **Hadoop Hive Task Editor** dialog box.  
@@ -30,7 +29,7 @@ manager: "jhubbard"
   
 |Field|Description|  
 |-----------|-----------------|  
-|**Hadoop Connection**|Specify an existing Hadoop Connection Manager or create a new one. This connection manager indicates  where the the WebHCat service is hosted.|  
+|**Hadoop Connection**|Specify an existing Hadoop Connection Manager or create a new one. This connection manager indicates  where the WebHCat service is hosted.|  
 |**SourceType**|Specify the source type of the query. Available values are **ScriptFile** and **DirectInput**.|  
 |**InlineScript**|When the value of **SourceType** is **DirectInput**, specify the hive script.|  
 |**HadoopScriptFilePath**|When the value of **SourceType** is **ScriptFile**, specify the script file path on Hadoop.|  

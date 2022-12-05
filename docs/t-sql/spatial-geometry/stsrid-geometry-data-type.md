@@ -1,14 +1,12 @@
 ---
+description: "STSrid (geometry Data Type)"
 title: "STSrid (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "STSrid (geometry Data Type)"
   - "STSrid_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "STSrid (geometry Data Type)"
 ms.assetid: 5e0de983-a0fe-48b7-9e08-30588d7271e2
-caps.latest.revision: 24
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # STSrid (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   **STSrid** is an integer representing the spatial reference identifier of the instance.  
   
@@ -36,7 +32,9 @@ This property can be modified.
 STSrid  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] type: **int**  
   
  CLR type: **SqlInt32**  
@@ -44,7 +42,7 @@ STSrid
 ## Examples  
  The first example creates a **geometry** instance with the SRID value 13 and uses `STSrid` to confirm the SRID.  
   
-```  
+```sql
 DECLARE @g geometry;  
 SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0))', 13);  
 SELECT @g.STSrid;  
@@ -52,7 +50,7 @@ SELECT @g.STSrid;
   
  The second example uses `STSrid` to change the SRID value of the instance to 23 and then confirms the modified SRID value.  
   
-```  
+```sql
 SET @g.STSrid = 23;  
 SELECT @g.STSrid;  
 ```  

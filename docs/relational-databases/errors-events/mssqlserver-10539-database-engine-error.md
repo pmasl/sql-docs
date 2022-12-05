@@ -1,28 +1,25 @@
 ---
+description: "MSSQLSERVER_10539"
 title: "MSSQLSERVER_10539 | Microsoft Docs"
 ms.custom: ""
 ms.date: "04/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 helpviewer_keywords: 
   - "10539 (Database Engine error)"
 ms.assetid: 49c26ff7-18b8-4f07-a087-f45f63463b3b
-caps.latest.revision: 9
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_10539
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|SQL Server|  
 |Event ID|10539|  
 |Event Source|MSSQLSERVER|  

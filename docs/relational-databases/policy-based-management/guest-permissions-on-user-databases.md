@@ -1,23 +1,20 @@
 ---
 title: "Guest Permissions on User Databases | Microsoft Docs"
+description: Determine whether the guest user has permission to access user databases in SQL Server. Revoke the guest user permission if it is not required.
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: security
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Best Practices [Database Engine]"
 ms.assetid: 540f1c6d-df51-497e-958a-3a0f429d2920
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # Guest Permissions on User Databases
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This rule determines whether the guest user has permission to access the database. This rule applies to user databases only.  
   
 ## Best Practices Recommendations  

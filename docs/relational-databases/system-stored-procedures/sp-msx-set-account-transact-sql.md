@@ -1,14 +1,12 @@
 ---
+description: "sp_msx_set_account (Transact-SQL)"
 title: "sp_msx_set_account (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_msx_set_account"
   - "sp_msx_set_account_TSQL"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_msx_set_account"
 ms.assetid: 314ec720-3a37-48f7-bb6b-8d5b894bf843
-caps.latest.revision: 26
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_msx_set_account (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Sets the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent master server account name and password on the target server.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -41,10 +33,10 @@ sp_msx_set_account [ @credential_name = ] 'credential_name'  | [ @credential_id 
 ```  
   
 ## Arguments  
- [ **@credential_name=** ] **'***credential_name***'**  
+`[ @credential_name = ] 'credential_name'`
  The name of the credential to use to log in to the master server. The name provided must be the name of an existing credential. Either *credential_name* or *credential_id* must be specified.  
   
- [ **@credential_id=** ] *credential_id*  
+`[ @credential_id = ] credential_id`
  The identifier for the credential to use to log in to the master server. The identifier must be an identifier for an existing credential. Either *credential_name* or *credential_id* must be specified.  
   
 ## Return Code Values  

@@ -1,19 +1,12 @@
 ---
-title: "isSparseColumnSet Method (SQLServerResultSetMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "isSparseColumnSet Method (SQLServerResultSetMetaData)"
+description: "isSparseColumnSet Method (SQLServerResultSetMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: ac363670-78ae-49f1-aeda-4fba3329a258
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # isSparseColumnSet Method (SQLServerResultSetMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

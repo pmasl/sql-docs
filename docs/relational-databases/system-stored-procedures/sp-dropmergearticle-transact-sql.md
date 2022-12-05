@@ -1,27 +1,25 @@
 ---
+description: "sp_dropmergearticle (Transact-SQL)"
 title: "sp_dropmergearticle (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "05/02/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_dropmergearticle"
   - "sp_dropmergearticle_TSQL"
 helpviewer_keywords: 
   - "sp_dropmergearticle"
 ms.assetid: 5ef1fbf7-c03d-4488-9ab2-64aae296fa4f
-caps.latest.revision: 34
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_dropmergearticle (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Removes an article from a merge publication. This stored procedure is executed at the Publisher on the publication database.  
   
@@ -41,33 +39,33 @@ sp_dropmergearticle [ @publication= ] 'publication'
 ```  
   
 ## Arguments  
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication from which to drop an article. *publication*is **sysname**, with no default.  
   
- [ **@article=**] **'***article***'**  
+`[ @article = ] 'article'`
  Is the name of the article to drop from the given publication. *article*is **sysname**, with no default. If **all**, all existing articles in the specified merge publication are removed. Even if *article* is **all**, the publication still must be dropped separately from the article.  
   
- [ **@ignore_distributor=**] *ignore_distributor*  
+`[ @ignore_distributor = ] ignore_distributor`
  Indicates whether this stored procedure is executed without connecting to the Distributor. *ignore_distributor* is **bit**, with a default of **0**.  
   
- [ **@reserved=**] *reserved*  
+`[ @reserved = ] reserved`
  Is reserved for future use. *reserved* is **nvarchar(20)**, with a default of NULL.  
   
- [ **@force_invalidate_snapshot=**] *force_invalidate_snapshot*  
+`[ @force_invalidate_snapshot = ] force_invalidate_snapshot`
  Enables or disables the ability to have a snapshot invalidated. *force_invalidate_snapshot* is a **bit**, with a default **0**.  
   
  **0** specifies that changes to the merge article do not cause the snapshot to be invalid.  
   
  **1** means that changes to the merge article may cause the snapshot to be invalid, and if that is the case, a value of **1** gives permission for the new snapshot to occur.  
   
- [ **@force_reinit_subscription =** ] *force_reinit_subscription*  
+`[ @force_reinit_subscription = ] force_reinit_subscription`
  Acknowledges that dropping the article requires existing subscriptions to be reinitialized. *force_reinit_subscription* is a **bit**, with a default of **0**.  
   
  **0** specifies that dropping the article does not cause the subscription to be reinitialized.  
   
  **1** means that dropping the article causes existing subscriptions to be reinitialized, and gives permission for the subscription reinitialization to occur.  
   
- [ **@ignore_merge_metadata=** ] *ignore_merge_metadata*  
+`[ @ignore_merge_metadata = ] ignore_merge_metadata`
  Internal use only.  
   
 ## Return Code Values  
@@ -83,7 +81,7 @@ sp_dropmergearticle [ @publication= ] 'publication'
   
 ## Example  
   
-```tsql  
+```sql  
 DECLARE @publication AS sysname;  
 DECLARE @article1 AS sysname;  
 DECLARE @article2 AS sysname;  
@@ -104,7 +102,7 @@ EXEC sp_dropmergearticle
 GO  
 ```  
   
-```tsql  
+```sql  
 DECLARE @publication AS sysname;  
 DECLARE @table1 AS sysname;  
 DECLARE @table2 AS sysname;  

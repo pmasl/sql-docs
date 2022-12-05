@@ -1,14 +1,11 @@
 ---
-title: "Verify Queries (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Verify Queries (Visual Database Tools)"
+title: Verify Queries
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vdtsql.chm:100644"
 helpviewer_keywords: 
@@ -16,12 +13,13 @@ helpviewer_keywords:
   - "queries [SQL Server], verifying"
   - "checking queries"
 ms.assetid: 1382c0c0-46dc-45f9-ab38-9bba1d347eea
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Verify Queries (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 To avoid problems, you can check the query you have built to ensure its syntax is correct. This option is especially useful when you enter statements in the [SQL pane](../../ssms/visual-db-tools/sql-pane-visual-database-tools.md).  
   
 Some notes to keep in mind about verifying queries:  

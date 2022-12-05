@@ -1,1 +1,2 @@
-![Download](../ssdt/media/download.png)[Install pyodbc Python Driver](../connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development.md) ![Download](../ssdt/media/download.png)[Install pymssql Python Driver](../connect/python/pymssql/step-1-configure-development-environment-for-pymssql-python-development.md) 
+:::image type="icon" source="media/download.svg" border="false"::: [Install pyodbc Python driver](../connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development.md) :::image type="icon" source="media/download.svg" border="false"::: [Install pymssql Python driver](../connect/python/pymssql/step-1-configure-development-environment-for-pymssql-python-development.md)
+

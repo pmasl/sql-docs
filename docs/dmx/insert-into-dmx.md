@@ -1,41 +1,19 @@
 ---
-title: "INSERT INTO (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "INSERT INTO"
-  - "INSERT"
-  - "INSERT_INTO"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "SKIP (DMX)"
-  - "mapped model columns element"
-  - "source data query element"
-  - "<mapped model columns> element"
-  - "<source data query> element"
-  - "INSERT INTO statement"
-  - "mining models [Analysis Services], processing"
-  - "training mining models"
-  - "mining structures [DMX], processing"
-ms.assetid: 85eed207-396c-4a95-a74e-2acc1abc7e2c
-caps.latest.revision: 49
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "INSERT INTO (DMX)"
+description: "INSERT INTO (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # INSERT INTO (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
-  Processes the specified data mining object. For more information about processing mining models and mining structures, see [Processing Requirements and Considerations &#40;Data Mining&#41;](../analysis-services/data-mining/processing-requirements-and-considerations-data-mining.md).  
+  Processes the specified data mining object. For more information about processing mining models and mining structures, see [Processing Requirements and Considerations &#40;Data Mining&#41;](/analysis-services/data-mining/processing-requirements-and-considerations-data-mining).  
   
  If a mining structure is specified, the statement processes the mining structure and all its associated mining models. If a mining model is specified, the statement processes just the mining model.  
   
@@ -65,7 +43,7 @@ INSERT INTO [MINING MODEL]|[MINING STRUCTURE] <model>|<structure>.COLUMN_VALUES 
   
  By using the second syntax form, INSERT INTO*\<object>*.COLUMN_VALUES, you can insert data directly into the model columns without training the model. This method provides column data to the model in a concise, ordered manner that is useful when you work with datasets that contain hierarchies or ordered columns.  
   
- If you use **INSERT INTO** with a mining model or a mining structure, and leave off the \<mapped model columns> and \<source data query> arguments, the statement behaves like **ProcessDefault**, using bindings that already exist. If bindings do not exist, the statement returns an error. For more information about **ProcessDefault**, see [Processing Options and Settings &#40;Analysis Services&#41;](../analysis-services/multidimensional-models/processing-options-and-settings-analysis-services.md). The following example shows the syntax:  
+ If you use **INSERT INTO** with a mining model or a mining structure, and leave off the \<mapped model columns> and \<source data query> arguments, the statement behaves like **ProcessDefault**, using bindings that already exist. If bindings do not exist, the statement returns an error. For more information about **ProcessDefault**, see [Processing Options and Settings &#40;Analysis Services&#41;](/analysis-services/multidimensional-models/processing-options-and-settings-analysis-services). The following example shows the syntax:  
   
 ```  
 INSERT INTO [MINING MODEL] <model>  
@@ -140,5 +118,4 @@ AS [Models]
  [Data Mining Extensions &#40;DMX&#41; Data Definition Statements](../dmx/dmx-statements-data-definition.md)   
  [Data Mining Extensions &#40;DMX&#41; Data Manipulation Statements](../dmx/dmx-statements-data-manipulation.md)   
  [Data Mining Extensions &#40;DMX&#41; Statement Reference](../dmx/data-mining-extensions-dmx-statements.md)  
-  
   

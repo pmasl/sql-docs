@@ -1,24 +1,20 @@
 ---
+description: "C Data Types"
 title: "C Data Types | Microsoft Docs"
 ms.custom: ""
 ms.date: "07/12/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "data types [ODBC], C data types"
   - "C data types [ODBC], about C data types"
   - "C data types [ODBC]"
   - "C buffers [ODBC]"
 ms.assetid: b681d260-3dbb-47df-a616-4910d727add7
-caps.latest.revision: 19
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # C Data Types
 ODBC C data types indicate the data type of C buffers used to store data in the application.  
@@ -73,7 +69,7 @@ struct tagDATE_STRUCT {
 struct tagTIME_STRUCT {  
    SQLUSMALLINT hour;  
    SQLUSMALLINT minute;  
-   SQLUSMALLINT second;  
+   SQLUSMALLINT second;  
 } TIME_STRUCT;[a]  
 ```  
   
@@ -85,7 +81,7 @@ struct tagTIME_STRUCT {
   
 ```  
 struct tagTIMESTAMP_STRUCT {  
-   SQLSMALLINT year;  
+   SQLSMALLINT year;  
    SQLUSMALLINT month;  
    SQLUSMALLINT day;  
    SQLUSMALLINT hour;  

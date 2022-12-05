@@ -1,29 +1,17 @@
 ---
-title: "Predict (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "PREDICT"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "Predict function"
-ms.assetid: f02ff4b3-9bd7-409d-ad14-ead67b3206c4
-caps.latest.revision: 40
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "Predict (DMX)"
+description: "Predict (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # Predict (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   The **Predict** function returns a predicted value, or set of values, for a specified column.  
   

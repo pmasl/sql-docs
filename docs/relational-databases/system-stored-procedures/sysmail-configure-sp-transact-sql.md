@@ -1,14 +1,12 @@
 ---
+description: "sysmail_configure_sp (Transact-SQL)"
 title: "sysmail_configure_sp (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sysmail_configure_sp_TSQL"
   - "sysmail_configure_sp"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sysmail_configure_sp"
 ms.assetid: 73b33c56-2bff-446a-b495-ae198ad74db1
-caps.latest.revision: 46
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sysmail_configure_sp (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Changes configuration settings for Database Mail. The configuration settings specified with **sysmail_configure_sp** apply to the entire [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -43,13 +35,13 @@ sysmail_configure_sp [ [ @parameter_name = ] 'parameter_name' ]
 ```  
   
 ## Arguments  
- [**@parameter_name** = ] **'***parameter_name***'**  
+ [**@parameter_name** = ] **'**_parameter_name_**'**  
  The name of the parameter to change.  
   
- [**@parameter_value** = ] **'***parameter_value***'**  
+ [**@parameter_value** = ] **'**_parameter_value_**'**  
  The new value of the parameter.  
   
- [**@description** = ] **'***description***'**  
+ [**@description** = ] **'**_description_**'**  
  A description of the parameter.  
   
 ## Return Code Values  
@@ -61,9 +53,8 @@ sysmail_configure_sp [ [ @parameter_name = ] 'parameter_name' ]
 ## Remarks  
  Database Mail uses the following parameters:  
   
-||||  
-|-|-|-|  
-|Parameter name|Description|Default Value|  
+| Parameter name | Description | Default value |
+| -------------- | ----------- | ------------- |
 |*AccountRetryAttempts*|The number of times that the external mail process attempts to send the e-mail message using each account in the specified profile.|**1**|  
 |*AccountRetryDelay*|The amount of time, in seconds, for the external mail process to wait between attempts to send a message.|**5000**|  
 |*DatabaseMailExeMinimumLifeTime*|The minimum amount of time, in seconds, that the external mail process remains active. When Database Mail is sending many messages, increase this value to keep Database Mail active and avoid the overhead of frequent starts and stops.|**600**|  

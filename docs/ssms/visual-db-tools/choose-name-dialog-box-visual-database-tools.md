@@ -1,26 +1,24 @@
 ---
-title: "Choose Name Dialog Box (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Choose Name Dialog Box (Visual Database Tools)"
+title: Choose Name Dialog Box
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vdt.dlgbox.choosename"
   - "vdt.dlgbox.newdatabaseview"
   - "vdt.dlgbox.newtablename"
 ms.assetid: cd6b5527-c032-473e-b954-1a549e1cdf4a
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Choose Name Dialog Box (Visual Database Tools)
-This dialog box appears when you choose **Save \<TableName**> , **Save <DiagramName>**, or **Save <ViewName>** from the **File** menu.  
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
+This dialog box appears when you choose **Save \<TableName**> , **Save \<DiagramName\>**, or **Save \<ViewName\>** from the **File** menu.  
   
 **Enter a name for the table, diagram, or view.**  
 Provides a text box where you can type a name for the table, diagram, or view.  

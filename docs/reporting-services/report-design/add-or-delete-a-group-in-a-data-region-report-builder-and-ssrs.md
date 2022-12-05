@@ -1,23 +1,21 @@
 ---
-title: "Add or Delete a Group in a Data Region (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Add or delete a group in a data region in a paginated report | Microsoft Docs"
+description: Consider adding a group to a data region in a paginated report to organize data by a specific value or set of expressions for display and calculations in Report Builder.
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: 4de53c3c-c6fc-49ce-b692-3609fc0b3ec5
-caps.latest.revision: 10
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Add or Delete a Group in a Data Region (Report Builder and SSRS)
-In [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] paginated reports, add a group to a data region when you want to organize data by a specific value or set of expressions, for display and calculations. A group has a name and an expression that identifies which data from a dataset belongs to the group. For more information about groups, see [Understanding Groups &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/understanding-groups-report-builder-and-ssrs.md).  
+# Add or delete a group in a data region in a paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+In paginated reports, add a group to a data region when you want to organize data by a specific value or set of expressions, for display and calculations. A group has a name and an expression that identifies which data from a dataset belongs to the group. For more information about groups, see [Understanding Groups &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/understanding-groups-report-builder-and-ssrs.md).  
   
  In a tablix data region, click in the table, matrix, or list to display the Grouping pane. Drag dataset fields to the Row Group and Column Group pane to create parent or child groups. Right-click an existing group to add an adjacent group. By definition, the details group is the innermost group and can only be added as a child group. Right-click an existing group to delete it. Rows and columns on which to display group values are automatically added for you. For more information, see [Tables, Matrices, and Lists &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/tables-matrices-and-lists-report-builder-and-ssrs.md).  
   
@@ -47,7 +45,7 @@ In [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] paginated repor
   
 3.  In **Group expression**, type an expression or click the expression button (**fx**) to create an expression.  
   
-4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+4.  Select **OK**.
   
      A new group is added to the Grouping pane and a row or column on which to display group values is added to the tablix data region on the design surface.  
   
@@ -59,7 +57,7 @@ In [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] paginated repor
   
 3.  Select **Show detail data**.  
   
-4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+4.  Select **OK**.
   
      A new details group is added as a child group in the Grouping pane, and the row handle for the group you selected in step 1 displays the details group icon. For more information about handles, see [Tablix Data Region Cells, Rows, and Columns &#40;Report Builder&#41; and SSRS](../../reporting-services/report-design/tablix-data-region-cells-rows-and-columns-report-builder-and-ssrs.md).  
   
@@ -85,7 +83,7 @@ In [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] paginated repor
   
 10. (Optional) Click **Variables** to define variables scoped to this group and accessible from any child groups.  
   
-11. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+11. Select **OK**.
   
 ## To delete a group from a tablix data region  
   
@@ -97,7 +95,7 @@ In [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] paginated repor
   
     -   **Delete group only** Choose this option to keep the structure of the tablix data region the same and delete only the group definition.  
   
-3.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+3.  Select **OK**.
   
 ## To delete a details group from a tablix data region  
   
@@ -109,7 +107,7 @@ In [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] paginated repor
   
     -   **Delete group only** Choose this option to keep the structure of the tablix data region the same and delete only the group definition.  
   
-3.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+3.  Select **OK**.
   
      The details group is deleted.  
   

@@ -1,34 +1,27 @@
 ---
-title: "DROP SIGNATURE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP SIGNATURE (Transact-SQL)"
+description: DROP SIGNATURE (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DROP SIGNATURE"
   - "DROP_SIGNATURE_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "deleting signatures"
   - "dropping signatures"
   - "DROP SIGNATURE statement"
   - "removing signatures"
   - "signatures [SQL Server]"
   - "digital signatures [SQL Server]"
-ms.assetid: 8a1fd8c5-0e75-4b2f-9d3c-c296bed56cc7
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DROP SIGNATURE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Drops a digital signature from a stored procedure, function, trigger, or assembly.  
   
@@ -36,8 +29,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 DROP [ COUNTER ] SIGNATURE FROM module_name   
     BY <crypto_list> [ ,...n ]  
   
@@ -46,7 +38,9 @@ DROP [ COUNTER ] SIGNATURE FROM module_name
     | ASYMMETRIC KEY Asym_key_name  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *module_name*  
  Is the name of a stored procedure, function, assembly, or trigger.  
   
@@ -65,7 +59,7 @@ DROP [ COUNTER ] SIGNATURE FROM module_name
 ## Examples  
  The following example removes the signature of certificate `HumanResourcesDP` from the stored procedure `HumanResources.uspUpdateEmployeeLogin`.  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 DROP SIGNATURE FROM HumanResources.uspUpdateEmployeeLogin   
     BY CERTIFICATE HumanResourcesDP;  

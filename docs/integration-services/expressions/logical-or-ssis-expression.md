@@ -1,25 +1,25 @@
 ---
+description: "|| (Logical OR) (SSIS Expression)"
 title: "|| (Logical OR) (SSIS Expression) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "OR operator"
   - "logical OR (||)"
   - "|| (logical OR)"
 ms.assetid: a3c07c09-f121-4187-9617-b01adcf843c4
-caps.latest.revision: 33
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # || (Logical OR) (SSIS Expression)
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Performs a logical OR operation. The expression evaluates to TRUE if one or both conditions are TRUE.  
   
 ## Syntax  

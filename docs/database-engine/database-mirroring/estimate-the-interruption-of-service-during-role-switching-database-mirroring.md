@@ -1,28 +1,23 @@
 ---
-title: "Estimate Service Interruption for Role Switching (Database Mirroring) | Microsoft Docs"
-ms.custom: ""
+title: "Estimate service interruption during mirror failover"
+description: Estimate the interruption of service when failover a database mirror from the primary to the secondary role.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "parallel redo [SQL Server]"
   - "role switching [SQL Server]"
   - "database mirroring [SQL Server], queues"
   - "failover [SQL Server], database mirroring"
   - "redo [database mirroring]"
   - "database mirroring [SQL Server], failover"
-ms.assetid: 586a6f25-672b-491b-bc2f-deab2ccda6e2
-caps.latest.revision: 41
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Estimate the Interruption of Service During Role Switching (Database Mirroring)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   During a role switch, the amount of time that database mirroring will be out of service depends on the type of role switching and the cause of the role switch.  
   
 -   For automatic failover, two factors contribute to the time service is interrupted: the time required for the mirror server to recognize that the principal server instance has failed, that is error detection, plus the time required to fail over the database, that is failover time.  
@@ -35,7 +30,7 @@ manager: "jhubbard"
 -   For a manual failover, only the time required to fail over the database after the failover command is issued.  
   
 ## Error detection  
- The time for the system to notice an error depends on the type of error; for example, a network error is noticed almost instantly, while noticing a server hang by default takes 10 seconds, which is the default timeout period.  
+ The time for the system to notice an error depends on the type of error; for example, a network error is noticed almost instantly, while noticing a server that is not responding takes 10 seconds (with the default timeout).  
   
  For information on errors that can cause a failure during a database mirroring session and timeout detection in high-safety mode with automatic failover, see [Possible Failures During Database Mirroring](../../database-engine/database-mirroring/possible-failures-during-database-mirroring.md)).  
   
@@ -51,7 +46,7 @@ manager: "jhubbard"
  Failover time for the database depends on how fast the mirror server can roll forward the log in the redo queue, which, in turn, is determined primarily by the system hardware and the current work load. Potentially, a principal database can become so busy that the principal server ships log to the mirror server much faster than it can roll the log forward. In this situation, failover might take significant time while the mirror server rolls forward the log in the redo queue. To learn the current size of the redo queue, use the **Redo Queue** counter in the database mirroring performance object. For more information, see [SQL Server, Database Mirroring Object](../../relational-databases/performance-monitor/sql-server-database-mirroring-object.md).  
   
 ### Estimating the Failover Redo Rate  
- You can measure the amount of time required to roll forward log records—the *redo rate*—by using a test copy of the production database.  
+ You can measure the amount of time required to roll forward log records-the *redo rate*-by using a test copy of the production database.  
   
  The method for estimating roll forward time during failover depends on the number of threads the mirror server uses during the redo phase. The number of threads depends on the following:  
   

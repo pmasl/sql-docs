@@ -1,24 +1,15 @@
 ---
-title: "getArray Method (int) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getArray Method (int) (SQLServerResultSet)"
+description: "getArray Method (int) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getArray (int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getArray (int)"
 apitype: "Assembly"
-ms.assetid: 377746c7-8c9c-41f5-8490-ca0dd56fd57a
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getArray Method (int) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

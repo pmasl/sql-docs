@@ -1,24 +1,15 @@
 ---
-title: "getSubString Method (SQLServerClob) | Microsoft Docs"
-ms.custom: ""
+title: "getSubString Method (SQLServerClob)"
+description: "getSubString Method (SQLServerClob)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerClob.getSubString"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerClob.getSubString"
 apitype: "Assembly"
-ms.assetid: bf915590-a883-4403-befa-5b5bb42f34d8
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getSubString Method (SQLServerClob)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

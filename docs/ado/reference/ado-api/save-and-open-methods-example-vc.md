@@ -1,29 +1,22 @@
 ---
-title: "Save and Open Methods Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Save and Open Methods Example (VC++)"
+description: "Save and Open Methods Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Save method [ADO], VC++ example"
   - "Open method [ADO]"
-ms.assetid: 334ae655-8cac-48e6-8d00-1d28f3436e1e
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Save and Open Methods Example (VC++)
-These three examples demonstrate how the [Save](../../../ado/reference/ado-api/save-method.md) and **Open** methods can be used together.  
+These three examples demonstrate how the [Save](./save-method.md) and **Open** methods can be used together.  
   
- Assume you are going on a business trip and want to take along a table from a database. Before you go, you access the data as a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) and save it in a transportable form. When you arrive at your destination, you access the **Recordset** as a local, disconnected **Recordset**. You make changes to the **Recordset**, then save it again. Finally, when you return home, you connect to the database again and update it with the changes you made on the road.  
+ Assume you are going on a business trip and want to take along a table from a database. Before you go, you access the data as a [Recordset](./recordset-object-ado.md) and save it in a transportable form. When you arrive at your destination, you access the **Recordset** as a local, disconnected **Recordset**. You make changes to the **Recordset**, then save it again. Finally, when you return home, you connect to the database again and update it with the changes you made on the road.  
   
 ```  
 // BeginSaveCpp.cpp  
@@ -259,6 +252,6 @@ bool FileExists() {
 ```  
   
 ## See Also  
- [Open Method (ADO Recordset)](../../../ado/reference/ado-api/open-method-ado-recordset.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)   
- [Save Method](../../../ado/reference/ado-api/save-method.md)
+ [Open Method (ADO Recordset)](./open-method-ado-recordset.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)   
+ [Save Method](./save-method.md)

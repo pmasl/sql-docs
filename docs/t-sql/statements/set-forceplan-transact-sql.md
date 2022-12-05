@@ -1,35 +1,28 @@
 ---
-title: "SET FORCEPLAN (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "SET FORCEPLAN (Transact-SQL)"
+description: SET FORCEPLAN (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "07/26/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "SET_FORCEPLAN_TSQL"
   - "SET FORCEPLAN"
   - "FORCEPLAN"
   - "FORCEPLAN_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "joins [SQL Server], overriding query optimizer process"
   - "FORCEPLAN option"
   - "SET FORCEPLAN statement"
   - "query optimizer [SQL Server], optimizing process"
   - "overriding query optimizer process"
-ms.assetid: b6c0b08f-2060-4696-9e12-50cb7e674321
-caps.latest.revision: 40
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # SET FORCEPLAN (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   When FORCEPLAN is set to ON, the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] query optimizer processes a join in the same order as the tables appear in the FROM clause of a query. In addition, setting FORCEPLAN to ON forces the use of a nested loop join unless other types of joins are required to construct a plan for the query, or they are requested with join hints or query hints.  
   
@@ -37,12 +30,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 SET FORCEPLAN { ON | OFF }  
 ```  
   
-## Remarks  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Remarks
  SET FORCEPLAN essentially overrides the logic used by the query optimizer to process a [!INCLUDE[tsql](../../includes/tsql-md.md)] SELECT statement. The data returned by the SELECT statement is the same regardless of this setting. The only difference is the way in which [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] processes the tables to satisfy the query.  
   
  Query optimizer hints can also be used in queries to affect how [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] processes the SELECT statement.  
@@ -55,7 +50,7 @@ SET FORCEPLAN { ON | OFF }
 ## Examples  
  The following example performs a join of four tables. The `SHOWPLAN_TEXT` setting is enabled, so [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] returns information about how it is processing the query differently after the `SET FORCE_PLAN` setting is enabled.  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO  
 -- Make sure FORCEPLAN is set to OFF.  

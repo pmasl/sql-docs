@@ -1,33 +1,17 @@
 ---
-title: "DROP MINING MODEL (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "DROP_MINING_MODEL"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "DROP MINING MODEL statement"
-  - "deleting mining models"
-  - "removing mining models"
-  - "dropping mining models"
-  - "mining models [Analysis Services], deleting"
-ms.assetid: 8ff561d0-a526-4712-9fff-11df9f8c45a1
-caps.latest.revision: 33
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "DROP MINING MODEL (DMX)"
+description: "DROP MINING MODEL (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # DROP MINING MODEL (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Deletes a mining model from the database.  
   

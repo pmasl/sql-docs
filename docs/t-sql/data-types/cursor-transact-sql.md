@@ -1,32 +1,25 @@
 ---
-title: "cursor (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "cursor (Transact-SQL)"
+description: "cursor (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "07/23/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: "reference"
+helpviewer_keywords:
   - "cursor data type"
-ms.assetid: fbea16ef-f2cc-4734-9149-ec2598fd3cca
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # cursor (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 A data type for variables or stored procedure OUTPUT parameters that contain a reference to a cursor.
   
 ## Remarks  
 The operations that can reference variables and parameters having a **cursor** data type are:
--   The DECLARE *@local_variable* and SET *@local_variable* statements.  
+-   The DECLARE *\@local_variable* and SET *\@local_variable* statements.  
 -   The OPEN, FETCH, CLOSE, and DEALLOCATE cursor statements.  
 -   Stored procedure output parameters.  
 -   The CURSOR_STATUS function.  

@@ -1,14 +1,11 @@
 ---
-title: "Customize Menus and Shortcut Keys | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Customize Menus and Shortcut Keys"
+title: "Customize Menus and Shortcut Keys"
+ms.custom: seo-lt-2019
+ms.date: 06/03/2020
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQL Server Management Studio [SQL Server], shortcuts"
   - "keyboard shortcuts [SQL Server Management Studio]"
@@ -20,13 +17,15 @@ helpviewer_keywords:
   - "customizing menus [SQL Server]"
   - "accelerator keys"
 ms.assetid: fb4edf3c-71b6-4645-b1d1-ddfdd69f0d7b
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
+ms.reviewer: ""
 ---
+
 # Customize Menus and Shortcut Keys
-A keyboard accelerator allows you to select a menu command or button by pressing ALT+*<single letter>*. For example, to open the **Edit** menu, press ALT+E. You can rearrange and modify toolbar buttons, menus, and menu commands by using the **Customize** dialog box. Instructions are provided for changing the settings using the mouse and using only the keyboard.  
+
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+A keyboard accelerator allows you to select a menu command or button by pressing ALT+*\<single letter>*. For example, to open the **Edit** menu, press ALT+E. You can rearrange and modify toolbar buttons, menus, and menu commands by using the **Customize** dialog box. Instructions are provided for changing the settings using the mouse and using only the keyboard.  
   
 Keyboard accelerators for stored procedures using the Ctrl key can be created from the **Keyboard** page of the **Tools**/**Options** dialog box.  
   
@@ -156,8 +155,7 @@ Keyboard accelerators for stored procedures using the Ctrl key can be created fr
 6.  In the **Customize** dialog box, click **Close**.  
   
 > [!NOTE]  
-> Some commands are available only when [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull_md.md)] is displaying relevant content. If no commands on the menu are available, the menu item will not be available.  
+> Some commands are available only when SQL Server Management Studio is displaying relevant content. If no commands on the menu are available, the menu item will not be available.  
   
 ## See Also  
-[Features in SQL Server Management Studio](../ssms/features-in-sql-server-management-studio.md)  
-  
+[Features in SQL Server Management Studio](./sql-server-management-studio-ssms.md)  

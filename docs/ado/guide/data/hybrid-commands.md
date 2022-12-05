@@ -1,23 +1,16 @@
 ---
-title: "Hybrid Commands | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Hybrid Commands"
+description: "Hybrid Commands"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "shape commands [ADO]"
   - "hybrid commands [ADO]"
   - "data shaping [ADO], hybrid commands"
-ms.assetid: e8ca40e8-459c-40e2-8dd3-3ec6d5ee7b51
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Hybrid Commands
 Hybrid commands are partially parameterized commands. For example:  
@@ -32,6 +25,6 @@ SHAPE {select * from plants}
  The caching behavior for a hybrid command is the same as that of regular parameterized commands.  
   
 ## See Also  
- [Data Shaping Example](../../../ado/guide/data/data-shaping-example.md)   
- [Formal Shape Grammar](../../../ado/guide/data/formal-shape-grammar.md)   
- [Shape Commands in General](../../../ado/guide/data/shape-commands-in-general.md)
+ [Data Shaping Example](./data-shaping-example.md)   
+ [Formal Shape Grammar](./formal-shape-grammar.md)   
+ [Shape Commands in General](./shape-commands-in-general.md)

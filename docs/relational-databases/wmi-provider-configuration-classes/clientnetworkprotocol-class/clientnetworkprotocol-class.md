@@ -1,13 +1,12 @@
 ---
-title: "ClientNetworkProtocol Class | Microsoft Docs"
+description: "ClientNetworkProtocol Class"
+title: "ClientNetworkProtocol Class"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: 
+
 ms.topic: "reference"
 apiname: 
   - "ClientNetworkProtocol Class"
@@ -16,12 +15,11 @@ apilocation:
 helpviewer_keywords: 
   - "ClientNetworkProtocol class"
 ms.assetid: 19ccc16b-0afe-4e28-a7ac-d5ff25b873b6
-caps.latest.revision: 28
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # ClientNetworkProtocol Class
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   The [ClientNetworkProtocol Class](../../../relational-databases/wmi-provider-configuration-classes/clientnetworkprotocol-class/clientnetworkprotocol-class.md) represents network protocols installed on a client instance that allows communication with an instance of [!INCLUDE[msCoName](../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] over a network.  
   
  With the [ClientNetworkProtocol Class](../../../relational-databases/wmi-provider-configuration-classes/clientnetworkprotocol-class/clientnetworkprotocol-class.md), you can perform the following tasks:  

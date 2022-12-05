@@ -1,49 +1,43 @@
 ---
-title: "ORIGINAL_DB_NAME (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "ORIGINAL_DB_NAME (Transact-SQL)"
+description: "ORIGINAL_DB_NAME (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ORIGINAL_DB_NAME"
   - "ORIGINAL_DB_NAME_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ORIGINAL_DB_NAME function"
-ms.assetid: 7dadc40a-1287-4f31-8487-434ee477144d
-caps.latest.revision: 11
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ORIGINAL_DB_NAME (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
-  Returns the database name that is specified by the user in the database connection string. This is the database that is specified by using the **sqlcmd-d** option (USE *database*) or the ODBC data source expression (initial catalog =*databasename*).  
+  Returns the database name specified by the user in the database connection string. This database is specified by using the **sqlcmd-d** option (USE *database*). It can also be specified with the Open Database Connectivity (ODBC) data source expression (initial catalog =*databasename*).  
   
- This database is not the same as the default user database.  
+ This database is different from the default user database.  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 ORIGINAL_DB_NAME ()  
-```  
-  
+```
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
 ## Remarks  
- If the initial database is not specified, the function returns an empty string.  
+ If the initial database isn't specified, the function returns an empty string.  
   
 ## See Also  
  [sqlcmd Utility](../../tools/sqlcmd-utility.md)   
  [osql Utility](../../tools/osql-utility.md)   
- [SQL Server Native Client &#40;ODBC&#41;](../../relational-databases/native-client/odbc/sql-server-native-client-odbc.md)  
+ [SQL Server Native Client (ODBC)](../../relational-databases/native-client/odbc/sql-server-native-client-odbc.md)  
   
   

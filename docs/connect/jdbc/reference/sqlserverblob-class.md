@@ -1,24 +1,15 @@
 ---
-title: "SQLServerBlob Class | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerBlob Class"
+description: "SQLServerBlob Class"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerBlob"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerBlob"
 apitype: "Assembly"
-ms.assetid: 88bd8623-889d-4b5d-99ff-c85b32f3ff5c
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # SQLServerBlob Class
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -39,7 +30,7 @@ public class SQLServerBlob
 ```  
   
 ## Remarks  
- A BLOB is stored in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] as an IMAGE data type.  
+ A BLOB is stored in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] as an IMAGE data type.  
   
 ## See Also  
  [SQLServerBlob Members](../../../connect/jdbc/reference/sqlserverblob-members.md)   

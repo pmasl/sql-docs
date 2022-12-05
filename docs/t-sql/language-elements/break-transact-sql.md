@@ -1,54 +1,72 @@
 ---
-title: "BREAK (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
+title: "BREAK (Transact-SQL)"
+description: "BREAK (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "11/19/2018"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "BREAK"
   - "BREAK_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "exiting innermost loop [SQL Server]"
   - "END keyword"
   - "ignored statements"
   - "BREAK keyword"
-ms.assetid: 67c30b8d-3f15-41ad-b9a9-a4ced3b2af9f
-caps.latest.revision: 34
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # BREAK (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  Exits the innermost loop in a WHILE statement or an IF…ELSE statement inside a WHILE loop. Any statements appearing after the END keyword, marking the end of the loop, are executed. BREAK is frequently, but not always, started by an IF test.  
-  
-## Examples  
-  
-```  
--- Uses AdventureWorks  
-  
-WHILE ((SELECT AVG(ListPrice) FROM dbo.DimProduct) < $300)  
-BEGIN  
-    UPDATE DimProduct  
-        SET ListPrice = ListPrice * 2;  
-     IF ((SELECT MAX(ListPrice) FROM dbo.DimProduct) > $500)  
-         BREAK;  
-END  
-```  
-  
-## See Also  
- [Control-of-Flow Language &#40;Transact-SQL&#41;](~/t-sql/language-elements/control-of-flow.md)   
- [WHILE &#40;Transact-SQL&#41;](../../t-sql/language-elements/while-transact-sql.md)   
- [IF...ELSE &#40;Transact-SQL&#41;](../../t-sql/language-elements/if-else-transact-sql.md)  
-  
-  
+BREAK exits the current WHILE loop. If the current WHILE loop is nested inside another, BREAK exits only the current loop, and control is given to the next statement in the outer loop.
 
+BREAK is usually inside an IF statement.
+
+## Examples
+
+### Example for SQL Server
+```sql
+WHILE (1=1)
+BEGIN
+   IF EXISTS (SELECT * FROM ##MyTempTable WHERE EventCode = 'Done')
+   BEGIN
+      BREAK;  -- 'Done' row has finally been inserted and detected, so end this loop.
+   END
+
+   PRINT N'The other process is not yet done.';  -- Re-confirm the non-done status to the console.
+   WAITFOR DELAY '00:01:30';  -- Sleep for 90 seconds.
+END
+```
+
+### Example for Azure Synapse Dedicated SQL Pool
+```sql
+declare @sleeptimesec int = 5;
+declare @startingtime datetime2 = getdate();
+
+PRINT N'Sleeping for ' + cast(@sleeptimesec as varchar(5)) + ' seconds'
+WHILE (1=1)
+BEGIN
+  
+	PRINT N'Sleeping.';  
+	print datediff(s, getdate(),  @startingtime)
+
+	if datediff(s, getdate(),  @startingtime) < -@sleeptimesec
+		begin
+			print 'We have finished waiting.'
+			break;
+		end
+END
+```
+
+## See Also
+
+- [Control-of-Flow Language &#40;Transact-SQL&#41;](~/t-sql/language-elements/control-of-flow.md)
+- [WHILE &#40;Transact-SQL&#41;](../../t-sql/language-elements/while-transact-sql.md)
+- [IF...ELSE &#40;Transact-SQL&#41;](../../t-sql/language-elements/if-else-transact-sql.md)
 

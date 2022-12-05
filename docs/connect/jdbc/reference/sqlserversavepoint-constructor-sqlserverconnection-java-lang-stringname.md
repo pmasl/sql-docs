@@ -1,24 +1,15 @@
 ---
-title: "SQLServerSavepoint Constructor - savepoint | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerSavepoint Constructor - savepoint"
+description: "SQLServerSavepoint Constructor (SQLServerConnection, java.lang.StringName)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection, java.lang.StringName.SQLServerSavepoint"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection, java.lang.StringName.SQLServerSavepoint"
 apitype: "Assembly"
-ms.assetid: fb77db6b-ebf8-4b12-8153-2c4bdb8d72f7
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # SQLServerSavepoint Constructor (SQLServerConnection, java.lang.StringName)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,23 +1,16 @@
 ---
-title: "ConvertToString Method Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ConvertToString Method Example (VB)"
+description: "ConvertToString Method Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "ConvertToString method [ADO], Visual Basic example"
-ms.assetid: 31731e4f-3c0c-451e-8cbc-c9df28fabf6c
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # ConvertToString Method Example (VB)
 ```  
@@ -46,7 +39,7 @@ Public Sub Main()
      ' Create a DataSpace object  
     Set rdsDS = New RDS.DataSpace  
      ' Create a DataFactory object  
-    Set rdsDF = rdsDS.CreateObject("RDSServer.DataFactory", "http://MyServer") 'MyServer  
+    Set rdsDF = rdsDS.CreateObject("RDSServer.DataFactory", "https://MyServer") 'MyServer  
   
      ' Get all of the Author records  
   
@@ -97,5 +90,5 @@ End Sub
 ```  
   
 ## See Also  
- [ConvertToString Method (RDS)](../../../ado/reference/rds-api/converttostring-method-rds.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [ConvertToString Method (RDS)](../rds-api/converttostring-method-rds.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

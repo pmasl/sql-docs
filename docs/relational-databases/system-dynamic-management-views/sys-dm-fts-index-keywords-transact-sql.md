@@ -1,33 +1,27 @@
 ---
-title: "sys.dm_fts_index_keywords (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_fts_index_keywords (Transact-SQL)"
+description: sys.dm_fts_index_keywords (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_fts_index_keywords"
   - "sys.dm_fts_index_keywords"
   - "sys.dm_fts_index_keywords_TSQL"
   - "dm_fts_index_keywords_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_fts_index_keywords dynamic management function"
   - "full-text search [SQL Server], viewing keywords"
   - "troubleshooting [SQL Server], full-text search"
+dev_langs:
+  - "TSQL"
 ms.assetid: fce7b2a1-7e74-4769-86a8-c77c7628decd
-caps.latest.revision: 21
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
 ---
 # sys.dm_fts_index_keywords (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns information about the content of a full-text index for the specified table.  
   
@@ -35,10 +29,6 @@ manager: "jhubbard"
   
 > [!NOTE]  
 >  To view lower-level full-text index information, use the [sys.dm_fts_index_keywords_by_document](../../relational-databases/system-dynamic-management-views/sys-dm-fts-index-keywords-by-document-transact-sql.md) dynamic management function at the document level.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
 ## Syntax  
   

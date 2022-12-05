@@ -1,29 +1,29 @@
 ---
+description: "catalog.clear_object_parameter_value (SSISDB Database)"
 title: "catalog.clear_object_parameter_value (SSISDB Database) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "language-reference"
 ms.assetid: dcbbb714-a051-4805-9e2b-2c2fb647c890
-caps.latest.revision: 19
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # catalog.clear_object_parameter_value (SSISDB Database)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Clears the value of a parameter for an existing [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] project or package that is stored on the server.  
   
 ## Syntax  
   
-```tsql  
-clear_object_parameter [ @folder_name = ] folder_name   
+```sql  
+catalog.clear_object_parameter [ @folder_name = ] folder_name   
     , [ @project_name = ] project_name   
     , [ @object_type = ] object_type   
     , [ @object_name = ] object_name   
@@ -31,19 +31,19 @@ clear_object_parameter [ @folder_name = ] folder_name
 ```  
   
 ## Arguments  
- [ @folder_name = ] *folder_name*  
+ [ \@folder_name = ] *folder_name*  
  The name of the folder that contains the project. The *folder_name* is **nvarchar(128)**.  
   
- [ @project_name = ] *project_name*  
+ [ \@project_name = ] *project_name*  
  The name of project. The *project_name* is **nvarchar(128)**.  
   
- [ @object_type = ] *object_type*  
+ [ \@object_type = ] *object_type*  
  The type of object. Valid values include `20` for a project and `30` for a package. The *object_type* is **smallInt**.  
   
- [ @ object _name = ] *object _name*  
+ [ \@ object _name = ] *object _name*  
  The name of the package. The *object _name* is **nvarchar(260)**.  
   
- [ @parameter_ name = ] *parameter_name*  
+ [ \@parameter_ name = ] *parameter_name*  
  The name of the parameter. The *parameter_ name* is **nvarchar(128)**.  
   
 ## Return Code Value  

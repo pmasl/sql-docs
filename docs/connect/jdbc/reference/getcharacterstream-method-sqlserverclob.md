@@ -1,19 +1,12 @@
 ---
-title: "getCharacterStream Method (SQLServerClob) | Microsoft Docs"
-ms.custom: ""
+title: "getCharacterStream Method (SQLServerClob)"
+description: "getCharacterStream Method (SQLServerClob)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3d9bb5b0-f943-4463-99e3-cc7178a2fb1e
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getCharacterStream Method (SQLServerClob)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

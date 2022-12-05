@@ -1,24 +1,18 @@
 ---
-title: "DROP EXTERNAL DATA SOURCE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP EXTERNAL DATA SOURCE (Transact-SQL)"
+description: DROP EXTERNAL DATA SOURCE (Transact-SQL)
+author: markingmyname
+ms.author: maghan
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+dev_langs:
   - "TSQL"
-ms.assetid: 3f65a2f5-a6c6-4be5-8ca4-6057078fe10e
-caps.latest.revision: 14
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # DROP EXTERNAL DATA SOURCE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-ss2016-xxxx-asdw-pdw-md.md)]
+[!INCLUDE [sqlserver2016-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdbmi-asa-pdw.md)]
 
   Removes a PolyBase external data source.  
   
@@ -26,9 +20,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql
 -- Drop an external data source  
 DROP EXTERNAL DATA SOURCE external_data_source_name  
 [;]  
@@ -41,7 +33,7 @@ DROP EXTERNAL DATA SOURCE external_data_source_name
 ## Metadata  
  To view a list of external data sources use the sys.external_data_sources system view.  
   
-```  
+```sql  
 SELECT * FROM sys.external_data_sources;  
 ```  
   
@@ -58,15 +50,7 @@ SELECT * FROM sys.external_data_sources;
   
 ### A. Using basic syntax  
   
-```  
-DROP EXTERNAL DATA SOURCE mydatasource;  
-```  
-  
-## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
-  
-### B. Using basic syntax  
-  
-```  
+```sql  
 DROP EXTERNAL DATA SOURCE mydatasource;  
 ```  
   

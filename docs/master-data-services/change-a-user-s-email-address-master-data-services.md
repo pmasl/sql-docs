@@ -1,23 +1,22 @@
 ---
-title: "Change a User&#39;s Email Address (Master Data Services) | Microsoft Docs"
+description: "Change a User's Email Address (Master Data Services)"
+title: Change a User's Email Address
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "users [Master Data Services], changing e-mail address"
 ms.assetid: 721277fd-84f0-41aa-8f2d-bc13a7221044
-caps.latest.revision: 7
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
-# Change a User&#39;s Email Address (Master Data Services)
+# Change a User's Email Address (Master Data Services)
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   In [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)], you can change the email address that notifications are sent to, and the default format of notification emails.  
   
 ## Prerequisites  

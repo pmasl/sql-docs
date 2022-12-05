@@ -1,24 +1,15 @@
 ---
-title: "prepareCall Method (java.lang.String, int, int, int) | Microsoft Docs"
-ms.custom: ""
+title: "prepareCall Method (java.lang.String, int, int, int)"
+description: "prepareCall Method (java.lang.String, int, int, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.prepareCall (java.lang.String, int, int, int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.prepareCall (java.lang.String, int, int, int)"
 apitype: "Assembly"
-ms.assetid: 81104fd5-75b0-4540-9f48-c3dbf59a8564
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # prepareCall Method (java.lang.String, int, int, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,26 +1,19 @@
 ---
-title: "Prepared Property Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Prepared Property Example (VC++)"
+description: "Prepared Property Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Prepared property [ADO], VC++ example"
-ms.assetid: f697ac1a-f125-42b5-bbf6-762a7fa30ae3
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Prepared Property Example (VC++)
-This example demonstrates the [Prepared](../../../ado/reference/ado-api/prepared-property-ado.md) property by opening two [Command](../../../ado/reference/ado-api/command-object-ado.md) objects — one prepared and one not prepared.  
+This example demonstrates the [Prepared](./prepared-property-ado.md) property by opening two [Command](./command-object-ado.md) objects - one prepared and one not prepared.  
   
 ## Example  
   
@@ -142,5 +135,5 @@ void PrintComError(_com_error &e) {
 **Not Prepared:  0.016 seconds**  
 **Prepared:      0.016 seconds**   
 ## See Also  
- [Command Object (ADO)](../../../ado/reference/ado-api/command-object-ado.md)   
- [Prepared Property (ADO)](../../../ado/reference/ado-api/prepared-property-ado.md)
+ [Command Object (ADO)](./command-object-ado.md)   
+ [Prepared Property (ADO)](./prepared-property-ado.md)

@@ -1,31 +1,23 @@
 ---
-title: "MSsubscriber_info (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSsubscriber_info (Transact-SQL)"
+description: MSsubscriber_info (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSsubscriber_info_TSQL"
   - "MSsubscriber_info"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSsubscriber_info system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 5ca22f41-6020-4f72-8110-e69baf3447cb
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSsubscriber_info (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSsubscriber_info** table contains one row for each Publisher/Subscriber pair that is being pushed subscriptions from the local Distributor. This table is stored in the distribution database.  
   

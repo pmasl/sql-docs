@@ -1,13 +1,11 @@
 ---
-title: "StartMode Property (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "StartMode Property (SqlService Class)"
+title: "StartMode Property (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "StartMode Property (SqlService Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "StartMode property"
 ms.assetid: c0c2c7f8-d4ae-44f2-ad8e-aecfcb7c2878
-caps.latest.revision: 36
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # StartMode Property (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the start mode of the service.  
   
 ## Syntax  
@@ -59,6 +56,6 @@ object.StartMode [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

@@ -1,13 +1,11 @@
 ---
-title: "PropertyName Property (SqlServiceAdvancedProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "PropertyName Property (SqlServiceAdvancedProperty Class)"
+title: "PropertyName Property (SqlServiceAdvancedProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "PropertyName Property (SqlServiceAdvancedProperty Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "PropertyName property"
 ms.assetid: e51d3475-e998-47f3-837b-4b4bd7635dcb
-caps.latest.revision: 32
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # PropertyName Property (SqlServiceAdvancedProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets or sets the name of an advanced property.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.PropertyName [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

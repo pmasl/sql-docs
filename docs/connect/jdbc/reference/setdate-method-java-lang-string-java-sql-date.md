@@ -1,24 +1,15 @@
 ---
-title: "setDate Method setDate Method to date value - string | Microsoft Docs"
-ms.custom: ""
+title: "setDate Method setDate Method to date value - string"
+description: "setDate Method setDate Method to date value - string"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.setDate (java.lang.String, java.sql.Date)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.setDate (java.lang.String, java.sql.Date)"
 apitype: "Assembly"
-ms.assetid: 4762e2bd-5e94-4562-97d5-f023ecffc08c
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setDate Method (java.lang.String, java.sql.Date)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,14 +1,12 @@
 ---
-title: "Restore a Differential Database Backup (SQL Server) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+title: "Restore database: differential"
+description: This article describes how to restore a differential database backup in SQL Server by using SQL Server Management Studio or Transact-SQL.
+ms.custom: seo-lt-2019
+ms.date: "12/17/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-backup-restore"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: backup-restore
+ms.topic: conceptual
 helpviewer_keywords: 
   - "full differential backups [SQL Server]"
   - "restoring databases [SQL Server], full differential backups"
@@ -16,15 +14,13 @@ helpviewer_keywords:
   - "database restores [SQL Server], full differential backups"
   - "backing up databases [SQL Server], full differential backups"
 ms.assetid: 0dd971a4-ee38-4dd3-9f30-ef77fc58dd11
-caps.latest.revision: 46
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
-# Restore a Differential Database Backup (SQL Server)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# Restore a differential database backup (SQL Server)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  This topic describes how to restore a differential database backup in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
+  This topic describes how to restore a differential database backup in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
   
  **In This Topic**  
   
@@ -52,7 +48,7 @@ manager: "jhubbard"
   
 -   Backups that are created by more recent version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] cannot be restored in earlier versions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
--   In [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], you can restore a user database from a database backup that was created by using [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] or a later version.  
+-   In [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], you can restore a user database from a database backup that was created by using [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] or a later version.  
   
 ###  <a name="Prerequisites"></a> Prerequisites  
   
@@ -131,7 +127,7 @@ manager: "jhubbard"
   
 11. Optionally, use the **Files** page to restore the database to a new location. For help with moving a database, see [Restore a Database to a New Location &#40;SQL Server&#41;](../../relational-databases/backup-restore/restore-a-database-to-a-new-location-sql-server.md).  
   
-12. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+12. Select **OK**.
   
 ##  <a name="TsqlProcedure"></a> Using Transact-SQL  
   
@@ -154,7 +150,7 @@ manager: "jhubbard"
 #### A. Restoring a differential database backup  
  This example restores a database and differential database backup of the `MyAdvWorks` database.  
   
-```tsql  
+```sql  
 -- Assume the database is lost, and restore full database,   
 -- specifying the original full database backup and NORECOVERY,   
 -- which allows subsequent restore operations to proceed.  
@@ -174,7 +170,7 @@ GO
 #### B. Restoring a database, differential database, and transaction log backup  
  This example restores a database, differential database, and transaction log backup of the `MyAdvWorks` database.  
   
-```tsql  
+```sql  
 -- Assume the database is lost at this point. Now restore the full   
 -- database. Specify the original full database backup and NORECOVERY.  
 -- NORECOVERY allows subsequent restore operations to proceed.  

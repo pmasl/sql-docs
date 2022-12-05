@@ -1,24 +1,24 @@
 ---
+description: "FLOOR (SSIS Expression)"
 title: "FLOOR (SSIS Expression) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "largest integer less than or equal to expression"
   - "FLOOR function [SSIS]"
 ms.assetid: 168084db-badd-40f2-87b4-1f5bc45c3e24
-caps.latest.revision: 33
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # FLOOR (SSIS Expression)
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Returns the largest integer that is less than or equal to a numeric expression.  
   
 ## Syntax  

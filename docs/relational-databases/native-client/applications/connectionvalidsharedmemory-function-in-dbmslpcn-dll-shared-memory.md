@@ -1,22 +1,22 @@
 ---
-title: "ConnectionValidSharedMemory function in dbmslpcn.dll Shared Memory | Microsoft Docs"
+description: "ConnectionValidSharedMemory function in dbmslpcn.dll Shared Memory"
+title: "ConnectionValidSharedMemory dbmslpcn.dll"
 ms.custom: ""
 ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 ms.assetid: 6ae35826-7d75-4542-b686-5f79316b6157
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # ConnectionValidSharedMemory function in dbmslpcn.dll Shared Memory
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+> [!IMPORTANT] 
+> [!INCLUDE[snac-removed-oledb-and-odbc](../../../includes/snac-removed-oledb-and-odbc.md)]
 
   The function determines whether SQL Server Shared Memory is installed and active.  
   

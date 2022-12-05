@@ -1,26 +1,19 @@
 ---
-title: "MaxRecords Property Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "MaxRecords Property Example (VC++)"
+description: "MaxRecords Property Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "MaxRecords property [ADO], VC++ example"
-ms.assetid: af6b399b-e546-4de5-9cd1-5a6e0ec7ddc7
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # MaxRecords Property Example (VC++)
-This example uses the [MaxRecords](../../../ado/reference/ado-api/maxrecords-property-ado.md) property to open a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) containing the 10 most expensive titles in the ***Titles*** table.  
+This example uses the [MaxRecords](./maxrecords-property-ado.md) property to open a [Recordset](./recordset-object-ado.md) containing the 10 most expensive titles in the ***Titles*** table.  
   
 ## Example  
   
@@ -175,5 +168,5 @@ void PrintComError(_com_error &e) {
 **Sushi, Anyone? ---   14.99**  
 **Fifty Years in Buckingham Palace Kitchens ---   11.95**   
 ## See Also  
- [MaxRecords Property (ADO)](../../../ado/reference/ado-api/maxrecords-property-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [MaxRecords Property (ADO)](./maxrecords-property-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

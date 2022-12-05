@@ -1,29 +1,29 @@
 ---
+description: "catalog.get_parameter_values (SSISDB Database)"
 title: "catalog.get_parameter_values (SSISDB Database) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "language-reference"
 ms.assetid: 5b1aeaf7-c938-4aef-bafc-e4d7a82eb578
-caps.latest.revision: 13
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # catalog.get_parameter_values (SSISDB Database)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Resolves and retrieves the default parameter values from a project and corresponding packages in the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] catalog.  
   
 ## Syntax  
   
-```tsql  
-get_parameter_values [ @folder_name = ] folder_name  
+```sql  
+catalog.get_parameter_values [ @folder_name = ] folder_name  
      , [ @project_name = ] project_name  
      , [ @package_name = ] package_name  
   [  , [ @reference_id = ] reference_id  ]  
@@ -38,7 +38,7 @@ get_parameter_values [ @folder_name = ] folder_name
  The name of the project where the parameters resides. The *project_name* is **nvarchar(128)**.  
   
  [ @package_name = ] *package_name*  
- The name of the package. Specify the package name to retrieve all project parameters and the parameters from a specific package. Use NULL to retrieve all project parameters and the parameters from all packages. The *package_name* is **nvarchar(260)**.  
+ The name of the package. Specify the package name to retrieve all project parameters and the parameters from a specific package. The *package_name* is **nvarchar(260)**.  
   
  [ @reference_id = ] *reference_id*  
  The unique identifier of an environment reference. This parameter is optional. The *reference_id* is **bigint**.  

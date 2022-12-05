@@ -1,31 +1,23 @@
 ---
-title: "MSmerge_identity_range (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSmerge_identity_range (Transact-SQL)"
+description: MSmerge_identity_range (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSmerge_identity_range_TSQL"
   - "MSmerge_identity_range"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSmerge_identity_range system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 493a2028-88a0-4e83-ad89-ae5661d9f477
-caps.latest.revision: 21
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSmerge_identity_range (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSmerge_identity_range** table is used to track the numeric ranges assigned to identity columns for subscription to publications on which replication is automatically managing these range assignments. This table is stored in the publication and subscription databases.  
   

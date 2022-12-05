@@ -1,30 +1,22 @@
 ---
-title: "Compound Operators (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+title: "Compound Operators (Transact-SQL)"
+description: "Compound Operators (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server (starting with 2008)"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.date: "03/14/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+helpviewer_keywords:
   - "compound operators"
   - "compound operators, described"
-ms.assetid: 5072fe91-02d3-42a7-831f-756eff714a17
-caps.latest.revision: 9
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # Compound Operators (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Compound operators execute some operation and set an original value to the result of the operation. For example, if a variable @x equals 35, then @x += 2 takes the original value of @x, add 2 and sets @x to that new value (37).  
   
@@ -32,23 +24,24 @@ manager: "jhubbard"
   
 |Operator|Link to more information|Action|  
 |--------------|------------------------------|------------|  
-|+=|[+= &#40;Add EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/add-equals-transact-sql.md)|Adds some amount to the original value and sets the original value to the result.|  
-|-=|[-= &#40;Subtract EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/subtract-equals-transact-sql.md)|Subtracts some amount from the original value and sets the original value to the result.|  
-|*=|[&#42;= &#40;Multiply EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/multiply-equals-transact-sql.md)|Multiplies by an amount and sets the original value to the result.|  
-|/=|[&#40;Divide EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/divide-equals-transact-sql.md)|Divides by an amount and sets the original value to the result.|  
-|%=|[Modulo EQUALS &#40;Transact-SQL&#41;](../../t-sql/language-elements/modulo-equals-transact-sql.md)|Divides by an amount and sets the original value to the modulo.|  
-|&=|[&= &#40;Bitwise AND EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/bitwise-and-equals-transact-sql.md)|Performs a bitwise AND and sets the original value to the result.|  
-|^=|[^= &#40;Bitwise Exclusive OR EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/bitwise-exclusive-or-equals-transact-sql.md)|Performs a bitwise exclusive OR and sets the original value to the result.|  
-|&#124;=|[&#124;= &#40;Bitwise OR EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/bitwise-or-equals-transact-sql.md)|Performs a bitwise OR and sets the original value to the result.|  
+|+=|[+= &#40;Add Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/add-equals-transact-sql.md)|Adds some amount to the original value and sets the original value to the result.|  
+|-=|[-= &#40;Subtract Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/subtract-equals-transact-sql.md)|Subtracts some amount from the original value and sets the original value to the result.|  
+|*=|[&#42;= &#40;Multiply Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/multiply-equals-transact-sql.md)|Multiplies by an amount and sets the original value to the result.|  
+|/=|[&#40;Divide Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/divide-equals-transact-sql.md)|Divides by an amount and sets the original value to the result.|  
+|%=|[Modulus Assignment &#40;Transact-SQL&#41;](../../t-sql/language-elements/modulo-equals-transact-sql.md)|Divides by an amount and sets the original value to the modulo.|  
+|&=|[&= &#40;Bitwise AND Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/bitwise-and-equals-transact-sql.md)|Performs a bitwise AND and sets the original value to the result.|  
+|^=|[^= &#40;Bitwise Exclusive OR Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/bitwise-exclusive-or-equals-transact-sql.md)|Performs a bitwise exclusive OR and sets the original value to the result.|  
+|&#124;=|[&#124;= &#40;Bitwise OR Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/bitwise-or-equals-transact-sql.md)|Performs a bitwise OR and sets the original value to the result.|  
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 expression operator expression  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *expression*  
  Is any valid [expression](../../t-sql/language-elements/expressions-transact-sql.md) of any one of the data types in the numeric category.  
   
@@ -61,39 +54,38 @@ expression operator expression
 ## Examples  
  The following examples demonstrate compound operations.  
   
-```  
-DECLARE @x1 int = 27;  
+```sql  
+DECLARE @x1 INT = 27;  
 SET @x1 += 2 ;  
 SELECT @x1 AS Added_2;  
   
-DECLARE @x2 int = 27;  
+DECLARE @x2 INT = 27;  
 SET @x2 -= 2 ;  
 SELECT @x2 AS Subtracted_2;  
   
-DECLARE @x3 int = 27;  
+DECLARE @x3 INT = 27;  
 SET @x3 *= 2 ;  
 SELECT @x3 AS Multiplied_by_2;  
   
-DECLARE @x4 int = 27;  
+DECLARE @x4 INT = 27;  
 SET @x4 /= 2 ;  
 SELECT @x4 AS Divided_by_2;  
   
-DECLARE @x5 int = 27;  
+DECLARE @x5 INT = 27;  
 SET @x5 %= 2 ;  
 SELECT @x5 AS Modulo_of_27_divided_by_2;  
   
-DECLARE @x6 int = 9;  
+DECLARE @x6 INT = 9;  
 SET @x6 &= 13 ;  
 SELECT @x6 AS Bitwise_AND;  
   
-DECLARE @x7 int = 27;  
+DECLARE @x7 INT = 27;  
 SET @x7 ^= 2 ;  
 SELECT @x7 AS Bitwise_Exclusive_OR;  
   
-DECLARE @x8 int = 27;  
+DECLARE @x8 INT = 27;  
 SET @x8 |= 2 ;  
 SELECT @x8 AS Bitwise_OR;  
-  
 ```  
   
 ## See Also  

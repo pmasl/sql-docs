@@ -1,29 +1,17 @@
 ---
-title: "ClusterProbability (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "ClusterProbability"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "ClusterProbability function"
-ms.assetid: a6447b3c-94ce-4122-a3eb-6f3827598d8f
-caps.latest.revision: 35
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "ClusterProbability (DMX)"
+description: "ClusterProbability (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # ClusterProbability (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Returns the probability that the input case belongs to the specified cluster.  
   
@@ -47,7 +35,7 @@ ClusterProbability([<Node_Caption>])
 SELECT NODE_CAPTION FROM <model>.CONTENT  
 ```  
   
- For more information about using this syntax, see [SELECT FROM &#60;model&#62;.CONTENT &#40;DMX&#41;](../dmx/select-from-model-content-dmx.md). For more information about the mining model content schema rowset, see [DMSCHEMA_MINING_MODEL_CONTENT Rowset](../analysis-services/schema-rowsets/data-mining/dmschema-mining-model-content-rowset.md).  
+ For more information about using this syntax, see [SELECT FROM &#60;model&#62;.CONTENT &#40;DMX&#41;](../dmx/select-from-model-content-dmx.md). For more information about the mining model content schema rowset, see [DMSCHEMA_MINING_MODEL_CONTENT Rowset](/previous-versions/sql/sql-server-2012/ms126267(v=sql.110)).  
   
  If a \<node caption> is not specified, the function returns the probability that the input cases belong to the most likely cluster. Use the **Cluster** function to return the most likely cluster.  
   
@@ -72,5 +60,4 @@ NATURAL PREDICTION JOIN
  [Data Mining Extensions &#40;DMX&#41; Function Reference](../dmx/data-mining-extensions-dmx-function-reference.md)   
  [Functions &#40;DMX&#41;](../dmx/functions-dmx.md)   
  [General Prediction Functions &#40;DMX&#41;](../dmx/general-prediction-functions-dmx.md)  
-  
   

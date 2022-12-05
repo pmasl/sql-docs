@@ -1,14 +1,12 @@
 ---
+description: "sys.sp_drop_trusted_assembly (Transact-SQL)"
 title: "sys.sp_drop_trusted_assembly (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_drop_trusted_assembly_TSQL"
   - "sp_drop_trusted_assembly"
@@ -19,15 +17,14 @@ dev_langs:
 helpviewer_keywords: 
   - "sys.sp_drop_trusted_assembly"
 ms.assetid: 
-caps.latest.revision: 
-author: "tmullaney"
-ms.author: "thmullan;rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
+monikerRange: ">=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.sp_drop_trusted_assembly (Transact-SQL)  
-[!INCLUDE[tsql-appliesto-ssvnxt-xxxx-xxxx-xxx](../../includes/tsql-appliesto-ssvnxt-xxxx-xxxx-xxx.md)]
+[!INCLUDE[SQL Server 2017](../../includes/applies-to-version/sqlserver2017.md)]
 
-Adds an assembly to the list of trusted assemblies for the server.
+Drops an assembly from the list of trusted assemblies on the server.
 
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
 
@@ -41,7 +38,7 @@ sp_drop_trusted_assembly
 ## Arguments
 
 [ @hash = ] '*value*'  
-The SHA2_512 hash value of the assembly to add to the list of trusted assemblies for the server. Trusted assemblies may load when clr strict security is enabled, even if the assembly is unsigned or the database is not marked as trustworthy.
+The SHA2_512 hash value of the assembly to drop from the list of trusted assemblies for the server. Trusted assemblies may load when clr strict security is enabled, even if the assembly is unsigned or the database is not marked as trustworthy.
 
 ## Remarks  
 

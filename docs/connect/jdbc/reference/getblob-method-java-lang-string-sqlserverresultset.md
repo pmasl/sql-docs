@@ -1,24 +1,15 @@
 ---
-title: "getBlob Method (java.lang.String) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getBlob Method (java.lang.String) (SQLServerResultSet)"
+description: "getBlob Method (java.lang.String) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getBlob (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getBlob (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: 9f730d45-b54a-4961-950e-f4447f7225e1
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getBlob Method (java.lang.String) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

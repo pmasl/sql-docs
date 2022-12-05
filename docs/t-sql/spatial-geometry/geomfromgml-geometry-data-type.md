@@ -1,14 +1,9 @@
 ---
-title: "GeomFromGml (geometry Data Type) | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+title: GeomFromGml (geometry Data Type)
+description: "GeomFromGml (geometry Data Type)"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "GeomFromGML_TSQL"
   - "GeomFromGML"
@@ -16,20 +11,22 @@ dev_langs:
   - "TSQL"
 helpviewer_keywords: 
   - "GeomFromGML (geometry Data Type)"
-ms.assetid: a3f2c84b-a49f-4ce3-ba25-b903fb0c99b4
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "08/03/2017"
 ---
+
 # GeomFromGml (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Construct a **geometry** instance given a representation in the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] subset of the Geography Markup Language (GML).
   
 For more information on the Geography Markup Language, see the following Open Geospatial Consortium Specifications:
   
-[OGC Specifications, Geography Markup Language](http://go.microsoft.com/fwlink/?LinkId=93629)
+[OGC Specifications, Geography Markup Language](https://go.microsoft.com/fwlink/?LinkId=93629)
   
 ## Syntax  
   
@@ -38,7 +35,9 @@ For more information on the Geography Markup Language, see the following Open Ge
 GeomFromGml ( GML_input, SRID )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *GML_input*  
  Is an XML input from which the GML will return a value.  
   
@@ -56,10 +55,10 @@ GeomFromGml ( GML_input, SRID )
 ## Examples  
  The following example uses `GeomFromGml()` to create a `geometry` instance.  
   
-```  
+```sql
 DECLARE @g geometry;  
 DECLARE @x xml;  
-SET @x = '<LineString xmlns="http://www.opengis.net/gml"> <posList>100 100 20 180 180 180</posList> </LineString>';  
+SET @x = '<LineString xmlns="https://www.opengis.net/gml"> <posList>100 100 20 180 180 180</posList> </LineString>';  
 SET @g = geometry::GeomFromGml(@x, 0);  
 SELECT @g.ToString();  
 ```  

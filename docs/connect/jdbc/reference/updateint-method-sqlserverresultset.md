@@ -1,24 +1,15 @@
 ---
-title: "updateInt Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "updateInt Method (SQLServerResultSet)"
+description: "updateInt Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateInt"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateInt"
 apitype: "Assembly"
-ms.assetid: 2bb0319e-12cb-4604-a7e3-b22a24b02296
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateInt Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

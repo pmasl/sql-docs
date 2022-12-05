@@ -1,22 +1,18 @@
 ---
+description: "SQLColAttributes (Text File Driver)"
 title: "SQLColAttributes (Text File Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "text file driver [ODBC], SQLColAttributes"
   - "SQLColAttribute function [ODBC], Text File Driver"
 ms.assetid: 132fd1c0-1921-4a7d-910e-aedf1bff5453
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLColAttributes (Text File Driver)
 > [!NOTE]  

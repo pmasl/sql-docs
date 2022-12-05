@@ -1,28 +1,21 @@
 ---
-title: "Execute21 Method (RDS) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Execute21 Method (RDS)"
+description: "Execute21 Method (RDS)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Execute21 method [RDS]"
-ms.assetid: 9f131c8d-1497-416d-8209-abb481c38f7b
-caps.latest.revision: 17
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Execute21 Method (RDS)
 Executes the request and creates an ADO recordset for use in ADO 2.1.  
   
 > [!IMPORTANT]
->  Beginning with Windows 8 and Windows Server 2012, RDS server components are no longer included in the Windows operating system (see Windows 8 and [Windows Server 2012 Compatibility Cookbook](https://www.microsoft.com/en-us/download/details.aspx?id=27416) for more detail). RDS client components will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Applications that use RDS should migrate to [WCF Data Service](http://go.microsoft.com/fwlink/?LinkId=199565).  
+>  Beginning with Windows 8 and Windows Server 2012, RDS server components are no longer included in the Windows operating system (see Windows 8 and [Windows Server 2012 Compatibility Cookbook](https://www.microsoft.com/download/details.aspx?id=27416) for more detail). RDS client components will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Applications that use RDS should migrate to [WCF Data Service](/dotnet/framework/wcf/).  
   
 ## Syntax  
   
@@ -39,7 +32,7 @@ object.Execute21(ConnectionString As String, HandlerString As String, QueryStrin
  The string identifies the handler to be used with this execution. The string contains two parts. The first part contains the name (ProgID) of the handler to be used. The second part of the string contains arguments to be passed to the handler. How the arguments string is interpreted is handler specific. The two parts are separated by the first instance of a comma in the string (although the arguments string can contain additional commas). The arguments are optional.  
   
  *QueryString*  
- A command in the command language supported by the OLE DB provider identified in the connection string. For SQL-based providers, it might contain a [!INCLUDE[tsql](../../../includes/tsql_md.md)] command statement, but for non-SQL providers (for example, MSDataShape) this may not be a [!INCLUDE[tsql](../../../includes/tsql_md.md)] query statement.  
+ A command in the command language supported by the OLE DB provider identified in the connection string. For SQL-based providers, it might contain a [!INCLUDE[tsql](../../../includes/tsql-md.md)] command statement, but for non-SQL providers (for example, MSDataShape) this may not be a [!INCLUDE[tsql](../../../includes/tsql-md.md)] query statement.  
   
  Also, if a handler is being used (and it is highly recommended that a handler be used), the handler can alter or replace the value specified here. For example, the handler typically replaces *QueryString* with a query string from its .ini file. By default, the Msdfmap.ini file is used.  
   
@@ -71,9 +64,7 @@ object.Execute21(ConnectionString As String, HandlerString As String, QueryStrin
  The *HandlerString* parameter may be null. What occurs in this case depends on how the RDS server is configured. A handler string of "MSDFMAP.handler" indicates that the Microsoft supplied handler (Msdfmap.dll) should be used. A handler string of "MASDFMAP.handler,sample.ini" indicates that the Msdfmap.dll handler should be used and that the argument "sample.ini" should be passed to the handler. MSDFMAP.dll will interpret the argument as a direction to use the sample.ini to check the connection and query strings.  
   
 > [!NOTE]
->  The **Execute21** method is a version of the [Execute method (RDS)](../../../ado/reference/rds-api/execute-method-rds.md). Where you need to use the **Execute** method to communicate with ADO 2.1, the **Execute21** method can be called instead. The capabilities of the **Execute** method in ADO 2.5 and later are a superset of the capabilities provided for the same method in ADO 2.1.  
+>  The **Execute21** method is a version of the [Execute method (RDS)](./execute-method-rds.md). Where you need to use the **Execute** method to communicate with ADO 2.1, the **Execute21** method can be called instead. The capabilities of the **Execute** method in ADO 2.5 and later are a superset of the capabilities provided for the same method in ADO 2.1.  
   
 ## Applies To  
- [DataFactory Object (RDSServer)](../../../ado/reference/rds-api/datafactory-object-rdsserver.md)
-
-
+ [DataFactory Object (RDSServer)](./datafactory-object-rdsserver.md)

@@ -1,24 +1,15 @@
 ---
-title: "getUserName Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getUserName Method (SQLServerDatabaseMetaData)"
+description: "getUserName Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getUserName"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getUserName"
 apitype: "Assembly"
-ms.assetid: 1ae81034-5de3-4f4a-b3f2-7d9d198a73af
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getUserName Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

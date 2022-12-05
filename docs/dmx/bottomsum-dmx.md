@@ -1,29 +1,17 @@
 ---
-title: "BottomSum (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "BOTTOMSUM"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "BottomSum function"
-ms.assetid: fd4b0418-f814-4d83-b2fe-850117e1beb7
-caps.latest.revision: 36
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "BottomSum (DMX)"
+description: "BottomSum (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # BottomSum (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Returns, in order of increasing rank, the bottom-most rows of a table whose cumulative total is at least a specified value.  
   
@@ -44,7 +32,7 @@ BottomSum(<table expression>, <rank expression>, <sum>)
  The **BottomSum** function returns the bottom-most rows in increasing order of rank. The rank is based on the evaluated value of the \<rank expression> argument for each row, such that the sum of the \<rank expression> values is at least the given total that is specified by the \<sum> argument. **BottomSum** returns the smallest number of elements possible while still meeting the specified sum value.  
   
 ## Examples  
- The following example creates a prediction query against the Association model that you build by using the [Basic Data Mining Tutorial](http://msdn.microsoft.com/library/6602edb6-d160-43fb-83c8-9df5dddfeb9c).  
+ The following example creates a prediction query against the Association model that you build by using the [Basic Data Mining Tutorial](/previous-versions/sql/sql-server-2016/ms167167(v=sql.130)).  
   
  To understand how BottomSum works, it might be helpful to first execute a prediction query that returns only the nested table.  
   
@@ -57,7 +45,7 @@ SELECT (SELECT 'Women''s Mountain Shorts' as [Model]) AS [v Assoc Seq Line Items
 ```  
   
 > [!NOTE]  
->  In this example, the value supplied as input contains a single quotation mark, and therefore must be escaped by prefacing it with another single quotation mark. If you are not sure of the syntax for inserting an escape character, you can use the Prediction Query Builder to create the query. When you select the value from the dropdown list, the required escape character is inserted for you. For more information, see [Create a Singleton Query in the Data Mining Designer](../analysis-services/data-mining/create-a-singleton-query-in-the-data-mining-designer.md).  
+>  In this example, the value supplied as input contains a single quotation mark, and therefore must be escaped by prefacing it with another single quotation mark. If you are not sure of the syntax for inserting an escape character, you can use the Prediction Query Builder to create the query. When you select the value from the dropdown list, the required escape character is inserted for you. For more information, see [Create a Singleton Query in the Data Mining Designer](/analysis-services/data-mining/create-a-singleton-query-in-the-data-mining-designer).  
   
  Example results:  
   
@@ -99,8 +87,8 @@ NATURAL PREDICTION JOIN
   
 |Model|$SUPPORT|$PROBABILITY|$ADJUSTEDPROBABILITY|  
 |-----------|--------------|------------------|--------------------------|  
-|Road Bottle Cage|1195|0.08…|0.07…|  
-|Mountain Bottle Cage|1367|0.09…|0.08…|  
+|Road Bottle Cage|1195|0.08...|0.07...|  
+|Mountain Bottle Cage|1367|0.09...|0.08...|  
   
  **Note** This example is provided only to illustrate the usage of BottomSum. Depending on the size of your data set, this query might take a long time to run.  
   
@@ -108,5 +96,4 @@ NATURAL PREDICTION JOIN
  [Functions &#40;DMX&#41;](../dmx/functions-dmx.md)   
  [General Prediction Functions &#40;DMX&#41;](../dmx/general-prediction-functions-dmx.md)   
  [BottomPercent &#40;DMX&#41;](../dmx/bottompercent-dmx.md)  
-  
   

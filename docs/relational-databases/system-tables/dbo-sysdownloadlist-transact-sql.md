@@ -1,31 +1,25 @@
 ---
-title: "dbo.sysdownloadlist (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "dbo.sysdownloadlist (Transact-SQL)"
+description: dbo.sysdownloadlist (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dbo.sysdownloadlist"
   - "sysdownloadlist_TSQL"
   - "dbo.sysdownloadlist_TSQL"
   - "sysdownloadlist"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysdownloadlist system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 71087a4c-e829-488e-aa7d-a9476e2b4779
-caps.latest.revision: 25
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # dbo.sysdownloadlist (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Holds the queue of download instructions for all target servers.  
   

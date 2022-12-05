@@ -1,35 +1,28 @@
 ---
-title: "Configure Data Source Properties for a Report  (Report Manager) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Configure Data Source Properties for a Paginated Report - SSRS | Microsoft Docs"
+description: Learn to configure data source properties in Reporting Services for a paginated report. Also set the properties to vary the data source connection information.
+ms.date: 05/24/2018
+ms.service: reporting-services
+ms.subservice: report-data
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "data sources [Reporting Services], embedded"
 ms.assetid: 27af5195-c845-40e0-9a9c-efe569424022
-caps.latest.revision: 44
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Configure Data Source Properties for a Report  (Report Manager)
-  When you run a report, the report server retrieves property information to determine how to connect to a data source. The data source type, connection string, and credential information are specified in the Data Source property pages of the published report. You can set the properties to vary the data source connection information from the original values that were specified when the report was created.  
+# Configure Data Source Properties for a Paginated Report
+  When you run a paginated report, the report server retrieves property information to determine how to connect to a data source. The data source type, connection string, and credential information are specified in the Data Source property pages of the published report. You can set the properties to vary the data source connection information from the original values that were specified when the report was created.  
   
  Alternatively, if you have a predefined shared data source that already specifies the connection information you want to use, you can specify a shared data source instead. To use a shared data source, click **A shared data source** on the Data Source properties page of the report.  
   
-### To configure an embedded data source  
+## To configure an embedded data source  
   
-1.  Start [Report Manager  &#40;SSRS Native Mode&#41;](http://msdn.microsoft.com/library/80949f9d-58f5-48e3-9342-9e9bf4e57896).  
+1.  In the web portal, navigate to the report that you want to configure a report-specific data source for..  
   
-2.  In Report Manager, navigate to the **Contents** page. Navigate to the report that you want to configure a report-specific data source for, and open the report.  
-  
-3.  Click the **Properties** tab. The **General** properties page opens.  
+3.  Select the ellipsis (**...**) in the upper-right corner > **Manage**.  
   
 4.  Click the **Data Sources** tab. This opens the Data Source properties page of the report.  
   
@@ -55,14 +48,9 @@ manager: "erikre"
   
     -   If the data source does not use credentials (for example, if the data source is an XML file that is accessed from the file system), click **Credentials are not required**. You should only specify this credential type if it is valid for the data source. If you select this option for a data source that requires authentication, the connection will fail. If you select this option, be sure to configure the unattended execution account that allows the report server to connect to other computers to retrieve data or files when user credentials are not available.  
   
- For more information about configuring credentials, see [Specify Credential and Connection Information for Report Data Sources](../../reporting-services/report-data/specify-credential-and-connection-information-for-report-data-sources.md). For more information about the unattended execution account, see [Configure the Unattended Execution Account &#40;SSRS Configuration Manager&#41;](../../reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager.md).  
+ For more information about configuring credentials, see [Specify Credential and Connection Information for Report Data Sources](../../reporting-services/report-data/specify-credential-and-connection-information-for-report-data-sources.md). For more information about the unattended execution account, see [Configure the Unattended Execution Account &#40;Report Server Configuration Manager&#41;](../../reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager.md).  
   
 ## See Also  
- [Contents Page &#40;Report Manager&#41;](http://msdn.microsoft.com/library/6b16869b-158a-4934-9c85-bee934b35378)   
- [New Data Source Page &#40;Report Manager&#41;](http://msdn.microsoft.com/library/35563d4c-a3d5-4f95-bf46-605da9dfcbb8)   
- [Create, Modify, and Delete Shared Data Sources &#40;SSRS&#41;](../../reporting-services/report-data/create-modify-and-delete-shared-data-sources-ssrs.md)   
- [Manage Report Data Sources](../../reporting-services/report-data/manage-report-data-sources.md)   
- [Create, Delete, or Modify a Shared Data Source &#40;Report Manager&#41;](http://msdn.microsoft.com/library/cd7bace3-f8ec-4ee3-8a9f-2f217cdca9f2)   
- [Data Sources Properties Page &#40;Report Manager&#41;](http://msdn.microsoft.com/library/f37edda0-19e6-489e-b544-8751fa6b6cfb)  
-  
+[Create, Modify, and Delete Shared Data Sources &#40;SSRS&#41;](../../reporting-services/report-data/create-modify-and-delete-shared-data-sources-ssrs.md)   
+[Manage Report Data Sources](../../reporting-services/report-data/manage-report-data-sources.md)
   

@@ -1,29 +1,25 @@
 ---
+description: "sp_addscriptexec (Transact-SQL)"
 title: "sp_addscriptexec (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_addscriptexec"
   - "sp_addscriptexec_TSQL"
 helpviewer_keywords: 
   - "sp_addscriptexec"
 ms.assetid: 1627db41-6a80-45b6-b0b9-c0b7f9a1c886
-caps.latest.revision: 27
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_addscriptexec (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Posts a SQL script (.sql file) to all Subscribers of a publication. This stored procedure is executed at the Publisher on the publication database.  
   
@@ -40,21 +36,21 @@ sp_addscriptexec [ @publication = ] publication
 ```  
   
 ## Arguments  
- [ **@publication=** ] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication. *publication* is **sysname**, with no default.  
   
- [ **@scriptfile=** ] **'***scriptfile***'**  
+`[ @scriptfile = ] 'scriptfile'`
  Is the full path to the SQL script file. *scriptfile* is **nvarchar(4000)**, with no default.  
   
- [ **@skiperror=** ] **'***skiperror***'**  
+`[ @skiperror = ] 'skiperror'`
  Indicates whether the Distribution Agent or Merge Agent should stop when an error is encountered during script processing. *SkipError* is **bit**, with a default of 0.  
   
  **0** = the agent will stop.  
   
  **1** = the agent continues the script and ignores the error.  
   
- [ **@publisher=** ] **'***publisher***'**  
- Specifies a non-[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] publisher. *publisher* is **sysname**, with a default of NULL.  
+`[ @publisher = ] 'publisher'`
+ Specifies a non- [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] publisher. *publisher* is **sysname**, with a default of NULL.  
   
 > [!NOTE]  
 >  *publisher* should not be used when publishing from a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Publisher.  

@@ -1,20 +1,16 @@
 ---
-title: "INSERT (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "05/17/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "INSERT (Transact-SQL)"
+description: INSERT (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: "06/10/2021"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "INSERT_TSQL"
   - "INSERT"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "inserting multiple rows"
   - "user-defined types [SQL Server], inserting values"
   - "DML [SQL Server], INSERT statement"
@@ -30,22 +26,21 @@ helpviewer_keywords:
   - "INSERT INTO statement"
   - "data manipulation language [SQL Server], INSERT statement"
   - "inserting data"
-ms.assetid: 1054c76e-0fd5-4131-8c07-a6c5d024af50
-caps.latest.revision: 136
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # INSERT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  Adds one or more rows to a table or a view in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For examples, see [Examples](#InsertExamples).  
+
+Adds one or more rows to a table or a view in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For examples, see [Examples](#InsertExamples).  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
+```syntaxsql
 -- Syntax for SQL Server and Azure SQL Database  
 
 [ WITH <common_table_expression> [ ,...n ] ]  
@@ -86,14 +81,13 @@ INSERT
         [ OPTION ( <query_hint> [ ,...n ] ) ]  
 ```  
   
-```  
+```syntaxsql
 -- External tool only syntax  
 
 INSERT   
 {  
     [BULK]  
-    [ database_name . [ schema_name ] . | schema_name . ]  
-    [ table_name | view_name ]  
+    { database_name.schema_name.table_or_view_name | schema_name.table_or_view_name | table_or_view_name }  
     ( <column_definition> )  
     [ WITH (  
         [ [ , ] CHECK_CONSTRAINTS ]  
@@ -116,10 +110,10 @@ INSERT
     [ ( precision [ , scale ] | max ]  
 ```  
   
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
 
-INSERT INTO [ database_name . [ schema_name ] . | schema_name . ] table_name   
+INSERT [INTO] { database_name.schema_name.table_name | schema_name.table_name | table_name }
     [ ( column_name [ ,...n ] ) ]  
     {   
       VALUES ( { NULL | expression } )  
@@ -129,7 +123,9 @@ INSERT INTO [ database_name . [ schema_name ] . | schema_name . ] table_name
 [;]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  WITH \<common_table_expression>  
  Specifies the temporary named result set, also known as common table expression, defined within the scope of the INSERT statement. The result set is derived from a SELECT statement. For more information, see [WITH common_table_expression &#40;Transact-SQL&#41;](../../t-sql/queries/with-common-table-expression-transact-sql.md).  
   
@@ -140,14 +136,14 @@ INSERT INTO [ database_name . [ schema_name ] . | schema_name . ] table_name
  Is an optional keyword that can be used between INSERT and the target table.  
   
  *server_name*  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Is the name of the linked server on which the table or view is located. *server_name* can be specified as a [linked server](../../relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql.md) name, or by using the [OPENDATASOURCE](../../t-sql/functions/opendatasource-transact-sql.md) function.  
   
  When *server_name* is specified as a linked server, *database_name* and *schema_name* are required. When *server_name* is specified with OPENDATASOURCE, *database_name* and *schema_name* may not apply to all data sources and is subject to the capabilities of the OLE DB provider that accesses the remote object.  
   
  *database_name*  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Is the name of the database.  
   
@@ -162,7 +158,7 @@ INSERT INTO [ database_name . [ schema_name ] . | schema_name . ] table_name
  The view referenced by *table_or_view_name* must be updatable and reference exactly one base table in the FROM clause of the view. For example, an INSERT into a multi-table view must use a *column_list* that references only columns from one base table. For more information about updatable views, see [CREATE VIEW &#40;Transact-SQL&#41;](../../t-sql/statements/create-view-transact-sql.md).  
   
  *rowset_function_limited*  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Is either the [OPENQUERY](../../t-sql/functions/openquery-transact-sql.md) or [OPENROWSET](../../t-sql/functions/openrowset-transact-sql.md) function. Use of these functions is subject to the capabilities of the OLE DB provider that accesses the remote object.  
   
@@ -196,7 +192,7 @@ INSERT INTO [ database_name . [ schema_name ] . | schema_name . ] table_name
 OUTPUT Clause  
  Returns inserted rows as part of the insert operation. The results can be returned to the processing application or inserted into a table or table variable for further processing.  
   
- The [OUTPUT clause](../../t-sql/queries/output-clause-transact-sql.md) is not supported in DML statements that reference local partitioned views, distributed partitioned views, or remote tables, or INSERT statements that contain an *execute_statement*. The OUTPUT INTO clause is not supported in INSERT statements that contain a <dml_table_source> clause.  
+ The OUTPUT clause is not supported in DML statements that reference local partitioned views, distributed partitioned views, or remote tables, or INSERT statements that contain an *execute_statement*. The OUTPUT INTO clause is not supported in INSERT statements that contain a \<dml_table_source> clause. For more information about the arguments and behavior of this clause, see [OUTPUT Clause &#40;Transact-SQL&#41;](../../t-sql/queries/output-clause-transact-sql.md).
   
  VALUES  
  Introduces the list or lists of data values to be inserted. There must be one data value for each column in *column_list*, if specified, or in the table. The value list must be enclosed in parentheses.  
@@ -204,7 +200,11 @@ OUTPUT Clause
  If the values in the Value list are not in the same order as the columns in the table or do not have a value for each column in the table, *column_list* must be used to explicitly specify the column that stores each incoming value.  
   
  You can use the [!INCLUDE[tsql](../../includes/tsql-md.md)] row constructor (also called a table value constructor) to specify multiple rows in a single INSERT statement. The row constructor consists of a single VALUES clause with multiple value lists enclosed in parentheses and separated by a comma. For more information, see [Table Value Constructor &#40;Transact-SQL&#41;](../../t-sql/queries/table-value-constructor-transact-sql.md).  
-  
+
+> [!NOTE]
+> Table value constructor is not supported in Azure Synapse Analytics. Instead, subsequent `INSERT` statements can be executed to insert multiple rows. In Azure Synapse Analytics, insert values can only be constant literal values or variable references. To insert a non-literal, set a variable to non-constant value and insert the variable.
+
+
  DEFAULT  
  Forces the [!INCLUDE[ssDE](../../includes/ssde-md.md)] to load the default value defined for a column. If a default does not exist for the column and the column allows null values, NULL is inserted. For a column defined with the **timestamp** data type, the next timestamp value is inserted. DEFAULT is not valid for an identity column.  
   
@@ -219,7 +219,7 @@ OUTPUT Clause
  *execute_statement*  
  Is any valid EXECUTE statement that returns data with SELECT or READTEXT statements. For more information, see [EXECUTE &#40;Transact-SQL&#41;](../../t-sql/language-elements/execute-transact-sql.md).  
   
- The RESULT SETS options of the EXECUTE statement cannot be specified in an INSERT…EXEC statement.  
+ The RESULT SETS options of the EXECUTE statement cannot be specified in an INSERT...EXEC statement.  
   
  If *execute_statement* is used with INSERT, each result set must be compatible with the columns in the table or in *column_list*.  
   
@@ -230,7 +230,7 @@ OUTPUT Clause
  You cannot specify a table-valued parameter as the target of an INSERT EXEC statement; however, it can be specified as a source in the INSERT EXEC string or stored-procedure. For more information, see [Use Table-Valued Parameters &#40;Database Engine&#41;](../../relational-databases/tables/use-table-valued-parameters-database-engine.md).  
   
  \<dml_table_source>  
- Specifies that the rows inserted into the target table are those returned by the OUTPUT clause of an INSERT, UPDATE, DELETE, or MERGE statement, optionally filtered by a WHERE clause. If <dml_table_source> is specified, the target of the outer INSERT statement must meet the following restrictions:  
+ Specifies that the rows inserted into the target table are those returned by the OUTPUT clause of an INSERT, UPDATE, DELETE, or MERGE statement, optionally filtered by a WHERE clause. If \<dml_table_source> is specified, the target of the outer INSERT statement must meet the following restrictions: 
   
 -   It must be a base table, not a view.  
   
@@ -245,7 +245,7 @@ OUTPUT Clause
  The compatibility level of the database must be set to 100 or higher. For more information, see [OUTPUT Clause &#40;Transact-SQL&#41;](../../t-sql/queries/output-clause-transact-sql.md).  
   
  \<select_list>  
- Is a comma-separated list specifying which columns returned by the OUTPUT clause to insert. The columns in <select_list> must be compatible with the columns into which values are being inserted. <select_list> cannot reference aggregate functions or TEXTPTR.  
+ Is a comma-separated list specifying which columns returned by the OUTPUT clause to insert. The columns in \<select_list> must be compatible with the columns into which values are being inserted. \<select_list> cannot reference aggregate functions or TEXTPTR. 
   
 > [!NOTE]  
 >  Any variables listed in the SELECT list refer to their original values, regardless of any changes made to them in \<dml_statement_with_output_clause>.  
@@ -254,30 +254,30 @@ OUTPUT Clause
  Is a valid INSERT, UPDATE, DELETE, or MERGE statement that returns affected rows in an OUTPUT clause. The statement cannot contain a WITH clause, and cannot target remote tables or partitioned views. If UPDATE or DELETE is specified, it cannot be a cursor-based UPDATE or DELETE. Source rows cannot be referenced as nested DML statements.  
   
  WHERE \<search_condition>  
- Is any WHERE clause containing a valid <search_condition> that filters the rows returned by <dml_statement_with_output_clause>. For more information, see [Search Condition &#40;Transact-SQL&#41;](../../t-sql/queries/search-condition-transact-sql.md). When used in this context, <search_condition> cannot contain subqueries, scalar user-defined functions that perform data access, aggregate functions, TEXTPTR, or full-text search predicates.  
+ Is any WHERE clause containing a valid \<search_condition> that filters the rows returned by \<dml_statement_with_output_clause>. For more information, see [Search Condition &#40;Transact-SQL&#41;](../../t-sql/queries/search-condition-transact-sql.md). When used in this context, \<search_condition> cannot contain subqueries, scalar user-defined functions that perform data access, aggregate functions, TEXTPTR, or full-text search predicates. 
   
  DEFAULT VALUES  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Forces the new row to contain the default values defined for each column.  
   
  BULK  
-**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Used by external tools to upload a binary data stream. This option is not intended for use with tools such as [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)], SQLCMD, OSQL, or data access application programming interfaces such as [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client.  
   
  FIRE_TRIGGERS  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies that any insert triggers defined on the destination table execute during the binary data stream upload operation. For more information, see [BULK INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/bulk-insert-transact-sql.md).  
   
  CHECK_CONSTRAINTS  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies that all constraints on the target table or view must be checked during the binary data stream upload operation. For more information, see [BULK INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/bulk-insert-transact-sql.md).  
   
  KEEPNULLS  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies that empty columns should retain a null value during the binary data stream upload operation. For more information, see [Keep Nulls or Use Default Values During Bulk Import &#40;SQL Server&#41;](../../relational-databases/import-export/keep-nulls-or-use-default-values-during-bulk-import-sql-server.md).  
   
@@ -285,11 +285,11 @@ OUTPUT Clause
  Specifies the approximate number of kilobytes (KB) of data per batch as *kilobytes_per_batch*. For more information, see [BULK INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/bulk-insert-transact-sql.md).  
   
  ROWS_PER_BATCH =*rows_per_batch*  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Indicates the approximate number of rows of data in the binary data stream. For more information, see [BULK INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/bulk-insert-transact-sql.md).  
   
->  [!NOTE]
+> [!NOTE]
 >  A syntax error is raised if a column list is not provided.  
 
 ## Remarks  
@@ -300,37 +300,43 @@ For information specific to inserting data into SQL graph tables, see [INSERT (S
   
 ### Best Practices for Bulk Importing Data  
   
-#### Using INSERT INTO…SELECT to Bulk Import Data with Minimal Logging  
- You can use `INSERT INTO <target_table> SELECT <columns> FROM <source_table>` to efficiently transfer a large number of rows from one table, such as a staging table, to another table with minimal logging. Minimal logging can improve the performance of the statement and reduce the possibility of the operation filling the available transaction log space during the transaction.  
+#### Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism 
+You can use `INSERT INTO <target_table> SELECT <columns> FROM <source_table>` to efficiently transfer a large number of rows from one table, such as a staging table, to another table with minimal logging. Minimal logging can improve the performance of the statement and reduce the possibility of the operation filling the available transaction log space during the transaction.  
   
- Minimal logging for this statement has the following requirements:  
-  
+Minimal logging for this statement has the following requirements:  
 -   The recovery model of the database is set to simple or bulk-logged.  
-  
--   The target table is an empty or nonempty heap.  
-  
+-   The target table is an empty or non-empty heap.  
 -   The target table is not used in replication.  
-  
--   The TABLOCK hint is specified for the target table.  
+-   The `TABLOCK` hint is specified for the target table.  
   
 Rows that are inserted into a heap as the result of an insert action in a MERGE statement may also be minimally logged.  
   
- Unlike the BULK INSERT statement, which holds a less restrictive Bulk Update lock, INSERT INTO…SELECT with the TABLOCK hint holds an exclusive (X) lock on the table. This means that you cannot insert rows using parallel insert operations.  
+Unlike the `BULK INSERT` statement, which holds a less restrictive Bulk Update (BU) lock, `INSERT INTO … SELECT` with the `TABLOCK` hint holds an exclusive (X) lock on the table. This means that you cannot insert rows using multiple insert operations executing simultaneously. 
+
+However, starting with [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] and database compatibility level 130, a single `INSERT INTO … SELECT` statement can be executed in parallel when inserting into heaps or clustered columnstore indexes (CCI). Parallel inserts are possible when using the `TABLOCK` hint.  
+
+Parallelism for the statement above has the following requirements, which are similar to the requirements for minimal logging:  
+-   The target table is an empty or non-empty heap.  
+-   The target table has a clustered columnstore index (CCI) but no non-clustered indexes.  
+-   The target table does not have an identity column with IDENTITY_INSERT set to OFF.  
+-   The `TABLOCK` hint is specified for the target table.
+
+For scenarios where requirements for minimal logging and parallel insert are met, both improvements will work together to ensure maximum throughput of your data load operations.
+
+> [!NOTE]
+> Inserts into local temporary tables (identified by the # prefix) and global temporary tables (identified by ## prefixes) are also enabled for parallelism using the TABLOCK hint.
   
-#### Using OPENROWSET and BULK to Bulk Import Data  
+#### Using OPENROWSET and BULK to Bulk Import data  
  The OPENROWSET function can accept the following table hints, which provide bulk-load optimizations with the INSERT statement:  
   
--   The TABLOCK hint can minimize the number of log records for the insert operation. The recovery model of the database must be set to simple or bulk-logged and the target table cannot be used in replication. For more information, see [Prerequisites for Minimal Logging in Bulk Import](../../relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import.md).  
+-   The `TABLOCK` hint can minimize the number of log records for the insert operation. The recovery model of the database must be set to simple or bulk-logged and the target table cannot be used in replication. For more information, see [Prerequisites for Minimal Logging in Bulk Import](../../relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import.md).  
+-   The `TABLOCK` hint can enable parallel insert operations. The target table is a heap or clustered columnstore index (CCI) with no non-clustered indexes, and the target table cannot have an identity column specified.  
+-   The `IGNORE_CONSTRAINTS` hint can temporarily disable FOREIGN KEY and CHECK constraint checking.  
+-   The `IGNORE_TRIGGERS` hint can temporarily disable trigger execution.  
+-   The `KEEPDEFAULTS` hint allows the insertion of a table column's default value, if any, instead of NULL when the data record lacks a value for the column.  
+-   The `KEEPIDENTITY` hint allows the identity values in the imported data file to be used for the identity column in the target table.  
   
--   The IGNORE_CONSTRAINTS hint can temporarily disable FOREIGN KEY and CHECK constraint checking.  
-  
--   The IGNORE_TRIGGERS hint can temporarily disable trigger execution.  
-  
--   The KEEPDEFAULTS hint allows the insertion of a table column's default value, if any, instead of NULL when the data record lacks a value for the column.  
-  
--   The KEEPIDENTITY hint allows the identity values in the imported data file to be used for the identity column in the target table.  
-  
-These optimizations are similar to those available with the BULK INSERT command. For more information, see [Table Hints &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-table.md).  
+These optimizations are similar to those available with the `BULK INSERT` command. For more information, see [Table Hints &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-table.md).  
   
 ## Data Types  
  When you insert rows, consider the following data type behavior:  
@@ -358,7 +364,7 @@ These optimizations are similar to those available with the BULK INSERT command.
   
 -   Supplying a value in a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] system data type, as long as the user-defined type supports implicit or explicit conversion from that type. The following example shows how to insert a value in a column of user-defined type `Point`, by explicitly converting from a string.  
   
-    ```  
+    ```sql
     INSERT INTO Cities (Location)  
     VALUES ( CONVERT(Point, '12.3:46.2') );  
     ```  
@@ -367,13 +373,13 @@ These optimizations are similar to those available with the BULK INSERT command.
   
 -   Calling a user-defined function that returns a value of the user-defined type. The following example uses a user-defined function `CreateNewPoint()` to create a new value of user-defined type `Point` and insert the value into the `Cities` table.  
   
-    ```  
+    ```sql
     INSERT INTO Cities (Location)  
     VALUES ( dbo.CreateNewPoint(x, y) );  
     ```  
   
 ## Error Handling  
- You can implement error handling for the INSERT statement by specifying the statement in a TRY…CATCH construct.  
+ You can implement error handling for the INSERT statement by specifying the statement in a TRY...CATCH construct.  
   
  If an INSERT statement violates a constraint or rule, or if it has a value incompatible with the data type of the column, the statement fails and an error message is returned.  
   
@@ -382,14 +388,16 @@ These optimizations are similar to those available with the BULK INSERT command.
  When an INSERT statement encounters an arithmetic error (overflow, divide by zero, or a domain error) occurring during expression evaluation, the [!INCLUDE[ssDE](../../includes/ssde-md.md)] handles these errors as if SET ARITHABORT is set to ON. The batch is stopped, and an error message is returned. During expression evaluation when SET ARITHABORT and SET ANSI_WARNINGS are OFF, if an INSERT, DELETE or UPDATE statement encounters an arithmetic error, overflow, divide-by-zero, or a domain error, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] inserts or updates a NULL value. If the target column is not nullable, the insert or update action fails and the user receives an error.  
   
 ## Interoperability  
- When an INSTEAD OF trigger is defined on INSERT actions against a table or view, the trigger executes instead of the INSERT statement. For more information about INSTEAD OF triggers, see [CREATE TRIGGER &#40;Transact-SQL&#41;](../../t-sql/statements/create-trigger-transact-sql.md).  
+ When an `INSTEAD OF` trigger is defined on INSERT actions against a table or view, the trigger executes instead of the INSERT statement. For more information about `INSTEAD OF` triggers, see [CREATE TRIGGER &#40;Transact-SQL&#41;](../../t-sql/statements/create-trigger-transact-sql.md).  
   
 ## Limitations and Restrictions  
  When you insert values into remote tables and not all values for all columns are specified, you must identify the columns to which the specified values are to be inserted.  
   
  When TOP is used with INSERT the referenced rows are not arranged in any order and the ORDER BY clause can not be directly specified in this statements. If you need to use TOP to insert rows in a meaningful chronological order, you must use TOP together with an ORDER BY clause that is specified in a subselect statement. See the Examples section that follows in this topic.
  
-INSERT queries that use SELECT with ORDER BY to populate rows guarantees how identity values are computed but not the order in which the rows are inserted.    
+INSERT queries that use SELECT with ORDER BY to populate rows guarantees how identity values are computed but not the order in which the rows are inserted.
+
+In Parallel Data Warehouse, the ORDER BY clause is invalid in VIEWS, CREATE TABLE AS SELECT, INSERT SELECT, inline functions, derived tables, subqueries and common table expressions, unless TOP is also specified.
   
 ## Logging Behavior  
  The INSERT statement is always fully logged except when using the OPENROWSET function with the BULK keyword or when using `INSERT INTO <target_table> SELECT <columns> FROM <source_table>`. These operations can be minimally logged. For more information, see the section "Best Practices for Bulk Loading Data" earlier in this topic.  
@@ -397,14 +405,14 @@ INSERT queries that use SELECT with ORDER BY to populate rows guarantees how ide
 ## Security  
  During a linked server connection, the sending server provides a login name and password to connect to the receiving server on its behalf. For this connection to work, you must create a login mapping between the linked servers by using [sp_addlinkedsrvlogin](../../relational-databases/system-stored-procedures/sp-addlinkedsrvlogin-transact-sql.md).  
   
- When you use OPENROWSET(BULK…), it is important to understand how [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] handles impersonation. For more information, see "Security Considerations" in [Import Bulk Data by Using BULK INSERT or OPENROWSET&#40;BULK...&#41; &#40;SQL Server&#41;](../../relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server.md).  
+ When you use OPENROWSET(BULK...), it is important to understand how [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] handles impersonation. For more information, see "Security Considerations" in [Import Bulk Data by Using BULK INSERT or OPENROWSET&#40;BULK...&#41; &#40;SQL Server&#41;](../../relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server.md).  
   
 ### Permissions  
  INSERT permission is required on the target table.  
   
- INSERT permissions default to members of the **sysadmin** fixed server role, the **db_owner** and **db_datawriter** fixed database roles, and the table owner. Members of the **sysadmin**, **db_owner**, and the **db_securityadmin** roles, and the table owner can transfer permissions to other users.  
+ INSERT permissions default to members of the `sysadmin` fixed server role, the `db_owner` and `db_datawriter` fixed database roles, and the table owner. Members of the `sysadmin`, `db_owner`, and the `db_securityadmin` roles, and the table owner can transfer permissions to other users.  
   
- To execute INSERT with the OPENROWSET function BULK option, you must be a member of the **sysadmin** fixed server role or of the **bulkadmin** fixed server role.  
+ To execute INSERT with the OPENROWSET function BULK option, you must be a member of the `sysadmin` fixed server role or of the `bulkadmin` fixed server role.  
   
 ##  <a name="InsertExamples"></a> Examples  
   
@@ -412,10 +420,10 @@ INSERT queries that use SELECT with ORDER BY to populate rows guarantees how ide
 |--------------|------------------------------|  
 |[Basic syntax](#BasicSyntax)|INSERT • table value constructor|  
 |[Handling column values](#ColumnValues)|IDENTITY • NEWID • default values • user-defined types|  
-|[Inserting data from other tables](#OtherTables)|INSERT…SELECT • INSERT…EXECUTE • WITH common table expression • TOP • OFFSET FETCH|  
+|[Inserting data from other tables](#OtherTables)|INSERT...SELECT • INSERT...EXECUTE • WITH common table expression • TOP • OFFSET FETCH|  
 |[Specifying target objects other than standard tables](#TargetObjects)|Views • table variables|  
 |[Inserting rows into a remote table](#RemoteTables)|Linked server • OPENQUERY rowset function • OPENDATASOURCE rowset function|  
-|[Bulk loading data from tables or data files](#BulkLoad)|INSERT…SELECT • OPENROWSET function|  
+|[Bulk loading data from tables or data files](#BulkLoad)|INSERT...SELECT • OPENROWSET function|  
 |[Overriding the default behavior of the query optimizer by using hints](#TableHints)|Table hints|  
 |[Capturing the results of the INSERT statement](#CaptureResults)|OUTPUT clause|  
   
@@ -425,15 +433,18 @@ INSERT queries that use SELECT with ORDER BY to populate rows guarantees how ide
 #### A. Inserting a single row of data  
  The following example inserts one row into the `Production.UnitMeasure` table in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database. The columns in this table are `UnitMeasureCode`, `Name`, and `ModifiedDate`. Because values for all columns are supplied and are listed in the same order as the columns in the table, the column names do not have to be specified in the column list*.*  
   
-```  
+```sql
 INSERT INTO Production.UnitMeasure  
 VALUES (N'FT', N'Feet', '20080414');  
 ```  
   
 #### B. Inserting multiple rows of data  
- The following example uses the [table value constructor](../../t-sql/queries/table-value-constructor-transact-sql.md) to insert three rows into the `Production.UnitMeasure` table in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database in a single INSERT statement. Because values for all columns are supplied and are listed in the same order as the columns in the table, the column names do not have to be specified in the column list.  
+ The following example uses the [table value constructor](../../t-sql/queries/table-value-constructor-transact-sql.md) to insert three rows into the `Production.UnitMeasure` table in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database in a single INSERT statement. Because values for all columns are supplied and are listed in the same order as the columns in the table, the column names do not have to be specified in the column list.
+
+>[!NOTE]
+> The table vaule constructor is not supported in Azure Synapse Analytics.  
   
-```  
+```sql
 INSERT INTO Production.UnitMeasure  
 VALUES (N'FT2', N'Square Feet ', '20080923'), (N'Y', N'Yards', '20080923')
     , (N'Y3', N'Cubic Yards', '20080923');  
@@ -442,7 +453,7 @@ VALUES (N'FT2', N'Square Feet ', '20080923'), (N'Y', N'Yards', '20080923')
 #### C. Inserting data that is not in the same order as the table columns  
  The following example uses a column list to explicitly specify the values that are inserted into each column. The column order in the `Production.UnitMeasure` table in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database is `UnitMeasureCode`, `Name`, `ModifiedDate`; however, the columns are not listed in that order in *column_list*.  
   
-```  
+```sql
 INSERT INTO Production.UnitMeasure (Name, UnitMeasureCode,  
     ModifiedDate)  
 VALUES (N'Square Yards', N'Y2', GETDATE());  
@@ -454,7 +465,7 @@ VALUES (N'Square Yards', N'Y2', GETDATE());
 #### D. Inserting data into a table with columns that have default values  
  The following example shows inserting rows into a table with columns that automatically generate a value or have a default value. `Column_1` is a computed column that automatically generates a value by concatenating a string with the value inserted into `column_2`. `Column_2` is defined with a default constraint. If a value is not specified for this column, the default value is used. `Column_3` is defined with the **rowversion** data type, which automatically generates a unique, incrementing binary number. `Column_4` does not automatically generate a value. When a value for this column is not specified, NULL is inserted. The INSERT statements insert rows that contain values for some of the columns but not all. In the last INSERT statement, no columns are specified and only the default values are inserted by using the DEFAULT VALUES clause.  
   
-```  
+```sql
 CREATE TABLE dbo.T1   
 (  
     column_1 AS 'Computed column ' + column_2,   
@@ -480,7 +491,7 @@ GO
 #### E. Inserting data into a table with an identity column  
  The following example shows different methods of inserting data into an identity column. The first two INSERT statements allow identity values to be generated for the new rows. The third INSERT statement overrides the IDENTITY property for the column with the SET IDENTITY_INSERT statement and inserts an explicit value into the identity column.  
   
-```  
+```sql
 CREATE TABLE dbo.T1 ( column_1 int IDENTITY, column_2 VARCHAR(30));  
 GO  
 INSERT T1 VALUES ('Row #1');  
@@ -499,7 +510,7 @@ GO
 #### F. Inserting data into a uniqueidentifier column by using NEWID()  
  The following example uses the [NEWID](../../t-sql/functions/newid-transact-sql.md)() function to obtain a GUID for `column_2`. Unlike for identity columns, the [!INCLUDE[ssDE](../../includes/ssde-md.md)] does not automatically generate values for columns with the [uniqueidentifier](../../t-sql/data-types/uniqueidentifier-transact-sql.md) data type, as shown by the second `INSERT` statement.  
   
-```  
+```sql
 CREATE TABLE dbo.T1   
 (  
     column_1 int IDENTITY,   
@@ -512,13 +523,12 @@ INSERT INTO T1 DEFAULT VALUES;
 GO  
 SELECT column_1, column_2  
 FROM dbo.T1;  
-  
 ```  
   
 #### G. Inserting data into user-defined type columns  
  The following [!INCLUDE[tsql](../../includes/tsql-md.md)] statements insert three rows into the `PointValue` column of the `Points` table. This column uses a [CLR user-defined type](../../relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types.md) (UDT). The `Point` data type consists of X and Y integer values that are exposed as properties of the UDT. You must use either the CAST or CONVERT function to cast the comma-delimited X and Y values to the `Point` type. The first two statements use the CONVERT function to convert a string value to the `Point` type, and the third statement uses the CAST function. For more information, see [Manipulating UDT Data](../../relational-databases/clr-integration-database-objects-user-defined-types/working-with-user-defined-types-manipulating-udt-data.md).  
   
-```  
+```sql
 INSERT INTO dbo.Points (PointValue) VALUES (CONVERT(Point, '3,4'));  
 INSERT INTO dbo.Points (PointValue) VALUES (CONVERT(Point, '1,5'));  
 INSERT INTO dbo.Points (PointValue) VALUES (CAST ('1,99' AS Point));  
@@ -528,11 +538,11 @@ INSERT INTO dbo.Points (PointValue) VALUES (CAST ('1,99' AS Point));
  Examples in this section demonstrate methods of inserting rows from one table into another table.  
   
 #### H. Using the SELECT and EXECUTE options to insert data from other tables  
- The following example shows how to insert data from one table into another table by using INSERT…SELECT or INSERT…EXECUTE. Each is based on a multi-table SELECT statement that includes an expression and a literal value in the column list.  
+ The following example shows how to insert data from one table into another table by using INSERT...SELECT or INSERT...EXECUTE. Each is based on a multi-table SELECT statement that includes an expression and a literal value in the column list.  
   
  The first INSERT statement uses a SELECT statement to derive the data from the source tables (`Employee`, `SalesPerson`, and `Person`) in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database and store the result set in the `EmployeeSales` table. The second INSERT statement uses the EXECUTE clause to call a stored procedure that contains the SELECT statement, and the third INSERT uses the EXECUTE clause to reference the SELECT statement as a literal string.  
   
-```  
+```sql
 CREATE TABLE dbo.EmployeeSales  
 ( DataSource   varchar(20) NOT NULL,  
   BusinessEntityID   varchar(11) NOT NULL,  
@@ -585,7 +595,7 @@ FROM dbo.EmployeeSales;
 #### I. Using WITH common table expression to define the data inserted  
  The following example creates the `NewEmployee` table in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database. A common table expression (`EmployeeTemp`) defines the rows from one or more tables to be inserted into the `NewEmployee` table. The INSERT statement references the columns in the common table expression.  
   
-```  
+```sql
 CREATE TABLE HumanResources.NewEmployee  
 (  
     EmployeeID int NOT NULL,  
@@ -628,7 +638,7 @@ GO
 #### J. Using TOP to limit the data inserted from the source table  
  The following example creates the table `EmployeeSales` and inserts the name and year-to-date sales data for the top 5 random employees from the table `HumanResources.Employee` in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database. The INSERT statement chooses any 5 rows returned by the `SELECT` statement. The OUTPUT clause displays the rows that are inserted into the `EmployeeSales` table. Notice that the ORDER BY clause in the SELECT statement is not used to determine the top 5 employees.  
   
-```  
+```sql
 CREATE TABLE dbo.EmployeeSales  
 ( EmployeeID   nvarchar(11) NOT NULL,  
   LastName     nvarchar(20) NOT NULL,  
@@ -649,7 +659,7 @@ INSERT TOP(5)INTO dbo.EmployeeSales
   
  If you have to use TOP to insert rows in a meaningful chronological order, you must use TOP together with ORDER BY in a subselect statement as shown in the following example. The OUTPUT clause displays the rows that are inserted into the `EmployeeSales` table. Notice that the top 5 employees are now inserted based on the results of the ORDER BY clause instead of random rows.  
   
-```  
+```sql
 INSERT INTO dbo.EmployeeSales  
     OUTPUT inserted.EmployeeID, inserted.FirstName, 
         inserted.LastName, inserted.YearlySales  
@@ -667,7 +677,7 @@ INSERT INTO dbo.EmployeeSales
 #### K. Inserting data by specifying a view  
  The following example specifies a view name as the target object; however, the new row is inserted in the underlying base table. The order of the values in the `INSERT` statement must match the column order of the view. For more information, see [Modify Data Through a View](../../relational-databases/views/modify-data-through-a-view.md).  
   
-```  
+```sql
 CREATE TABLE T1 ( column_1 int, column_2 varchar(30));  
 GO  
 CREATE VIEW V1 AS   
@@ -688,7 +698,7 @@ GO
 #### L. Inserting data into a table variable  
  The following example specifies a table variable as the target object in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database.  
   
-```  
+```sql
 -- Create the table variable.  
 DECLARE @MyTableVar table(  
     LocationID int NOT NULL,  
@@ -708,14 +718,14 @@ GO
 ```  
   
 ###  <a name="RemoteTables"></a> Inserting Rows into a Remote Table  
- Examples in this section demonstrate how to insert rows into a remote target table by using a [linked server](../../relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql.md) or a [rowset function](../../t-sql/functions/rowset-functions-transact-sql.md) to reference the remote table.  
+ Examples in this section demonstrate how to insert rows into a remote target table by using a [linked server](../../relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql.md) or a [rowset function](../functions/opendatasource-transact-sql.md) to reference the remote table.  
   
 #### M. Inserting data into a remote table by using a linked server  
  The following example inserts rows into a remote table. The example begins by creating a link to the remote data source by using [sp_addlinkedserver](../../relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql.md). The linked server name, `MyLinkServer`, is then specified as part of the four-part object name in the form *server.catalog.schema.object*.  
   
-**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
-```  
+```sql
 USE master;  
 GO  
 -- Create a link to the remote data source.   
@@ -730,7 +740,7 @@ EXEC sp_addlinkedserver @server = N'MyLinkServer',
 GO  
 ```  
   
-```  
+```sql
 -- Specify the remote data source in the FROM clause using a four-part name   
 -- in the form linked_server.catalog.schema.object.  
   
@@ -742,9 +752,9 @@ GO
 #### N. Inserting data into a remote table by using the OPENQUERY function  
  The following example inserts a row into a remote table by specifying the [OPENQUERY](../../t-sql/functions/openquery-transact-sql.md) rowset function. The linked server name created in the previous example is used in this example.  
   
-**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
-```  
+```sql
 INSERT OPENQUERY (MyLinkServer, 
     'SELECT Name, GroupName 
      FROM AdventureWorks2012.HumanResources.Department')  
@@ -755,9 +765,9 @@ GO
 #### O. Inserting data into a remote table by using the OPENDATASOURCE function  
  The following example inserts a row into a remote table by specifying the [OPENDATASOURCE](../../t-sql/functions/opendatasource-transact-sql.md) rowset function. Specify a valid server name for the data source by using the format *server_name* or *server_name\instance_name*.  
   
-**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
-```  
+```sql
 -- Use the OPENDATASOURCE function to specify the remote data source.  
 -- Specify a valid server name for Data Source using the format 
 -- server_name or server_nameinstance_name.  
@@ -770,11 +780,11 @@ GO
 ```  
   
 #### P. Inserting into an external table created using PolyBase  
- Export data from SQL Server to Hadoop or Azure Storage. First, create an external table that points to the destination file or directory. Then, use INSERT INTO to export data from a local SQL Server table to an external data source. The INSERT INTO statement creates the destination file or directory if it does not exist and the results of the SELECT statement are exported to the specified location in the specified file format.  For more information, see [Get started with PolyBase](../../relational-databases/polybase/get-started-with-polybase.md).  
+ Export data from SQL Server to Hadoop or Azure Storage. First, create an external table that points to the destination file or directory. Then, use INSERT INTO to export data from a local SQL Server table to an external data source. The INSERT INTO statement creates the destination file or directory if it does not exist and the results of the SELECT statement are exported to the specified location in the specified file format.  For more information, see [Get started with PolyBase](../../relational-databases/polybase/polybase-guide.md).  
   
-**Applies to**: [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+**Applies to**: [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].  
   
-```  
+```sql
 -- Create an external table.   
 CREATE EXTERNAL TABLE [dbo].[FastCustomers2009] (  
         [FirstName] char(25) NOT NULL,   
@@ -803,9 +813,9 @@ WHERE T2.YearMeasured = 2009 and T2.Speed > 40;
  Examples in this section demonstrate two methods to bulk load data into a table by using the INSERT statement.  
   
 #### Q. Inserting data into a heap with minimal logging  
- The following example creates a a new table (a heap) and inserts data from another table into it using minimal logging. The example assumes that the recovery model of the `AdventureWorks2012` database is set to FULL. To ensure minimal logging is used, the recovery model of the `AdventureWorks2012` database is set to BULK_LOGGED before rows are inserted and reset to FULL after the INSERT INTO…SELECT statement. In addition, the TABLOCK hint is specified for the target table `Sales.SalesHistory`. This ensures that the statement uses minimal space in the transaction log and performs efficiently.  
+ The following example creates a new table (a heap) and inserts data from another table into it using minimal logging. The example assumes that the recovery model of the `AdventureWorks2012` database is set to FULL. To ensure minimal logging is used, the recovery model of the `AdventureWorks2012` database is set to BULK_LOGGED before rows are inserted and reset to FULL after the INSERT INTO...SELECT statement. In addition, the TABLOCK hint is specified for the target table `Sales.SalesHistory`. This ensures that the statement uses minimal space in the transaction log and performs efficiently.  
   
-```  
+```sql
 -- Create the target heap.  
 CREATE TABLE Sales.SalesHistory(  
     SalesOrderID int NOT NULL,  
@@ -848,9 +858,9 @@ GO
 #### R. Using the OPENROWSET function with BULK to bulk load data into a table  
  The following example inserts rows from a data file into a table by specifying the OPENROWSET function. The IGNORE_TRIGGERS table hint is specified for performance optimization. For more examples, see [Import Bulk Data by Using BULK INSERT or OPENROWSET&#40;BULK...&#41; &#40;SQL Server&#41;](../../relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server.md).  
   
-**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
-```  
+```sql
 INSERT INTO HumanResources.Department WITH (IGNORE_TRIGGERS) (Name, GroupName)  
 SELECT b.Name, b.GroupName   
 FROM OPENROWSET (  
@@ -870,7 +880,7 @@ FROM OPENROWSET (
   
 **Applies to**: [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)], [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)].  
   
-```  
+```sql
 INSERT INTO Production.Location WITH (XLOCK)  
 (Name, CostRate, Availability)  
 VALUES ( N'Final Inventory', 15.00, 80.00);  
@@ -882,7 +892,7 @@ VALUES ( N'Final Inventory', 15.00, 80.00);
 #### T. Using OUTPUT with an INSERT statement  
  The following example inserts a row into the `ScrapReason` table and uses the `OUTPUT` clause to return the results of the statement to the `@MyTableVar` table variable. Because the `ScrapReasonID` column is defined with an `IDENTITY` property, a value is not specified in the `INSERT` statement for that column. However, note that the value generated by the [!INCLUDE[ssDE](../../includes/ssde-md.md)] for that column is returned in the `OUTPUT` clause in the `INSERTED.ScrapReasonID` column.  
   
-```  
+```sql
 DECLARE @MyTableVar table( NewScrapReasonID smallint,  
                            Name varchar(50),  
                            ModifiedDate datetime);  
@@ -901,7 +911,7 @@ FROM Production.ScrapReason;
 #### U. Using OUTPUT with identity and computed columns  
  The following example creates the `EmployeeSales` table and then inserts several rows into it using an INSERT statement with a SELECT statement to retrieve data from source tables. The `EmployeeSales` table contains an identity column (`EmployeeID`) and a computed column (`ProjectedSales`). Because these values are generated by the [!INCLUDE[ssDE](../../includes/ssde-md.md)] during the insert operation, neither of these columns can be defined in `@MyTableVar`.  
   
-```  
+```sql
 CREATE TABLE dbo.EmployeeSales  
 ( EmployeeID   int IDENTITY (1,5)NOT NULL,  
   LastName     nvarchar(20) NOT NULL,  
@@ -938,7 +948,7 @@ FROM dbo.EmployeeSales;
 #### V. Inserting data returned from an OUTPUT clause  
  The following example captures data returned from the OUTPUT clause of a MERGE statement, and inserts that data into another table. The MERGE statement updates the `Quantity` column of the `ProductInventory` table daily, based on orders that are processed in the `SalesOrderDetail` table in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database. It also deletes rows for products whose inventories drop to 0. The example captures the rows that are deleted and inserts them into another table, `ZeroInventory`, which tracks products with no inventory.  
   
-```  
+```sql
 --Create ZeroInventory table.  
 CREATE TABLE Production.ZeroInventory (DeletedProductID int, RemovedOnDate DateTime);  
 GO  
@@ -968,7 +978,7 @@ SELECT DeletedProductID, RemovedOnDate FROM Production.ZeroInventory;
 #### W. Inserting data using the SELECT option  
  The following example shows how to insert multiple rows of data using an INSERT statement with a SELECT option. The first `INSERT` statement uses a `SELECT` statement directly to retrieve data from the source table, and then to store the result set in the `EmployeeTitles` table.  
   
-```  
+```sql
 CREATE TABLE EmployeeTitles  
 ( EmployeeKey   INT NOT NULL,  
   LastName     varchar(40) NOT NULL,  
@@ -983,7 +993,7 @@ INSERT INTO EmployeeTitles
 #### X. Specifying a label with the INSERT statement  
  The following example shows the use of a label with an INSERT statement.  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 INSERT INTO DimCurrency   
@@ -992,9 +1002,9 @@ OPTION ( LABEL = N'label1' );
 ```  
   
 #### Y. Using a label and a query hint with the INSERT statement  
- This query shows the basic syntax for using a label and a query join hint with the INSERT statement. After the query is submitted to the Control node, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], running on the Compute nodes, will apply the hash join strategy when it generates the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] query plan. For more information on join hints and how to use the OPTION clause, see [OPTION (SQL Server PDW)](http://msdn.microsoft.com/en-us/72bbce98-305b-42fa-a19f-d89620621ecc).  
+ This query shows the basic syntax for using a label and a query join hint with the INSERT statement. After the query is submitted to the Control node, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], running on the Compute nodes, will apply the hash join strategy when it generates the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] query plan. For more information on join hints and how to use the OPTION clause, see [OPTION (SQL Server PDW)](../../t-sql/queries/option-clause-transact-sql.md).  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 INSERT INTO DimCustomer (CustomerKey, CustomerAlternateKey, 
@@ -1019,6 +1029,3 @@ OPTION ( LABEL = 'Add French Prospects', HASH JOIN);
  [OUTPUT Clause &#40;Transact-SQL&#41;](../../t-sql/queries/output-clause-transact-sql.md)   
  [Use the inserted and deleted Tables](../../relational-databases/triggers/use-the-inserted-and-deleted-tables.md)  
   
-  
-
-

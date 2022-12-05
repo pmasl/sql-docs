@@ -1,29 +1,23 @@
 ---
-title: "sysssispackages (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sysssispackages (Transact-SQL)"
+description: sysssispackages (Transact-SQL)
+author: lrtoyou1223
+ms.author: lle
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sysdtspackages90_TSQL"
   - "sysdtspackages90"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysssispackages system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 66155dcd-dcdb-4e33-a242-1625828ad8d2
-caps.latest.revision: 43
-author: "spelluru"
-ms.author: "spelluru"
-manager: "jhubbard"
 ---
 # sysssispackages (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row for each package that is saved to [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. This table is stored in the **msdb** database.  
   

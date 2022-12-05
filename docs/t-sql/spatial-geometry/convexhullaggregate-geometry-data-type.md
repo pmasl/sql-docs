@@ -1,26 +1,22 @@
 ---
+description: "ConvexHullAggregate (geometry Data Type)"
 title: "ConvexHullAggregate (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
   - "ConvexHullAggregate method (geometry)"
 ms.assetid: ca3d3b55-e02d-4599-8817-a54f5e047db8
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # ConvexHullAggregate (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns a convex hull for a given set of **geometry** objects.
   
@@ -31,7 +27,9 @@ Returns a convex hull for a given set of **geometry** objects.
 ConvexHullAggregate ( geometry_operand )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *geometry_operand*  
  Is a **geometry** type table column that represents a set of geometry objects.  
   
@@ -52,27 +50,19 @@ ConvexHullAggregate ( geometry_operand )
 ## Examples  
  The following example returns a convex hull of the set of geometry objects in a table variable column.  
   
- `-- Setup table variable for ConvexHullAggregate example`  
-  
- `DECLARE @Geom TABLE`  
-  
- `(`  
-  
- `shape geometry,`  
-  
- `shapeType nvarchar(50)`  
-  
- `)`  
-  
- `INSERT INTO @Geom(shape,shapeType) VALUES('CURVEPOLYGON(CIRCULARSTRING(2 3, 4 1, 6 3, 4 5, 2 3))', 'Circle'),`  
-  
- `('POLYGON((1 1, 4 1, 4 5, 1 5, 1 1))', 'Rectangle');`  
-  
- `-- Perform ConvexHullAggregate on @Geom.shape column`  
-  
- `SELECT geometry::ConvexHullAggregate(shape).ToString()`  
-  
- `FROM @Geom;`  
+ ```sql
+ -- Setup table variable for ConvexHullAggregate example  
+ DECLARE @Geom TABLE  
+ (  
+ shape geometry,  
+ shapeType nvarchar(50)  
+ )  
+ INSERT INTO @Geom(shape,shapeType) VALUES('CURVEPOLYGON(CIRCULARSTRING(2 3, 4 1, 6 3, 4 5, 2 3))', 'Circle'),  
+ ('POLYGON((1 1, 4 1, 4 5, 1 5, 1 1))', 'Rectangle');  
+ -- Perform ConvexHullAggregate on @Geom.shape column  
+ SELECT geometry::ConvexHullAggregate(shape).ToString()  
+ FROM @Geom;
+ ```  
   
 ## See Also  
  [Extended Static Geometry Methods](../../t-sql/spatial-geometry/extended-static-geometry-methods.md)  

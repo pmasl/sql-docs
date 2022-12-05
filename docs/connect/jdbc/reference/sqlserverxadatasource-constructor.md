@@ -1,24 +1,15 @@
 ---
-title: "SQLServerXADataSource Constructor () | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerXADataSource Constructor ()"
+description: "SQLServerXADataSource Constructor ()"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerXADataSource"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerXADataSource"
 apitype: "Assembly"
-ms.assetid: 03649d56-3319-4867-bef1-559dfd221b8b
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # SQLServerXADataSource Constructor ()
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,14 +1,12 @@
 ---
+description: "Limit Trace File and Table Sizes"
 title: "Limit Trace File and Table Sizes | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: 
+ms.topic: conceptual
 helpviewer_keywords: 
   - "maximum file size for traces"
   - "traces [SQL Server], file size"
@@ -16,12 +14,11 @@ helpviewer_keywords:
   - "file rollover option [SQL Server]"
   - "size [SQL Server], files"
 ms.assetid: 88c31b02-f44c-4a14-be8b-437f2097de12
-caps.latest.revision: 23
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # Limit Trace File and Table Sizes
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   SQL Trace results vary in size depending on the event classes that are included in the trace and the way in which the [!INCLUDE[ssDE](../../includes/ssde-md.md)] is used. If you trace event classes that occur frequently, you can minimize the amount of data that the trace collects by setting the maximum file size or the maximum number of rows. By specifying the maximum file size or rows, you ensure that the trace file or table will not grow beyond the specified limit.  
   
 > [!NOTE]  

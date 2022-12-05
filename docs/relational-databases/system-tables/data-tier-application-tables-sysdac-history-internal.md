@@ -1,29 +1,23 @@
 ---
-title: "sysdac_history_internal (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sysdac_history_internal (Transact-SQL)"
+description: Data-tier Application Tables - sysdac_history_internal
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sysdac_history_internal"
   - "sysdac_history_internal_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysdac_history_internal"
+dev_langs:
+  - "TSQL"
 ms.assetid: 774a1678-0b27-42be-8adc-a6d7a4a56510
-caps.latest.revision: 10
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Data-tier Application Tables - sysdac_history_internal
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains information about the actions taken to manage data-tier applications (DAC). This table is stored in the **dbo** schema of the **msdb** database.  
   
@@ -52,9 +46,8 @@ manager: "jhubbard"
 ## Remarks  
  DAC management actions, such as deploying or deleting a DAC, generate multiple steps. Each action is assigned an action identifier. Each step is assigned a sequence number and a row in **sysdac_history_internal**, where the status of the step is recorded. Each row is created when the action step starts, and is updated as needed to reflect the status of the operation. For example, a deploy DAC action could be assigned **action_id** 12 and get four rows in **sysdac_history_internal**:  
   
-|||||  
-|-|-|-|-|  
-|**action_id**|**sequence_id**|**action_type_name**|**dac_object_type_name**|  
+| action_id | sequence_id | action_type_name | dac_object_type_name |
+| --------- | ----------- | ---------------- | -------------------- |
 |12|0|create|dacpac|  
 |12|1|create|login|  
 |12|2|create|database|  
@@ -62,7 +55,7 @@ manager: "jhubbard"
   
  DAC operations, such as delete, do not remove rows from **sysdac_history_internal**. You can use the following query to manually delete the rows for DACs no longer deployed on an instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)]:  
   
-```tsql  
+```sql  
 DELETE FROM msdb.dbo.sysdac_history_internal  
 WHERE instance_id NOT IN  
    (SELECT instance_id  

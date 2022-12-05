@@ -1,24 +1,24 @@
 ---
+description: "SQRT (SSIS Expression)"
 title: "SQRT (SSIS Expression) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQRT function"
   - "square root of given expression"
 ms.assetid: 54a75389-c501-4e22-87b8-905f66d6a3a5
-caps.latest.revision: 33
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # SQRT (SSIS Expression)
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Returns the square root of a numeric expression.  
   
 ## Syntax  
@@ -62,7 +62,7 @@ SQRT(SQUARE(@Side1) + SQUARE(@Side2))
 ```  
   
 > [!NOTE]  
->  In expressions, variable names always include the @ prefix.  
+>  In expressions, variable names always include the \@ prefix.  
   
 ## See Also  
  [Functions &#40;SSIS Expression&#41;](../../integration-services/expressions/functions-ssis-expression.md)  

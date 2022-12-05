@@ -1,34 +1,30 @@
 ---
-title: "sys.fulltext_stopwords (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.fulltext_stopwords (Transact-SQL)"
+description: sys.fulltext_stopwords (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "fulltext_stopwords_TSQL"
   - "fulltext_stopwords"
   - "sys.fulltext_stopwords"
   - "sys.fulltext_stopwords_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "stoplists [full-text search]"
   - "full-text search [SQL Server], stopwords"
   - "sys.fulltext_stopwords catalog view"
   - "stopwords [full-text search]"
+dev_langs:
+  - "TSQL"
 ms.assetid: 79787bb7-d729-448e-b56a-0a467bbb304f
-caps.latest.revision: 29
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.fulltext_stopwords (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Contains a row per stopword for all stoplists in the database.  
  

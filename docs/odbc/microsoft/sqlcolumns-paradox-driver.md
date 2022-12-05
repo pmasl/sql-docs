@@ -1,22 +1,18 @@
 ---
+description: "SQLColumns (Paradox Driver)"
 title: "SQLColumns (Paradox Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLColumns function [ODBC], Paradox Driver"
   - "Paradox driver [ODBC], SQLColumns"
 ms.assetid: d7831c7d-8be9-40a7-bc70-8d89db8fe8c9
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLColumns (Paradox Driver)
 > [!NOTE]  

@@ -1,25 +1,21 @@
 ---
-title: "Solve common issues with JSON in SQL Server | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "07/07/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-json"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Solve common issues with JSON in SQL Server"
+title: "Solve common issues with JSON in SQL Server"
+ms.date: 06/03/2020
+ms.service: sql
+ms.subservice: 
+ms.topic: conceptual
 helpviewer_keywords: 
   - "JSON, FAQ"
 ms.assetid: feae120b-55cc-4601-a811-278ef1c551f9
-caps.latest.revision: 9
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "craigg"
+author: jovanpop-msft
+ms.author: jovanpop
+ms.reviewer: jroth
+ms.custom: seo-dt-2019
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Solve common issues with JSON in SQL Server
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sqlserver2016-asdb.md)]
 
  Find answers here to some common questions about the built-in JSON support in SQL Server.  
  
@@ -33,14 +29,14 @@ manager: "craigg"
 ### Create a nested JSON structure  
  **Question.** I want to produce complex JSON with several arrays on the same level. FOR JSON PATH can create nested objects using paths, and FOR JSON AUTO creates additional nesting level for each table. Neither one of these two options lets me generate the output I want. How can I create a custom JSON format that the existing options don't directly support?  
   
- **Answer.** You can create any data structure by adding FOR JSON queries as column expressions that return JSON text. You can also create JSON manually by using the JSON_QUERY function. The the following example demonstrates these techniques.  
+ **Answer.** You can create any data structure by adding FOR JSON queries as column expressions that return JSON text. You can also create JSON manually by using the JSON_QUERY function. The following example demonstrates these techniques.  
   
 ```sql  
 SELECT col1, col2, col3,  
      (SELECT col11, col12, col13 FROM t11 WHERE t11.FK = t1.PK FOR JSON PATH) as t11,  
      (SELECT col21, col22, col23 FROM t21 WHERE t21.FK = t1.PK FOR JSON PATH) as t21,  
      (SELECT col31, col32, col33 FROM t31 WHERE t31.FK = t1.PK FOR JSON PATH) as t31,  
-     JSON_QUERY('{"'+col4'":"'+col5+'"}' as t41  
+     JSON_QUERY('{"'+col4+'":"'+col5+'"}') as t41  
 FROM t1  
 FOR JSON PATH  
 ```  
@@ -48,7 +44,7 @@ FOR JSON PATH
 Every result of a FOR JSON query or the JSON_QUERY function in the column expressions is formatted as a separate nested JSON sub-object and included in the main result.  
 
 ### Prevent double-escaped JSON in FOR JSON output  
- **Question.** I have JSON text stored in a table column. I want to include it in the output of FOR JSON. But FOR JSON escapes all characters in the JSON, so I’m getting a JSON string instead of a nested object, as shown in the following example.  
+ **Question.** I have JSON text stored in a table column. I want to include it in the output of FOR JSON. But FOR JSON escapes all characters in the JSON, so I'm getting a JSON string instead of a nested object, as shown in the following example.  
   
 ```sql  
 SELECT 'Text' AS myText, '{"day":23}' AS myJson  
@@ -74,7 +70,7 @@ FOR JSON PATH
  JSON_QUERY without its optional second parameter returns only the first argument as a result. Since JSON_QUERY always returns valid JSON, FOR JSON knows that this result does not have to be escaped.
 
 ### JSON generated with the WITHOUT_ARRAY_WRAPPER clause is escaped in FOR JSON output  
- **Question.** I’m trying to format a column expression by using FOR JSON and the WITHOUT_ARRAY_WRAPPER option.  
+ **Question.** I'm trying to format a column expression by using FOR JSON and the WITHOUT_ARRAY_WRAPPER option.  
   
 ```sql  
 SELECT 'Text' as myText,  
@@ -129,9 +125,9 @@ WHERE [key] = 'color'
 ```  
 
 ### OPENJSON requires compatibility level 130  
- **Question.** I’m trying to run  OPENJSON in SQL Server 2016 and I’m getting the following error.  
+ **Question.** I'm trying to run  OPENJSON in SQL Server 2016 and I'm getting the following error.  
   
- `Msg 208, Level 16, State 1 ‘Invalid object name OPENJSON’`  
+ `Msg 208, Level 16, State 1 'Invalid object name OPENJSON'`  
   
  **Answer.** The OPENJSON function is available only under compatibility level 130. If your DB compatibility level is lower than 130, OPENJSON is hidden. Other JSON functions are available at all compatibility levels.  
  
@@ -142,5 +138,13 @@ WHERE [key] = 'color'
   
  **Answer.** You have to surround them with quotes in JSON paths. For example, `JSON_VALUE(@json, '$."$info"."First Name".value')`.
  
-## Learn more about the built-in JSON support in SQL Server  
-For lots of specific solutions, use cases, and recommendations, see the [blog posts about the built-in JSON support](http://blogs.msdn.com/b/sqlserverstorageengine/archive/tags/json/) in SQL Server and in Azure SQL Database by Microsoft Program Manager Jovan Popovic.
+## Learn more about JSON in SQL Server and Azure SQL Database  
+  
+### Microsoft videos
+
+> [!NOTE]
+> Some of the video links in this section may not work at this time. Microsoft is migrating content formerly on Channel 9 to a new platform. We will update the links as the videos are migrated to the new platform.
+
+For a visual introduction to the built-in JSON support in SQL Server and Azure SQL Database, see the following videos:
+
+-   [JSON as a bridge between NoSQL and relational worlds](https://channel9.msdn.com/events/DataDriven-SQLServer2016/JSON-as-bridge-betwen-NoSQL-relational-worlds)

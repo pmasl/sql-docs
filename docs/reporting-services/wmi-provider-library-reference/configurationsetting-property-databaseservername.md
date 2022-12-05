@@ -1,27 +1,22 @@
 ---
+description: "DatabaseServerName Property (WMI MSReportServer_ConfigurationSetting)"
 title: "DatabaseServerName Property (WMI MSReportServer_ConfigurationSetting) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: wmi-provider-library-reference
+
+
+ms.topic: conceptual
 apiname: 
   - "DatabaseServerName Property"
 apilocation: 
   - "reportingservices.mof"
-apitype: "MOFDef"
+apitype: MOFDef
 helpviewer_keywords: 
   - "DatabaseServerName property"
 ms.assetid: 57d09ad0-66a8-44f2-a81f-736217e3815c
-caps.latest.revision: 34
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # ConfigurationSetting Property - DatabaseServerName
   Specifies the name of the server on which the report server database is installed. Read/write.  

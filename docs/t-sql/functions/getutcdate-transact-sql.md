@@ -1,20 +1,16 @@
 ---
-title: "GETUTCDATE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "GETUTCDATE (Transact-SQL)"
+description: "GETUTCDATE (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "12/02/2015"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "GETUTCDATE"
   - "GETUTCDATE_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "time [SQL Server], UTC time"
   - "dates [SQL Server], functions"
   - "UTC time [SQL Server]"
@@ -33,14 +29,12 @@ helpviewer_keywords:
   - "dates [SQL Server], current date and time"
   - "dates [SQL Server], system date and time"
   - "time [SQL Server], system"
-ms.assetid: 48a5b230-102e-4a89-bb2a-fcf0cac862bb
-caps.latest.revision: 37
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # GETUTCDATE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns the current database system timestamp as a **datetime** value. The database time zone offset is not included. This value represents the current UTC time (Coordinated Universal Time). This value is derived from the operating system of the computer on which the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] is running.  
   
@@ -53,13 +47,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql  
 GETUTCDATE()  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **datetime**  
   
 ## Remarks  
@@ -72,7 +66,7 @@ GETUTCDATE()
   
 ### A. Getting the current system date and time  
   
-```  
+```sql  
 SELECT 'SYSDATETIME()      ', SYSDATETIME();  
 SELECT 'SYSDATETIMEOFFSET()', SYSDATETIMEOFFSET();  
 SELECT 'SYSUTCDATETIME()   ', SYSUTCDATETIME();  
@@ -111,68 +105,7 @@ GETUTCDATE()             2007-05-04
   
 ### C. Getting the current system time  
   
-```  
-SELECT 'SYSDATETIME()      ', CONVERT (time, SYSDATETIME());  
-SELECT 'SYSDATETIMEOFFSET()', CONVERT (time, SYSDATETIMEOFFSET());  
-SELECT 'SYSUTCDATETIME()   ', CONVERT (time, SYSUTCDATETIME());  
-SELECT 'CURRENT_TIMESTAMP  ', CONVERT (time, CURRENT_TIMESTAMP);  
-SELECT 'GETDATE()          ', CONVERT (time, GETDATE());  
-SELECT 'GETUTCDATE()       ', CONVERT (time, GETUTCDATE());  
-/* Returned  
-SYSDATETIME()            18:25:01.6958841  
-SYSDATETIMEOFFSET()      18:25:01.6958841  
-SYSUTCDATETIME()         01:25:01.6958841  
-CURRENT_TIMESTAMP        18:25:01.6930000  
-GETDATE()                18:25:01.6930000  
-GETUTCDATE()             01:25:01.6930000  
-*/  
-```  
-  
-## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
- The following examples use the six system functions that return current date and time to return the date, time or both. The values are returned in series; therefore, their fractional seconds might be different.  
-  
-### D. Getting the current system date and time  
-  
-```  
-SELECT 'SYSDATETIME()      ', SYSDATETIME();  
-SELECT 'SYSDATETIMEOFFSET()', SYSDATETIMEOFFSET();  
-SELECT 'SYSUTCDATETIME()   ', SYSUTCDATETIME();  
-SELECT 'CURRENT_TIMESTAMP  ', CURRENT_TIMESTAMP;  
-SELECT 'GETDATE()          ', GETDATE();  
-SELECT 'GETUTCDATE()       ', GETUTCDATE();  
-/* Returned:  
-SYSDATETIME()            2007-05-03 18:34:11.9351421  
-SYSDATETIMEOFFSET()      2007-05-03 18:34:11.9351421 -07:00  
-SYSUTCDATETIME()         2007-05-04 01:34:11.9351421  
-CURRENT_TIMESTAMP        2007-05-03 18:34:11.933  
-GETDATE()                2007-05-03 18:34:11.933  
-GETUTCDATE()             2007-05-04 01:34:11.933  
-*/  
-```  
-  
-### E. Getting the current system date  
-  
-```  
-SELECT 'SYSDATETIME()      ', CONVERT (date, SYSDATETIME());  
-SELECT 'SYSDATETIMEOFFSET()', CONVERT (date, SYSDATETIMEOFFSET());  
-SELECT 'SYSUTCDATETIME()   ', CONVERT (date, SYSUTCDATETIME());  
-SELECT 'CURRENT_TIMESTAMP  ', CONVERT (date, CURRENT_TIMESTAMP);  
-SELECT 'GETDATE()          ', CONVERT (date, GETDATE());  
-SELECT 'GETUTCDATE()       ', CONVERT (date, GETUTCDATE());  
-  
-/* Returned:   
-SYSDATETIME()            2007-05-03  
-SYSDATETIMEOFFSET()      2007-05-03  
-SYSUTCDATETIME()         2007-05-04  
-CURRENT_TIMESTAMP        2007-05-03  
-GETDATE()                2007-05-03  
-GETUTCDATE()             2007-05-04  
-*/  
-```  
-  
-### F. Getting the current system time  
-  
-```  
+```sql  
 SELECT 'SYSDATETIME()      ', CONVERT (time, SYSDATETIME());  
 SELECT 'SYSDATETIMEOFFSET()', CONVERT (time, SYSDATETIMEOFFSET());  
 SELECT 'SYSUTCDATETIME()   ', CONVERT (time, SYSUTCDATETIME());  

@@ -1,24 +1,15 @@
 ---
-title: "storesUpperCaseIdentifiers Method | Microsoft Docs"
-ms.custom: ""
+title: "storesUpperCaseIdentifiers Method"
+description: "storesUpperCaseIdentifiers Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.storesUpperCaseIdentifiers"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.storesUpperCaseIdentifiers"
 apitype: "Assembly"
-ms.assetid: a622b748-d10b-4f02-afe3-fba4a5bca17b
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # storesUpperCaseIdentifiers Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,25 +1,22 @@
 ---
+description: "catalog.operations (SSISDB Database)"
 title: "catalog.operations (SSISDB Database) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "language-reference"
 helpviewer_keywords: 
   - "operations view [Integration Services]"
   - "catalog.operations view [Integration Services]"
 ms.assetid: 9455c5b1-60ff-45fc-8599-cc3abbd6daf5
-caps.latest.revision: 29
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # catalog.operations (SSISDB Database)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
 
   Displays the details of all operations in the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] catalog.  
   
@@ -53,12 +50,13 @@ manager: "jhubbard"
 |`2`|Retention window<br /><br /> (SQL Agent job)|**NULL**|**NULL**|  
 |`3`|MaxProjectVersion<br /><br /> (SQL Agent job)|**NULL**|**NULL**|  
 |`101`|**deploy_project**<br /><br /> (Stored procedure)|Project ID|Project name|  
+|`102`|**get_project**<br /><br /> (Stored procedure)|Project ID|Project name|  
 |`106`|**restore_project**<br /><br /> (Stored procedure)|Project ID|Project name|  
 |`200`|**create_execution** and **start_execution**<br /><br /> (Stored procedures)|Project ID|**NULL**|  
 |`202`|**stop_operation**<br /><br /> (Stored procedure)|Project ID|**NULL**|  
 |`300`|**validate_project**<br /><br /> (Stored procedure)|Project ID|Project name|  
 |`301`|**validate_package**<br /><br /> (Stored procedure)|Project ID|Package name|  
-|`1000`|**configure_catalog**<br /><br /> (Stored procedure)|**NULL**|**NULL**||  
+|`1000`|**configure_catalog**<br /><br /> (Stored procedure)|**NULL**|**NULL**|
   
 ## Permissions  
  This view requires one of the following permissions:  

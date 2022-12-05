@@ -1,22 +1,17 @@
 ---
+description: "Refresh from database (MySQLToSQL)"
 title: "Refresh from database (MySQLToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 59a6db8f-2db6-4071-9005-928a7231de92
-caps.latest.revision: 4
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
+f1_keywords: 
+    - "ssma.mysql.synchronizeupdatesource.f1"
 ---
 # Refresh from database (MySQLToSQL)
 The **Refresh from Database** dialog box lets you select which objects to refresh from the MySQL database. Rows in the dialog box are color coded based on the state of the metadata:  
@@ -35,9 +30,8 @@ To access the **Refresh from Database** dialog box, right-click an object in MyS
   
 ## Options  
   
-|||  
-|-|-|  
 |**Term**|**Definition**|  
+|-|-|  
 |**Collapse (-)**|Collapse all object groups to hide individual objects.|  
 |**Expand (+)**|Expand all object groups to show individual objects.|  
 |**Hide/Show Equal Objects**|Hides objects from the list if the object metadata is the same in the MySQL database and in SSMA.|  

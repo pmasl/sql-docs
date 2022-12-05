@@ -1,30 +1,30 @@
 ---
+description: "Create and Deploy a Cache for the Lookup Transformation"
 title: "Create and Deploy a Cache for the Lookup Transformation | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "creating cache files for Lookup transformation"
   - "deploying cache files for Lookup transformation"
   - "Lookup transformation cache files"
 ms.assetid: cedf5cad-2fac-42d0-ad91-9461e117d330
-caps.latest.revision: 23
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Create and Deploy a Cache for the Lookup Transformation
+
+[!INCLUDE[sqlserver-ssis](../../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   You can create and deploy a cache file (.caw) for the Lookup transformation. The reference dataset is stored in the cache file.  
   
  The Lookup transformation performs lookups by joining data in input columns from a connected data source with columns in the reference dataset.  
   
- You create a cache file by using a Cache connection manager and a Cache Transform transformation. For more information, see [Cache Connection Manager](../../../integration-services/data-flow/transformations/cache-connection-manager.md) and [Cache Transform](../../../integration-services/data-flow/transformations/cache-transform.md).  
+ You create a cache file by using a Cache connection manager and a Cache Transform transformation. For more information, see [Cache Connection Manager](../../connection-manager/cache-connection-manager.md) and [Cache Transform](../../../integration-services/data-flow/transformations/cache-transform.md).  
   
  To learn more about the Lookup transformation and cache files, see [Lookup Transformation](../../../integration-services/data-flow/transformations/lookup-transformation.md).  
   
@@ -58,11 +58,11 @@ manager: "jhubbard"
     > [!NOTE]  
     >  When the Lookup transformation is configured to use a Cache connection manager, only index columns in the reference dataset can be mapped to input columns. Also all index columns must be mapped.  
   
-     For more information, see [Cache Connection Manager Editor](../../../integration-services/data-flow/transformations/cache-connection-manager-editor.md).  
+     For more information, see [Cache Connection Manager Editor](../../connection-manager/cache-connection-manager.md).  
   
 7.  Configure the Cache Transform as needed.  
   
-     For more information, see [Cache Transformation Editor &#40;Connection Manager Page&#41;](../../../integration-services/data-flow/transformations/cache-transformation-editor-connection-manager-page.md) and [Cache Transformation Editor &#40;Mappings Page&#41;](../../../integration-services/data-flow/transformations/cache-transformation-editor-mappings-page.md).  
+     For more information, see [Cache Transformation Editor &#40;Connection Manager Page&#41;](./cache-transform.md) and [Cache Transformation Editor &#40;Mappings Page&#41;](./cache-transform.md).  
   
 8.  Run the package.  
   
@@ -70,7 +70,7 @@ manager: "jhubbard"
   
 1.  In [!INCLUDE[ssBIDevStudioFull](../../../includes/ssbidevstudiofull-md.md)], open the [!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] project that contains the package you want, and then open the package.  
   
-2.  Optionally, create a package configuration. For more information, see [Create Package Configurations](../../../integration-services/packages/create-package-configurations.md).  
+2.  Optionally, create a package configuration. For more information, see [Create Package Configurations](../../packages/legacy-package-deployment-ssis.md).  
   
 3.  Add the cache file to the project by doing the following:  
   
@@ -82,13 +82,12 @@ manager: "jhubbard"
   
      The file appears in the **Miscellaneous** folder in Solution Explorer.  
   
-4.  Configure the project to create a deployment utility, and then build the project. For more information, see [Create a Deployment Utility](../../../integration-services/packages/create-a-deployment-utility.md).  
+4.  Configure the project to create a deployment utility, and then build the project. For more information, see [Create a Deployment Utility](../../packages/legacy-package-deployment-ssis.md).  
   
      A manifest file, \<*project name*>.SSISDeploymentManifest.xml, is created that lists the miscellaneous files in the project, the packages, and the package configurations.  
   
-5.  Deploy the package to the file system. For more information, see [Deploy Packages by Using the Deployment Utility](../../../integration-services/packages/deploy-packages-by-using-the-deployment-utility.md).  
+5.  Deploy the package to the file system. For more information, see [Deploy Packages by Using the Deployment Utility](../../packages/legacy-package-deployment-ssis.md).  
   
 ## See Also  
- [Create a Deployment Utility](../../../integration-services/packages/create-a-deployment-utility.md)  
-  
+ [Create a Deployment Utility](../../packages/legacy-package-deployment-ssis.md)  
   

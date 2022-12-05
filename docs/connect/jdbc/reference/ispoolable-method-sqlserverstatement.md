@@ -1,19 +1,12 @@
 ---
-title: "isPoolable Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "isPoolable Method (SQLServerStatement)"
+description: "isPoolable Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b8a12ac5-57cb-4288-9973-c7d5cebd197c
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # isPoolable Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,35 +1,17 @@
 ---
+description: "MDX Data Manipulation - CLEAR CALCULATIONS"
 title: "CLEAR CALCULATIONS Statement (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "CLEAR CALCULATIONS"
-  - "clalculations"
-  - "clear"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "clearing calculations"
-  - "CLEAR CALCULATIONS statement"
-  - "deleting calculations"
-  - "removing calculations"
-  - "calculations [Analysis Services], clearing"
-  - "cubes [Analysis Services], calculations"
-ms.assetid: aebec9a1-1d1d-4697-aa3f-cc2449625603
-caps.latest.revision: 30
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # MDX Data Manipulation - CLEAR CALCULATIONS
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Removes all calculations from the cube and returns the cube to calculation pass 0.  
   

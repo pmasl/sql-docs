@@ -1,16 +1,12 @@
 ---
 title: "Primary Expressions (XQuery) | Microsoft Docs"
+description: Learn about XQuery primary expressions that include literals, variable references, context item expressions, constructors, and function calls.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: xml
 ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
 dev_langs: 
   - "XML"
 helpviewer_keywords: 
@@ -21,13 +17,11 @@ helpviewer_keywords:
   - "literals [XQuery]"
   - "context item expressions [XQuery]"
 ms.assetid: d4183c3e-12b5-4ca0-8413-edb0230cb159
-caps.latest.revision: 20
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "rothja"
+ms.author: "jroth"
 ---
 # Primary Expressions (XQuery)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
 
   The XQuery primary expressions include literals, variable references, context item expressions, constructors, and function calls.  
   
@@ -36,11 +30,11 @@ manager: "jhubbard"
   
 |Entity reference|Represents|  
 |----------------------|----------------|  
-|&lt;|\<|  
-|&gt;|>|  
-|&amp;|&|  
-|&quot;|"|  
-|&apos;|'|  
+|`&lt;`|\<|  
+|`&gt;`|>|  
+|`&amp;`|&|  
+|`&quot;`|"|  
+|`&apos;`|'|  
   
  A string literal can also contain a character reference, an XML-style reference to a Unicode character, that is identified by its decimal or hexadecimal code point. For example, the Euro symbol can be represented by the character reference, "&\#8364;".  
   
@@ -64,7 +58,7 @@ GO
 ```  
 DECLARE @var XML  
 SET @var = ''  
-SELECT @var.query(' <SalaryRange>Salary > 50000 and < 100000</SalaryRange>')  
+SELECT @var.query(' <SalaryRange>Salary &gt; 50000 and &lt; 100000</SalaryRange>')  
 GO  
 ```  
   
@@ -125,7 +119,7 @@ GO
 DECLARE @var XML  
 SET @var = '<root>1</root>'  
 SELECT @var.query('  
-DECLARE namespace x="http://X";  
+DECLARE namespace x="https://X";  
 for $x:i in /root return data($x:i)')  
 GO  
 ```  
@@ -182,6 +176,5 @@ SELECT @var.query('/ROOT[1]/a[./@attr]')
 -   Function import is not supported.  
   
 ## See Also  
- [XML Construction &#40;XQuery&#41;](../xquery/xml-construction-xquery.md)  
-  
-  
+ [XML Construction &#40;XQuery&#41;](../xquery/xml-construction-xquery.md)
+ 

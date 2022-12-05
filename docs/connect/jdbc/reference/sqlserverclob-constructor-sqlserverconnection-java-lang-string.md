@@ -1,24 +1,15 @@
 ---
-title: "SQLServerClob Constructor (SQLServerConnection, java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerClob Constructor (SQLServerConnection, java.lang.String)"
+description: "SQLServerClob Constructor (SQLServerConnection, java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.SQLServerClob (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.SQLServerClob (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: 7058f4f7-ef3e-4d62-90d1-79299708b1eb
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # SQLServerClob Constructor (SQLServerConnection, java.lang.String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

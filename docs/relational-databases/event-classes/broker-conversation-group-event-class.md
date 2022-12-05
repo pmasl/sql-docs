@@ -1,24 +1,24 @@
 ---
+description: "Broker:Conversation Group Event Class"
 title: "Broker:Conversation Group Event Class | Microsoft Docs"
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "05/24/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: reference
 helpviewer_keywords: 
   - "Broker:Conversation Group event class"
 ms.assetid: 6595bef6-9d40-42eb-a934-735622dd23fb
-caps.latest.revision: 24
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Broker:Conversation Group Event Class
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] generates a **Broker:Conversation Group** event when Service Broker creates a new conversation group or drops an existing conversation group.  
+
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] generates a **Broker:Conversation Group** event when Service Broker creates a new conversation group or drops an existing conversation group.  
   
 ## Broker:Conversation Group Event Class Data Columns  
   

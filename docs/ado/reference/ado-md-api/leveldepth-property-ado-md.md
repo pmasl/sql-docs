@@ -1,38 +1,31 @@
 ---
-title: "LevelDepth Property (ADO MD) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "LevelDepth Property (ADO MD)"
+description: "LevelDepth Property (ADO MD)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "LevelDepth"
   - "Member::LevelDepth"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "LevelDepth property [ADO MD]"
-ms.assetid: 8a1cfe2c-f207-4445-b152-ade090f64608
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # LevelDepth Property (ADO MD)
-Indicates the number of levels between the root of the hierarchy and a [member](../../../ado/reference/ado-md-api/member-object-ado-md.md).  
+Indicates the number of levels between the root of the hierarchy and a [member](./member-object-ado-md.md).  
   
 ## Return Values  
  Returns a **Long** integer, and is read-only.  
   
 ## Remarks  
- Use the **LevelDepth** property to determine the distance of the [Member](../../../ado/reference/ado-md-api/member-object-ado-md.md)object from the root level of the hierarchy. The **LevelDepth**of a member at the root level is 0. This corresponds to the [Depth](../../../ado/reference/ado-md-api/depth-property-ado-md.md) property of a [Level](../../../ado/reference/ado-md-api/level-object-ado-md.md) object.  
+ Use the **LevelDepth** property to determine the distance of the [Member](./member-object-ado-md.md)object from the root level of the hierarchy. The **LevelDepth**of a member at the root level is 0. This corresponds to the [Depth](./depth-property-ado-md.md) property of a [Level](./level-object-ado-md.md) object.  
   
 ## Applies To  
- [Member Object (ADO MD)](../../../ado/reference/ado-md-api/member-object-ado-md.md)  
+ [Member Object (ADO MD)](./member-object-ado-md.md)  
   
 ## See Also  
- [Depth Property (ADO MD)](../../../ado/reference/ado-md-api/depth-property-ado-md.md)   
- [Level Object (ADO MD)](../../../ado/reference/ado-md-api/level-object-ado-md.md)
+ [Depth Property (ADO MD)](./depth-property-ado-md.md)   
+ [Level Object (ADO MD)](./level-object-ado-md.md)

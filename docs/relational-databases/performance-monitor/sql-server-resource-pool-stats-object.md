@@ -1,27 +1,23 @@
 ---
-title: "SQL Server, Resource Pool Stats Object | Microsoft Docs"
+title: "SQL Server, Resource Pool Stats object"
+description: Learn about the SQLServer:Resource Pool Stats object, which contains performance counters that report about Resource Governor resource pool statistics.
 ms.custom: ""
-ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/13/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Reosurce Pool Stats object"
   - "SQLServer: Resource Pool Stats object"
-ms.assetid: bb46e029-fcf9-4aeb-a066-be41e7668fb9
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server, Resource Pool Stats Object
-  The SQLServer:Resource Pool Stats object contains performance counters that report information about Resource Governor resource pool statistics.  
+# SQL Server, Resource Pool Stats object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  The **SQLServer:Resource Pool Stats** object contains performance counters that report information about Resource Governor resource pool statistics.  
   
- Each active resource pool creates an instance of the SQLServer:Resource Pool Stats performance object that has the same instance name as the Resource Governor resource pool name. The following table describes counters supported on this instance.  
+ Each active resource pool creates an instance of the **SQLServer:Resource Pool Stats** performance object that has the same instance name as the Resource Governor resource pool name. The following table describes counters supported on this instance.  
   
 |Counter name|Description|  
 |------------------|-----------------|  
@@ -56,8 +52,24 @@ manager: "jhubbard"
 |**Target memory (KB)**|The target amount, in kilobytes (KB), of memory the resource pool is trying to obtain based on the resource pool settings and server state.|   
 |**Used memory (KB)**|The amount of memory used, in kilobytes (KB), for the resource pool.|  
 
+ Each counter in the object contains the following instances:  
   
-## See Also  
+|Instance|Description|  
+|--------------------------|-----------------|  
+|**default**|The **default** Resource Governor resource pool|  
+|**internal**|The **internal** Resource Governor resource pool|  
+|**\<resource pool name>**|Information for any custom resource pools|  
+
+## Example
+
+You begin to explore the query performance counters in this object using this T-SQL query on the [sys.dm_os_performance_counters](../system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md) dynamic management view:
+
+```sql
+SELECT * FROM sys.dm_os_performance_counters
+WHERE object_name LIKE '%Resource Pool Stats%';
+```    
+
+## See also  
  [Monitor Resource Usage &#40;System Monitor&#41;](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)   
  [SQL Server, Workload Group Stats Object](../../relational-databases/performance-monitor/sql-server-workload-group-stats-object.md)   
  [Resource Governor](../../relational-databases/resource-governor/resource-governor.md)  

@@ -1,29 +1,22 @@
 ---
-title: "How Event Handlers Work Together | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "How Event Handlers Work Together"
+description: "How Event Handlers Work Together"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "events [ADO], about event handlers"
   - "unpaired event handlers [ADO]"
   - "paired event handlers [ADO]"
   - "single event handlers [ADO]"
   - "event handlers [ADO]"
   - "multiple object event handlers [ADO]"
-ms.assetid: a86c8a02-dd69-420d-8a47-0188b339858d
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # How Event Handlers Work Together
-Unless you are programming in Visual Basic, all event handlers for **Connection** and **Recordset** events must be implemented, regardless of whether you actually process all of the events. The amount of implementation work you have to do depends on your programming language. For more information, see [ADO Event Instantiation by Language](../../../ado/guide/data/ado-event-instantiation-by-language.md).  
+Unless you are programming in Visual Basic, all event handlers for **Connection** and **Recordset** events must be implemented, regardless of whether you actually process all of the events. The amount of implementation work you have to do depends on your programming language. For more information, see [ADO Event Instantiation by Language](./ado-event-instantiation-by-language.md).  
   
 ## Paired Event Handlers  
  Each Will event handler has an associated **Complete** event handler. For example, when your application changes the value of a field, the **WillChangeField** event handler is called. If the change is acceptable, your application leaves the **adStatus** parameter unchanged and the operation is performed. When the operation completes, a **FieldChangeComplete** event notifies your application that the operation has finished. If it completed successfully, **adStatus** contains **adStatusOK**; otherwise, **adStatus** contains **adStatusErrorsOccurred** and you must check the **Error** object to determine the cause of the error.  
@@ -43,7 +36,7 @@ Unless you are programming in Visual Basic, all event handlers for **Connection*
   
  Single **Complete** event handlers can be useful for managing asynchronous operations. Each asynchronous operation has an appropriate **Complete** event.  
   
- For example, it can take a long time to populate a large [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) object. If your application is appropriately written, you can start a `Recordset.Open(...,adAsyncExecute)` operation and continue with other processing. You will eventually be notified when the **Recordset** is populated by an **ExecuteComplete** event.  
+ For example, it can take a long time to populate a large [Recordset](../../reference/ado-api/recordset-object-ado.md) object. If your application is appropriately written, you can start a `Recordset.Open(...,adAsyncExecute)` operation and continue with other processing. You will eventually be notified when the **Recordset** is populated by an **ExecuteComplete** event.  
   
 ## Single Event Handlers and Multiple Objects  
  The flexibility of a programming language like Microsoft Visual C++® enables you to have one event handler process events from multiple objects. For example, you could have one **Disconnect** event handler process events from several **Connection** objects. If one of the connections ended, the **Disconnect** event handler would be called. You could tell which connection caused the event because the event-handler object parameter would be set to the corresponding **Connection** object.  
@@ -52,7 +45,7 @@ Unless you are programming in Visual Basic, all event handlers for **Connection*
 >  This technique cannot be used in Visual Basic because that language can correlate only one object to an event handler.  
   
 ## See Also  
- [ADO Event Handler Summary](../../../ado/guide/data/ado-event-handler-summary.md)   
- [ADO Event Instantiation by Language](../../../ado/guide/data/ado-event-instantiation-by-language.md)   
- [Event Parameters](../../../ado/guide/data/event-parameters.md)   
- [Types of Events](../../../ado/guide/data/types-of-events.md)
+ [ADO Event Handler Summary](./ado-event-handler-summary.md)   
+ [ADO Event Instantiation by Language](./ado-event-instantiation-by-language.md)   
+ [Event Parameters](./event-parameters.md)   
+ [Types of Events](./types-of-events.md)

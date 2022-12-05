@@ -1,24 +1,21 @@
 ---
+description: "Create New Condition or Open Condition Dialog Box, Description Page"
 title: "Create New Condition or Open Condition Dialog Box, Description Page | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: security
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.dmf.condition.description.f1"
   - "sql13.swb.dmf.policy.description.f1"
 ms.assetid: 2ef0a556-9566-4af8-849e-ab038b9279cc
-caps.latest.revision: 37
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # Create New Condition or Open Condition Dialog Box, Description Page
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use this dialog box to add a description to a Policy-Based Management condition.  
   
 ## Options  

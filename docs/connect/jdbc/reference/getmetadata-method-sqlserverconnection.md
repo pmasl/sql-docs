@@ -1,24 +1,15 @@
 ---
-title: "getMetaData Method (SQLServerConnection) | Microsoft Docs"
-ms.custom: ""
+title: "getMetaData Method (SQLServerConnection)"
+description: "getMetaData Method (SQLServerConnection)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.getMetaData"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.getMetaData"
 apitype: "Assembly"
-ms.assetid: 86223cb5-3bf4-489a-8c82-669a91764f2b
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getMetaData Method (SQLServerConnection)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

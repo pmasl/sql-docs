@@ -1,25 +1,19 @@
 ---
-title: "Getting Information About Assemblies | Microsoft Docs"
-ms.custom: ""
+title: "Getting Information About Assemblies"
+description: Getting Information About Assemblies
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "assemblies [CLR integration], metadata"
   - "status information [SQL Server], assemblies"
   - "metadata [SQL Server], assemblies"
 ms.assetid: 6aa7f18e-baad-4481-9777-8c3b230b392f
-caps.latest.revision: 20
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Assemblies - Getting Information
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   The following catalog views and functions can be queried for metadata about assemblies.  
   
  **To get information about individual assemblies**  

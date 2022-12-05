@@ -1,19 +1,12 @@
 ---
-title: "setSQLXML Method (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setSQLXML Method (SQLServerCallableStatement)"
+description: "setSQLXML Method (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: de095cb3-1111-4154-8996-3c2e529e3000
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # setSQLXML Method (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

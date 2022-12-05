@@ -1,33 +1,30 @@
 ---
-title: "Delete Objects | Microsoft Docs"
-ms.custom: ""
+description: "Delete Objects"
+title: "Delete Objects"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.deleteobjects.f1"
 helpviewer_keywords: 
   - "Delete Objects dialog box"
 ms.assetid: 49541441-179c-40d3-ba0c-01bcae545984
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Delete Objects
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 Use this dialog box to delete a database or database object.  
   
-## UIElement List  
+## UI element list  
 **Object to be deleted**  
 Displays the names, types, owners, and status of the objects that are about to be deleted, as well as any messages about errors during execution.  
   
 > [!NOTE]  
-> Running **Delete** on a database is equivalent to issuing DROP DATABASE in [!INCLUDE[tsql](../../includes/tsql_md.md)].  
+> Running **Delete** on a database is equivalent to issuing DROP DATABASE in [!INCLUDE[tsql](../../includes/tsql-md.md)].  
   
 **Show Dependencies**  
 Click to display both the objects that are dependent on the currently selected object and objects that the current object is dependent on (upward and downward dependency). The information displayed in the **Show Dependencies** dialog box is read-only.  

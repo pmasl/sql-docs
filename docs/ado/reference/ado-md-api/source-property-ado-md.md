@@ -1,36 +1,29 @@
 ---
-title: "Source Property (ADO MD) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Source Property (ADO MD)"
+description: "Source Property (ADO MD)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Cellset::Source"
   - "Source"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Source property [ADO MD]"
-ms.assetid: 875a99ea-7f1a-4570-87b1-5ecbebbcf845
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Source Property (ADO MD)
-Indicates the source for the data in the [cellset](../../../ado/reference/ado-md-api/cellset-object-ado-md.md).  
+Indicates the source for the data in the [cellset](./cellset-object-ado-md.md).  
   
 ## Settings and Return Values  
- Sets or returns a **Variant**, and is read/write for closed [Cellset](../../../ado/reference/ado-md-api/cellset-object-ado-md.md) objects and read-only for open **Cellset** objects. The **Variant** should contain a valid **String**, for example, an MDX query.  
+ Sets or returns a **Variant**, and is read/write for closed [Cellset](./cellset-object-ado-md.md) objects and read-only for open **Cellset** objects. The **Variant** should contain a valid **String**, for example, an MDX query.  
   
 ## Applies To  
- [Cellset Object (ADO MD)](../../../ado/reference/ado-md-api/cellset-object-ado-md.md)  
+ [Cellset Object (ADO MD)](./cellset-object-ado-md.md)  
   
 ## See Also  
- [Cellset Example (VB)](../../../ado/reference/ado-md-api/cellset-example-vb.md)   
- [ActiveConnection Property (ADO MD)](../../../ado/reference/ado-md-api/activeconnection-property-ado-md.md)   
- [Open Method (ADO MD)](../../../ado/reference/ado-md-api/open-method-ado-md.md)
+ [Cellset Example (VB)](./cellset-example-vb.md)   
+ [ActiveConnection Property (ADO MD)](./activeconnection-property-ado-md.md)   
+ [Open Method (ADO MD)](./open-method-ado-md.md)

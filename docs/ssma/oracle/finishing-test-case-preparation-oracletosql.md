@@ -1,19 +1,15 @@
 ---
+description: "Finishing Test Case Preparation (OracleToSQL)"
 title: "Finishing Test Case Preparation (OracleToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 32f38713-7ae4-48d3-980d-74cadc8545a0
-caps.latest.revision: 6
-author: "sabotta"
-ms.author: "carlasab"
-manager: "v-thobro"
+author: cpichuka 
+ms.author: cpichuka 
 ---
 # Finishing Test Case Preparation (OracleToSQL)
 The wizard's final page displays the Test Case description and information about objects involved in the test. In addition, on this page you can set the test execution options.  
@@ -52,10 +48,9 @@ Defines the saving mode for auxiliary tables created during test execution. See 
   
 -   If you select **Ask User if Table Comparison Failed**, the user can select the necessary action if an error happens.  
   
-Click the **Finish** button to save the prepared Test Case into [Using Test Repositories (OracleToSQL)](http://msdn.microsoft.com/en-us/f941cce4-d3e3-4aeb-a88a-4f101a97a9f4).  
+Click the **Finish** button to save the prepared Test Case into [Using Test Repositories (OracleToSQL)](./using-test-repositories-oracletosql.md).  
   
 ## See Also  
 [Using Test Repositories &#40;OracleToSQL&#41;](../../ssma/oracle/using-test-repositories-oracletosql.md)  
 [Running Test Cases &#40;OracleToSQL&#41;](../../ssma/oracle/running-test-cases-oracletosql.md)  
 [Testing Migrated Database Objects &#40;OracleToSQL&#41;](../../ssma/oracle/testing-migrated-database-objects-oracletosql.md)  
-  

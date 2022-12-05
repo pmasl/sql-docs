@@ -1,24 +1,15 @@
 ---
-title: "getTimeDateFunctions Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getTimeDateFunctions Method (SQLServerDatabaseMetaData)"
+description: "getTimeDateFunctions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getTimeDateFunctions"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getTimeDateFunctions"
 apitype: "Assembly"
-ms.assetid: a56e08ae-6f4e-4dc6-b175-ff457d0d7a81
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getTimeDateFunctions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

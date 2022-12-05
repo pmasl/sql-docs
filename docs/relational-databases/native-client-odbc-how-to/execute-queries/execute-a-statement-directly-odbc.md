@@ -1,34 +1,31 @@
 ---
+description: "Execute a Statement Directly (ODBC)"
 title: "Execute a Statement Directly (ODBC) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "statement execution"
 ms.assetid: b690f9de-66e1-4ee5-ab6a-121346fb5f85
-caps.latest.revision: 12
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Execute a Statement Directly (ODBC)
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
     
 ### To execute a statement directly and one time only  
   
 1.  If the statement has parameter markers, use [SQLBindParameter](../../../relational-databases/native-client-odbc-api/sqlbindparameter.md) to bind each parameter to a program variable. Fill the program variables with data values, and then set up any data-at-execution parameters.  
   
-2.  Call [SQLExecDirect](http://go.microsoft.com/fwlink/?LinkId=58399) to execute the statement.  
+2.  Call [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md) to execute the statement.  
   
-3.  If data-at-execution input parameters are used, [SQLExecDirect](http://go.microsoft.com/fwlink/?LinkId=58399) returns SQL_NEED_DATA. Send the data in chunks by using [SQLParamData](http://go.microsoft.com/fwlink/?LinkId=58405) and [SQLPutData](../../../relational-databases/native-client-odbc-api/sqlputdata.md).  
-  
+3.  If data-at-execution input parameters are used, [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md) returns SQL_NEED_DATA. Send the data in chunks by using [SQLParamData](../../../odbc/reference/syntax/sqlparamdata-function.md) and [SQLPutData](../../../relational-databases/native-client-odbc-api/sqlputdata.md).  
+
 ### To execute a statement multiple times by using column-wise parameter binding  
   
 1.  Call [SQLSetStmtAttr](../../../relational-databases/native-client-odbc-api/sqlsetstmtattr.md) to set the following attributes:  
@@ -53,9 +50,9 @@ manager: "jhubbard"
   
      Put S data values and S data lengths into the bound parameter arrays.  
   
-3.  Call [SQLExecDirect](http://go.microsoft.com/fwlink/?LinkId=58399) to execute the statement. The driver efficiently executes the statement S times, once for each set of parameters.  
+3.  Call [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md) to execute the statement. The driver efficiently executes the statement S times, once for each set of parameters.  
   
-4.  If data-at-execution input parameters are used, [SQLExecDirect](http://go.microsoft.com/fwlink/?LinkId=58399) returns SQL_NEED_DATA. Send the data in chunks by using [SQLParamData](http://go.microsoft.com/fwlink/?LinkId=58405) and [SQLPutData](../../../relational-databases/native-client-odbc-api/sqlputdata.md).  
+4.  If data-at-execution input parameters are used, [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md) returns SQL_NEED_DATA. Send the data in chunks by using [SQLParamData](../../../odbc/reference/syntax/sqlparamdata-function.md) and [SQLPutData](../../../relational-databases/native-client-odbc-api/sqlputdata.md).  
   
 ### To execute a statement multiple times by using row-wise parameter binding  
   
@@ -79,13 +76,12 @@ manager: "jhubbard"
   
 4.  Fill the bound parameter buffer array with data values.  
   
-5.  Call [SQLExecDirect](http://go.microsoft.com/fwlink/?LinkId=58399) to execute the statement. The driver efficiently executes the statement S times, once for each set of parameters.  
+5.  Call [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md) to execute the statement. The driver efficiently executes the statement S times, once for each set of parameters.  
   
-6.  If data-at-execution input parameters are used, [SQLExecDirect](http://go.microsoft.com/fwlink/?LinkId=58399) returns SQL_NEED_DATA. Send the data in chunks by using [SQLParamData](http://go.microsoft.com/fwlink/?LinkId=58405) and [SQLPutData](../../../relational-databases/native-client-odbc-api/sqlputdata.md).  
+6.  If data-at-execution input parameters are used, [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md) returns SQL_NEED_DATA. Send the data in chunks by using [SQLParamData](../../../odbc/reference/syntax/sqlparamdata-function.md) and [SQLPutData](../../../relational-databases/native-client-odbc-api/sqlputdata.md).  
   
- **Note** Column-wise and row-wise binding are more typically used in conjunction with [SQLPrepare Function](http://go.microsoft.com/fwlink/?LinkId=59360) and [SQLExecute](http://go.microsoft.com/fwlink/?LinkId=58400) than with [SQLExecDirect](http://go.microsoft.com/fwlink/?LinkId=58399).  
+ **Note** Column-wise and row-wise binding are more typically used in conjunction with [SQLPrepare Function](../../../odbc/reference/syntax/sqlprepare-function.md) and [SQLExecute](../../../odbc/reference/syntax/sqlexecute-function.md) than with [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md).  
   
 ## See Also  
  [Executing Queries How-to Topics &#40;ODBC&#41;](../../../relational-databases/native-client-odbc-how-to/execute-queries/executing-queries-how-to-topics-odbc.md)  
-  
   

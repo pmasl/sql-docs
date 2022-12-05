@@ -1,26 +1,23 @@
 ---
-title: "Change the Connection Associated with a Query | Microsoft Docs"
-ms.custom: ""
+description: "Change the Connection Associated with a Query"
+title: "Change the Connection Associated with a Query"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "connections [SQL Server Management Studio], query associations"
   - "projects [SQL Server Management Studio], connections"
   - "projects [SQL Server Management Studio], query connections"
   - "query associations [SQL Server Management Studio]"
 ms.assetid: 7b8851b8-eccb-4e6c-944a-68fa90fc5870
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Change the Connection Associated with a Query
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 A query can be executed against several different servers or databases by changing the connection used by the query.  
   
 ### To change the connection associated with a query  

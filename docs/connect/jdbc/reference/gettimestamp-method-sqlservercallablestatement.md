@@ -1,24 +1,15 @@
 ---
-title: "getTimestamp Method (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getTimestamp Method (SQLServerCallableStatement)"
+description: "getTimestamp Method (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.getTimestamp"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.getTimestamp"
 apitype: "Assembly"
-ms.assetid: fca2d35f-266b-4dc7-9aa9-30a17ee2ecec
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getTimestamp Method (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

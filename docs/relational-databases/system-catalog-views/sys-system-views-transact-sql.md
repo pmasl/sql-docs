@@ -1,33 +1,27 @@
 ---
-title: "sys.system_views (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.system_views (Transact-SQL)"
+description: sys.system_views (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.system_views_TSQL"
   - "system_views"
   - "system_views_TSQL"
   - "sys.system_views"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.system_views catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: a526c410-e7b5-4075-8103-e1f3c6837c3c
-caps.latest.revision: 24
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.system_views (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  Contains one row for each system view that is shipped with [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. All system views are contained in the schemas named **sys** or **INFORMATION_SCHEMA**.  
+  Contains one row for each system view that is shipped with [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. All system views are contained in the schemas named **sys** or **INFORMATION_SCHEMA**.  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  

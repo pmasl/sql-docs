@@ -1,29 +1,32 @@
 ---
+description: "catalog.deploy_packages"
 title: "catalog.deploy_packages | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "language-reference"
 ms.assetid: 8e861df6-d103-4d84-8438-e822533f6849
-caps.latest.revision: 4
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
-# catalog.deploy_packages
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+# catalog.deploy_packages 
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Deploys one or more packages to a folder in the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] catalog or updates an existing package that has been deployed previously.  
   
 ## Syntax  
   
-```  
-[catalog].[deploy_packages]     [ @folder_name = ] folder_name,    [ @project_name = ] project_name,    [ @packages_table = ] packages_table,     [ @operation_id OUTPUT ] operation_id OUTPUT ]  
+```sql  
+catalog.deploy_packages [ @folder_name = ] folder_name
+    , [ @project_name = ] project_name
+    , [ @packages_table = ] packages_table
+    [, [ @operation_id OUTPUT = ] operation_id OUTPUT]
 ```  
   
 ## Arguments  

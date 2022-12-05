@@ -1,16 +1,12 @@
 ---
+description: "sysarticles (System View) (Transact-SQL)"
 title: "sysarticles (System View) (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
 f1_keywords: 
   - "sysarticles"
   - "sysarticles_TSQL"
@@ -18,16 +14,14 @@ dev_langs:
   - "TSQL"
 helpviewer_keywords: 
   - "sysarticles view"
-ms.assetid: 18f8c9b3-cab7-4e8f-8754-11ac38c3f789
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # sysarticles (System View) (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  The **sysarticles** view exposes article properties. This view is stored in the distribution database.  
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+The **sysarticles** view exposes article properties. This view is stored in the distribution database.  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  

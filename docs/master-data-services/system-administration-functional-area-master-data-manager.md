@@ -1,21 +1,20 @@
 ---
-title: "System Administration Functional Area (Master Data Manager) | Microsoft Docs"
+description: "System Administration Functional Area (Master Data Manager)"
+title: System Administration Functional Area
 ms.custom: ""
 ms.date: "04/01/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 ms.assetid: 4254e825-d76a-4daf-961f-087b961644a7
-caps.latest.revision: 9
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # System Administration Functional Area (Master Data Manager)
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   In the System Administration functional area, administrators can create a model and all its objects. They can also create business rules and create and deploy model packages. For more information about administrators, see [Administrators &#40;Master Data Services&#41;](../master-data-services/administrators-master-data-services.md).  
   
 ## Model  
@@ -45,7 +44,7 @@ manager: "jhubbard"
   
  [Create a Model Deployment Package by Using the Wizard](../master-data-services/create-a-model-deployment-package-by-using-the-wizard.md)  
   
- [Troubleshooting Model Deployment (Master Data Services)](http://social.technet.microsoft.com/wiki/contents/articles/troubleshooting-model-deployment-master-data-services.aspx)  
+ [Troubleshooting Model Deployment (Master Data Services)](https://social.technet.microsoft.com/wiki/contents/articles/troubleshooting-model-deployment-master-data-services.aspx)  
   
 ## Business Rules  
  [Business Rules &#40;Master Data Services&#41;](../master-data-services/business-rules-master-data-services.md)  

@@ -1,22 +1,15 @@
 ---
-title: "Default SQL Server Data Types | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "Default SQL Server data types"
+description: "This topic lists all the default SQL Server Data types based on PHP Data Types when using the Microsoft SQLSRV Driver for PHP for SQL Server"
+author: David-Engel
+ms.author: v-davidengel
+ms.date: "08/10/2020"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: conceptual
+helpviewer_keywords:
   - "default data types"
   - "converting data types"
-ms.assetid: 65c7c211-96d3-4e65-a1de-1fe8d21348e7
-caps.latest.revision: 20
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Default SQL Server Data Types
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -29,7 +22,7 @@ When sending data to the server, the [!INCLUDE[ssDriverPHP](../../includes/ssdri
 |Boolean|bit|bit|  
 |Integer|int|int|  
 |Float|float(24)|not supported|  
-|String (length less than 8000 bytes)|varchar(<string length>)|varchar(<string length>)|  
+|String (length less than 8000 bytes)|varchar(\<string length\>)|varchar(\<string length\>)|  
 |String (length greater than 8000 bytes)|varchar(max)|varchar(max)|  
 |Resource|Not supported.|Not supported.|  
 |Stream (encoding: not binary)|varchar(max)|varchar(max)|  
@@ -39,9 +32,12 @@ When sending data to the server, the [!INCLUDE[ssDriverPHP](../../includes/ssdri
 |DateTime (1)|datetime|Not supported.|  
   
 ## See Also  
-[Constants &#40;Microsoft Drivers for PHP for SQL Server&#41;](../../connect/php/constants-microsoft-drivers-for-php-for-sql-server.md)  
-[Converting Data Types](../../connect/php/converting-data-types.md)  
-[sqlsrv_field_metadata](../../connect/php/sqlsrv-field-metadata.md)  
-[PHP Types](http://go.microsoft.com/fwlink/?LinkId=109071)  
-[Data Types (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=109068)  
-  
+[Constants &#40;Microsoft Drivers for PHP for SQL Server&#41;](../../connect/php/constants-microsoft-drivers-for-php-for-sql-server.md)
+
+[Converting Data Types](../../connect/php/converting-data-types.md)
+
+[sqlsrv_field_metadata](../../connect/php/sqlsrv-field-metadata.md)
+
+[PHP Types](https://php.net/manual/language.types.php)
+
+[Data Types (Transact-SQL)](../../t-sql/data-types/data-types-transact-sql.md)  

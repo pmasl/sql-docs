@@ -1,30 +1,26 @@
 ---
-title: "JSON_QUERY (Transact-SQL) | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "06/02/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-json"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "JSON_QUERY (Transact-SQL)"
+description: "JSON_QUERY (Transact-SQL)"
+author: "jovanpop-msft"
+ms.author: "jovanpop"
+ms.date: 06/03/2020
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "JSON_QUERY"
   - "JSON_QUERY_TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "JSON, extracting"
   - "JSON, querying"
   - "JSON_QUERY function"
-ms.assetid: 1ab0d90f-19b6-4988-ab4f-22fdf28b7c79
-caps.latest.revision: 19
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "craigg"
+dev_langs:
+  - "TSQL"
+monikerRange: "= azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017"
 ---
 # JSON_QUERY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
 
  Extracts an object or an array from a JSON string.  
   
@@ -34,11 +30,12 @@ manager: "craigg"
   
 ## Syntax  
   
-```sql  
+```syntaxsql
 JSON_QUERY ( expression [ , path ] )  
 ```  
   
-## Arguments  
+## Arguments
+
  *expression*  
  An expression. Typically the name of a variable or a column that contains JSON text.  
   
@@ -47,7 +44,7 @@ JSON_QUERY ( expression [ , path ] )
  *path*  
  A JSON path that specifies the object or the array to extract.
 
-In [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] and in [!INCLUDE[ssSDSfull_md](../../includes/sssdsfull-md.md)], you can provide a variable as the value of *path*.
+In [!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] and in [!INCLUDE[ssSDSfull_md](../../includes/sssdsfull-md.md)], you can provide a variable as the value of *path*.
 
 The JSON path can specify lax or strict mode for parsing. If you don't specify the parsing mode, lax mode is the default. For more info, see [JSON Path Expressions &#40;SQL Server&#41;](../../relational-databases/json/json-path-expressions-sql-server.md).  
 
@@ -55,14 +52,15 @@ The default value for *path* is '$'. As a result, if you don't provide a value f
 
 If the format of *path* isn't valid, **JSON_QUERY** returns an error.  
   
-## Return Value  
+## Return value
+
  Returns a JSON fragment of type nvarchar(max). The collation of the returned value is the same as the collation of the input expression.  
   
  If the value is not an object or an array:  
   
--   In lax mode, **JSON_QUERY** returns null.  
+- In lax mode, **JSON_QUERY** returns null.  
   
--   In strict mode, **JSON_QUERY** returns an error.  
+- In strict mode, **JSON_QUERY** returns an error.  
   
 ## Remarks  
 
@@ -72,16 +70,16 @@ If the format of *path* isn't valid, **JSON_QUERY** returns an error.
   
 ```json  
 {
-	"info": {
-		"type": 1,
-		"address": {
-			"town": "Bristol",
-			"county": "Avon",
-			"country": "England"
-		},
-		"tags": ["Sport", "Water polo"]
-	},
-	"type": "Basic"
+   "info": {
+      "type": 1,
+      "address": {
+         "town": "Cheltenham",
+         "county": "Gloucestershire",
+         "country": "England"
+      },
+      "tags": ["Sport", "Water polo"]
+   },
+   "type": "Basic"
 } 
 ```  
   
@@ -92,7 +90,7 @@ If the format of *path* isn't valid, **JSON_QUERY** returns an error.
 |$|Returns the entire JSON text.|Returns the entire JSON text.|N/a|  
 |$.info.type|NULL|Error|Not an object or array.<br /><br /> Use **JSON_VALUE** instead.|  
 |$.info.address.town|NULL|Error|Not an object or array.<br /><br /> Use **JSON_VALUE** instead.|  
-|$.info."address"|N'{ "town":"Bristol", "county":"Avon", "country":"England" }'|N'{ "town":"Bristol", "county":"Avon", "country":"England" }'|N/a|  
+|$.info."address"|N'{ "town":"Cheltenham", "county":"Gloucestershire", "country":"England" }'|N'{ "town":"Cheltenham", "county":"Gloucestershire", "country":"England" }'|N/a|  
 |$.info.tags|N'[ "Sport", "Water polo"]'|N'[ "Sport", "Water polo"]'|N/a|  
 |$.info.type[0]|NULL|Error|Not an array.|  
 |$.info.none|NULL|Error|Property does not exist.|  
@@ -105,16 +103,18 @@ If you're returning results with FOR JSON, and you're including data that's alre
 
 ## Examples  
   
-### Example 1  
+### Example 1
+
  The following example shows how to return a JSON fragment from a `CustomFields` column in query results.  
   
 ```sql  
 SELECT PersonID,FullName,
- JSON_QUERY(CustomFields,'$.OtherLanguages') AS Languages
+  JSON_QUERY(CustomFields,'$.OtherLanguages') AS Languages
 FROM Application.People
 ```  
   
-### Example 2  
+### Example 2
+
 The following example shows how to include JSON fragments in the output of the FOR JSON clause.  
   
 ```sql  
@@ -125,6 +125,7 @@ FROM Warehouse.StockItems
 FOR JSON PATH
 ```  
   
-## See Also  
- [JSON Path Expressions &#40;SQL Server&#41;](../../relational-databases/json/json-path-expressions-sql-server.md)   
- [JSON Data &#40;SQL Server&#41;](../../relational-databases/json/json-data-sql-server.md)  
+## See also
+
+- [JSON Path Expressions &#40;SQL Server&#41;](../../relational-databases/json/json-path-expressions-sql-server.md)   
+- [JSON Data &#40;SQL Server&#41;](../../relational-databases/json/json-data-sql-server.md)  

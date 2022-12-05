@@ -1,32 +1,25 @@
 ---
-title: "KEY_ID (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "KEY_ID (Transact-SQL)"
+description: "KEY_ID (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "Key_ID"
   - "Key_ID_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "identification numbers [SQL Server], symmetric keys"
   - "KEY_ID function"
   - "symmetric keys [SQL Server], IDs"
   - "IDs [SQL Server], symmetric keys"
-ms.assetid: d7309542-dbbe-41dc-b42e-5d9a1c8b4838
-caps.latest.revision: 27
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # KEY_ID (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns the ID of a symmetric key in the current database.  
   
@@ -34,12 +27,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 Key_ID ( 'Key_Name' )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  **'** *Key_Name* **'**  
  The name of a symmetric key in the database.  
   
@@ -57,14 +51,14 @@ Key_ID ( 'Key_Name' )
 ### A. Returning the ID of a symmetric key  
  The following example returns the ID of a key called `ABerglundKey1`.  
   
-```  
+```sql  
 SELECT KEY_ID('ABerglundKey1');  
 ```  
   
 ### B. Returning the ID of a temporary symmetric key  
  The following example returns the ID of a temporary symmetric key. Note that `#` is prepended to the key name.  
   
-```  
+```sql  
 SELECT KEY_ID('#ABerglundKey2');  
 ```  
   

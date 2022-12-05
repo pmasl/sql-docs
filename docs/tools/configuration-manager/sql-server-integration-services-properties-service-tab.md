@@ -1,21 +1,19 @@
 ---
-title: "SQL Server Integration Services Properties (Service Tab) | Microsoft Docs"
-ms.custom: ""
+title: "SQL Server Integration Services Properties (Service Tab)"
+description: Learn about the options on the Service tab in the Integration Services Properties dialog box, such as the binary path, the host name, and the start mode.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: tools-other
+ms.topic: conceptual
 ms.assetid: 37f0acd9-c96f-48fd-9b53-2ca0097af242
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=sql-server-2016"
 ---
 # SQL Server Integration Services Properties (Service Tab)
+[!INCLUDE [SQL Server Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
   Use the **Service**tab on the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] **Properties** dialog box to view or specify the following options.  
   
 ## Options  
@@ -50,6 +48,6 @@ manager: "jhubbard"
 -   Disabled: This service cannot be started.  
   
  **State**  
- Indicates whether this service is running, stopped, or disabled. "**…**" indicates a state change is pending.  
+ Indicates whether this service is running, stopped, or disabled. "**...**" indicates a state change is pending.  
   
   

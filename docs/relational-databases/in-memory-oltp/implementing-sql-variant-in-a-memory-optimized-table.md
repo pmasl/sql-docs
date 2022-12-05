@@ -1,32 +1,28 @@
 ---
-title: "Implementing SQL_VARIANT in a Memory-Optimized Table | Microsoft Docs"
-ms.custom: ""
+title: "SQL_VARIANT in a memory-optimized table"
+description: Use this example to learn how to implement SQL_VARIANT in a memory-optimized table in SQL Server and Azure SQL Database.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine-imoltp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: in-memory-oltp
+ms.topic: conceptual
+ms.custom: seo-dt-2019
 ms.assetid: f17f21df-959d-4e20-92f3-bd707d555a46
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Implementing SQL_VARIANT in a Memory-Optimized Table
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Consider an example of a table with **SQL_VARIANT** column:  
   
-```tsql  
+```sql  
 CREATE TABLE [dbo].[T1]([Key] [sql_variant] NOT NULL)  
 ```  
   
  Assume that the key column can only be either a **BIGINT** or **NVARCHAR(300)**. You can model this table as follows:  
   
-```tsql  
+```sql  
 -- original disk-based table  
 CREATE TABLE [dbo].[T1_disk]([Key] int not null primary key,  
        [Value] [sql_variant])  
@@ -66,7 +62,7 @@ from dbo.T1_inmem
   
  Now you can load data into [T1_HK] from T1 by opening a cursor on T1:  
   
-```tsql  
+```sql  
 DECLARE T1_rows_cursor CURSOR FOR    
 select *  
 FROM dbo.T1  
@@ -114,13 +110,12 @@ DEALLOCATE T1_rows_cursor
   
  You can convert data back to **SQL_VARIANT** as follows:  
   
-```tsql  
+```sql  
 case [Key_enum] when 1 then convert(sql_variant, [Key_bi])   
                        else convert(sql_variant, [Key_nv])   
                        end  
 ```  
   
 ## See Also  
- [Migrating to In-Memory OLTP](../../relational-databases/in-memory-oltp/migrating-to-in-memory-oltp.md)  
-  
+ [Migrating to In-Memory OLTP](./plan-your-adoption-of-in-memory-oltp-features-in-sql-server.md)  
   

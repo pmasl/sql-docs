@@ -1,24 +1,15 @@
 ---
-title: "getTimestamp Method (int, java.util.Calendar) | Microsoft Docs"
-ms.custom: ""
+title: "getTimestamp Method (int, java.util.Calendar) (SQLServerResultSet)"
+description: "getTimestamp Method (int, java.util.Calendar) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getTimestamp (int, java.util.Calendar)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getTimestamp (int, java.util.Calendar)"
 apitype: "Assembly"
-ms.assetid: f2dd5688-7344-437a-8716-7024fb8e9c31
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getTimestamp Method (int, java.util.Calendar) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -51,7 +42,7 @@ public java.sql.Timestamp getTimestamp(int columnIndex,
 ## Remarks  
  This getTimestamp method is specified by the getTimestamp method in the java.sql.ResultSet interface.  
   
- This method returns values only from [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] datetime and smalldatetime columns.  
+ This method returns values only from [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] datetime and smalldatetime columns.  
   
 ## See Also  
  [getTimestamp Method &#40;SQLServerResultSet&#41;](../../../connect/jdbc/reference/gettimestamp-method-sqlserverresultset.md)   

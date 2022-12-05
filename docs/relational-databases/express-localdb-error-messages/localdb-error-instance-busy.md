@@ -1,26 +1,23 @@
 ---
+description: "LOCALDB_ERROR_INSTANCE_BUSY"
 title: "LOCALDB_ERROR_INSTANCE_BUSY | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: performance
 ms.topic: "reference"
 ms.assetid: 0ed9d0f8-3297-4e31-a3e9-4a827f381789
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # LOCALDB_ERROR_INSTANCE_BUSY
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |
+| --------- | ----- |
 |Product Name|SQL Server|  
 |Event ID|274|  
 |Event Source|SQL Server Local Database Runtime 12.0|  

@@ -1,28 +1,24 @@
 ---
+description: "Level 1 Interface Conformance"
 title: "Level 1 Interface Conformance | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "interface conformance levels [ODBC]"
   - "conformance levels [ODBC], interface"
   - "level 1 interface conformance levels [ODBC]"
 ms.assetid: ee3f5c08-0583-4f3b-8354-ef71b6086a7e
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Level 1 Interface Conformance
-The Level 1 interface conformance level includes the Core interface conformance level functionality plus additional features, such as transactions, that are usually available in an OLTP relational DBMS. A Level 1 interface–conformant driver lets the application do the following, in addition to the features in the Core interface conformance level:  
+The Level 1 interface conformance level includes the Core interface conformance level functionality plus additional features, such as transactions, that are usually available in an OLTP relational DBMS. A Level 1 interface-conformant driver lets the application do the following, in addition to the features in the Core interface conformance level:  
   
-|||  
+|Feature number|Description|  
 |-|-|  
 |101|Specify the schema of database tables and views (using two-part naming). (For more information, see the three-part naming feature 201 in [Level 2 Interface Conformance](../../../odbc/reference/develop-app/level-2-interface-conformance.md).)|  
 |102|Invoke true asynchronous execution of ODBC functions, where applicable ODBC functions are all synchronous or all asynchronous on a given connection.|  

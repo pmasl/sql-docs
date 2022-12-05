@@ -1,29 +1,24 @@
 ---
-title: "Upgrade Data Quality Services | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/24/2017"
-ms.prod:
-  - "sql-server-2016"
-  - "sql-server-2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "setup-install"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f396666b-7754-4efc-9507-0fd114cc32d5
-caps.latest.revision: 12
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+title: "Upgrade Data Quality Services"
+description: This article provides information on how to upgrade your existing installation of SQL Server Data Quality Services (DQS).
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: 06/29/2020
+ms.service: sql
+ms.subservice: install
+ms.topic: conceptual
+monikerRange: ">=sql-server-2016"
 ---
 # Upgrade Data Quality Services
-This topic provides information on how to upgrade your existing installation of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Data Quality Services (DQS). As part of upgrading your [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Data Quality Server, you must also upgrade the DQS databases schema.  
+
+[!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
+
+This article provides information on how to upgrade your existing installation of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Data Quality Services (DQS). As part of upgrading your [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Data Quality Server, you must also upgrade the DQS databases schema.  
   
-> [!IMPORTANT]  
+> [!IMPORTANT]
 >  -   You must back up your DQS databases before upgrading DQS to prevent any accidental data loss during the schema upgrade. For information about backing up DQS databases, see [Backing Up and Restoring DQS Databases](../../data-quality-services/backing-up-and-restoring-dqs-databases.md).  
 > -   You can connect to [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Data Quality Server by using the current or an earlier version of Data Quality Client or the [DQS Cleansing Transformation](../../integration-services/data-flow/transformations/dqs-cleansing-transformation.md) in Integration Services to perform your data quality tasks.  
-> -   After upgrading Data Quality Services and Master Data Services, any earlier version of the Master Data Services Add-In for Excel will no longer work. You can download the [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] version of Master Data Services Add-In for Excel from [here](http://go.microsoft.com/fwlink/?LinkID=506665).  
+> -   After upgrading Data Quality Services and Master Data Services, any earlier version of the Master Data Services Add-In for Excel will no longer work. You can download the [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] version of Master Data Services Add-In for Excel from [here](../../master-data-services/master-data-services-installation-and-configuration.md).  
   
 ##  <a name="Prerequisites"></a> Prerequisites  
   
@@ -55,18 +50,18 @@ This topic provides information on how to upgrade your existing installation of 
   
     2.  At the command prompt, change your directory to the location where DQSInstaller.exe is available. For the default instance of SQL Server, the DQSInstaller.exe file is available at C:\Program Files\Microsoft SQL Server\MSSQL[nn].MSSQLSERVER\MSSQL\Binn:  
 
-      >[!NOTE]
-      >In the folder path, replace [nn] with the [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] version number.
-      >- For SQL Server 2016: 13
-      >- For SQL Server 2017: 14
-
-        ```  
+        >[!NOTE]
+        >In the folder path, replace [nn] with the [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] version number.
+        >- For SQL Server 2016: 13
+        >- For SQL Server 2017: 14
+    
+        ```console
         cd C:\Program Files\Microsoft SQL Server\MSSQL[nn].MSSQLSERVER\MSSQL\Binn  
         ```  
   
     3.  At the command prompt, type the following command, and press ENTER:  
   
-        ```  
+        ```console
         dqsinstaller.exe -upgrade  
         ```  
   
@@ -81,7 +76,7 @@ This topic provides information on how to upgrade your existing installation of 
   
 2.  Run the following query:  
   
-    ```  
+    ```sql
     SELECT * FROM DQS_MAIN.dbo.A_DB_VERSION WHERE STATUS=2;  
     SELECT * FROM DQS_PROJECTS.dbo.A_DB_VERSION WHERE STATUS=2;  
     ```  
@@ -97,5 +92,4 @@ This topic provides information on how to upgrade your existing installation of 
  [Install Data Quality Services](../../data-quality-services/install-windows/install-data-quality-services.md)   
  [Remove Data Quality Server Objects](../../sql-server/install/remove-data-quality-server-objects.md)   
  [Upgrade SQL Server](../../database-engine/install-windows/upgrade-sql-server.md)  
-  
   

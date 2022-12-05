@@ -1,24 +1,15 @@
 ---
-title: "setByte Method (SQLServerPreparedStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setByte Method (SQLServerPreparedStatement)"
+description: "setByte Method (SQLServerPreparedStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.setByte"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.setByte"
 apitype: "Assembly"
-ms.assetid: 39c5ca20-d5f0-40dd-a853-29c3b8cd38e8
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setByte Method (SQLServerPreparedStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

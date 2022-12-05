@@ -1,24 +1,18 @@
 ---
-title: "Migrate MySQL Databases to SQL Server - Azure SQL DB | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.custom: ""
+title: "Migrate MySQL Databases to SQL Server - Azure SQL Database | Microsoft Docs"
+description: Use this recommended process to migrate MySQL databases to SQL Server or Azure SQL Database using SQL Server Migration Assistant (SSMA).
+ms.service: sql
+ms.custom:
+  - intro-migration
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 8006f9a0-394d-4238-8dc5-44255134628b
-caps.latest.revision: 12
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
 ---
-# Migrating MySQL Databases to SQL Server - Azure SQL DB (MySQLToSql)
+# Migrating MySQL Databases to SQL Server - Azure SQL Database (MySQLToSql)
 SQL Server Migration Assistant (SSMA) for MySQL is a comprehensive environment that helps you quickly migrate MySQL databases to SQL Server or SQL Azure. By using SSMA for MySQL, you can review database objects and data, assess databases for migration, migrate database objects to SQL Server or SQL Azure, and then migrate data to SQL Server or SQL Azure.  
   
 ## Recommended Migration Process  
@@ -34,13 +28,13 @@ To successfully migrate objects and data from MySQL databases to SQL Server or S
   
 4.  [Mapping MySQL Databases to SQL Server Schemas &#40;MySQLToSQL&#41;](../../ssma/mysql/mapping-mysql-databases-to-sql-server-schemas-mysqltosql.md)  
   
-5.  [Connecting to Azure SQL DB &#40;MySQLToSQL&#41;](../../ssma/mysql/connecting-to-azure-sql-db-mysqltosql.md)  
+5.  [Connecting to Azure SQL Database &#40;MySQLToSQL&#41;](../../ssma/mysql/connecting-to-azure-sql-db-mysqltosql.md)  
   
 6.  Optionally, [Assessing MySQL Databases for Conversion &#40;MySQLToSQL&#41;](../../ssma/mysql/assessing-mysql-databases-for-conversion-mysqltosql.md) to assess database objects for conversion and estimate the conversion time.  
   
 7.  [Converting MySQL Databases &#40;MySQLToSQL&#41;](../../ssma/mysql/converting-mysql-databases-mysqltosql.md)  
   
-8.  [Synchronization](http://msdn.microsoft.com/en-us/ac993a6d-0283-4823-8793-6b217677dfa3)  
+8.  [Synchronization](loading-converted-database-objects-into-sql-server-mysqltosql.md)  
   
 9. You can do this in one of the following ways:  
   
@@ -48,7 +42,7 @@ To successfully migrate objects and data from MySQL databases to SQL Server or S
   
     -   Synchronize the database objects.  
   
-10. [Migrating MySQL Data into SQL Server - Azure SQL DB &#40;MySQLToSQL&#41;](../../ssma/mysql/migrating-mysql-data-into-sql-server-azure-sql-db-mysqltosql.md)  
+10. [Migrating MySQL Data into SQL Server - Azure SQL Database &#40;MySQLToSQL&#41;](../../ssma/mysql/migrating-mysql-data-into-sql-server-azure-sql-db-mysqltosql.md)  
   
 11. If necessary, update database applications.  
   

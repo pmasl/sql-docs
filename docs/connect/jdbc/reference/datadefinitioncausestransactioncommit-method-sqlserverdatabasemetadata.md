@@ -1,24 +1,15 @@
 ---
-title: "Does Data Definition Statement Force Transaction Commit. | Microsoft Docs"
-ms.custom: ""
+title: "Does Data Definition Statement Force Transaction Commit."
+description: "dataDefinitionCausesTransactionCommit Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.dataDefinitionCausesTransactionCommit"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.dataDefinitionCausesTransactionCommit"
 apitype: "Assembly"
-ms.assetid: bf04fa73-b9f1-4403-b6a0-e53d0d27c671
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # dataDefinitionCausesTransactionCommit Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

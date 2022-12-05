@@ -1,26 +1,26 @@
 ---
-title: "Schema Element for Database (DTA) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Schema Element for Database (DTA)"
+description: In the dta utility, the Schema element for Database specifies the schema of the database that you want to tune.
+ms.service: sql
+ms.subservice: tools-other
+ms.topic: conceptual
 dev_langs: 
   - "XML"
 helpviewer_keywords: 
   - "Schema element"
 ms.assetid: d932e59c-953f-4ab4-934d-b6baf344835c
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: 03/01/2017
 ---
+
 # Schema Element for Database (DTA)
-  Specifies the schema of the database that you want to tune.  
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Specifies the schema of the database that you want to tune.  
   
 ## Syntax  
   

@@ -1,24 +1,15 @@
 ---
-title: "storesUpperCaseQuotedIdentifiers Method | Microsoft Docs"
-ms.custom: ""
+title: "storesUpperCaseQuotedIdentifiers Method"
+description: "storesUpperCaseQuotedIdentifiers Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.storesUpperCaseQuotedIdentifiers"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.storesUpperCaseQuotedIdentifiers"
 apitype: "Assembly"
-ms.assetid: 936ec140-2597-44e6-82d3-3994a676ee35
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # storesUpperCaseQuotedIdentifiers Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

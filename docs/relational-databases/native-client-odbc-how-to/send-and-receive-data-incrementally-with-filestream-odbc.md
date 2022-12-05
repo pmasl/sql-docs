@@ -1,22 +1,19 @@
 ---
-title: "Send and Receive Data Incrementally with FILESTREAM (ODBC) | Microsoft Docs"
+description: "Send and Receive Data Incrementally with FILESTREAM (ODBC)"
+title: "Data incrementally, FILESTREAM (ODBC)"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 ms.assetid: b82ecf4c-f151-4a99-8717-a73ee5ec994f
-caps.latest.revision: 7
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Send and Receive Data Incrementally with FILESTREAM (ODBC)
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   This sample shows how to use the FILESTREAM feature to send and receive data incrementally with SQLPutData and SQLGetData.  
   
@@ -25,13 +22,13 @@ manager: "jhubbard"
 ## Example  
  Before you compile and run this sample, enable FILESTREAM support ([Enable and Configure FILESTREAM](../../relational-databases/blob/enable-and-configure-filestream.md)).  
   
- The first ([!INCLUDE[tsql](../../includes/tsql-md.md)]) code listing creates a database used by this sample. Your instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] must have write access to run this script (for example, log on as a local system account).  
+ The first ( [!INCLUDE[tsql](../../includes/tsql-md.md)]) code listing creates a database used by this sample. Your instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] must have write access to run this script (for example, log on as a local system account).  
   
  The second code listing is the C++ code. You must specify a server; in the C++ code listing, change "MyServer" to a valid server name. Make sure your INCLUDE environment variable includes the directory that contains sqlncli.h. Compile the C++ code listing with odbc32.lib, user32.lib, /D "_UNICODE", /D "UNICODE", odbc32.lib, and /EHsc.  
   
- The third ([!INCLUDE[tsql](../../includes/tsql-md.md)]) code listing deletes the database used by this sample.  
+ The third ( [!INCLUDE[tsql](../../includes/tsql-md.md)]) code listing deletes the database used by this sample.  
   
-```  
+```sql
 USE master  
 GO  
   
@@ -72,7 +69,7 @@ CREATE TABLE [myfilestreamdb]..[mydocs]
 GO  
 ```  
   
-```  
+```cpp
 // compile with: /D "_UNICODE" /D "UNICODE" odbc32.lib /EHsc  
 #pragma once  
 #define WIN32_LEAN_AND_MEAN  
@@ -173,7 +170,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
 }  
 ```  
   
-```  
+```sql
 USE master  
 GO  
 -- Drop the filestream demo database  

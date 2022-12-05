@@ -1,42 +1,32 @@
 ---
-title: "Availability group is not ready for automatic failover | Microsoft Docs"
-ms.custom: ""
+title: "Availability group is not ready for automatic failover"
+description: "Learn how to identify possible reasons why an Always On availability group is not ready for failover."
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: end-user-help
+ms.custom: seodec18
+f1_keywords:
   - "sql13.swb.agdashboard.agp3autofailover.issues.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Availability Groups [SQL Server], policies"
-ms.assetid: 28261014-342c-442a-bd89-6d04b8d4e8b7
-caps.latest.revision: 12
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
-# Availability group is not ready for automatic failover
+# Always On availability group is not ready for automatic failover
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## Introduction  
   
-|||  
-|-|-|  
-|**Policy Name**|Availability Group Automatic Failover Readiness|  
-|**Issue**|Availability group is not ready for automatic failover.|  
-|**Category**|**Critical**|  
-|**Facet**|Availability group|  
+- **Policy Name**: Availability Group Automatic Failover Readiness
+- **Issue**: Availability group is not ready for automatic failover.
+- **Category**: **Critical**
+- **Facet**: Availability group  
   
 ## Description  
  This policy checks to verify that the availability group has at least one secondary replica that is failover ready. The policy is in an unhealthy state and an alert is raised when the failover mode of the primary replica is automatic, however none of the secondary replicas in the availability group are failover ready.  
   
- The policy is in a healthy state when at least one secondary replica is automatic failover ready.  
-  
-> [!NOTE]  
->  For this release of [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)], information about possible causes and solutions is located at [Availability group is not ready for automatic failover](http://go.microsoft.com/fwlink/p/?LinkId=220851) on the TechNet Wiki.  
+ The policy is in a healthy state when at least one secondary replica is automatic failover ready.
   
 ## Possible Causes  
  The availability group is not ready for automatic failover. The primary replica is configured for automatic failover; however, the secondary replica is not ready for automatic failover. The secondary replica that is configured for automatic failover might be unavailable or its data synchronization state is currently not SYNCHRONIZED.  

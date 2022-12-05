@@ -1,14 +1,12 @@
 ---
 title: "sys.sp_rda_reconcile_batch (Transact-SQL) | Microsoft Docs"
+description: Learn how to use sys.sp_rda_reconcile_batch to reconcile the batch ID in the Stretch-enabled SQL Server table with the batch ID stored in the remote Azure table.
 ms.custom: ""
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-stretch"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.date: 07/25/2022
+ms.service: sql
+ms.reviewer: randolphwest
+ms.subservice: stored-procedures
+ms.topic: "reference"
 f1_keywords: 
   - "sys.sp_rda_reconcile_batch"
   - "sys.sp_rda_reconcile_batch_TSQL"
@@ -17,15 +15,16 @@ dev_langs:
 helpviewer_keywords: 
   - "sys.sp_rda_reconcile_batch stored procedure"
 ms.assetid: 6d21eac3-7b6c-4fe0-8bc4-bf503f3948a6
-caps.latest.revision: 12
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sys.sp_rda_reconcile_batch (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
   Reconciles the batch ID stored in the Stretch-enabled SQL Server table with the batch ID stored in the remote Azure table.  
+
+> [!IMPORTANT]  
+> Stretch Database is deprecated in [!INCLUDE [sssql22-md](../../includes/sssql22-md.md)]. [!INCLUDE [ssNoteDepFutureAvoid-md](../../includes/ssnotedepfutureavoid-md.md)]
   
  Typically you only have to run **sp_rda_reconcile_batch** if you have manually deleted the most recently migrated data from the remote table. When you manually delete remote data that includes the most recent batch, the batch IDs are out of sync and migration stops.  
  
@@ -42,7 +41,7 @@ sp_rda_reconcile_batch @objname = '@objname'
 ```  
   
 ## Arguments  
- @objname = '*@objname*'  
+ \@objname = '*\@objname*'  
  The name of the Stretch-enabled SQL Server table.  
   
 ## Permissions  
@@ -64,7 +63,7 @@ sp_rda_reconcile_batch @objname = '@objname'
 ## Example  
  To reconcile the batch IDs, run the following statement.  
   
-```tsql  
+```sql  
 EXEC sp_rda_reconcile_batch @objname = N'StretchEnabledTableName';  
 ```  
   

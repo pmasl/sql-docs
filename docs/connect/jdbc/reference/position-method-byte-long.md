@@ -1,24 +1,15 @@
 ---
-title: "position Method (byte, long) | Microsoft Docs"
-ms.custom: ""
+title: "position Method (byte, long)"
+description: "position Method (byte, long)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerBlob.position (byte[], long)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerBlob.position (byte[], long)"
 apitype: "Assembly"
-ms.assetid: 787412c2-4342-49c8-9ca2-7a9ddcd3277c
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # position Method (byte, long)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

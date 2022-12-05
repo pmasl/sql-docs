@@ -1,14 +1,12 @@
 ---
+description: "SQLGetStmtAttr Function"
 title: "SQLGetStmtAttr Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLGetStmtAttr"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLGetStmtAttr function [ODBC]"
 ms.assetid: e321d460-e997-4527-aee6-207cf5a498e9
-caps.latest.revision: 25
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLGetStmtAttr Function
 **Conformance**  
@@ -36,14 +32,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 SQLRETURN SQLGetStmtAttr(  
-     SQLHSTMT        StatementHandle,  
-     SQLINTEGER      Attribute,  
-     SQLPOINTER      ValuePtr,  
-     SQLINTEGER      BufferLength,  
-     SQLINTEGER *    StringLengthPtr);  
+     SQLHSTMT        StatementHandle,  
+     SQLINTEGER      Attribute,  
+     SQLPOINTER      ValuePtr,  
+     SQLINTEGER      BufferLength,  
+     SQLINTEGER *    StringLengthPtr);  
 ```  
   
 ## Arguments  
@@ -72,7 +68,7 @@ SQLRETURN SQLGetStmtAttr(
 -   If *\*ValuePtr* is contains a fixed-length data type, then *BufferLength* is either SQL_IS_INTEGER or SQL_IS_UINTEGER, as appropriate.  
   
  *StringLengthPtr*  
- [Output] A pointer to a buffer in which to return the total number of bytes (excluding the null-termination character) available to return in *\*ValuePtr*. If *ValuePtr* is a null pointer, no length is returned. If the attribute value is a character string, and the number of bytes available to return is greater than or equal to *BufferLength*, the data in *\*ValuePtr* is truncated to *BufferLength* minus the length of a null-termination character and is null-terminated by the driver.  
+ [Output] A pointer to a buffer in which to return the total number of bytes (excluding the null-termination character) available to return in *\*ValuePtr*. If the attribute value is a character string, and the number of bytes available to return is greater than or equal to *BufferLength*, the data in *\*ValuePtr* is truncated to *BufferLength* minus the length of a null-termination character and is null-terminated by the driver.  
   
 ## Returns  
  SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, SQL_ERROR, or SQL_INVALID_HANDLE.  

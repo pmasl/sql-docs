@@ -1,17 +1,13 @@
 ---
-title: "GRANT Service Broker Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "GRANT Service Broker Permissions (Transact-SQL)"
+description: GRANT Service Broker Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "granting permissions [SQL Server], Service Broker"
   - "routes [Service Broker], permissions"
   - "Service Broker, permissions"
@@ -19,14 +15,11 @@ helpviewer_keywords:
   - "remote service bindings [Service Broker], permissions"
   - "message types [Service Broker], permissions"
   - "contracts [Service Broker], permissions"
-ms.assetid: c5579976-97c4-4123-be0c-d0b98a9e38fb
-caps.latest.revision: 17
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # GRANT Service Broker Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Grants permissions on a Service Broker contract, message type, remote binding, route, or service.  
   
@@ -34,7 +27,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 GRANT permission  [ ,...n ] ON  
     {    
@@ -49,23 +42,25 @@ GRANT permission  [ ,...n ] ON
         [ AS granting_principal ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be granted on a Service Broker securable.  Listed below.  
   
- CONTRACT **::***contract_name*  
+ CONTRACT **::**_contract_name_  
  Specifies the contract on which the permission is being granted. The scope  qualifier "::" is required.  
   
- MESSAGE TYPE **::***message_type_name*  
+ MESSAGE TYPE **::**_message_type_name_  
  Specifies the message type on which the permission is being granted. The scope qualifier "::" is required.  
   
- REMOTE SERVICE BINDING **::***remote_binding_name*  
+ REMOTE SERVICE BINDING **::**_remote_binding_name_  
  Specifies the remote service binding on which the permission is being granted. The scope qualifier "::" is required.  
   
- ROUTE **::***route_name*  
+ ROUTE **::**_route_name_  
  Specifies the route on which the permission is being granted. The scope qualifier "::" is required.  
   
- SERVICE **::***service_name*  
+ SERVICE **::**_service_name_  
  Specifies the service on which the permission is being granted. The scope qualifier "::" is required.  
   
  *database_principal*  

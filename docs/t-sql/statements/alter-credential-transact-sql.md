@@ -1,47 +1,44 @@
 ---
-title: "ALTER CREDENTIAL (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/19/2015"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "ALTER CREDENTIAL (Transact-SQL)"
+description: ALTER CREDENTIAL (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
+ms.date: 09/07/2018
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER CREDENTIAL"
   - "ALTER_CREDENTIAL_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "passwords [SQL Server], credentials"
   - "credentials [SQL Server], ALTER CREDENTIAL statement"
   - "modifying credentials"
   - "authentication [SQL Server], credentials"
   - "ALTER CREDENTIAL statement"
-ms.assetid: b08899a6-c09e-4af4-91aa-a978ada79264
-caps.latest.revision: 27
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017"
 ---
 # ALTER CREDENTIAL (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Changes the properties of a credential.  
-  
- ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
+
+> [!IMPORTANT]
+> "Should do" info as best practice; "must do" to complete task ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
-  
+```syntaxsql 
 ALTER CREDENTIAL credential_name WITH IDENTITY = 'identity_name'  
     [ , SECRET = 'secret' ]  
 ```  
   
-## Arguments  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *credential_name*  
  Specifies the name of the credential that is being altered.  
   
@@ -49,7 +46,10 @@ ALTER CREDENTIAL credential_name WITH IDENTITY = 'identity_name'
  Specifies the name of the account to be used when connecting outside the server.  
   
  SECRET **='***secret***'**  
- Specifies the secret required for outgoing authentication. *secret* is optional.  
+ Specifies the secret required for outgoing authentication. *secret* is optional.
+  
+> [!IMPORTANT]
+> Azure SQL Database only supports Azure Key Vault and Shared Access Signature identities. Windows user identities are not supported.
   
 ## Remarks  
  When a credential is changed, the values of both *identity_name* and *secret* are reset. If the optional SECRET argument is not specified, the value of the stored secret will be set to NULL.  
@@ -66,7 +66,7 @@ ALTER CREDENTIAL credential_name WITH IDENTITY = 'identity_name'
 ### A. Changing the password of a credential  
  The following example changes the secret stored in a credential called `Saddles`. The credential contains the Windows login `RettigB` and its password. The new password is added to the credential using the SECRET clause.  
   
-```  
+```sql  
 ALTER CREDENTIAL Saddles WITH IDENTITY = 'RettigB',   
     SECRET = 'sdrlk8$40-dksli87nNN8';  
 GO  
@@ -75,7 +75,7 @@ GO
 ### B. Removing the password from a credential  
  The following example removes the password from a credential named `Frames`. The credential contains Windows login `Aboulrus8` and a password. After the statement is executed, the credential will have a NULL password because the SECRET option is not specified.  
   
-```  
+```sql  
 ALTER CREDENTIAL Frames WITH IDENTITY = 'Aboulrus8';  
 GO  
 ```  

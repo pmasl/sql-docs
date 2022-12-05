@@ -1,34 +1,27 @@
 ---
-title: "SET NOEXEC (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "SET NOEXEC (Transact-SQL)"
+description: SET NOEXEC (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "NOEXEC_TSQL"
   - "SET_NOEXEC_TSQL"
   - "SET NOEXEC"
   - "NOEXEC"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "queries [SQL Server], compiling"
   - "SET NOEXEC statement"
   - "compiling queries [SQL Server]"
   - "NOEXEC option"
-ms.assetid: ba56fba1-af9b-4459-b6e4-5d7e71a7630b
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # SET NOEXEC (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Compiles each query but does not execute it.  
   
@@ -36,13 +29,15 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 SET NOEXEC { ON | OFF }  
 ```  
   
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
 ## Remarks  
- When SET NOEXEC is ON, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] compiles each batch of [!INCLUDE[tsql](../../includes/tsql-md.md)] statements but does not execute them. When SET NOEXEC is OFF, all batches are executed after compilation.  
+ When SET NOEXEC is ON, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] parses and compiles each batch of [!INCLUDE[tsql](../../includes/tsql-md.md)] statements but does not execute them. When SET NOEXEC is OFF, all batches are executed after compilation.  NOEXEC supports deferred name resolution; if one or more referenced objects in the batch don't exist, no error will be thrown.
   
  The execution of statements in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] has two phases: compilation and execution. This setting is useful for having [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] validate the syntax and object names in [!INCLUDE[tsql](../../includes/tsql-md.md)] code when executing. It is also useful for debugging statements that would generally be part of a larger batch of statements.  
   
@@ -54,7 +49,7 @@ SET NOEXEC { ON | OFF }
 ## Examples  
  The following example uses `NOEXEC` with a valid query, a query with an object name that is not valid, and a query with incorrect syntax.  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO  
 PRINT 'Valid query';  
@@ -79,7 +74,7 @@ GO
 -- SET NOEXEC to ON.  
 SET NOEXEC ON;  
 GO  
--- Function name uses is a reserved keyword.  
+-- Function name used is a reserved keyword.  
 USE AdventureWorks2012;  
 GO  
 CREATE FUNCTION dbo.Values(@BusinessEntityID int)  

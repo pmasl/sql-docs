@@ -1,24 +1,15 @@
 ---
-title: "getResultSetConcurrency Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getResultSetConcurrency Method (SQLServerStatement)"
+description: "getResultSetConcurrency Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.getResultSetConcurrency"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.getResultSetConcurrency"
 apitype: "Assembly"
-ms.assetid: 47ef6547-5ec7-4cf5-a4d4-e34cbeec72eb
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getResultSetConcurrency Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

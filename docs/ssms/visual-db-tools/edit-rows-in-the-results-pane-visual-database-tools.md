@@ -1,14 +1,9 @@
 ---
-title: "Edit Rows in the Results Pane (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Edit Rows in the Results Pane
+description: "Edit Rows in the Results Pane (Visual Database Tools)"
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vdt.pane.results"
 helpviewer_keywords: 
@@ -16,13 +11,17 @@ helpviewer_keywords:
   - "modifying rows"
   - "Query Designer [SQL Server], Results pane"
   - "Results pane"
-ms.assetid: de36f636-cfe9-4ae6-a474-06e9c51f9f0c
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
 ---
+
 # Edit Rows in the Results Pane (Visual Database Tools)
+
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
 In many cases, you can edit the data in the [Results Pane](../../ssms/visual-db-tools/results-pane-visual-database-tools.md). For more detailed information about changing data see [Rules for Updating Results &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/rules-for-updating-results-visual-database-tools.md) and [Work with Data in the Results Pane &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/work-with-data-in-the-results-pane-visual-database-tools.md).  
   
 ### To edit data in the Results pane  

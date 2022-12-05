@@ -1,14 +1,12 @@
 ---
+description: "sp_fulltext_semantic_register_language_statistics_db (Transact-SQL)"
 title: "sp_fulltext_semantic_register_language_statistics_db (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_fulltext_semantic_register_language_statistics_db"
   - "sp_fulltext_semantic_register_language_statistics_db_TSQL"
@@ -17,34 +15,28 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_fulltext_semantic_register_language_statistics_db"
 ms.assetid: bef1b104-5a44-4327-9ae4-45eae3000f7e
-caps.latest.revision: 12
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_fulltext_semantic_register_language_statistics_db (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Registers a pre-populated Semantic Language Statistics database in the current instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
  You can initiate semantic extraction only after you have attached this language statistics database and registered it by using this stored procedure. You only need to perform this task once for each instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
-  
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```tsql  
+```sql  
 EXEC sp_fulltext_semantic_register_language_statistics_db  
-    [ @dbname = ] ‘database_name’;  
+    [ @dbname = ] 'database_name';  
 GO  
 ```  
   
 ##  <a name="Arguments"></a> Arguments  
- [ @dbname = ] ‘*database_name*’  
+ [ @dbname = ] '*database_name*'  
  Is the name of the Semantic Language Statistics database to be registered for the current instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. The database must already be attached. *database_name* is **sysname**, and may not be NULL.  
   
 ## Return Code Value  
@@ -85,7 +77,7 @@ GO
 ## Examples  
  The following example shows how to register the Semantic Language Statistics database by calling **sp_fulltext_semantic_register_language_statistics_db**.  
   
-```tsql  
+```sql  
 EXEC sp_fulltext_semantic_register_language_statistics_db @dbname = 'semanticsDb';  
 GO  
 ```  

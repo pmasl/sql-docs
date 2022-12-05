@@ -1,14 +1,12 @@
 ---
+description: "sp_delete_targetserver (Transact-SQL)"
 title: "sp_delete_targetserver (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_delete_targetserver"
   - "sp_delete_targetserver_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_delete_targetserver"
 ms.assetid: cc438701-ad91-419d-9f23-ebc4c548c700
-caps.latest.revision: 22
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_delete_targetserver (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Removes the specified server from the list of available target servers.  
    
@@ -39,13 +35,13 @@ sp_delete_targetserver [ @server_name = ] 'server'
 ```  
   
 ## Arguments  
- [ **@server_name=** ] **'***server***'**  
+`[ @server_name = ] 'server'`
  The name of the server to remove as an available target server. *server* is **nvarchar(30)**, with no default.  
   
- [ **@clear_downloadlist=** ] *clear_downloadlist*  
+`[ @clear_downloadlist = ] clear_downloadlist`
  Specifies whether to clear the download list for the target server. *clear_downloadlist* is type **bit**, with a default of **1**. When *clear_downloadlist* is **1**, the procedure clears the download list for the server before deleting the server. When *clear_downloadlist* is **0**, the download list is not cleared.  
   
- [ **@post_defection=** ] *post_defection*  
+`[ @post_defection = ] post_defection`
  Specifies whether to post a defect instruction to the target server. *post_defection* is type **bit**, with a default of 1. When *post_defection* is **1**, the procedure posts a defect instruction to the target server before deleting the server. When *post_defection* is **0**, the procedure does not post a defect instruction to the target server.  
   
 ## Return Code Values  

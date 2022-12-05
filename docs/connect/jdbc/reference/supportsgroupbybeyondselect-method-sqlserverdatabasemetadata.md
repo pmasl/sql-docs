@@ -1,24 +1,15 @@
 ---
-title: "supportsGroupByBeyondSelect Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "supportsGroupByBeyondSelect Method (SQLServerDatabaseMetaData)"
+description: "supportsGroupByBeyondSelect Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsGroupByBeyondSelect"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsGroupByBeyondSelect"
 apitype: "Assembly"
-ms.assetid: eadd2c37-d9ec-4b47-a91e-ed90b1eaf4b4
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsGroupByBeyondSelect Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

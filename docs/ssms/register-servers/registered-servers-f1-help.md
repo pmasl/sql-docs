@@ -1,28 +1,25 @@
 ---
-title: "Registered Servers F1 Help | Microsoft Docs"
-ms.custom: ""
+description: "Registered Servers F1 Help"
+title: "Registered Servers F1 Help"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: ssms
 ms.topic: "reference"
 helpviewer_keywords: 
   - "SQL Server Management Studio [SQL Server], Help"
   - "Registered Servers [SQL Server], help"
   - "SQL Server Management Studio Help [SQL Server], registered servers"
 ms.assetid: 59f76b28-ba78-4a1a-b5d5-8b581f30114d
-caps.latest.revision: 23
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Registered Servers F1 Help
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
   This section contains the F1 Help for the Registered Servers component in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]. It describes the various options.
   
- To learn about Registered Servers and get links to what to do with them, go to the [Register Servers](../../tools/sql-server-management-studio/register-servers.md) topic. 
+ To learn about Registered Servers and get links to what to do with them, go to the [Register Servers](./register-servers.md) topic. 
  
 
  Click to save the Registered Servers settings. 
@@ -60,7 +57,8 @@ manager: "jhubbard"
  **Remember password**  
  Store the password you have entered. This option is only available if you have clicked **Basic** or **Forms Authentication**.  
   
-> **NOTE:** If you have stored the password and want to stop storing it, clear this check box and then click **Save**.  
+> [!NOTE]  
+> If you have stored the password and want to stop storing it, clear this check box and then click **Save**.  
   
  **Registered server name**  
  The name you want to appear in Registered Servers. This name does not have to match the name in the **Server name** box.  
@@ -143,4 +141,3 @@ manager: "jhubbard"
 
  
  
-  

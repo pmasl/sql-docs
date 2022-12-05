@@ -1,24 +1,15 @@
 ---
-title: "setResponseBuffering Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setResponseBuffering Method (SQLServerStatement)"
+description: "setResponseBuffering Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.setResponseBuffering(String responseBufferingValue)"
-apilocation: 
-  - "SQLServerStatement.setResponseBuffering(String responseBufferingValue)"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "SQLServerStatement.setResponseBuffering(String responseBufferingValue)"
+apiname: "SQLServerStatement.setResponseBuffering(String responseBufferingValue)"
 apitype: "Assembly"
-ms.assetid: 9f489835-6cda-4c8c-b139-079639a169cf
-caps.latest.revision: 24
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setResponseBuffering Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

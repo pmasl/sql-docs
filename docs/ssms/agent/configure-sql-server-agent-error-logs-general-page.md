@@ -1,28 +1,32 @@
 ---
-title: "Configure SQL Server Agent Error Logs (General Page) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Configure SQL Server Agent Error Logs (General Page)"
+title: Configure Error Logs (General Page)
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.ag.errorlog.configure.f1"
 ms.assetid: e08de622-6f87-470c-aee0-b2d6cb6cca88
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+monikerRange: "= azuresqldb-mi-current || >= sql-server-2016"
 ---
+
 # Configure SQL Server Agent Error Logs (General Page)
-Use this screen to view and update settings for [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Agent error logging.  
+
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+
+> [!IMPORTANT]  
+> On [Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance), most, but not all SQL Server Agent features are currently supported. See [Azure SQL Managed Instance T-SQL differences from SQL Server](/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent) for details.
+
+Use this screen to view and update settings for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent error logging.  
   
 ## Options  
 **Error log file**  
-Specifies the file to which [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Agent writes error logs.  
+Specifies the file to which [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent writes error logs.  
   
 **...**  
 Browse to the error log file.  
@@ -41,4 +45,3 @@ Writes only informational messages to the log file.
   
 ## See Also  
 [SQL Server Agent Error Log](../../ssms/agent/sql-server-agent-error-log.md)  
-  

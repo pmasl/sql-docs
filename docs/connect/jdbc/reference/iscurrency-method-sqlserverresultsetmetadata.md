@@ -1,24 +1,15 @@
 ---
-title: "isCurrency Method (SQLServerResultSetMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "isCurrency Method (SQLServerResultSetMetaData)"
+description: "isCurrency Method (SQLServerResultSetMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSetMetaData.isCurrency"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSetMetaData.isCurrency"
 apitype: "Assembly"
-ms.assetid: 7fe25d90-693c-4d3b-9dd2-0f8351c5a9ed
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # isCurrency Method (SQLServerResultSetMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -46,7 +37,7 @@ public boolean isCurrency(int column)
 ## Remarks  
  This isCurrency method is specified by the isCurrency method in the java.sql.ResultSetMetaData interface.  
   
- This method will return **true** only with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] money and smallmoney data types.  
+ This method will return **true** only with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] money and smallmoney data types.  
   
 ## See Also  
  [SQLServerResultSetMetaData Methods](../../../connect/jdbc/reference/sqlserverresultsetmetadata-methods.md)   

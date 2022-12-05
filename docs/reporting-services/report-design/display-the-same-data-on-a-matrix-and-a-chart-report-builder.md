@@ -1,23 +1,21 @@
 ---
-title: "Display the Same Data on a Matrix and a Chart (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Display the same data on a matrix and a chart in paginated report | Microsoft Docs"
+description: Show the same data in a paginated report in a matrix and in a chart in Report Builder. Set properties on these data regions to include the specifics.
+ms.date: 03/07/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: 1262f283-9fc2-4bc1-9c79-457f7642abc7
-caps.latest.revision: 6
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Display the Same Data on a Matrix and a Chart (Report Builder)
-  When you want to show the same data in a matrix and a chart, you must set properties on both data regions to specify the same dataset, and also the same expressions for filters, groups, sorts, and data.  
+# Display the same data on a matrix and a chart in paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+  When you want to show the same data in a matrix and a chart in a paginated report, you must set properties on both data regions to specify the same dataset, and also the same expressions for filters, groups, sorts, and data.  
   
  Because both data regions will have the same ancestor for data (the report dataset), you can add an interactive sort button to the matrix that, when the user clicks it, changes the sort order for both the matrix and the chart. For more information, see [Add Interactive Sort to a Table or Matrix &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/add-interactive-sort-to-a-table-or-matrix-report-builder-and-ssrs.md).  
   
@@ -48,13 +46,13 @@ manager: "erikre"
   
 6.  In the matrix, right-click the cell with data, click **Text Box Properties**, and then click **Number**. Choose an appropriate format for the dataset field value.  
   
-7.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 8.  Drag the same dataset field you chose in step 3 to the **Values** area on the chart.  
   
 9. In the chart, right-click the Y axis, click **Axis Properties**, and then click **Number**. Choose the same format for the data that you chose in step 4.  
   
-10. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+10. Select **OK**.
   
      In the next few steps, you will set the matrix row group and the chart series group to the same expression, and also set the sort order for the chart series group.  
   
@@ -72,7 +70,7 @@ manager: "erikre"
   
 16. In **Sort by**, from the drop-down list, choose the dataset field that you chose to group by in step 9.  
   
-17. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+17. Select **OK**.
   
      In the next few steps, you will set the matrix column group and the chart category group to the same expression, and also set the sort order for the chart category group.  
   
@@ -90,7 +88,7 @@ manager: "erikre"
   
 23. In **Sort by**, from the drop-down list, choose the dataset field that you chose to group by in step 16.  
   
-24. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+24. Select **OK**.
   
 25. Preview the result. The matrix row and column groups display the same data as the chart series and category groups.  
   

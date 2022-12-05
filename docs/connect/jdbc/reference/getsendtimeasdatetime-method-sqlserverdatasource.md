@@ -1,24 +1,17 @@
 ---
-title: "getSendTimeAsDatetime Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "getSendTimeAsDatetime Method (SQLServerDataSource)"
+description: "getSendTimeAsDatetime Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 02287122-5dc1-455d-987f-95fd9a69d503
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getSendTimeAsDatetime Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
 
-  This method was added in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] JDBC Driver 3.0.  
+  This method was added in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] JDBC Driver 3.0.  
   
  Returns the setting of the **sendTimeAsDatetime** connection property.  
   
@@ -30,7 +23,7 @@ public boolean getSendTimeAsDatetime();
 ```  
   
 ## Return Value  
- **true** if java.sql.Time values will be sent to the server as a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] **datetime** type. **false** if java.sql.Time values will be sent to the server as a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] **time** type.  
+ **true** if java.sql.Time values will be sent to the server as a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **datetime** type. **false** if java.sql.Time values will be sent to the server as a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **time** type.  
   
 ## Remarks  
  See [Setting the Connection Properties](../../../connect/jdbc/setting-the-connection-properties.md) for more information about the **sendTimeAsDatetime** connection property.  

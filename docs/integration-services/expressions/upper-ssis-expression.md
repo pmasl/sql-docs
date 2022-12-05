@@ -1,26 +1,26 @@
 ---
+description: "UPPER (SSIS Expression)"
 title: "UPPER (SSIS Expression) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "UPPER function"
   - "converting lowercase to uppercase"
   - "uppercase characters [Integration Services]"
   - "lowercase characters"
 ms.assetid: d33985f7-1048-4023-83e4-274090acda78
-caps.latest.revision: 36
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # UPPER (SSIS Expression)
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Returns a character expression after converting lowercase characters to uppercase characters.  
   
 ## Syntax  

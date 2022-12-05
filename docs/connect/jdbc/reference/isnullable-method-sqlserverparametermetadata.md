@@ -1,24 +1,15 @@
 ---
-title: "isNullable Method (SQLServerParameterMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "isNullable Method (SQLServerParameterMetaData)"
+description: "isNullable Method (SQLServerParameterMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerParameterMetaData.sNullable"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerParameterMetaData.sNullable"
 apitype: "Assembly"
-ms.assetid: d7e07cff-6fc4-4c9c-8e8f-838c77734bc5
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # isNullable Method (SQLServerParameterMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

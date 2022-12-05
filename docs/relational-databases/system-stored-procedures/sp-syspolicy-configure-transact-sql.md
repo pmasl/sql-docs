@@ -1,14 +1,12 @@
 ---
+description: "sp_syspolicy_configure (Transact-SQL)"
 title: "sp_syspolicy_configure (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_syspolicy_configure"
   - "sp_syspolicy_configure_TSQL"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_syspolicy_configure"
 ms.assetid: 70c10922-9345-4190-ba69-808a43f760da
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # sp_syspolicy_configure (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Configures settings for Policy-Based Management, such as whether Policy-Based Management is enabled.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -42,7 +34,7 @@ sp_syspolicy_configure [ @name = ] 'name'
 ```  
   
 ## Arguments  
- [ **@name =** ] **'***name***'**  
+`[ @name = ] 'name'`
  Is the name of the setting that you want to configure. *name* is **sysname**, is required, and cannot be NULL or an empty string.  
   
  *name* can be any of the following values:  
@@ -53,7 +45,7 @@ sp_syspolicy_configure [ @name = ] 'name'
   
 -   'LogOnSuccess' - Specifies whether Policy-Based Management logs successful policy evaluations.  
   
- [ **@value =** ] *value*  
+`[ @value = ] value`
  Is the value that is associated with the specified value for *name*. *value* is **sql_variant**, and is required.  
   
 -   If you specify 'Enabled' for *name*, you can use either of the following values:  

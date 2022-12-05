@@ -1,24 +1,15 @@
 ---
-title: "setQueryTimeout Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setQueryTimeout Method (SQLServerStatement)"
+description: "setQueryTimeout Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.setQueryTimeout"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.setQueryTimeout"
 apitype: "Assembly"
-ms.assetid: 0c513265-cd0c-4b38-9494-94458c17a16d
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setQueryTimeout Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

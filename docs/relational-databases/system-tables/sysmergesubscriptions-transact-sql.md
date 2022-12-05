@@ -1,31 +1,23 @@
 ---
-title: "sysmergesubscriptions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sysmergesubscriptions (Transact-SQL)"
+description: sysmergesubscriptions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "sysmergesubscriptions_TSQL"
   - "sysmergesubscriptions"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysmergesubscriptions system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 6adc78da-991d-4c08-98c3-ecb4762e0e99
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sysmergesubscriptions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row for each known Subscriber and is a local table at the Publisher. This table is stored in the publication and subscription databases.  
   
@@ -62,9 +54,12 @@ manager: "jhubbard"
 |supportability_mode|**int**|Internal use only.|  
 |application_name|**nvarchar(128)**|Internal use only.|  
 |subscriber_number|**int**|Internal use only.|  
-|last_makegeneration_datetime|**datetime**|The last **datetime** that the makegeneration process ran for the Publisher. For more information, see the -MakeGenerationInterval parameter in [Replication Merge Agent](../../relational-databases/replication/agents/replication-merge-agent.md).|  
+|last_makegeneration_datetime|**datetime**|The last **datetime** that the makegeneration process ran for the Publisher. For more information, see the -MakeGenerationInterval parameter in [Replication Merge Agent](../../relational-databases/replication/agents/replication-merge-agent.md).|
+|last_local_sentgen|**bigint**|Stores the last generation that was sent by the previous merge agent sync.|
+|last_local_recguid|**uniqueidentifier**|Stores the last local received generation GUID from previous merge agent sync.|
+|last_local_recgen|**bigint**|Set by merge cleanup. Stores the last local generation received.|
   
 ## See Also  
- [Replication Tables &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)  
+ [Replication Tables &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md) 
   
   

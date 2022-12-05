@@ -1,31 +1,25 @@
 ---
-title: "dbo.sysschedules (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "dbo.sysschedules (Transact-SQL)"
+description: dbo.sysschedules (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dbo.sysschedules_TSQL"
   - "sysschedules"
   - "sysschedules_TSQL"
   - "dbo.sysschedules"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysschedules system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 4cac9237-7a69-4035-bb3e-928b76aad698
-caps.latest.revision: 17
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # dbo.sysschedules (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains information about [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent job schedules. This table is stored in the **msdb** database.  
   
@@ -42,7 +36,7 @@ manager: "jhubbard"
 |**freq_interval**|**int**|Days that the job is executed. Depends on the value of **freq_type**. The default value is **0**, which indicates that **freq_interval** is unused. See the table below for the possible values and their effects.|  
 |**freq_subday_type**|**int**|Units for the **freq_subday_interval**. The following are the possible values and their descriptions.<br /><br /> <br /><br /> **1** : At the specified time<br /><br /> **2** : Seconds<br /><br /> **4** : Minutes<br /><br /> **8** : Hours|  
 |**freq_subday_interval**|**int**|Number of **freq_subday_type** periods to occur between each execution of the job.|  
-|**freq_relative_interval**|**int**|When **freq_interval** occurs in each month, if **freq_interval** is **32** (monthly relative). Can be one of the following values:<br /><br /> **0** = **freq_relative_interval** is unused<br /><br /> **1** = First<br /><br /> **2** = Second<br /><br /> **4** = Third<br /><br /> **8** = Fourth<br /><br /> **16** = Last|  
+|**freq_relative_interval**|**int**|When **freq_interval** occurs in each month, if **freq_type** is **32** (monthly relative). Can be one of the following values:<br /><br /> **0** = **freq_relative_interval** is unused<br /><br /> **1** = First<br /><br /> **2** = Second<br /><br /> **4** = Third<br /><br /> **8** = Fourth<br /><br /> **16** = Last|  
 |**freq_recurrence_**<br /><br /> **factor**|**int**|Number of weeks or months between the scheduled execution of a job. **freq_recurrence_factor** is used only if **freq_type** is **8**, **16**, or **32**. If this column contains **0**, **freq_recurrence_factor** is unused.|  
 |**active_start_date**|**int**|Date on which execution of a job can begin. The date is formatted as YYYYMMDD. NULL indicates today's date.|  
 |**active_end_date**|**int**|Date on which execution of a job can stop. The date is formatted YYYYMMDD.|  

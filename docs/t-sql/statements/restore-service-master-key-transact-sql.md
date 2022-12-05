@@ -1,35 +1,28 @@
 ---
-title: "RESTORE SERVICE MASTER KEY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "RESTORE SERVICE MASTER KEY (Transact-SQL)"
+description: RESTORE SERVICE MASTER KEY (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "RESTORE SERVICE MASTER KEY"
   - "RESTORE_SERVICE_MASTER_KEY_TSQL"
   - "LOAD SERVICE MASTER KEY"
   - "LOAD_SERVICE_MASTER_KEY_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "importing Service Master Keys"
   - "copying Service Master Keys"
   - "service master key [SQL Server], importing"
   - "RESTORE SERVICE MASTER KEY statement"
   - "transferring Service Master Keys"
-ms.assetid: a68fd0ee-70ce-4104-aca0-fcae5f41fc38
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # RESTORE SERVICE MASTER KEY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Imports a service master key from a backup file.  
   
@@ -37,17 +30,18 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 RESTORE SERVICE MASTER KEY FROM FILE = 'path_to_file'   
     DECRYPTION BY PASSWORD = 'password' [FORCE]  
 ```  
   
-## Arguments  
- FILE **='***path_to_file***'**  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+ FILE **='**_path\_to\_file_**'**  
  Specifies the complete path, including file name, to the stored service master key. *path_to_file* can be a local path or a UNC path to a network location.  
   
- PASSWORD **='***password***'**  
+ PASSWORD **='**_password_**'**  
  Specifies the password required to decrypt the service master key that is being imported from a file.  
   
  FORCE  
@@ -69,7 +63,7 @@ RESTORE SERVICE MASTER KEY FROM FILE = 'path_to_file'
 ## Examples  
  The following example restores the service master key from a backup file.  
   
-```  
+```sql  
 RESTORE SERVICE MASTER KEY   
     FROM FILE = 'c:\temp_backups\keys\service_master_key'   
     DECRYPTION BY PASSWORD = '3dH85Hhk003GHk2597gheij4';  
@@ -77,9 +71,7 @@ GO
 ```  
   
 ## See Also  
- [Service Master Key](../../relational-databases/security/encryption/service-master-key.md)   
+ [Service Master Key](../../relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine.md)   
  [ALTER SERVICE MASTER KEY &#40;Transact-SQL&#41;](../../t-sql/statements/alter-service-master-key-transact-sql.md)   
  [BACKUP SERVICE MASTER KEY &#40;Transact-SQL&#41;](../../t-sql/statements/backup-service-master-key-transact-sql.md)   
- [Encryption Hierarchy](../../relational-databases/security/encryption/encryption-hierarchy.md)  
-  
-  
+ [Encryption Hierarchy](../../relational-databases/security/encryption/encryption-hierarchy.md)

@@ -1,14 +1,11 @@
 ---
+description: "sys.sp_add_trusted_assembly (Transact-SQL)"
 title: "sys.sp_add_trusted_assembly (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_add_trusted_assembly_TSQL"
   - "sp_add_trusted_assembly"
@@ -19,13 +16,12 @@ dev_langs:
 helpviewer_keywords: 
   - "sys.sp_add_trusted_assembly"
 ms.assetid: 
-caps.latest.revision: 
-author: "tmullaney"
-ms.author: "thmullan;rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
+monikerRange: ">=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.sp_add_trusted_assembly (Transact-SQL)  
-[!INCLUDE[tsql-appliesto-ssvnxt-xxxx-xxxx-xxx](../../includes/tsql-appliesto-ssvnxt-xxxx-xxxx-xxx.md)]
+[!INCLUDE[tsql-appliesto-ss2017-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2017-asdbmi-xxxx-xxx-md.md)]
 
 Adds an assembly to the list of trusted assemblies for the server.
 

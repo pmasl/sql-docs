@@ -1,27 +1,20 @@
 ---
-title: "NumericScale and Precision Properties Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "NumericScale and Precision properties ADOX code example (VB)"
+description: "ADOX Code Example: NumericScale and Precision Properties Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Precision property [ADOX], Visual Basic example"
   - "NumericScale property [ADOX], Visual Basic example"
-ms.assetid: ea2ec614-34c8-41b7-8ebd-063798bd56b4
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # ADOX Code Example: NumericScale and Precision Properties Example (VB)
-This example demonstrates the [NumericScale](../../../ado/reference/adox-api/numericscale-property-adox.md) and [Precision](../../../ado/reference/adox-api/precision-property-adox.md) properties of the [Column](../../../ado/reference/adox-api/column-object-adox.md) object. This code displays their value for the **Order Details** table of the *Northwind* database.  
+This example demonstrates the [NumericScale](./numericscale-property-adox.md) and [Precision](./precision-property-adox.md) properties of the [Column](./column-object-adox.md) object. This code displays their value for the **Order Details** table of the *Northwind* database.  
   
 ```  
 ' BeginNumericScalePrecVB  
@@ -74,6 +67,6 @@ End Sub
 ```  
   
 ## See Also  
- [Column Object (ADOX)](../../../ado/reference/adox-api/column-object-adox.md)   
- [NumericScale Property (ADOX)](../../../ado/reference/adox-api/numericscale-property-adox.md)   
- [Precision Property (ADOX)](../../../ado/reference/adox-api/precision-property-adox.md)
+ [Column Object (ADOX)](./column-object-adox.md)   
+ [NumericScale Property (ADOX)](./numericscale-property-adox.md)   
+ [Precision Property (ADOX)](./precision-property-adox.md)

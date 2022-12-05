@@ -1,31 +1,25 @@
 ---
-title: "sys.service_queues (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.service_queues (Transact-SQL)"
+description: sys.service_queues (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.service_queues"
   - "service_queues"
   - "service_queues_TSQL"
   - "sys.service_queues_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.service_queues catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 9fd9fa76-6128-410c-896f-741e6050143a
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # sys.service_queues (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains a row for each object in the database that is a service queue, with **sys.objects.type** = SQ.  
   
@@ -39,7 +33,7 @@ manager: "jhubbard"
 |**is_receive_enabled**|**bit**|1 = Receive is enabled.|  
 |**is_enqueue_enabled**|**bit**|1 = Enqueue is enabled.|  
 |**is_retention_enabled**|**bit**|1 = Messages are retained until dialog end.|  
-|**is_poison_message_handling_enabled**|**bit**|**Applies to**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br /><br /> 1 = Poison message handling is enabled.|  
+|**is_poison_message_handling_enabled**|**bit**|**Applies to**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] and later.<br /><br /> 1 = Poison message handling is enabled.|  
   
 ## Permissions  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] For more information, see [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md).  

@@ -1,14 +1,12 @@
 ---
+description: "SQLGetDiagRec Function"
 title: "SQLGetDiagRec Function | Microsoft Docs"
 ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.date: 12/08/2021
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLGetDiagRec"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLGetDiagRec function [ODBC]"
 ms.assetid: ebdbac93-3d68-438f-8416-ef1f08e04269
-caps.latest.revision: 26
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLGetDiagRec Function
 **Conformance**  
@@ -33,17 +29,17 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 SQLRETURN SQLGetDiagRec(  
-     SQLSMALLINT     HandleType,  
-     SQLHANDLE       Handle,  
-     SQLSMALLINT     RecNumber,  
-     SQLCHAR *       SQLState,  
-     SQLINTEGER *    NativeErrorPtr,  
-     SQLCHAR *       MessageText,  
-     SQLSMALLINT     BufferLength,  
-     SQLSMALLINT *   TextLengthPtr);  
+     SQLSMALLINT     HandleType,  
+     SQLHANDLE       Handle,  
+     SQLSMALLINT     RecNumber,  
+     SQLCHAR *       SQLState,  
+     SQLINTEGER *    NativeErrorPtr,  
+     SQLCHAR *       MessageText,  
+     SQLSMALLINT     BufferLength,  
+     SQLSMALLINT *   TextLengthPtr);  
 ```  
   
 ## Arguments  
@@ -86,14 +82,14 @@ SQLRETURN SQLGetDiagRec(
  [Output] Pointer to a buffer in which to return the total number of characters (excluding the number of characters required for the null-termination character) available to return in *\*MessageText*. If the number of characters available to return is greater than *BufferLength*, the diagnostic message text in *\*MessageText* is truncated to *BufferLength* minus the length of a null-termination character.  
   
 ## Returns  
- SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, SQL_ERROR, or SQL_INVALID_HANDLE.  
+ SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, SQL_ERROR, SQL_NO_DATA, or SQL_INVALID_HANDLE.  
   
 ## Diagnostics  
  **SQLGetDiagRec** does not post diagnostic records for itself. It uses the following return values to report the outcome of its own execution:  
   
 -   SQL_SUCCESS: The function successfully returned diagnostic information.  
   
--   SQL_SUCCESS_WITH_INFO: The \**MessageText* buffer was too small to hold the requested diagnostic message. No diagnostic records were generated. To determine that a truncation occurred, the application must compare *BufferLength* to the actual number of bytes available, which is written to **StringLengthPtr*.  
+-   SQL_SUCCESS_WITH_INFO: The \**MessageText* buffer was too small to hold the requested diagnostic message. No diagnostic records were generated. To determine that a truncation occurred, the application must compare *BufferLength* to the actual number of bytes available, which is written to **TextLengthPtr*.  
   
 -   SQL_INVALID_HANDLE: The handle indicated by *HandleType* and *Handle* was not a valid handle.  
   
@@ -118,7 +114,7 @@ SQLRETURN SQLGetDiagRec(
   
  For a description of the fields of the diagnostic data structure, see [SQLGetDiagField](../../../odbc/reference/syntax/sqlgetdiagfield-function.md). For more information, see [Using SQLGetDiagRec and SQLGetDiagField](../../../odbc/reference/develop-app/using-sqlgetdiagrec-and-sqlgetdiagfield.md) and [Implementing SQLGetDiagRec and SQLGetDiagField](../../../odbc/reference/develop-app/implementing-sqlgetdiagrec-and-sqlgetdiagfield.md).  
   
- Calling an API other than the one that’s being executed asynchronously will generate HY010 "Function sequence error". However, the error record cannot be retrieved before the asynchronous operation completes.  
+ Calling an API other than the one that's being executed asynchronously will generate HY010 "Function sequence error". However, the error record cannot be retrieved before the asynchronous operation completes.  
   
 ## HandleType Argument  
  Each handle type can have diagnostic information associated with it. The *HandleType* argument denotes the handle type of the *Handle* argument.  

@@ -1,29 +1,25 @@
 ---
+description: "sp_change_subscription_properties (Transact-SQL)"
 title: "sp_change_subscription_properties (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_change_subscription_properties_TSQL"
   - "sp_change_subscription_properties"
 helpviewer_keywords: 
   - "sp_change_subscription_properties"
 ms.assetid: cf8137f9-f346-4aa1-ae35-91a2d3c16f17
-caps.latest.revision: 29
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_change_subscription_properties (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Updates information for pull subscriptions. This stored procedure is executed at the Subscriber on the subscription database.  
   
@@ -42,22 +38,22 @@ sp_change_subscription_properties [ @publisher = ] 'publisher'
 ```  
   
 ## Arguments  
- [ **@publisher=**] **'***publisher***'**  
+`[ @publisher = ] 'publisher'`
  Is the name of the Publisher. *publisher* is **sysname**, with no default.  
   
- [ **@publisher_db=**] **'***publisher_db***'**  
+`[ @publisher_db = ] 'publisher_db'`
  Is the name of the Publisher database. *publisher_db* is **sysname**, with no default.  
   
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication. *publication* is **sysname**, with no default.  
   
- [ **@property=**]  **'***property***'**  
+`[ @property = ] 'property'`
  Is the property to be changed. *property* is **sysname**.  
   
- [ **@value=**]  **'***value***'**  
+`[ @value = ] 'value'`
  Is the new value of the property. *value* is **nvarchar(1000)**, with no default.  
   
- [ **@publication_type =** ] *publication_type*  
+`[ @publication_type = ] publication_type`
  Specifies the replication type of the publication. *publication_type* is **int**, and can be one of these values.  
   
 |Value|Publication type|  
@@ -90,7 +86,7 @@ sp_change_subscription_properties [ @publisher = ] 'publisher'
 |**internet_login**||Login that the Merge Agent uses when connecting to the Web server that is hosting Web synchronization using Basic Authentication.|  
 |**internet_password**||Password that the Merge Agent uses when connecting to the Web server that is hosting Web synchronization using Basic Authentication.|  
 |**internet_security_mode**|**1**|Use Windows Integrated Authentication for Web synchronization. We recommend using Basic Authentication with Web synchronization. For more information, see [Configure Web Synchronization](../../relational-databases/replication/configure-web-synchronization.md).|  
-||**0**|Use Basic Authentication for Web synchronization.<br /><br /> Note: Web synchronization requires an SSL connection to the Web server.|  
+||**0**|Use Basic Authentication for Web synchronization.<br /><br /> Note: Web synchronization requires a TLS connection to the Web server.|  
 |**internet_timeout**||Length of time, in seconds, before a Web synchronization request expires.|  
 |**internet_url**||URL that represents the location of the replication listener for Web synchronization.|  
 |**merge_job_login**||Login for the Windows account under which the agent runs.|  

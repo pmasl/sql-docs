@@ -1,27 +1,20 @@
 ---
-title: "ResyncEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ResyncEnum"
+description: "ResyncEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "ResyncEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ResyncEnum enumeration [ADO]"
-ms.assetid: d3df2c90-e570-4c40-a79a-25b3448a009c
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ResyncEnum
-Specifies whether underlying values are overwritten by a call to [Resync](../../../ado/reference/ado-api/resync-method.md).  
+Specifies whether underlying values are overwritten by a call to [Resync](./resync-method.md).  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -37,4 +30,4 @@ Specifies whether underlying values are overwritten by a call to [Resync](../../
 |AdoEnums.Resync.UNDERLYINGVALUES|  
   
 ## Applies To  
- [Resync Method](../../../ado/reference/ado-api/resync-method.md)
+ [Resync Method](./resync-method.md)

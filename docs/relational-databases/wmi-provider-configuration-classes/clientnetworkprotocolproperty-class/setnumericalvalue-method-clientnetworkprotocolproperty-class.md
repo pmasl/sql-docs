@@ -1,28 +1,25 @@
 ---
-title: "SetNumericalValue Method (ClientNetworkProtocolProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "SetNumericalValue Method (ClientNetworkProtocolProperty Class)"
+title: "SetNumericalValue Method (ClientNetworkProtocolProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
-  - "SetNumericalValue Method (ClientNetworkProtocolProperty Class)"
+  - "SetNumericalValue Method (ClientNetworkProtocolProperty"
 apilocation: 
   - "sqlmgmproviderxpsp2up.mof"
 apitype: "MOFDef"
 helpviewer_keywords: 
   - "SetNumericalValue method"
 ms.assetid: d4d6df52-9e68-4003-9e28-ece6716ba7f1
-caps.latest.revision: 12
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SetNumericalValue Method (ClientNetworkProtocolProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Sets the numeric value of the current property referenced by the [PropertyIdx Property (ClientNetworkProtocolProperty Class)](../../../relational-databases/wmi-provider-configuration-classes/clientnetworkprotocolproperty-class/propertyidx-property-clientnetworkprotocolproperty-class.md) value.  
   
 ## Syntax  

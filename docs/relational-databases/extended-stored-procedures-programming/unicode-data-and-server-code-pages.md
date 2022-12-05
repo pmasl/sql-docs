@@ -1,28 +1,22 @@
 ---
-title: "Unicode Data and Server Code Pages | Microsoft Docs"
-ms.custom: ""
+title: "Unicode Data and Server Code Pages"
+description: Unicode Data and Server Code Pages
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "metadata [SQL Server], stored procedures"
   - "Unicode [SQL Server], extended stored procedures"
   - "extended stored procedures [SQL Server], metadata"
 ms.assetid: 52310260-a892-4b27-ad2e-bf164b98ee80
-caps.latest.revision: 31
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Unicode Data and Server Code Pages
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 > [!IMPORTANT]  
->  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] Use CLR Integration instead.  
+>  [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)] Use CLR Integration instead.  
   
  The Extended Stored Procedure API is enabled for Unicode data; however, it is not enabled for Unicode metadata. The #define Unicode directive does not have any effect on the Extended Stored Procedure API.  
   

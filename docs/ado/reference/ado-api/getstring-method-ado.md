@@ -1,28 +1,21 @@
 ---
-title: "GetString Method (ADO) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "GetString Method (ADO)"
+description: "GetString Method (ADO)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Recordset20::raw_GetString"
   - "Recordset20::GetString"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "GetString method [ADO]"
-ms.assetid: 92452940-b2a7-456e-94fc-3780c71da33c
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # GetString Method (ADO)
-Returns the [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) as a string.  
+Returns the [Recordset](./recordset-object-ado.md) as a string.  
   
 ## Syntax  
   
@@ -36,7 +29,7 @@ Variant = recordset.GetString(StringFormat, NumRows, ColumnDelimiter, RowDelimit
   
 #### Parameters  
  *StringFormat*  
- A [StringFormatEnum](../../../ado/reference/ado-api/stringformatenum.md) value that specifies how the **Recordset** should be converted to a string. The *RowDelimiter*, *ColumnDelimiter*, and *NullExpr* parameters are used only with a *StringFormat* of **adClipString**.  
+ A [StringFormatEnum](./stringformatenum.md) value that specifies how the **Recordset** should be converted to a string. The *RowDelimiter*, *ColumnDelimiter*, and *NullExpr* parameters are used only with a *StringFormat* of **adClipString**.  
   
  *NumRows*  
  Optional. The number of rows to be converted in the **Recordset**. If *NumRows* is not specified, or if it is greater than the total number of rows in the **Recordset**, then all the rows in the **Recordset** are converted.  
@@ -56,7 +49,7 @@ Variant = recordset.GetString(StringFormat, NumRows, ColumnDelimiter, RowDelimit
  This method is equivalent to the RDO **GetClipString** method.  
   
 ## Applies To  
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)  
+ [Recordset Object (ADO)](./recordset-object-ado.md)  
   
 ## See Also  
- [GetString Method Example (VB)](../../../ado/reference/ado-api/getstring-method-example-vb.md)
+ [GetString Method Example (VB)](./getstring-method-example-vb.md)

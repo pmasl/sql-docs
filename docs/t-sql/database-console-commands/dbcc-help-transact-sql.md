@@ -1,30 +1,23 @@
 ---
-title: "DBCC HELP (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "7/16/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+title: "DBCC HELP (Transact-SQL)"
+description: "DBCC HELP (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "07/16/2017"
+ms.service: sql
+ms.subservice: t-sql
 ms.topic: "language-reference"
-f1_keywords: 
+f1_keywords:
   - "DBCC HELP"
   - "DBCC_HELP_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "DBCC statement syntax information"
   - "DBCC HELP statement"
-ms.assetid: 306092c6-4354-4e47-928b-606124fbdc6e
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DBCC HELP (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
 Returns syntax information for the specified DBCC command.
   
@@ -32,13 +25,15 @@ Returns syntax information for the specified DBCC command.
   
 ## Syntax  
   
-```sql
+```syntaxsql
 DBCC HELP ( 'dbcc_statement' | @dbcc_statement_var | '?' )  
 [ WITH NO_INFOMSGS ]  
 ```  
   
-## Arguments  
- *dbcc_statement* | *@dbcc_statement_var*  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+ *dbcc_statement* | *\@dbcc_statement_var*  
  Is the name of the DBCC command for which to receive syntax information. Provide only the part of the DBCC command that follows DBCC, for example, CHECKDB instead of DBCC CHECKDB.  
   
  ?  

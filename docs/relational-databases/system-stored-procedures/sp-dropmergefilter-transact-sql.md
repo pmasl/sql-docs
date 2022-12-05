@@ -1,33 +1,30 @@
 ---
-title: "sp_dropmergefilter (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+title: sp_dropmergefilter (Transact-SQL)
+description: "sp_dropmergefilter (Transact-SQL)"
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_dropmergefilter_TSQL"
   - "sp_dropmergefilter"
 helpviewer_keywords: 
   - "sp_dropmergefilter"
-ms.assetid: 798586d7-05f3-4a5e-bea8-a34b7b52d0fd
-caps.latest.revision: 26
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "03/06/2017"
 ---
-# sp_dropmergefilter (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  Drops a merge filter. **sp_dropmergefilter** drops all the merge filter columns defined on the merge filter that is to be dropped. This stored procedure is executed at the Publisher on the publication database.  
+# sp_dropmergefilter (Transact-SQL)
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Drops a merge filter. **sp_dropmergefilter** drops all the merge filter columns defined on the merge filter that is to be dropped. This stored procedure is executed at the Publisher on the publication database.  
   
- ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
+![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
@@ -39,23 +36,23 @@ sp_dropmergefilter [ @publication= ] 'publication', [ @article= ] 'article'     
 ```  
   
 ## Arguments  
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication. *publication* is **sysname**, with no default.  
   
- [ **@article=**] **'***article***'**  
+`[ @article = ] 'article'`
  Is the name of the article. *article* is **sysname**, with no default.  
   
- [ **@filtername=**] **'***filtername***'**  
+`[ @filtername = ] 'filtername'`
  Is the name of the filter to be dropped. *filtername* is **sysname**, with no default.  
   
- [ **@force_invalidate_snapshot=** ] *force_invalidate_snapshot*  
+`[ @force_invalidate_snapshot = ] force_invalidate_snapshot`
  Enables or disables the ability to have a snapshot invalidated. *force_invalidate_snapshot* is a **bit**, with a default **0**.  
   
  **0** specifies that changes to the merge article do not cause the snapshot to be invalid.  
   
  **1** means that changes to the merge article may cause the snapshot to be invalid. If that is the case, a value of **1** gives permission for the new snapshot to occur.  
   
- [ **@force_reinit_subscription**= ] *force_reinit_subscription*  
+`[ @force_reinit_subscription = ] force_reinit_subscription`
  Enables or disables the ability to mark a subscription as not valid. *force_reinit_subscription* is a **bit**, with a default **0**.  
   
  **0** specifies that changes to the merge article filter do not cause the subscriptions to be invalid.  

@@ -1,14 +1,12 @@
 ---
+description: "Integration Services (SSIS) Connections"
 title: "Integration Services (SSIS) Connections | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.asvs.connectionmanager.f1"
   - "sql13.dts.designer.adddtsconnection.f1"
@@ -23,12 +21,14 @@ helpviewer_keywords:
   - "connections [Integration Services]"
   - "SQL Server Integration Services packages, connections"
 ms.assetid: 72f5afa3-d636-410b-9e81-2ffa27772a8c
-caps.latest.revision: 92
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Integration Services (SSIS) Connections
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] packages use connections to perform different tasks and to implement [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] features:  
   
 -   Connecting to source and destination data stores such as text, XML, Excel workbooks, and relational databases to extract and load data.  
@@ -103,13 +103,13 @@ A connection manager can be created at the package level or at the project level
  The following table lists additional types of connection manager that you can download from the [!INCLUDE[msCoName](../../includes/msconame-md.md)] website.  
   
 > [!IMPORTANT]  
->  The connection managers listed in the following table work only with [!INCLUDE[ssEnterpriseEd11](../../includes/ssenterpriseed11-md.md)] and [!INCLUDE[ssDeveloperEd11](../../includes/ssdevelopered11-md.md)].  
+>  The connection managers listed in the following table work only with [!INCLUDE[ssEnterprise](../../includes/ssenterprise-md.md)] and SQL Server Developer edition.  
   
 |Type|Description|Topic|  
 |----------|-----------------|-----------|  
-|ORACLE|Connects to an Oracle \<version info\> server.|The Oracle connection manager is the connection manager component of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Oracle by Attunity. The [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Oracle by Attunity also includes a source and a destination. For more information, see the download page, [Microsoft Connectors for Oracle and Teradata by Attunity](http://go.microsoft.com/fwlink/?LinkId=251526).|  
-|SAPBI|Connects to an SAP NetWeaver BI version 7 system.|The SAP BI connection manager is the connection manager component of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for SAP BI. The [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for SAP BI also includes a source and a destination. For more information, see the download page, [Microsoft SQL Server 2008 Feature Pack](http://go.microsoft.com/fwlink/?LinkId=262016).|  
-|TERADATA|Connects to a Teradata \<version info\> server.|The Teradata connection manager is the connection manager component of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Teradata by Attunity. The [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Teradata by Attunity also includes a source and a destination. For more information, see the download page, [Microsoft Connectors for Oracle and Teradata by Attunity](http://go.microsoft.com/fwlink/?LinkId=251526).|  
+|ORACLE|Connects to an Oracle \<version info\> server.|The Oracle connection manager is the connection manager component of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Oracle by Attunity. The [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Oracle by Attunity also includes a source and a destination. For more information, see the download page, [Microsoft Connector for Oracle](https://www.microsoft.com/en-us/download/details.aspx?id=58228).|  
+|SAPBI|Connects to an SAP NetWeaver BI version 7 system.|The SAP BI connection manager is the connection manager component of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for SAP BI. The [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for SAP BI also includes a source and a destination. For more information, see the download page, [Microsoft SQL Server 2008 Feature Pack](https://www.microsoft.com/download/details.aspx?id=44277).|  
+|TERADATA|Connects to a Teradata \<version info\> server.|The Teradata connection manager is the connection manager component of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Teradata by Attunity. The [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Teradata by Attunity also includes a source and a destination. For more information, see the download page, [Microsoft Connectors for Oracle and Teradata by Attunity](https://www.microsoft.com/download/details.aspx?id=55179).|  
   
 ### Custom Connection Managers  
  You can also write custom connection managers. For more information, see [Developing a Custom Connection Manager](../../integration-services/extending-packages-custom-objects/connection-manager/developing-a-custom-connection-manager.md).  
@@ -135,7 +135,7 @@ A connection manager can be created at the package level or at the project level
   
  At run time, the correct version is used, and it does not matter that you specified the 32-bit version of the provider at design time. The 64-bit version of the provider can be run even if the package is run in [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)].  
   
- Both versions of the provider have the same ID. To specify whether the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] runtime uses an available 64-bit version of the provider, you set the Run64BitRuntime property of the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] project. If the Run64BitRuntime property is set to **true**, the runtime finds and uses the 64-bit provider; if Run64BitRuntime is **false**, the runtime finds and uses the 32-bit provider. For more information about properties you can set on [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] projects, see [Integration Services &(SSIS) and Studio Environments](https://msdn.microsoft.com/library/ms140028.aspx).  
+  Both versions of the provider have the same ID. To specify whether the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] runtime uses an available 64-bit version of the provider, you set the Run64BitRuntime property of the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] project. If the Run64BitRuntime property is set to **true**, the runtime finds and uses the 64-bit provider; if Run64BitRuntime is **false**, the runtime finds and uses the 32-bit provider. For more information about properties you can set on [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] projects, see [Integration Services &(SSIS) and Studio Environments](../integration-services-ssis-development-and-management-tools.md).   
 
 ## Add a connection manager
 ###  <a name="wizard"></a> Add a connection manager when you create a package  
@@ -156,7 +156,7 @@ A connection manager can be created at the package level or at the project level
   
     -   Click the connection manager type to add to the package.  
   
-         —or—  
+         -or-  
   
     -   If the type that you want to add is not listed, click **New Connection** to open the **Add SSIS Connection Manager** dialog box, select a connection manager type, and then click **OK**.  
   
@@ -164,23 +164,23 @@ A connection manager can be created at the package level or at the project level
   
     |Connection manager|Options|  
     |------------------------|-------------|  
-    |[ADO Connection Manager](../../integration-services/connection-manager/ado-connection-manager.md)|[Configure OLE DB Connection Manager](../../integration-services/connection-manager/configure-ole-db-connection-manager.md)|  
-    |[ADO.NET Connection Manager](../../integration-services/connection-manager/ado-net-connection-manager.md)|[Configure ADO.NET Connection Manager](../../integration-services/connection-manager/configure-ado-net-connection-manager.md)|  
+    |[ADO Connection Manager](../../integration-services/connection-manager/ado-connection-manager.md)|[Configure OLE DB Connection Manager](./ole-db-connection-manager.md)|  
+    |[ADO.NET Connection Manager](../../integration-services/connection-manager/ado-net-connection-manager.md)|[Configure ADO.NET Connection Manager](./ado-net-connection-manager.md)|  
     |[Analysis Services Connection Manager](../../integration-services/connection-manager/analysis-services-connection-manager.md)|[Add Analysis Services Connection Manager Dialog Box UI Reference](../../integration-services/connection-manager/add-analysis-services-connection-manager-dialog-box-ui-reference.md)|  
-    |[Excel Connection Manager](../../integration-services/connection-manager/excel-connection-manager.md)|[Excel Connection Manager Editor](../../integration-services/connection-manager/excel-connection-manager-editor.md)|  
-    |[File Connection Manager](../../integration-services/connection-manager/file-connection-manager.md)|[File Connection Manager Editor](../../integration-services/connection-manager/file-connection-manager-editor.md)|  
+    |[Excel Connection Manager](../../integration-services/connection-manager/excel-connection-manager.md)|[Excel Connection Manager Editor](./excel-connection-manager.md)|  
+    |[File Connection Manager](../../integration-services/connection-manager/file-connection-manager.md)|[File Connection Manager Editor](./file-connection-manager.md)|  
     |[Multiple Files Connection Manager](../../integration-services/connection-manager/multiple-files-connection-manager.md)|[Add File Connection Manager Dialog Box UI Reference](../../integration-services/connection-manager/add-file-connection-manager-dialog-box-ui-reference.md)|  
-    |[Flat File Connection Manager](../../integration-services/connection-manager/flat-file-connection-manager.md)|[Flat File Connection Manager Editor &#40;General Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-general-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Columns Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-columns-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Advanced Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-advanced-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Preview Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-preview-page.md)|  
-    |[Multiple Flat Files Connection Manager](../../integration-services/connection-manager/multiple-flat-files-connection-manager.md)|[Multiple Flat Files Connection Manager Editor &#40;General Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-general-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Columns Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-columns-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Advanced Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-advanced-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Preview Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-preview-page.md)|  
-    |[FTP Connection Manager](../../integration-services/connection-manager/ftp-connection-manager.md)|[FTP Connection Manager Editor](../../integration-services/connection-manager/ftp-connection-manager-editor.md)|  
-    |[HTTP Connection Manager](../../integration-services/connection-manager/http-connection-manager.md)|[HTTP Connection Manager Editor &#40;Server Page&#41;](../../integration-services/connection-manager/http-connection-manager-editor-server-page.md)<br /><br /> [HTTP Connection Manager Editor &#40;Proxy Page&#41;](../../integration-services/connection-manager/http-connection-manager-editor-proxy-page.md)|  
-    |[MSMQ Connection Manager](../../integration-services/connection-manager/msmq-connection-manager.md)|[MSMQ Connection Manager Editor](../../integration-services/connection-manager/msmq-connection-manager-editor.md)|  
-    |[ODBC Connection Manager](../../integration-services/connection-manager/odbc-connection-manager.md)|[ODBC Connection Manager UI Reference](../../integration-services/connection-manager/odbc-connection-manager-ui-reference.md)|  
-    |[OLE DB Connection Manager](../../integration-services/connection-manager/ole-db-connection-manager.md)|[Configure OLE DB Connection Manager](../../integration-services/connection-manager/configure-ole-db-connection-manager.md)|  
-    |[SMO Connection Manager](../../integration-services/connection-manager/smo-connection-manager.md)|[SMO Connection Manager Editor](../../integration-services/connection-manager/smo-connection-manager-editor.md)|  
-    |[SMTP Connection Manager](../../integration-services/connection-manager/smtp-connection-manager.md)|[SMTP Connection Manager Editor](../../integration-services/connection-manager/smtp-connection-manager-editor.md)|  
-    |[SQL Server Compact Edition Connection Manager](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager.md)|[SQL Server Compact Edition Connection Manager Editor &#40;Connection Page&#41;](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager-editor-connection-page.md)<br /><br /> [SQL Server Compact Edition Connection Manager Editor &#40;All Page&#41;](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager-editor-all-page.md)|  
-    |[WMI Connection Manager](../../integration-services/connection-manager/wmi-connection-manager.md)|[WMI Connection Manager Editor](../../integration-services/connection-manager/wmi-connection-manager-editor.md)|  
+    |[Flat File Connection Manager](../../integration-services/connection-manager/flat-file-connection-manager.md)|[Flat File Connection Manager Editor &#40;General Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Columns Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Advanced Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Preview Page&#41;](./flat-file-connection-manager.md)|  
+    |[Multiple Flat Files Connection Manager](../../integration-services/connection-manager/multiple-flat-files-connection-manager.md)|[Multiple Flat Files Connection Manager Editor &#40;General Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Columns Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Advanced Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Preview Page&#41;](./multiple-flat-files-connection-manager.md)|  
+    |[FTP Connection Manager](../../integration-services/connection-manager/ftp-connection-manager.md)|[FTP Connection Manager Editor](./ftp-connection-manager.md)|  
+    |[HTTP Connection Manager](../../integration-services/connection-manager/http-connection-manager.md)|[HTTP Connection Manager Editor &#40;Server Page&#41;](./http-connection-manager.md)<br /><br /> [HTTP Connection Manager Editor &#40;Proxy Page&#41;](./http-connection-manager.md)|  
+    |[MSMQ Connection Manager](../../integration-services/connection-manager/msmq-connection-manager.md)|[MSMQ Connection Manager Editor](./msmq-connection-manager.md)|  
+    |[ODBC Connection Manager](../../integration-services/connection-manager/odbc-connection-manager.md)|[ODBC Connection Manager UI Reference](./odbc-connection-manager.md)|  
+    |[OLE DB Connection Manager](../../integration-services/connection-manager/ole-db-connection-manager.md)|[Configure OLE DB Connection Manager](./ole-db-connection-manager.md)|  
+    |[SMO Connection Manager](../../integration-services/connection-manager/smo-connection-manager.md)|[SMO Connection Manager Editor](./smo-connection-manager.md)|  
+    |[SMTP Connection Manager](../../integration-services/connection-manager/smtp-connection-manager.md)|[SMTP Connection Manager Editor](./smtp-connection-manager.md)|  
+    |[SQL Server Compact Edition Connection Manager](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager.md)|[SQL Server Compact Edition Connection Manager Editor &#40;Connection Page&#41;](./sql-server-compact-edition-connection-manager.md)<br /><br /> [SQL Server Compact Edition Connection Manager Editor &#40;All Page&#41;](./sql-server-compact-edition-connection-manager.md)|  
+    |[WMI Connection Manager](../../integration-services/connection-manager/wmi-connection-manager.md)|[WMI Connection Manager Editor](./wmi-connection-manager.md)|  
   
      The **Connection Managers** area lists the added connection manager.  
   
@@ -200,30 +200,30 @@ A connection manager can be created at the package level or at the project level
   
     |Connection manager|Options|  
     |------------------------|-------------|  
-    |[ADO Connection Manager](../../integration-services/connection-manager/ado-connection-manager.md)|[Configure OLE DB Connection Manager](../../integration-services/connection-manager/configure-ole-db-connection-manager.md)|  
-    |[ADO.NET Connection Manager](../../integration-services/connection-manager/ado-net-connection-manager.md)|[Configure ADO.NET Connection Manager](../../integration-services/connection-manager/configure-ado-net-connection-manager.md)|  
+    |[ADO Connection Manager](../../integration-services/connection-manager/ado-connection-manager.md)|[Configure OLE DB Connection Manager](./ole-db-connection-manager.md)|  
+    |[ADO.NET Connection Manager](../../integration-services/connection-manager/ado-net-connection-manager.md)|[Configure ADO.NET Connection Manager](./ado-net-connection-manager.md)|  
     |[Analysis Services Connection Manager](../../integration-services/connection-manager/analysis-services-connection-manager.md)|[Add Analysis Services Connection Manager Dialog Box UI Reference](../../integration-services/connection-manager/add-analysis-services-connection-manager-dialog-box-ui-reference.md)|  
-    |[Excel Connection Manager](../../integration-services/connection-manager/excel-connection-manager.md)|[Excel Connection Manager Editor](../../integration-services/connection-manager/excel-connection-manager-editor.md)|  
-    |[File Connection Manager](../../integration-services/connection-manager/file-connection-manager.md)|[File Connection Manager Editor](../../integration-services/connection-manager/file-connection-manager-editor.md)|  
+    |[Excel Connection Manager](../../integration-services/connection-manager/excel-connection-manager.md)|[Excel Connection Manager Editor](./excel-connection-manager.md)|  
+    |[File Connection Manager](../../integration-services/connection-manager/file-connection-manager.md)|[File Connection Manager Editor](./file-connection-manager.md)|  
     |[Multiple Files Connection Manager](../../integration-services/connection-manager/multiple-files-connection-manager.md)|[Add File Connection Manager Dialog Box UI Reference](../../integration-services/connection-manager/add-file-connection-manager-dialog-box-ui-reference.md)|  
-    |[Flat File Connection Manager](../../integration-services/connection-manager/flat-file-connection-manager.md)|[Flat File Connection Manager Editor &#40;General Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-general-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Columns Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-columns-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Advanced Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-advanced-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Preview Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-preview-page.md)|  
-    |[Multiple Flat Files Connection Manager](../../integration-services/connection-manager/multiple-flat-files-connection-manager.md)|[Multiple Flat Files Connection Manager Editor &#40;General Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-general-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Columns Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-columns-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Advanced Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-advanced-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Preview Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-preview-page.md)|  
-    |[FTP Connection Manager](../../integration-services/connection-manager/ftp-connection-manager.md)|[FTP Connection Manager Editor](../../integration-services/connection-manager/ftp-connection-manager-editor.md)|  
-    |[HTTP Connection Manager](../../integration-services/connection-manager/http-connection-manager.md)|[HTTP Connection Manager Editor &#40;Server Page&#41;](../../integration-services/connection-manager/http-connection-manager-editor-server-page.md)<br /><br /> [HTTP Connection Manager Editor &#40;Proxy Page&#41;](../../integration-services/connection-manager/http-connection-manager-editor-proxy-page.md)|  
-    |[MSMQ Connection Manager](../../integration-services/connection-manager/msmq-connection-manager.md)|[MSMQ Connection Manager Editor](../../integration-services/connection-manager/msmq-connection-manager-editor.md)|  
-    |[ODBC Connection Manager](../../integration-services/connection-manager/odbc-connection-manager.md)|[ODBC Connection Manager UI Reference](../../integration-services/connection-manager/odbc-connection-manager-ui-reference.md)|  
-    |[OLE DB Connection Manager](../../integration-services/connection-manager/ole-db-connection-manager.md)|[Configure OLE DB Connection Manager](../../integration-services/connection-manager/configure-ole-db-connection-manager.md)|  
-    |[SMO Connection Manager](../../integration-services/connection-manager/smo-connection-manager.md)|[SMO Connection Manager Editor](../../integration-services/connection-manager/smo-connection-manager-editor.md)|  
-    |[SMTP Connection Manager](../../integration-services/connection-manager/smtp-connection-manager.md)|[SMTP Connection Manager Editor](../../integration-services/connection-manager/smtp-connection-manager-editor.md)|  
-    |[SQL Server Compact Edition Connection Manager](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager.md)|[SQL Server Compact Edition Connection Manager Editor &#40;Connection Page&#41;](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager-editor-connection-page.md)<br /><br /> [SQL Server Compact Edition Connection Manager Editor &#40;All Page&#41;](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager-editor-all-page.md)|  
-    |[WMI Connection Manager](../../integration-services/connection-manager/wmi-connection-manager.md)|[WMI Connection Manager Editor](../../integration-services/connection-manager/wmi-connection-manager-editor.md)|  
+    |[Flat File Connection Manager](../../integration-services/connection-manager/flat-file-connection-manager.md)|[Flat File Connection Manager Editor &#40;General Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Columns Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Advanced Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Preview Page&#41;](./flat-file-connection-manager.md)|  
+    |[Multiple Flat Files Connection Manager](../../integration-services/connection-manager/multiple-flat-files-connection-manager.md)|[Multiple Flat Files Connection Manager Editor &#40;General Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Columns Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Advanced Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Preview Page&#41;](./multiple-flat-files-connection-manager.md)|  
+    |[FTP Connection Manager](../../integration-services/connection-manager/ftp-connection-manager.md)|[FTP Connection Manager Editor](./ftp-connection-manager.md)|  
+    |[HTTP Connection Manager](../../integration-services/connection-manager/http-connection-manager.md)|[HTTP Connection Manager Editor &#40;Server Page&#41;](./http-connection-manager.md)<br /><br /> [HTTP Connection Manager Editor &#40;Proxy Page&#41;](./http-connection-manager.md)|  
+    |[MSMQ Connection Manager](../../integration-services/connection-manager/msmq-connection-manager.md)|[MSMQ Connection Manager Editor](./msmq-connection-manager.md)|  
+    |[ODBC Connection Manager](../../integration-services/connection-manager/odbc-connection-manager.md)|[ODBC Connection Manager UI Reference](./odbc-connection-manager.md)|  
+    |[OLE DB Connection Manager](../../integration-services/connection-manager/ole-db-connection-manager.md)|[Configure OLE DB Connection Manager](./ole-db-connection-manager.md)|  
+    |[SMO Connection Manager](../../integration-services/connection-manager/smo-connection-manager.md)|[SMO Connection Manager Editor](./smo-connection-manager.md)|  
+    |[SMTP Connection Manager](../../integration-services/connection-manager/smtp-connection-manager.md)|[SMTP Connection Manager Editor](./smtp-connection-manager.md)|  
+    |[SQL Server Compact Edition Connection Manager](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager.md)|[SQL Server Compact Edition Connection Manager Editor &#40;Connection Page&#41;](./sql-server-compact-edition-connection-manager.md)<br /><br /> [SQL Server Compact Edition Connection Manager Editor &#40;All Page&#41;](./sql-server-compact-edition-connection-manager.md)|  
+    |[WMI Connection Manager](../../integration-services/connection-manager/wmi-connection-manager.md)|[WMI Connection Manager Editor](./wmi-connection-manager.md)|  
   
      The connection manager you added will show up under the **Connections Managers** node in the **Solution Explorer**. It will also appear in the **Connection Managers** tab in the **SSIS Designer** window for all the packages in the project. The name of the connection manager in this tab will have a **(project)** prefix in order to differentiate this project level connection manager from the package level connection managers.  
   
 4.  Optionally, right-click the connection manager in the **Solution Explorer** window under **Connection Managers** node (or) in the **Connection Managers** tab of the **SSIS Designer** window, click **Rename**, and then modify the default name of the connection manager.  
   
     > [!NOTE]  
-    >  In the **Connection Managers** tab of the **SSIS Designer** window, you won’t be able to overwrite the **(project)** prefix from the connection manager name. This is by design.  
+    >  In the **Connection Managers** tab of the **SSIS Designer** window, you won't be able to overwrite the **(project)** prefix from the connection manager name. This is by design.  
 
 ### Add SSIS Connection Manager dialog box
 Use the **Add SSIS Connection Manager** dialog box to select the type of connection to add to a package.  
@@ -241,7 +241,11 @@ Use the **Add SSIS Connection Manager** dialog box to select the type of connect
   
 1.  In the **Connection Managers** area, right-click the connection manager that you want to create a parameter for and then click **Parameterize**.  
   
-2.  Configure the parameter settings in the **Parameterize** dialog box. For more information, see [Parameterize Dialog Box](http://msdn.microsoft.com/library/fac02b6d-d247-447a-8940-e8700c7ac350).  
+2.  Configure the parameter settings in the **Parameterize** dialog box. For more information, see [Parameterize Dialog Box](../integration-services-ssis-package-and-project-parameters.md).  
+
+> [!NOTE]
+> Property **ConnectionString** is not sensitive and designed not to contain sensitive password information.
+> it is recommended to use property **Password** to parameterize sensitive password.
 
 ## Delete a connection manager 
 ###  <a name="DeletePackageLevel"></a> Delete a connection manager from a package  
@@ -309,36 +313,35 @@ All connection managers can be configured using the **Properties** window.
   
     |Connection manager|Options|  
     |------------------------|-------------|  
-    |[ADO Connection Manager](../../integration-services/connection-manager/ado-connection-manager.md)|[Configure OLE DB Connection Manager](../../integration-services/connection-manager/configure-ole-db-connection-manager.md)|  
-    |[ADO.NET Connection Manager](../../integration-services/connection-manager/ado-net-connection-manager.md)|[Configure ADO.NET Connection Manager](../../integration-services/connection-manager/configure-ado-net-connection-manager.md)|  
+    |[ADO Connection Manager](../../integration-services/connection-manager/ado-connection-manager.md)|[Configure OLE DB Connection Manager](./ole-db-connection-manager.md)|  
+    |[ADO.NET Connection Manager](../../integration-services/connection-manager/ado-net-connection-manager.md)|[Configure ADO.NET Connection Manager](./ado-net-connection-manager.md)|  
     |[Analysis Services Connection Manager](../../integration-services/connection-manager/analysis-services-connection-manager.md)|[Add Analysis Services Connection Manager Dialog Box UI Reference](../../integration-services/connection-manager/add-analysis-services-connection-manager-dialog-box-ui-reference.md)|  
-    |[Excel Connection Manager](../../integration-services/connection-manager/excel-connection-manager.md)|[Excel Connection Manager Editor](../../integration-services/connection-manager/excel-connection-manager-editor.md)|  
-    |[File Connection Manager](../../integration-services/connection-manager/file-connection-manager.md)|[File Connection Manager Editor](../../integration-services/connection-manager/file-connection-manager-editor.md)|  
+    |[Excel Connection Manager](../../integration-services/connection-manager/excel-connection-manager.md)|[Excel Connection Manager Editor](./excel-connection-manager.md)|  
+    |[File Connection Manager](../../integration-services/connection-manager/file-connection-manager.md)|[File Connection Manager Editor](./file-connection-manager.md)|  
     |[Multiple Files Connection Manager](../../integration-services/connection-manager/multiple-files-connection-manager.md)|[Add File Connection Manager Dialog Box UI Reference](../../integration-services/connection-manager/add-file-connection-manager-dialog-box-ui-reference.md)|  
-    |[Flat File Connection Manager](../../integration-services/connection-manager/flat-file-connection-manager.md)|[Flat File Connection Manager Editor &#40;General Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-general-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Columns Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-columns-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Advanced Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-advanced-page.md)<br /><br /> [Flat File Connection Manager Editor &#40;Preview Page&#41;](../../integration-services/connection-manager/flat-file-connection-manager-editor-preview-page.md)|  
-    |[Multiple Flat Files Connection Manager](../../integration-services/connection-manager/multiple-flat-files-connection-manager.md)|[Multiple Flat Files Connection Manager Editor &#40;General Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-general-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Columns Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-columns-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Advanced Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-advanced-page.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Preview Page&#41;](../../integration-services/connection-manager/multiple-flat-files-connection-manager-editor-preview-page.md)|  
-    |[FTP Connection Manager](../../integration-services/connection-manager/ftp-connection-manager.md)|[FTP Connection Manager Editor](../../integration-services/connection-manager/ftp-connection-manager-editor.md)|  
-    |[HTTP Connection Manager](../../integration-services/connection-manager/http-connection-manager.md)|[HTTP Connection Manager Editor &#40;Server Page&#41;](../../integration-services/connection-manager/http-connection-manager-editor-server-page.md)<br /><br /> [HTTP Connection Manager Editor &#40;Proxy Page&#41;](../../integration-services/connection-manager/http-connection-manager-editor-proxy-page.md)|  
-    |[MSMQ Connection Manager](../../integration-services/connection-manager/msmq-connection-manager.md)|[MSMQ Connection Manager Editor](../../integration-services/connection-manager/msmq-connection-manager-editor.md)|  
-    |[ODBC Connection Manager](../../integration-services/connection-manager/odbc-connection-manager.md)|[ODBC Connection Manager UI Reference](../../integration-services/connection-manager/odbc-connection-manager-ui-reference.md)|  
-    |[OLE DB Connection Manager](../../integration-services/connection-manager/ole-db-connection-manager.md)|[Configure OLE DB Connection Manager](../../integration-services/connection-manager/configure-ole-db-connection-manager.md)|  
-    |[SMO Connection Manager](../../integration-services/connection-manager/smo-connection-manager.md)|[SMO Connection Manager Editor](../../integration-services/connection-manager/smo-connection-manager-editor.md)|  
-    |[SMTP Connection Manager](../../integration-services/connection-manager/smtp-connection-manager.md)|[SMTP Connection Manager Editor](../../integration-services/connection-manager/smtp-connection-manager-editor.md)|  
-    |[SQL Server Compact Edition Connection Manager](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager.md)|[SQL Server Compact Edition Connection Manager Editor &#40;Connection Page&#41;](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager-editor-connection-page.md)<br /><br /> [SQL Server Compact Edition Connection Manager Editor &#40;All Page&#41;](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager-editor-all-page.md)|  
-    |[WMI Connection Manager](../../integration-services/connection-manager/wmi-connection-manager.md)|[WMI Connection Manager Editor](../../integration-services/connection-manager/wmi-connection-manager-editor.md)|  
+    |[Flat File Connection Manager](../../integration-services/connection-manager/flat-file-connection-manager.md)|[Flat File Connection Manager Editor &#40;General Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Columns Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Advanced Page&#41;](./flat-file-connection-manager.md)<br /><br /> [Flat File Connection Manager Editor &#40;Preview Page&#41;](./flat-file-connection-manager.md)|  
+    |[Multiple Flat Files Connection Manager](../../integration-services/connection-manager/multiple-flat-files-connection-manager.md)|[Multiple Flat Files Connection Manager Editor &#40;General Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Columns Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Advanced Page&#41;](./multiple-flat-files-connection-manager.md)<br /><br /> [Multiple Flat Files Connection Manager Editor &#40;Preview Page&#41;](./multiple-flat-files-connection-manager.md)|  
+    |[FTP Connection Manager](../../integration-services/connection-manager/ftp-connection-manager.md)|[FTP Connection Manager Editor](./ftp-connection-manager.md)|  
+    |[HTTP Connection Manager](../../integration-services/connection-manager/http-connection-manager.md)|[HTTP Connection Manager Editor &#40;Server Page&#41;](./http-connection-manager.md)<br /><br /> [HTTP Connection Manager Editor &#40;Proxy Page&#41;](./http-connection-manager.md)|  
+    |[MSMQ Connection Manager](../../integration-services/connection-manager/msmq-connection-manager.md)|[MSMQ Connection Manager Editor](./msmq-connection-manager.md)|  
+    |[ODBC Connection Manager](../../integration-services/connection-manager/odbc-connection-manager.md)|[ODBC Connection Manager UI Reference](./odbc-connection-manager.md)|  
+    |[OLE DB Connection Manager](../../integration-services/connection-manager/ole-db-connection-manager.md)|[Configure OLE DB Connection Manager](./ole-db-connection-manager.md)|  
+    |[SMO Connection Manager](../../integration-services/connection-manager/smo-connection-manager.md)|[SMO Connection Manager Editor](./smo-connection-manager.md)|  
+    |[SMTP Connection Manager](../../integration-services/connection-manager/smtp-connection-manager.md)|[SMTP Connection Manager Editor](./smtp-connection-manager.md)|  
+    |[SQL Server Compact Edition Connection Manager](../../integration-services/connection-manager/sql-server-compact-edition-connection-manager.md)|[SQL Server Compact Edition Connection Manager Editor &#40;Connection Page&#41;](./sql-server-compact-edition-connection-manager.md)<br /><br /> [SQL Server Compact Edition Connection Manager Editor &#40;All Page&#41;](./sql-server-compact-edition-connection-manager.md)|  
+    |[WMI Connection Manager](../../integration-services/connection-manager/wmi-connection-manager.md)|[WMI Connection Manager Editor](./wmi-connection-manager.md)|  
   
 5.  To save the updated package, click **Save Selected Items** on the **File** menu.  
 
 ## Related Content  
   
--   Video, [Leverage Microsoft Attunity Connector for Oracle to enhance Package Performance](http://technet.microsoft.com/sqlserver/gg598963.aspx), on technet.microsoft.com  
+-   Video, [Leverage Microsoft Attunity Connector for Oracle to enhance Package Performance](/previous-versions/dn912438(v=msdn.10)), on technet.microsoft.com  
   
--   Wiki articles, [SSIS Connectivity](http://social.technet.microsoft.com/wiki/contents/articles/sql-server-integration-services-ssis.aspx#Connectivity), on social.technet.microsoft.com  
+-   Wiki articles, [SSIS Connectivity](https://social.technet.microsoft.com/wiki/contents/articles/sql-server-integration-services-ssis.aspx#Connectivity), on social.technet.microsoft.com  
   
--   Blog entry, [Connecting to MySQL from SSIS](http://go.microsoft.com/fwlink/?LinkId=217669), on blogs.msdn.com.  
+-   Blog entry, [Connecting to MySQL from SSIS](https://techcommunity.microsoft.com/t5/sql-server-integration-services/connecting-to-mysql-from-ssis/ba-p/387400), on blogs.msdn.com.  
   
--   Technical article, [Extracting and Loading SharePoint Data in SQL Server Integration Services](http://go.microsoft.com/fwlink/?LinkId=247826), on msdn.microsoft.com.  
+-   Technical article, [Extracting and Loading SharePoint Data in SQL Server Integration Services](/previous-versions/sql/sql-server-2012/hh368261(v=msdn.10)), on msdn.microsoft.com.  
   
--   Technical article, [You get "DTS_E_CANNOTACQUIRECONNECTIONFROMCONNECTIONMANAGER" error message when using Oracle connection manager in SSIS](http://go.microsoft.com/fwlink/?LinkId=233696), on support.microsoft.com.  
-  
+-   Technical article, [You get "DTS_E_CANNOTACQUIRECONNECTIONFROMCONNECTIONMANAGER" error message when using Oracle connection manager in SSIS](https://go.microsoft.com/fwlink/?LinkId=233696), on support.microsoft.com.  
   

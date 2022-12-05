@@ -1,31 +1,24 @@
 ---
-title: "@@IDENTITY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "@@IDENTITY (Transact-SQL)"
+description: "@@IDENTITY (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
+ms.date: "08/29/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "@@IDENTITY_TSQL"
   - "@@IDENTITY"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "last-inserted identity values"
   - "identity values [SQL Server], last-inserted"
   - "@@IDENTITY function"
-ms.assetid: 912e4485-683c-41c2-97b3-8831c0289ee4
-caps.latest.revision: 35
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@IDENTITY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+# &#x40;&#x40;IDENTITY (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Is a system function that returns the last-inserted identity value.  
   
@@ -33,12 +26,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql  
 @@IDENTITY  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **numeric(38,0)**  
   
 ## Remarks  
@@ -57,12 +51,12 @@ manager: "jhubbard"
  Replication may affect the @@IDENTITY value, since it is used within the replication triggers and stored procedures. @@IDENTITY is not a reliable indicator of the most recent user-created identity if the column is part of a replication article. You can use the SCOPE_IDENTITY() function syntax instead of @@IDENTITY. For more information, see [SCOPE_IDENTITY &#40;Transact-SQL&#41;](../../t-sql/functions/scope-identity-transact-sql.md)  
   
 > [!NOTE]  
->  The calling stored procedure or [!INCLUDE[tsql](../../includes/tsql-md.md)] statement must be rewritten to use the SCOPE_IDENTITY() function which will return the latest identity used within the scope of that user statement, and not the identity within the scope of the nested trigger used by replication.  
+>  The calling stored procedure or [!INCLUDE[tsql](../../includes/tsql-md.md)] statement must be rewritten to use the `SCOPE_IDENTITY()` function, which returns the latest identity used within the scope of that user statement, and not the identity within the scope of the nested trigger used by replication.  
   
 ## Examples  
  The following example inserts a row into a table with an identity column (`LocationID`) and uses `@@IDENTITY` to display the identity value used in the new row.  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 --Display the value of LocationID in the last row in the table.  
@@ -79,7 +73,7 @@ GO
 ```  
   
 ## See Also  
- [System Functions &#40;Transact-SQL&#41;](../../relational-databases/system-functions/system-functions-for-transact-sql.md)   
+ [System Functions &#40;Transact-SQL&#41;](../../relational-databases/system-functions/system-functions-category-transact-sql.md)   
  [CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)   
  [IDENT_CURRENT &#40;Transact-SQL&#41;](../../t-sql/functions/ident-current-transact-sql.md)   
  [INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/insert-transact-sql.md)   

@@ -1,26 +1,19 @@
 ---
-title: "DefinedSize Property Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "DefinedSize Property Example (VC++)"
+description: "DefinedSize Property Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "DefinedSize property [ADOX], VC++ example"
-ms.assetid: cc752ae4-58c4-4a7b-bfb2-0454e90fe2e7
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # DefinedSize Property Example (VC++)
-This example demonstrates the [DefinedSize](../../../ado/reference/adox-api/definedsize-property-adox.md) property of a [Column](../../../ado/reference/adox-api/column-object-adox.md). The code will redefine the size of the FirstName column of the **Employees** table of the *Northwind* database. Then, the change in the values of the FirstName [Field](../../../ado/reference/ado-api/field-object.md) of a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) based on the **Employees** table is displayed. Note that by default, the FirstName field becomes padded with spaces after you redefine the **DefinedSize** property.  
+This example demonstrates the [DefinedSize](./definedsize-property-adox.md) property of a [Column](./column-object-adox.md). The code will redefine the size of the FirstName column of the **Employees** table of the *Northwind* database. Then, the change in the values of the FirstName [Field](../ado-api/field-object.md) of a [Recordset](../ado-api/recordset-object-ado.md) based on the **Employees** table is displayed. Note that by default, the FirstName field becomes padded with spaces after you redefine the **DefinedSize** property.  
   
 ```  
 // BeginDefinedSizeCpp.cpp  
@@ -147,7 +140,7 @@ int main() {
       printf("\n\tSource :  %s \n\tdescription : %s \n ", (LPCSTR)bstrSource, (LPCSTR)bstrDescription);  
    }  
    catch(...) {  
-      cout << "Error occured in DefinedSizeX...." << endl;  
+      cout << "Error occurred in DefinedSizeX...." << endl;  
    }  
   
    if (m_pRstEmployees)  
@@ -161,5 +154,5 @@ int main() {
 ```  
   
 ## See Also  
- [Column Object (ADOX)](../../../ado/reference/adox-api/column-object-adox.md)   
- [DefinedSize Property (ADOX)](../../../ado/reference/adox-api/definedsize-property-adox.md)
+ [Column Object (ADOX)](./column-object-adox.md)   
+ [DefinedSize Property (ADOX)](./definedsize-property-adox.md)

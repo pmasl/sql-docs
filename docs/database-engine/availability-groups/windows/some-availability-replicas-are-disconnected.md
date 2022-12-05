@@ -1,41 +1,31 @@
 ---
-title: "Some availability replicas are disconnected | Microsoft Docs"
-ms.custom: ""
+title: "Some availability replicas are disconnected"
+description: Possible causes and solutions for when your availability group replica is disconnected for an Always On SQL Server availability group.
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+f1_keywords:
   - "sql13.swb.agdashboard.agp7allconnected.issues.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Availability Groups [SQL Server], policies"
-ms.assetid: aea808be-6f0f-40c2-9aa2-a2a435ec6443
-caps.latest.revision: 12
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Some availability replicas are disconnected
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## Introduction  
   
-|||  
-|-|-|  
-|**Policy Name**|Availability Replicas Connection State|  
-|**Issue**|Some availability replicas are disconnected.|  
-|**Category**|**Warning**|  
-|**Facet**|Availability group|  
+- **Policy Name**: Availability Replicas Connection State
+- **Issue**: Some availability replicas are disconnected.
+- **Category**: **Warning**
+- **Facet**: Availability group  
   
 ## Description  
  This policy rolls up the connection state of all availability replicas and checks for any availability replicas that are DISCONENCTED. The policy is in an unhealthy state when any availability replica is DISCONNECTED. The policy is otherwise in a healthy state.  
-  
-> [!NOTE]  
->  For this release of [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)], information about possible causes and solutions is located at [Some availability replicas are disconnected](http://go.microsoft.com/fwlink/p/?LinkId=220855) on the TechNet Wiki.  
-  
+ 
 ## Possible Causes  
  In this availability group, at least one secondary replica is not connected to the primary replica. The connected state is DISCONNECTED.  
   

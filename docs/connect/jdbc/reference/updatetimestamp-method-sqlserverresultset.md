@@ -1,24 +1,15 @@
 ---
-title: "updateTimestamp Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "updateTimestamp Method (SQLServerResultSet)"
+description: "updateTimestamp Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateTimestamp"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateTimestamp"
 apitype: "Assembly"
-ms.assetid: f81f7ba0-7d75-4b42-861c-be00c0032335
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateTimestamp Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

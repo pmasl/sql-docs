@@ -1,14 +1,12 @@
 ---
+description: "Querying and Updating Visual FoxPro Data from Microsoft Access"
 title: "Querying and Updating Visual FoxPro Data from Microsoft Access | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "querying Visual FoxPro data [ODBC]"
   - "FoxPro ODBC driver [ODBC], Access"
@@ -17,10 +15,8 @@ helpviewer_keywords:
   - "Visual FoxPro data [ODBC], querying and updating"
   - "updating Visual FoxPro data [ODBC]"
 ms.assetid: 2d314e78-9edf-44b2-bd8b-96784236bcbe
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Querying and Updating Visual FoxPro Data from Microsoft Access
 You can query and update data stored in a Visual FoxPro database from a Microsoft Access database by using the Link Table option.  

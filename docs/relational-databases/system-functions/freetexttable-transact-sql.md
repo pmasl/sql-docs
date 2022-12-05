@@ -1,14 +1,12 @@
 ---
+description: "FREETEXTTABLE (Transact-SQL)"
 title: "FREETEXTTABLE (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.date: "10/05/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "FREETEXTTABLE_TSQL"
   - "FREETEXTTABLE"
@@ -21,13 +19,12 @@ helpviewer_keywords:
   - "ranked results [full-text search]"
   - "column searches [full-text search]"
 ms.assetid: 4523ae15-4260-40a7-a53c-8df15e1fee79
-caps.latest.revision: 51
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # FREETEXTTABLE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Is a function used in the [FROM clause](../../t-sql/queries/from-transact-sql.md) of a [!INCLUDE[tsql](../../includes/tsql-md.md)] SELECT statement to perform a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] full-text search on full-text indexed columns containing character-based data types. This function returns a table of zero, one, or more rows for those columns containing values that match the meaning and not just the exact wording, of the text in the specified *freetext_string*. FREETEXTTABLE is referenced as if it were a regular table name.  
   
@@ -38,14 +35,11 @@ manager: "jhubbard"
 > [!NOTE]  
 >  For information about the forms of full-text searches that are supported by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Query with Full-Text Search](../../relational-databases/search/query-with-full-text-search.md).  
   
-(http://azure.microsoft.com/documentation/articles/sql-database-preview-whats-new/?WT.mc_id=TSQL_GetItTag)).|  
-  
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 FREETEXTTABLE (table , { column_name | (column_list) | * }   
           , 'freetext_string'   
      [ , LANGUAGE language_term ]   
@@ -77,7 +71,7 @@ FREETEXTTABLE (table , { column_name | (column_list) | * }
  LANGUAGE *language_term*  
  Is the language whose resources will be used for word breaking, stemming, and thesaurus and stopword removal as part of the query. This parameter is optional and can be specified as a string, integer, or hexadecimal value corresponding to the locale identifier (LCID) of a language. If *language_term* is specified, the language it represents will be applied to all elements of the search condition. If no value is specified, the column full-text language is used.  
   
- If documents of different languages are stored together as binary large objects (BLOBs) in a single column, the locale identifier (LCID) of a given document determines what language is used to index its content. When querying such a column, specifying *LANGUAGE**language_term* can increase the probability of a good match.  
+ If documents of different languages are stored together as binary large objects (BLOBs) in a single column, the locale identifier (LCID) of a given document determines what language is used to index its content. When querying such a column, specifying *LANGUAGE language_term* can increase the probability of a good match.  
   
  When specified as a string, *language_term* corresponds to the **alias** column value in the [sys.syslanguages &#40;Transact-SQL&#41;](../../relational-databases/system-compatibility-views/sys-syslanguages-transact-sql.md) compatibility view.  The string must be enclosed in single quotation marks, as in '*language_term*'. When specified as an integer, *language_term* is the actual LCID that identifies the language. When specified as a hexadecimal value, *language_term* is 0x followed by the hexadecimal value of the LCID. The hexadecimal value must not exceed eight digits, including leading zeros.  
   
@@ -103,7 +97,7 @@ FREETEXTTABLE (table , { column_name | (column_list) | * }
 ### A. Simple Example  
  The following example creates and populates a simple table of two columns, listing 3 counties and the colors in their flags. The it creates and populates a full-text catalog and index on the table. Then the **FREETEXTTABLE** syntax is demonstrated.  
   
-```  
+```sql
 CREATE TABLE Flags (Country nvarchar(30) NOT NULL, FlagColors varchar(200));  
 CREATE UNIQUE CLUSTERED INDEX FlagKey ON Flags(Country);  
 INSERT Flags VALUES ('France', 'Blue and White and Red');  
@@ -122,9 +116,9 @@ SELECT * FROM FREETEXTTABLE (Flags, FlagColors, 'Yellow');
 ```  
   
 ### B. Using FREETEXT in an INNER JOIN  
- The following example returns the category name and description of all categories that relate to `sweet`, `candy`, `bread`, `dry`, or `meat`.  
+ The following example returns the description and rank of any products with a description that matches the meaning of `high level of performance`.  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO  
   
@@ -142,7 +136,7 @@ GO
 ### C. Specifying Language and Highest Ranked Matches  
  The following example is identical and shows the use of the `LANGUAGE`*language_term* and *top_n_by_rank* parameters.  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO  
   
@@ -158,8 +152,8 @@ ORDER BY RANK DESC;
 GO  
 ```  
   
-> [!NOTE]  
->  The LANGUAGE *language_term* paramete*r* is not required to use the *top_n_by_rank* parameter*.*  
+> [!NOTE]
+>  The LANGUAGE *language_term* parameter is not required to use the *top_n_by_rank* parameter.  
   
 ## See Also  
  [Get Started with Full-Text Search](../../relational-databases/search/get-started-with-full-text-search.md)   
@@ -168,13 +162,12 @@ GO
  [CREATE FULLTEXT INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-fulltext-index-transact-sql.md)   
  [Create and Manage Full-Text Indexes](../../relational-databases/search/create-and-manage-full-text-indexes.md)   
  [Query with Full-Text Search](../../relational-databases/search/query-with-full-text-search.md)   
- [Create Full-Text Search Queries &#40;Visual Database Tools&#41;](http://msdn.microsoft.com/library/537fa556-390e-4c88-9b8e-679848d94abc)   
+ [Create Full-Text Search Queries &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/create-full-text-search-queries-visual-database-tools.md)   
  [CONTAINS &#40;Transact-SQL&#41;](../../t-sql/queries/contains-transact-sql.md)   
  [CONTAINSTABLE &#40;Transact-SQL&#41;](../../relational-databases/system-functions/containstable-transact-sql.md)   
  [FREETEXT &#40;Transact-SQL&#41;](../../t-sql/queries/freetext-transact-sql.md)   
- [Rowset Functions &#40;Transact-SQL&#41;](../../t-sql/functions/rowset-functions-transact-sql.md)   
+ [Rowset Functions &#40;Transact-SQL&#41;](../../t-sql/functions/opendatasource-transact-sql.md)   
  [SELECT &#40;Transact-SQL&#41;](../../t-sql/queries/select-transact-sql.md)   
  [WHERE &#40;Transact-SQL&#41;](../../t-sql/queries/where-transact-sql.md)   
- [precompute rank Server Configuration Option](../../database-engine/configure-windows/precompute-rank-server-configuration-option.md)  
-  
-  
+ [precompute rank Server Configuration Option](../../database-engine/discontinued-database-engine-functionality-in-sql-server.md)  
+ [Compare features in Azure SQL Database and Azure SQL Managed Instance](/azure/azure-sql/database/features-comparison?WT.mc_id=TSQL_GetItTag)

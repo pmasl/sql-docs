@@ -1,14 +1,12 @@
 ---
+description: "sp_syspolicy_set_config_history_retention (Transact-SQL)"
 title: "sp_syspolicy_set_config_history_retention (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_syspolicy_set_config_history_retention_TSQL"
   - "sp_syspolicy_set_config_history_retention"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_syspolicy_set_config_history_retention"
 ms.assetid: 2574898a-e724-4447-b96c-ff778471339d
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # sp_syspolicy_set_config_history_retention (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Specifies the number of days to keep policy evaluation history for Policy-Based Management.  
   
@@ -37,7 +33,7 @@ sp_syspolicy_set_config_history_retention [ @value = ] value
 ```  
   
 ## Arguments  
- [ **@value=** ] *value*  
+`[ @value = ] value`
  Is the number of days to retain Policy-Based Management history. *value* is **sqlvariant**.  
   
 ## Return Code Values  

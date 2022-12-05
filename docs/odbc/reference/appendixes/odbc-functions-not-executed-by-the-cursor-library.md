@@ -1,24 +1,20 @@
 ---
+description: "ODBC Functions Not Executed by the Cursor Library"
 title: "ODBC Functions Not Executed by the Cursor Library | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "cursor library [ODBC], functions"
   - "functions [ODBC], cursor library"
   - "ODBC functions [ODBC], cursor library"
   - "ODBC cursor library [ODBC], functions"
 ms.assetid: f2941522-75eb-4db9-9468-4800b884dac2
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # ODBC Functions Not Executed by the Cursor Library
 > [!IMPORTANT]  
@@ -26,9 +22,12 @@ manager: "jhubbard"
   
  The cursor library does not execute the following functions. When an application calls one of these functions, the Driver Manager invokes the driver, not the cursor library.  
   
-|||  
-|-|-|  
-|**SQLFetch**|**SQLGetEnvAttr**|  
-|**SQLGetConnectAttr**|**SQLSetDescRec**|  
-|**SQLGetDiagField**|**SQLSetEnvAttr**|  
-|**SQLGetDiagRec**||
+:::row:::
+   :::column span="":::
+      **SQLFetch**<br>      **SQLGetConnectAttr**<br>      **SQLGetDiagField**<br>      **SQLGetDiagRec**
+   :::column-end:::
+   :::column span="":::
+      **SQLGetEnvAttr**<br>      **SQLSetDescRec**<br>      **SQLSetEnvAttr**  
+   :::column-end:::
+:::row-end:::
+

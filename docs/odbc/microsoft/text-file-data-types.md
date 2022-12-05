@@ -1,14 +1,12 @@
 ---
+description: "Text File Data Types"
 title: "Text File Data Types | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "text file driver [ODBC], data types"
   - "ODBC desktop database drivers [ODBC], text file driver"
@@ -16,10 +14,8 @@ helpviewer_keywords:
   - "text file data types [ODBC]"
   - "Jet-based ODBC drivers [ODBC], text file driver"
 ms.assetid: e113112e-ae42-469e-8e4b-a365a10d9071
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Text File Data Types
 The following table shows how text data types are mapped to ODBC SQL data types. Note that not all ODBC SQL data types are supported by the ODBC Text driver.  

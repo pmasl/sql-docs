@@ -1,24 +1,15 @@
 ---
-title: "getMoreResults Method () | Microsoft Docs"
-ms.custom: ""
+title: "getMoreResults Method ()"
+description: "getMoreResults Method ()"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.getMoreResults ()"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.getMoreResults ()"
 apitype: "Assembly"
-ms.assetid: df89db50-0b2f-4094-820a-30be25ad72fe
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getMoreResults Method ()
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

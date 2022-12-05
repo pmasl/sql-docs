@@ -1,28 +1,17 @@
 ---
+description: "Ancestor (MDX)"
 title: "Ancestor (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "ANCESTOR"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "Ancestor function"
-ms.assetid: b5bf2ce4-20df-4ebc-97eb-e44a6f64cc50
-caps.latest.revision: 46
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # Ancestor (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   A function that returns the ancestor of a specified member at a specified level or at a specified distance from the member.  
   
@@ -84,7 +73,7 @@ SELECT {[Measures].[Internet Sales Amount], Measures.x} ON 0,
 FROM [Adventure Works]  
 ```  
   
- The following example uses a numeric expression and returns the Internet Sales Amount for each State-Province in Australia and its percent of the total Internet Sales Amount for all countries.  
+ The following example uses a numeric expression and returns the Internet Sales Amount for each State-Province in Australia and its percent of the total Internet Sales Amount for all countries/regions.  
   
 ```  
 WITH MEMBER Measures.x AS [Measures].[Internet Sales Amount] /   

@@ -1,31 +1,24 @@
 ---
-title: "MSpeer_conflictdetectionconfigresponse (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSpeer_conflictdetectionconfigresponse (T-SQL)"
+description: Describes the MSPeer_conflictdetectionconfigureresponse stored procedure used in Peer-to-Peer replication to store each node's response to a topology wide configuration requestion.
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+ms.custom: seo-lt-2019
+f1_keywords:
   - "MSpeer_conflictdetectionconfigresponse"
   - "MSpeer_conflictdetectionconfigresponse_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSpeer_conflictdetectionconfigureresponse"
+dev_langs:
+  - "TSQL"
 ms.assetid: 2685fb66-731d-40f7-af4b-596b9222c5d4
-caps.latest.revision: 11
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSpeer_conflictdetectionconfigresponse (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Used in peer-to-peer replication to store each node's response to a topology wide configuration request. This table is stored in the publication database.  
   

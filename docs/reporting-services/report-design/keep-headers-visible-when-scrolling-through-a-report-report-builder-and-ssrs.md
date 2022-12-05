@@ -1,23 +1,21 @@
 ---
-title: "Keep Headers Visible When Scrolling Through a Report (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Keep headers visible when scrolling through a paginated report | Microsoft Docs"
+description: Freeze the row or column headings to prevent row and column labels from scrolling out of view after rendering a paginated report in Report Builder. 
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: 6d9192a4-fd5c-41ad-b9ef-f88f9496afed
-caps.latest.revision: 10
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Keep Headers Visible When Scrolling Through a Report (Report Builder and SSRS)
-  To prevent row and column labels from scrolling out of view after rendering a report, you can freeze the row or column headings.  
+# Keep headers visible when scrolling through a paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+  To prevent row and column labels from scrolling out of view after rendering a paginated report, you can freeze the row or column headings.  
   
  How you control the rows and columns depends on whether you have a table or a matrix. If you have a table, you configure static members (row and column headings) to remain visible. If you have a matrix, you configure row and column group headers to remain visible.  
   
@@ -28,11 +26,11 @@ manager: "erikre"
   
  The following image shows a table.  
   
- ![Table](../../reporting-services/report-design/media/table.png "Table")  
+ ![Screenshot of a table.](../../reporting-services/report-design/media/table.png "Table")  
   
  The following image shows a matrix.  
   
- ![Matrix](../../reporting-services/report-design/media/matrix.png "Matrix")  
+ ![Screenshot of a matrix.](../../reporting-services/report-design/media/matrix.png "Matrix")  
   
 > [!NOTE]  
 >  [!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]  
@@ -43,7 +41,7 @@ manager: "erikre"
   
 2.  On the **General** tab, under **Row Headers** or **Column Headers**, select **Header should remain visible while scrolling**.  
   
-3.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+3.  Select **OK**.
   
 ### To keep a static tablix member (row or column) visible while scrolling  
   

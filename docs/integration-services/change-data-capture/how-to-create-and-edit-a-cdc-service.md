@@ -1,21 +1,18 @@
 ---
+description: "How to Create and Edit a CDC Service"
 title: "How to Create and Edit a CDC Service | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/20/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: 1b3d47a5-dc89-482d-bbc7-fff04f194c43
-caps.latest.revision: 7
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # How to Create and Edit a CDC Service
+
   These procedures describe how to create and edit a new Oracle CDC Service from the CDC Service Configuration Console.  
   
  This procedure requires a Windows user with administrator privileges on the computer where the Oracle CDC service is configured.  

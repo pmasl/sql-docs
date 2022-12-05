@@ -1,24 +1,15 @@
 ---
-title: "getAttributes Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getAttributes Method (SQLServerDatabaseMetaData)"
+description: "getAttributes Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getAttributes"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getAttributes"
 apitype: "Assembly"
-ms.assetid: 4dc784ed-4699-4197-9af5-6e03da80d14c
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getAttributes Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

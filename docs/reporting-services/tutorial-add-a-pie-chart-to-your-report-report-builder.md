@@ -1,21 +1,14 @@
 ---
 title: "Tutorial: Add a Pie Chart to Your Report (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/15/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-applies_to: 
-  - "SQL Server 2016"
+description: Learn how to create a pie chart in a Reporting Services paginated report, add percentages, and combine small slices into a single slice.
+ms.date: 06/15/2016
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+ms.topic: conceptual
 ms.assetid: eaadf7bf-c312-428a-b214-0a1fbf959c3f
-caps.latest.revision: 14
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Tutorial: Add a Pie Chart to Your Report (Report Builder)
 In this tutorial, you create pie chart in a Reporting Services paginated report. You add percentages and combine small slices into a single slice.
@@ -24,7 +17,7 @@ Pie and doughnut charts display data as a proportion of the whole. They have no 
 
 This illustration shows the pie chart you will create. 
  
-![report-builder-pie-chart-final](../reporting-services/media/report-builder-pie-chart-final.png)
+![Screenshot of the report builder pie chart.](../reporting-services/media/report-builder-pie-chart-final.png)
   
 If there are too many data points on a pie chart, your data point labels might be too crowded to read. In that case, consider combining a number of small slices into one larger slice. Pie charts are more readable when you have aggregated your data into a few data points.  
  
@@ -95,7 +88,7 @@ You can choose from a variety of predefined chart types.
   
     The chart is added to the design surface. You don't see the actual values of the pie chart -- you see Product 1, Product 2, etc., to give an idea of how the chart will look.  
     
-    ![report-builder-pie-chart-first-design](../reporting-services/media/report-builder-pie-chart-first-design.png)
+    ![Screenshot of the report builder pie chart in the design view.](../reporting-services/media/report-builder-pie-chart-first-design.png)
   
 6.  Click the chart to display the chart handles. Drag the bottom-right corner of the chart to make it bigger. Note that the report design surface also gets bigger, to accommodate the chart size.  
   
@@ -103,7 +96,7 @@ You can choose from a variety of predefined chart types.
   
 The report displays the pie chart with eight slices, one for each product. Now you see the actual products and the size of each slice represents the sales for that product. Three of the slices are quite thin.  
 
-![report-builder-pie-chart-first-preview](../reporting-services/media/report-builder-pie-chart-first-preview.png)
+![Screenshot showing a preview of the report builder pie chart.](../reporting-services/media/report-builder-pie-chart-first-preview.png)
   
 ## <a name="Percentages"></a>3. Display Percentages in Each Slice  
 On each slice of the pie, you can display a percentage for this slice compared to the whole pie.  
@@ -124,13 +117,13 @@ On each slice of the pie, you can display a percentage for this slice compared t
     > [!NOTE]  
     > **Number Format** in the **Series Label Properties** dialog box has no effect when you format percentages. This formats the labels as percentages, but does not calculate the percentage of the pie that each slice represents.  
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
 7.  Click **Run** to preview the report.  
   
 The report displays the percentage of the whole for each pie slice.  
 
-![report-builder-pie-chart-preview-percents](../reporting-services/media/report-builder-pie-chart-preview-percents.png)
+![Screenshot showing a preview of the report builder pie chart with percentages in each slice.](../reporting-services/media/report-builder-pie-chart-preview-percents.png)
   
 ## <a name="CombineSlices"></a>4. Combine Small Slices into One Slice  
 Three of the slices in the pie are quite small. You can combine multiple small slices into one larger "Other" slice that represents all three.  
@@ -145,7 +138,7 @@ Three of the slices in the pie are quite small. You can combine multiple small s
   
 5.  Set the **CollectedStyle** property to **SingleSlice**.  
 
-    ![report-builder-pie-chart-single-slice-property](../reporting-services/media/report-builder-pie-chart-single-slice-property.png)
+    ![Screenshot showing how to set a property of a single slice in the report builder pie chart.](../reporting-services/media/report-builder-pie-chart-single-slice-property.png)
  
 6.  Verify that the **CollectedThreshold** property is set to 5.  
   
@@ -155,7 +148,7 @@ Three of the slices in the pie are quite small. You can combine multiple small s
   
 In the legend, you now see the category "Other". The new pie slice combines all the slices that were under 5% into one slice that is 6% of the whole pie.  
 
-![report-builder-pie-chart-start-at-90](../reporting-services/media/report-builder-pie-chart-start-at-90.png)
+![Screenshot showing how the report builder pie chart starts at 90 degrees from the top of the chart.](../reporting-services/media/report-builder-pie-chart-start-at-90.png)
  
 ## <a name="DrawingEffect"></a>5. Start pie chart values at the top 
 
@@ -173,7 +166,7 @@ In this section, we'll make the first value start at the top.
 
 Now the pie chart slices are in alphabetical order, starting at the top, and ending with the "Other" slice.
 
-![report-builder-pie-chart-start-at-top](../reporting-services/media/report-builder-pie-chart-start-at-top.png)
+![Screenshot showing how the report builder pie chart starts at the top.](../reporting-services/media/report-builder-pie-chart-start-at-top.png)
   
 ## <a name="Title"></a>6. Add a Report Title  
   
@@ -218,6 +211,6 @@ You have successfully completed the Adding a Pie Chart to Your Report tutorial. 
   
 ## See Also  
 [Report Builder Tutorials](../reporting-services/report-builder-tutorials.md)  
-[Report Builder in SQL Server 2016](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
+[Report Builder in SQL Server](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
   
 

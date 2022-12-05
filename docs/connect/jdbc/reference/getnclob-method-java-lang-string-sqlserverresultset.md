@@ -1,19 +1,12 @@
 ---
-title: "getNClob Method (java.lang.String) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getNClob Method (java.lang.String) (SQLServerResultSet)"
+description: "getNClob Method (java.lang.String) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 36571f7c-b335-4249-8f83-51dcb6923aec
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getNClob Method (java.lang.String) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -28,7 +21,7 @@ public java.sql.NClob getNClob(java.lang.String columnLabel)
 ```  
   
 #### Parameters  
- *columnLable*  
+ *columnLabel*  
   
  A **String** that contains the column label.  
   

@@ -1,20 +1,18 @@
 ---
-title: "@@PROCID (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
+title: "@@PROCID (Transact-SQL)"
+description: "&#x40;&#x40;PROCID (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "09/18/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "@@PROCID"
   - "@@PROCID_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "stored procedures [SQL Server], identification numbers"
   - "UDTs [SQL Server], object identifiers"
   - "@@PROCID function"
@@ -23,14 +21,11 @@ helpviewer_keywords:
   - "identification numbers [SQL Server], modules"
   - "IDs [SQL Server], modules"
   - "module object identifiers [SQL Server]"
-ms.assetid: 0d4882c7-edb8-49b1-a470-2c7497b8998f
-caps.latest.revision: 43
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@PROCID (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+# &#x40;&#x40;PROCID (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns the object identifier (ID) of the current [!INCLUDE[tsql](../../includes/tsql-md.md)] module. A [!INCLUDE[tsql](../../includes/tsql-md.md)] module can be a stored procedure, user-defined function, or trigger. @@PROCID cannot be specified in CLR modules or the in-process data access provider.  
   
@@ -38,29 +33,30 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql  
 @@PROCID  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **int**  
   
 ## Examples  
  The following example uses `@@PROCID` as the input parameter in the `OBJECT_NAME` function to return the name of the stored procedure in the `RAISERROR` message.  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO  
 IF OBJECT_ID ( 'usp_FindName', 'P' ) IS NOT NULL   
 DROP PROCEDURE usp_FindName;  
 GO  
 CREATE PROCEDURE usp_FindName  
-    @lastname varchar(40) = '%',   
-    @firstname varchar(20) = '%'  
+    @lastname VARCHAR(40) = '%',   
+    @firstname VARCHAR(20) = '%'  
 AS  
-DECLARE @Count int;  
-DECLARE @ProcName nvarchar(128);  
+DECLARE @Count INT;  
+DECLARE @ProcName NVARCHAR(128);  
 SELECT LastName, FirstName  
 FROM Person.Person   
 WHERE FirstName LIKE @firstname AND LastName LIKE @lastname;  

@@ -1,15 +1,14 @@
 ---
-title: "Handling Database Concurrency Issues in Updategrams (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Database concurrency issues in Updategrams (SQLXML)"
+description: Learn how to use the Optimistic Concurrency Control mechanism in updategrams (SQLXML 4.0) to handle database concurrency issues.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "<before> block"
   - "low concurrency protection"
   - "database concurrency [SQLXML]"
@@ -20,12 +19,10 @@ helpviewer_keywords:
   - "concurrency [SQLXML]"
   - "intermediate concurrency protection [SQLXML]"
 ms.assetid: d4b908d1-b25b-4ad9-8478-9cd882e8c44e
-caps.latest.revision: 26
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Handling Database Concurrency Issues in Updategrams (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   Like other database update mechanisms, updategrams must deal with concurrent updates to data in a multiuser environment. Updategrams use the Optimistic Concurrency Control, which uses comparison of select field data as snapshots to ensure that the data to be updated has not been altered by another user application since it was read from the database. Updategrams include these snapshot values in the **\<before>** block of the updategrams. Before updating the database, the updategram checks the values that are specified in the **\<before>** block against the values currently in the database to ensure that the update is valid.  
   
  The Optimistic Concurrency Control offers three levels of protection in an updategram: low (none), intermediate, and high. You can decide what level of protection you need by specifying the updategram accordingly.  

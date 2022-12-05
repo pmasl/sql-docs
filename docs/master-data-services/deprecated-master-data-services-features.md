@@ -1,22 +1,21 @@
 ---
-title: "Deprecated Master Data Services Features | Microsoft Docs"
+description: "Deprecated Master Data Services Features"
+title: Deprecated Master Data Services Features
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 ms.assetid: d8506bda-66dd-45a4-bfc9-3a10fa665acc
-caps.latest.revision: 18
-author: "sabotta"
-ms.author: "carlasab"
-manager: "erikre"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Deprecated Master Data Services Features
-  This topic describes the deprecated [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] features that are still available in [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]. These features are scheduled to be removed in a future release of [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. Deprecated features should not be used in new applications.  
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
+  This topic describes the deprecated [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] features. These features are scheduled to be removed in a future release. Deprecated features should not be used in new applications.  
   
 ## Explicit Hierarchies, Collections, and Related Components  
  Explicit hierarchies, collections and related components are deprecated. Members that before were modeled as consolidated member types (explicit hierarchy parent) and collection member types will be modeled as leaf members in derived hierarchies. The following new features enable derived hierarchies to take the place of explicit hierarchies.  
@@ -47,7 +46,7 @@ Entity transaction log type "Attribute" is deprecated, please migrate to the "Me
 * [Member Revision History](../master-data-services/member-revision-history-master-data-services.md)
   
 ## External Resources  
- Blog post, [Deprecated: Explicit Hierarchies and Collections](http://go.microsoft.com/fwlink/p/?LinkId=615373), on msdn.com.  
+ Blog post, [Deprecated: Explicit Hierarchies and Collections](https://techcommunity.microsoft.com/t5/sql-server-integration-services/deprecated-explicit-hierarchies-and-collections/ba-p/388221), on msdn.com.  
   
 ## See Also  
  [Discontinued Master Data Services Features](../master-data-services/discontinued-master-data-services-features.md)  

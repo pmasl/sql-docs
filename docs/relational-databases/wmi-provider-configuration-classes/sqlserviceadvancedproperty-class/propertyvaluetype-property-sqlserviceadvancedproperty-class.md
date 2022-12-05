@@ -1,13 +1,11 @@
 ---
-title: "PropertyValueType Property (SqlServiceAdvancedProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "PropertyValueType Property (SqlServiceAdvancedProperty Class)"
+title: "PropertyValueType Property (SqlServiceAdvancedProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "PropertyValueType Property (SqlServiceAdvancedProperty Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "PropertyValueType property"
 ms.assetid: f1b1dcc6-6d44-4ad2-8c2e-4fd48c2c8086
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # PropertyValueType Property (SqlServiceAdvancedProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the data type of a property.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.PropertyValueType [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

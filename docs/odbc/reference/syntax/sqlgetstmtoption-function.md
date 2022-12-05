@@ -1,14 +1,12 @@
 ---
+description: "SQLGetStmtOption Function"
 title: "SQLGetStmtOption Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLGetStmtOption"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLGetStmtOption function [ODBC]"
 ms.assetid: d69c2668-4260-4722-8c34-1c51caac307f
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLGetStmtOption Function
 **Conformance**  

@@ -1,31 +1,26 @@
 ---
-title: "sys.procedures (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.procedures (Transact-SQL)"
+description: sys.procedures (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "procedures"
   - "sys.procedures_TSQL"
   - "sys.procedures"
   - "procedures_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.procedures catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: d17af274-b2dd-464e-9523-ee1f43e1455b
-caps.latest.revision: 20
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.procedures (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Contains a row for each object that is a procedure of some kind, with **sys.objects.type** = P, X, RF, and PC.  
   

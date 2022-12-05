@@ -1,14 +1,12 @@
 ---
 title: "sys.sp_rda_reauthorize_db (Transact-SQL) | Microsoft Docs"
+description: Learn how to use sys.sp_rda_reauthorize_db to restore the authenticated connection between a local Stretch-enabled database and a remote database.
 ms.custom: ""
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-stretch"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.date: 07/25/2022
+ms.service: sql
+ms.reviewer: randolphwest
+ms.subservice: stored-procedures
+ms.topic: "reference"
 f1_keywords: 
   - "sp_rda_reauthorize_db"
   - "sp_rda_reauthorize_db_TSQL"
@@ -17,15 +15,16 @@ dev_langs:
 helpviewer_keywords: 
   - "sys.sp_rda_reauthorize_db stored procedure"
 ms.assetid: f6f3e4b2-8c72-4d23-a5de-fe671ca5c5cd
-caps.latest.revision: 20
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sys.sp_rda_reauthorize_db (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
   Restores the authenticated connection between a local database enabled for Stretch and the remote database.  
+
+> [!IMPORTANT]  
+> Stretch Database is deprecated in [!INCLUDE [sssql22-md](../../includes/sssql22-md.md)]. [!INCLUDE [ssNoteDepFutureAvoid-md](../../includes/ssnotedepfutureavoid-md.md)]
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -37,17 +36,17 @@ sp_rda_reauthorize_db @credential = @credential, @with_copy = @with_copy [ , @az
 ```  
   
 ## Arguments  
- @credential = *@credential*  
+ @credential = *\@credential*  
  Is the database scoped credential associated with the local Stretch-enabled database.  
   
- @with_copy = *@with_copy*  
- Specifies whether to make a copy of the remote data and connect to the copy (recommended). *@with_copy* is bit.  
+ @with_copy = *\@with_copy*  
+ Specifies whether to make a copy of the remote data and connect to the copy (recommended). *\@with_copy* is bit.  
   
- @azure_servername = *@azure_servername*  
- Specifies the name of the Azure server that contains the remote data. *@azure_servername* is sysname.  
+ @azure_servername = *\@azure_servername*  
+ Specifies the name of the Azure server that contains the remote data. *\@azure_servername* is sysname.  
   
- @azure_databasename = *@azure_databasename*  
- Specifies the name of the Azure database that contains the remote data. *@azure_databasename* is sysname.  
+ @azure_databasename = *\@azure_databasename*  
+ Specifies the name of the Azure database that contains the remote data. *\@azure_databasename* is sysname.  
   
 ## Return Code Values  
  0 (success) or >0 (failure)  
@@ -61,7 +60,7 @@ sp_rda_reauthorize_db @credential = @credential, @with_copy = @with_copy [ , @az
 ## Example  
  The following example restores the authenticated connection between a local database enabled for Stretch and the remote database. It makes a copy of the remote data (recommended) and connects to the new copy.  
   
-```tsql  
+```sql  
 DECLARE @credentialName nvarchar(128);   
 SET @credentialName = N'<existing_database_scoped_credential_name>';   
 EXEC sp_rda_reauthorize_db @credential = @credentialName, @with_copy = 1;  

@@ -1,24 +1,20 @@
 ---
-title: "sp_datatype_info_90 (SQL Data Warehouse) | Microsoft Docs"
+description: "sp_datatype_info_90 (Azure Synapse Analytics)"
+title: "sp_datatype_info_90 (Azure Synapse Analytics)"
 ms.custom: ""
 ms.date: "03/13/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.topic: "reference"
 dev_langs: 
   - "TSQL"
 ms.assetid: 1d043964-dc6e-4c3e-ab61-bc444d5e25ae
-caps.latest.revision: 9
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">= aps-pdw-2016 || = azure-sqldw-latest"
 ---
-# sp_datatype_info_90 (SQL Data Warehouse)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-asdw-pdw-md.md)]
+# sp_datatype_info_90 (Azure Synapse Analytics)
+[!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
   Returns information about the data types supported by the current environment.  
   
@@ -26,18 +22,21 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql  
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 sp_datatype_info_90 [ [ @data_type = ] data_type ]   
      [ , [ @ODBCVer = ] odbc_version ]   
 ```  
+
+> [!NOTE]
+> [!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
   
 ## Arguments  
- [ **@data_type=** ] *data_type*  
+`[ @data_type = ] data_type`
  Is the code number for the specified data type. To obtain a list of all data types, omit this parameter. *data_type* is **int**, with a default of 0.  
   
- [ **@ODBCVer=** ] *odbc_version*  
+`[ @ODBCVer = ] odbc_version`
  Is the version of ODBC that is used. *odbc_version* is **tinyint**, with a default of 2.  
   
 ## Return Code Values  
@@ -77,7 +76,7 @@ sp_datatype_info_90 [ [ @data_type = ] data_type ]
 ## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  The following example retrieves information for the **sysname** and **nvarchar** data types by specifying the *data_type* value of `-9`.  
   
-```  
+```sql  
 USE master;  
 GO  
 EXEC sp_datatype_info_90 -9;  
@@ -85,7 +84,7 @@ GO
 ```  
   
 ## See Also  
- [SQL Data Warehouse Stored Procedures](../../relational-databases/system-stored-procedures/sql-data-warehouse-stored-procedures.md)   
+ [Azure Synapse Analytics Stored Procedures](../../relational-databases/system-stored-procedures/sql-data-warehouse-stored-procedures.md)   
  [Data Types &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)  
   
   

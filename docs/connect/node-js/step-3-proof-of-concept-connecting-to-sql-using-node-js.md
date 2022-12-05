@@ -1,24 +1,18 @@
 ---
-title: "Step 3: Proof of concept connecting to SQL using Node.js | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/30/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 5d5b41b6-129a-40b1-af8b-7e8fbd4a84bb
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+title: "Step 3: Connecting to SQL using Node.js"
+description: "This example should be considered a proof of concept showing how to connect to SQL using Node.js and is simplified for clarity."
+author: David-Engel
+ms.author: v-davidengel
+ms.date: "07/23/2019"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: conceptual
 ---
 # Step 3: Proof of concept connecting to SQL using Node.js
-[!INCLUDE[Driver_NodeJS_Download](../../includes/driver_nodejs_download.md)]
 
-This example should be considered a proof of concept only.  The sample code is simplified for clarity, and does not necessarily represent best practices recommended by Microsoft. Other examples which use the same crucial functions are available on Github:
+:::image type="icon" source="../../includes/media/download.svg" border="false"::: [Download Node.js SQL driver](../sql-connection-libraries.md#anchor-20-drivers-relational-access)
+
+This example should be considered a proof of concept only.  The sample code is simplified for clarity, and does not necessarily represent best practices recommended by Microsoft. Other examples, which use the same crucial functions are available on GitHub:
 
 - [https://github.com/tediousjs/tedious/blob/master/examples/](https://github.com/tediousjs/tedious/blob/master/examples/)
   
@@ -29,17 +23,28 @@ The **new Connection** function is used to connect to SQL Database.
 ```javascript  
     var Connection = require('tedious').Connection;  
     var config = {  
-        userName: 'yourusername',  
-        password: 'yourpassword',  
-        server: 'yourserver.database.windows.net',  
-        // If you are on Microsoft Azure, you need this:  
-        options: {encrypt: true, database: 'AdventureWorks'}  
+        server: 'your_server.database.windows.net',  //update me
+        authentication: {
+            type: 'default',
+            options: {
+                userName: 'your_username', //update me
+                password: 'your_password'  //update me
+            }
+        },
+        options: {
+            // If you are on Microsoft Azure, you need encryption:
+            encrypt: true,
+            database: 'your_database'  //update me
+        }
     };  
     var connection = new Connection(config);  
     connection.on('connect', function(err) {  
-    // If no error, then good to proceed.  
+        // If no error, then good to proceed.
         console.log("Connected");  
-    });  
+    });
+    
+    connection.connect();
+
 ```  
   
 ## Step 2:  Execute a query  
@@ -51,18 +56,28 @@ All SQL statements are executed using the **new Request()** function. If the sta
 ```javascript  
     var Connection = require('tedious').Connection;  
     var config = {  
-        userName: 'yourusername',  
-        password: 'yourpassword',  
-        server: 'yourserver.database.windows.net',  
-        // When you connect to Azure SQL Database, you need these next options.  
-        options: {encrypt: true, database: 'AdventureWorks'}  
-    };  
+        server: 'your_server.database.windows.net',  //update me
+        authentication: {
+            type: 'default',
+            options: {
+                userName: 'your_username', //update me
+                password: 'your_password'  //update me
+            }
+        },
+        options: {
+            // If you are on Microsoft Azure, you need encryption:
+            encrypt: true,
+            database: 'your_database'  //update me
+        }
+    }; 
     var connection = new Connection(config);  
     connection.on('connect', function(err) {  
         // If no error, then good to proceed.  
         console.log("Connected");  
         executeStatement();  
     });  
+    
+    connection.connect();
   
     var Request = require('tedious').Request;  
     var TYPES = require('tedious').TYPES;  
@@ -88,31 +103,46 @@ All SQL statements are executed using the **new Request()** function. If the sta
         request.on('done', function(rowCount, more) {  
         console.log(rowCount + ' rows returned');  
         });  
+        
+        // Close the connection after the final event emitted by the request, after the callback passes
+        request.on("requestCompleted", function (rowCount, more) {
+            connection.close();
+        });
         connection.execSql(request);  
     }  
 ```  
   
 ## Step 3: Insert a row  
   
-In this example you will see how to execute an [INSERT](https://msdn.microsoft.com/library/ms174335.aspx) statement safely, pass parameters which protect your application from [SQL injection](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) vulnerability, and retrieve the auto-generated [Primary Key](https://msdn.microsoft.com/library/ms179610.aspx) value.    
+In this example you will see how to execute an [INSERT](../../t-sql/statements/insert-transact-sql.md) statement safely, passing parameters, which protect your application from [SQL injection](../../relational-databases/security/sql-injection.md) values.    
   
   
 ```javascript  
     var Connection = require('tedious').Connection;  
     var config = {  
-        userName: 'yourusername',  
-        password: 'yourpassword',  
-        server: 'yourserver.database.windows.net',  
-        // If you are on Azure SQL Database, you need these next options.  
-        options: {encrypt: true, database: 'AdventureWorks'}  
+        server: 'your_server.database.windows.net',  //update me
+        authentication: {
+            type: 'default',
+            options: {
+                userName: 'your_username', //update me
+                password: 'your_password'  //update me
+            }
+        },
+        options: {
+            // If you are on Microsoft Azure, you need encryption:
+            encrypt: true,
+            database: 'your_database'  //update me
+        }
     };  
     var connection = new Connection(config);  
     connection.on('connect', function(err) {  
         // If no error, then good to proceed.  
         console.log("Connected");  
         executeStatement1();  
-    });  
-  
+    });
+    
+    connection.connect();
+    
     var Request = require('tedious').Request  
     var TYPES = require('tedious').TYPES;  
   
@@ -133,8 +163,12 @@ In this example you will see how to execute an [INSERT](https://msdn.microsoft.c
                 console.log("Product id of inserted item is " + column.value);  
               }  
             });  
-        });       
+        });
+
+        // Close the connection after the final event emitted by the request, after the callback passes
+        request.on("requestCompleted", function (rowCount, more) {
+            connection.close();
+        });
         connection.execSql(request);  
     }  
 ```  
-  

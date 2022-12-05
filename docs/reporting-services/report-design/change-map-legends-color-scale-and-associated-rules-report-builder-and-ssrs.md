@@ -1,15 +1,13 @@
 ---
-title: "Change Map Legends-Color Scale-Associated Rules in Report Builder-SSRS | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Change map legends-color scale-associated rules in a paginated report | Microsoft Docs"
+
+description: Learn how to change map legends in a paginated report to help users interpret the data visualization on maps in Report Builder. 
+ms.date: 03/07/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.rtp.rptdesigner.mapcolorscaleproperties.labels.f1"
   - "sql13.rtp.rptdesigner.mappointlayerproperties.typerules.f1"
@@ -34,13 +32,14 @@ f1_keywords:
   - "10540"
   - "10517"
 ms.assetid: a1d691b2-c5ae-420f-af60-b7c54a7385a4
-caps.latest.revision: 12
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Change Map Legends, Color Scale, and Associated Rules (Report Builder and SSRS)
-  In a [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] paginated report, a map can contain map legends, a color scale, and a distance scale. These parts of a map help users interpret the data visualization on the map.  
+# Change map legends, color scale, and associated rules in a paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+  In a paginated report, a map can contain map legends, a color scale, and a distance scale. These parts of a map help users interpret the data visualization on the map.  
   
  Legends include the following parts of a map:  
   
@@ -56,13 +55,13 @@ manager: "erikre"
   
 #### To change the position of a legend relative to the viewport  
   
-1.  In Design view, right-click the legend and open the *\<report item>***Properties** page.  
+1.  In Design view, right-click the legend and open the _\<report item>_**Properties** page.  
   
 2.  In **Position**, click the location that specifies where to display the legend relative to the viewport.  
   
 3.  To display the legend outside the viewport, select **Show \<report item> outside viewport**.  
   
-4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+4.  Select **OK**.
   
     > [!NOTE]  
     >  In preview, map legends and the color scale appear only when there are results from the rules related to that legend. If there are no items to display, the legend does not appear in the rendered report.  
@@ -75,7 +74,7 @@ manager: "erikre"
   
 2.  In **Legend layout**, click the table layout that you want to use for the legend. As you click different options, the layout on the design surface changes.  
   
-3.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+3.  Select **OK**.
   
 ##  <a name="MapLegendTitle"></a> To show or hide a map legend title  
   
@@ -102,13 +101,13 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want and then click *\<map element type>***Color Rule**.  
+2.  Right-click the layer that has the data that you want and then click _\<map element type>_**Color Rule**.  
   
 3.  Click **Legend**.  
   
 4.  In the **Show in this legend** drop-down list, click the name of the legend to display the rule results in.  
   
-5.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+5.  Select **OK**.
   
 ##  <a name="TemplateStyle"></a> To vary map element colors based on a template style  
   
@@ -116,13 +115,13 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want and then click *\<map element type>***Color Rule**.  
+2.  Right-click the layer that has the data that you want and then click _\<map element type>_**Color Rule**.  
   
 3.  Click **Apply template style**.  
   
      A template style specifies font, border style, and color palette. Each map element is assigned a different color from the color palette for the theme that was specified in the Map Wizard or Map Layer Wizard. This is the only option that applies to layers that do not have associated analytical data.  
   
-4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+4.  Select **OK**.
   
 ##  <a name="ColorPalette"></a> To vary map element colors based on color palette  
   
@@ -130,7 +129,7 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want, and then click *\<map element type>***Color Rule**.  
+2.  Right-click the layer that has the data that you want, and then click _\<map element type>_**Color Rule**.  
   
 3.  Click **Visualize data by using color palette**.  
   
@@ -140,7 +139,7 @@ manager: "erikre"
   
 5.  In **Palette**, from the drop-down list, select the name of the palette to use.  
   
-6.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+6.  Select **OK**.
   
 ##  <a name="ColorRanges"></a> To vary map element colors based on color ranges  
   
@@ -148,7 +147,7 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want, and then click *\<map element type>***Color Rule**.  
+2.  Right-click the layer that has the data that you want, and then click _\<map element type>_**Color Rule**.  
   
 3.  Click **Visualize data by using color ranges**.  
   
@@ -162,7 +161,7 @@ manager: "erikre"
   
 7.  In **End color**, specify the color to use for the highest range.  
   
-8.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+8.  Select **OK**.
   
 ##  <a name="CustomColors"></a> To vary map element colors based on custom colors  
   
@@ -170,7 +169,7 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want, and then click *\<map element type>***Color Rule**.  
+2.  Right-click the layer that has the data that you want, and then click _\<map element type>_**Color Rule**.  
   
 3.  Click **Visualize data by using custom colors**.  
   
@@ -180,7 +179,7 @@ manager: "erikre"
   
 5.  In **Custom colors**, click **Add** to specify each custom color.  
   
-6.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+6.  Select **OK**.
   
 ##  <a name="DistributionOptions"></a> To set distribution options for a legend  
   
@@ -188,7 +187,7 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want, and then click *\<map element type>***Color Rule**.  
+2.  Right-click the layer that has the data that you want, and then click _\<map element type>_**Color Rule**.  
   
 3.  Select the **Visualize data by using** \<rule type> option. To use distribution options, you must create ranges on the **Distribution** page based on analytical data that is associated with the layer.  
   
@@ -212,7 +211,7 @@ manager: "erikre"
   
 8.  In **Range end**, type a maximum range value. All values larger than this number are the same as the range maximum.  
   
-9. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+9. Select **OK**.
   
 ##  <a name="RuleLegend"></a> To change the contents of a rule legend  
   
@@ -220,7 +219,7 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want, and then click *\<map element type>***Rule**.  
+2.  Right-click the layer that has the data that you want, and then click _\<map element type>_**Rule**.  
   
 3.  Verify that **Visualize data by using** \<*rule type*> is selected.  
   
@@ -233,7 +232,7 @@ manager: "erikre"
   
 6.  In **Show in this legend**, select the map legend to use to display the rule results.  
   
-7.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 ##  <a name="ColorScale"></a> To change the contents of the color scale  
   
@@ -241,7 +240,7 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want, and then click *\<map element type>***Color Rule**.  
+2.  Right-click the layer that has the data that you want, and then click _\<map element type>_**Color Rule**.  
   
 3.  Select the color rule option to use. To display items in a map legend or color scale, you must select one of the **Visualize data by using** \<rule type> options.  
   
@@ -254,7 +253,7 @@ manager: "erikre"
   
 6.  In **Color scale options**, select **Show in color scale** to display the rule results in the color scale. You can specify this option for more than one color rule.  
   
-7.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 ##  <a name="HideItems"></a> To remove all items from a legend  
   
@@ -262,11 +261,11 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want, and then click *\<map element type>***Rule**.  
+2.  Right-click the layer that has the data that you want, and then click _\<map element type>_**Rule**.  
   
 3.  Click **Legend**.  
   
-4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+4.  Select **OK**.
   
 ##  <a name="ChangeFormatItems"></a> To change the format of content in a legend  
  Set legend options for the rule that is associated with the map legend.  
@@ -275,13 +274,13 @@ manager: "erikre"
   
 1.  In Design view, click the map until the Map pane appears.  
   
-2.  Right-click the layer that has the data that you want, and then click *\<map element type>***Rule**.  
+2.  Right-click the layer that has the data that you want, and then click _\<map element type>_**Rule**.  
   
 3.  Click **Legend**.  
   
 4.  **Legend text** displays keywords that specify which data appears in the legend. Use map keywords and custom formats to help control the format of legend text. For example, #FROMVALUE {C2} specifies a currency format with two decimal places. For more information, see [Vary Polygon, Line, and Point Display by Rules and Analytical Data &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/vary-polygon-line-and-point-display-by-rules-and-analytical-data.md).  
   
-5.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+5.  Select **OK**.
   
 ## See Also  
  [Maps &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/maps-report-builder-and-ssrs.md)   

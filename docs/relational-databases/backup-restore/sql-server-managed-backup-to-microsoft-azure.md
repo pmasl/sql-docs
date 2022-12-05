@@ -1,26 +1,22 @@
 ---
-title: "SQL Server Managed Backup to Microsoft Azure | Microsoft Docs"
+title: "SQL Server managed backup to Microsoft Azure | Microsoft Docs"
+description: SQL Server Managed Backup to Microsoft Azure manages and automates SQL Server backups to Microsoft Azure Blob storage. 
 ms.custom: ""
-ms.date: "10/18/2016"
-ms.prod: "sql-server-2016"
+ms.date: 10/05/2021
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-backup-restore"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: backup-restore
+ms.topic: conceptual
 ms.assetid: afa01165-39e0-4efe-ac0e-664edb8599fd
-caps.latest.revision: 44
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
-# SQL Server Managed Backup to Microsoft Azure
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# SQL Server managed backup to Microsoft Azure
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] manages and automates SQL Server backups to Microsoft Azure Blob storage. You can choose to allow SQL Server to determine the backup schedule based on the transaction workload of your database. Or you can use advanced options to define a schedule. The retention settings determine how long the backups are stored in Azure Blob storage. [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] supports point in time restore for the retention time period specified.  
   
- Beginning with [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], the procedures and underlying behavior of [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] has changed. For more information, see [Migrate SQL Server 2014 Managed Backup Settings to SQL Server 2016](../../relational-databases/backup-restore/migrate-sql-server-2014-managed-backup-settings-to-sql-server-2016.md).  
+ Beginning with [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)], the procedures and underlying behavior of [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] has changed. For more information, see [Migrate SQL Server 2014 managed backup Settings to SQL Server 2016](../../relational-databases/backup-restore/migrate-sql-server-2014-managed-backup-settings-to-sql-server-2016.md).  
   
 > [!TIP]  
 >  [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] is recommended for SQL Server instances running on Microsoft Azure virtual machines.  
@@ -30,17 +26,17 @@ manager: "jhubbard"
   
  [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] can be configured at the database level or at the SQL Server instance level. When configuring at the instance level, any new databases are also backed up automatically. Settings at the database level can be used to override instance level defaults on an individual case.  
   
- You can also encrypt the backups for additional security, and you can set up a custom schedule to control when the backups are taken. For more details on the benefits of using Microsoft Azure Blob storage for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] backups, see [SQL Server Backup and Restore with Microsoft Azure Blob Storage Service](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)  
+ You can also encrypt the backups for additional security, and you can set up a custom schedule to control when the backups are taken. For more details on the benefits of using Microsoft Azure Blob storage for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] backups, see [SQL Server Backup and Restore with Microsoft Azure Blob Storage](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)  
   
 ##  <a name="Prereqs"></a> Prerequisites  
  Microsoft Azure Storage is used by [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] to store the backup files. The following prerequisites are required:  
   
 |Prerequisite|Description|  
 |------------------|-----------------|  
-|**Microsoft Azure Account**|You can get started with Azure with a [free trial](http://azure.microsoft.com/pricing/free-trial/) before exploring [purchase options](http://azure.microsoft.com/pricing/purchase-options/).|  
-|**Azure Storage Account**|The backups are stored in Azure blob storage associated with an Azure storage account. For step-by-step instructions to create a storage account, see [About Azure Storage Accounts](http://azure.microsoft.com/en-us/documentation/articles/storage-create-storage-account/).|  
-|**Blob Container**|Blobs are organized in containers. You specify the target container for the backup files. You can create a container in the [Azure Management Portal](https://manage.windowsazure.com/), or you use the **New-AzureStorageContainer**[Azure PowerShell](http://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) command.|  
-|**Shared Access Signature (SAS)**|Access to the target container is controlled by a Shared Access Signature (SAS). For an overview of SAS, see [Shared Access Signatures, Part 1: Understanding the SAS Model](http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/). You can create a SAS token in code or with the **New-AzureStorageContainerSASToken** PowerShell command. For a PowerShell script that simplifies this process, see [Simplifying creation of SQL Credentials with Shared Access Signature ( SAS ) tokens on Azure Storage with Powershell](http://blogs.msdn.com/b/sqlcat/archive/2015/03/21/simplifying-creation-sql-credentials-with-shared-access-signature-sas-keys-on-azure-storage-containers-with-powershell.aspx). The SAS token can be stored in a **SQL Credential** for use with [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)].|  
+|**Microsoft Azure Account**|You can get started with Azure with a [free trial](https://azure.microsoft.com/pricing/free-trial/) before exploring [purchase options](https://azure.microsoft.com/pricing/purchase-options/).|  
+|**Azure Storage Account**|The backups are stored in Azure Blob Storage associated with an Azure storage account. For step-by-step instructions to create a storage account, see [About Azure Storage Accounts](/azure/storage/common/storage-account-create).|  
+|**Blob Container**|Blobs are organized in containers. You specify the target container for the backup files. You can create a container in the [Azure Management Portal](https://portal.azure.com/), or you use the **New-AzureStorageContainer**[Azure PowerShell](/powershell/azure/) command.|  
+|**Shared Access Signature (SAS)**|Access to the target container is controlled by a Shared Access Signature (SAS). For an overview of SAS, see [Shared Access Signatures, Part 1: Understanding the SAS Model](/azure/storage/common/storage-sas-overview). You can create a SAS token in code or with the **New-AzureStorageContainerSASToken** PowerShell command. For a PowerShell script that simplifies this process, see [Simplifying creation of SQL Credentials with Shared Access Signature ( SAS ) tokens on Azure Storage with Powershell](/archive/blogs/sqlcat/simplifying-creation-of-sql-credentials-with-shared-access-signature-sas-tokens-on-azure-storage-with-powershell). The SAS token can be stored in a **SQL Credential** for use with [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)].|  
 |**SQL Server Agent**|SQL Server Agent must be running for [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] to work. Consider setting the startup option to automatic.|  
   
 ## Components  
@@ -48,9 +44,8 @@ manager: "jhubbard"
   
  PowerShell cmdlets are also available to configure [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)]. SQL Server Management Studio supports restoring backups created by [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] by using the **Restore Database** task  
   
-|||  
-|-|-|  
 |System Object|Description|  
+|-|-|  
 |**MSDB**|Stores the metadata, backup history for all the backups created by [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)].|  
 |[managed_backup.sp_backup_config_basic (Transact-SQL)](../../relational-databases/system-stored-procedures/managed-backup-sp-backup-config-basic-transact-sql.md)|Enables [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)].|  
 |[managed_backup.sp_backup_config_advanced &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/managed-backup-sp-backup-config-advanced-transact-sql.md)|Configures advanced settings for [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)], such as encryption.|  
@@ -72,7 +67,7 @@ manager: "jhubbard"
  You can specify a custom backup schedule using the system stored procedure [managed_backup.sp_backup_config_schedule &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/managed-backup-sp-backup-config-schedule-transact-sql.md). If you do not specify a custom schedule, the type of backups scheduled and the backup frequency is determined based on the workload of the database. The retention period settings are used to determine the length of time a backup file should be retained in the storage and the ability to recover the database to a point-in-time within the retention period.  
   
 ### Backup File Naming Conventions  
- [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] uses the container that you specify, so you have control over the name of the container. For the backup files, non availability databases are named using the following convention: The name is created using the first 40 characters of the database name, the database GUID without the ‘-‘, and the timestamp. The underscore character is inserted between segments as separators. The **.bak** file extension is used for full backup and **.log** for log backups. For Avaialbility Group databases, in addition to the file naming convention described above, the Availability Group database GUID is added after the 40 characters of the database name. The Availability Group database GUID value is the value for group_database_id in sys.databases.  
+ [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] uses the container that you specify, so you have control over the name of the container. For the backup files, non availability databases are named using the following convention: The name is created using the first 40 characters of the database name, the database GUID without the '-', and the timestamp. The underscore character is inserted between segments as separators. The **.bak** file extension is used for full backup and **.log** for log backups. For Availability Group databases, in addition to the file naming convention described above, the Availability Group database GUID is added after the 40 characters of the database name. The Availability Group database GUID value is the value for group_database_id in sys.databases.  
   
 ### Full Database Backup  
  [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] agent schedules a full database backup if any of the following is true.  
@@ -105,27 +100,30 @@ manager: "jhubbard"
  For a database, if there is an existing full database backup job running, then [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] waits for the current job to be completed before doing another full database backup for the same database. Similarly, only one transaction log backup can be running at a given time. However, a full database backup and a transaction log backup can run concurrently. Failures are logged as Extended Events.  
   
  If more than 10 concurrent full database backups are scheduled, a warning is issued through the debug channel of Extended Events. [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] then maintains a priority queue for the remaining databases that require a backup until the all backups are scheduled and completed.  
+
+> [!NOTE]
+> SQL Server managed backup is not supported with proxy servers.
+>
   
 ##  <a name="support_limits"></a> Supportability  
- The following support limitations and considerations are specific to [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]:  
+ The following support limitations and considerations are specific to [!INCLUDE [ssnoversion-md](../../includes/ssnoversion-md.md)]:  
   
 -   Backup of **master**, **model**, and **msdb** system databases is supported. Backup of **tempdb** is not supported. 
   
--   For [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], all recovery models are supported (Full, Bulk-logged, and Simple).  
+-   All recovery models are supported (Full, Bulk-logged, and Simple).  
   
 -   [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] agent only supports database full and log backups. File backup automation is not supported.  
   
--   Microsoft Azure Blob Storage service is the only supported backup storage option. Backups to disk or tape are not supported.  
+-   The Microsoft Azure Blob Storage is the only supported backup storage option. Backups to disk or tape are not supported.  
   
 -   [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] uses the Backup to Block Blob feature. The maximum size of a block blob is 200 GB. But by utilizing striping, the maximum size of an individual backup can be up to 12 TB. If your backup requirements exceed this, consider using compression, and test the backup file size prior to setting up [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)]. You can either test by backing up to a local disk or manually backing up to Microsoft Azure storage using **BACKUP TO URL** Transact-SQL statement. For more information, see [SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md).  
   
 -   [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] may have some limitations when it is configured with other technologies supporting backup, high availability, or disaster recovery.  
   
 ## See Also  
-- [Enable SQL Server Managed Backup to Microsoft Azure](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md)   
-- [Configure Advanced Options for SQL Server Managed Backup to Microsoft Azure](../../relational-databases/backup-restore/configure-advanced-options-for-sql-server-managed-backup-to-microsoft-azure.md)   
-- [Disable SQL Server Managed Backup to Microsoft Azure](../../relational-databases/backup-restore/disable-sql-server-managed-backup-to-microsoft-azure.md)
+- [Enable SQL Server managed backup to Microsoft Azure](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md)   
+- [Configure Advanced Options for SQL Server managed backup to Microsoft Azure](../../relational-databases/backup-restore/configure-advanced-options-for-sql-server-managed-backup-to-microsoft-azure.md)   
+- [Disable SQL Server managed backup to Microsoft Azure](../../relational-databases/backup-restore/disable-sql-server-managed-backup-to-microsoft-azure.md)
 - [Backup and Restore of System Databases](../../relational-databases/backup-restore/back-up-and-restore-of-system-databases-sql-server.md)
 - [Backup and Restore of SQL Server Databases](../../relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases.md)   
-  
   

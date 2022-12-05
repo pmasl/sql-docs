@@ -1,25 +1,18 @@
 ---
-title: "Delete Method (ADO Parameters Collection) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Delete Method (ADO Parameters Collection)"
+description: "Delete Method (ADO Parameters Collection)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "_DynaCollection::Delete"
   - "_DynaCollection::raw_Delete"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Delete method [ADO]"
-ms.assetid: 160c575e-df63-4ade-a2d3-5fd8f72e70cc
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Delete Method (ADO Parameters Collection)
 Deletes an object from the [Parameters](../../../ado/reference/ado-api/parameters-collection-ado.md) collection.  
@@ -36,7 +29,7 @@ Parameters.Delete Index
  A **String** value that contains the name of the object you want to delete, or the object's ordinal position (index) in the collection.  
   
 ## Remarks  
- Using the **Delete** method on a collection lets you remove one of the objects in the collection. This method is available only on the **Parameters** collection of a [Command](../../../ado/reference/ado-api/command-object-ado.md) object. You must use the [Parameter](../../../ado/reference/ado-api/parameter-object.md) object's [Name](../../../ado/reference/ado-api/name-property-ado.md) property or its collection index when calling the **Delete** method—an object variable is not a valid argument.  
+ Using the **Delete** method on a collection lets you remove one of the objects in the collection. This method is available only on the **Parameters** collection of a [Command](../../../ado/reference/ado-api/command-object-ado.md) object. You must use the [Parameter](../../../ado/reference/ado-api/parameter-object.md) object's [Name](../../../ado/reference/ado-api/name-property-ado.md) property or its collection index when calling the **Delete** method-an object variable is not a valid argument.  
   
 ## Applies To  
  [Parameters Collection (ADO)](../../../ado/reference/ado-api/parameters-collection-ado.md)  

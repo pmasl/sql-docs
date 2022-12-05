@@ -1,24 +1,15 @@
 ---
-title: "clearBatch Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "clearBatch Method (SQLServerStatement)"
+description: "clearBatch Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.clearBatch"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.clearBatch"
 apitype: "Assembly"
-ms.assetid: e6fc1461-bbc6-45ae-85b1-a824aba51085
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # clearBatch Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,14 +1,12 @@
 ---
-title: "Get Information About a View | Microsoft Docs"
+description: "Get Information About a View"
+title: "Get Information About a View"
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "08/19/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-views"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: table-view-index
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.viewproperties.general.f1"
 helpviewer_keywords: 
@@ -20,14 +18,13 @@ helpviewer_keywords:
   - "viewing view information"
   - "status information [SQL Server], views"
   - "view dependencies"
-ms.assetid: 05a73e33-8f85-4fb6-80c1-1b659e753403
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Get Information About a View
-  You can gain information about a view’s definition or properties in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)]. You may need to see the definition of the view to understand how its data is derived from the source tables or to see the data defined by the view.  
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+  You can gain information about a view's definition or properties in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)]. You may need to see the definition of the view to understand how its data is derived from the source tables or to see the data defined by the view.  
   
 > [!IMPORTANT]  
 >  If you change the name of an object referenced by a view, you must modify the view so that its text reflects the new name. Therefore, before renaming an object, display the dependencies of the object first to determine if any views are affected by the proposed change.  
@@ -55,10 +52,10 @@ manager: "jhubbard"
   
 #### Get view properties by using Object Explorer  
   
-1.  In **Object Explorer**, click the plus sign next to the database that contains the view to which you want to view the properties, and then click the plus sign to expand the **Views** folder.  
+1.  In **Object Explorer**, select the plus sign next to the database that contains the view to which you want to view the properties, and then click the plus sign to expand the **Views** folder.  
   
 2.  Right-click the view of which you want to view the properties and select **Properties**.  
-  
+
      The following properties show in the **View Properties** dialog box.  
   
      **Database**  
@@ -100,7 +97,7 @@ manager: "jhubbard"
   
 2.  Right-click the view of which you want to view the properties and select **Design**.  
   
-3.  Right-click in the blank space of the Diagram pane and click **Properties**.  
+3.  Right-click in the blank space of the Diagram pane and select **Properties**.  
   
      The following properties show in the **Properties** pane.  
   
@@ -135,7 +132,7 @@ manager: "jhubbard"
      Shows whether all columns are returned by the selected view. This is set at the time the view is created.  
   
      **SQL Comment**  
-     Shows a description of the SQL statements. To see the entire description, or to edit it, click the description and then click the ellipses **(…)** to the right of the property. Your comments might include information such as who uses the view and when they use it.  
+     Shows a description of the SQL statements. To see the entire description, or to edit it, select the description and then select the ellipses **(...)** to the right of the property. Your comments might include information such as who uses the view and when they use it.  
   
      **Top Specification**  
      Expands to show properties for the **Top**, **Expression**, **Percent**, and **With Ties** properties.  
@@ -161,7 +158,7 @@ manager: "jhubbard"
      In some cases, MDAC manifests view update and view insert operations as updates and inserts against the view's underlying base tables. By selecting **Update Using View Rules**, you can ensure that MDAC generates update and insert operations against the view itself.  
   
      **Check Option**  
-     Indicates that when you open this view and modify the **Results** pane, the data source checks whether the added or modified data satisfies the **WHERE** clause of the view definition. If your modification do not satisfy the **WHERE** clause, you will see an error with more information.  
+     Indicates that when you open this view and modify the **Results** pane, the data source checks whether the added or modified data satisfies the **WHERE** clause of the view definition. If your modification does not satisfy the **WHERE** clause, you will see an error with more information.  
   
 #### To get dependencies on the view  
   
@@ -179,11 +176,11 @@ manager: "jhubbard"
   
 1.  In **Object Explorer**, connect to an instance of [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
-2.  On the Standard bar, click **New Query**.  
+2.  On the Standard bar, select **New Query**.  
   
-3.  Copy and paste one of the following examples into the query window and click **Execute**.  
+3.  Copy and paste one of the following examples into the query window and select **Execute**.  
   
-    ```  
+    ```sql  
     USE AdventureWorks2012;  
     GO  
     SELECT definition, uses_ansi_nulls, uses_quoted_identifier, is_schema_bound  
@@ -192,28 +189,31 @@ manager: "jhubbard"
     GO  
     ```  
   
-    ```  
+    ```sql  
     USE AdventureWorks2012;   
     GO  
     SELECT OBJECT_DEFINITION (OBJECT_ID('HumanResources.vEmployee')) AS ObjectDefinition;   
     GO  
     ```  
   
-    ```  
+    ```sql  
     EXEC sp_helptext 'HumanResources.vEmployee';  
     ```  
   
  For more information, see [sys.sql_modules &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md), [OBJECT_DEFINITION &#40;Transact-SQL&#41;](../../t-sql/functions/object-definition-transact-sql.md) and [sp_helptext &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-helptext-transact-sql.md).  
+
+> [!NOTE]
+> The system stored procedure `sp_helptext` is not supported in Azure Synapse Analytics. Instead, use the `sys.sql_modules` object catalog view.
   
 #### To get the dependencies of a view  
   
 1.  In **Object Explorer**, connect to an instance of [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
-2.  On the Standard bar, click **New Query**.  
+2.  On the Standard bar, select **New Query**.  
   
-3.  Copy and paste the following example into the query window and click **Execute**.  
+3.  Copy and paste the following example into the query window and select **Execute**.  
   
-    ```  
+    ```sql  
     USE AdventureWorks2012;  
     GO  
     SELECT OBJECT_NAME(referencing_id) AS referencing_entity_name,   

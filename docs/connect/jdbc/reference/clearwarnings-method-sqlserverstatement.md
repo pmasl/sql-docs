@@ -1,24 +1,15 @@
 ---
-title: "clearWarnings Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "clearWarnings Method (SQLServerStatement)"
+description: "clearWarnings Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.clearWarnings"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.clearWarnings"
 apitype: "Assembly"
-ms.assetid: b1d3a50c-3d05-44b3-b1ba-404a013fd627
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # clearWarnings Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

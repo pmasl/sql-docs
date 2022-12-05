@@ -1,75 +1,60 @@
 ---
-title: "Create Unique Constraints | Microsoft Docs"
-ms.custom: ""
-ms.date: "10/12/2016"
-ms.prod: "sql-server-2016"
+description: "Create Unique Constraints"
+title: "Create Unique Constraints"
+ms.custom: FY22Q2Fresh
+ms.date: "10/21/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-tables"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: table-view-index
+ms.topic: conceptual
 f1_keywords: 
   - "UNIQUE_TSQL"
 helpviewer_keywords: 
   - "UNIQUE constraints [SQL Server], creating"
   - "constraints [SQL Server], creating"
   - "constraints [SQL Server], unique"
-ms.assetid: a86f9d6f-f242-43be-b65d-b3435b71b62a
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Create Unique Constraints
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
 
-  You can create a unique constraint in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)] to ensure no duplicate values are entered in specific columns that do not participate in a primary key. Creating a unique constraint automatically creates a corresponding unique index.  
+[!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
+
+  You can create a unique constraint in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)] to ensure no duplicate values are entered in specific columns that do not participate in a primary key. Creating a unique constraint automatically creates a corresponding unique index.  
   
- **In This Topic**  
+> [!NOTE]    
+> See [Primary key, foreign key, and unique key in Azure Synapse Analytics](/azure/sql-data-warehouse/sql-data-warehouse-table-constraints) for information on unique constraints in Azure Synapse Analytics.
   
--   **Before you begin:**  
-  
-     [Security](#Security)  
-  
--   **To create a unique constraint, using:**  
-  
-     [SQL Server Management Studio](#SSMSProcedure)  
-  
-     [Transact-SQL](#TsqlProcedure)  
-  
-##  <a name="BeforeYouBegin"></a> Before You Begin  
-  
-###  <a name="Security"></a> Security  
-  
-####  <a name="Permissions"></a> Permissions  
+##  <a name="Security"></a><a name="Permissions"></a> Permissions  
  Requires ALTER permission on the table.  
-  
-##  <a name="SSMSProcedure"></a> Using SQL Server Management Studio  
+
+##  <a name="SSMSProcedure"></a> Use SQL Server Management Studio  
   
 #### To create a unique constraint  
   
-1.  In **Object Explorer**, right-click the table to which you want to add a unique constraint, and click **Design**.  
+1.  In **Object Explorer**, right-click the table to which you want to add a unique constraint, and select **Design**.  
   
-2.  On the **Table Designer** menu, click **Indexes/Keys**.  
+2.  On the **Table Designer** menu, select **Indexes/Keys**.  
   
-3.  In the **Indexes/Keys** dialog box, click **Add**.  
+3.  In the **Indexes/Keys** dialog box, select **Add**.  
   
-4.  In the grid under **General**, click **Type** and choose **Unique Key** from the drop-down list box to the right of the property.  
+4.  In the grid under **General**, select **Type** and choose **Unique Key** from the drop-down list box to the right of the property, and then select **Close**.  
   
-5.  On the **File** menu, click **Save***table name*.  
-  
-##  <a name="TsqlProcedure"></a> Using Transact-SQL  
-  
+5.  On the **File** menu, select **Save** _table name_.  
+
+##  <a name="TsqlExample"></a><a name="TsqlProcedure"></a> Use Transact-SQL  
+
+
 #### To create a unique constraint  
   
 1.  In **Object Explorer**, connect to an instance of [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
-2.  On the Standard bar, click **New Query**.  
+2.  On the Standard bar, select **New Query**.  
   
-3.  Copy and paste the following example into the query window and click **Execute**. The example creates the table `TransactionHistoryArchive4` and creates a unique constraint on the column `TransactionID`.  
+3.  Copy and paste the following example into the query window and select **Execute**. The example creates the table `TransactionHistoryArchive4` and creates a unique constraint on the column `TransactionID`.  
   
-    ```  
+    ```sql  
     USE AdventureWorks2012;  
     GO  
     CREATE TABLE Production.TransactionHistoryArchive4  
@@ -85,11 +70,11 @@ manager: "jhubbard"
   
 1.  In **Object Explorer**, connect to an instance of [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
-2.  On the Standard bar, click **New Query**.  
+2.  On the Standard bar, select **New Query**.  
   
-3.  Copy and paste the following example into the query window and click **Execute**. The example creates a unique constraint on the columns `PasswordHash` and `PasswordSalt` in the table `Person.Password`.  
+3.  Copy and paste the following example into the query window and select **Execute**. The example creates a unique constraint on the columns `PasswordHash` and `PasswordSalt` in the table `Person.Password`.  
   
-    ```  
+    ```sql  
     USE AdventureWorks2012;   
     GO  
     ALTER TABLE Person.Password   
@@ -98,15 +83,15 @@ manager: "jhubbard"
   
     ```  
   
-#### To create a unique constraint in an new table  
+#### To create a unique constraint on a new table  
   
 1.  In **Object Explorer**, connect to an instance of [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
-2.  On the Standard bar, click **New Query**.  
+2.  On the Standard bar, select **New Query**.  
   
-3.  Copy and paste the following example into the query window and click **Execute**. The example creates a table and defines a unique constraint on the column `TransactionID`.  
+3.  Copy and paste the following example into the query window and select **Execute**. The example creates a table and defines a unique constraint on the column `TransactionID`.  
   
-    ```  
+    ```sql  
     USE AdventureWorks2012;  
     GO  
     CREATE TABLE Production.TransactionHistoryArchive2  
@@ -115,9 +100,11 @@ manager: "jhubbard"
        CONSTRAINT AK_TransactionID UNIQUE(TransactionID)  
     );  
     GO  
-  
     ```  
+
+## Next steps
   
-     For more information, see [ALTER TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-transact-sql.md), [CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md), and [table_constraint &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-table-constraint-transact-sql.md).  
+ - [ALTER TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-transact-sql.md)
+ - [CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)
+ - [table_constraint &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-table-constraint-transact-sql.md)
   
-###  <a name="TsqlExample"></a>  

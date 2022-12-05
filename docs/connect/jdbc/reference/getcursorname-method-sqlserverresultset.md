@@ -1,24 +1,15 @@
 ---
-title: "getCursorName Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getCursorName Method (SQLServerResultSet)"
+description: "getCursorName Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getCursorName"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getCursorName"
 apitype: "Assembly"
-ms.assetid: e5b3af67-423a-4551-a4c6-a4bc076bd504
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getCursorName Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

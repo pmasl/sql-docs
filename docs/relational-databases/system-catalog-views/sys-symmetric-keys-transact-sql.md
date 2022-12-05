@@ -1,37 +1,32 @@
 ---
-title: "sys.symmetric_keys (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.symmetric_keys (Transact-SQL)"
+description: sys.symmetric_keys (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "symmetric_keys"
   - "sys.symmetric_keys"
   - "sys.symmetric_keys_TSQL"
   - "symmetric_keys_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.symmetric_keys catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: d410eae1-3a52-45de-b9a1-52d2bd93a8eb
-caps.latest.revision: 41
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.symmetric_keys (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns one row for every symmetric key created with the CREATE SYMMETRIC KEY statement.  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
-|**name**|**sysname**|Name of the key. Unique within the c4database.|  
+|**name**|**sysname**|Name of the key. Unique within the database.|  
 |**principal_id**|**int**|ID of the database principal who owns the key.|  
 |**symmetric_key_id**|**int**|ID of the key. Unique within the database.|  
 |**key_length**|**int**|Length of the key in bits.|  
@@ -49,7 +44,7 @@ manager: "jhubbard"
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] For more information, see [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md).  
   
 ## Remarks  
- The RC4 algorithm is deprecated. [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)]  
+ The RC4 algorithm is deprecated. [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]  
   
 > [!NOTE]  
 >  The RC4 algorithm is only supported for backward compatibility. New material can only be encrypted using RC4 or RC4_128 when the database is in compatibility level 90 or 100. (Not recommended.) Use a newer algorithm such as one of the AES algorithms instead. In [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] material encrypted using RC4 or RC4_128 can be decrypted in any compatibility level.  

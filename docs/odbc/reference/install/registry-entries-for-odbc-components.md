@@ -1,14 +1,12 @@
 ---
+description: "Registry Entries for ODBC Components"
 title: "Registry Entries for ODBC Components | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "subkeys [ODBC]"
   - "installing ODBC components [ODBC], registry entries"
@@ -16,25 +14,19 @@ helpviewer_keywords:
   - "subkeys [ODBC], for components"
   - "registry entries for components [ODBC], about registry entries"
 ms.assetid: c90aa8a4-6ece-48de-901c-17d23739a9ff
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Registry Entries for ODBC Components
 > [!NOTE]  
 >  Starting with Windows XP and Windows Server 2003, ODBC is included in the Windows operation system. You should only explicitly install ODBC on earlier versions of Windows.  
   
  The installer DLL maintains information in the registry about each installed ODBC component. On computers running Microsoft Windows NT and Microsoft Windows 95/98, this information is stored in subkeys under the following key in the registry:  
-  
- HKEY_LOCAL_MACHINE  
-  
- SOFTWARE  
-  
- ODBC  
-  
- Odbcinst.ini  
-  
+
+ ```console
+ HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\Odbcinst.ini
+ ```
+
  Because Odbcinst.ini is a subkey of the HKEY_LOCAL_MACHINE tree, the information about ODBC components is available to all users of the machine.  
   
  This section contains the following topics.  

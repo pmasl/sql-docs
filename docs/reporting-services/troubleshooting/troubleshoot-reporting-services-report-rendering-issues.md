@@ -1,20 +1,15 @@
 ---
-title: "Troubleshoot Reporting Services Report Rendering Issues | Microsoft Docs"
-ms.custom: ""
-ms.date: "02/27/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-  - "reporting-services-sharepoint"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Troubleshoot Reporting Services Report Rendering Issues"
+description: In this article, diagnose and fix display problems when the compiled report and layout data is sent to a report renderer in SQL Server Reporting Services.
+ms.date: 02/27/2016
+ms.service: reporting-services
+ms.subservice: troubleshooting
+
+
+ms.topic: conceptual
 ms.assetid: 1e0fb399-4c16-438a-92cb-db3e877896d0
-caps.latest.revision: 4
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Troubleshoot Reporting Services Report Rendering Issues
 After the report data and layout information is combined, the compiled report is sent to a report renderer. For example, when you preview a report locally, you are using the HTML renderer to view the compiled report. Use this topic to help troubleshoot issues specific to report rendering.   
@@ -46,7 +41,7 @@ For soft page-break renderers, to view all the data on one page, in Report prope
 For more information about categories of renderers, see [Rendering Behaviors](../../reporting-services/report-design/rendering-behaviors-report-builder-and-ssrs.md).  
   
 ## Reports do not run when your browser is configured to prompt for credentials  
-Viewing your reports may fail with an error message when your browser is configured to prompt for credentials and your data source is configured for integrated windows authentication. This occurs when your data source is on a separate computer than the report server, the data source is configured to use Windows Authentication, and the browser is set to prompt for credentials. The following are examples of messages you will see.  
+Viewing your reports may fail with an error message when your browser is configured to prompt for credentials and your data source is configured for integrated Windows authentication. This occurs when your data source is on a separate computer than the report server, the data source is configured to use Windows Authentication, and the browser is set to prompt for credentials. The following are examples of messages you will see.  
   
 When the data source is configured for a Microsoft SQL Server connection type:  
 `An error has occurred during report processing.`  
@@ -72,5 +67,4 @@ When the data source is configured for a Microsoft SharePoint List connection ty
   
   
 
-[!INCLUDE[feedback_stackoverflow_msdn_connect](../../includes/feedback-stackoverflow-msdn-connect.md)]
-
+[!INCLUDE[feedback_stackoverflow_msdn_connect](../../includes/feedback-stackoverflow-msdn-connect-md.md)]

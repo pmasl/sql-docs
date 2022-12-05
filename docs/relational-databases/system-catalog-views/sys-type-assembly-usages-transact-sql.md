@@ -1,31 +1,25 @@
 ---
-title: "sys.type_assembly_usages (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.type_assembly_usages (Transact-SQL)"
+description: sys.type_assembly_usages (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.type_assembly_usages"
   - "sys.type_assembly_usages_TSQL"
   - "type_assembly_usages_TSQL"
   - "type_assembly_usages"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.type_assembly_usages catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 79b8bf25-6e4e-4a07-ae93-7a4e44f65171
-caps.latest.revision: 19
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # sys.type_assembly_usages (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row per type to assembly reference.  
   

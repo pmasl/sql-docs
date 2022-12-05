@@ -1,29 +1,24 @@
 ---
+description: "MSSQLSERVER_7911"
 title: "MSSQLSERVER_7911 | Microsoft Docs"
 ms.custom: ""
-ms.date: "04/04/2017"
-ms.prod: "sql-server-2016"
+ms.date: "05/25/2022"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 helpviewer_keywords: 
   - "7911 (Database Engine error)"
-ms.assetid: dd8390f3-0f77-4fb2-ba94-631a56e42bc6
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
-robots: noindex,nofollow
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_7911
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|SQL Server|  
 |Event ID|7911|  
 |Event Source|MSSQLSERVER|  

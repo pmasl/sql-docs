@@ -1,25 +1,22 @@
 ---
-title: "Database Snapshots with Always On Availability Groups (SQL Server) | Microsoft Docs"
-ms.custom: ""
+title: "Create a database snapshot for an availability group"
+description: "Describes how to create a database snapshot for a database within an Always On availability group on either the primary or secondary database."
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: how-to
+ms.custom: seodec18
+helpviewer_keywords:
   - "database snapshots [SQL Server], AlwaysOn Availability Groups"
+  - "database snapshots [SQL Server], Always On Availability Groups"
   - "Availability Groups [SQL Server], interoperability"
-ms.assetid: 7432da1c-ce2f-4cd9-af41-54c97744166b
-caps.latest.revision: 7
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Database Snapshots with Always On Availability Groups (SQL Server)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
+
+[!NOTE] Creating database snapshots on any database has cpu and IO overhead due to copy on write activity. On database replicas, this can hurt redo throughput among other operations, especially as the number of snapshots increases.
 
   You can create a database snapshot on an primary or secondary database in an availability group. The replica role must be either PRIMARY or SECONDARY, not in the RESOLVING state.  
   

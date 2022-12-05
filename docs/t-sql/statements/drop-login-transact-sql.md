@@ -1,33 +1,27 @@
 ---
-title: "DROP LOGIN (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP LOGIN (Transact-SQL)"
+description: DROP LOGIN (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "05/11/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DROP LOGIN"
   - "DROP_LOGIN_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "deleting login accounts"
   - "logins [SQL Server], removing"
   - "DROP LOGIN statement"
   - "removing login accounts"
   - "dropping login accounts"
-ms.assetid: acb5c3dc-7aa2-49f6-9330-573227ba9b1a
-caps.latest.revision: 36
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # DROP LOGIN (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Removes a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login account.  
   
@@ -35,11 +29,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql  
 DROP LOGIN login_name  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *login_name*  
  Specifies the name of the login to be dropped.  
   
@@ -58,7 +54,7 @@ DROP LOGIN login_name
 ### A. Dropping a login  
  The following example drops the login `WilliJo`.  
   
-```  
+```sql  
 DROP LOGIN WilliJo;  
 GO 
 ```  

@@ -1,29 +1,23 @@
 ---
-title: "log_shipping_secondary (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "log_shipping_secondary (Transact-SQL)"
+description: log_shipping_secondary (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "log_shipping_secondary"
   - "log_shipping_secondary_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "log_shipping_secondary system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 69723419-4544-49c6-a517-adb30ffa5741
-caps.latest.revision: 21
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # log_shipping_secondary (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Stores one record per secondary ID. This table is stored in the **msdb** database.  
   

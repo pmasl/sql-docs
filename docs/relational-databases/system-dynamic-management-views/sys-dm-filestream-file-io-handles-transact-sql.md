@@ -1,37 +1,31 @@
 ---
-title: "sys.dm_filestream_file_io_handles (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_filestream_file_io_handles (Transact-SQL)"
+description: sys.dm_filestream_file_io_handles (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_filestream_file_io_handles"
   - "sys.dm_filestream_file_io_handles"
   - "dm_filestream_file_io_handles_TSQL"
   - "sys.dm_filestream_file_io_handles_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_filestream_file_io_handle catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: e59632f4-3292-419f-9217-ca375749f1a5
-caps.latest.revision: 10
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # sys.dm_filestream_file_io_handles (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Displays the file handles that the Namespace Owner (NSO) knows about. Filestream handles that a client got using **OpenSqlFilestream** are displayed by this view.  
   
 |Column|Type|Description|  
 |------------|----------|-----------------|  
-|**handle_context_address**|**varbinary(8)**|Shows the address of the internal NSO structure associated with the client’s handle. Is nullable.|  
+|**handle_context_address**|**varbinary(8)**|Shows the address of the internal NSO structure associated with the client's handle. Is nullable.|  
 |**creation_request_id**|**int**|Shows a field from the REQ_PRE_CREATE I/O request used to create this handle. Is not nullable.|  
 |**creation_irp_id**|**int**|Shows a field from the REQ_PRE_CREATE I/O request used to create this handle. Is not nullable|  
 |**handle_id**|**int**|Shows the unique ID of this handle that is assigned by the driver. Is not nullable.|  

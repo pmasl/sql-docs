@@ -1,26 +1,25 @@
 ---
-title: "sys.dm_pdw_nodes_database_encryption_keys (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_pdw_nodes_database_encryption_keys (Transact-SQL)"
+description: sys.dm_pdw_nodes_database_encryption_keys (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "03/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.service: sql
+ms.subservice: data-warehouse
+ms.topic: "reference"
+ms.custom: seo-dt-2019
+dev_langs:
   - "TSQL"
 ms.assetid: e7fd02b2-5d7e-4816-a0af-b58ae2ac3f7a
-caps.latest.revision: 9
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azure-sqldw-latest"
 ---
 # sys.dm_pdw_nodes_database_encryption_keys (Transact-SQL)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-asdw-pdw-md.md)]
+[!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
-  Returns information about the encryption state of a database and its associated database encryption keys. **sys.dm_pdw_nodes_database_encryption_keys** provides this information for each node. For more information about database encryption, see [Transparent Data Encryption (SQL Server PDW)](http://msdn.microsoft.com/en-us/b82ad21d-09dd-43dd-8fab-bcf2c8c3ac6d).  
+  Returns information about the encryption state of a database and its associated database encryption keys. **sys.dm_pdw_nodes_database_encryption_keys** provides this information for each node. For more information about database encryption, see [Transparent Data Encryption (SQL Server PDW)](../../analytics-platform-system/transparent-data-encryption.md).
+
+> [!NOTE]
+> [!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]  
   
 |Column Name|Data Type|Description|  
 |-----------------|---------------|-----------------|  
@@ -35,15 +34,18 @@ manager: "jhubbard"
 |key_length|**int**|Displays the length of the key.|  
 |encryptor_thumbprint|**varbin**|Shows the thumbprint of the encryptor.|  
 |percent_complete|**real**|Percent complete of the database encryption state change. This will be 0 if there is no state change.|  
-|node_id|**int**|Unique numeric id associated with the node.|  
+|node_id|**int**|Unique numeric ID associated with the node.|  
   
 ## Permissions  
  Requires the VIEW SERVER STATE permission on the server.  
-  
-## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
- The following example joins `sys.dm_pdw_nodes_database_encryption_keys` to other system tables to indicate the encryption state for each node of the TDE protected databases.  
-  
-```  
+
+## Examples 
+
+The following example joins `sys.dm_pdw_nodes_database_encryption_keys` to other system tables to indicate the encryption state for each node of the TDE protected databases.  
+
+[!INCLUDE[ssPDW](../../includes/sspdw-md.md)]
+
+```sql  
 SELECT D.database_id AS DBIDinMaster, D.name AS UserDatabaseName,   
 PD.pdw_node_id AS NodeID, DM.physical_name AS PhysDBName,   
 keys.encryption_state  
@@ -56,9 +58,35 @@ JOIN sys.databases AS D
     ON D.database_id = DM.database_id  
 ORDER BY D.database_id, PD.pdw_node_ID;  
 ```  
+
+[!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 
+
+```sql
+--Query provides underlying distribution encryption status
+SELECT keys.database_id AS DBIDinPhysicalDatabases,   
+PD.pdw_node_id AS NodeID, PD.physical_name AS PhysDBName,   
+keys.encryption_state  
+FROM sys.dm_pdw_nodes_database_encryption_keys AS keys  
+JOIN sys.pdw_nodes_pdw_physical_databases AS PD  
+    ON keys.database_id = PD.database_id AND keys.pdw_node_id = PD.pdw_node_id  
+ORDER BY keys.database_id, PD.pdw_node_ID;
+```
+
+```sql
+--Query provides the DW encryption status
+SELECT D.database_id AS DBIDinMaster, D.name AS UserDatabaseName,   
+PD.pdw_node_id AS NodeID, PD.physical_name AS PhysDBName,   
+keys.encryption_state  
+FROM sys.dm_pdw_nodes_database_encryption_keys AS keys  
+JOIN sys.pdw_nodes_pdw_physical_databases AS PD  
+    ON keys.database_id = PD.database_id AND keys.pdw_node_id = PD.pdw_node_id  
+JOIN sys.databases AS D  
+    ON D.database_id = PD.database_id  
+ORDER BY D.database_id, PD.pdw_node_ID;
+```
   
 ## See Also  
- [SQL Data Warehouse and Parallel Data Warehouse Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)   
+ [Azure Synapse Analytics and Parallel Data Warehouse Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)   
  [CREATE DATABASE ENCRYPTION KEY &#40;Transact-SQL&#41;](../../t-sql/statements/create-database-encryption-key-transact-sql.md)   
  [ALTER DATABASE ENCRYPTION KEY &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-encryption-key-transact-sql.md)   
  [DROP DATABASE ENCRYPTION KEY &#40;Transact-SQL&#41;](../../t-sql/statements/drop-database-encryption-key-transact-sql.md)  

@@ -1,13 +1,11 @@
 ---
-title: "ResumeService Method (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "ResumeService Method (SqlService Class)"
+title: "ResumeService Method (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "ResumeService Method (SqlService Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "ResumeService method"
 ms.assetid: 0b0a5f08-b95e-4626-bf81-309da7a0aacd
-caps.latest.revision: 34
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # ResumeService Method (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Attempts to place the service in the resumed state.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.ResumeService()
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

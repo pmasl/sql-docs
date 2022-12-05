@@ -1,23 +1,21 @@
 ---
+description: "Lock:Deadlock Chain Event Class"
 title: "Lock:Deadlock Chain Event Class | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: reference
 helpviewer_keywords: 
   - "Deadlock Chain event class"
 ms.assetid: 9883127b-aa34-4235-88cc-c161cd2112cc
-caps.latest.revision: 35
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Lock:Deadlock Chain Event Class
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   The Lock:Deadlock Chain event class is produced for each participant in a deadlock.  
   
  Use the Lock:Deadlock Chain event class to monitor when deadlock conditions occur. This information is useful to determine if deadlocks are significantly affecting the performance of your application, and which objects are involved. You can examine the application code that modifies these objects to determine if changes to minimize deadlocks can be made.  

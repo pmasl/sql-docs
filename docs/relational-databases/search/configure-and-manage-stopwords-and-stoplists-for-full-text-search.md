@@ -1,14 +1,10 @@
 ---
-title: "Configure and Manage Stopwords and Stoplists for Full-Text Search | Microsoft Docs"
-ms.custom: ""
+description: "Configure and Manage Stopwords and Stoplists for Full-Text Search"
+title: "Configure & manage stopwords & stoplists for Full-Text Search"
 ms.date: "02/02/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-search"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: search
+ms.topic: conceptual
 helpviewer_keywords: 
   - "stoplists [full-text search]"
   - "full-text search [SQL Server], stoplists"
@@ -17,12 +13,14 @@ helpviewer_keywords:
   - "full-text search [SQL Server], stopwords"
   - "stopwords [full-text search]"
 ms.assetid: 43b5ce7b-9f09-4443-8a5b-c3da6eb28bcc
-caps.latest.revision: 81
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
+ms.custom: "seo-lt-2019"
 ---
 # Configure and Manage Stopwords and Stoplists for Full-Text Search
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   To prevent a full-text index from becoming bloated, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] has a mechanism that discards commonly occurring strings that do not help the search. These discarded strings are called *stopwords*. During index creation, the Full-Text Engine omits stopwords from the full-text index. This means that full-text queries will not search on stopwords.  
    
 **Stopwords**. A stopword can be a word with meaning in a specific language. For example, in the English language, words such as "a," "and," "is," and "the" are left out of the full-text index since they are known to be useless to a search. A stopword can also be a *token* that does not have linguistic meaning.  
@@ -64,9 +62,9 @@ Use [CREATE FULLTEXT STOPLIST](../../t-sql/statements/create-fulltext-stoplist-t
   
     -   **Create from an existing full-text stoplist**  
   
-     For more information, see [New Full-Text Stoplist &#40;General Page&#41;](http://msdn.microsoft.com/library/97f8e82d-82ab-4525-91c9-1ee3ae217309).  
+     For more information, see [New Full-Text Stoplist &#40;General Page&#41;](/previous-versions/sql/sql-server-2016/cc280518(v=sql.130)).  
   
-8.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+8.  Select **OK**.
   
 ##  Use a stoplist in full-text queries  
  To use a stoplist in queries, you must associate it with a full-text index. You can attach a stoplist to a full-text index when you create the index, or you can alter the index later to add a stoplist.  
@@ -91,7 +89,7 @@ Use [ALTER FULLTEXT STOPLIST &#40;Transact-SQL&#41;](../../t-sql/statements/alte
   
 4.  Right-click the stoplist whose properties you want to change, and select **Properties**.  
   
-5.  In the [Full-Text Stoplist Properties](http://msdn.microsoft.com/library/2e907f5b-0cf9-484a-afcf-a4e7f1e2f87f) dialog box:  
+5.  In the [Full-Text Stoplist Properties](/previous-versions/sql/sql-server-2016/cc280415(v=sql.130)) dialog box:  
   
     1.  In the **Action** list box, select one of the following actions: **Add stopword**, **Delete stopword**, **Delete all stopwords**, or **Clear stoplist**.  
   
@@ -99,7 +97,7 @@ Use [ALTER FULLTEXT STOPLIST &#40;Transact-SQL&#41;](../../t-sql/statements/alte
   
     3.  If the **Full-text language** list box is enabled for the selected action, select a language.  
   
-6.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+6.  Select **OK**.
 
 ## Manage stoplists and their usage
   
@@ -134,6 +132,5 @@ Use the [transform noise words Server Configuration Option](../../database-engin
   
 ## Upgrade noise words from SQL Server 2005  
  [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] noise words have been replaced by stopwords. When a database is upgraded from [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)], the noise-word files are no longer used. However, the noise-word files are stored in the FTDATA\ FTNoiseThesaurusBak folder, and you can use them later when updating or building the corresponding stoplists. For information about upgrading noise-word files to stoplists, see [Upgrade Full-Text Search](../../relational-databases/search/upgrade-full-text-search.md).  
-  
   
   

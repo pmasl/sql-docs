@@ -1,22 +1,17 @@
 ---
+description: "ConfigurationSetting Method - GetDatabaseVersionDisplayName"
 title: "GetDatabaseVersionDisplayName Method (WMI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: wmi-provider-library-reference
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "GetDatabaseVersionDisplayName method"
 ms.assetid: e1286424-7043-4f12-a7ad-1cf69e81baa4
-caps.latest.revision: 15
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # ConfigurationSetting Method - GetDatabaseVersionDisplayName
   Gets the display name for a given report server database version string.  

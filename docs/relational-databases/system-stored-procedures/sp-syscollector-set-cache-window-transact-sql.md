@@ -1,14 +1,12 @@
 ---
+description: "sp_syscollector_set_cache_window (Transact-SQL)"
 title: "sp_syscollector_set_cache_window (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_syscollector_set_cache_window"
   - "sp_syscollector_set_cache_window_TSQL"
@@ -18,13 +16,11 @@ helpviewer_keywords:
   - "sp_syscollector_set_cache_window stored procedure"
   - "data collector [SQL Server], stored procedures"
 ms.assetid: 660f2749-392f-46bf-89f3-27764d848507
-caps.latest.revision: 23
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_syscollector_set_cache_window (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Sets the number of times to attempt a data upload in case of failure. Retrying an upload in the event of a failure mitigates the risk of losing collected data.  
 
@@ -60,7 +56,7 @@ sp_syscollector_set_cache_window [ @cache_window = ] cache_window
 ## Examples  
  The following example disables the data collector, configures the cache window to retain data for up to three failed uploads, and then enables to data collector.  
   
-```tsql  
+```sql  
 USE msdb;  
 GO  
 EXECUTE dbo.sp_syscollector_disable_collector;  

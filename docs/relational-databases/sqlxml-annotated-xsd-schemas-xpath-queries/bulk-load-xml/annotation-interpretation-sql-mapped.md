@@ -1,29 +1,24 @@
 ---
-title: "sql:mapped (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "sql:mapped (SQLXML)"
+description: "Learn how the SQLXML annotation sql:mapped is interpreted during the XML Bulk Load process."
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "mapped annotation"
   - "element mapping [SQLXML], XML Bulk Load"
   - "attribute mapping [SQLXML], XML Bulk Load"
   - "overflow data [SQLXML]"
-  - "sql:mapped"
-  - "column mapping [SQLXML]"
 ms.assetid: 7042741e-ce4d-4912-9c4a-d77194a028fc
-caps.latest.revision: 22
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Annotation Interpretation - sql:mapped
-  XML Bulk Load processes the **sql:mapped** annotation in the XSD schema as expected—that is, if the mapping schema specifies **sql:mapped="false"** for any element or attribute, XML Bulk Load does not attempt to store the associated data in the corresponding column.  
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
+  XML Bulk Load processes the **sql:mapped** annotation in the XSD schema as expected-that is, if the mapping schema specifies **sql:mapped="false"** for any element or attribute, XML Bulk Load does not attempt to store the associated data in the corresponding column.  
   
  XML Bulk Load ignores elements and attributes that are not mapped (either because they are not described in the schema, or because they are annotated in the XSD schema with **sql:mapped="false"**). All unmapped data goes into the overflow column, if such a column is specified by using **sql:overflow-field**.  
   
@@ -81,7 +76,7 @@ manager: "jhubbard"
     ```  
   
 4.  To execute XML Bulk Load, save and execute this [!INCLUDE[msCoName](../../../includes/msconame-md.md)] Visual Basic Scripting Edition (VBScript) example as Sample.vbs:  
-  
+
     ```  
     set objBL = CreateObject("SQLXMLBulkLoad.SQLXMLBulkload.4.0")  
     objBL.ConnectionString = "provider=SQLOLEDB;data source=localhost;database=tempdb;integrated security=SSPI"  

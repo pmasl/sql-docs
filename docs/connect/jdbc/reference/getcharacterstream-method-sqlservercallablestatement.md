@@ -1,24 +1,15 @@
 ---
-title: "getCharacterStream Method (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getCharacterStream Method (SQLServerCallableStatement)"
+description: "getCharacterStream Method (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.getCharacterStream()"
-apilocation: 
-  - "SQLServerCallableStatement.getCharacterStream()"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "SQLServerCallableStatement.getCharacterStream()"
+apiname: "SQLServerCallableStatement.getCharacterStream()"
 apitype: "Assembly"
-ms.assetid: 6207ad4b-56b3-4c66-bad5-6e590591ac2f
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getCharacterStream Method (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

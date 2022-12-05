@@ -1,14 +1,12 @@
 ---
+description: "sp_OAGetErrorInfo (Transact-SQL)"
 title: "sp_OAGetErrorInfo (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_OAGetErrorInfo_TSQL"
   - "sp_OAGetErrorInfo"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_OAGetErrorInfo"
 ms.assetid: ceecea08-456f-4819-85d9-ecc9647d7187
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_OAGetErrorInfo (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Obtains OLE Automation error information.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -48,16 +40,16 @@ sp_OAGetErrorInfo [ objecttoken ]
  *objecttoken*  
  Is either the object token of an OLE object that was previously created by using **sp_OACreate** or it is NULL. If *objecttoken* is specified, error information for that object is returned. If NULL is specified, the error information for the entire batch is returned.  
   
- *source* **OUTPUT**  
+ _source_ **OUTPUT**  
  Is the source of the error information. If specified, it must be a local **char**, **nchar**, **varchar**, or **nvarchar** variable. The return value is truncated to fit the local variable if necessary.  
   
- *description* **OUTPUT**  
+ _description_ **OUTPUT**  
  Is the description of the error. If specified, it must be a local **char**, **nchar**, **varchar**, or **nvarchar** variable. The return value is truncated to fit the local variable if necessary.  
   
- *helpfile* **OUTPUT**  
+ _helpfile_ **OUTPUT**  
  Is the help file for the OLE object. If specified, it must be a local **char**, **nchar**, **varchar**, or **nvarchar** variable. The return value is truncated to fit the local variable if necessary.  
   
- *helpid* **OUTPUT**  
+ _helpid_ **OUTPUT**  
  Is the help file context ID. If specified, it must be a local **int** variable.  
   
 > [!NOTE]  
@@ -97,7 +89,7 @@ sp_OAGetErrorInfo [ objecttoken ]
  For more information about processing HRESULT Return Codes, see [OLE Automation Return Codes and Error Information](../../relational-databases/stored-procedures/ole-automation-return-codes-and-error-information.md).  
   
 ## Permissions  
- Requires membership in the **sysadmin** fixed server role.  
+ Requires membership in the **sysadmin** fixed server role or execute permission directly on this Stored Procedure. `Ole Automation Procedures` configuration must be **enabled** to use any system procedure related to OLE Automation.  
   
 ## Examples  
  The following example displays OLE Automation error information.  

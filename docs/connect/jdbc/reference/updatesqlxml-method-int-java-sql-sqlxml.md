@@ -1,19 +1,12 @@
 ---
-title: "updateSQLXML Method (int, java.sql.SQLXML) | Microsoft Docs"
-ms.custom: ""
+title: "updateSQLXML Method (int, java.sql.SQLXML)"
+description: "updateSQLXML Method (int, java.sql.SQLXML)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b5170751-fbe1-433b-96f5-4f237ba55f60
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # updateSQLXML Method (int, java.sql.SQLXML)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

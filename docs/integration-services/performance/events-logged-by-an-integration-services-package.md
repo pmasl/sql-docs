@@ -1,29 +1,29 @@
 ---
+description: "Events Logged by an Integration Services Package"
 title: "Events Logged by an Integration Services Package | Microsoft Docs"
-ms.custom: ""
+ms.custom: supportability
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "package [Integration Services], events"
   - "events [Integration Services], package"
 ms.assetid: 55a0951a-46f3-4f0f-9972-74cec9cc26b7
-caps.latest.revision: 27
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Events Logged by an Integration Services Package
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   An [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] package logs various event messages to the Windows Application event log. A package logs these messages when the package starts, when the package stops, and when certain problems occur.  
   
  This topic provides information about the common event messages that a package logs to the Application event log. By default, a package logs some of these messages even if you have not enabled logging on the package. However, there are other messages that the package will log only if you have enabled logging on the package. Regardless of whether the package logs these messages by default or because logging has been enabled, the Event Source for the messages is SQLISPackage.  
   
- For general information about how to run SSIS packages, see [Execution of Projects and Packages](https://msdn.microsoft.com/library/ms141708.aspx).  
+ For general information about how to run SSIS packages, see [Execution of Projects and Packages](../packages/run-integration-services-ssis-packages.md).  
   
  For information about how to troubleshoot running packages, see [Troubleshooting Tools for Package Execution](../../integration-services/troubleshooting/troubleshooting-tools-for-package-execution.md).  
   
@@ -43,7 +43,7 @@ manager: "jhubbard"
  By default, in a new installation, [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] is configured not to log certain events that are related to the running of packages to the Application event log. This setting prevents too many event log entries when you use the Data Collector feature of the current release of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)][!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)]. The events that are not logged are EventID 12288, "Package started," and EventID 12289, "Package finished successfully." To log these events to the Application event log, open the registry for editing. Then in the registry, locate the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\110\SSIS node, and change the DWORD value of the LogPackageExecutionToEventLog setting from 0 to 1. However, in an upgrade insallation, [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] is configured to log these two events. To disable logging, change the value of the LogPackageExecutionToEventLog setting from 1 to 0.  
   
 ## Messages Associated with Package Logging  
- If you have enabled logging on the package, the Application event log is one of the destinations that is supported by the optional logging features in [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] packages. For more information, see [Integration Services &#40;SSIS&#41; Logging](../../integration-services/performance/integration-services-ssis-logging.md).  
+ If you have enabled logging on the package, the Application event log is one of the destinations that is supported by the optional logging features in [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] packages. For more information, see [Integration Services \(SSIS\) Logging](../../integration-services/performance/integration-services-ssis-logging.md).  
   
  When you have enabled logging on the package and the log location is the Application event log, the package logs entries that pertain to the following information:  
   

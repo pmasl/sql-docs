@@ -1,24 +1,15 @@
 ---
-title: "SupportsDataDefinitionAndDataManipulationTransactions Method | Microsoft Docs"
-ms.custom: ""
+title: "SupportsDataDefinitionAndDataManipulationTransactions Method"
+description: "supportsDataDefinitionAndDataManipulationTransactions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsDataDefinitionAndDataManipulationTransactions"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsDataDefinitionAndDataManipulationTransactions"
 apitype: "Assembly"
-ms.assetid: fe91c601-9bb3-4364-9131-575a94d3a1b3
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsDataDefinitionAndDataManipulationTransactions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

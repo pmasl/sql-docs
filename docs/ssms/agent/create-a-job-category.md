@@ -1,44 +1,30 @@
 ---
-title: "Create a Job Category | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Create a Job Category"
+title: "Create a Job Category"
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQL Server Agent jobs, categories"
   - "jobs [SQL Server Agent], categories"
   - "categories [SQL Server Agent jobs]"
 ms.assetid: e24a6d38-d231-4f64-ab89-2d1ef6f5792c
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+monikerRange: "= azuresqldb-mi-current || >= sql-server-2016"
 ---
 # Create a Job Category
-This topic describes how to create a job category in [!INCLUDE[ssCurrent](../../includes/sscurrent_md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)], [!INCLUDE[tsql](../../includes/tsql_md.md)] or [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Management Objects.  
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+
+> [!IMPORTANT]  
+> On [Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance), most, but not all SQL Server Agent features are currently supported. See [Azure SQL Managed Instance T-SQL differences from SQL Server](/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent) for details.
+
+This topic describes how to create a job category in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using SQL Server Management Studio, [!INCLUDE[tsql](../../includes/tsql-md.md)] or [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Management Objects.  
   
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Agent provides built-in job categories that you can assign jobs to, or you can create a job category and assign jobs to it. Job categories help you organize your jobs for easy filtering and grouping. For example, you can organize all your database backup jobs in the Database Maintenance category. You can also create your own job categories.  
-  
-**In This Topic**  
-  
--   **Before you begin:**  
-  
-    [Limitations and Restrictions](#Restrictions)  
-  
-    [Security](#Security)  
-  
--   **To create a job category, using:**  
-  
-    [SQL Server Management Studio](#SSMS)  
-  
-    [Transact-SQL](#TSQL)  
-  
-    [SQL Server Management Objects](#SMO)  
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent provides built-in job categories that you can assign jobs to, or you can create a job category and assign jobs to it. Job categories help you organize your jobs for easy filtering and grouping. For example, you can organize all your database backup jobs in the Database Maintenance category. You can also create your own job categories.  
   
 ## <a name="BeforeYouBegin"></a>Before You Begin  
   
@@ -58,7 +44,7 @@ For detailed information, see [Implement SQL Server Agent Security](../../ssms/a
   
 3.  Right-click the **Jobs** folder and select **Manage Job Categories**.  
   
-4.  In the **Manage Job Categories***server_name* dialog box, click **Add**.  
+4.  In the **Manage Job Categories**_server_name_ dialog box, click **Add**.  
   
 5.  In the new dialog box, in the **Name** box, enter a name for the new job category.  
   
@@ -66,7 +52,7 @@ For detailed information, see [Implement SQL Server Agent Security](../../ssms/a
   
 7.  Click **OK**.  
   
-8.  In the **Manage Job Categories***server_name* dialog box, click **Refresh** to ensure that the new job category is active. If everything looks as expected, close this dialog box.  
+8.  In the **Manage Job Categories**_server_name_ dialog box, click **Refresh** to ensure that the new job category is active. If everything looks as expected, close this dialog box.  
   
 For more information on these dialog boxes, see [Job Categories - Manage Job Categories](../../ssms/agent/job-categories-manage-job-categories.md) and [Job Categories Properties - New Job Category](../../ssms/agent/job-categories-properties-new-job-category.md).  
   
@@ -91,10 +77,9 @@ For more information on these dialog boxes, see [Job Categories - Manage Job Cat
     GO  
     ```  
   
-For more information, see [sp_add_category (Transact-SQL)](http://msdn.microsoft.com/en-us/6cca32cd-d941-4378-aed6-a7c90cb7520a).  
+For more information, see [sp_add_category (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-add-category-transact-sql.md).  
   
 ## <a name="SMO"></a>Using SQL Server Management Objects  
 **To create a job category**  
   
-Call the **JobCategory** class by using a programming language that you choose, such as Visual Basic, Visual C#, or PowerShell. For example code, see [Scheduling Automatic Administrative Tasks in SQL Server Agent](http://msdn.microsoft.com/en-us/900242ad-d6a2-48e9-8a1b-f0eea4413c16).  
-  
+Call the **JobCategory** class by using a programming language that you choose, such as Visual Basic, Visual C#, or PowerShell. For example code, see [Scheduling Automatic Administrative Tasks in SQL Server Agent](../../relational-databases/server-management-objects-smo/tasks/scheduling-automatic-administrative-tasks-in-sql-server-agent.md).  

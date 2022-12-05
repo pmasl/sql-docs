@@ -1,28 +1,29 @@
 ---
+description: "SQLGetEnvAttr Function"
 title: "SQLGetEnvAttr Function | Microsoft Docs"
 ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.date: "07/18/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLGetEnvAttr"
 apilocation: 
   - "sqlsrv32.dll"
+  - "odbc32.dll"
+  - "Msodbcsql11.dll"
+  - "Sqlncli10.dll"
+  - "Sqlncli11.dll"
+  - "Sqlncli11e.dll"
 apitype: "dllExport"
 f1_keywords: 
   - "SQLGetEnvAttr"
 helpviewer_keywords: 
   - "SQLGetEnvAttr function [ODBC]"
 ms.assetid: 01f4590f-427a-4280-a1c3-18de9f7d86c1
-caps.latest.revision: 22
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLGetEnvAttr Function
 **Conformance**  
@@ -33,14 +34,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 SQLRETURN SQLGetEnvAttr(  
-     SQLHENV        EnvironmentHandle,  
-     SQLINTEGER     Attribute,  
-     SQLPOINTER     ValuePtr,  
-     SQLINTEGER     BufferLength,  
-     SQLINTEGER *   StringLengthPtr);  
+     SQLHENV        EnvironmentHandle,  
+     SQLINTEGER     Attribute,  
+     SQLPOINTER     ValuePtr,  
+     SQLINTEGER     BufferLength,  
+     SQLINTEGER *   StringLengthPtr);  
 ```  
   
 ## Arguments  
@@ -59,7 +60,7 @@ SQLRETURN SQLGetEnvAttr(
  [Input] If *ValuePtr* points to a character string, this argument should be the length of \**ValuePtr*. If \**ValuePtr* is an integer, *BufferLength* is ignored. If *\*ValuePtr* is a Unicode string (when calling **SQLGetEnvAttrW**), the *BufferLength* argument must be an even number. If the attribute value is not a character string, *BufferLength* is unused.  
   
  *StringLengthPtr*  
- [Output] A pointer to a buffer in which to return the total number of bytes (excluding the null-termination character) available to return in *\*ValuePtr*. If *ValuePtr* is a null pointer, no length is returned. If the attribute value is a character string and the number of bytes available to return is greater than or equal to *BufferLength*, the data in \**ValuePtr* is truncated to *BufferLength* minus the length of a null-termination character and is null-terminated by the driver.  
+ [Output] A pointer to a buffer in which to return the total number of bytes (excluding the null-termination character) available to return in *\*ValuePtr*. If the attribute value is a character string and the number of bytes available to return is greater than or equal to *BufferLength*, the data in \**ValuePtr* is truncated to *BufferLength* minus the length of a null-termination character and is null-terminated by the driver.  
   
 ## Returns  
  SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, SQL_NO_DATA, SQL_ERROR, or SQL_INVALID_HANDLE.  
@@ -85,7 +86,7 @@ SQLRETURN SQLGetEnvAttr(
   
  **SQLGetEnvAttr** can be called at any time between the allocation and the freeing of an environment handle. All environment attributes successfully set by the application for the environment persist until **SQLFreeHandle** is called on the *EnvironmentHandle* with a *HandleType* of SQL_HANDLE_ENV. More than one environment handle can be allocated simultaneously in ODBC 3*.x*. An environment attribute on one environment is not affected when another environment has been allocated.  
   
-> [!NOTE]  
+> [!NOTE]
 >  The SQL_ATTR_OUTPUT_NTS environment attribute is supported by standards-compliant applications. When **SQLGetEnvAttr** is called, the ODBC 3*.x* Driver Manager always returns SQL_TRUE for this attribute. SQL_ATTR_OUTPUT_NTS can be set to SQL_TRUE only by a call to **SQLSetEnvAttr**.  
   
 ## Related Functions  

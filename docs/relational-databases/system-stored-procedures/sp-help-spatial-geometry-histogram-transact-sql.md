@@ -1,14 +1,12 @@
 ---
+description: "sp_help_spatial_geometry_histogram (Transact-SQL)"
 title: "sp_help_spatial_geometry_histogram (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_help_spatial_geometry_histogram"
   - "sp_help_spatial_geometry_histogram_TSQL"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_help_spatial_geometry_histogram"
 ms.assetid: 036aaf61-df3e-40f7-aa4e-62983c5a37bd
-caps.latest.revision: 17
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_help_spatial_geometry_histogram (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Facilitates the keying of bounding box and grid parameters for a spatial index.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
 ## Syntax  
   
@@ -46,30 +38,30 @@ sp_help_spatial_geometry_histogram [ @tabname =] 'tabname'
 ```  
   
 ## Arguments  
- [ **@tabname =**] **'***tabname***'**  
+`[ @tabname = ] 'tabname'`
  Is the qualified or nonqualified name of the table for which the spatial index has been specified.  
   
  Quotation marks are required only if a qualified table is specified. If a fully qualified name, including a database name, is provided, the database name must be the name of the current database. *tabname* is **sysname**, with no default.  
   
- [ **@colname =** ] **'***colname***'**  
+`[ @colname = ] 'colname'`
  Is the name of the spatial column specified. *colname* is a **sysname**, with no default.  
   
- [ **@resolution =** ] **'***resolution***'**  
+`[ @resolution = ] 'resolution'`
  Is the resolution of the bounding box. Valid values are from 10 to 5000. *resolution* is a **tinyint**, with no default.  
   
- [ **@xmin =** ] **'***xmin***'**  
+`[ @xmin = ] 'xmin'`
  Is the X-minimum bounding box property. *xmin* is a **float**, with no default.  
   
- [ **@ymin =** ] **'***ymin***'**  
+`[ @ymin = ] 'ymin'`
  Is the Y-minimum bounding box property. *ymin* is a **float**, with no default.  
   
- [ **@xmax =** ] **'***xmax***'**  
+`[ @xmax = ] 'xmax'`
  Is the X-maximum bounding box property. *xmax* is a **float**, with no default.  
   
- [ **@ymax =** ] **'***ymax***'**  
+`[ @ymax = ] 'ymax'`
  Is the Y-maximum bounding box property. *ymax* is a **float**, with no default.  
   
- [ **@sample =** ] **'***sample***'**  
+`[ @sample = ] 'sample'`
  Is the percentage of the table that is used. Valid values are from 0 to 100. *sample* is a **float**. Default value is 100.  
   
 ## Property Value/Return Value  
@@ -157,6 +149,5 @@ sp_help_spatial_geometry_histogram [ @tabname =] 'tabname'
  `GO`  
   
 ## See Also  
- [Spatial Index Stored Procedures &#40;Transact-SQL&#41;](http://msdn.microsoft.com/library/1be0f34e-3d5a-4a1f-9299-bd482362ec7a)  
-  
+ [Spatial Index Stored Procedures &#40;Transact-SQL&#41;](./spatial-index-stored-procedures-arguments-and-properties.md)  
   

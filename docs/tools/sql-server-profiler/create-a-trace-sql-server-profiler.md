@@ -1,24 +1,23 @@
 ---
-title: "Create a Trace (SQL Server Profiler) | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/01/2016"
-ms.prod: "sql-server-2016"
+title: Create a Trace
+titleSuffix: SQL Server Profiler
+description: Learn how to capture event data in SQL Server Profiler by creating a trace. Read about the various options you can specify for traces.
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "traces [SQL Server], creating"
+ms.subservice: profiler
+ms.topic: conceptual
 ms.assetid: 0302fa6d-d2b5-43fe-ad70-7a337575b112
-caps.latest.revision: 28
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.custom: seo-lt-2019
+ms.date: 08/01/2016
 ---
+
 # Create a Trace (SQL Server Profiler)
-  This topic describes how to use [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] to create a trace.  
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+This topic describes how to use [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] to create a trace.  
   
 ### To create a trace  
   
@@ -26,7 +25,8 @@ manager: "jhubbard"
   
      The **Trace Properties** dialog box appears.  
   
-    > **NOTE:** The **Trace Properties** dialog box fails to appear, and the trace begins instead, if **Start tracing immediately after making connection** is selected. To turn off this setting, on the **Tools* *menu, click **Options**, and clear the Start tracing immediately after making connection check box.  
+    > [!NOTE]  
+    > The **Trace Properties** dialog box fails to appear, and the trace begins instead, if **Start tracing immediately after making connection** is selected. To turn off this setting, on the **Tools* *menu, click **Options**, and clear the Start tracing immediately after making connection check box.  
   
 2.  In the **Trace name** box, type a name for the trace.  
   
@@ -54,6 +54,5 @@ manager: "jhubbard"
  [Permissions Required to Run SQL Server Profiler](../../tools/sql-server-profiler/permissions-required-to-run-sql-server-profiler.md)   
  [SQL Server Profiler Templates and Permissions](../../tools/sql-server-profiler/sql-server-profiler-templates-and-permissions.md)   
  [SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler.md)   
- [Correlate a Trace with Windows Performance Log Data &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/correlate-a-trace-with-windows-performance-log-data-sql-server-profiler.md)  
-  
+ [Correlate a Trace with Windows Performance Log Data &#40;SQL Server Profiler&#41;](./correlate-a-trace-with-windows-performance-log-data.md)  
   

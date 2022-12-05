@@ -1,24 +1,15 @@
 ---
-title: "getWarnings Method (SQLServerConnection) | Microsoft Docs"
-ms.custom: ""
+title: "getWarnings Method (SQLServerConnection)"
+description: "getWarnings Method (SQLServerConnection)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.getWarnings"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.getWarnings"
 apitype: "Assembly"
-ms.assetid: 15af39bf-6285-44cc-a021-7341e7a055c4
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getWarnings Method (SQLServerConnection)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

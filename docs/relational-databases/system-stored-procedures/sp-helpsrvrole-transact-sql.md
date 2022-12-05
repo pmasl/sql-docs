@@ -1,14 +1,12 @@
 ---
+description: "sp_helpsrvrole (Transact-SQL)"
 title: "sp_helpsrvrole (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/20/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_helpsrvrole_TSQL"
   - "sp_helpsrvrole"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_helpsrvrole"
 ms.assetid: 5c7f39f3-c261-4f70-8beb-08242d4ac242
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_helpsrvrole (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a list of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] fixed server roles.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -41,7 +33,7 @@ sp_helpsrvrole [ [ @srvrolename = ] 'role' ]
 ```  
   
 ## Arguments  
- [ **@srvrolename=** ] **'***role***'**  
+`[ @srvrolename = ] 'role'`
  Is the name of the fixed server role. *role* is **sysname**, with a default of NULL. *role* can be one of the following values.  
   
 |Fixed server role|Description|  

@@ -1,24 +1,15 @@
 ---
-title: "position Method (SQLServerClob) | Microsoft Docs"
-ms.custom: ""
+title: "position Method (SQLServerClob)"
+description: "position Method (SQLServerClob)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerClob.position"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerClob.position"
 apitype: "Assembly"
-ms.assetid: 20e04cb0-34ea-4b7a-ba74-4de13b8645b6
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # position Method (SQLServerClob)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

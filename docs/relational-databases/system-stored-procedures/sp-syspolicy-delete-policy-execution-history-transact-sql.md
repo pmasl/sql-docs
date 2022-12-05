@@ -1,14 +1,12 @@
 ---
+description: "sp_syspolicy_delete_policy_execution_history (Transact-SQL)"
 title: "sp_syspolicy_delete_policy_execution_history (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_syspolicy_delete_policy_execution_history"
   - "sp_syspolicy_delete_policy_execution_history_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_syspolicy_delete_policy_execution_history"
 ms.assetid: fe651af9-267e-45ec-b4e7-4b0698fb1be3
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # sp_syspolicy_delete_policy_execution_history (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Deletes execution history for policies in Policy-Based Management. You can use this stored procedure to delete execution history for a specific policy or for all policies, and to delete execution history before a specific date.  
   
@@ -38,10 +34,10 @@ sp_syspolicy_delete_policy_execution_history [ @policy_id = ] policy_id ]
 ```  
   
 ## Arguments  
- [ **@policy_id=** ] *policy_id*  
+`[ @policy_id = ] policy_id`
  Is the identifier of the policy for which you want to delete the execution history. *policy_id* is **int**, and is required. Can be NULL.  
   
- [ **@oldest_date=** ] **'***oldest_date***'**  
+`[ @oldest_date = ] 'oldest_date'`
  Is the oldest date for which you want to keep policy execution history. Any execution history earlier than this date is deleted. *oldest_date* is **datetime**, and is required. Can be NULL.  
   
 ## Return Code Values  

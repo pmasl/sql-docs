@@ -1,24 +1,15 @@
 ---
-title: "setFetchSize Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "setFetchSize Method (SQLServerResultSet)"
+description: "setFetchSize Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.setFetchSize"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.setFetchSize"
 apitype: "Assembly"
-ms.assetid: 233bf4f8-4758-42d0-a80b-33e34fa78027
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setFetchSize Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

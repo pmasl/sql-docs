@@ -1,24 +1,17 @@
 ---
-title: "ConnectPromptEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ConnectPromptEnum"
+description: "ConnectPromptEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "ConnectPromptEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ConnectPromptEnum enumeration [ADO]"
-ms.assetid: 21026e24-62b7-4cc9-8aef-62c1fc6cba75
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ConnectPromptEnum
 Specifies whether a dialog box should be displayed to prompt for missing parameters when opening a connection to a data source.  
@@ -41,4 +34,4 @@ Specifies whether a dialog box should be displayed to prompt for missing paramet
 |AdoEnums.ConnectPrompt.NEVER|  
   
 ## Applies To  
- [Prompt Property-Dynamic (ADO)](../../../ado/reference/ado-api/prompt-property-dynamic-ado.md)
+ [Prompt Property-Dynamic (ADO)](./prompt-property-dynamic-ado.md)

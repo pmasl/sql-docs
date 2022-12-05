@@ -1,24 +1,15 @@
 ---
-title: "getMaxTableNameLength Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getMaxTableNameLength Method (SQLServerDatabaseMetaData)"
+description: "getMaxTableNameLength Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getMaxTableNameLength"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getMaxTableNameLength"
 apitype: "Assembly"
-ms.assetid: 5c51218f-c6e8-49f4-ad09-292e849ca43a
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getMaxTableNameLength Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

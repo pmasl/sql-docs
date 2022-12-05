@@ -1,25 +1,27 @@
 ---
+description: "FTP Connection Manager"
 title: "FTP Connection Manager | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
+f1_keywords: 
+  - "sql13.dts.designer.ftpconnectionmanager.f1"
 helpviewer_keywords: 
   - "FTP connection manager"
   - "connections [Integration Services], FTP"
   - "connection managers [Integration Services], FTP"
 ms.assetid: c4f43455-29ca-44ba-ac7f-ea729b1daf93
-caps.latest.revision: 41
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # FTP Connection Manager
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   An FTP connection manager enables a package to connect to a File Transfer Protocol (FTP) server. The FTP task that [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] includes uses this connection manager.  
   
  When you add an FTP connection manager to a package, [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] creates a connection manager that can be resolved as an FTP connection at run time, sets the connection manager properties, and adds the connection manager to the **Connections** collection on the package.  
@@ -47,16 +49,53 @@ manager: "jhubbard"
   
 ## Active/Passive Modes  
  An FTP connection manager can send and receive files using either active mode or passive mode. In active mode, the server initiates the data connection, and in passive mode, the client initiates the data connection.  
-  
+> [!NOTE]
+> Passive Mode is recommended for SSIS Integration Runtime (IR), as SSIS IR might not be able to accept incoming TCP connections.
+ 
 ## Configuration of the FTP Connection Manager  
  You can set properties through [!INCLUDE[ssIS](../../includes/ssis-md.md)] Designer or programmatically.  
   
- For information about the properties that you can set in [!INCLUDE[ssIS](../../includes/ssis-md.md)] Designer, see [FTP Connection Manager Editor](../../integration-services/connection-manager/ftp-connection-manager-editor.md).  
+ For information about the properties that you can set in [!INCLUDE[ssIS](../../includes/ssis-md.md)] Designer, see [FTP Connection Manager Editor]().  
   
  For information about configuring a connection manager programmatically, see <xref:Microsoft.SqlServer.Dts.Runtime.ConnectionManager> and [Adding Connections Programmatically](../../integration-services/building-packages-programmatically/adding-connections-programmatically.md).  
+  
+## FTP Connection Manager Editor
+  Use the **FTP Connection Manager Editor** dialog box to specify properties for connecting to an FTP server.  
+  
+> [!IMPORTANT]  
+>  The FTP connection manager supports only anonymous authentication and basic authentication. It does not support Windows Authentication.  
+  
+ To learn more about the FTP connection manager, see [FTP Connection Manager](../../integration-services/connection-manager/ftp-connection-manager.md).  
+  
+### Options  
+ **Server name**  
+ Provide the name of the FTP server.  
+  
+ **Server port**  
+ Specify the port number on the FTP server to use for the connection. The default value of this property is **21**.  
+  
+ **User name**  
+ Provide a user name to access the FTP server. The default value of this property is **anonymous**.  
+  
+ **Password**  
+ Provide the password to access the FTP server.  
+  
+ **Time-out (in seconds)**  
+ Specify the number of seconds the task takes before timing out. A value of **0** indicates an infinite amount of time. The default value of this property is **60**.  
+  
+ **Use passive mode**  
+ Specify whether the server or the client initiates the connection. The server initiates the connection in active mode, and the client activates the connection in passive mode. The default value of this property is **active mode**.  
+  
+ **Retries**  
+ Specify the number of times the task attempts to make a connection. A value of **0** indicates no limit to the number of attempts.  
+  
+ **Chunk size (in KB)**  
+ Provide a chunk size in kilobytes for transmitting data.  
+  
+ **Test Connection**  
+ After configuring the FTP Connection Manager, confirm that the connection is viable by clicking **Test Connection**.  
   
 ## See Also  
  [FTP Task](../../integration-services/control-flow/ftp-task.md)   
  [Integration Services &#40;SSIS&#41; Connections](../../integration-services/connection-manager/integration-services-ssis-connections.md)  
-  
   

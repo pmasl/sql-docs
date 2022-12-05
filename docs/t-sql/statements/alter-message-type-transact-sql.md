@@ -1,31 +1,24 @@
 ---
-title: "ALTER MESSAGE TYPE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "ALTER MESSAGE TYPE (Transact-SQL)"
+description: ALTER MESSAGE TYPE (Transact-SQL)
+author: markingmyname
+ms.author: maghan
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER_MESSAGE_TYPE_TSQL"
   - "ALTER MESSAGE TYPE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ALTER MESSAGE TYPE statement"
   - "modifying message types"
   - "message types [Service Broker], modifying"
-ms.assetid: 98c94176-2bdf-4725-b4bc-d33b6b14817d
-caps.latest.revision: 27
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ALTER MESSAGE TYPE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Changes the properties of a message type.  
   
@@ -33,8 +26,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql 
 ALTER MESSAGE TYPE message_type_name  
    VALIDATION =  
     {  NONE   
@@ -44,7 +36,10 @@ ALTER MESSAGE TYPE message_type_name
 [ ; ]  
 ```  
   
-## Arguments  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *message_type_name*  
  The name of the message type to change. Server, database, and schema names cannot be specified.  
   
@@ -76,7 +71,7 @@ ALTER MESSAGE TYPE message_type_name
 ## Examples  
  The following example changes the message type `//Adventure-Works.com/Expenses/SubmitExpense` to require that the message body contain a well-formed XML document.  
   
-```  
+```sql  
 ALTER MESSAGE TYPE  
     [//Adventure-Works.com/Expenses/SubmitExpense]  
     VALIDATION = WELL_FORMED_XML ;  

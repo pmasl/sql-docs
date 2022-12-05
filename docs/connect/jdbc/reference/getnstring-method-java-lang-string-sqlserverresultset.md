@@ -1,19 +1,12 @@
 ---
-title: "getNString Method (java.lang.String) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getNString Method (java.lang.String) (SQLServerResultSet)"
+description: "getNString Method (java.lang.String) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 546d77e2-723a-42ac-ba3f-fabf2395d376
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getNString Method (java.lang.String) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

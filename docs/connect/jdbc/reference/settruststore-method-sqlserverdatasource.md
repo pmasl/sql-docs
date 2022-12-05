@@ -1,24 +1,15 @@
 ---
-title: "setTrustStore Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "setTrustStore Method (SQLServerDataSource)"
+description: "setTrustStore Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "setTrustStore Method (SQLServerDataSource)"
-apilocation: 
-  - "setTrustStore Method (SQLServerDataSource)"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "setTrustStore Method (SQLServerDataSource)"
+apiname: "setTrustStore Method (SQLServerDataSource)"
 apitype: "Assembly"
-ms.assetid: bab5485d-4547-426c-adbe-44e2b5702d1d
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setTrustStore Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -48,7 +39,7 @@ public void setTrustStore(java.lang.String trustStore)
   
  For more information, see the SunX509 TrustManager Interface documentation on the Sun Microsystems Web site.  
   
- If the trustStore property is set to a string or an empty string "", the driver will use that value to find the trustStore file to validate the server SSL certificate.  
+ If the trustStore property is set to a string or an empty string "", the driver will use that value to find the trustStore file to validate the server TLS/SSL certificate.  
   
  The trustStorePassword property can be specified along with the trustStore property and its value is used to open the trustStore file. For more information, see [setTrustStorePassword](../../../connect/jdbc/reference/settruststorepassword-method-sqlserverdatasource.md).  
   

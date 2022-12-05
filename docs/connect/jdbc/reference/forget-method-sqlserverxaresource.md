@@ -1,24 +1,15 @@
 ---
-title: "forget Method (SQLServerXAResource) | Microsoft Docs"
-ms.custom: ""
+title: "forget Method (SQLServerXAResource)"
+description: "forget Method (SQLServerXAResource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerXAResource.forget"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerXAResource.forget"
 apitype: "Assembly"
-ms.assetid: 6d83138d-aa45-4d94-9da6-fdfe7ed28edc
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # forget Method (SQLServerXAResource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

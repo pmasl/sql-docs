@@ -1,26 +1,23 @@
 ---
+description: "Table Column Properties (SQL Server Management Studio)"
 title: "Table Column Properties (SQL Server Management Studio) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/08/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-tables"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: table-view-index
+ms.topic: conceptual
 f1_keywords: 
   - "vdtsql.chm:65558"
   - "vdtsql.chm:69657"
   - "vdt.ppg.columns"
 ms.assetid: 09830897-cc10-46b8-95f5-e0e9681b668c
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Table Column Properties (SQL Server Management Studio)
-[!INCLUDE[tsql-appliesto-ss2016-all_md](../../includes/tsql-appliesto-ss2016-all-md.md)]
+[!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]
 
   These properties appear in the bottom pane of Table Designer. Unless otherwise noted, you can edit these properties in the Properties window when the column is selected. The **Column Properties** can be displayed in categories or alphabetically. Many properties only appear or can only be changed for certain data types.  
   
@@ -79,7 +76,7 @@ manager: "jhubbard"
  Shows whether the data type of the selected column can be determined with certainty.  
   
  **DTS-published**  
- Shows whether the column is DTS-published. ([Data Transformation Services Is Deprecated](https://msdn.microsoft.com/library/cc707786(v=sql.130).aspx#Anchor_0)). 
+ Shows whether the column is DTS-published. ([Data Transformation Services Is Deprecated](/previous-versions/sql/sql-server-2008-r2/cc707786(v=sql.105))). 
   
  **Full-text Specification**  
  Displays information about a full-text index. The value of this property is the value of the **Is Full-text Indexed** child property and indicates whether this column is full-text indexed.  
@@ -133,5 +130,4 @@ manager: "jhubbard"
   
 > [!NOTE]  
 >  The length of a **(max)** data types vary for each row. **sp_help** returns (-1) as the length of **(max)** columns. [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] displays -1 as the column size.  
-  
   

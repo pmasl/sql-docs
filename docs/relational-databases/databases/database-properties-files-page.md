@@ -1,26 +1,23 @@
 ---
 title: "Database Properties (Files Page) | Microsoft Docs"
+description: "Find out how to view or modify a database's properties and how to create a new database in SQL Server Management Studio."
 ms.custom: ""
 ms.date: "03/09/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: configuration
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.databaseproperties.files.f1"
 ms.assetid: 3c030e51-db82-4b43-b1e5-8547ddd3de87
-caps.latest.revision: 42
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # Database Properties (Files Page)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use this page to create a new database, or view or modify properties for the selected database. This topic applies to the **Database Properties (Files Page)** for existing databases, and to the **New Database (General Page)**.  
   
-## UIElement List  
+## UI element list  
  **Database name**  
  Add or display the name of the database.  
   
@@ -28,7 +25,7 @@ manager: "jhubbard"
  Specify the owner of the database by selecting from the list.  
   
  **Use full-text indexing**  
- This check box is checked and disabled because full-text indexing is always enabled in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. For more information, see [Full-Text Search](../../relational-databases/search/full-text-search.md).  
+ This check box is checked and disabled because full-text indexing is always enabled in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. For more information, see [Full-Text Search](../../relational-databases/search/full-text-search.md).  
   
  **Database Files**  
  Add, view, modify, or remove database files for the associated database. Database files have the following properties:  

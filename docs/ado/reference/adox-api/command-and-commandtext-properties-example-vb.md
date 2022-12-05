@@ -1,27 +1,20 @@
 ---
-title: "Command and CommandText Properties Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Command and CommandText Properties Example (VB)"
+description: "Command and CommandText Properties Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "CommandText property [ADOX], Visual Basic example"
   - "Command property [ADOX], Visual Basic example"
-ms.assetid: 413263a8-05c0-4404-929d-69f82b987ba3
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Command and CommandText Properties Example (VB)
-The following code demonstrates how to use the [Command](../../../ado/reference/adox-api/command-property-adox.md) property to update the text of a procedure.  
+The following code demonstrates how to use the [Command](./command-property-adox.md) property to update the text of a procedure.  
   
 ```  
 ' BeginProcedureTextVB  
@@ -74,8 +67,8 @@ End Sub
 ```  
   
 ## See Also  
- [ActiveConnection Property (ADOX)](../../../ado/reference/adox-api/activeconnection-property-adox.md)   
- [Catalog Object (ADOX)](../../../ado/reference/adox-api/catalog-object-adox.md)   
- [Command Property (ADOX)](../../../ado/reference/adox-api/command-property-adox.md)   
- [Procedure Object (ADOX)](../../../ado/reference/adox-api/procedure-object-adox.md)   
- [Procedures Collection (ADOX)](../../../ado/reference/adox-api/procedures-collection-adox.md)
+ [ActiveConnection Property (ADOX)](./activeconnection-property-adox.md)   
+ [Catalog Object (ADOX)](./catalog-object-adox.md)   
+ [Command Property (ADOX)](./command-property-adox.md)   
+ [Procedure Object (ADOX)](./procedure-object-adox.md)   
+ [Procedures Collection (ADOX)](./procedures-collection-adox.md)

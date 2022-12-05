@@ -1,47 +1,28 @@
 ---
-title: "Use Object Explorer Details to Monitor Availability Groups | Microsoft Docs"
-ms.custom: ""
+title: "Use Object Explorer Details to Monitor Availability Groups"
+description: Learn how to use SQL Server Management Studio to monitor and manage existing Always On availability groups, availability replicas, and availability databases.
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.availabilitygroup.OEdetails.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Availability Groups [SQL Server], monitoring"
   - "Availability Groups [SQL Server], databases"
   - "Availability Groups [SQL Server]"
-ms.assetid: 84affc47-40e0-43d9-855e-468967068c35
-caps.latest.revision: 28
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Use Object Explorer Details to Monitor Availability Groups
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   This topic describes how to use the **Object Explorer Details** pane of [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] to monitor and manage existing Always On availability groups, availability replicas, and availability databases.  
   
 > [!NOTE]  
->  For information about using the Object Explorer Details pane, see [Object Explorer Details Pane](http://msdn.microsoft.com/library/b963e3c2-dc9e-4d38-bd28-2e00fe9e0e47).  
+>  For information about using the Object Explorer Details pane, see [Object Explorer Details Pane](../../../ssms/object/object-explorer-details-pane.md).  
   
--   **Before you begin:**  [Prerequisites](#Prerequisites)  
   
--   **To Monitor an Availability Group, using:**  [SQL Server Management Studio](#SSMSProcedure)  
-  
--   **Object Explorer Details:**  
-  
-     [Availability Groups Details](#AvGroupsDetails)  
-  
-     [Availability Replica Details](#AvReplicaDetails)  
-  
-     [Availability Database Details](#AvDbDetails)  
-  
-##  <a name="BeforeYouBegin"></a> Before You Begin  
-  
-###  <a name="Prerequisites"></a> Prerequisites  
+##  <a name="Prerequisites"></a> Prerequisites  
  You must be connected to the instance of [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] (server instance) that hosts either the primary replica or a secondary replica.  
   
 ##  <a name="SSMSProcedure"></a> Using SQL Server Management Studio  
@@ -126,7 +107,6 @@ manager: "jhubbard"
 |Value|Description|  
 |-----------|-----------------|  
 |Synchronizing|The secondary database has received the transaction log records for the primary database that are not yet written to disk (hardened).<br /><br /> Note: In asynchronous-commit mode, the synchronization state is always **Synchronizing**.|  
-|||  
   
  **Suspended**  
  Indicates whether the availability database is currently online. The possible values are as follows:  

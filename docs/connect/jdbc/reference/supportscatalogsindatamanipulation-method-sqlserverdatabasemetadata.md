@@ -1,24 +1,15 @@
 ---
-title: "supportsCatalogsInDataManipulation Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsCatalogsInDataManipulation Method"
+description: "supportsCatalogsInDataManipulation Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsCatalogsInDataManipulation"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsCatalogsInDataManipulation"
 apitype: "Assembly"
-ms.assetid: ee1af47a-4c04-4391-83a5-54ced80218c8
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsCatalogsInDataManipulation Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

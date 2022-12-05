@@ -1,28 +1,25 @@
 ---
+description: "MSSQLSERVER_4846"
 title: "MSSQLSERVER_4846 | Microsoft Docs"
 ms.custom: ""
 ms.date: "04/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 helpviewer_keywords: 
   - "4846 (Database Engine error)"
 ms.assetid: a455e809-1883-4c7d-b3e3-835ee5bfe258
-caps.latest.revision: 19
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_4846
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|SQL Server|  
 |Event ID|4846|  
 |Event Source|MSSQLSERVER|  
@@ -48,7 +45,7 @@ Follow these general steps to troubleshoot memory errors:
   
     -   **min memory per query**  
   
-    Notice any unusual settings. Correct them as necessary. Account for memory requirements for [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Default settings are listed in "Setting Server Configuration Options" in SQL Server Books Online.  
+    Notice any unusual settings. Correct them as necessary. Account for memory requirements for [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. Default settings are listed in "Setting Server Configuration Options" in SQL Server Books Online.  
   
 4.  Observe DBCC MEMORYSTATUS output and the way it changes when you see these error messages.  
   

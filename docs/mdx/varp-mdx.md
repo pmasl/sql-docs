@@ -1,28 +1,17 @@
 ---
+description: "VarP (MDX)"
 title: "VarP (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "VARP"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "VarP function [MDX]"
-ms.assetid: feca648d-bbc8-44c8-9a0e-38f66d914c72
-caps.latest.revision: 30
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # VarP (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../includes/tsql-appliesto-ss2008-all-md.md)]
+
 
   Returns the population variance of a numeric expression evaluated over a set, using the biased population formula (dividing by *n*-1).  
   

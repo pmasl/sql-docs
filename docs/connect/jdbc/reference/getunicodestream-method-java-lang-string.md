@@ -1,24 +1,15 @@
 ---
-title: "getUnicodeStream Method (java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "getUnicodeStream Method (java.lang.String)"
+description: "getUnicodeStream Method (java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getUnicodeStream (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getUnicodeStream (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: e8ea50a3-804a-4752-96e5-eb3d521f93c1
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getUnicodeStream Method (java.lang.String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

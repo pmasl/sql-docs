@@ -1,26 +1,24 @@
 ---
-title: "Bindings and Conversions (OLE DB) | Microsoft Docs"
-ms.custom: ""
+description: "SQL Server Native Client Conversions (OLE DB)"
+title: "Bindings and Conversions (OLE DB)"
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: 
+
 ms.topic: "reference"
 helpviewer_keywords: 
   - "conversions [OLE DB]"
   - "bindings [OLE DB]"
   - "OLE DB, bindings and conversions"
 ms.assetid: c187df58-a8c8-4c74-a76f-663abbc5f0c1
-caps.latest.revision: 20
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.custom: seo-dt-2019
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Conversions (OLE DB)
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# SQL Server Native Client Conversions (OLE DB)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   This section discusses how to convert between **datetime** and **datetimeoffset** values. The conversions described in this section are either already provided by OLE DB or are a consistent extension of OLE DB.  
   

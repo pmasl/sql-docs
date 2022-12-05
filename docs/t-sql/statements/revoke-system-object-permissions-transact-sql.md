@@ -1,27 +1,20 @@
 ---
-title: "REVOKE System Object Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "REVOKE System Object Permissions (Transact-SQL)"
+description: REVOKE System Object Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "REVOKE statement, system objects"
   - "permissions [SQL Server], system objects"
-ms.assetid: 84983238-dd7d-45bd-99bb-52c9d8e96a87
-caps.latest.revision: 20
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # REVOKE System Object Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Revokes permissions on system objects such as stored procedures, extended stored procedures, functions, and views from a principal.  
   
@@ -29,12 +22,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 REVOKE { SELECT | EXECUTE } ON [sys.]system_object FROM principal   
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  [**sys.**] .  
  The **sys** qualifier is required only when you are referring to catalog views and dynamic management views.  
   
@@ -64,7 +58,7 @@ REVOKE { SELECT | EXECUTE } ON [sys.]system_object FROM principal
 ## Examples  
  The following example revokes `EXECUTE` permission on `sp_addlinkedserver` from `public`.  
   
-```  
+```sql  
 REVOKE EXECUTE ON sys.sp_addlinkedserver FROM public;  
 GO  
 ```  

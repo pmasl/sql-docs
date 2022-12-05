@@ -1,31 +1,25 @@
 ---
-title: "sys.linked_logins (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.linked_logins (Transact-SQL)"
+description: sys.linked_logins (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.linked_logins"
   - "sys.linked_logins_TSQL"
   - "linked_logins_TSQL"
   - "linked_logins"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.linked_logins catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: af57bf0c-a265-410f-9bab-63b78569b4a6
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.linked_logins (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row per linked-server-login mapping, for use by RPC and distributed queries from local server to the corresponding linked server.  
   

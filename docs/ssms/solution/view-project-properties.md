@@ -1,24 +1,21 @@
 ---
-title: "View Project Properties | Microsoft Docs"
-ms.custom: ""
+description: "View Project Properties"
+title: "View Project Properties"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "projects [SQL Server Management Studio], viewing properties"
   - "viewing project properties"
 ms.assetid: 5537efab-19da-40a1-a201-20adc1d71e7e
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # View Project Properties
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 You can view properties associated with your projects in the Properties window.  
   
 ### To view project properties  

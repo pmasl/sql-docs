@@ -1,24 +1,15 @@
 ---
-title: "getBinaryStream Method (int) | Microsoft Docs"
-ms.custom: ""
+title: "getBinaryStream Method (int)"
+description: "getBinaryStream Method (int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getBinaryStream (int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getBinaryStream (int)"
 apitype: "Assembly"
-ms.assetid: de22a6c4-1ba3-4ed0-91a2-bf235c2ceec3
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getBinaryStream Method (int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -46,7 +37,7 @@ public java.io.InputStream getBinaryStream(int columnIndex)
 ## Remarks  
  This getBinaryStream method is specified by the getBinaryStream method in the java.sql.ResultSet interface.  
   
- This method can be used only with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] data types of binary, varbinary, varbinary(max), and image. Trying to use it with other data types will cause an exception to be thrown.  
+ This method can be used only with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] data types of binary, varbinary, varbinary(max), and image. Trying to use it with other data types will cause an exception to be thrown.  
   
  After this method gets the value as a stream, the value can then be read in chunks from the stream. This method is particularly suitable for retrieving large LONGVARBINARY values.  
   

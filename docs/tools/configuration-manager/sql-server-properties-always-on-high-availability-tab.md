@@ -1,22 +1,20 @@
 ---
-title: "SQL Server Properties (Always On High Availability Tab) | Microsoft Docs"
-ms.custom: ""
+title: "SQL Server Properties (Always On High Availability Tab)"
+description: To use availability groups as a high-availability and disaster-recovery solution, turn on the Always On Availability Groups feature in SQL Server.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: tools-other
+ms.topic: conceptual
 ms.assetid: d8630923-a600-4f1c-aca1-027453a3ec82
-caps.latest.revision: 13
 author: "MikeRayMSFT"
 ms.author: "mikeray"
-manager: "jhubbard"
+monikerRange: ">=sql-server-2016"
 ---
 # SQL Server Properties (Always On High Availability Tab)
-  Use the **Always On High Availability** tab of the **SQL Server Properties** dialog box in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Configuration Manager to enable or disable the Always On Availability Groups feature in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Enabling Always On Availability Groups is a prerequisite for an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] to use availability groups as a high availability and disaster recovery solution.  
+[!INCLUDE [SQL Server Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
+  Use the **Always On High Availability** tab of the **SQL Server Properties** dialog box in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Configuration Manager to enable or disable the Always On Availability Groups feature in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. Enabling Always On Availability Groups is a prerequisite for an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] to use availability groups as a high availability and disaster recovery solution.  
   
 ##  <a name="Prerequisites"></a> Prerequisites  
  To be enabled for Always On Availability Groups, a server instance must meet the following prerequisites:  
@@ -30,7 +28,7 @@ manager: "jhubbard"
 -   Enable Always On Availability Groups for only one server instance at a time. After enabling Always On Availability Groups, wait until the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] service has restarted before you enable the next server instance.  
   
 > [!NOTE]  
->  For information about feature support and for information about additional prerequisites, restrictions, and recommendations for [!INCLUDE[ssHADR](../../includes/sshadr-md.md)], see [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] Books Online.  
+>  For information about feature support and for information about additional prerequisites, restrictions, and recommendations for [!INCLUDE[ssHADR](../../includes/sshadr-md.md)], see [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Books Online.  
   
 ## Dialog Options  
  **Windows failover cluster name**  
@@ -46,9 +44,9 @@ manager: "jhubbard"
     > [!TIP]  
     >  After disabling Always On Availability Groups, you should remove any local availability replicas from the server instance. If you remove the last replica of a given availability group, you should also remove the group.  
   
-## UIElement List  
+## UI element list  
   
 > [!NOTE]  
->  For more information about follow up after you disable Always On Availability Groups and for information about how to create and configure availability groups, see [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] Books Online.  
+>  For more information about follow up after you disable Always On Availability Groups and for information about how to create and configure availability groups, see [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Books Online.  
   
   

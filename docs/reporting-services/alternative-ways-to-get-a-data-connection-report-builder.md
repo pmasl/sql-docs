@@ -1,21 +1,14 @@
 ---
 title: "Alternative Ways to Get a Data Connection (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/15/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-applies_to: 
-  - "SQL Server 2016"
+description: Learn details about alternative ways to connect to an external data source, such as a SQL Server database.
+ms.date: 06/15/2016
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+ms.topic: conceptual
 ms.assetid: aebc5f3d-97d5-4d54-b525-753fed073a9a
-caps.latest.revision: 7
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Alternative Ways to Get a Data Connection (Report Builder)
 A data connection contains the information to connect to an external data source such as a [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] database. Usually, you get the connection information and the type of credentials to use from the data source owner.  
@@ -35,13 +28,13 @@ To use a shared data source, you browse to a report server and select one. Usual
   
 2.  From the list of data sources, select a data source that you have permission to access.  
   
-3.  To verify that you can connect to the data source, click **Test Connection**. The message "Connection created successfully" appears. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+3.  To verify that you can connect to the data source, click **Test Connection**. The message "Connection created successfully" appears. Select **OK**.
   
 4.  Click **Next**.  
   
     If necessary, enter your credentials. To save the credentials locally, select **Save password with connection**. If you don't select this option, you will be prompted for credentials every time that you run the report  
   
-5.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+5.  Select **OK**.
   
 ### To specify a data connection by browsing to a shared data source on a report server  
   
@@ -63,13 +56,13 @@ To use a shared data source, you browse to a report server and select one. Usual
   
 6.  To verify that you can connect to the data source, click **Test Connection**.  
   
-    The message "Connection created successfully" appears. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+    The message "Connection created successfully" appears. Select **OK**.
   
 7.  Click **Next**.  
   
 8.  If you are prompted for a user name and password, enter your credentials. To save the credentials locally, select **Save password with connection**.  
   
-9. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+9. Select **OK**.
   
 ## See Also  
 [Report Datasets &#40;SSRS&#41;](../reporting-services/report-data/report-datasets-ssrs.md)  

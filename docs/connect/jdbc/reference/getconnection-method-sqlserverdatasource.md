@@ -1,24 +1,15 @@
 ---
-title: "getConnection Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "getConnection Method (SQLServerDataSource)"
+description: "getConnection Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDataSource.getConnection"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDataSource.getConnection"
 apitype: "Assembly"
-ms.assetid: a15ee185-f433-4915-9c75-5ebd90c758fd
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getConnection Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

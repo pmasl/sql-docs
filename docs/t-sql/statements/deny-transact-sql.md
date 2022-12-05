@@ -1,20 +1,16 @@
 ---
-title: "DENY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: DENY (Transact-SQL)
+description: DENY (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "05/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DENY"
   - "DENY_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "schema-level securables [SQL Server]"
   - "security [SQL Server], denying access"
   - "DENY statement"
@@ -25,14 +21,14 @@ helpviewer_keywords:
   - "principal security [SQL Server]"
   - "database-level securables [SQL Server]"
   - "denying permissions [SQL Server]"
-ms.assetid: c32d1e01-9ee9-4665-a516-fcfece58078e
-caps.latest.revision: 48
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
+
 # DENY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Denies a permission to a principal. Prevents that principal from inheriting the permission through its group or role memberships. DENY takes precedence over all permissions, except that DENY does not apply to object owners or members of the sysadmin fixed server role.
   **Security Note** Members of the sysadmin fixed server role and object owners cannot be denied permissions."
@@ -41,7 +37,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 -- Syntax for SQL Server and Azure SQL Database  
   
 -- Simplified syntax for DENY  
@@ -59,8 +55,8 @@ DENY   { ALL [ PRIVILEGES ] }
 { see the tables below }  
 ```  
   
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 DENY   
     <permission> [ ,...n ]  
@@ -83,7 +79,9 @@ DENY
 }  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  ALL  
  This option does not deny all possible permissions. Denying ALL is equivalent to denying the following permissions.  
   
@@ -124,7 +122,8 @@ DENY
  Indicates that the permission is denied to the specified principal and to all other principals to which the principal granted the permission. Required when the principal has the permission with GRANT OPTION.  
   
  AS *principal*  
-  Use the AS principal clause to indicate that the principal recorded as the denier of the permission should be a principal other than the person executing the statement. For example, presume that user Mary is principal_id 12 and user Raul is principal 15. Mary executes `DENY SELECT ON OBJECT::X TO Steven WITH GRANT OPTION AS Raul;` Now the sys.database_permissions table will indicate that the grantor_prinicpal_id of the deny statement was 15 (Raul) even though the statement was actually executed by user 13 (Mary).
+ Specifies the principal from which the principal executing this query derives its right to deny the permission.
+ Use the AS principal clause to indicate that the principal recorded as the denier of the permission should be a principal other than the person executing the statement. For example, presume that user Mary is principal_id 12 and user Raul is principal 15. Mary executes `DENY SELECT ON OBJECT::X TO Steven WITH GRANT OPTION AS Raul;` Now the sys.database_permissions table will indicate that the grantor_prinicpal_id of the deny statement was 15 (Raul) even though the statement was actually executed by user 13 (Mary).
   
 The use of AS in this statement does not imply the ability to impersonate another user.  
   
@@ -149,11 +148,12 @@ The use of AS in this statement does not imply the ability to impersonate anothe
   
  Grantees of CONTROL SERVER permission, such as members of the sysadmin fixed server role, can deny any permission on any securable in the server. Grantees of CONTROL permission on the database, such as members of the db_owner fixed database role, can deny any permission on any securable in the database. Grantees of CONTROL permission on a schema can deny any permission on any object in the schema. If the AS clause is used, the specified principal must own the securable on which permissions are being denied.  
   
-## Examples  
+## Examples
+
  The following table lists the securables and the topics that describe the securable-specific syntax.  
   
-|||  
-|-|-|  
+|Securables|Syntax|
+|----------|------|
 |Application Role|[DENY Database Principal Permissions &#40;Transact-SQL&#41;](../../t-sql/statements/deny-database-principal-permissions-transact-sql.md)|  
 |Assembly|[DENY Assembly Permissions &#40;Transact-SQL&#41;](../../t-sql/statements/deny-assembly-permissions-transact-sql.md)|  
 |Asymmetric Key|[DENY Asymmetric Key Permissions &#40;Transact-SQL&#41;](../../t-sql/statements/deny-asymmetric-key-permissions-transact-sql.md)|  

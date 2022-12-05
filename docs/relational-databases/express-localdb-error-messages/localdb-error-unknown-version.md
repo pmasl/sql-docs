@@ -1,26 +1,23 @@
 ---
+description: "LOCALDB_ERROR_UNKNOWN_VERSION"
 title: "LOCALDB_ERROR_UNKNOWN_VERSION | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: performance
 ms.topic: "reference"
 ms.assetid: f2a04023-ed42-4516-b59c-7a1b8a5395d4
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # LOCALDB_ERROR_UNKNOWN_VERSION
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |
+| --------- | ----- |
 |Product Name|SQL Server|  
 |Event ID|269|  
 |Event Source|SQL Server Local Database Runtime 12.0|  

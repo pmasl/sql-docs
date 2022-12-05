@@ -1,13 +1,11 @@
 ---
 title: "position Function (XQuery) | Microsoft Docs"
+description: Learn about the XQuery function position() that returns an integer value indicating the position of a context item within a sequence of items.  
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: xml
 ms.topic: "language-reference"
 dev_langs: 
   - "XML"
@@ -15,13 +13,11 @@ helpviewer_keywords:
   - "position function"
   - "fn:position function"
 ms.assetid: f1bab9e4-1715-4c06-9cb0-06c7e0c9c97f
-caps.latest.revision: 29
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "rothja"
+ms.author: "jroth"
 ---
 # Context Functions - position (XQuery)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
 
   Returns an integer value that indicates the position of the context item within the sequence of items currently being processed.  
   
@@ -43,7 +39,7 @@ fn:position() as xs:integer
   
 ```  
 SELECT CatalogDescription.query('  
-     declare namespace pd="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelDescription";  
+     declare namespace pd="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelDescription";  
      <Product>   
           { /pd:ProductDescription/@ProductModelID }  
           { /pd:ProductDescription/@ProductModelName }   
@@ -79,18 +75,18 @@ WHERE CatalogDescription is not null
   
 ```  
 <Product ProductModelID="19" ProductModelName="Mountain 100">  
-  <p1:Warranty xmlns:p1="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelWarrAndMain">  
+  <p1:Warranty xmlns:p1="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelWarrAndMain">  
     <p1:WarrantyPeriod>3 year</p1:WarrantyPeriod>  
     <p1:Description>parts and labor</p1:Description>  
   </p1:Warranty>  
-  <p2:Maintenance xmlns:p2="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelWarrAndMain">  
+  <p2:Maintenance xmlns:p2="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelWarrAndMain">  
     <p2:NoOfYears>10</p2:NoOfYears>  
     <p2:Description>maintenance contact available through your dealer or  
                     any AdventureWorks retail store.</p2:Description>  
   </p2:Maintenance>  
   <there-is-more/>  
 </Product>   
-…  
+...  
 ```  
   
 ## See Also  

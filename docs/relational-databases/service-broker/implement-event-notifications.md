@@ -1,25 +1,22 @@
 ---
+description: "Implement Event Notifications"
 title: "Implement Event Notifications | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: 
+ms.topic: conceptual
 helpviewer_keywords: 
   - "event notifications [SQL Server], target service"
   - "target service [SQL Server]"
   - "event notifications [SQL Server], creating"
 ms.assetid: 29ac8f68-a28a-4a77-b67b-a8663001308c
-caps.latest.revision: 34
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # Implement Event Notifications
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   To implement an event notification, you must first create a target service to receive event notifications, and then create the event notification.  
   
 > [!IMPORTANT]  
@@ -29,7 +26,7 @@ manager: "jhubbard"
  You do not have to create a [!INCLUDE[ssSB](../../includes/sssb-md.md)]-initiating service because [!INCLUDE[ssSB](../../includes/sssb-md.md)] includes the following specific message type and contract for event notifications:  
   
 ```  
-http://schemas.microsoft.com/SQL/Notifications/PostEventNotification  
+https://schemas.microsoft.com/SQL/Notifications/PostEventNotification  
 ```  
   
  The target service that receives event notifications must honor this preexisting contract.  

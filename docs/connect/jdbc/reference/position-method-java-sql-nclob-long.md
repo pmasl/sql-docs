@@ -1,19 +1,12 @@
 ---
-title: "position Method (java.sql.NClob, long) | Microsoft Docs"
-ms.custom: ""
+title: "position Method (java.sql.NClob, long)"
+description: "position Method (java.sql.NClob, long)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: f2354278-d128-4cf4-a170-22c05fcb763b
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # position Method (java.sql.NClob, long)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,21 +1,17 @@
 ---
+description: "INDEX Command"
 title: "INDEX Command | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "index command [ODBC]"
 ms.assetid: 694e8cf5-2f69-4001-9c1e-b735a4da3aff
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # INDEX Command
 Creates an index file to display and access table records in a logical order.  
@@ -25,11 +21,11 @@ Creates an index file to display and access table records in a logical order.
 ```  
   
 INDEX ON eExpression TO IDXFileName | TAG TagName [OF CDXFileName]  
-   [FOR lExpression]  
-   [COMPACT]  
-   [ASCENDING | DESCENDING]  
-   [UNIQUE | CANDIDATE]  
-   [ADDITIVE]  
+   [FOR lExpression]  
+   [COMPACT]  
+   [ASCENDING | DESCENDING]  
+   [UNIQUE | CANDIDATE]  
+   [ADDITIVE]  
 ```  
   
 ## Arguments  

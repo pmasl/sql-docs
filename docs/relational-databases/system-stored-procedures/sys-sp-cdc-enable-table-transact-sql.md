@@ -1,14 +1,12 @@
 ---
+description: "sys.sp_cdc_enable_table (Transact-SQL)"
 title: "sys.sp_cdc_enable_table (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sys.sp_cdc_enable_table_TSQL"
   - "sp_cdc_enable_table_TSQL"
@@ -21,21 +19,15 @@ helpviewer_keywords:
   - "sys.sp_cdc_enable_table"
   - "sp_cdc_enable_table"
 ms.assetid: 26150c09-2dca-46ad-bb01-3cb3165bcc5d
-caps.latest.revision: 42
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sys.sp_cdc_enable_table (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Enables change data capture for the specified source table in the current database. When a table is enabled for change data capture, a record of each data manipulation language (DML) operation applied to the table is written to the transaction log. The change data capture process retrieves this information from the log and writes it to change tables that are accessed by using a set of functions.  
   
- Change data capture is not available in every edition of [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2016](~/sql-server/editions-and-supported-features-for-sql-server-2016.md).  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
+ Change data capture is not available in every edition of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2016](~/sql-server/editions-and-supported-features-for-sql-server-2016.md).  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -56,27 +48,27 @@ sys.sp_cdc_enable_table
 ```  
   
 ## Arguments  
- [ **@source_schema =** ] **'***source_schema***'**  
+`[ @source_schema = ] 'source_schema'`
  Is the name of the schema in which the source table belongs. *source_schema* is **sysname**, with no default, and cannot be NULL.  
   
- [ **@source_name =** ] **'***source_name***'**  
+`[ @source_name = ] 'source_name'`
  Is the name of the source table on which to enable change data capture. *source_name* is **sysname**, with no default, and cannot be NULL.  
   
  *source_name* must exist in the current database. Tables in the **cdc** schema cannot be enabled for change data capture.  
   
- [ **@role_name =** ] **'***role_name***'**  
+`[ @role_name = ] 'role_name'`
  Is the name of the database role used to gate access to change data. *role_name* is **sysname** and must be specified. If explicitly set to NULL, no gating role is used to limit access to the change data.  
   
  If the role currently exists, it is used. If the role does not exist, an attempt is made to create a database role with the specified name. The role name is trimmed of white space at the right of the string before attempting to create the role. If the caller is not authorized to create a role within the database, the stored procedure operation fails.  
   
- [ **@capture_instance =** ] **'***capture_instance***'**  
+`[ @capture_instance = ] 'capture_instance'`
  Is the name of the capture instance used to name instance-specific change data capture objects. *capture_instance* is **sysname** and cannot be NULL.  
   
  If not specified, the name is derived from the source schema name plus the source table name in the format *schemaname_sourcename*. *capture_instance* cannot exceed 100 characters and must be unique within the database. Whether specified or derived, *capture_instance* is trimmed of any white space to the right of the string.  
   
  A source table can have a maximum of two capture instances. For more information see, [sys.sp_cdc_help_change_data_capture &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-help-change-data-capture-transact-sql.md).  
   
- [ **@supports_net_changes =** ] *supports_net_changes*  
+`[ @supports_net_changes = ] supports_net_changes`
  Indicates whether support for querying for net changes is to be enabled for this capture instance. *supports_net_changes* is **bit** with a default of 1 if the table has a primary key or the table has a unique index that has been identified by using the @index_name parameter. Otherwise, the parameter defaults to 0.  
   
  If 0, only the support functions to query for all changes are generated.  
@@ -85,10 +77,10 @@ sys.sp_cdc_enable_table
   
  If *supports_net_changes* is set to 1, *index_name* must be specified, or the source table must have a defined primary key.  
   
- [ **@index_name =** ] **'***index_name*'  
+`[ @index_name = ] 'index_name_'`
  The name of a unique index to use to uniquely identify rows in the source table. *index_name* is **sysname** and can be NULL. If specified, *index_name* must be a valid unique index on the source table. If *index_name* is specified, the identified index columns takes precedence over any defined primary key columns as the unique row identifier for the table.  
   
- [ **@captured_column_list =** ] **'***captured_column_list***'**  
+`[ @captured_column_list = ] 'captured_column_list'`
  Identifies the source table columns that are to be included in the change table. *captured_column_list* is **nvarchar(max)** and can be NULL. If NULL, all columns are included in the change table.  
   
  Column names must be valid columns in the source table. Columns defined in a primary key index, or columns defined in an index referenced by *index_name* must be included.  
@@ -97,19 +89,24 @@ sys.sp_cdc_enable_table
   
  *captured_column_list* cannot contain the following reserved column names: **__$start_lsn**, **__$end_lsn**, **__$seqval**, **__$operation**, and **__$update_mask**.  
   
- [ **@filegroup_name =** ] **'***filegroup_name***'**  
+`[ @filegroup_name = ] 'filegroup_name'`
  Is the filegroup to be used for the change table created for the capture instance. *filegroup_name* is **sysname** and can be NULL. If specified, *filegroup_name* must be defined for the current database. If NULL, the default filegroup is used.  
   
  We recommend creating a separate filegroup for change data capture change tables.  
   
- [ **@allow_partition_switch=** ] **'***allow_partition_switch***'**  
+`[ @allow_partition_switch = ] 'allow_partition_switch'`
  Indicates whether the SWITCH PARTITION command of ALTER TABLE can be executed against a table that is enabled for change data capture. *allow_partition_switch* is **bit**, with a default of 1.  
   
  For nonpartitioned tables, the switch setting is always 1, and the actual setting is ignored. If the switch is explicitly set to 0 for a nonpartitioned table, warning 22857 is issued to indicate that the switch setting has been ignored. If the switch is explicitly set to 0 for a partitioned table, the warning 22356 is issued to indicate that partition switch operations on the source table will be disallowed. Finally, if the switch setting is either set explicitly to 1 or allowed to default to 1 and the enabled table is partitioned, warning 22855 is issued to indicate that partition switches will not be blocked. If any partition switches occur, change data capture will not track the changes resulting from the switch. This will cause data inconsistencies when the change data is consumed.  
   
 > [!IMPORTANT]  
 >  SWITCH PARTITION is a metadata operation, but it causes data changes. The data changes that are associated with this operation are not captured in the change data capture change tables. Consider a table that has three partitions, and changes are made to this table. The capture process will track user insert, update, and delete operations that are executed against the table. However, if a partition is switched out to another table (for example, to perform a bulk delete), the rows that were moved as part of this operation will not be captured as deleted rows in the change table. Similarly, if a new partition that has prepopulated rows is added to the table, these rows will not be reflected in the change table. This can cause data inconsistency when the changes are consumed by an application and applied to a destination.  
-  
+ 
+> [!NOTE] 
+> If you enable partition switching on SQL Server 2008 R2 through the current version, you might also need split and merge operations in near future. Before executing a split or merge operation on a replicated or CDC enabled table ensure that the partition in question does not have any pending replicated commands. You should also ensure that no DML operations are executed on the partition during the split and merge operations. If there are transactions which the log reader or CDC capture job has not processed, or if DML operations are performed on a partition of a replicated or CDC enabled table while a split or merge operation is executed (involving the same partition), it could lead to a processing error (error 608 - No catalog entry found for partition ID) with log reader agent or CDC capture job. In order to correct the error, it might require a reinitialization of the subscription or disabling CDC on that table or database.
+
+
+
 ## Return Code Values  
  **0** (success) or **1** (failure)  
   

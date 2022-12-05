@@ -1,26 +1,21 @@
 ---
-title: "Rebuild Index Task (Maintenance Plan) | Microsoft Docs"
-ms.custom: ""
+title: "Rebuild Index Task (Maintenance Plan)"
+description: Learn how to re-create the indexes on the tables in a SQL Server database with a new fill factor by using the Rebuild Index Task.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "07/21/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: supportability
+ms.topic: conceptual
+f1_keywords:
   - "reindex"
   - "sql13.swb.maint.reindex.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Rebuild Index Task dialog box"
 ms.assetid: 33e2940b-139f-4563-b0cb-5683f08bd879
-caps.latest.revision: 42
-author: "MightyPen"
-ms.author: "genemi"
-manager: "craigg"
 ---
 # Rebuild Index Task (Maintenance Plan)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use the **Rebuild Index Task** dialog to re-create the indexes on the tables in the database with a new fill factor. The fill factor determines the amount of empty space on each page in the index, to accommodate future expansion. As data is added to the table, the free space fills because the fill factor is not maintained. Reorganizing data and index pages can re-establish the free space.  
   
  The **Rebuild Index Task** uses the ALTER INDEX statement. For more info about the options described on this page, see [ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md).  
@@ -75,8 +70,8 @@ manager: "craigg"
  **Keep index online**  
  Use the `ONLINE` option which allows users to access the underlying table or clustered index data and any associated nonclustered indexes during index operations.  
   
-> [!NOTE]  
->  Online index operations are not available in every edition of [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2016](~/sql-server/editions-and-supported-features-for-sql-server-2016.md).  
+> [!NOTE]
+>  Online index operations are not available in every edition of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2016](~/sql-server/editions-and-supported-features-for-sql-server-2016.md).  
   
  **Do not rebuild indexes | Rebuild indexes offline**  
  Specify what to do for index types that cannot be rebuilt while they are online.  

@@ -1,57 +1,37 @@
 ---
-title: "Create Synonyms | Microsoft Docs"
+description: "Create Synonyms"
+title: "Create Synonyms"
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
+ms.date: "02/01/2022"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.synonym.general.f1"
 helpviewer_keywords: 
   - "creating synonyms"
   - "synonyms [SQL Server], creating"
-ms.assetid: fedfa7a5-d0b6-4e2b-90f4-a08122958e33
-caps.latest.revision: 7
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Create Synonyms
-  This topic describes how to create a synonym in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
-  
- **In This Topic**  
-  
--   **Before you begin:**  
-  
-     [Security](#Security)  
-  
--   **To create a synonym, using:**  
-  
-     [SQL Server Management Studio](#SSMSProcedure)  
-  
-     [Transact-SQL](#TsqlProcedure)  
-  
-##  <a name="BeforeYouBegin"></a> Before You Begin  
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+  This article describes how to create a synonym in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
   
 ###  <a name="Security"></a> Security  
  To create a synonym in a given schema, a user must have CREATE SYNONYM permission and either own the schema or have ALTER SCHEMA permission. The CREATE SYNONYM permission is a grantable permission.  
+   
+##  <a name="SSMSProcedure"></a> Use SQL Server Management Studio  
   
-####  <a name="Permissions"></a> Permissions  
-  
-##  <a name="SSMSProcedure"></a> Using SQL Server Management Studio  
-  
-#### To Create a Synonym  
+### Create a Synonym  
   
 1.  In **Object Explorer**, expand the database where you want to create your new view.  
   
-2.  Right-click the **Synonyms** folder, then click **New Synonym…**.  
+2.  Right-click the **Synonyms** folder, then select **New Synonym...**.  
   
 3.  In the **Add Synonym** dialog box, enter the following information.  
-  
+
      **Synonym name**  
      Type the new name you will use for this object.  
   
@@ -73,20 +53,20 @@ manager: "jhubbard"
      **Object name**  
      Type the name of the object to which the synonym refers.  
   
-##  <a name="TsqlProcedure"></a> Using Transact-SQL  
+##  <a name="TsqlProcedure"></a> Use Transact-SQL  
   
-#### To Create a Synonym  
+### Create a Synonym
   
 1.  Connect to the [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
-2.  From the Standard bar, click **New Query**.  
+2.  From the Standard bar, select **New Query**.  
   
-3.  Copy and paste the following examples into the query window and click **Execute**.  
+3.  Copy and paste the following examples into the query window and select **Execute**.  
   
 ###  <a name="TsqlExample"></a> Example (Transact-SQL)  
  The following example creates a synonym for an existing table in the [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] database. The synonym is then used in subsequent examples.  
   
-```  
+```sql  
 USE tempdb;  
 GO  
 CREATE SYNONYM MyAddressType  
@@ -96,7 +76,7 @@ GO
   
  The following example inserts a row into the base table that is referenced by the `MyAddressType` synonym.  
   
-```  
+```sql  
 USE tempdb;  
 GO  
 INSERT INTO MyAddressType (Name)  
@@ -106,11 +86,13 @@ GO
   
  The following example demonstrates how a synonym can be referenced in dynamic SQL.  
   
-```  
+```sql  
 USE tempdb;  
 GO  
 EXECUTE ('SELECT Name FROM MyAddressType');  
 GO  
 ```  
-  
-  
+
+## Next steps
+
+- [CREATE SYNONYM (Transact-SQL)](../../t-sql/statements/create-synonym-transact-sql.md)

@@ -1,21 +1,27 @@
 ---
-title: "Microsoft Connectors for Oracle and Teradata by Attunity (SSIS) | Microsoft Docs"
+description: "Microsoft Connectors for Oracle and Teradata by Attunity for Integration Services (SSIS)"
+title: "Microsoft Connectors for Oracle and Teradata by Attunity | Microsoft Docs"
 
-ms.date: "05/16/2017"
-ms.prod: "sql-server-2016"
+ms.date: "08/16/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.custom: ""
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: 
-caps.latest.revision: 
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Microsoft Connectors for Oracle and Teradata by Attunity for Integration Services (SSIS)
+
+[!INCLUDE[sqlserver-ssis](../includes/applies-to-version/sqlserver-ssis.md)]
+
+> [!NOTE]
+> Atunity Connectors for Oracle and Teradata support SQL Server 2017 and below.
+>
+> From SQL Server 2019, get latest connectors for Oracle and Teradata here:
+> - [Microsoft connector for Oracle](data-flow/oracle-connector.md)
+> - [Microsoft connector for Teradata](data-flow/teradata-connector.md)
 
 You can download connectors for Integration Services by Attunity that optimize performance when loading data to or from Oracle or Teradata in an SSIS package.
 
@@ -36,7 +42,6 @@ Check the installed version of SSDT in Visual Studio from **Help** | **About Mic
 |---------|---------|---------|---------|
 |17|Starts with 14|SQL Server 2017|[Microsoft Connectors v5.0 for Oracle and Teradata](https://www.microsoft.com/download/details.aspx?id=55179)|
 |16|Starts with 13|SQL Server 2016|[Microsoft Connectors v4.0 for Oracle and Teradata](https://www.microsoft.com/download/details.aspx?id=52950)|
-||||
 
 ## Download the latest SQL Server Data Tools (SSDT)
 

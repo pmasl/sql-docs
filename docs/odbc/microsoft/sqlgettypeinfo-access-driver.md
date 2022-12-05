@@ -1,22 +1,18 @@
 ---
+description: "SQLGetTypeInfo (Access Driver)"
 title: "SQLGetTypeInfo (Access Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Access driver [ODBC], SQLGetTypeInfo"
   - "SQLGetTypeInfo function [ODBC], Access Driver"
 ms.assetid: a28b16eb-ca36-4297-9297-ecd7c107a84e
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLGetTypeInfo (Access Driver)
 > [!NOTE]  

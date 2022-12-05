@@ -1,9 +1,16 @@
+# Default .gitignore for a new provisioned repository in MicrosoftDocs org
+
 log/
+xhtml/
+packages/
 obj/
 _site/
+Tools/NuGet/
 .optemp/
-_themes/
-_themes.MSDN.Modern/
-_themes.VS.Modern/
 
+.openpublishing.build.mdproj
 .openpublishing.buildcore.ps1
+packages.config
+
+
+**/.vscode/settings.json

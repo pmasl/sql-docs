@@ -1,23 +1,19 @@
 ---
-title: "SQL Server, LogPool FreePool Object | Microsoft Docs"
+title: "SQL Server, LogPool FreePool object"
+description: Learn about the SQLServer:LogPool FreePool performance object, wich provides counters for statistics for the free pool inside the Log Pool.
 ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/13/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLServer:LogPool FreePool"
-ms.assetid: 8ffd569b-045f-4c3f-a473-4a491d6a1d80
-caps.latest.revision: 3
-author: "dagiro"
-ms.author: "v-dagir"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server, LogPool FreePool Object
+# SQL Server, LogPool FreePool object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 The **SQLServer:LogPool FreePool** performance object provides counters for statistics for the free pool inside the Log Pool.
 
 This following table describes the SQL Server **LogPool FreePool** performance objects.
@@ -29,6 +25,16 @@ This following table describes the SQL Server **LogPool FreePool** performance o
 
 There is one instance of the counter for each category of log pool.
 
-## See Also  
+  
+## Example
+
+You begin to explore the query performance counters in this object using this T-SQL query on the [sys.dm_os_performance_counters](../system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md) dynamic management view:
+
+```sql
+SELECT * FROM sys.dm_os_performance_counters
+WHERE object_name LIKE '%LogPool FreePool%';
+```  
+
+## See also  
 [Monitor Resource Usage (System Monitor)](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)
 

@@ -1,36 +1,17 @@
 ---
-title: "CREATE MINING MODEL (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "CREATE MINING MODEL"
-  - "CREATE"
-  - "CREATE_MINING_MODEL"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "RELATED TO column"
-  - "mining models [Analysis Services], creating"
-  - "column definition lists [DMX]"
-  - "parameter lists [DMX]"
-  - "SESSION clause"
-  - "CREATE MINING MODEL statement"
-ms.assetid: 43e4b591-7b34-494c-9b2d-7f0fe69af788
-caps.latest.revision: 57
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "CREATE MINING MODEL (DMX)"
+description: "CREATE MINING MODEL (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # CREATE MINING MODEL (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Creates both a new mining model and a mining structure in the database. You can create a model either by defining the new model in the statement, or by using the Predictive Model Markup Language (PMML). This second option is for advanced users only.  
   
@@ -61,7 +42,7 @@ CREATE MINING MODEL <model> FROM PMML <xml string>
  The name of a data mining algorithm, as defined by the current provider.  
   
 > [!NOTE]  
->  A list of the algorithms supported by the current provider can be retrieved by using [DMSCHEMA_MINING_SERVICES Rowset](../analysis-services/schema-rowsets/data-mining/dmschema-mining-services-rowset.md). To view the algorithms supported in the current instance of [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)], see [Data Mining Properties](../analysis-services/server-properties/data-mining-properties.md).  
+>  A list of the algorithms supported by the current provider can be retrieved by using [DMSCHEMA_MINING_SERVICES Rowset](/previous-versions/sql/sql-server-2012/ms126251(v=sql.110)). To view the algorithms supported in the current instance of [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)], see [Data Mining Properties](/analysis-services/server-properties/data-mining-properties).  
   
  *parameter list*  
  Optional. A comma-separated list of provider-defined parameters for the algorithm.  
@@ -108,13 +89,13 @@ CREATE MINING MODEL <model> FROM PMML <xml string>
   
  For a list of the data types, content types, column distributions, and modeling flags that you can use to define a column, see the following topics:  
   
--   [Data Types &#40;Data Mining&#41;](../analysis-services/data-mining/data-types-data-mining.md)  
+-   [Data Types &#40;Data Mining&#41;](/analysis-services/data-mining/data-types-data-mining)  
   
--   [Content Types &#40;Data Mining&#41;](../analysis-services/data-mining/content-types-data-mining.md)  
+-   [Content Types &#40;Data Mining&#41;](/analysis-services/data-mining/content-types-data-mining)  
   
--   [Column Distributions &#40;Data Mining&#41;](../analysis-services/data-mining/column-distributions-data-mining.md)  
+-   [Column Distributions &#40;Data Mining&#41;](/analysis-services/data-mining/column-distributions-data-mining)  
   
--   [Modeling Flags &#40;Data Mining&#41;](../analysis-services/data-mining/modeling-flags-data-mining.md)  
+-   [Modeling Flags &#40;Data Mining&#41;](/analysis-services/data-mining/modeling-flags-data-mining)  
   
  You can add a clause to the statement to describe the relationship between two columns. [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] supports the use of the following \<Column relationship> clause.  
   
@@ -132,15 +113,15 @@ CREATE MINING MODEL <model> FROM PMML <xml string>
  You can use the parameter list to adjust the performance and functionality of a mining model. The syntax of the parameter list is as follows:  
   
 ```  
-[<parameter> = <value>, <parameter> = <value>,…]  
+[<parameter> = <value>, <parameter> = <value>,...]  
 ```  
   
- For a list of the parameters that are associated with each algorithm, see [Data Mining Algorithms &#40;Analysis Services - Data Mining&#41;](../analysis-services/data-mining/data-mining-algorithms-analysis-services-data-mining.md).  
+ For a list of the parameters that are associated with each algorithm, see [Data Mining Algorithms &#40;Analysis Services - Data Mining&#41;](/analysis-services/data-mining/data-mining-algorithms-analysis-services-data-mining).  
   
 ## Remarks  
  If you want to create a model that has a built-in testing data set, you should use the statement CREATE MINING STRUCTURE followed by ALTER MINING STRUCTURE. However, not all model types support a holdout data set. For more information, see [CREATE MINING STRUCTURE &#40;DMX&#41;](../dmx/create-mining-structure-dmx.md).  
   
- For a walkthrough of how to create a mining model by using the CREATEMODEL statement, see [Time Series Prediction DMX Tutorial](http://msdn.microsoft.com/library/38ea7c03-4754-4e71-896a-f68cc2c98ce2).  
+ For a walkthrough of how to create a mining model by using the CREATEMODEL statement, see [Time Series Prediction DMX Tutorial](/previous-versions/sql/sql-server-2016/cc879270(v=sql.130)).  
   
 ## Naive Bayes Example  
  The following example uses the [!INCLUDE[msCoName](../includes/msconame-md.md)] Naive Bayes algorithm to create a new mining model. The Bike Buyer column is defined as the predictable attribute.  
@@ -204,5 +185,4 @@ USING Microsoft_Time_Series (PERIODICITY_HINT = '{12}', FORECAST_METHOD = 'ARTXP
  [Data Mining Extensions &#40;DMX&#41; Data Definition Statements](../dmx/dmx-statements-data-definition.md)   
  [Data Mining Extensions &#40;DMX&#41; Data Manipulation Statements](../dmx/dmx-statements-data-manipulation.md)   
  [Data Mining Extensions &#40;DMX&#41; Statement Reference](../dmx/data-mining-extensions-dmx-statements.md)  
-  
   

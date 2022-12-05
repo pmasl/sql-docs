@@ -1,13 +1,11 @@
 ---
-title: "AcceptPause Property (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "AcceptPause Property (SqlService Class)"
+title: "AcceptPause Property (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "AcceptPause Property (SqlService Class)"
@@ -16,12 +14,11 @@ apilocation:
 helpviewer_keywords: 
   - "AcceptPause property"
 ms.assetid: 4339e903-35ee-4395-b005-ca58b3a24a84
-caps.latest.revision: 34
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # AcceptPause Property (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the Boolean property value that specifies whether the service can be paused.  
   
 ## Syntax  
@@ -41,6 +38,6 @@ object.AcceptPause [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

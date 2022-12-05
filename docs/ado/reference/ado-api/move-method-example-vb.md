@@ -1,26 +1,19 @@
 ---
-title: "Move Method Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Move Method Example (VB)"
+description: "Move Method Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Move method [ADO], Visual Basic example"
-ms.assetid: 55eb797a-0205-40d2-a797-55b216d1d3bb
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Move Method Example (VB)
-This example uses the [Move](../../../ado/reference/ado-api/move-method-ado.md) method to position the record pointer based on user input.  
+This example uses the [Move](./move-method-ado.md) method to position the record pointer based on user input.  
   
 ```  
 'BeginMoveVB  
@@ -125,5 +118,5 @@ End Sub
 ```  
   
 ## See Also  
- [Move Method (ADO)](../../../ado/reference/ado-api/move-method-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [Move Method (ADO)](./move-method-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

@@ -1,29 +1,20 @@
 ---
-title: "TYPE_SS_SCROLL_KEYSET Field (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "TYPE_SS_SCROLL_KEYSET Field (SQLServerResultSet)"
+description: "TYPE_SS_SCROLL_KEYSET Field (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.TYPE_SS_SCROLL_KEYSET"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.TYPE_SS_SCROLL_KEYSET"
 apitype: "Assembly"
-ms.assetid: 2b16123e-07ab-4c73-9509-e0425910680b
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # TYPE_SS_SCROLL_KEYSET Field (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
 
-  Used to specify a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] keyset cursor type.  
+  Used to specify a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] keyset cursor type.  
   
 ## Syntax  
   

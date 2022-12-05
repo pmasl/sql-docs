@@ -1,15 +1,12 @@
 ---
 title: "Define Parameters in the MDX Query Designer for Analysis Services | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Learn how to define query parameters in the Multidimensional Expression (MDX) query designer for Analysis Services.
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: report-data
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "parameters [Reporting Services], MDX"
   - "Multidimensional Expressions [Reporting Services]"
@@ -17,10 +14,8 @@ helpviewer_keywords:
   - "MDX [Reporting Services], defining parameters"
   - "DMX [Reporting Services]"
 ms.assetid: 4ad1e5bc-f510-4752-b4f6-589e55317a90
-caps.latest.revision: 37
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Define Parameters in the MDX Query Designer for Analysis Services
   To parameterize an MDX query for an [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] data source, you must add a query parameter to the query. In the MDX query designer, you can add a query parameter in both Design mode and Query mode by specifying a filter. After you define the query with a query parameter, Reporting Services automatically creates a report parameter and a dataset to provide the list of valid values. This enables a user to specify a value that is passed directly to the query.  
@@ -46,7 +41,7 @@ manager: "erikre"
   
      After you run the query, click **Design** on the toolbar to toggle to Query mode to view the MDX query that was created. Do not change the query text in Query mode if you want to continue to use Design mode to develop the query. Click **Design** to toggle back to Design mode.  
   
-8.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+8.  Select **OK**.
   
      In the Report Data pane, expand the Parameters node to display the report parameter that was automatically created for the filter.  
   
@@ -70,11 +65,11 @@ manager: "erikre"
   
 8.  In the **Default** column, from the drop-down list, select a single value or multiple values depending on your choice in step 5.  
   
-9. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+9.  Select **OK**.
   
 10. On the query designer toolbar, click **Run**.  
   
-11. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+11. Select **OK**.
   
      In the Report Data pane, expand the Parameters node to display the report parameter that was automatically created for the filter.  
   

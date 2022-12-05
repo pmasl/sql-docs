@@ -1,26 +1,26 @@
 ---
-title: "DTAInput Element (DTA) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "DTAInput Element (DTA)"
+description: In the dta utility, the DTAInput element contains the definition of XML input for Database Engine Tuning Advisor.
+ms.service: sql
+ms.subservice: tools-other
+ms.topic: conceptual
 dev_langs: 
   - "XML"
 helpviewer_keywords: 
   - "DTAInput element"
 ms.assetid: 40c19abf-ded5-43de-be96-5b43b1b81b03
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: 03/01/2017
 ---
+
 # DTAInput Element (DTA)
-  Contains the definition of XML input for Database Engine Tuning Advisor.  
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Contains the definition of XML input for Database Engine Tuning Advisor.  
   
 ## Syntax  
   

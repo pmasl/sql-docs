@@ -1,28 +1,21 @@
 ---
-title: "GRANT System Object Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "GRANT System Object Permissions (Transact-SQL)"
+description: GRANT System Object Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "07/26/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "encryption [SQL Server], system objects"
   - "system objects [SQL Server]"
   - "GRANT statement, system objects"
-ms.assetid: 9d4e89f4-478f-419a-8b50-b096771e3880
-caps.latest.revision: 26
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # GRANT System Object Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Grants permissions on system objects such as system stored procedures, extended stored procedures, functions, and views.  
   
@@ -30,12 +23,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 GRANT { SELECT | EXECUTE } ON [ sys.]system_object TO principal   
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  [ sys.] .  
  The sys qualifier is required only when you are referring to catalog views and dynamic management views.  
   
@@ -60,7 +55,7 @@ GRANT { SELECT | EXECUTE } ON [ sys.]system_object TO principal
   
  The following query returns information about permissions of system objects:  
   
-```  
+```sql  
 SELECT * FROM master.sys.database_permissions AS dp   
     JOIN sys.system_objects AS so  
     ON dp.major_id = so.object_id  
@@ -76,7 +71,7 @@ GO
 ### A. Granting SELECT permission on a view  
  The following example grants the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login `Sylvester1` permission to select a view that lists [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins. The example then grants the additional permission that is required to view metadata on [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins that are not owned by the user.  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GRANT SELECT ON sys.sql_logins TO Sylvester1;  
 GRANT VIEW SERVER STATE to Sylvester1;  
@@ -86,7 +81,7 @@ GO
 ### B. Granting EXECUTE permission on an extended stored procedure  
  The following example grants `EXECUTE` permission on `xp_readmail` to `Sylvester1`.  
   
-```  
+```sql  
 GRANT EXECUTE ON xp_readmail TO Sylvester1;  
 GO  
 ```  

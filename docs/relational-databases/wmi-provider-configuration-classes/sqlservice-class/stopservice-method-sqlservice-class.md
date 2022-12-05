@@ -1,13 +1,11 @@
 ---
-title: "StopService Method (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "StopService Method (SqlService Class)"
+title: "StopService Method (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "StopService Method (SqlService Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "StopService method"
 ms.assetid: ef8e1856-4930-417a-8f52-be470fd3f15c
-caps.latest.revision: 34
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # StopService Method (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Attempts to place the service in the stopped state.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.StopService()
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

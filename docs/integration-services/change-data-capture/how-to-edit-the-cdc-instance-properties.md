@@ -1,21 +1,18 @@
 ---
+description: "How to Edit the CDC Instance Properties"
 title: "How to Edit the CDC Instance Properties | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: 7a6c719a-3735-43b7-b3ab-dfadd325eca2
-caps.latest.revision: 6
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # How to Edit the CDC Instance Properties
+
   This procedure describes how to use the CDC Designer Console to edit the configuration properties for a CDC instance.  
   
 ### To edit the CDC instance configuration properties  

@@ -1,24 +1,17 @@
 ---
 title: "Tutorial: Add a Bar Chart to Your Report (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/15/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-applies_to: 
-  - "SQL Server 2016"
+description: Learn how to use a wizard in Report Builder to create a bar chart in a Reporting Services paginated report.
+ms.date: 06/15/2016
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+ms.topic: conceptual
 ms.assetid: 6956ebd6-0217-4087-a4fa-5cc1c3804691
-caps.latest.revision: 14
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Tutorial: Add a Bar Chart to Your Report (Report Builder)
-In this tutorial, you use a wizard in [!INCLUDE[ssRBnoversion_md](../includes/ssrbnoversion-md.md)] to create a bar chart in a [!INCLUDE[ssRSnoversion_md](../includes/ssrsnoversion-md.md)] paginated report. Then you add a filter and enhance the chart. 
+In this tutorial, you use a wizard in [!INCLUDE[ssRBnoversion_md](../includes/ssrbnoversion.md)] to create a bar chart in a [!INCLUDE[ssRSnoversion_md](../includes/ssrsnoversion-md.md)] paginated report. Then you add a filter and enhance the chart. 
 
 A bar chart displays category data horizontally. This can help to:  
   
@@ -28,7 +21,7 @@ A bar chart displays category data horizontally. This can help to:
   
 The following illustration shows the bar chart that you will create, with sales for 2014 and 2015 for the top five salespeople, from most to least 2015 sales.  
   
-![report-builder-bar-chart](../reporting-services/media/report-builder-bar-chart.png) 
+![Screenshot of a report builder bar chart.](../reporting-services/media/report-builder-bar-chart.png) 
   
  
 > [!NOTE]  
@@ -124,7 +117,7 @@ By default, only some of the values on the vertical axis appear. You can change 
   
 3.  Under **Axis range and interval**, in the **Interval** box, type **1**.  
   
-4.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+4.  Select **OK**.
   
 5.  Click **Run** to preview the report.  
   
@@ -146,9 +139,9 @@ You can change the category expression to include last name followed by first na
   
     This expression concatenates the last name, a comma, and the first name.  
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
-7.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 8.  Click **Run** to preview the report.  
   
@@ -172,7 +165,7 @@ When you sort the data on a chart, you are changing the order of values on the c
   
 6.  in the **Order** list, select **A to Z** so that the names appear in order from largest to smallest 2015 sales.
   
-7.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 10. Click **Run** to preview the report.  
   
@@ -193,7 +186,7 @@ To improve the readability of the chart values, you might want to move the chart
   
     When the legend is placed at the top or bottom of a chart, the layout of the legend changes from vertical to horizontal. You can select a different layout from the **Layout** drop-down list.  
   
-5.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+5.  Select **OK**.
   
 6.  Click **Run** to preview the report.  
   
@@ -222,13 +215,14 @@ By default, the horizontal axis displays values in a general format that is auto
   
 5.  On the **Number** tab, select **Show values in Thousands**.  
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
 
 8.  Right-click the horizontal axis, and select **Show Axis Title**.
   
 7.  In the **Axis Title** box, type **Sales in thousands** and press Enter.  
 
-    >**Note:** While you're typing, the Axis Title box appears to be on the vertical axis. But when you press Enter, it goes to the horizontal axis.
+    > [!NOTE]  
+    > While you're typing, the Axis Title box appears to be on the vertical axis. But when you press Enter, it goes to the horizontal axis.
   
 9. Click **Run** to preview the report.  
   
@@ -255,7 +249,7 @@ You can add a filter to the chart to specify which data from the dataset to incl
   
 9. In **Value**, type the following expression: **=5**  
   
-10. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+10. Select **OK**.
   
 11. Click **Run** to preview the report.  
   
@@ -300,6 +294,6 @@ You have successfully completed the Adding a Bar Chart to Your Report tutorial. 
   
 ## See Also  
 [Report Builder Tutorials](../reporting-services/report-builder-tutorials.md)  
-[Report Builder in SQL Server 2016](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
+[Report Builder in SQL Server](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
   
 

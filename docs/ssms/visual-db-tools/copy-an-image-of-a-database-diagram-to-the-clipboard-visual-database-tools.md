@@ -1,24 +1,24 @@
 ---
-title: "Copy an Image of a Database Diagram to the Clipboard | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Copy an Image of a Database Diagram to the Clipboard (Visual Database Tools)"
+title: Copy an Image of a Database Diagram to the Clipboard
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Visual Database Tools [SQL Server], how-to topics"
   - "Visual Database Tools [SQL Server], database diagrams"
 ms.assetid: 7fa6b709-e023-49c8-8f0d-b4476402cd73
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Copy an Image of a Database Diagram to the Clipboard (Visual Database Tools)
+
+[!INCLUDE[SQL Server Azure SQL Database PDW](../../includes/applies-to-version/sql-asdb-asdbmi-pdw.md)]
+
 You can create an image of a Database Diagram and copy it to another application.  
   
 ### To copy a diagram image to the Clipboard  

@@ -1,36 +1,30 @@
 ---
-title: "SET DATEFIRST (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "SET DATEFIRST (Transact-SQL)"
+description: SET DATEFIRST (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "SET DATEFIRST"
   - "SET_DATEFIRST_TSQL"
   - "DATEFIRST_TSQL"
   - "DATEFIRST"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "first day of week [SQL Server]"
   - "day of week [SQL Server]"
   - "SET DATEFIRST option [SQL Server]"
   - "DATEFIRST option [SQL Server]"
   - "weekdays [SQL Server]"
   - "options [SQL Server], date"
-ms.assetid: 6b0d0e52-8ac1-4f88-b091-f98d6fb8574a
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # SET DATEFIRST (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Sets the first day of the week to a number from 1 through 7.  
   
@@ -40,20 +34,22 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 -- Syntax for SQL Server and Azure SQL Database  
   
 SET DATEFIRST { number | @number_var }   
 ```  
   
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 SET DATEFIRST 7 ;  
 ```  
   
-## Arguments  
- *number* | **@***number_var*  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+ *number* | **@**_number_var_  
  Is an integer that indicates the first day of the week. It can be one of the following values.  
   
 |Value|First day of the week is|  
@@ -79,7 +75,7 @@ SET DATEFIRST 7 ;
 ## Examples  
  The following example displays the day of the week for a date value and shows the effects of changing the `DATEFIRST` setting.  
   
-```  
+```sql
 -- SET DATEFIRST to U.S. English default value of 7.  
 SET DATEFIRST 7;  
   
@@ -97,14 +93,6 @@ SET DATEFIRST 3;
 SELECT CAST('1999-1-1' AS datetime2) AS SelectDate  
     ,DATEPART(dw, '1999-1-1') AS DayOfWeek;  
 GO  
-```  
-  
-## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
-  
-```  
--- SET DATEFIRST to U.S. English default value of 7.  
-SET DATEFIRST 7;  
-  
 ```  
   
 ## See Also  

@@ -1,24 +1,15 @@
 ---
-title: "getUpdateCount Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getUpdateCount Method (SQLServerStatement)"
+description: "getUpdateCount Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.getUpdateCount"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.getUpdateCount"
 apitype: "Assembly"
-ms.assetid: e9570228-4500-44b6-b2f1-84ac050b5112
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getUpdateCount Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

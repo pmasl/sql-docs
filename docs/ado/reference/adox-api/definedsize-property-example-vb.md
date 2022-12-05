@@ -1,26 +1,19 @@
 ---
-title: "DefinedSize Property Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "DefinedSize Property Example (VB)"
+description: "DefinedSize Property Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "DefinedSize property [ADOX], Visual Basic example"
-ms.assetid: 4dda2239-7ab5-4729-9c63-eb530803f7d9
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # DefinedSize Property Example (VB)
-This example demonstrates the [DefinedSize](../../../ado/reference/adox-api/definedsize-property-adox.md) property of a [Column](../../../ado/reference/adox-api/column-object-adox.md). The code will redefine the size of the FirstName column of the **Employees** table of the *Northwind* database. Then, the change in the values of the FirstName [Field](../../../ado/reference/ado-api/field-object.md) of a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) based on the **Employees** table is displayed. Note that by default, the FirstName field becomes padded with spaces after you redefine the **DefinedSize** property.  
+This example demonstrates the [DefinedSize](./definedsize-property-adox.md) property of a [Column](./column-object-adox.md). The code will redefine the size of the FirstName column of the **Employees** table of the *Northwind* database. Then, the change in the values of the FirstName [Field](../ado-api/field-object.md) of a [Recordset](../ado-api/recordset-object-ado.md) based on the **Employees** table is displayed. Note that by default, the FirstName field becomes padded with spaces after you redefine the **DefinedSize** property.  
   
 ```  
 ' BeginDefinedSizeVB  
@@ -148,5 +141,5 @@ End Sub
 ```  
   
 ## See Also  
- [Column Object (ADOX)](../../../ado/reference/adox-api/column-object-adox.md)   
- [DefinedSize Property (ADOX)](../../../ado/reference/adox-api/definedsize-property-adox.md)
+ [Column Object (ADOX)](./column-object-adox.md)   
+ [DefinedSize Property (ADOX)](./definedsize-property-adox.md)

@@ -1,19 +1,12 @@
 ---
-title: "SQLServerDataSourceObjectFactory Members | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerDataSourceObjectFactory Members"
+description: "SQLServerDataSourceObjectFactory Members"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 52c6b133-f7ed-468d-8f34-bc2e4b81553e
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerDataSourceObjectFactory Members
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,26 +1,22 @@
 ---
+description: "EnvelopeAggregate (geometry Data Type)"
 title: "EnvelopeAggregate (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
   - "EnvelopeAggregate method (geometry)"
 ms.assetid: c4c15abe-0fe9-441d-9d42-6572e264869c
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # EnvelopeAggregate (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns a bounding box for a given set of **geometry** objects.
   
@@ -31,7 +27,9 @@ Returns a bounding box for a given set of **geometry** objects.
 EnvelopeAggregate ( geometry_operand )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *geometry_operand*  
  Is a **geometry** type table column that represents the set of **geometry** objects.  
   
@@ -52,27 +50,19 @@ EnvelopeAggregate ( geometry_operand )
 ## Examples  
  The following example returns a bounding box for a set of objects in a table variable column.  
   
- `-- Setup table variable for EnvelopeAggregate example`  
-  
- `DECLARE @Geom TABLE`  
-  
- `(`  
-  
- `shape geometry,`  
-  
- `shapeType nvarchar(50)`  
-  
- `)`  
-  
- `INSERT INTO @Geom(shape,shapeType) VALUES('CURVEPOLYGON(CIRCULARSTRING(2 3, 4 1, 6 3, 4 5, 2 3))', 'Circle'),`  
-  
- `('POLYGON((1 1, 4 1, 4 5, 1 5, 1 1))', 'Rectangle');`  
-  
- `-- Perform EnvelopeAggregate on @Geom.shape column`  
-  
- `SELECT geometry::EnvelopeAggregate(shape).ToString()`  
-  
- `FROM @Geom;`  
+ ```sql
+ -- Setup table variable for EnvelopeAggregate example 
+DECLARE @Geom TABLE 
+( 
+shape geometry, 
+shapeType nvarchar(50) 
+) 
+INSERT INTO @Geom(shape,shapeType) VALUES('CURVEPOLYGON(CIRCULARSTRING(2 3, 4 1, 6 3, 4 5, 2 3))', 'Circle'), 
+('POLYGON((1 1, 4 1, 4 5, 1 5, 1 1))', 'Rectangle'); 
+-- Perform EnvelopeAggregate on @Geom.shape column 
+SELECT geometry::EnvelopeAggregate(shape).ToString() 
+FROM @Geom;
+```  
   
 ## See Also  
  [Extended Static Geometry Methods](../../t-sql/spatial-geometry/extended-static-geometry-methods.md)  

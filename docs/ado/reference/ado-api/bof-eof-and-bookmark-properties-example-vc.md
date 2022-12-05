@@ -1,28 +1,21 @@
 ---
-title: "BOF, EOF, and Bookmark Properties Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "BOF, EOF, and Bookmark Properties Example (VC++)"
+description: "BOF, EOF, and Bookmark Properties Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Bookmark property [ADO], VC++ example"
   - "EOF property [ADO], VC++ example"
   - "BOF property [ADO], VC++ example"
-ms.assetid: bd2b9d85-e75e-4fc8-a392-076582019caa
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # BOF, EOF, and Bookmark Properties Example (VC++)
-The first function in this example uses the [BOF](../../../ado/reference/ado-api/bof-eof-properties-ado.md) and [EOF](../../../ado/reference/ado-api/bof-eof-properties-ado.md) properties to display a message if a user tries to move past the first or last record of a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md). It uses the [Bookmark](../../../ado/reference/ado-api/bookmark-property-ado.md) property to let the user flag a record in a **Recordset** and return to it later.  
+The first function in this example uses the [BOF](./bof-eof-properties-ado.md) and [EOF](./bof-eof-properties-ado.md) properties to display a message if a user tries to move past the first or last record of a [Recordset](./recordset-object-ado.md). It uses the [Bookmark](./bookmark-property-ado.md) property to let the user flag a record in a **Recordset** and return to it later.  
   
  The second function uses the Bookmark property to place the **Bookmark** of every other record from a **Recordset** into an array, and then filters the Recordset using the array.  
   
@@ -204,6 +197,6 @@ Authors with 25 percent royalty
 ```  
   
 ## See Also  
- [BOF, EOF Properties (ADO)](../../../ado/reference/ado-api/bof-eof-properties-ado.md)   
- [Bookmark Property (ADO)](../../../ado/reference/ado-api/bookmark-property-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [BOF, EOF Properties (ADO)](./bof-eof-properties-ado.md)   
+ [Bookmark Property (ADO)](./bookmark-property-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

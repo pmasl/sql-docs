@@ -1,17 +1,13 @@
 ---
-title: "DENY Server Principal Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DENY Server Principal Permissions (Transact-SQL)"
+description: DENY Server Principal Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/09/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "DENY statement, impersonate"
   - "permissions [SQL Server], impersonate"
   - "impersonate [SQL Server], denying"
@@ -20,14 +16,11 @@ helpviewer_keywords:
   - "denying permissions [SQL Server], logins"
   - "servers [SQL Server], permissions"
   - "logins [SQL Server], denying access"
-ms.assetid: 859affa7-0567-47d1-9490-57c1abbd619b
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DENY Server Principal Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Denies permissions granted on a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login.  
   
@@ -36,7 +29,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 DENY permission [ ,...n ] }   
     ON   
     { [ LOGIN :: SQL_Server_login ]  
@@ -53,7 +46,9 @@ DENY permission [ ,...n ] }
     | server_role  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be denies on a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login. For a list of the permissions, see the Remarks section later in this topic.  
   
@@ -125,7 +120,7 @@ GO
 ### B. Denying VIEW DEFINITION permission with CASCADE  
  The following example denies `VIEW DEFINITION` permission on the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login `EricKurjan` to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login `RMeyyappan`. The `CASCADE` option indicates that `VIEW DEFINITION` permission on `EricKurjan` will also be denied to principals to which `RMeyyappan` granted this permission.  
   
-```  
+```sql  
 USE master;  
 DENY VIEW DEFINITION ON LOGIN::EricKurjan TO RMeyyappan   
     CASCADE;  
@@ -135,7 +130,7 @@ GO
 ### C. Denying VIEW DEFINITION permission on a server role  
  The following example denies `VIEW DEFINITION` on the `Sales` server role to the `Auditors` server role.  
   
-```  
+```sql 
 USE master;  
 DENY VIEW DEFINITION ON SERVER ROLE::Sales TO Auditors ;  
 GO   

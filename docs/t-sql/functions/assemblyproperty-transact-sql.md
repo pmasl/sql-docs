@@ -1,47 +1,42 @@
 ---
-title: "ASSEMBLYPROPERTY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "ASSEMBLYPROPERTY (Transact-SQL)"
+description: "ASSEMBLYPROPERTY (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "07/24/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ASSEMBLYPROPERTY_TSQL"
   - "ASSEMBLYPROPERTY"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ASSEMBLYPROPERTY statement"
   - "assemblies [CLR integration], properties"
-ms.assetid: cf03d1b1-724c-48bf-a8df-3fe2586b150a
-caps.latest.revision: 40
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ASSEMBLYPROPERTY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
-Returns information about a property of an assembly.
+This function returns information about a property of an assembly.
   
 ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
 ## Syntax  
   
-```sql
+```syntaxsql
 ASSEMBLYPROPERTY('assembly_name', 'property_name')  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
 *assembly_name*  
-Is the name of the assembly.
+The name of the assembly.
   
 *property_name*  
-Is the name of a property about which to retrieve information. *property_name* can be one of the following values.
+The name of a property about which to retrieve information. *property_name* can have one of the following values:
   
 |Value|Description|  
 |---|---|
@@ -60,7 +55,7 @@ Is the name of a property about which to retrieve information. *property_name* c
 **sql_variant**
   
 ## Examples  
-The following example assumes a `HelloWorld` assembly is registered in the [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] database. For more information, see [Hello World Sample](http://msdn.microsoft.com/library/fed6c358-f5ee-4d4c-9ad6-089778383ba7).
+This example assumes a `HelloWorld` assembly that is registered in the [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] database. For more information, see [Hello World Sample](/previous-versions/sql/sql-server-2016/ff878250(v=sql.130)).
   
 ```sql
 USE AdventureWorks2012;  
@@ -71,5 +66,4 @@ SELECT ASSEMBLYPROPERTY ('HelloWorld' , 'PublicKey');
 ## See also
 [CREATE ASSEMBLY &#40;Transact-SQL&#41;](../../t-sql/statements/create-assembly-transact-sql.md)  
 [DROP ASSEMBLY &#40;Transact-SQL&#41;](../../t-sql/statements/drop-assembly-transact-sql.md)
-  
   

@@ -1,0 +1,1 @@
+:::image type="icon" source="media/download.svg" border="false"::: [Download OLE DB driver](../connect/oledb/download-oledb-driver-for-sql-server.md)

@@ -1,24 +1,19 @@
 ---
+description: "Replication Language Reference"
 title: "Replication Language Reference | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
+ms.subservice: replication
 ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
 ms.assetid: 605eb49a-225c-4186-a341-e90403c82b60
-caps.latest.revision: 5
-author: "MikeRayMSFT"
-ms.author: "mblythe"
-manager: "erikre"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # Replication Language Reference
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Replication Language Reference contains the following sections.  
   

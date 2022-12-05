@@ -1,30 +1,32 @@
 ---
+description: "Cache Transform"
 title: "Cache Transform | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.designer.cachetrans.f1"
+  - "sql13.dts.designer.cachetranscon.f1"
+  - "sql13.dts.designer.cachetransmap.f1"
 helpviewer_keywords: 
   - "Cache transform"
 ms.assetid: a5683fc8-9c32-4634-819e-e9815627e4f1
-caps.latest.revision: 30
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Cache Transform
+
+[!INCLUDE[sqlserver-ssis](../../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   The Cache Transform transformation generates a reference dataset for the Lookup Transformation by writing data from a connected data source in the data flow to a Cache connection manager. The Lookup transformation performs lookups by joining data in input columns from a connected data source with columns in the reference database.  
   
  You can use the Cache connection manager when you want to configure the Lookup Transformation to run in the full cache mode. In this mode, the reference dataset is loaded into cache before the Lookup Transformation runs.  
   
- For instructions on how to configure the Lookup transformation in full cache mode with the Cache connection manager and Cache Transform transformation, see [Implement a Lookup Transformation in Full Cache Mode Using the Cache Connection Manager](../../../integration-services/data-flow/transformations/lookup-transformation-full-cache-mode-cache-connection-manager.md).  
+ For instructions on how to configure the Lookup transformation in full cache mode with the Cache connection manager and Cache Transform transformation, see [Implement a Lookup Transformation in Full Cache Mode Using the Cache Connection Manager](../../connection-manager/lookup-transformation-full-cache-mode-cache-connection-manager.md).  
   
  For more information on caching the reference dataset, see [Lookup Transformation](../../../integration-services/data-flow/transformations/lookup-transformation.md).  
   
@@ -33,7 +35,7 @@ manager: "jhubbard"
   
  In a single package, only one Cache Transform can write data to the same Cache connection manager. If the package contains multiple Cache Transforms, the first Cache Transform that is called when the package runs, writes the data to the connection manager. The write operations of subsequent Cache Transforms fail.  
   
- For more information, see [Cache Connection Manager](../../../integration-services/data-flow/transformations/cache-connection-manager.md) and [Cache Connection Manager Editor](../../../integration-services/data-flow/transformations/cache-connection-manager-editor.md).  
+ For more information, see [Cache Connection Manager](../../connection-manager/cache-connection-manager.md).  
   
 ## Configuration of the Cache Transform  
  You can configure the Cache connection manager to save the data to a cache file (.caw).  
@@ -53,8 +55,22 @@ manager: "jhubbard"
   
  For more information about how to set properties, see [Set the Properties of a Data Flow Component](../../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md).  
   
+## Cache Transformation Editor (Connection Manager Page)
+  Use the **Connection Manager** page of the **Cache Transformation Editor** dialog box to select an existing Cache connection manager or create a new one.  
+  
+ To learn more about the Cache connection manager, see [Cache Connection Manager](../../connection-manager/cache-connection-manager.md).  
+  
+### Options  
+ **Cache connection manager**  
+ Select an existing Cache connection manager by using the list, or create a new connection by using the **New** button.  
+  
+ **New**  
+ Create a new connection by using the Cache Connection Manager Editor dialog box.  
+  
+ **Edit**  
+ Modify an existing connection.  
+  
 ## See Also  
  [Integration Services Transformations](../../../integration-services/data-flow/transformations/integration-services-transformations.md)   
  [Data Flow](../../../integration-services/data-flow/data-flow.md)  
-  
   

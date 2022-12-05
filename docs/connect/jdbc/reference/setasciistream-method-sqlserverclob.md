@@ -1,24 +1,15 @@
 ---
-title: "setAsciiStream Method (SQLServerClob) | Microsoft Docs"
-ms.custom: ""
+title: "setAsciiStream Method (SQLServerClob)"
+description: "setAsciiStream Method (SQLServerClob)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerClob.setAsciiStream"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerClob.setAsciiStream"
 apitype: "Assembly"
-ms.assetid: 6e1779df-3b2a-41d1-8dca-99692cc9da14
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setAsciiStream Method (SQLServerClob)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

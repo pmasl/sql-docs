@@ -1,24 +1,15 @@
 ---
-title: "setFailoverPartner Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "setFailoverPartner Method (SQLServerDataSource)"
+description: "setFailoverPartner Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDataSource.setFailoverPartner"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDataSource.setFailoverPartner"
 apitype: "Assembly"
-ms.assetid: 5310b7c2-9d10-474f-ad3a-218fe5da694b
-caps.latest.revision: 17
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setFailoverPartner Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

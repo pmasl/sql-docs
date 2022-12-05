@@ -1,35 +1,28 @@
 ---
-title: "MOVE CONVERSATION (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MOVE CONVERSATION (Transact-SQL)"
+description: MOVE CONVERSATION (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "07/26/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "MOVE_CONVERSATION_TSQL"
   - "MOVE CONVERSATION"
   - "MOVE_TSQL"
   - "MOVE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "moving conversations"
   - "MOVE CONVERSATION statement"
   - "relocating conversations"
   - "conversations [Service Broker], groups"
   - "conversations [Service Broker], moving"
-ms.assetid: 1da4d2c9-e767-434e-b49b-615711a7f626
-caps.latest.revision: 28
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # MOVE CONVERSATION (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Moves a conversation to a different conversation group.  
   
@@ -37,14 +30,15 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 MOVE CONVERSATION conversation_handle  
    TO conversation_group_id  
 [ ; ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *conversation_handle*  
  Is a variable or constant containing the conversation handle of the conversation to be moved. *conversation_handle* must be of type **uniqueidentifier**.  
   
@@ -67,7 +61,7 @@ MOVE CONVERSATION conversation_handle
 ## Examples  
  The following example moves a conversation to a different conversation group.  
   
-```  
+```sql  
 DECLARE @conversation_handle UNIQUEIDENTIFIER,  
         @conversation_group_id UNIQUEIDENTIFIER ;  
   

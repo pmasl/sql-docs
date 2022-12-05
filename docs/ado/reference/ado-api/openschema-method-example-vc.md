@@ -1,26 +1,19 @@
 ---
-title: "OpenSchema Method Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "OpenSchema Method Example (VC++)"
+description: "OpenSchema Method Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "OpenSchema method [ADO], VC++ example"
-ms.assetid: 6f3da460-0f49-41e0-999d-a754ec1d887e
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # OpenSchema Method Example (VC++)
-This example uses the [OpenSchema](../../../ado/reference/ado-api/openschema-method.md) method to display the name and type of each table in the ***Pubs*** database.  
+This example uses the [OpenSchema](./openschema-method.md) method to display the name and type of each table in the ***Pubs*** database.  
   
 ```  
 // OpenSchemaMethodExample.cpp  
@@ -192,4 +185,4 @@ void PrintComError(_com_error &e) {
 ```  
   
 ## See Also  
- [OpenSchema Method](../../../ado/reference/ado-api/openschema-method.md)
+ [OpenSchema Method](./openschema-method.md)

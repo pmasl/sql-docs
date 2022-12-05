@@ -1,26 +1,26 @@
 ---
+description: "Implement a Lookup in No Cache or Partial Cache Mode"
 title: "Implement a Lookup in No Cache or Partial Cache Mode | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Lookup transformation"
   - "match exactly [Integration Services]"
   - "lookups [Integration Services]"
   - "exact matches [Integration Services]"
 ms.assetid: 01b7fbca-5181-4d47-9f75-7f25af6b40d2
-caps.latest.revision: 67
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Implement a Lookup in No Cache or Partial Cache Mode
+
+[!INCLUDE[sqlserver-ssis](../../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   You can configure the Lookup transformation to use the partial cache or no cache mode:  
   
 -   Partial cache  
@@ -58,11 +58,11 @@ manager: "jhubbard"
   
     -   Click **Use results of an SQL query**, and then build a query in the **SQL Command** window.  
   
-         —or—  
+         -or-  
   
          Click **Build Query** to build a query by using the graphical tools that the **Query Builder** provides.  
   
-         —or—  
+         -or-  
   
          Click **Browse** to import an SQL statement from a file.  
   
@@ -101,11 +101,10 @@ manager: "jhubbard"
     > [!NOTE]  
     >  The optional SQL statement that you specify on this page overrides and replaces the table name that you specified on the **Connection** page of the **Lookup Transformation Editor**.  
   
-13. To configure the error output, click the **Error Output** page and set the error handling options. For more information, see [Lookup Transformation Editor &#40;Error Output Page&#41;](../../../integration-services/data-flow/transformations/lookup-transformation-editor-error-output-page.md).  
+13. To configure the error output, click the **Error Output** page and set the error handling options. For more information, see [Lookup Transformation Editor &#40;Error Output Page&#41;](./lookup-transformation.md).  
   
 14. Click **OK** to save your changes to the Lookup transformation, and then run the package.  
   
 ## See Also  
  [Integration Services Transformations](../../../integration-services/data-flow/transformations/integration-services-transformations.md)  
-  
   

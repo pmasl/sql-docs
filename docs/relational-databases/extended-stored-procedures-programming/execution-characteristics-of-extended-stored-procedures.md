@@ -1,27 +1,22 @@
 ---
-title: "Execution Characteristics of Extended Stored Procedures | Microsoft Docs"
-ms.custom: ""
+title: "Execution characteristics of extended stored procedures"
+description: Execution Characteristics of Extended Stored Procedures
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: seo-dt-2019
+helpviewer_keywords:
   - "extended stored procedures [SQL Server], executing"
   - "executing extended stored procedures [SQL Server]"
 ms.assetid: 6fe1f7e8-cc02-49df-8a2a-d47a96ec3567
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Execution Characteristics of Extended Stored Procedures
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 > [!IMPORTANT]  
->  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] Use CLR Integration instead.  
+>  [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)] Use CLR Integration instead.  
   
  The execution of an extended stored procedure has these characteristics:  
   
@@ -45,13 +40,13 @@ EXECUTE @retval = xp_extendedProcName @param1, @param2 OUTPUT
 ```  
   
 ## Parameters  
- @ *retval*  
+ \@ *retval*  
  Is a return value.  
   
- @ *param1*  
+ \@ *param1*  
  Is an input parameter.  
   
- @ *param2*  
+ \@ *param2*  
  Is an input/output parameter.  
   
 > [!CAUTION]  

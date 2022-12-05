@@ -1,14 +1,12 @@
 ---
+description: "SQLInstallerError Function"
 title: "SQLInstallerError Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLInstallerError"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLInstallerError [ODBC]"
 ms.assetid: e6474b79-4d55-458f-81ce-abfafe357f83
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLInstallerError Function
 **Conformance**  
@@ -33,14 +29,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 RETCODE SQLInstallerError(  
-     WORD      iError,  
-     DWORD *   pfErrorCode,  
-     LPSTR     lpszErrorMsg,  
-     WORD      cbErrorMsgMax,  
-     WORD *    pcbErrorMsg);  
+     WORD      iError,  
+     DWORD *   pfErrorCode,  
+     LPSTR     lpszErrorMsg,  
+     WORD      cbErrorMsgMax,  
+     WORD *    pcbErrorMsg);  
 ```  
   
 ## Arguments  

@@ -1,14 +1,12 @@
 ---
+description: "STInteriorRingN (geometry Data Type)"
 title: "STInteriorRingN (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "STInteriorRingN_TSQL"
   - "STInteriorRingN (geometry Data Type)"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "STInteriorRingN (geometry Data Type)"
 ms.assetid: 47310f9f-2cdb-41e0-a6da-7c3cfbf139ac
-caps.latest.revision: 21
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # STInteriorRingN (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns the specified interior ring of a **Polygongeometry** instance.
   
@@ -34,7 +30,9 @@ Returns the specified interior ring of a **Polygongeometry** instance.
 .STInteriorRingN ( expression )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *expression*  
  Is an **int** expression between 1 and the number of interior rings in the **geometry** instance.  
   
@@ -51,7 +49,7 @@ Returns the specified interior ring of a **Polygongeometry** instance.
 ## Examples  
  The following example creates a `Polygon` instance and uses `STInteriorRingN()` to return the interior ring of the polygon as a **LineString**.  
   
-```  
+```sql
 DECLARE @g geometry;  
 SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0),(2 2, 2 1, 1 1, 1 2, 2 2))', 0);  
 SELECT @g.STInteriorRingN(1).ToString();  

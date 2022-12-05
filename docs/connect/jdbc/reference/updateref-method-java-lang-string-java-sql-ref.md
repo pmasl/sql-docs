@@ -1,24 +1,15 @@
 ---
-title: "updateRef Method (java.lang.String, java.sql.Ref) | Microsoft Docs"
-ms.custom: ""
+title: "updateRef Method (java.lang.String, java.sql.Ref)"
+description: "updateRef Method (java.lang.String, java.sql.Ref)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateRef (java.lang.String, java.sql.Ref)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateRef (java.lang.String, java.sql.Ref)"
 apitype: "Assembly"
-ms.assetid: 7740d17d-282f-4f1d-91f9-c68a873b069a
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateRef Method (java.lang.String, java.sql.Ref)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

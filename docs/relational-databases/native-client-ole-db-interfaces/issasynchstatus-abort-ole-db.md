@@ -1,13 +1,11 @@
 ---
-title: "ISSAsynchStatus::Abort (OLE DB) | Microsoft Docs"
+description: "ISSAsynchStatus::Abort (Native Client OLE DB provider)"
+title: "ISSAsynchStatus::Abort (Native Client OLE DB provider) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 apiname: 
   - "ISSAsynchStatus::Abort (OLE DB)"
@@ -15,13 +13,15 @@ apitype: "COM"
 helpviewer_keywords: 
   - "Abort method"
 ms.assetid: 2a4bd312-839a-45a8-a299-fc8609be9a2a
-caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# ISSAsynchStatus::Abort (OLE DB)
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# ISSAsynchStatus::Abort (Native Client OLE DB Provider)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+> [!IMPORTANT]
+> [!INCLUDE[snac-removed-oledb-only](../../includes/snac-removed-oledb-only.md)]
 
   Cancels an asynchronously executing operation.  
   
@@ -41,7 +41,7 @@ HRESULT Abort(
  *eOperation*[in]  
  The operation to abort. This should be the following value:  
   
- DBASYNCHOP_OPEN—The request to cancel applies to the asynchronous opening or population of a rowset or to the asynchronous initialization of a data source object.  
+ DBASYNCHOP_OPEN-The request to cancel applies to the asynchronous opening or population of a rowset or to the asynchronous initialization of a data source object.  
   
 ## Return Code Values  
  S_OK  

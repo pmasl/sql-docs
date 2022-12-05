@@ -1,45 +1,40 @@
 ---
-title: "DBCC FREESESSIONCACHE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "7/16/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+title: "DBCC FREESESSIONCACHE (Transact-SQL)"
+description: "DBCC FREESESSIONCACHE (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "07/16/2017"
+ms.service: sql
+ms.subservice: t-sql
 ms.topic: "language-reference"
-f1_keywords: 
+f1_keywords:
   - "FREESESSIONCACHE"
   - "FREESESSIONCACHE_TSQL"
   - "DBCC_FREESESSIONCACHE_TSQL"
   - "DBCC FREESESSIONCACHE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "DBCC FREESESSIONCACHE statement"
   - "distributed queries [SQL Server], cache"
   - "clearing distributed query cache"
   - "flushing distributed query cache"
-ms.assetid: a256ba63-7e11-4d5e-abc0-1fa4ed072e63
-caps.latest.revision: 15
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DBCC FREESESSIONCACHE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
 Flushes the distributed query connection cache used by distributed queries against an instance of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
   
 ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
 ## Syntax  
-```sql
+```syntaxsql
 DBCC FREESESSIONCACHE [ WITH NO_INFOMSGS ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  WITH NO_INFOMSGS  
  Suppresses all informational messages.  
   

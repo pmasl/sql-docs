@@ -1,33 +1,28 @@
 ---
-title: "datetime2 (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/23/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "datetime2 (Transact-SQL)"
+description: "datetime2 (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
+ms.date: "08/21/2020"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: "reference"
+f1_keywords:
   - "datetime2"
   - "datetime2_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "time [SQL Server], data types"
   - "dates [SQL Server], data types"
   - "date and time [SQL Server], datetime2"
   - "data types [SQL Server], date and time"
   - "datetime2 data type [SQL Server]"
-ms.assetid: 868017f3-214f-43ef-8536-cc1632a2288f
-caps.latest.revision: 58
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # datetime2 (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 Defines a date that is combined with a time of day that is based on 24-hour clock. **datetime2** can be considered as an extension of the existing **datetime** type that has a larger date range, a larger default fractional precision, and optional user-specified precision.
   
@@ -36,7 +31,7 @@ Defines a date that is combined with a time of day that is based on 24-hour cloc
 |Property|Value|  
 |--------------|-----------|  
 |Syntax|**datetime2** [ (*fractional seconds precision*) ]|  
-|Usage|DECLARE @MyDatetime2 **datetime2(7)**<br /><br /> CREATE TABLE Table1 ( Column1 **datetime2(7)** )|  
+|Usage|DECLARE \@MyDatetime2 **datetime2(7)**<br /><br /> CREATE TABLE Table1 ( Column1 **datetime2(7)** )|  
 |Default string literal format<br /><br /> (used for down-level client)|YYYY-MM-DD hh:mm:ss[.fractional seconds]<br /><br /> For more information, see the "Backward Compatibility for Down-level Clients" section that follows.|  
 |Date range|0001-01-01 through 9999-12-31<br /><br /> January 1,1 CE through December 31, 9999 CE|  
 |Time range|00:00:00 through 23:59:59.9999999|  
@@ -44,14 +39,18 @@ Defines a date that is combined with a time of day that is based on 24-hour cloc
 |Element ranges|YYYY is a four-digit number, ranging from 0001 through 9999, that represents a year.<br /><br /> MM is a two-digit number, ranging from 01 to 12, that represents a month in the specified year.<br /><br /> DD is a two-digit number, ranging from 01 to 31 depending on the month, that represents a day of the specified month.<br /><br /> hh is a two-digit number, ranging from 00 to 23, that represents the hour.<br /><br /> mm is a two-digit number, ranging from 00 to 59, that represents the minute.<br /><br /> ss is a two-digit number, ranging from 00 to 59, that represents the second.<br /><br /> n* is a zero- to seven-digit number from 0 to 9999999 that represents the fractional seconds. In Informatica, the fractional seconds will be truncated when n > 3.|  
 |Character length|19 positions minimum (YYYY-MM-DD hh:mm:ss ) to 27 maximum (YYYY-MM-DD hh:mm:ss.0000000)|  
 |Precision, scale|0 to 7 digits, with an accuracy of 100ns. The default precision is 7 digits.|  
-|Storage size|6 bytes for precisions less than 3; 7 bytes for precisions 3 and 4. All other precisions require 8 bytes.|  
+|Storage size <sup>1</sup>|6 bytes for precision less than 3.<br/>7 bytes for precision 3 or 4.<br/>All other precision require 8 bytes.<sup>2</sup>|  
 |Accuracy|100 nanoseconds|  
 |Default value|1900-01-01 00:00:00|  
 |Calendar|Gregorian|  
 |User-defined fractional second precision|Yes|  
 |Time zone offset aware and preservation|No|  
 |Daylight saving aware|No|  
-  
+
+<sup>1</sup> Provided values are for uncompressed rowstore. Use of [data compression](../../relational-databases/data-compression/data-compression.md) or [columnstore](../../relational-databases/indexes/columnstore-indexes-overview.md) may alter storage size for each precision. Additionally, storage size on disk and in memory may differ. For example, **datetime2** values always require 8 bytes in memory when batch mode is used.
+
+<sup>2</sup> When a **datetime2** value is cast to a **varbinary** value, an additional byte is added to the **varbinary** value to store precision.
+
 For data type metadata, see [sys.systypes &#40;Transact-SQL&#41;](../../relational-databases/system-compatibility-views/sys-systypes-transact-sql.md) or [TYPEPROPERTY &#40;Transact-SQL&#41;](../../t-sql/functions/typeproperty-transact-sql.md). Precision and scale are variable for some date and time data types. To obtain the precision and scale for a column, see [COLUMNPROPERTY &#40;Transact-SQL&#41;](../../t-sql/functions/columnproperty-transact-sql.md), [COL_LENGTH &#40;Transact-SQL&#41;](../../t-sql/functions/col-length-transact-sql.md), or [sys.columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md).
   
 ## Supported string literal formats for datetime2
@@ -140,7 +139,7 @@ SELECT @datetime2 AS '@datetime2', @datetimeoffset AS '@datetimeoffset';
 --2016-10-23 12:45:37.1234567 2016-10-23 12:45:37.1234567 +10:00
 ```  
 
-When the conversion is from **datetime**, the date and time are copied.  The fractional precision is extended to 7 digits.  The following example shows the results of converting a `datetime` value to a `datetime2` value.
+When the conversion is from **datetime**, the date and time are copied. The fractional precision is extended to 7 digits. The following example shows the results of converting a `datetime` value to a `datetime2` value.
 
 ```sql
 DECLARE @datetime datetime = '2016-10-23 12:45:37.333';
@@ -153,7 +152,10 @@ SELECT @datetime2 AS '@datetime2', @datetime AS '@datetime';
 ------------------------- ---------------------------
 --2016-10-23 12:45:37.3333333 2016-10-23 12:45:37.333
 ```  
-  
+
+> [!NOTE]
+> Under database compatibility level 130, implicit conversions from datetime to datetime2 data types show improved accuracy by accounting for the fractional milliseconds, resulting in different converted values, as seen in the example above. Use explicit casting to datetime2 datatype whenever a mixed comparison scenario between datetime and datetime2 datatypes exists. For more information, refer to this [Microsoft Support Article](https://support.microsoft.com/help/4010261).
+
 ### Converting String Literals to datetime2  
 Conversions from string literals to date and time types are permitted if all parts of the strings are in valid formats. Otherwise, a runtime error is raised. Implicit conversions or explicit conversions that do not specify a style, from date and time types to string literals will be in the default format of the current session. The following table shows the rules for converting a string literal to the **datetime2** data type.
   
@@ -190,11 +192,11 @@ SELECT
   
 |Data type|Output|  
 |---|---|
-|**time**|12:35:29. 1234567|  
+|**time**|12:35:29.1234567|  
 |**date**|2007-05-08|  
 |**smalldatetime**|2007-05-08 12:35:00|  
 |**datetime**|2007-05-08 12:35:29.123|  
-|**datetime2**|2007-05-08 12:35:29. 1234567|  
+|**datetime2**|2007-05-08 12:35:29.1234567|  
 |**datetimeoffset**|2007-05-08 12:35:29.1234567 +12:15|  
   
 ## See also

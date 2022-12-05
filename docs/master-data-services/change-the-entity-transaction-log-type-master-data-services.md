@@ -1,21 +1,20 @@
 ---
-title: "Change the Entity Transaction Log Type (Master Data Services) | Microsoft Docs"
+description: "Change the Entity Transaction Log Type (Master Data Services)"
+title: Change the Entity Transaction Log Type
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 ms.assetid: 75250b32-3384-43c2-9b5c-1607cc3aa7b3
-caps.latest.revision: 10
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Change the Entity Transaction Log Type (Master Data Services)
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   You can change the transaction log type of an entity, to attribute, member, or none.  
   
 |Transaction Log Type|Description|  

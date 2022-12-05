@@ -1,13 +1,11 @@
 ---
-title: "Fetching BLOB Data Using IRow::Open and ISequentialStream | Microsoft Docs"
+description: "Fetching BLOB Data by Using IRow::Open and ISequentialStream"
+title: "BLOB, IRow::Open, ISequentialStream"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "fetching BLOB data"
@@ -15,19 +13,18 @@ helpviewer_keywords:
   - "ISequentialStream interface"
   - "BLOBs, fetching"
 ms.assetid: 439b3976-84e7-4d11-8dba-f668adbc9159
-caps.latest.revision: 29
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Fetching BLOB Data Using IRow::Open and ISequentialStream
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# Fetching BLOB Data by Using IRow::Open and ISequentialStream
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   **IRow::Open** supports only DBGUID_STREAM and DBGUID_NULL type of objects to be opened.  
   
  The following function uses **IRow::Open** and **ISequentialStream** to fetch large data.  
   
-```  
+```cpp
 void InitializeAndExecuteCommand()  
 {  
     ULONG iidx;  
@@ -79,6 +76,5 @@ HRESULT GetSequentialColumn(IRow* pUnkRow, ULONG iCol)
  Large data can be bound or retrieved by using the **ISequentialStream** interface. For bound columns, the status flag indicates if the data is truncated by setting DBSTATUS_S_TRUNCATED.  
   
 ## See Also  
- [Fetching BLOB Data Using IRow](http://msdn.microsoft.com/library/badbd6ac-20aa-4891-a14f-48d38e7f30de)  
-  
+ [Fetching BLOB Data Using IRow](./fetching-a-single-row-with-irow.md)  
   

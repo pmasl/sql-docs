@@ -1,14 +1,12 @@
 ---
+description: "STGeometryN (geometry Data Type)"
 title: "STGeometryN (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "STGeometryN_TSQL"
   - "STGeometryN (geometry Data Type)"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "STGeometryN (geometry Data Type)"
 ms.assetid: 348c7047-3442-4590-8879-fe841e79058c
-caps.latest.revision: 19
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # STGeometryN (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns a specified geometry in a **geometry collection**.
   
@@ -34,7 +30,9 @@ Returns a specified geometry in a **geometry collection**.
 .STGeometryN ( expression )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *expression*  
  Is an **int** expression between 1 and the number of **geometry** instances in the **geometrycollection**.  
   
@@ -49,7 +47,7 @@ Returns a specified geometry in a **geometry collection**.
 ## Examples  
  The following example creates a `MultiPoint``geometry collection` and uses `STGeometryN()` to find the second `geometry` instance of the collection.  
   
-```  
+```sql
 DECLARE @g geometry;  
 SET @g = geometry::STGeomFromText('MULTIPOINT(0 0, 13.5 2, 7 19)', 0);  
 SELECT @g.STGeometryN(2).ToString();  

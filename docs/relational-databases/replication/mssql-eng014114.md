@@ -1,27 +1,25 @@
 ---
+description: "MSSQL_ENG014114"
 title: "MSSQL_ENG014114 | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/26/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: reference
 helpviewer_keywords: 
   - "MSSQL_ENG014114 error"
 ms.assetid: f5f04590-e1c6-40d8-ab2b-98c791a0fc44
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # MSSQL_ENG014114
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
     
 ## Message Details  
   
-|||  
+|Attribute|Value|  
 |-|-|  
 |Product Name|SQL Server|  
 |Event ID|14114|  
@@ -42,13 +40,13 @@ manager: "jhubbard"
   
  If the message does not specify a particular instance ('null'), verify that the Distributor instance is registered properly. If the network name of the computer and the name of the SQL Server instance differ, either:  
   
--   Add the SQL Server instance name as a valid network name. One method to set an alternative network name is to add it to the local hosts file. The local hosts file is located by default at WINDOWS\system32\drivers\etc or WINNT\system32\drivers\etc. For more information, see the Windows documentation.  
+-   Add the SQL Server instance name as a valid network name. One method to set an alternative network name is to add it to the local hosts file. The local hosts file is located by default at `\Windows\system32\drivers\etc` or `\WINNT\system32\drivers\etc`. For more information, see the Windows documentation.  
   
      For example, if the computer name is comp1 and the computer has an IP address of 10.193.17.129, and the instance name is inst1/instname, add the following entry to the hosts file:  
   
      10.193.17.129 inst1  
   
--   Disable distribution, register the instance, and then reestablish distribution. If the value of @@SERVERNAME is not correct for a non-clustered instance, follow these steps:  
+-   Disable distribution, register the instance, and then reestablish distribution. If the value of @@SERVERNAME is not correct for a nonclustered instance, follow these steps:  
   
     ```  
     sp_dropserver '<old_name>', 'droplogins'  

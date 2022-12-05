@@ -1,21 +1,17 @@
 ---
-title: "Managing a Domain | Microsoft Docs"
-ms.custom: ""
+title: "Managing a Domain"
+description: "Managing a Domain"
+author: swinarko
+ms.author: sawinark
 ms.date: "07/31/2012"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c5ab71a3-0dac-45b1-be8e-93bf7e0e03ce
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
 ---
 # Managing a Domain
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
   This topic describes the use of domains in [!INCLUDE[ssDQSnoversion](../includes/ssdqsnoversion-md.md)] (DQS). A domain contains a semantic representation of the data in a specific field in the data source that is to be analyzed. A domain is part of the knowledge base that you create for a data source, and the knowledge that you build up by analyzing a sample data source, or importing data, is added to the domains defined in the knowledge base. The knowledge in those domains is later used to perform cleansing and matching in a data quality project. Domains are at the core of all activities in Data Quality Services.  
   
  A domain is mapped to a data source field, and is populated in the knowledge discovery, domain management, and matching activities. How you load data from the data source and output data in a report is defined in domain properties. When you use a reference data provider to cleanse data, you attach a reference data service to a single or composite domain. You create rules to be applied to your data in a domain, and you can create term-based relations for a domain. You can view and correct data in the domain.  
@@ -40,7 +36,7 @@ manager: "jhubbard"
 ## In This Section  
  Using a domain enables you to do the following:  
   
-|||  
+|Operation Description|Topic|  
 |-|-|  
 |Create a semantic representation for a data field with a specific data type, specify how the domain is populated, and format the output of the domain|[Create a Domain](../data-quality-services/create-a-domain.md)|  
 |Link a domain to another domain, enabling it to share the same settings and values|[Create a Linked Domain](../data-quality-services/create-a-linked-domain.md)|  
@@ -48,7 +44,7 @@ manager: "jhubbard"
 |Change or augment the values in a knowledge base|[Change Domain Values](../data-quality-services/change-domain-values.md)|  
 |Use validation and standardization rules|[Create a Domain Rule](../data-quality-services/create-a-domain-rule.md)|  
 |Use relations to correct a term that is part of a value in a domain|[Create Term-Based Relations](../data-quality-services/create-term-based-relations.md)|  
-|Complete, close, or cancel the domain management activity|[End the Domain Management Activity](http://msdn.microsoft.com/library/ab6505ad-3090-453b-bb01-58435e7fa7c0)|  
+|Complete, close, or cancel the domain management activity|[End the Domain Management Activity](/previous-versions/sql/sql-server-2016/hh510411(v=sql.130))|  
   
 ## Related Tasks  
   
@@ -57,5 +53,4 @@ manager: "jhubbard"
 |Building a knowledge base by running knowledge discovery and interactively managing knowledge|[Building a Knowledge Base](../data-quality-services/building-a-knowledge-base.md)|  
 |Importing knowledge into, or exporting it from, a knowledge base.|[Importing and Exporting Knowledge](../data-quality-services/importing-and-exporting-knowledge.md)|  
 |Creating a composite domain, and adding knowledge to the domain.|[Managing a Composite Domain](../data-quality-services/managing-a-composite-domain.md)|  
-  
   

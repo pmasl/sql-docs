@@ -1,30 +1,23 @@
 ---
-title: "AddNew Method Example (VBScript) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "AddNew Method Example (VBScript)"
+description: "AddNew Method Example (VBScript)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "AddNew method [ADO], VBScript"
-ms.assetid: dcdcaf0a-b9b0-4d81-8728-43c38c4c853b
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # AddNew Method Example (VBScript)
-This example uses the [AddNew](../../../ado/reference/ado-api/addnew-method-ado.md) method to create a new record with the specified name.  
+This example uses the [AddNew](./addnew-method-ado.md) method to create a new record with the specified name.  
   
  Use the following example in an Active Server Page (ASP). Use **Find** to locate the file Adovbs.inc and place it in the directory you plan to use. Cut and paste the following code to Notepad or another text editor, and save it as **AddNewVBS.asp**. You can view the result in any client browser.  
   
- To exercise the example, add a new record in the HTML form. Click **Add New**. See the [Delete Method Example](../../../ado/reference/ado-api/delete-method-example-vbscript.md) to remove unwanted records.  
+ To exercise the example, add a new record in the HTML form. Click **Add New**. See the [Delete Method Example](./delete-method-example-vbscript.md) to remove unwanted records.  
   
 ```  
 <!-- BeginAddNewVBS -->  
@@ -211,5 +204,5 @@ End Sub
 ```  
   
 ## See Also  
- [AddNew Method (ADO)](../../../ado/reference/ado-api/addnew-method-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [AddNew Method (ADO)](./addnew-method-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

@@ -1,41 +1,35 @@
 ---
-title: "sys.dm_db_xtp_memory_consumers (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.dm_db_xtp_memory_consumers (Transact-SQL)"
+description: dm_db_xtp_memory_consumers returns data on database-level memory consumers that the database engine uses for In-Memory OLTP.
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "03/02/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_db_xtp_memory_consumers"
   - "dm_db_xtp_memory_consumers"
   - "dm_db_xtp_memory_consumers_TSQL"
   - "sys.dm_db_xtp_memory_consumers_stats_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_db_xtp_memory_consumers dynamic management view"
-ms.assetid: f7ab2eaf-e627-464d-91fe-0e170b3f37bc
-caps.latest.revision: 24
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.dm_db_xtp_memory_consumers (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+[!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  Reports the database-level memory consumers in the [!INCLUDE[hek_2](../../includes/hek-2-md.md)] database engine. The view returns a row for each memory consumer that the database engine uses. Use this DMV to see how the memory is distributed across different internal objects.  
+  Reports the database-level memory consumers in the [!INCLUDE[inmemory](../../includes/inmemory-md.md)] database engine. The view returns a row for each memory consumer that the database engine uses. Use this DMV to see how the memory is distributed across different internal objects.  
   
- For more information, see [In-Memory OLTP &#40;In-Memory Optimization&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md).  
+ For more information, see [[!INCLUDE[inmemory](../../includes/inmemory-md.md)] &#40;In-Memory Optimization&#41;](../in-memory-oltp/overview-and-usage-scenarios.md).  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
 |memory_consumer_id|**bigint**|ID (internal) of the memory consumer.|  
 |memory_consumer_type|**int**|The type of memory consumer:<br /><br /> 0=Aggregation. (Aggregates memory usage of two or more consumers. It should not be displayed.)<br /><br /> 2=VARHEAP (Tracks memory consumption for a variable-length heap.)<br /><br /> 3=HASH (Tracks memory consumption for an index.)<br /><br /> 5=DB page pool (Tracks memory consumption for a database page pool used for runtime operations. For example, table variables and some serializable scans. There is only one memory consumer of this type per database.)|  
-|memory_consumer_type_desc|**nvarchar(64)**|Type of memory consumer: VARHEAP, HASH, or PGPOOL.<br /><br /> 0 – (It should not be displayed.)<br /><br /> 2 - VARHEAP<br /><br /> 3 - HASH<br /><br /> 5 - PGPOOL|  
+|memory_consumer_type_desc|**nvarchar(64)**|Type of memory consumer: VARHEAP, HASH, or PGPOOL.<br /><br /> 0 - (It should not be displayed.)<br /><br /> 2 - VARHEAP<br /><br /> 3 - HASH<br /><br /> 5 - PGPOOL|  
 |memory_consumer_desc|**nvarchar(64)**|Description of the memory consumer instance:<br /><br /> VARHEAP: <br />Database heap. Used to allocate user data for a database (rows).<br />Database System heap. Used to allocate database data that will be included in memory dumps and do not include user data.<br />Range index heap. Private heap used by range index to allocate BW pages.<br /><br /> HASH: No description since the object_id indicates the table and the index_id the hash index itself.<br /><br /> PGPOOL: For the database there is only one page pool Database 64K page pool.|  
 |object_id|**bigint**|The object ID to which the allocated memory is attributed. A negative value for system objects.|  
 |xtp_object_id|**bigint**|The object ID for the memory-optimized table.|  
@@ -48,10 +42,10 @@ manager: "jhubbard"
 |min_sizeclass|**int**|Internal use only.|  
 |max_sizeclass|**int**|Internal use only.|  
 |memory_consumer_address|**varbinary**|Internal address of the consumer. For internal use only.|  
-|xtp_object_id|**bigint**|The in-memory OLTP object ID that corresponds to the memory-optimized table.|  
+|xtp_object_id|**bigint**|The [!INCLUDE[inmemory](../../includes/inmemory-md.md)] object ID that corresponds to the memory-optimized table.|  
   
 ## Remarks  
- In the output, the allocators at database levels refer to user tables, indexes, and system tables. VARHEAP with object_id = NULL refers to memory allocated to tables with variable length columns.  
+ In the output, the allocators at database levels refer to user tables, indexes, and system tables. VARHEAP with `object_id` = `NULL` refers to memory allocated to tables with variable length columns.  
   
 ## Permissions  
  All rows are returned if you have VIEW DATABASE STATE permission on the current database. Otherwise, an empty rowset is returned.  
@@ -65,16 +59,18 @@ manager: "jhubbard"
  
   
 ## Examples  
-  
-```  
+
+Query memory consumers in the current database.
+
+```sql  
 -- memory consumers (database level)  
 SELECT OBJECT_NAME(object_id), *   
 FROM sys.dm_db_xtp_memory_consumers;  
 ```  
   
 ## User Scenario  
-  
-```  
+
+```sql  
 -- memory consumers (database level)  
   
 select  convert(char(10), object_name(object_id)) as Name,   
@@ -82,9 +78,9 @@ convert(char(10),memory_consumer_type_desc ) as memory_consumer_type_desc, objec
 from sys.dm_db_xtp_memory_consumers  
 ```  
   
- Here is the output with a subset of columns. The allocators at database levels refer to user tables, indexes, and system tables. The VARHEAP with object_id = NULL (last row) refers to memory allocated to data rows of the tables (in the example here, it is t1). The allocated bytes, when converted to MB, is 1340MB.  
+ Here is the output with a subset of columns. The allocators at database levels refer to user tables, indexes, and system tables. The VARHEAP with `object_id` = `NULL` (last row) refers to memory allocated to data rows of the tables (in the example here, it is `t1`). The allocated bytes, when converted to MB, is 1340MB.  
   
-```  
+```output  
 Name       memory_consumer_type_desc object_id   index_id    allocated_bytes      used_bytes  
 ---------- ------------------------- ----------- ----------- -------------------- --------------------  
 t3         HASH                      629577281   2           8388608              8388608  
@@ -110,17 +106,24 @@ NULL       VARHEAP                   NULL        NULL        1405943808         
   
  The total memory allocated and used from this DMV is same as the object level in [sys.dm_db_xtp_table_memory_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-xtp-table-memory-stats-transact-sql.md).  
   
-```  
+```sql  
 select  sum(allocated_bytes)/(1024*1024) as total_allocated_MB,   
         sum(used_bytes)/(1024*1024) as total_used_MB  
-from sys.dm_db_xtp_memory_consumers  
-  
+from sys.dm_db_xtp_memory_consumers;
+```
+
+```output  
 total_allocated_MB   total_used_MB  
 -------------------- --------------------  
 1358                 1191  
 ```  
   
-## See Also  
- [Memory-Optimized Table Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/memory-optimized-table-dynamic-management-views-transact-sql.md)  
-  
-  
+## See also
+
+- [Introduction to Memory-Optimized Tables](../in-memory-oltp/introduction-to-memory-optimized-tables.md)
+- [Memory-Optimized Table Dynamic Management Views](../../relational-databases/system-dynamic-management-views/memory-optimized-table-dynamic-management-views-transact-sql.md)
+
+## Next steps 
+
+- [[!INCLUDE[inmemory](../../includes/inmemory-md.md)] Overview and Usage Scenarios](../in-memory-oltp/overview-and-usage-scenarios.md)
+- [Optimize performance by using in-memory technologies in Azure SQL Database and Azure SQL Managed Instance](/azure/azure-sql/in-memory-oltp-overview)

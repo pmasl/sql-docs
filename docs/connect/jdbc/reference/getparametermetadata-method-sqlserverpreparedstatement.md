@@ -1,24 +1,15 @@
 ---
-title: "getParameterMetaData Method (SQLServerPreparedStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getParameterMetaData Method (SQLServerPreparedStatement)"
+description: "getParameterMetaData Method (SQLServerPreparedStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.getParameterMetaData"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.getParameterMetaData"
 apitype: "Assembly"
-ms.assetid: c2876dec-ce29-4b61-9d74-ec3173b8cba5
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getParameterMetaData Method (SQLServerPreparedStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

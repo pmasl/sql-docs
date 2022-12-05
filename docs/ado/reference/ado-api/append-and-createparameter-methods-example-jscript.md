@@ -1,27 +1,20 @@
 ---
-title: "Append and CreateParameter Methods Example (JScript) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Append and CreateParameter Methods Example (JScript)"
+description: "Append and CreateParameter Methods Example (JScript)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "JScript"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "CreateParameter method [ADO], JScript example"
   - "Append method [ADO], JScript example"
-ms.assetid: 37000833-68f4-45f1-b2dd-7f75893d09d9
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "JScript"
 ---
 # Append and CreateParameter Methods Example (JScript)
-This example uses the [Append](../../../ado/reference/ado-api/append-method-ado.md) and [CreateParameter](../../../ado/reference/ado-api/createparameter-method-ado.md) methods to execute a stored procedure with an input parameter. Cut and paste the following code to Notepad or another text editor, and save it as **AppendJS.asp**.  
+This example uses the [Append](./append-method-ado.md) and [CreateParameter](./createparameter-method-ado.md) methods to execute a stored procedure with an input parameter. Cut and paste the following code to Notepad or another text editor, and save it as **AppendJS.asp**.  
   
 ```  
 <!-- BeginAppendJS -->  
@@ -140,8 +133,8 @@ body {
 ```  
   
 ## See Also  
- [Append Method (ADO)](../../../ado/reference/ado-api/append-method-ado.md)   
- [CreateParameter Method (ADO)](../../../ado/reference/ado-api/createparameter-method-ado.md)   
- [Field Object](../../../ado/reference/ado-api/field-object.md)   
- [Fields Collection (ADO)](../../../ado/reference/ado-api/fields-collection-ado.md)   
- [Parameter Object](../../../ado/reference/ado-api/parameter-object.md)
+ [Append Method (ADO)](./append-method-ado.md)   
+ [CreateParameter Method (ADO)](./createparameter-method-ado.md)   
+ [Field Object](./field-object.md)   
+ [Fields Collection (ADO)](./fields-collection-ado.md)   
+ [Parameter Object](./parameter-object.md)

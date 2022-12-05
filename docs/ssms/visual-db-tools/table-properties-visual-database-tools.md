@@ -1,28 +1,26 @@
 ---
-title: "Table Properties (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Table Properties (Visual Database Tools)"
+title: Table Properties
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vdt.tabledesigner"
   - "vdt.designers.properties.Table"
 ms.assetid: cc392987-1aab-45f5-b5af-a26be53409bf
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Table Properties (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 These properties appear in the Properties window when you right click in Table Designer and select Properties. Unless otherwise noted, you can edit these properties in the Properties window when the table is selected.  
   
 > [!NOTE]  
-> If the table is published for replication, you must make schema changes using the Transact-SQL statement [ALTER TABLE](http://msdn.microsoft.com/en-us/f1745145-182d-4301-a334-18f799d361d1) or SQL Server Management Objects (SMO). When schema changes are made using the Table Designer or the Database Diagram Designer, it attempts to drop and recreate the table. You cannot drop published objects, therefore the schema change will fail.  
+> If the table is published for replication, you must make schema changes using the Transact-SQL statement [ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md) or SQL Server Management Objects (SMO). When schema changes are made using the Table Designer or the Database Diagram Designer, it attempts to drop and recreate the table. You cannot drop published objects, therefore the schema change will fail.  
   
 ## Show Table Properties in Table Designer  
   
@@ -42,7 +40,7 @@ Displays the name of the table. To edit the name, type in the text box.
 Shows the name of the data source of the selected table.  
   
 **Description**  
-Shows a description of the selected table. To see the entire description, or to edit it, click the description and then click the ellipses **(…)** to the right of the property.  
+Shows a description of the selected table. To see the entire description, or to edit it, click the description and then click the ellipses **(...)** to the right of the property.  
   
 **Schema**  
 Shows the name of the schema to which this table belongs. (Applies only to Microsoft SQL Server.)  
@@ -81,5 +79,5 @@ Shows the column used by Microsoft SQL Server as the table's ROWGUID column. To 
 Provides a drop-down list from which you can choose the filegroup for columns that have text or image data types. If the table is stored using a partition scheme, leave this field blank.  
   
 ## See Also  
-[Design Tables (Visual Database Tools)](../../ssms/visual-db-tools/design-tables-visual-database-tools.md)  
+[Design Tables](../../ssms/visual-db-tools/design-tables-visual-database-tools.md)  
   

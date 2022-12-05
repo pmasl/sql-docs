@@ -1,17 +1,15 @@
 ---
-title: "GRANT Database Principal Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "GRANT Database Principal Permissions"
+titleSuffix: SQL Server (Transact-SQL)
+description: Grant permissions on a database user, database role, or application role.
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/12/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "database roles [SQL Server], permissions"
   - "permissions [SQL Server], database roles"
   - "granting permissions [SQL Server], database users"
@@ -23,14 +21,12 @@ helpviewer_keywords:
   - "GRANT statement, users"
   - "GRANT statement, roles"
   - "application roles [SQL Server], permissions"
-ms.assetid: 012588a2-cbe1-48f0-a731-b4a2b83203d5
-caps.latest.revision: 24
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # GRANT Database Principal Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Grants permissions on a database user, database role, or application role in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
@@ -39,7 +35,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 GRANT permission [ ,...n ]    
     ON   
     {  [ USER :: database_user ]  
@@ -61,7 +57,9 @@ GRANT permission [ ,...n ]
   | Database_user_with_no_login   
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be granted on the database principal. For a list of the permissions, see the Remarks section later in this topic.  
   
@@ -88,12 +86,12 @@ GRANT permission [ ,...n ]
  Specifies a database role.  
   
  *Application_role*  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later, [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)].  
   
  Specifies an application role.  
   
  *Database_user_mapped_to_Windows_User*  
- pecifies a database user mapped to a Windows user.  
+ Specifies a database user mapped to a Windows user.  
   
  *Database_user_mapped_to_Windows_Group*  
   
@@ -167,7 +165,7 @@ GRANT permission [ ,...n ]
 ### A. Granting CONTROL permission on a user to another user  
  The following example grants `CONTROL` permission on `AdventureWorks2012` user `Wanida` to user `RolandX`.  
   
-```  
+```sql  
 GRANT CONTROL ON USER::Wanida TO RolandX;  
 GO  
 ```  
@@ -175,7 +173,7 @@ GO
 ### B. Granting VIEW DEFINITION permission on a role to a user with GRANT OPTION  
  The following example grants `VIEW DEFINITION` permission on `AdventureWorks2012` role `SammamishParking` together with `GRANT OPTION` to database user `JinghaoLiu`.  
   
-```  
+```sql  
 GRANT VIEW DEFINITION ON ROLE::SammamishParking   
     TO JinghaoLiu WITH GRANT OPTION;  
 GO  
@@ -184,9 +182,9 @@ GO
 ### C. Granting IMPERSONATE permission on a user to an application role  
  The following example grants `IMPERSONATE` permission on user `HamithaL` to `AdventureWorks2012` application role `AccountsPayable17`.  
   
-**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)].  
+**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later, [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)].  
   
-```  
+```sql  
 GRANT IMPERSONATE ON USER::HamithaL TO AccountsPayable17;  
 GO    
 ```  

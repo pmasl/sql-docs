@@ -1,13 +1,11 @@
 ---
 title: "Performing Asynchronous Operations | Microsoft Docs"
+description: Allow applications to perform asynchronous database operations with the SQL Server Native Client OLD DB provider.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "initialization [SQL Server Native Client]"
@@ -19,13 +17,15 @@ helpviewer_keywords:
   - "SQLNCLI, asynchronous operations"
   - "SQL Server Native Client, asynchronous operations"
 ms.assetid: 8fbd84b4-69cb-4708-9f0f-bbdf69029bcc
-caps.latest.revision: 45
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Performing Asynchronous Operations
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+# Performing Asynchronous Operations in SQL Server Native Client
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+> [!IMPORTANT] 
+> [!INCLUDE[snac-removed-oledb-and-odbc](../../../includes/snac-removed-oledb-and-odbc.md)]
 
   [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] allows applications to perform asynchronous database operations. Asynchronous processing enables methods to return immediately without blocking on the calling thread. This allows much of the power and flexibility of multithreading, without requiring the developer to explicitly create threads or handle synchronization. Applications request asynchronous processing when initializing a database connection, or when initializing the result from the execution of a command.  
   

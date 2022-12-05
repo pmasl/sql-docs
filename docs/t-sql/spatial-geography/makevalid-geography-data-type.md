@@ -1,26 +1,22 @@
 ---
+description: "MakeValid (geography Data Type)"
 title: "MakeValid (geography Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
   - "MakeValid method (geography)"
 ms.assetid: f67038e3-4f62-4465-994e-e95ac27d8ada
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # MakeValid (geography Data Type)
-[!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Converts a **geography** instance that is not valid into a valid **geography** instance with a valid Open Geospatial Consortium (OGC) type.  
   
@@ -34,8 +30,10 @@ manager: "jhubbard"
   
 .MakeValid ()  
 ```  
-  
-## Return Types  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] return type: **geography**  
   
  CLR return type: **SqlGeography**  
@@ -53,7 +51,7 @@ manager: "jhubbard"
 ## Examples  
  The first example creates an invalid `LineString` instance that overlaps itself and uses `STIsValid()` to confirm that it is an invalid instance. `STIsValid()` returns the value of 0 for an invalid instance.  
   
-```  
+```sql
 DECLARE @g geography;  
 SET @g = geography::STGeomFromText('LINESTRING(0 2, 1 1, 1 0, 1 1, 2 2)', 4326);  
 SELECT @g.STIsValid();  
@@ -61,20 +59,20 @@ SELECT @g.STIsValid();
   
  The second example uses `MakeValid()` to make the instance valid and to test that the instance is indeed valid. `STIsValid()` returns the value of 1 for a valid instance.  
   
-```  
+```sql
 SET @g = @g.MakeValid();  
 SELECT @g.STIsValid();  
 ```  
   
  The third example verifies how the instance has been changed to make it a valid instance.  
   
-```  
+```sql
 SELECT @g.ToString();  
 ```  
   
  In this example, when the `LineString` instance is selected, the values are returned as a valid `MultiLineString` instance.  
   
-```  
+```sql
 MULTILINESTRING ((0 2, 1 1, 2 2), (1 1, 1 0))  
 ```  
   

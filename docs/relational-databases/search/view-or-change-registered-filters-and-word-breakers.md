@@ -1,27 +1,28 @@
 ---
-title: "View or Change Registered Filters and Word Breakers | Microsoft Docs"
-ms.custom: ""
+description: "View or Change Registered Filters and Word Breakers"
+title: "View or change registered filters & word breakers"
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-search"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: search
+ms.topic: conceptual
 helpviewer_keywords: 
   - "full-text search [SQL Server], word breakers"
   - "full-text search [SQL Server], filters"
   - "filters [full-text search]"
   - "word breakers [full-text search]"
 ms.assetid: f88c54df-b1aa-4701-807f-dc92c32363fd
-caps.latest.revision: 22
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
+ms.custom: "seo-lt-2019"
 ---
 # View or Change Registered Filters and Word Breakers
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
   After any word breakers or filters are installed or uninstalled on a system, the changes do not automatically take effect on server instances. This topic describes how to view the currently registered word breaker or filters and how to register newly installed word breakers and filters on an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+  
+  > [!NOTE]
+  >  Azure SQL Managed Instance supports viewing registered filters and word breakers, but changing them is not supported. Only preinstalled ones can be used. Third party filters and word breakers are not supported on managed instance.
   
 ### To view a list of languages whose word breakers are currently registered  
   
@@ -44,7 +45,7 @@ manager: "jhubbard"
 1.  Use the [sp_fulltext_service](../../relational-databases/system-stored-procedures/sp-fulltext-service-transact-sql.md) system stored procedure to update the list of languages, as follows:  
   
     ```  
-    exec sp_fulltext_service 'update_languages';   
+    EXEC sp_fulltext_service 'update_languages';   
     ```  
   
 ### To unregister uninstalled word breakers and filters  
@@ -52,13 +53,13 @@ manager: "jhubbard"
 1.  Use the **sp_fulltext_service** to update the list of languages, as follows:  
   
     ```  
-    exec sp_fulltext_service 'update_languages'  
+    EXEC sp_fulltext_service 'update_languages';  
     ```  
   
 2.  Use the **sp_fulltext_service** to restart the filter daemon host processes (fdhost.exe), as follows:  
   
     ```  
-    exec sp_fulltext_service 'restart_all_fdhosts';  
+    EXEC sp_fulltext_service 'restart_all_fdhosts';  
     ```  
   
 ### To replace existing word breakers or filters when installing new ones  
@@ -76,7 +77,7 @@ manager: "jhubbard"
   
      **To install and load Microsoft Filter Pack IFilters**  
   
-    -   [How to register Microsoft Filter Pack IFilters with SQL Server](http://go.microsoft.com/fwlink/?LinkId=130439)  
+    -   [How to register Microsoft Filter Pack IFilters with SQL Server]()  
   
 4.  Use **sp_fulltext_service** to load newly installed word breakers and filters in the server instance, as follows:  
   
@@ -100,5 +101,4 @@ manager: "jhubbard"
  [Set the Service Account for the Full-text Filter Daemon Launcher](../../relational-databases/search/set-the-service-account-for-the-full-text-filter-daemon-launcher.md)   
  [Configure and Manage Filters for Search](../../relational-databases/search/configure-and-manage-filters-for-search.md)   
  [Configure and Manage Word Breakers and Stemmers for Search](../../relational-databases/search/configure-and-manage-word-breakers-and-stemmers-for-search.md)  
-  
   

@@ -1,24 +1,15 @@
 ---
-title: "supportsMixedCaseIdentifiers Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsMixedCaseIdentifiers Method"
+description: "supportsMixedCaseIdentifiers Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsMixedCaseIdentifiers"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsMixedCaseIdentifiers"
 apitype: "Assembly"
-ms.assetid: 0f68d9f7-0d8d-4d8d-9188-14e253a2576a
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsMixedCaseIdentifiers Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

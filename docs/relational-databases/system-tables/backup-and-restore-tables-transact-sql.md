@@ -1,29 +1,23 @@
 ---
-title: "Backup and Restore Tables (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "Backup and Restore Tables (Transact-SQL)"
+description: Backup and Restore Tables (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+helpviewer_keywords:
   - "system tables [SQL Server], backup tables"
   - "backup system tables [SQL Server]"
   - "system tables [SQL Server], restore tables"
   - "restore system tables [SQL Server]"
+dev_langs:
+  - "TSQL"
 ms.assetid: aa615add-54e6-40f5-8b55-3728b26884ee
-caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Backup and Restore Tables (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The topics in this section describe the system tables that store information used by database backup and restore operations.  
   

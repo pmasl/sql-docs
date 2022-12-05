@@ -1,24 +1,15 @@
 ---
-title: "rollback Method (SQLServerXAResource) | Microsoft Docs"
-ms.custom: ""
+title: "rollback Method (SQLServerXAResource)"
+description: "rollback Method (SQLServerXAResource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerXAResource.rollback"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerXAResource.rollback"
 apitype: "Assembly"
-ms.assetid: 93d9d7e6-54b6-4d86-8f8c-386c6057e85e
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # rollback Method (SQLServerXAResource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

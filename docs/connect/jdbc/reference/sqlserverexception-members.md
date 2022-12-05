@@ -1,19 +1,12 @@
 ---
-title: "SQLServerException Members | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 610be62e-0994-40bc-9348-4615b9b7a180
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+title: "SQLServerException Members"
+description: "SQLServerException Members"
+author: David-Engel
+ms.author: v-davidengel
+ms.date: "01/19/2018"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerException Members
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -21,7 +14,10 @@ manager: "jhubbard"
   The following tables list the members exposed by the [SQLServerException](../../../connect/jdbc/reference/sqlserverexception-class.md) class.  
   
 ## Constructors  
- None.  
+
+|Name|Description|  
+|----------|-----------------|  
+|[SQLServerException](../../../connect/jdbc/reference/sqlserverexception-constructors.md)|Initializes a new instance of the SQLServerException class.|  
   
 ## Fields  
  None.  

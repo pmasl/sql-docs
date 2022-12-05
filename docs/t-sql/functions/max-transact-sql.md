@@ -1,31 +1,25 @@
 ---
-title: "MAX (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/13/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "MAX (Transact-SQL)"
+description: "MAX (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
+ms.date: "08/23/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "MAX"
   - "MAX_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MAX function [Transact-SQL]"
   - "values [SQL Server], maximum"
   - "maximum values [SQL Server]"
-ms.assetid: 9b002b69-ab5e-472d-b12e-dc2fbe35ef42
-caps.latest.revision: 38
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # MAX (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns the maximum value in the expression.  
   
@@ -33,24 +27,17 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server and Azure SQL Database  
-  
-MAX ( [ ALL | DISTINCT ] expression )  
-   OVER ( [ partition_by_clause ] order_by_clause )     
-```  
-  
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
-  
+```syntaxsql  
 -- Aggregation Function Syntax  
-MAX ( [ ALL | DISTINCT ] expression )  
+MAX( [ ALL | DISTINCT ] expression )  
   
--- Aggregation Function Syntax   
-MAX ( expression ) OVER ( [ <partition_by_clause> ] [ <order_by_clause> ] )  
-```  
+-- Analytic Function Syntax  
+MAX ([ ALL ] expression) OVER ( <partition_by_clause> [ <order_by_clause> ] )  
+``` 
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  **ALL**  
  Applies the aggregate function to all values. ALL is the default.  
   
@@ -62,14 +49,16 @@ MAX ( expression ) OVER ( [ <partition_by_clause> ] [ <order_by_clause> ] )
   
  For more information, see [Expressions &#40;Transact-SQL&#41;](../../t-sql/language-elements/expressions-transact-sql.md).  
   
- OVER **(** [ *partition_by_clause* ] *order_by_clause***)**  
- *partition_by_clause* divides the result set produced by the FROM clause into partitions to which the function is applied. If not specified, the function treats all rows of the query result set as a single group. *order_by_clause* determines the logical order in which the operation is performed. *order_by_clause* is required. For more information, see [OVER Clause &#40;Transact-SQL&#41;](../../t-sql/queries/select-over-clause-transact-sql.md).  
+ OVER **(** _partition\_by\_clause_ [  _order\_by\_clause_ ] **)**  
+ *partition_by_clause* divides the result set produced by the FROM clause into partitions to which the function is applied. If not specified, the function treats all rows of the query result set as a single group. *order_by_clause* determines the logical order in which the operation is performed. *_partition\_by\_clause_* is required. For more information, see [OVER Clause &#40;Transact-SQL&#41;](../../t-sql/queries/select-over-clause-transact-sql.md).  
   
 ## Return Types  
  Returns a value same as *expression*.  
   
 ## Remarks  
  MAX ignores any null values.  
+ 
+ MAX returns NULL when there is no row to select.  
   
  For character columns, MAX finds the highest value in the collating sequence.  
   
@@ -80,7 +69,7 @@ MAX ( expression ) OVER ( [ <partition_by_clause> ] [ <order_by_clause> ] )
 ### A. Simple example  
  The following example returns the highest (maximum) tax rate in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database.  
   
-```  
+```sql  
 SELECT MAX(TaxRate)  
 FROM Sales.SalesTaxRate;  
 GO  
@@ -88,18 +77,18 @@ GO
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
- `-------------------`  
+ ```  
+ -------------------  
+ 19.60  
+ Warning, null value eliminated from aggregate.  
   
- `19.60`  
-  
- `Warning, null value eliminated from aggregate.`  
-  
- `(1 row(s) affected)`  
+ (1 row(s) affected)  
+ ```  
   
 ### B. Using the OVER clause  
- The following example uses the MIN, MAX, AVG and COUNT functions with the OVER clause to provide aggregated values for each department in the `HumanResources.Department` table in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database.  
+ The following example uses the MIN, MAX, AVG, and COUNT functions with the OVER clause to provide aggregated values for each department in the `HumanResources.Department` table in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database.  
   
-```  
+```sql  
 SELECT DISTINCT Name  
        , MIN(Rate) OVER (PARTITION BY edh.DepartmentID) AS MinSalary  
        , MAX(Rate) OVER (PARTITION BY edh.DepartmentID) AS MaxSalary  
@@ -139,51 +128,12 @@ Tool Design                   8.62                  29.8462               23.505
  (16 row(s) affected)  
 ```  
   
-## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
-  
-### C. Using MAX  
- The following example uses the MAX aggregate function to return the price of the most expensive (maximum) product in a specified set of sales orders.  
-  
-```  
--- Uses AdventureWorks  
-  
-SELECT DISTINCT MAX(UnitPrice)   
-FROM dbo.FactResellerSales   
-WHERE SalesOrderNumber IN (N'SO43659', N'SO43660', N'SO43664');  
-```  
-  
- [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
-  
- `----------`  
-  
- `2039.9940`  
-  
-### D. Using MAX with OVER  
- The following examples use the MAX OVER() analytic function to return the price of the most expensive product in each sales order.  
-  
-```  
--- Uses AdventureWorks  
-  
-SELECT DISTINCT MAX(UnitPrice) OVER(PARTITION BY SalesOrderNumber) AS MostExpensiveProduct,  
-       SalesOrderNumber  
-FROM dbo.FactResellerSales    
-WHERE SalesOrderNumber IN (N'SO43659', N'SO43660', N'SO43664')  
-ORDER BY SalesOrderNumber  
-;  
-  
-```  
-  
- [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
-  
- `MostExpensiveProduct SalesOrderNumber`  
-  
- `--------------------- ----------------`  
-  
- `2039.9940             SO43659`  
-  
- `879.7940             SO43660`  
-  
- `2039.9940             SO43664`  
+### C. Using MAX with character data   
+The following example returns the database name that sorts as the last name alphabetically. The example uses `WHERE database_id < 5`, to consider only the system databases.  
+```sql   
+SELECT MAX(name) FROM sys.databases WHERE database_id < 5;
+```
+The last system database is `tempdb`.  
   
 ## See Also  
  [Aggregate Functions &#40;Transact-SQL&#41;](../../t-sql/functions/aggregate-functions-transact-sql.md)   

@@ -1,29 +1,25 @@
 ---
+description: "sp_showpendingchanges (Transact-SQL)"
 title: "sp_showpendingchanges (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_showpendingchanges"
   - "sp_showpendingchanges_TSQL"
 helpviewer_keywords: 
   - "sp_showpendingchanges"
 ms.assetid: 8013a792-639d-4550-b262-e65d30f9d291
-caps.latest.revision: 17
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_showpendingchanges (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a result set showing the changes that are waiting to be replicated. This stored procedure is executed at the Publisher on the publication database and at the Subscriber on the subscription database.  
   
@@ -43,16 +39,16 @@ sp_showpendingchanges [ [ @destination_server = ] 'destination_server' ]
 ```  
   
 ## Arguments  
- [ @destination_server**=** ] **'***destination_server***'**  
+`[ @destination_server = ] 'destination_server'`
  Is the name of the server where the replicated changes are applied. *destination_server* is **sysname**, with default value of NULL.  
   
- [ @publication**=** ] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication. *publication* is **sysname**, with a default value of NULL. When *publication* is specified, results are limited only to the specified publication.  
   
- [ @article **=** ] **'***article***'**  
+`[ @article = ] 'article'`
  Is the name of the article. *article* is **sysname**, with a default value of NULL. When *article* is specified, results are limited only to the specified article.  
   
- [ @show_rows **=** ] *show_rows*  
+`[ @show_rows = ] 'show_rows'`
  Specifies whether the result set contains more specific information about pending changes, with a default value of **0**. If a value of **1** is specified, the result set contains the columns is_delete and rowguid.  
   
 ## Result Set  

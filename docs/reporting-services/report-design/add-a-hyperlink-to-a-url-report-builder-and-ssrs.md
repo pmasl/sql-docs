@@ -1,31 +1,29 @@
 ---
-title: "Add a Hyperlink to a URL (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/07/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Add a hyperlink to a URL in a paginated report | Microsoft Docs"
+description: Discover how to add hyperlink actions to text boxes, images, charts, and gauges in paginated reports in Report Builder.
+ms.date: 09/07/2016
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: d3392c0b-7b62-4d27-bc04-2bd0c5487d08
-caps.latest.revision: 11
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Add a Hyperlink to a URL (Report Builder and SSRS)
-Learn how to add hyperlink actions to text boxes, images, charts, and gauges in [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)]  paginated reports. Links can go to other reports, to bookmarks in a report, or to  static or dynamic URLs. 
+# Add a hyperlink to a URL in a paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+Learn how to add hyperlink actions to text boxes, images, charts, and gauges in paginated reports. Links can go to other reports, to bookmarks in a report, or to  static or dynamic URLs.
 
  You can add a hyperlink action to any item that has an **Action** property, for example, a text box, an image, or a calculated series in a chart. When the user clicks that report item, the action that you define takes place.  
   
-*   You can **add a hyperlink that will open a browser with a URL** that you specify. The hyperlink can be a static URL or an expression that evaluates to a URL. If you have a field in a database that contains URLs, the expression can contain that field, resulting in a dynamic list of hyperlinks in the report. Make sure your report readers have access to the URL that you provide.  
+* You can **add a hyperlink that will open a browser with a URL** that you specify. The hyperlink can be a static URL or an expression that evaluates to a URL. If you have a field in a database that contains URLs, the expression can contain that field, resulting in a dynamic list of hyperlinks in the report. Make sure your report readers have access to the URL that you provide.  
    
-*  You can also **specify URLs to create drillthroughs** to reports on any report server that you and your users have permission to view using URL requests to the report server. For example, you can specify a report and hide the document map for the user when they first view the report. For more information, see [URL Access &#40;SSRS&#41;](../../reporting-services/url-access-ssrs.md) and [Specifying Paths to External Items &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/specifying-paths-to-external-items-report-builder-and-ssrs.md).
+* You can also **specify URLs to create drillthroughs** to reports on any report server that you and your users have permission to view using URL requests to the report server. For example, you can specify a report and hide the document map for the user when they first view the report. For more information, see [URL Access &#40;SSRS&#41;](../../reporting-services/url-access-ssrs.md) and [Specifying Paths to External Items &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/specifying-paths-to-external-items-report-builder-and-ssrs.md).
  
- *  And you can **add a bookmark to a specific place** in the same report. 
+ * And you can **add a bookmark to a specific place** in the same report. 
   
 Try adding hyperlinks with sample data in [Tutorial: Format Text &#40;Report Builder&#41;](../../reporting-services/tutorial-format-text-report-builder.md).  
   
@@ -52,7 +50,7 @@ Try adding hyperlinks with sample data in [Tutorial: Format Text &#40;Report Bui
   
    See [Add a Drillthrough Action on a Report](../../reporting-services/report-design/add-a-drillthrough-action-on-a-report-report-builder-and-ssrs.md) for more information. 
    
-6. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+6. Select **OK**.
    
 ## ... add a bookmark
 
@@ -66,7 +64,7 @@ You can link to bookmarks to a location in the current report. To link to a book
    
    See [Add a Bookmark to a Report](../../reporting-services/report-design/add-a-bookmark-to-a-report-report-builder-and-ssrs.md) for more information.
    
-3. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+3. Select **OK**.
 
 ## ... add a hyperlink 
   
@@ -74,11 +72,11 @@ You can link to bookmarks to a location in the current report. To link to a book
   
 4.  In **Select URL**, type or select a URL or an expression that evaluates to a URL, or click the drop-down arrow and click the name of a field that contains a URL. 
 
-    For an item published to a report server configured for native mode, use a full or relative path. For example, `http://<servername>/images/image1.jpg`. 
+    For an item published to a report server configured for native mode, use a full or relative path. For example, `https://<servername>/images/image1.jpg`. 
     
-    For an item published to a report server configured in SharePoint integrated mode, use a fully qualified URL. For example, `http://<SharePointservername>/<site>/Documents/images/image1.jpg`.
+    For an item published to a report server configured in SharePoint integrated mode, use a fully qualified URL. For example, `https://<SharePointservername>/<site>/Documents/images/image1.jpg`.
   
-5.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+5.  Select **OK**.
 
 ## After you add a hyperlink
   

@@ -1,15 +1,13 @@
 ---
-title: "Broadcast a Shutdown Message (Command Prompt) | Microsoft Docs"
-ms.custom: ""
+title: "Broadcast a Shutdown Message (Command Prompt)"
+description: Find out how to use the net send command to broadcast a message in SQL Server. See how to determine which users are currently connected to SQL Server.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: configuration
+ms.topic: conceptual
+helpviewer_keywords:
   - "SQL Server, stopping"
   - "named instances [SQL Server], broadcasting shutdown messages"
   - "shutdown message broadcast"
@@ -17,14 +15,10 @@ helpviewer_keywords:
   - "command prompt [SQL Server], broadcasting shutdown messages"
   - "default instances [SQL Server], broadcasting shutdown messages"
   - "stopping SQL Server"
-ms.assetid: 9f20ccd5-d952-431d-ba12-339911af9430
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # Broadcast a Shutdown Message (Command Prompt)
-  This topic describes how to broadcast a shutdown message in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using the **net send** command. In the message, include the time the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] will be stopped so that users can finish their tasks.  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  This topic describes how to broadcast a shutdown message in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using the **net send** command. In the message, include the time the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] will be stopped so that users can finish their tasks.  
   
 ##  <a name="SSMSProcedure"></a>  
   

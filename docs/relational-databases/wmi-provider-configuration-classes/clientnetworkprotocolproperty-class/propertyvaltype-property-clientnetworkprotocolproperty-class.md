@@ -1,28 +1,25 @@
 ---
-title: "PropertyValType Property (ClientNetworkProtocolProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "PropertyValType Property (ClientNetworkProtocolProperty Class)"
+title: "PropertyValType Property (ClientNetworkProtocolProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
-  - "PropertyValType Property (ClientNetworkProtocolProperty Class)"
+  - "PropertyValType Property (ClientNetworkProtocolProperty"
 apilocation: 
   - "sqlmgmproviderxpsp2up.mof"
 apitype: "MOFDef"
 helpviewer_keywords: 
   - "PropertyValType property"
 ms.assetid: 624b9bdd-ed93-4140-bd4e-00d714a2558c
-caps.latest.revision: 31
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # PropertyValType Property (ClientNetworkProtocolProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the data type of the value stored in the property referenced by the [PropertyIdx Property (ClientNetworkProtocolProperty Class)](../../../relational-databases/wmi-provider-configuration-classes/clientnetworkprotocolproperty-class/propertyidx-property-clientnetworkprotocolproperty-class.md) value.  
   
 ## Syntax  

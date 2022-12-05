@@ -1,36 +1,30 @@
 ---
-title: "restorehistory (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "restorehistory (Transact-SQL)"
+description: restorehistory (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "restorehistory"
   - "restorehistory_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "restorehistory system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 9140ecc1-d912-4d76-ae70-e2a857da6d44
-caps.latest.revision: 28
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # restorehistory (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row for each restore operation. This table is stored in the **msdb** database.  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
 |**restore_history_id**|**int**|Unique identification number that identifies each restore operation. Identity, primary key.|  
-|**restore_date**|**datetime**|Date and time of the completion of the restore operation. Can be NULL.|  
+|**restore_date**|**datetime**|Date and time of the start of the restore operation. Can be NULL.|  
 |**destination_database_name**|**nvarchar(128)**|Name of the destination database for the restore operation. Can be NULL.|  
 |**user_name**|**nvarchar(128)**|Name of the user who performed the restore operation. Can be NULL.|  
 |**backup_set_id**|**int**|Unique identification number identifying the backup set being restored. References **backupset(backup_set_id)**.|  

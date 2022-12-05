@@ -1,24 +1,20 @@
 ---
+description: "Scrollable Cursors and Transaction Isolation"
 title: "Scrollable Cursors and Transaction Isolation | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "isolation levels [ODBC]"
   - "scrollable cursors [ODBC]"
   - "transaction isolation [ODBC]"
   - "transactions [ODBC], isolation"
 ms.assetid: f0216f4a-46e3-48ae-be0a-e2625e8403a6
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Scrollable Cursors and Transaction Isolation
 The following table lists the factors governing the visibility of changes.  

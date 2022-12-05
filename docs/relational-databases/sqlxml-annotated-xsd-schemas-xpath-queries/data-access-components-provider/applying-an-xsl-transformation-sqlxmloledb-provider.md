@@ -1,27 +1,24 @@
 ---
-title: "Applying an XSL Transformation (SQLXMLOLEDB Provider) | Microsoft Docs"
-ms.custom: ""
+title: "Apply an XSL Transformation (SQLXMLOLEDB)"
+description: Learn how to apply an XSL transformation in an ADO application by using the ClientSideXML and xsl properties of the SQLXMLOLEDB Provider.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "SQLXMLOLEDB Provider, applying XSL transformations"
   - "applying XSL transformations [SQLXML]"
   - "xsl property"
   - "Base Path property"
   - "XSL Transformations [SQLXML]"
 ms.assetid: cb5e41ab-dd20-4873-af20-f417bd1bbf6d
-caps.latest.revision: 30
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Applying an XSL Transformation (SQLXMLOLEDB Provider)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   In this sample ADO application, an SQL query is executed, and an XSL transformation is applied to the result. Setting the ClientSideXML property to True enforces the processing of the rowset on the client side. The command dialect is set to {5d531cb2-e6ed-11d2-b252-00c04f681b71}, because the SQL query is specified in a template and this dialect must be specified when executing a template. The xsl property specifies the XSL file to use to apply the transformation. The value of Base Path property is used to search for the XSL file. If you specify a path in the value of the xsl property, the path is relative to the path that is specified in the Base Path property.  
   
  This example shows how to use the following SQLXMLOLEDB Provider-specific properties:  
@@ -36,7 +33,7 @@ manager: "jhubbard"
   
  The xsl property is specified in the application; therefore, the XSL transformation is applied to the XML document that is generated on the client, and the result is a two-column table.  
   
- To execute the template command, the XML template dialect — {5d531cb2-e6ed-11d2-b252-00c04f681b71} — must be specified.  
+ To execute the template command, the XML template dialect - {5d531cb2-e6ed-11d2-b252-00c04f681b71} - must be specified.  
   
 > [!NOTE]  
 >  In the code, you must provide the name of the instance of Microsoft [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] in the connection string. Also, this example specifies the use of the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client for the data provider which requires additional network client software to be installed. For more information, see [System Requirements for SQL Server Native Client](../../../relational-databases/native-client/system-requirements-for-sql-server-native-client.md).  

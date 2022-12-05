@@ -1,31 +1,25 @@
 ---
-title: "sys.dm_db_xtp_gc_cycle_stats (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/29/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.dm_db_xtp_gc_cycle_stats (Transact-SQL)"
+description: sys.dm_db_xtp_gc_cycle_stats returns the current state of committed transactions that have deleted one or more rows for In-Memory OLTP tables.
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "03/02/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_db_xtp_gc_cycle_stats_TSQL"
   - "dm_db_xtp_gc_cycle_stats"
   - "sys.dm_db_xtp_gc_cycle_stats_TSQL"
   - "sys.dm_db_xtp_gc_cycle_stats"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_db_xtp_gc_cycle_stats dynamic management view"
-ms.assetid: bbc9704e-158e-4d32-b693-f00dce31cd2f
-caps.latest.revision: 12
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.dm_db_xtp_gc_cycle_stats (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+[!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Outputs the current state of committed transactions that have deleted one or more rows. The idle garbage collection thread wakes every minute or when the number of committed DML transactions exceeds an internal threshold since the last garbage collection cycle. As part of the garbage collection cycle, it moves the transactions that have committed into one or more  queues associated with generations. The transactions that have generated stale versions are grouped in a unit of 16 transactions across 16 generations as follows:  
   
@@ -37,7 +31,7 @@ manager: "jhubbard"
   
  When there is memory pressure, the garbage collection thread updates the oldest active transaction hint aggressively, which forces garbage collection.  
   
- For more information, see [In-Memory OLTP &#40;In-Memory Optimization&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md).  
+ For more information, see [[!INCLUDE[inmemory](../../includes/inmemory-md.md)] &#40;In-Memory Optimization&#41;](../in-memory-oltp/overview-and-usage-scenarios.md).  
   
   
 |Column name|Type|Description|  
@@ -45,7 +39,7 @@ manager: "jhubbard"
 |cycle_id|**bigint**|A unique identifier for the garbage collection cycle.|  
 |ticks_at_cycle_start|**bigint**|Ticks at the time the cycle started.|  
 |ticks_at_cycle_end|**bigint**|Ticks at the time the cycle ended.|  
-|base_generation|**bigint**|The current base generation value in the database. This represents the timestamp of the oldest active transaction used to identify transactions for garbage collection. The oldest active transaction id is updated in the increment of 16. For example, if you have transaction ids as 124, 125, 126 … 139, the value will be 124. When you add another transaction, for example 140, the value will be 140.|  
+|base_generation|**bigint**|The current base generation value in the database. This represents the timestamp of the oldest active transaction used to identify transactions for garbage collection. The oldest active transaction id is updated in the increment of 16. For example, if you have transaction ids as 124, 125, 126 ... 139, the value will be 124. When you add another transaction, for example 140, the value will be 140.|  
 |xacts_copied_to_local|**bigint**|The number of transactions copied from the transaction pipeline into the database's generation array.|  
 |xacts_in_gen_0- xacts_in_gen_15|**bigint**|Number of transactions in each generation.|  
   
@@ -55,7 +49,7 @@ manager: "jhubbard"
 ## Usage Scenario  
  Here is a sample output with a subset of columns, showing 27 generations:  
   
-```  
+```output  
 cycle_id   ticks_at_cycle_start ticks_at_cycle_end   base_generation  xacts_in_gen_0    xacts_in_gen_1  
   
 1          123160509            123160509            1                    0                    0  
@@ -88,7 +82,12 @@ cycle_id   ticks_at_cycle_start ticks_at_cycle_end   base_generation  xacts_in_g
   
 ```  
   
-## See Also  
- [Memory-Optimized Table Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/memory-optimized-table-dynamic-management-views-transact-sql.md)  
-  
-  
+## See also
+
+- [Introduction to Memory-Optimized Tables](../in-memory-oltp/introduction-to-memory-optimized-tables.md)
+- [Memory-Optimized Table Dynamic Management Views](../../relational-databases/system-dynamic-management-views/memory-optimized-table-dynamic-management-views-transact-sql.md)
+
+## Next steps 
+
+- [[!INCLUDE[inmemory](../../includes/inmemory-md.md)] Overview and Usage Scenarios](../in-memory-oltp/overview-and-usage-scenarios.md)
+- [Optimize performance by using in-memory technologies in Azure SQL Database and Azure SQL Managed Instance](/azure/azure-sql/in-memory-oltp-overview)

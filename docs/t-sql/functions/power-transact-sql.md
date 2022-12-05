@@ -1,29 +1,25 @@
 ---
-title: "POWER (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/13/2017"
-ms.prod: "sql-non-specified"
+title: "POWER (Transact-SQL)"
+description: "POWER (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/13/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "POWER_TSQL"
   - "POWER"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "POWER function"
-ms.assetid: 0fd34494-90b9-4559-8011-a8c1b9f40239
-caps.latest.revision: 41
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # POWER (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns the value of the specified expression to the specified power.  
   
@@ -31,13 +27,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql  
 POWER ( float_expression , y )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *float_expression*  
  Is an [expression](../../t-sql/language-elements/expressions-transact-sql.md) of type **float** or of a type that can be implicitly converted to **float**.  
   
@@ -45,16 +41,27 @@ POWER ( float_expression , y )
  Is the power to which to raise *float_expression*. *y* can be an expression of the exact numeric or approximate numeric data type category, except for the **bit** data type.  
   
 ## Return Types  
- Returns the same type as submitted in *float_expression*. For example, if a **decimal**(2,0) is submitted as *float_expression*, the result returned is **decimal**(2,0).  
+ The return type depends on the input type of *float_expression*:
+ 
+|Input type|Return type|  
+|----------|-----------|  
+|**float**, **real**|**float**|
+|**decimal(*p*, *s*)**|**decimal(38, *s*)**|
+|**int**, **smallint**, **tinyint**|**int**|
+|**bigint**|**bigint**|
+|**money**, **smallmoney**|**money**|
+|**bit**, **char**, **nchar**, **varchar**, **nvarchar**|**float**|
+ 
+If the result does not fit in the return type, an arithmetic overflow error occurs.
   
 ## Examples  
   
 ### A. Using POWER to return the cube of a number  
  The following example demonstrates raising a number to the power of 3 (the cube of the number).  
   
-```  
-DECLARE @input1 float;  
-DECLARE @input2 float;  
+```sql  
+DECLARE @input1 FLOAT;  
+DECLARE @input2 FLOAT;  
 SET @input1= 2;  
 SET @input2 = 2.5;  
 SELECT POWER(@input1, 3) AS Result1, POWER(@input2, 3) AS Result2;  
@@ -73,14 +80,14 @@ Result1                Result2
 ### B. Using POWER to show results of data type conversion  
  The following example shows how the *float_expression* preserves the data type which can return unexpected results.  
   
-```  
+```sql 
 SELECT   
-POWER(CAST(2.0 AS float), -100.0) AS FloatResult,  
+POWER(CAST(2.0 AS FLOAT), -100.0) AS FloatResult,  
 POWER(2, -100.0) AS IntegerResult,  
-POWER(CAST(2.0 AS int), -100.0) AS IntegerResult,  
+POWER(CAST(2.0 AS INT), -100.0) AS IntegerResult,  
 POWER(2.0, -100.0) AS Decimal1Result,  
 POWER(2.00, -100.0) AS Decimal2Result,  
-POWER(CAST(2.0 AS decimal(5,2)), -100.0) AS Decimal2Result;  
+POWER(CAST(2.0 AS DECIMAL(5,2)), -100.0) AS Decimal2Result;  
 GO  
 ```  
   
@@ -95,8 +102,8 @@ FloatResult            IntegerResult IntegerResult Decimal1Result Decimal2Result
 ### C. Using POWER  
  The following example returns `POWER` results for `2`.  
   
-```  
-DECLARE @value int, @counter int;  
+```sql  
+DECLARE @value INT, @counter INT;  
 SET @value = 2;  
 SET @counter = 1;  
   
@@ -139,15 +146,16 @@ GO
 ### D: Using POWER to return the cube of a number  
  The following example shows returns `POWER` results for `2.0` to the 3rd power.  
   
-```  
+```sql  
 SELECT POWER(2.0, 3);  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
- `------------`  
-  
- `8.0`  
+ ```
+------------ 
+8.0
+```  
   
 ## See Also  
  [decimal and numeric &#40;Transact-SQL&#41;](../../t-sql/data-types/decimal-and-numeric-transact-sql.md)   

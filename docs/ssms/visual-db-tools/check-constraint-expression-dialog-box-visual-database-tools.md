@@ -1,26 +1,24 @@
 ---
-title: "Check Constraint Expression Dialog Box (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Check Constraint Expression Dialog Box (Visual Database Tools)"
+title: Check Constraint Expression Dialog Box
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vdt.dlgbox.checkconstraintexpression"
 ms.assetid: beb6ce43-3913-4d66-8826-8e885335b790
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Check Constraint Expression Dialog Box (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 When you attach a check constraint to a table or column, you must include an SQL expression. Type the check constraint expression in the box provided.  
   
-## UIElement List  
+## UI element list  
 Expression  
 Enter the expression  
   
@@ -46,9 +44,11 @@ NOT (payment_method = 'credit card') OR
 ## To define a constraint expression  
 In the Check Constraints tab of the property pages, type an expression in the Constraint expression box using the following syntax:  
   
-<pre>{constant | column_name | function | (subquery)}  
+```
+{constant | column_name | function | (subquery)}  
 [{operator | AND | OR | NOT}  
-{constant | column_name | function | (subquery)}...]</pre>  
+{constant | column_name | function | (subquery)}...]
+```
   
 The SQL syntax is made up of the following parameters:  
   
@@ -63,6 +63,6 @@ The SQL syntax is made up of the following parameters:
 |NOT|Negates any Boolean expression (which can include keywords, such as LIKE, NULL, BETWEEN, IN, and EXISTS).<br /><br />When more than one logical operator is used in a statement, NOT is processed first. You can change the order of execution by using parentheses.|  
   
 ## See Also  
-[Unique Constraints and Check Constraints](http://msdn.microsoft.com/en-us/637098af-2567-48f8-90f4-b41df059833e)  
-[Create Unique Constraints](http://msdn.microsoft.com/en-us/a86f9d6f-f242-43be-b65d-b3435b71b62a)  
+[Unique Constraints and Check Constraints](../../relational-databases/tables/unique-constraints-and-check-constraints.md)  
+[Create Unique Constraints](../../relational-databases/tables/create-unique-constraints.md)  
   

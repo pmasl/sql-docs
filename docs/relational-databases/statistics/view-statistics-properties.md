@@ -1,27 +1,25 @@
 ---
 title: "View Statistics Properties | Microsoft Docs"
+description: Learn how to display current query optimization statistics for a table or indexed view in SQL Server by using SQL Server Management Studio or Transact-SQL.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-statistics"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.statistics.details.f1"
 helpviewer_keywords: 
   - "viewing statistics properties"
   - "statistics [SQL Server], viewing properties"
 ms.assetid: 0eaa2101-006e-4015-9979-3468b50e0aaa
-caps.latest.revision: 10
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # View Statistics Properties
-  You can display current query optimization statistics for a table or indexed view in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)]. Statistics objects include a header with metadata about the statistics, a histogram with the distribution of values in the first key column of the statistics object, and a density vector to measure cross-column correlation. For more information about histograms and density vectors, see [DBCC SHOW_STATISTICS &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-show-statistics-transact-sql.md)  
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+  You can display current query optimization statistics for a table or indexed view in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)]. Statistics objects include a header with metadata about the statistics, a histogram with the distribution of values in the first key column of the statistics object, and a density vector to measure cross-column correlation. For more information about histograms and density vectors, see [DBCC SHOW_STATISTICS &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-show-statistics-transact-sql.md)  
   
  **In This Topic**  
   
@@ -50,15 +48,15 @@ manager: "jhubbard"
   
 2.  Click the plus sign to expand the **Tables** folder.  
   
-3.  Click the plus sign to expand the table in which you want to view the statistic’s properties.  
+3.  Click the plus sign to expand the table in which you want to view the statistic's properties.  
   
 4.  Click the plus sign to expand the **Statistics** folder.  
   
 5.  Right-click the Statistics object of which you want to view the properties and select **Properties**.  
   
-6.  In the **Statistics Properties -** *statistics_name* dialog box, in the **Select a page** pane, select **Details**.  
+6.  In the **Statistics Properties -** _statistics_name_ dialog box, in the **Select a page** pane, select **Details**.  
   
-     The following properties show on the **Details** page in the **Statistics Properties -** *statistics_name* dialog box.  
+     The following properties show on the **Details** page in the **Statistics Properties -** _statistics_name_ dialog box.  
   
      **Table Name**  
      Displays the name of the table described by the statistics.  
@@ -130,7 +128,7 @@ manager: "jhubbard"
      Average number of rows with duplicate column values within a histogram step, excluding the upper bound (RANGE_ROWS / DISTINCT_RANGE_ROWS for DISTINCT_RANGE_ROWS > 0).  
   
 7.  Click **OK**.  
-  
+
 ##  <a name="TsqlProcedure"></a> Using Transact-SQL  
   
 #### To view statistics properties  

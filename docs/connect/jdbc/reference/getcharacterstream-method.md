@@ -1,24 +1,15 @@
 ---
-title: "getCharacterStream Method () | Microsoft Docs"
-ms.custom: ""
+title: "getCharacterStream Method ()"
+description: "getCharacterStream Method ()"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerClob.getCharacterStream"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerClob.getCharacterStream"
 apitype: "Assembly"
-ms.assetid: 70a5a8c8-791a-43f9-8a0e-1c390f30857c
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getCharacterStream Method ()
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

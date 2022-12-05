@@ -1,24 +1,15 @@
 ---
-title: "commit Method (SQLServerXAResource) | Microsoft Docs"
-ms.custom: ""
+title: "commit Method (SQLServerXAResource)"
+description: "commit Method (SQLServerXAResource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerXAResource.commit"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerXAResource.commit"
 apitype: "Assembly"
-ms.assetid: 1d0f8612-fb4a-4eca-bc37-8342e1419fd4
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # commit Method (SQLServerXAResource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

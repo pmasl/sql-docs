@@ -1,31 +1,23 @@
 ---
-title: "MSdbms_datatype (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSdbms_datatype (Transact-SQL)"
+description: MSdbms_datatype (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSdbms_datatype"
   - "MSdbms_datatype_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSdbms_datatype system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 606168cc-79a8-442f-ab43-936f8f884d72
-caps.latest.revision: 24
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSdbms_datatype (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSdbms_datatype** table contains the complete list of native data types at each supported database management system (DBMS) used as either a Publisher or Subscriber in heterogeneous database replication. This table is stored in the **msdb** database.  
   

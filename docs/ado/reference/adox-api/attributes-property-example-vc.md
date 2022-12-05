@@ -1,26 +1,19 @@
 ---
-title: "Attributes Property Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Attributes Property Example (VC++)"
+description: "Attributes Property Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Attributes property [ADOX], VC++ example"
-ms.assetid: 1057b57b-5ace-4830-9a20-562e88aeef86
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Attributes Property Example (VC++)
-This example demonstrates the [Attributes](../../../ado/reference/adox-api/attributes-property-adox.md) property of a [Column](../../../ado/reference/adox-api/column-object-adox.md). Setting it to **adColNullable** allows the user to set the value of a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) [Field](../../../ado/reference/ado-api/field-object.md) to an empty string. In this situation, the user can distinguish between a record where data is not known and a record where the data does not apply.  
+This example demonstrates the [Attributes](./attributes-property-adox.md) property of a [Column](./column-object-adox.md). Setting it to **adColNullable** allows the user to set the value of a [Recordset](../ado-api/recordset-object-ado.md) [Field](../ado-api/field-object.md) to an empty string. In this situation, the user can distinguish between a record where data is not known and a record where the data does not apply.  
   
 ```  
 // Attributes_Property_Sample.cpp  
@@ -177,7 +170,7 @@ int main() {
       printf("\n\tSource :  %s \n\tdescription : %s \n ", (LPCSTR)bstrSource, (LPCSTR)bstrDescription);  
    }  
    catch(...) {  
-      cout << "Error occured in AttributesX...." << endl;  
+      cout << "Error occurred in AttributesX...." << endl;  
    }  
   
    if (m_pRstEmployees)  
@@ -201,5 +194,5 @@ int main() {
 ```  
   
 ## See Also  
- [Attributes Property (ADOX)](../../../ado/reference/adox-api/attributes-property-adox.md)   
- [Column Object (ADOX)](../../../ado/reference/adox-api/column-object-adox.md)
+ [Attributes Property (ADOX)](./attributes-property-adox.md)   
+ [Column Object (ADOX)](./column-object-adox.md)

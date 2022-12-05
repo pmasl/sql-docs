@@ -1,29 +1,17 @@
 ---
-title: "PredictAdjustedProbability (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "PredictAdjustedProbability"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "PredictAdjustedProbability function"
-ms.assetid: 9a1e2ec5-5a37-4df6-a78e-26a495cc9301
-caps.latest.revision: 33
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "PredictAdjustedProbability (DMX)"
+description: "PredictAdjustedProbability (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # PredictAdjustedProbability (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Returns the adjusted probability of a specified state.  
   

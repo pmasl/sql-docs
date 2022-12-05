@@ -1,14 +1,12 @@
 ---
+description: "sp_remove_job_from_targets (Transact-SQL)"
 title: "sp_remove_job_from_targets (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_remove_job_from_targets_TSQL"
   - "sp_remove_job_from_targets"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_remove_job_from_targets"
 ms.assetid: b8171fb1-c11d-4244-8618-a12e28a150ce
-caps.latest.revision: 26
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_remove_job_from_targets (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Removes the specified job from the given target servers or target server groups.  
   
@@ -40,16 +36,16 @@ sp_remove_job_from_targets [ @job_id = ] job_id
 ```  
   
 ## Arguments  
- [ **@job_id =**] *job_id*  
+`[ @job_id = ] job_id`
  The job identification number of the job from which to remove the specified target servers or target server groups. Either *job_id* or *job_name* must be specified, but both cannot be specified. *job_id* is **uniqueidentifier**, with a default of NULL.  
   
- [ **@job_name =**] **'***job_name***'**  
+`[ @job_name = ] 'job_name'`
  The name of the job from which to remove the specified target servers or target server groups. Either *job_id* or *job_name* must be specified, but both cannot be specified. *job_name* is **sysname**, with a default of NULL.  
   
- [ **@target_server_groups =**] **'***target_server_groups***'**  
+`[ @target_server_groups = ] 'target_server_groups'`
  A comma-separated list of target server groups to be removed from the specified job. *target_server_groups* is **nvarchar(1024)**, with a default of NULL.  
   
- [ **@target_servers =**] **'***target_servers***'**  
+`[ @target_servers = ] 'target_servers'`
  A comma-separated list of target servers to be removed from the specified job. *target_servers* is **nvarchar(1024)**, with a default of NULL.  
   
 ## Return Code Values  

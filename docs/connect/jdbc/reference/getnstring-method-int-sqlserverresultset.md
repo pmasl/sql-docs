@@ -1,19 +1,12 @@
 ---
-title: "getNString Method (int) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getNString Method (int) (SQLServerResultSet)"
+description: "getNString Method (int) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c8cc4636-01e9-4dc8-a40c-728337ca08f5
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getNString Method (int) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

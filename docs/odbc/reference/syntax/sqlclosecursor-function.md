@@ -1,28 +1,29 @@
 ---
+description: "SQLCloseCursor Function"
 title: "SQLCloseCursor Function | Microsoft Docs"
 ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.date: "07/18/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLCloseCursor"
 apilocation: 
   - "sqlsrv32.dll"
+  - "odbc32.dll"
+  - "Msodbcsql11.dll"
+  - "Sqlncli10.dll"
+  - "Sqlncli11.dll"
+  - "Sqlncli11e.dll"
 apitype: "dllExport"
 f1_keywords: 
   - "SQLCloseCursor"
 helpviewer_keywords: 
   - "SQLCloseCursor function [ODBC]"
 ms.assetid: 05b0a054-e28d-4e16-b5b0-07418486b372
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLCloseCursor Function
 **Conformance**  
@@ -33,10 +34,10 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 SQLRETURN SQLCloseCursor(  
-     SQLHSTMT     StatementHandle);  
+     SQLHSTMT     StatementHandle);  
 ```  
   
 ## Arguments  

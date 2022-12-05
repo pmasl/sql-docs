@@ -1,24 +1,15 @@
 ---
-title: "updateObject Method (int, java.lang.Object, int) | Microsoft Docs"
-ms.custom: ""
+title: "updateObject Method (int, java.lang.Object, int)"
+description: "updateObject Method (int, java.lang.Object, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateObject (int, java.lang.Object, int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateObject (int, java.lang.Object, int)"
 apitype: "Assembly"
-ms.assetid: 9d33571b-4887-49d3-96df-8abda7b5a904
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateObject Method (int, java.lang.Object, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

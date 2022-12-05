@@ -1,31 +1,25 @@
 ---
-title: "sys.conversation_endpoints (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.conversation_endpoints (Transact-SQL)"
+description: sys.conversation_endpoints (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "conversation_endpoints_TSQL"
   - "conversation_endpoints"
   - "sys.conversation_endpoints"
   - "sys.conversation_endpoints_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.conversation_endpoints catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 2ed758bc-2a9d-4831-8da2-4b80e218f3ea
-caps.latest.revision: 47
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # sys.conversation_endpoints (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Each side of a [!INCLUDE[ssSB](../../includes/sssb-md.md)] conversation is represented by a conversation endpoint. This catalog view contains a row per conversation endpoint in the database.  
   

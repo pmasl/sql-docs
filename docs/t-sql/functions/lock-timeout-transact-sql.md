@@ -1,32 +1,25 @@
 ---
-title: "@@LOCK_TIMEOUT (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/13/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "@@LOCK_TIMEOUT (Transact-SQL)"
+description: "@@LOCK_TIMEOUT (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
+ms.date: "09/19/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "@@LOCK_TIMEOUT"
   - "@@LOCK_TIMEOUT_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "timeout options [SQL Server], locks"
   - "@@LOCK_TIMEOUT function"
   - "current lock time-out setting"
   - "locking [SQL Server], time-outs"
-ms.assetid: 6bf8bf97-60b8-40c1-b89d-8f5a00bcae2e
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@LOCK_TIMEOUT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+# &#x40;&#x40;LOCK_TIMEOUT (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns the current lock time-out setting in milliseconds for the current session.  
   
@@ -34,12 +27,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql  
 @@LOCK_TIMEOUT  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **integer**  
   
 ## Remarks  
@@ -50,7 +44,7 @@ manager: "jhubbard"
 ## Examples  
  This example shows the result set when a LOCK_TIMEOUT value is not set.  
   
-```  
+```sql  
 SELECT @@LOCK_TIMEOUT AS [Lock Timeout];  
 GO  
 ```  
@@ -65,7 +59,7 @@ Lock Timeout
   
  This example sets LOCK_TIMEOUT to 1800 milliseconds and then calls @@LOCK_TIMEOUT.  
   
-```  
+```sql  
 SET LOCK_TIMEOUT 1800;  
 SELECT @@LOCK_TIMEOUT AS [Lock Timeout];  
 GO  

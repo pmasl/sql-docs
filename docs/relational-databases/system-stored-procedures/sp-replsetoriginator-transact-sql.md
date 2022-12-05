@@ -1,29 +1,25 @@
 ---
+description: "sp_replsetoriginator (Transact-SQL)"
 title: "sp_replsetoriginator (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_replsetoriginator"
   - "sp_replsetoriginator_TSQL"
 helpviewer_keywords: 
   - "sp_replsetoriginator"
 ms.assetid: 030e5226-0585-439f-b8cd-36f48367d86d
-caps.latest.revision: 29
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_replsetoriginator (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Used to invoke loopback detection and handling in bidirectional transactional replication. This stored procedure is executed at the Publisher on the publication database.  
   
@@ -38,10 +34,10 @@ sp_replsetoriginator [ @server_name= ] 'server_name'
 ```  
   
 ## Arguments  
- [ **@server_name=**] **'***server_name***'**  
+`[ @server_name = ] 'server_name'`
  Is the name of the server where the transaction is being applied. *originating_server* is **sysname**, with no default.  
   
- [ **@database_name=**] **'***database_name***'**  
+`[ @database_name = ] 'database_name'`
  Is the name of the database where the transaction is being applied. *originating_db* is **sysname**, with no default.  
   
 ## Return Code Values  

@@ -1,33 +1,26 @@
 ---
-title: "DROP REMOTE SERVICE BINDING (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP REMOTE SERVICE BINDING (Transact-SQL)"
+description: DROP REMOTE SERVICE BINDING (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DROP REMOTE SERVICE BINDING"
   - "DROP_REMOTE_SERVICE_BINDING_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "dropping remote service bindings"
   - "removing remote service bindings"
   - "deleting remote service bindings"
   - "remote service bindings [Service Broker], dropping"
   - "DROP REMOTE SERVICE BINDING statement"
-ms.assetid: 377789b4-bf94-488f-8c20-687d0bae447a
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DROP REMOTE SERVICE BINDING (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Drops a remote service binding.  
   
@@ -35,13 +28,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 DROP REMOTE SERVICE BINDING binding_name  
 [ ; ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *binding_name*  
  Is the name of the remote service binding to drop. Server, database, and schema names cannot be specified.  
   
@@ -51,7 +45,7 @@ DROP REMOTE SERVICE BINDING binding_name
 ## Examples  
  The following example deletes the remote service binding `APBinding` from the database.  
   
-```  
+```sql 
 DROP REMOTE SERVICE BINDING APBinding ;  
 ```  
   

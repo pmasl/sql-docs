@@ -1,24 +1,15 @@
 ---
-title: "getDouble Method (java.lang.String) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getDouble Method (java.lang.String) (SQLServerResultSet)"
+description: "getDouble Method (java.lang.String) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getDouble (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getDouble (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: 3ee26412-43d2-404b-bc05-ffd0fc75805c
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getDouble Method (java.lang.String) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

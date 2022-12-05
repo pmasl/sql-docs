@@ -1,28 +1,21 @@
 ---
-title: "CopyRecord Method (ADO) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "CopyRecord Method (ADO)"
+description: "CopyRecord Method (ADO)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "_Record::raw_CopyRecord"
   - "_Record::CopyRecord"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "CopyRecord method [ADO]"
-ms.assetid: b9bcf272-3c74-479f-95dd-0229a32e98fc
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # CopyRecord Method (ADO)
-Copies an entity represented by a [record](../../../ado/reference/ado-api/record-object-ado.md) to another location.  
+Copies an entity represented by a [record](./record-object-ado.md) to another location.  
   
 ## Syntax  
   
@@ -33,7 +26,7 @@ Record.CopyRecord (Source, Destination, UserName, Password, Options, Async)
   
 #### Parameters  
  *Source*  
- Optional. A **String** value that contains a URL specifying the entity to be copied (for example, a file or directory). If *Source* is omitted or specifies an empty string, the file or directory represented by the current [Record](../../../ado/reference/ado-api/record-object-ado.md) will be copied.  
+ Optional. A **String** value that contains a URL specifying the entity to be copied (for example, a file or directory). If *Source* is omitted or specifies an empty string, the file or directory represented by the current [Record](./record-object-ado.md) will be copied.  
   
  *Destination*  
  Optional. A **String** value that contains a URL specifying the location where *Source* will be copied.  
@@ -45,7 +38,7 @@ Record.CopyRecord (Source, Destination, UserName, Password, Options, Async)
  Optional. A **String** value that contains the password that, if needed, verifies *UserName*.  
   
  *Options*  
- Optional. A [CopyRecordOptionsEnum](../../../ado/reference/ado-api/copyrecordoptionsenum.md) value that has a default value of **adCopyUnspecified**. Specifies the behavior of this method.  
+ Optional. A [CopyRecordOptionsEnum](./copyrecordoptionsenum.md) value that has a default value of **adCopyUnspecified**. Specifies the behavior of this method.  
   
  *Async*  
  Optional. A **Boolean** value that, when **True**, specifies that this operation should be asynchronous.  
@@ -64,7 +57,7 @@ Record.CopyRecord (Source, Destination, UserName, Password, Options, Async)
 >  Use the **adCopyOverWrite** option judiciously. For example, specifying this option when copying a file to a directory will *delete* the directory and replace it with the file.  
   
 > [!NOTE]
->  URLs using the http scheme will automatically invoke the [Microsoft OLE DB Provider for Internet Publishing](../../../ado/guide/appendixes/microsoft-ole-db-provider-for-internet-publishing.md). For more information, see [Absolute and Relative URLs](../../../ado/guide/data/absolute-and-relative-urls.md).  
+>  URLs using the http scheme will automatically invoke the [Microsoft OLE DB Provider for Internet Publishing](../../guide/appendixes/microsoft-ole-db-provider-for-internet-publishing.md). For more information, see [Absolute and Relative URLs](../../guide/data/absolute-and-relative-urls.md).  
   
 ## Applies To  
- [Record Object (ADO)](../../../ado/reference/ado-api/record-object-ado.md)
+ [Record Object (ADO)](./record-object-ado.md)

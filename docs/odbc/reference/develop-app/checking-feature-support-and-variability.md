@@ -1,24 +1,20 @@
 ---
+description: "Checking Feature Support and Variability"
 title: "Checking Feature Support and Variability | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "interoperability [ODBC], feature support and variability"
   - "interoperability [ODBC], writing interoperable applications"
   - "feature support in interoperable applications [ODBC]"
   - "feature variability in interoperable applications [ODBC]"
 ms.assetid: ff45f220-9b8b-4c44-82f8-a8e9913fffea
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Checking Feature Support and Variability
 To check feature support and variability, applications generally call **SQLGetInfo**, **SQLGetFunctions**, and **SQLGetTypeInfo**. A good starting place is the driver's API and SQL grammar conformance levels. These describe broad levels of feature support. The application can then call **SQLGetInfo** with other options to determine the support or variability of features it needs, **SQLGetFunctions** to determine whether functions it needs beyond the returned conformance level are supported, and **SQLGetTypeInfo** to determine what SQL data types are supported.  

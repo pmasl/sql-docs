@@ -1,22 +1,18 @@
 ---
-title: "Native Compilation of Tables and Stored Procedures | Microsoft Docs"
-ms.custom: ""
+title: "Native compilation of tables & stored procedures"
+description: Learn how In-Memory OLTP can compile memory-optimized tables and stored procedures that access memory-optimized tables into native code to enhance performance.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "04/20/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology:
-  - "database-engine-imoltp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: in-memory-oltp
+ms.topic: conceptual
+ms.custom: seo-dt-2019
 ms.assetid: 5880fbd9-a23e-464a-8b44-09750eeb2dad
-caps.latest.revision: 23
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Native Compilation of Tables and Stored Procedures
-
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 In-Memory OLTP introduces the concept of native compilation. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] can natively compile stored procedures that access memory-optimized tables. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] is also able to natively compile memory-optimized tables. Native compilation allows faster data access and more efficient query execution than interpreted (traditional) [!INCLUDE[tsql](../../includes/tsql-md.md)]. Native compilation of tables and stored procedures produce DLLs.
 
 Native compilation of memory optimized table types is also supported. For more information, see [Faster temp table and table variable by using memory optimization](../../relational-databases/in-memory-oltp/faster-temp-table-and-table-variable-by-using-memory-optimization.md).
@@ -32,7 +28,7 @@ In-Memory OLTP compiles memory-optimized tables when they are created, and nativ
 
 The following query shows all table and stored procedure DLLs currently loaded in memory on the server:
 
-```tsql
+```sql
 SELECT
 		mod1.name,
 		mod1.description
@@ -56,7 +52,7 @@ Creating a memory-optimized table using the **CREATE TABLE** statement results i
 
 Consider the following sample script, which creates a database and a memory-optimized table:
 
-```tsql
+```sql
 USE master;
 GO
 
@@ -145,11 +141,11 @@ The table DLL understands the index structures and row format of the table. [!IN
 
 Stored procedures that are marked with NATIVE_COMPILATION are natively compiled. This means the [!INCLUDE[tsql](../../includes/tsql-md.md)] statements in the procedure are all compiled to native code for efficient execution of performance-critical business logic.
 
-For more information about natively compiled stored procedures, see [Natively Compiled Stored Procedures](../../relational-databases/in-memory-oltp/natively-compiled-stored-procedures.md).
+For more information about natively compiled stored procedures, see [Natively Compiled Stored Procedures](./a-guide-to-query-processing-for-memory-optimized-tables.md).
 
 Consider the following sample stored procedure, which inserts rows in the table t1 from the previous example:
 
-```tsql
+```sql
 CREATE PROCEDURE dbo.native_sp
 	with native_compilation,
 	     schemabinding,
@@ -188,13 +184,13 @@ Native compilation of tables and stored procedures uses the In-Memory OLTP compi
 
 ### Native Compiler
 
-The compiler executable, as well as binaries and header files required for native compilation are installed as part of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance under the folder MSSQL\Binn\Xtp. So, if the default instance is installed under C:\Program Files, the compiler files are installed in C:\Program Files\\[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]\MSSQL13.MSSQLSERVER\MSSQL\Binn\Xtp.
+The compiler executable, as well as binaries and header files required for native compilation are installed as part of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance under the folder MSSQL\Binn\Xtp. So, if the default instance is installed under C:\Program Files, the compiler files are installed in C:\Program Files\\[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]\MSSQL13.MSSQLSERVER\MSSQL\Binn\Xtp.
 
 To limit access to the compiler, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] uses access control lists (ACLs) to restrict access to binary files. All [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] binaries are protected against modification or tampering through ACLs. The native compiler's ACLs also limit use of the compiler; only the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] service account and system administrators have read and execute permissions for native compiler files.
 
 ### Files Generated by a Native Compilation
 
-The files produced when a table or stored procedure is compiled include the DLL and intermediate files including files with the following extensions: .c, .obj, .xml, and .pdb. The generated files are saved in a subfolder of the default data folder. The subfolder is called Xtp. When installing the default instance with the default data folder, the generated files are placed in C:\Program Files\\[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]\MSSQL13.MSSQLSERVER\MSSQL\DATA\Xtp.
+The files produced when a table or stored procedure is compiled include the DLL and intermediate files including files with the following extensions: .c, .obj, .xml, and .pdb. The generated files are saved in a subfolder of the default data folder. The subfolder is called Xtp. When installing the default instance with the default data folder, the generated files are placed in C:\Program Files\\[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]\MSSQL13.MSSQLSERVER\MSSQL\DATA\Xtp.
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] prevents tampering with the generated DLLs in three ways:
 
@@ -208,6 +204,6 @@ No user interaction is needed to manage these files. [!INCLUDE[ssNoVersion](../.
 
 ## See Also
 
-[Memory-Optimized Tables](../../relational-databases/in-memory-oltp/memory-optimized-tables.md)
+[Memory-Optimized Tables](./sample-database-for-in-memory-oltp.md)
 
-[Natively Compiled Stored Procedures](../../relational-databases/in-memory-oltp/natively-compiled-stored-procedures.md)
+[Natively Compiled Stored Procedures](./a-guide-to-query-processing-for-memory-optimized-tables.md)

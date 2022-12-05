@@ -1,14 +1,12 @@
 ---
+description: "SQLReadFileDSN Function"
 title: "SQLReadFileDSN Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLReadFileDSN"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLReadFileDSN function [ODBC]"
 ms.assetid: ead464aa-cdc3-47dd-a0c0-997711205d31
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLReadFileDSN Function
 **Conformance**  
@@ -33,15 +29,15 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 BOOL SQLReadFileDSN(  
-     LPCSTR   lpszFileName,  
-     LPCSTR   lpszAppName,  
-     LPCSTR   lpszKeyName,  
-     LPSTR    lpszString,  
-     WORD     cbString,  
-     WORD *   pcbString);  
+     LPCSTR   lpszFileName,  
+     LPCSTR   lpszAppName,  
+     LPCSTR   lpszKeyName,  
+     LPSTR    lpszString,  
+     WORD     cbString,  
+     WORD *   pcbString);  
 ```  
   
 ## Arguments  

@@ -1,31 +1,23 @@
 ---
-title: "IHpublishercolumnindexes (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "IHpublishercolumnindexes (Transact-SQL)"
+description: IHpublishercolumnindexes (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "IHpublishercolumnindexes"
   - "IHpublishercolumnindexes_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "IHpublishercolumnindexes system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 95b95a1d-b502-4838-825f-82a456487e25
-caps.latest.revision: 23
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # IHpublishercolumnindexes (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **IHpublishercolumnindexes** system table maps columns of a non-SQL Server publication in the [IHpublishercolumns](../../relational-databases/system-tables/ihpublishercolumns-transact-sql.md) system table to indexes in the [IHpublisherindexes](../../relational-databases/system-tables/ihpublisherindexes-transact-sql.md) system table. This table is stored in the distribution database.  
   

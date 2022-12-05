@@ -1,27 +1,20 @@
 ---
-title: "AbsolutePosition and CursorLocation Properties Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "AbsolutePosition and CursorLocation Properties Example (VB)"
+description: "AbsolutePosition and CursorLocation Properties Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "AbsolutePosition property [ADO], Visual Basic example"
   - "CursorLocation property [ADO], Visual Basic example"
-ms.assetid: c4755799-c60a-4b5e-a01f-b85dd0e0a7f9
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # AbsolutePosition and CursorLocation Properties Example (VB)
-This example demonstrates how the [AbsolutePosition](../../../ado/reference/ado-api/absoluteposition-property-ado.md) property can track the progress of a loop that enumerates all the records of a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md). It uses the [CursorLocation](../../../ado/reference/ado-api/cursorlocation-property-ado.md) property to enable the **AbsolutePosition** property by setting the cursor to a client cursor.  
+This example demonstrates how the [AbsolutePosition](./absoluteposition-property-ado.md) property can track the progress of a loop that enumerates all the records of a [Recordset](./recordset-object-ado.md). It uses the [CursorLocation](./cursorlocation-property-ado.md) property to enable the **AbsolutePosition** property by setting the cursor to a client cursor.  
   
 ```  
 'BeginAbsolutePositionVB  
@@ -90,6 +83,6 @@ End Sub
 ```  
   
 ## See Also  
- [AbsolutePosition Property (ADO)](../../../ado/reference/ado-api/absoluteposition-property-ado.md)   
- [CursorLocation Property (ADO)](../../../ado/reference/ado-api/cursorlocation-property-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [AbsolutePosition Property (ADO)](./absoluteposition-property-ado.md)   
+ [CursorLocation Property (ADO)](./cursorlocation-property-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

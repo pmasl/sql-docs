@@ -1,37 +1,30 @@
 ---
-title: "CREATE FULLTEXT STOPLIST (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "CREATE FULLTEXT STOPLIST (Transact-SQL)"
+description: CREATE FULLTEXT STOPLIST (Transact-SQL)
+author: markingmyname
+ms.author: maghan
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "STOPLIST_TSQL"
   - "FULLTEXT STOPLIST"
   - "STOPLIST"
   - "FULLTEXT_STOPLIST_TSQL"
   - "CREATE FULLTEXT STOPLIST"
   - "CREATE_FULLTEXT_STOPLIST_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "stoplists [full-text search]"
   - "CREATE FULLTEXT STOPLIST statement"
   - "full-text search [SQL Server], stoplists"
   - "full-text search [SQL Server], stopwords"
   - "stopwords [full-text search]"
-ms.assetid: 0669b1d0-46cc-4fac-8df7-5f7fa7af5db4
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # CREATE FULLTEXT STOPLIST (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Creates a new full-text stoplist in the current database.  
   
@@ -44,15 +37,17 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 CREATE FULLTEXT STOPLIST stoplist_name  
 [ FROM { [ database_name.]source_stoplist_name } | SYSTEM STOPLIST ]  
 [ AUTHORIZATION owner_name ]  
 ;  
 ```  
-  
-## Arguments  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *stoplist_name*  
  Is the name of the stoplist. *stoplist_name* can be a maximum of 128 characters. *stoplist_name* must be unique among all stoplists in the current database, and conform to the rules for identifiers.  
   
@@ -84,7 +79,7 @@ CREATE FULLTEXT STOPLIST stoplist_name
 ### A. Creating a new full-text stoplist  
  The following example creates a new full-text stoplist named `myStoplist`.  
   
-```  
+```sql  
 CREATE FULLTEXT STOPLIST myStoplist;  
 GO  
 ```  
@@ -92,7 +87,7 @@ GO
 ### B. Copying a full-text stoplist from an existing full-text stoplist  
  The following example creates a new full-text stoplist named `myStoplist2` by copying an existing AdventureWorks stoplist named `Customers.otherStoplist`.  
   
-```  
+```sql  
 CREATE FULLTEXT STOPLIST myStoplist2 FROM AdventureWorks.otherStoplist;  
 GO  
 ```  
@@ -100,7 +95,7 @@ GO
 ### C. Copying a full-text stoplist from the system full-text stoplist  
  The following example creates a new full-text stoplist named `myStoplist3` by copying from the system stoplist.  
   
-```  
+```sql  
 CREATE FULLTEXT STOPLIST myStoplist3 FROM SYSTEM STOPLIST;  
 GO  
 ```  

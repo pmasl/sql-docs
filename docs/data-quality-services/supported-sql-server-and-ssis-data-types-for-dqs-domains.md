@@ -1,27 +1,24 @@
 ---
-title: "Supported SQL Server and SSIS Data Types for DQS Domains | Microsoft Docs"
-ms.custom: ""
+title: "Supported SQL Server and SSIS data types for DQS domains"
+description: Describes the four data types for Data Quality Services (DQS) domains (Data, Decimal, Integer, and String) in SQL Server.
+author: swinarko
+ms.author: sawinark
 ms.date: "11/08/2011"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4931143a-b84d-478b-9b45-174128d36ed3
-caps.latest.revision: 7
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
+ms.custom: seo-lt-2019
 ---
-# Supported SQL Server and SSIS Data Types for DQS Domains
+# Supported SQL Server and SSIS data types for DQS Domains
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
   There are many data types in SQL Server and SQL Server Integration Services (SSIS), but only four data types for DQS domains: Date, Decimal, Integer, and String. Not all SQL Server and SSIS data types are supported in DQS. You can map your source data to a DQS domain for performing data-quality activities only if the source data type is supported in DQS, and matches with the DQS domain data type. This topic provides information about the SQL Server and SSIS data types that are supported, and available for mapping to each of the four domain data types in DQS.  
   
 > [!NOTE]  
 >  In .xlsx and .xls files, the data type of the source column is determined by the most prevalent data type in the first eight rows. If a cell does not conform to that data type, it will be given a null value. Similarly, in .csv files, the data type of the source column is determined by the most prevalent data type in the first eight rows.  
   
-##  <a name="SQLServer"></a> Supported SQL Server Data Types  
+##  <a name="SQLServer"></a> Supported SQL Server Data Types 
  The following table provides information about the SQL Server data types supported for each DQS domain data type:  
   
 |DQS Domain Data Type|Supported SQL Server Data Type|  

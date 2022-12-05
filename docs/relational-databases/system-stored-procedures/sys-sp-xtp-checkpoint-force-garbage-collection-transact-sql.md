@@ -1,14 +1,12 @@
 ---
+description: "sys.sp_xtp_checkpoint_force_garbage_collection (Transact-SQL)"
 title: "sys.sp_xtp_checkpoint_force_garbage_collection (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/02/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sys.sp_xtp_checkpoint_force_garbage_collection_TSQL"
   - "sys.sp_xtp_checkpoint_force_garbage_collection"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sys.sp_xtp_checkpoint_force_garbage_collection"
 ms.assetid: 82b35b2b-edbd-44ac-9fc8-80695f2fd1df
-caps.latest.revision: 11
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sys.sp_xtp_checkpoint_force_garbage_collection (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2014-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
 
   Marks source files used in the merge operation with the log sequence number (LSN) after which they are not needed and can be garbage collected. Also, it moves the files whose associated LSN is lower than the log truncation point to filestream garbage collection.  
   
@@ -33,7 +29,7 @@ manager: "jhubbard"
 ## Syntax  
   
 ```  
-sys.sp_xtp_checkpoint_force_garbage_collection [[ @dbname=database_name]  
+sys.sp_xtp_checkpoint_force_garbage_collection [ @dbname=database_name ]  
 ```  
   
 ## Arguments  
@@ -63,6 +59,5 @@ exec [sys].[sp_xtp_checkpoint_force_garbage_collection] hkdb1
   
 ## See Also  
  [System Stored Procedures &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)   
- [In-Memory OLTP &#40;In-Memory Optimization&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)  
-  
+ [In-Memory OLTP &#40;In-Memory Optimization&#41;](../in-memory-oltp/overview-and-usage-scenarios.md)  
   

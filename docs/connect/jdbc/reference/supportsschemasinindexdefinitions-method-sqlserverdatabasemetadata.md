@@ -1,24 +1,15 @@
 ---
-title: "supportsSchemasInIndexDefinitions Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsSchemasInIndexDefinitions Method"
+description: "supportsSchemasInIndexDefinitions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsSchemasInIndexDefinitions"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsSchemasInIndexDefinitions"
 apitype: "Assembly"
-ms.assetid: 55ce9e4f-6e3f-482a-93a5-b9ae1b91d7a3
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsSchemasInIndexDefinitions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

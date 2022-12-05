@@ -1,19 +1,12 @@
 ---
-title: "SQLServerDataSourceObjectFactory Class | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerDataSourceObjectFactory Class"
+description: "SQLServerDataSourceObjectFactory Class"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b616632b-5987-470d-b36c-b22fa9213145
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerDataSourceObjectFactory Class
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

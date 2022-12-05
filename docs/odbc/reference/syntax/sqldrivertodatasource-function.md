@@ -1,14 +1,12 @@
 ---
+description: "SQLDriverToDataSource Function"
 title: "SQLDriverToDataSource Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLDriverToDataSource"
 apilocation: 
@@ -19,29 +17,27 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLDriverToDataSource function [ODBC]"
 ms.assetid: 0de28eb5-8aa9-43e4-a87f-7dbcafe800dc
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLDriverToDataSource Function
 **SQLDriverToDataSource** supports translations for ODBC drivers. This function is not called by ODBC-enabled applications; applications request translation through **SQLSetConnectAttr**. The driver associated with the *ConnectionHandle* specified in **SQLSetConnectAttr** calls the specified DLL to perform translations of all data flowing from the driver to the data source. A default translation DLL can be specified in the ODBC initialization file.  
   
 ## Syntax  
   
-```  
+```cpp  
   
 BOOL SQLDriverToDataSource(  
-     UDWORD     fOption,  
-     SWORD      fSqlType,  
-     PTR        rgbValueIn,  
-     SDWORD     cbValueIn,  
-     PTR        rgbValueOut,  
-     SDWORD     cbValueOutMax,  
-     SDWORD *   pcbValueOut,  
-     UCHAR *    szErrorMsg,  
-     SWORD      cbErrorMsgMax,  
-     SWORD *    pcbErrorMsg);  
+     UDWORD     fOption,  
+     SWORD      fSqlType,  
+     PTR        rgbValueIn,  
+     SDWORD     cbValueIn,  
+     PTR        rgbValueOut,  
+     SDWORD     cbValueOutMax,  
+     SDWORD *   pcbValueOut,  
+     UCHAR *    szErrorMsg,  
+     SWORD      cbErrorMsgMax,  
+     SWORD *    pcbErrorMsg);  
 ```  
   
 ## Arguments  

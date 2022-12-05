@@ -1,24 +1,24 @@
 ---
+description: "&lt;= (Less Than or Equal To) (SSIS Expression)"
 title: "&lt;= (Less Than or Equal To) (SSIS Expression) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "<= (less than or equal to operator)"
   - "less than or equal to operator (<=)"
 ms.assetid: 946c5630-dccf-4dae-9cfd-6ea823641ab2
-caps.latest.revision: 47
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # &lt;= (Less Than or Equal To) (SSIS Expression)
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Performs a comparison to determine if the first expression is less than or equal to the second one. The expression evaluator automatically converts many data types before it performs the comparison.  
   
 > [!NOTE]  

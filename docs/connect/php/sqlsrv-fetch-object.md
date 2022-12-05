@@ -1,26 +1,18 @@
 ---
-title: "sqlsrv_fetch_object | Microsoft Docs"
-ms.custom: ""
+title: "sqlsrv_fetch_object"
+description: "sqlsrv_fetch_object"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "sqlsrv_fetch_object"
-apitype: "NA"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+helpviewer_keywords:
   - "sqlsrv_fetch_object"
   - "API Reference, sqlsrv_fetch_object"
   - "retrieving data, as an object"
-ms.assetid: 4ce2df2c-083a-4a4d-a1e2-e866e63707d5
-caps.latest.revision: 31
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apiname: "sqlsrv_fetch_object"
+apitype: "NA"
 ---
 # sqlsrv_fetch_object
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -30,7 +22,6 @@ Retrieves the next row of data as a PHP object.
 ## Syntax  
   
 ```  
-  
 sqlsrv_fetch_object( resource $stmt [, string $className [, array $ctorParams[, row[, ]offset]]])  
 ```  
   
@@ -79,17 +70,21 @@ The following rules apply when specifying a class with the *$className* paramete
   
 If a field with no name is returned, **sqlsrv_fetch_object** will discard the field value and issue a warning. For example, consider this Transact-SQL statement that inserts a value into a database table and retrieves the server-generated primary key:  
   
-<pre>INSERT INTO Production.ProductPhoto (LargePhoto) VALUES (?);  
-SELECT SCOPE_IDENTITY()</pre>  
+```sql
+INSERT INTO Production.ProductPhoto (LargePhoto) VALUES (?);  
+SELECT SCOPE_IDENTITY()
+```
   
 If the results returned by this query are retrieved with **sqlsrv_fetch_object**, the value returned by `SELECT SCOPE_IDENTITY()` will be discarded and a warning will be issued. To avoid this, you can specify a name for the returned field in the Transact-SQL statement. The following is one way to specify a column name in Transact-SQL:  
   
-`SELECT SCOPE_IDENTITY() AS PictureID`  
+```sql
+SELECT SCOPE_IDENTITY() AS PictureID
+```
   
-## Example  
-The following example retrieves each row of a result set as a PHP object. The example assumes that the SQL Server and the [AdventureWorks](http://go.microsoft.com/fwlink/?LinkID=67739) database are installed on the local computer. All output is written to the console when the example is run from the command line.  
+## Object example  
+The following example retrieves each row of a result set as a PHP object. The example assumes that the SQL Server and the [AdventureWorks](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) database are installed on the local computer. All output is written to the console when the example is run from the command line.  
   
-```  
+``` 
 <?php  
 /* Connect to the local server using Windows Authentication and  
 specify the AdventureWorks database as the database in use. */  
@@ -125,7 +120,7 @@ sqlsrv_close( $conn);
 ?>  
 ```  
   
-## Example  
+## Class example  
 The following example retrieves each row of a result set as an instance of the *Product* class defined in the script. The example retrieves product information from the *Purchasing.PurchaseOrderDetail* and *Production.Product* tables of the AdventureWorks database for products that have a specified due date (*DueDate*), and a stocked quantity (*StockQty*) less than a specified value. The example highlights some of the rules that apply when specifying a class in a call to **sqlsrv_fetch_object**:  
   
 -   The *$product* variable is an instance of the *Product* class, because "Product" was specified with the *$className* parameter and the *Product* class exists.  
@@ -136,7 +131,7 @@ The following example retrieves each row of a result set as an instance of the *
   
 -   The private property *UnitPrice* is populated with the value of the *UnitPrice* field.  
   
-The example assumes that SQL Server and the [AdventureWorks](http://go.microsoft.com/fwlink/?LinkID=67739) database are installed on the local computer. All output is written to the console when the example is run from the command line.  
+The example assumes that SQL Server and the [AdventureWorks](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) database are installed on the local computer. All output is written to the console when the example is run from the command line.  
   
 ```  
 <?php  
@@ -232,15 +227,21 @@ The **sqlsrv_fetch_object** function always returns data according to the [Defau
   
 If a field with no name is returned, **sqlsrv_fetch_object** will discard the field value and issue a warning. For example, consider this Transact-SQL statement that inserts a value into a database table and retrieves the server-generated primary key:  
   
-<pre>INSERT INTO Production.ProductPhoto (LargePhoto) VALUES (?);  
-SELECT SCOPE_IDENTITY()</pre>  
+```sql
+INSERT INTO Production.ProductPhoto (LargePhoto) VALUES (?);  
+SELECT SCOPE_IDENTITY()
+```
   
 If the results returned by this query are retrieved with **sqlsrv_fetch_object**, the value returned by `SELECT SCOPE_IDENTITY()` will be discarded and a warning will be issued. To avoid this, you can specify a name for the returned field in the Transact-SQL statement. The following is one way to specify a column name in Transact-SQL:  
   
-`SELECT SCOPE_IDENTITY() AS PictureID`  
+```sql
+SELECT SCOPE_IDENTITY() AS PictureID
+```
   
 ## See Also  
 [Retrieving Data](../../connect/php/retrieving-data.md)  
+
 [About Code Examples in the Documentation](../../connect/php/about-code-examples-in-the-documentation.md)  
+
 [SQLSRV Driver API Reference](../../connect/php/sqlsrv-driver-api-reference.md)  
   

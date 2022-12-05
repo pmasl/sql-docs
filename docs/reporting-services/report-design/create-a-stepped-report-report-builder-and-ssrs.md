@@ -1,23 +1,21 @@
 ---
-title: "Create a Stepped Report (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Create a stepped paginated report | Microsoft Docs"
+description: Discover how to show detail rows or child groups indented under a parent group in the same column in a Report Builder paginated report.
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: 5933c4f0-c713-4ecb-b521-ff46c9c63fff
-caps.latest.revision: 8
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Create a Stepped Report (Report Builder and SSRS)
-A stepped report is a type of  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] paginated report that shows detail rows or child groups indented under a parent group in the same column, as shown in the example below:  
+# Create a stepped paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+A stepped report is a type of paginated report that shows detail rows or child groups indented under a parent group in the same column, as shown in the example below:  
   
  ![Rendered stepped report](../../reporting-services/report-design/media/steppedreportrendered.gif "Rendered stepped report")  
   
@@ -43,7 +41,7 @@ A stepped report is a type of  [!INCLUDE[ssRSnoversion](../../includes/ssrsnover
   
     3.  In the **Tablix Group** dialog box, provide a name for the group and type or select a group expression from the drop-down list. The drop-down list displays the simple field expressions that are available in the Report Data pane. For example, [PostalCode] is a simple field expression for the PostalCode field in a dataset.  
   
-    4.  Select **Add group header**. This option adds a static row above the group for the group label and group totals. Likewise, you can select **Add group footer** to add a static row below the group. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+    4.  Select **Add group header**. This option adds a static row above the group for the group label and group totals. Likewise, you can select **Add group footer** to add a static row below the group. Select **OK**.
   
      You now have a basic tabular report. When it is rendered, you see one column with the group instance value, and one or more columns with grouped detail data. The following figure shows what the data region might look like on the design surface.  
   
@@ -67,7 +65,7 @@ A stepped report is a type of  [!INCLUDE[ssRSnoversion](../../includes/ssrsnover
   
          Size designators are:  
   
-        |||  
+        |Designator|Description|  
         |-|-|  
         |**in**|Inches (1 inch = 2.54 centimeters)|  
         |**cm**|Centimeters|  
@@ -98,7 +96,7 @@ A stepped report is a type of  [!INCLUDE[ssRSnoversion](../../includes/ssrsnover
   
     3.  In **Group expression**, type an expression or select a dataset field to group on. To create an expression, click the expression (**fx**) button to open the **Expression** dialog box.  
   
-    4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+    4.  Select **OK**.
   
 3.  Change the padding for the cell that displays the group data.  
   

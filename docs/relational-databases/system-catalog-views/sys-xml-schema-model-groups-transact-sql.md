@@ -1,37 +1,27 @@
 ---
-title: "sys.xml_schema_model_groups (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.xml_schema_model_groups (Transact-SQL)"
+description: sys.xml_schema_model_groups (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.xml_schema_model_groups"
   - "xml_schema_model_groups"
   - "sys.xml_schema_model_groups_TSQL"
   - "xml_schema_model_groups_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.xml_schema_model_groups catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 566556dc-a8c8-465c-9196-c7e0ae092a8a
-caps.latest.revision: 22
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
 ---
 # sys.xml_schema_model_groups (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row per XML schema component that is a Model-Group, **symbol_space** of **M**..  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  

@@ -1,21 +1,19 @@
 ---
-title: "NS$&lt;service name&gt; Properties (Log On Tab) | Microsoft Docs"
-ms.custom: ""
+title: "NS$&lt;service name&gt; Properties (Log On Tab)"
+description: Learn about the Log On tab of the Notification Services Properties dialog box in SQL Server. See how to specify an account and start or stop the service.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: tools-other
+ms.topic: conceptual
 ms.assetid: 5e6816ec-d4c5-4429-8033-b97427584890
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=sql-server-2016"
 ---
 # NS$&lt;service name&gt; Properties (Log On Tab)
+[!INCLUDE [SQL Server Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
   Use the **Log On** tab of the **Notification Services Properties** dialog box to specify the account used by the [!INCLUDE[ssNS](../../includes/ssns-md.md)] service, and to start and stop the service.  
   
 ## Options  

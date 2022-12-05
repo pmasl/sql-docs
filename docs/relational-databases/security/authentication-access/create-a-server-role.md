@@ -1,14 +1,12 @@
 ---
 title: "Create a Server Role | Microsoft Docs"
+description: Create a server role in SQL Server by using SQL Server Management Studio or Transact-SQL. Review limitations, restrictions, and necessary permissions.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: security
+ms.topic: conceptual
 f1_keywords: 
   - "SQL13.SWB.SERVERROLE.GENERAL.F1"
   - "sql13.swb.serverrole.memberships.f1"
@@ -16,13 +14,13 @@ f1_keywords:
 helpviewer_keywords: 
   - "SERVER ROLE, creating"
 ms.assetid: 74f19992-8082-4ed7-92a1-04fe676ee82d
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
+monikerRange: ">=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Create a Server Role
-  This topic describes how to create a new server role in [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../../includes/tsql-md.md)].  
+[!INCLUDE[appliesto-ss-xxxx-xxxx-pdw-md](../../../includes/appliesto-ss-xxxx-xxxx-pdw-md.md)]
+  This topic describes how to create a new server role in [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../../includes/tsql-md.md)].  
   
  **In This Topic**  
   
@@ -65,11 +63,11 @@ manager: "jhubbard"
   
 2.  Expand the **Security** folder.  
   
-3.  Right-click the **Server Roles** folder and select **New Server Role…**.  
+3.  Right-click the **Server Roles** folder and select **New Server Role...**.  
   
-4.  In the **New Server Role –***server_role_name* dialog box, on the **General** page, enter a name for the new server role in the **Server role name** box.  
+4.  In the **New Server Role -**_server\_role\_name_ dialog box, on the **General** page, enter a name for the new server role in the **Server role name** box.  
   
-5.  In the **Owner** box, enter the name of the server principal that will own the new role. Alternately, click the ellipsis **(…)** to open the **Select Server Login or Role** dialog box.  
+5.  In the **Owner** box, enter the name of the server principal that will own the new role. Alternately, click the ellipsis **(...)** to open the **Select Server Login or Role** dialog box.  
   
 6.  Under **Securables**, select one or more server-level securables. When a securable is selected, this server role can be granted or denied permissions on that securable.  
   
@@ -79,7 +77,7 @@ manager: "jhubbard"
   
 9. A user-defined server role can be a member of another server role. On the **Memberships** page, select a check box to make the current user-defined server role a member of a selected server role.  
   
-10. [!INCLUDE[clickOK](../../../includes/clickok-md.md)]  
+10. Select **OK**.
   
 ##  <a name="TsqlProcedure"></a> Using Transact-SQL  
   

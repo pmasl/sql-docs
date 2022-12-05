@@ -1,24 +1,15 @@
 ---
-title: "getMinorVersion Method (SQLServerDriver) | Microsoft Docs"
-ms.custom: ""
+title: "getMinorVersion Method (SQLServerDriver)"
+description: "getMinorVersion Method (SQLServerDriver)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDriver.getMinorVersion"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDriver.getMinorVersion"
 apitype: "Assembly"
-ms.assetid: 5507000a-98b1-40b1-b8a7-16365ae80d7d
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getMinorVersion Method (SQLServerDriver)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

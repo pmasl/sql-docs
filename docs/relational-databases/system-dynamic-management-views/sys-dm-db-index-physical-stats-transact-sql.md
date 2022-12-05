@@ -1,37 +1,33 @@
 ---
-title: "sys.dm_db_index_physical_stats (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_db_index_physical_stats (Transact-SQL)"
+description: sys.dm_db_index_physical_stats (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_db_index_physical_stats"
   - "sys.dm_db_index_physical_stats_TSQL"
   - "sys.dm_db_index_physical_stats"
   - "dm_db_index_physical_stats_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_db_index_physical_stats dynamic management function"
   - "fragmentation [SQL Server]"
+dev_langs:
+  - "TSQL"
 ms.assetid: d294dd8e-82d5-4628-aa2d-e57702230613
-caps.latest.revision: 95
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.dm_db_index_physical_stats (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  Returns size and fragmentation information for the data and indexes of the specified table or view in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For an index, one row is returned for each level of the B-tree in each partition. For a heap, one row is returned for the IN_ROW_DATA allocation unit of each partition. For large object (LOB) data, one row is returned for the LOB_DATA allocation unit of each partition. If row-overflow data exists in the table, one row is returned for the ROW_OVERFLOW_DATA allocation unit in each partition. Does not return information about xVelocity memory optimized columnstore indexes.  
+Returns size and fragmentation information for the data and indexes of the specified table or view in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For an index, one row is returned for each level of the B-tree in each partition. For a heap, one row is returned for the IN_ROW_DATA allocation unit of each partition. For large object (LOB) data, one row is returned for the LOB_DATA allocation unit of each partition. If row-overflow data exists in the table, one row is returned for the ROW_OVERFLOW_DATA allocation unit in each partition. Does not return information about xVelocity memory optimized columnstore indexes.  
+
+[!INCLUDE [sql-b-tree](../../includes/sql-b-tree.md)]
   
-> [!IMPORTANT]
-> If you query **sys.dm_db_index_physical_stats** on a server instance that is hosting an Always On [readable secondary replica](../../database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups.md), you might encounter a REDO blocking issue. This is because this dynamic management view acquires an IS lock on the specified user table or view that can block requests by a REDO thread for an X lock on that user table or view.  
+If you query **sys.dm_db_index_physical_stats** on a server instance that is hosting an Always On [readable secondary replica](../../database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups.md), you might encounter a REDO blocking issue. This is because this dynamic management view acquires an IS lock on the specified user table or view that can block requests by a REDO thread for an X lock on that user table or view.  
   
  **sys.dm_db_index_physical_stats** does not return information about memory-optimized indexes. For information about memory-optimized index use, see [sys.dm_db_xtp_index_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-xtp-index-stats-transact-sql.md).  
   
@@ -52,33 +48,33 @@ sys.dm_db_index_physical_stats (
 ```  
   
 ## Arguments  
- *database_id* | NULL | 0 | DEFAULT  
+ *database_id* \| NULL \| 0 \| DEFAULT  
  Is the ID of the database. *database_id* is **smallint**. Valid inputs are the ID number of a database, NULL, 0, or DEFAULT. The default is 0. NULL, 0, and DEFAULT are equivalent values in this context.  
   
  Specify NULL to return information for all databases in the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. If you specify NULL for *database_id*, you must also specify NULL for *object_id*, *index_id*, and *partition_number*.  
   
  The built-in function [DB_ID](../../t-sql/functions/db-id-transact-sql.md) can be specified. When using DB_ID without specifying a database name, the compatibility level of the current database must be 90 or greater.  
   
- *object_id* | NULL | 0 | DEFAULT  
+ *object_id* \| NULL \| 0 \| DEFAULT  
  Is the object ID of the table or view the index is on. *object_id* is **int**.  
   
- Valid inputs are the ID number of a table and view, NULL, 0, or DEFAULT. The default is 0. NULL, 0, and DEFAULT are equivalent values in this context. As of [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)], valid inputs also include the service broker queue name or the queue internal table name. When default parameters are applied (i.e. all objects, all indexes, etc), fragmentation information for all queues are included in the result set.  
+ Valid inputs are the ID number of a table and view, NULL, 0, or DEFAULT. The default is 0. NULL, 0, and DEFAULT are equivalent values in this context. As of [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)], valid inputs also include the service broker queue name or the queue internal table name. When default parameters are applied (i.e. all objects, all indexes, etc), fragmentation information for all queues are included in the result set.  
   
  Specify NULL to return information for all tables and views in the specified database. If you specify NULL for *object_id*, you must also specify NULL for *index_id* and *partition_number*.  
   
- *index_id* | 0 | NULL | -1 | DEFAULT  
+ *index_id* \| 0 \| NULL \| -1 \| DEFAULT  
  Is the ID of the index. *index_id* is **int**. Valid inputs are the ID number of an index, 0 if *object_id* is a heap, NULL, -1, or DEFAULT. The default is -1. NULL, -1, and DEFAULT are equivalent values in this context.  
   
  Specify NULL to return information for all indexes for a base table or view. If you specify NULL for *index_id*, you must also specify NULL for *partition_number*.  
   
- *partition_number* | NULL | 0 | DEFAULT  
+ *partition_number* \| NULL \| 0 \| DEFAULT  
  Is the partition number in the object. *partition_number* is **int**. Valid inputs are the *partion_number* of an index or heap, NULL, 0, or DEFAULT. The default is 0. NULL, 0, and DEFAULT are equivalent values in this context.  
   
  Specify NULL to return information for all partitions of the owning object.  
   
  *partition_number* is 1-based. A nonpartitioned index or heap has *partition_number* set to 1.  
   
- *mode* | NULL | DEFAULT  
+ *mode* \| NULL \| DEFAULT  
  Is the name of the mode. *mode* specifies the scan level that is used to obtain statistics. *mode* is **sysname**. Valid inputs are DEFAULT, NULL, LIMITED, SAMPLED, or DETAILED. The default (NULL) is LIMITED.  
   
 ## Table Returned  
@@ -89,7 +85,7 @@ sys.dm_db_index_physical_stats (
 |object_id|**int**|Object ID of the table or view that the index is on.|  
 |index_id|**int**|Index ID of an index.<br /><br /> 0 = Heap.|  
 |partition_number|**int**|1-based partition number within the owning object; a table, view, or index.<br /><br /> 1 = Nonpartitioned index or heap.|  
-|index_type_desc|**nvarchar(60)**|Description of the index type:<br /><br /> HEAP<br /><br /> CLUSTERED INDEX<br /><br /> NONCLUSTERED INDEX<br /><br /> PRIMARY XML INDEX<br /><br /> SPATIAL INDEX<br /><br /> XML INDEX<br /><br /> COLUMNSTORE MAPPING INDEX (internal)<br /><br /> COLUMNSTORE DELETEBUFFER INDEX (internal)<br /><br /> COLUMNSTORE DELETEBITMAP INDEX (internal)|  
+|index_type_desc|**nvarchar(60)**|Description of the index type:<br /><br /> HEAP<br /><br /> CLUSTERED INDEX<br /><br /> NONCLUSTERED INDEX<br /><br /> PRIMARY XML INDEX<br /><br /> EXTENDED INDEX<br /><br /> XML INDEX<br /><br /> COLUMNSTORE MAPPING INDEX (internal)<br /><br /> COLUMNSTORE DELETEBUFFER INDEX (internal)<br /><br /> COLUMNSTORE DELETEBITMAP INDEX (internal)|  
 |hobt_id|**bigint**|Heap or B-Tree ID of the index or partition.<br /><br /> Besides returning the hobt_id of user-defined indexes, this also returns the hobt_id of the internal columnstore indexes.|  
 |alloc_unit_type_desc|**nvarchar(60)**|Description of the allocation unit type:<br /><br /> IN_ROW_DATA<br /><br /> LOB_DATA<br /><br /> ROW_OVERFLOW_DATA<br /><br /> The LOB_DATA allocation unit contains the data that is stored in columns of type **text**, **ntext**, **image**, **varchar(max)**, **nvarchar(max)**, **varbinary(max)**, and **xml**. For more information, see [Data Types &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md).<br /><br /> The ROW_OVERFLOW_DATA allocation unit contains the data that is stored in columns of type **varchar(n)**, **nvarchar(n)**, **varbinary(n)**, and **sql_variant** that have been pushed off-row.|  
 |index_depth|**tinyint**|Number of index levels.<br /><br /> 1 = Heap, or LOB_DATA or ROW_OVERFLOW_DATA allocation unit.|  
@@ -97,20 +93,28 @@ sys.dm_db_index_physical_stats (
 |avg_fragmentation_in_percent|**float**|Logical fragmentation for indexes, or extent fragmentation for heaps in the IN_ROW_DATA allocation unit.<br /><br /> The value is measured as a percentage and takes into account multiple files. For definitions of logical and extent fragmentation, see Remarks.<br /><br /> 0 for LOB_DATA and ROW_OVERFLOW_DATA allocation units.<br /><br /> NULL for heaps when *mode* = SAMPLED.|  
 |fragment_count|**bigint**|Number of fragments in the leaf level of an IN_ROW_DATA allocation unit. For more information about fragments, see Remarks.<br /><br /> NULL for nonleaf levels of an index, and LOB_DATA or ROW_OVERFLOW_DATA allocation units.<br /><br /> NULL for heaps when *mode* = SAMPLED.|  
 |avg_fragment_size_in_pages|**float**|Average number of pages in one fragment in the leaf level of an IN_ROW_DATA allocation unit.<br /><br /> NULL for nonleaf levels of an index, and LOB_DATA or ROW_OVERFLOW_DATA allocation units.<br /><br /> NULL for heaps when *mode* = SAMPLED.|  
-|page_count|**bigint**|Total number of index or data pages.<br /><br /> For an index, the total number of index pages in the current level of the b-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the total number of data pages in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, total number of pages in the allocation unit.|  
-|avg_page_space_used_in_percent|**float**|Average percentage of available data storage space used in all pages.<br /><br /> For an index, average applies to the current level of the b-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the average of all data pages in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW DATA allocation units, the average of all pages in the allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
-|record_count|**bigint**|Total number of records.<br /><br /> For an index, total number of records applies to the current level of the b-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the total number of records in the IN_ROW_DATA allocation unit.<br /><br /> **Note:** For a heap, the number of records returned from this function might not match the number of rows that are returned by running a SELECT COUNT(\*) against the heap. This is because a row may contain multiple records. For example, under some update situations, a single heap row may have a forwarding record and a forwarded record as a result of the update operation. Also, most large LOB rows are split into multiple records in LOB_DATA storage.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, the total number of records in the complete allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
+|page_count|**bigint**|Total number of index or data pages.<br /><br /> For an index, the total number of index pages in the current level of the B-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the total number of data pages in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, total number of pages in the allocation unit.|  
+|avg_page_space_used_in_percent|**float**|Average percentage of available data storage space used in all pages.<br /><br /> For an index, average applies to the current level of the B-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the average of all data pages in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW DATA allocation units, the average of all pages in the allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
+|record_count|**bigint**|Total number of records.<br /><br /> For an index, total number of records applies to the current level of the B-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the total number of records in the IN_ROW_DATA allocation unit.<br /><br /> **Note:** For a heap, the number of records returned from this function might not match the number of rows that are returned by running a SELECT COUNT(\*) against the heap. This is because a row may contain multiple records. For example, under some update situations, a single heap row may have a forwarding record and a forwarded record as a result of the update operation. Also, most large LOB rows are split into multiple records in LOB_DATA storage.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, the total number of records in the complete allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
 |ghost_record_count|**bigint**|Number of ghost records ready for removal by the ghost cleanup task in the allocation unit.<br /><br /> 0 for nonleaf levels of an index in the IN_ROW_DATA allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
 |version_ghost_record_count|**bigint**|Number of ghost records retained by an outstanding snapshot isolation transaction in an allocation unit.<br /><br /> 0 for nonleaf levels of an index in the IN_ROW_DATA allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
-|min_record_size_in_bytes|**int**|Minimum record size in bytes.<br /><br /> For an index, minimum record size applies to the current level of the b-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the minimum record size in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, the minimum record size in the complete allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
-|max_record_size_in_bytes|**int**|Maximum record size in bytes.<br /><br /> For an index, the maximum record size applies to the current level of the b-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the maximum record size in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, the maximum record size in the complete allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
-|avg_record_size_in_bytes|**float**|Average record size in bytes.<br /><br /> For an index, the average record size applies to the current level of the b-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the average record size in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, the average record size in the complete allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
+|min_record_size_in_bytes|**int**|Minimum record size in bytes.<br /><br /> For an index, minimum record size applies to the current level of the B-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the minimum record size in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, the minimum record size in the complete allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
+|max_record_size_in_bytes|**int**|Maximum record size in bytes.<br /><br /> For an index, the maximum record size applies to the current level of the B-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the maximum record size in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, the maximum record size in the complete allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
+|avg_record_size_in_bytes|**float**|Average record size in bytes.<br /><br /> For an index, the average record size applies to the current level of the B-tree in the IN_ROW_DATA allocation unit.<br /><br /> For a heap, the average record size in the IN_ROW_DATA allocation unit.<br /><br /> For LOB_DATA or ROW_OVERFLOW_DATA allocation units, the average record size in the complete allocation unit.<br /><br /> NULL when *mode* = LIMITED.|  
 |forwarded_record_count|**bigint**|Number of records in a heap that have forward pointers to another data location. (This state occurs during an update, when there is not enough room to store the new row in the original location.)<br /><br /> NULL for any allocation unit other than the IN_ROW_DATA allocation units for a heap.<br /><br /> NULL for heaps when *mode* = LIMITED.|  
 |compressed_page_count|**bigint**|The number of compressed pages.<br /><br /> For heaps, newly allocated pages are not PAGE compressed. A heap is PAGE compressed under two special conditions: when data is bulk imported or when a heap is rebuilt. Typical DML operations that cause page allocations will not be PAGE compressed. Rebuild a heap when the compressed_page_count value grows larger than the threshold you want.<br /><br /> For tables that have a clustered index, the compressed_page_count value indicates the effectiveness of PAGE compression.|  
-|hobt_id|bigint|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)), [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].<br /><br /> For columnstore indexes only, this is the ID for a rowset that tracks internal columnstore data for a partition. The rowsets are stored as data heaps or binary trees. They have the same index ID as the parent columnstore index. For more information, see [sys.internal_partitions &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-internal-partitions-transact-sql.md).<br /><br /> NULL if|  
-|column_store_delete_buffer_state|tinyint|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)), [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].<br /><br /> 0 = NOT_APPLICABLE<br /><br /> 1 = OPEN<br /><br /> 2 = DRAINING<br /><br /> 3 = FLUSHING<br /><br /> 4 = RETIRING<br /><br /> 5 = READY|  
-|column_store_delete_buff_state_desc||**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)), [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].<br /><br /> NOT_APPLICABLE –the parent index is not a columnstore index.<br /><br /> OPEN – deleters and scanners use this.<br /><br /> DRAINING – deleters are draining out but scanners still use it.<br /><br /> FLUSHING – buffer is closed and rows in the buffer are being written to the delete bitmap.<br /><br /> RETIRING – rows in the closed delete buffer have been written to the delete bitmap, but the buffer has not been truncated because scanners are still using it. New scanners don’t need to use the retiring buffer because the open buffer is enough.<br /><br /> READY – This delete buffer is ready for use.|  
-  
+|hobt_id|bigint|For columnstore indexes only, this is the ID for a rowset that tracks internal columnstore data for a partition. The rowsets are stored as data heaps or B-trees. They have the same index ID as the parent columnstore index. For more information, see [sys.internal_partitions &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-internal-partitions-transact-sql.md).<br /><br /> NULL if <br /><br /> **Applies to**: SQL Server 2016 and later, Azure SQL Database, Azure SQL Managed Instance|  
+|column_store_delete_buffer_state|tinyint| 0 = NOT_APPLICABLE<br /><br /> 1 = OPEN<br /><br /> 2 = DRAINING<br /><br /> 3 = FLUSHING<br /><br /> 4 = RETIRING<br /><br /> 5 = READY<br /><br />**Applies to**: SQL Server 2016 and later, Azure SQL Database, Azure SQL Managed Instance|  
+|column_store_delete_buff_state_desc|| NOT VALID -the parent index is not a columnstore index.<br /><br /> OPEN - deleters and scanners use this.<br /><br /> DRAINING - deleters are draining out but scanners still use it.<br /><br /> FLUSHING - buffer is closed and rows in the buffer are being written to the delete bitmap.<br /><br /> RETIRING - rows in the closed delete buffer have been written to the delete bitmap, but the buffer has not been truncated because scanners are still using it. New scanners don't need to use the retiring buffer because the open buffer is enough.<br /><br /> READY - This delete buffer is ready for use. <br /><br /> **Applies to**: SQL Server 2016 and later, Azure SQL Database, Azure SQL Managed Instance|  
+|version_record_count|**bigint**|This is the count of the row version records being maintained in this index.  These row versions are maintained by the [Accelerated Database Recovery](../../relational-databases/accelerated-database-recovery-concepts.md) feature. <br /><br /> [!INCLUDE[SQL2019](../../includes/applies-to-version/sqlserver2019.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] |  
+|inrow_version_record_count|**bigint**|Count of ADR version records kept in the data row for fast retrieval. <br /><br />  [!INCLUDE[SQL2019](../../includes/applies-to-version/sqlserver2019.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]e|  
+|inrow_diff_version_record_count|**bigint**| Count of ADR version records kept in the form of differences from the base version. <br /><br /> [!INCLUDE[SQL2019](../../includes/applies-to-version/sqlserver2019.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|  
+|total_inrow_version_payload_size_in_bytes|**bigint**|Total size in bytes of the inrow version records for this index. <br /><br /> [!INCLUDE[SQL2019](../../includes/applies-to-version/sqlserver2019.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|  
+|offrow_regular_version_record_count|**bigint**|Count of version records being kept outside the original data row. <br /><br /> [!INCLUDE[SQL2019](../../includes/applies-to-version/sqlserver2019.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|  
+|offrow_long_term_version_record_count|**bigint**|Count of version records considered long term. <br /><br /> [!INCLUDE[SQL2019](../../includes/applies-to-version/sqlserver2019.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] |  
+
+[!INCLUDE [sql-b-tree](../../includes/sql-b-tree.md)]
+
 ## Remarks  
  The sys.dm_db_index_physical_stats dynamic management function replaces the DBCC SHOWCONTIG statement.  
   
@@ -165,7 +169,7 @@ GO
 ```  
   
 ### Best Practice  
- Always make sure that a valid ID is returned when you use DB_ID or OBJECT_ID. For example, when you use OBJECT_ID, specify a three-part name such as `OBJECT`_`ID(N'AdventureWorks2012.Person.Address')`, or test the value returned by the functions before you use them in the sys.dm_db_index_physical_stats function. Examples A and B that follow demonstrate a safe way to specify database and object IDs.  
+ Always make sure that a valid ID is returned when you use DB_ID or OBJECT_ID. For example, when you use OBJECT_ID, specify a three-part name such as `OBJECT_ID(N'AdventureWorks2012.Person.Address')`, or test the value returned by the functions before you use them in the sys.dm_db_index_physical_stats function. Examples A and B that follow demonstrate a safe way to specify database and object IDs.  
   
 ## Detecting Fragmentation  
  Fragmentation occurs through the process of data modifications (INSERT, UPDATE, and DELETE statements) that are made against the table and, therefore, to the indexes defined on the table. Because these modifications are not ordinarily distributed equally among the rows of the table and indexes, the fullness of each page can vary over time. For queries that scan part or all of the indexes of a table, this kind of fragmentation can cause additional page reads. This hinders parallel scanning of data.  
@@ -193,7 +197,7 @@ GO
   
 -   Use ALTER INDEX REBUILD, the replacement for DBCC DBREINDEX, to rebuild the index online or offline. For more information, see [ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md).  
   
- Fragmentation alone is not a sufficient reason to reorganize or rebuild an index. The main effect of fragmentation is that it slows down page read-ahead throughput during index scans. This causes slower response times. If the query workload on a fragmented table or index does not involve scans, because the workload is primarily singleton lookups, removing fragmentation may have no effect. For more information, see this [Microsoft Web site](http://go.microsoft.com/fwlink/?linkid=31012).  
+ Fragmentation alone is not a sufficient reason to reorganize or rebuild an index. The main effect of fragmentation is that it slows down page read-ahead throughput during index scans. This causes slower response times. If the query workload on a fragmented table or index does not involve scans, because the workload is primarily singleton lookups, removing fragmentation may have no effect.
   
 > [!NOTE]  
 >  Running DBCC SHRINKFILE or DBCC SHRINKDATABASE may introduce fragmentation if an index is partly or completely moved during the shrink operation. Therefore, if a shrink operation must be performed, you should do it before fragmentation is removed.  
@@ -202,7 +206,7 @@ GO
  To reduce the extent fragmentation of a heap, create a clustered index on the table and then drop the index. This redistributes the data while the clustered index is created. This also makes it as optimal as possible, considering the distribution of free space available in the database. When the clustered index is then dropped to re-create the heap, the data is not moved and remains optimally in position. For information about how to perform these operations, see [CREATE INDEX](../../t-sql/statements/create-index-transact-sql.md) and [DROP INDEX](../../t-sql/statements/drop-index-transact-sql.md).  
   
 > [!CAUTION]  
->  Creating and dropping a clustered index on a table, rebuilds all non-clustered indexes on that table twice.  
+>  Creating and dropping a clustered index on a table, rebuilds all nonclustered indexes on that table twice.  
   
 ## Compacting Large Object Data  
  By default, the ALTER INDEX REORGANIZE statement compacts pages that contain large object (LOB) data. Because LOB pages are not deallocated when empty, compacting this data can improve disk space use if lots of LOB data have been deleted, or a LOB column is dropped.  
@@ -407,7 +411,7 @@ FROM sys.dm_db_index_physical_stats (db_id(),
   
 ||  
 |-|  
-|**Applies to**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] through [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
+|**Applies to**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] through [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
   
  The following examples shows how to query server broker queues for fragmentation.  
   
@@ -427,7 +431,5 @@ select * from sys.dm_db_index_physical_stats (db_id(), object_id ('ExpenseQueue'
  [sys.dm_db_index_usage_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-usage-stats-transact-sql.md)   
  [sys.dm_db_partition_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql.md)   
  [sys.allocation_units &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-allocation-units-transact-sql.md)   
- [System Views &#40;Transact-SQL&#41;](http://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)  
+ [System Views &#40;Transact-SQL&#41;](../../t-sql/language-reference.md)  
   
-  
-

@@ -1,28 +1,26 @@
 ---
+description: "Parsing Non-Standard Text File Formats with the Script Component"
 title: "Parsing Non-Standard Text File Formats with the Script Component | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
 helpviewer_keywords: 
   - "text file reading [Integration Services]"
   - "Script component [Integration Services], non-standard text file formats"
   - "transformations [Integration Services], components"
   - "Script component [Integration Services], examples"
 ms.assetid: 1fda034d-09e4-4647-9a9f-e8d508c2cc8f
-caps.latest.revision: 36
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Parsing Non-Standard Text File Formats with the Script Component
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   When your source data is arranged in a non-standard format, you may find it more convenient to consolidate all your parsing logic in a single script than to chain together multiple [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] transformations to achieve the same result.  
   
  [Example 1: Parsing Row-Delimited Records](#example1)  
@@ -66,7 +64,7 @@ manager: "jhubbard"
   
 3.  Select a destination database, and open a new query window. In the query window, execute the following script to create the destination table:  
   
-    ```  
+    ```sql
     create table RowDelimitedData  
     (  
     FirstName varchar(32),  
@@ -220,7 +218,7 @@ public override void Input0_ProcessInputRow(Input0Buffer Row)
   
 3.  Select a destination database, and open a new query window. In the query window, execute the following script to create the destination tables:  
   
-    ```  
+    ```sql
     CREATE TABLE [dbo].[Parents]([ParentID] [int] NOT NULL,  
     [ParentRecord] [varchar](32) NOT NULL,  
      CONSTRAINT [PK_Parents] PRIMARY KEY CLUSTERED   

@@ -1,26 +1,19 @@
 ---
-title: "Value Property Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Value Property Example (VB)"
+description: "Value Property Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Value property [ADO], Visual Basic example"
-ms.assetid: 2d4fe651-ef09-461b-8884-a70b6af4362e
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Value Property Example (VB)
-This example demonstrates the [Value](../../../ado/reference/ado-api/value-property-ado.md) property with [Field](../../../ado/reference/ado-api/field-object.md) and [Property](../../../ado/reference/ado-api/property-object-ado.md) objects by displaying field and property values for the ***Employees*** table.  
+This example demonstrates the [Value](./value-property-ado.md) property with [Field](./field-object.md) and [Property](./property-object-ado.md) objects by displaying field and property values for the ***Employees*** table.  
   
 ```  
 'BeginValueVB  
@@ -99,6 +92,6 @@ End Sub
 ```  
   
 ## See Also  
- [Field Object](../../../ado/reference/ado-api/field-object.md)   
- [Property Object (ADO)](../../../ado/reference/ado-api/property-object-ado.md)   
- [Value Property (ADO)](../../../ado/reference/ado-api/value-property-ado.md)
+ [Field Object](./field-object.md)   
+ [Property Object (ADO)](./property-object-ado.md)   
+ [Value Property (ADO)](./value-property-ado.md)

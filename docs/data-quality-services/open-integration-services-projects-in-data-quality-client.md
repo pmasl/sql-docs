@@ -1,22 +1,19 @@
 ---
-title: "Open Integration Services Projects in Data Quality Client | Microsoft Docs"
-ms.custom: ""
+title: "Open Integration Services (SSIS) projects in Data Quality Client"
+description: Learn how to open a SQL Server Integration Services (SSIS) project using the Data Quality Client for SQL Server Data Quality Services.
+author: swinarko
+ms.author: sawinark
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a8bad2f1-8fb0-4d14-a978-11a5720e62d6
-caps.latest.revision: 9
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
+ms.custom: seo-lt-2019
 ---
 # Open Integration Services Projects in Data Quality Client
-  The DQs Cleansing component in Integration Services enables you to run a cleansing project in batch mode. However, at times you might want to review the cleansing results in an Integration Services package similar to how you can review the cleansing results in the **Manage and View Results** tab of a cleansing activity in a data quality project in DQS. DQS enables you to open Integration Services projects in [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] just like any other data quality project from the **Open project** screen, and have an interactive cleansing experience of the cleansing results in an Integration Services project.  
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
+  The DQS Cleansing component in Integration Services enables you to run a cleansing project in batch mode. However, at times you might want to review the cleansing results in an Integration Services package similar to how you can review the cleansing results in the **Manage and View Results** tab of a cleansing activity in a data quality project in DQS. DQS enables you to open Integration Services projects in [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] just like any other data quality project from the **Open project** screen, and have an interactive cleansing experience of the cleansing results in an Integration Services project.  
   
 ##  <a name="BeforeYouBegin"></a> Before You Begin  
   
@@ -45,7 +42,7 @@ manager: "jhubbard"
   
 3.  In the **Open project** screen, you can identify an Integration Services project in either of the following ways:  
   
-    1.  **Project Name**: Integration Services projects are listed using the following naming terminology: “Package.DQS Cleansing_*\<DATE>**\<TIME>*_{GUID}.” Every time you successfully run the same package in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)], a new project is listed in the **Open project** screen.  
+    1.  **Project Name**: Integration Services projects are listed using the following naming terminology: "Package.DQS Cleansing_*\<DATE>\<TIME>*_{GUID}." Every time you successfully run the same package in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)], a new project is listed in the **Open project** screen.  
   
     2.  **Project Type**: Integration Services projects have **SSIS** as the project type in the **Open project** screen.  
   
@@ -60,6 +57,6 @@ manager: "jhubbard"
   
 ## See Also  
  [DQS Cleansing Transformation](../integration-services/data-flow/transformations/dqs-cleansing-transformation.md)   
- [Integration Services(SSIS)Projects](https://msdn.microsoft.com/library/ms138028.aspx)  
+ [Integration Services(SSIS)Projects](../integration-services/integration-services-ssis-projects-and-solutions.md)  
   
   

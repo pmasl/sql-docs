@@ -1,24 +1,22 @@
 ---
-title: "Query Parameters Dialog Box (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Query Parameters Dialog Box (Visual Database Tools)"
+title: Query Parameters Dialog Box
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vdtsql.chm:69645"
   - "vdt.dlgbox.definequeryparameters"
 ms.assetid: 31cdaee2-d7cd-4d64-a45f-924b27e8b1f0
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Query Parameters Dialog Box (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 This dialog allows you to enter values for the parameters defined in the query. This dialog box appears when you execute a query that contains parameters that require end-user input at run time.  
   
 ## Options  
@@ -29,7 +27,7 @@ Lists the parameters defined for the query being executed. If the query contains
 Enter the value for each parameter listed under **Name**. The value used most recently appears as the default parameter value.  
   
 ## Example  
-The following query in the SQL Pane, opens the Query Parameters dialog box when executed in the [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject_md.md)] database.  
+The following query in the SQL Pane, opens the Query Parameters dialog box when executed in the [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] database.  
   
 ```  
 SELECT   FirstName, LastName  

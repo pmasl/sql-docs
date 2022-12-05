@@ -1,14 +1,12 @@
 ---
+description: "STPointFromText (geometry Data Type)"
 title: "STPointFromText (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "STPointFromText_TSQL"
   - "STPointFromText (geometry Data Type)"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "STPointFromText (geometry Data Type)"
 ms.assetid: 1d71dfd8-9d80-44c3-b6e1-64e99cde1fa0
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # STPointFromText (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns a **geometry** instance from an Open Geospatial Consortium (OGC) Well-Known Text (WKT) representation augmented with any Z (elevation) and M (measure) values carried by the instance.
   
@@ -34,7 +30,9 @@ Returns a **geometry** instance from an Open Geospatial Consortium (OGC) Well-Kn
 STPointFromText ( 'point_tagged_text' , SRID )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *point_tagged_text*  
  Is the WKT representation of the **geometryPoint** instance you wish to return. *point_tagged_text* is an **nvarchar(max)** expression.  
   
@@ -54,7 +52,7 @@ STPointFromText ( 'point_tagged_text' , SRID )
 ## Examples  
  The following example uses `STPointFromText()` to create a `geometry` instance.  
   
-```  
+```sql
 DECLARE @g geometry;  
 SET @g = geometry::STPointFromText('POINT (100 100)', 0);  
 SELECT @g.ToString();  

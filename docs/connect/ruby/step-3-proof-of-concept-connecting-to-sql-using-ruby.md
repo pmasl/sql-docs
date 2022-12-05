@@ -1,22 +1,14 @@
 ---
-title: "Step 3: Proof of concept connecting to SQL using Ruby | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: cac20b18-0a6d-4243-bbda-a5d1b9476441
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+title: "Step 3: Proof of concept connecting to SQL using Ruby"
+description: "Step 3 is a proof of concept, which shows how you can connect to SQL Server using Ruby. The basic examples demonstrate selecting and inserting data."
+author: David-Engel
+ms.author: v-davidengel
+ms.date: 06/22/2020
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: conceptual
 ---
 # Step 3: Proof of concept connecting to SQL using Ruby
-[!INCLUDE[Driver_Ruby_Download](../../includes/driver_ruby_download.md)]
 
 This example should be considered a proof of concept only.  The sample code is simplified for clarity, and does not necessarily represent best practices recommended by Microsoft.  
   
@@ -24,7 +16,7 @@ This example should be considered a proof of concept only.  The sample code is s
   
 The [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) function is used to connect to SQL Database.  
   
-``` ruby
+```ruby
     require 'tiny_tds'  
     client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword',  
     host: 'yourserver.database.windows.net', port: 1433,  
@@ -35,11 +27,13 @@ The [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) function is u
   
 Copy and paste the following code in an empty file. Call it test.rb. Then execute it by entering the following command from your command prompt:  
   
+```ruby
     ruby test.rb  
+```
   
 In the code sample, the [TinyTds::Result](https://github.com/rails-sqlserver/tiny_tds) function is used to retrieve a result set from a query against SQL Database. This function accepts a query and returns a result set. The results set is iterated over by using [result.each do |row|](https://github.com/rails-sqlserver/tiny_tds).  
   
-``` ruby 
+```ruby 
     require 'tiny_tds'    
     print 'test'       
     client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword',  
@@ -53,13 +47,13 @@ In the code sample, the [TinyTds::Result](https://github.com/rails-sqlserver/tin
   
 ## Step 3:  Insert a row  
   
-In this example you will see how to execute an [INSERT](https://msdn.microsoft.com/library/ms174335.aspx) statement safely, pass parameters which protect your application from [SQL injection](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) vulnerability, and retrieve the auto-generated [Primary Key](https://msdn.microsoft.com/library/ms179610.aspx) value.    
+In this example you will see how to execute an [INSERT](../../t-sql/statements/insert-transact-sql.md) statement safely, pass parameters which protect your application from [SQL injection](../../relational-databases/tables/primary-and-foreign-key-constraints.md) value.    
   
 To use TinyTDS with Azure, it is recommended that you execute several `SET` statements to change how the current session handles specific information. Recommended `SET` statements are provided in the code sample. For example, `SET ANSI_NULL_DFLT_ON` will allow new columns created to allow null values even if the nullability status of the column is not explicitly stated.  
   
-To align with the Microsoft SQL Server [datetime](http://msdn.microsoft.com/library/ms187819.aspx) format, use the [strftime](http://ruby-doc.org/core-2.2.0/Time.html#method-i-strftime) function to cast to the corresponding datetime format.  
+To align with the Microsoft SQL Server [datetime](../../t-sql/data-types/datetime-transact-sql.md) format, use the [strftime](https://ruby-doc.org/core-2.2.0/Time.html#method-i-strftime) function to cast to the corresponding datetime format.  
   
-``` ruby
+```ruby
     require 'tiny_tds'  
     client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword',  
     host: 'yourserver.database.windows.net', port: 1433,  
@@ -80,6 +74,4 @@ To align with the Microsoft SQL Server [datetime](http://msdn.microsoft.com/libr
     results.each do |row|  
     puts row  
     end  
-```  
-  
-  
+```

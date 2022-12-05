@@ -1,32 +1,29 @@
 ---
+description: "SQLSetConnectInfo Function"
 title: "SQLSetConnectInfo Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "SQLSetConnectInfo function [ODBC]"
 ms.assetid: 0782a1c3-c5d1-499b-a8ba-134162db9990
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLSetConnectInfo Function
 **Conformance**  
  Version Introduced: ODBC 3.81 Standards Compliance: ODBC  
   
  **Summary**  
- **SQLSetConnectInfo** is used to set the data source, user ID, and password into the connection info token for an application’s [SQLConnect](../../../odbc/reference/syntax/sqlconnect-function.md) call.  
+ **SQLSetConnectInfo** is used to set the data source, user ID, and password into the connection info token for an application's [SQLConnect](../../../odbc/reference/syntax/sqlconnect-function.md) call.  
   
 ## Syntax  
   
-```  
+```cpp
+  
 SQLRETURN  SQLSetConnectInfo(  
                 SQLHDBC_INFO_TOKEN   TokenHandle,  
                 WCHAR *              ServerName,  

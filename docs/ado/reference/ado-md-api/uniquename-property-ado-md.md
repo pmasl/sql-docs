@@ -1,28 +1,21 @@
 ---
-title: "UniqueName Property (ADO MD) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "UniqueName Property (ADO MD)"
+description: "UniqueName Property (ADO MD)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Level::UniqueName"
   - "Member::UniqueName"
   - "Dimension::UniqueName"
   - "UniqueName"
   - "Hierarchy::UniqueName"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "UniqueName property [ADO MD]"
-ms.assetid: 5b977956-e252-4861-8425-f1aaf6b80130
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # UniqueName Property (ADO MD)
 Indicates an unambiguous name for the current object.  
@@ -32,10 +25,16 @@ Indicates an unambiguous name for the current object.
   
 ## Applies To  
   
-|||  
-|-|-|  
-|[Dimension Object (ADO MD)](../../../ado/reference/ado-md-api/dimension-object-ado-md.md)|[Hierarchy Object (ADO MD)](../../../ado/reference/ado-md-api/hierarchy-object-ado-md.md)|  
-|[Level Object (ADO MD)](../../../ado/reference/ado-md-api/level-object-ado-md.md)|[Member Object (ADO MD)](../../../ado/reference/ado-md-api/member-object-ado-md.md)|  
-  
+:::row:::
+    :::column:::
+        [Dimension Object (ADO MD)](./dimension-object-ado-md.md)  
+        [Hierarchy Object (ADO MD)](./hierarchy-object-ado-md.md)  
+    :::column-end:::
+    :::column:::
+        [Level Object (ADO MD)](./level-object-ado-md.md)  
+        [Member Object (ADO MD)](./member-object-ado-md.md)  
+    :::column-end:::
+:::row-end:::
+
 ## See Also  
- [Name Property (ADO MD)](../../../ado/reference/ado-md-api/name-property-ado-md.md)
+ [Name Property (ADO MD)](./name-property-ado-md.md)

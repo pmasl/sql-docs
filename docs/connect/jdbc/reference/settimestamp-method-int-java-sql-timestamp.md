@@ -1,24 +1,15 @@
 ---
-title: "setTimestamp Method (int, java.sql.Timestamp) | Microsoft Docs"
-ms.custom: ""
+title: "setTimestamp Method (int, java.sql.Timestamp)"
+description: "setTimestamp Method (int, java.sql.Timestamp)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.setTimestamp (int, java.sql.Timestamp)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.setTimestamp (int, java.sql.Timestamp)"
 apitype: "Assembly"
-ms.assetid: 2f7bb89f-ace7-41cb-b596-5aa8d0dd9e3c
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setTimestamp Method (int, java.sql.Timestamp)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

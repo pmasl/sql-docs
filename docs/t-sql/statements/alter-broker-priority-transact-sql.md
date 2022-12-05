@@ -1,32 +1,25 @@
 ---
-title: "ALTER BROKER PRIORITY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "ALTER BROKER PRIORITY (Transact-SQL)"
+description: ALTER BROKER PRIORITY (Transact-SQL)
+author: markingmyname
+ms.author: maghan
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER_BROKER_TSQL"
   - "ALTER BROKER PRIORITY"
   - "ALTER BROKER"
   - "ALTER_BROKER_PRIORITY_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ALTER BROKER PRIORITY statement"
   - "ssbdiagnose"
-ms.assetid: 15fda1b2-e4dd-4f9d-935a-2e38926075b2
-caps.latest.revision: 27
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ALTER BROKER PRIORITY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Changes the properties of a [!INCLUDE[ssSB](../../includes/sssb-md.md)] conversation priority.  
   
@@ -34,7 +27,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 ALTER BROKER PRIORITY ConversationPriorityName  
 FOR CONVERSATION  
@@ -48,7 +41,10 @@ FOR CONVERSATION
   
 ```  
   
-## Arguments  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *ConversationPriorityName*  
  Specifies the name of the conversation priority to be changed. The name must refer to a conversation priority in the current database.  
   
@@ -118,7 +114,7 @@ FOR CONVERSATION
 ### A. Changing only the priority level of an existing conversation priority.  
  Changes the priority level, but does not change the contract, local service, or remote service properties.  
   
-```  
+```sql  
 ALTER BROKER PRIORITY SimpleContractDefaultPriority  
     FOR CONVERSATION  
     SET (PRIORITY_LEVEL = 3);  
@@ -127,7 +123,7 @@ ALTER BROKER PRIORITY SimpleContractDefaultPriority
 ### B. Changing all of the properties of an existing conversation priority.  
  Changes the priority level, contract, local service, and remote service properties.  
   
-```  
+```sql  
 ALTER BROKER PRIORITY SimpleContractPriority  
     FOR CONVERSATION  
     SET (CONTRACT_NAME = SimpleContractB,  

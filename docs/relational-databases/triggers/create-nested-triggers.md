@@ -1,14 +1,12 @@
 ---
+description: "Create Nested Triggers"
 title: "Create Nested Triggers | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-dml"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice:
+ms.topic: conceptual
 helpviewer_keywords: 
   - "recursive DML triggers [SQL Server]"
   - "DML triggers, nested"
@@ -20,12 +18,12 @@ helpviewer_keywords:
   - "indirect recursion [SQL Server]"
   - "nested DML triggers"
 ms.assetid: cd522dda-b4ab-41b8-82b0-02445bdba7af
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Create Nested Triggers
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
   Both DML and DDL triggers are nested when a trigger performs an action that initiates another trigger. These actions can initiate other triggers, and so on. DML and DDL triggers can be nested up to 32 levels. You can control whether AFTER triggers can be nested through the **nested triggers** server configuration option. INSTEAD OF triggers (only DML triggers can be INSTEAD OF triggers) can be nested regardless of this setting.  
   
 > [!NOTE]  
@@ -40,7 +38,7 @@ CREATE TRIGGER Purchasing.savedel
    ON Purchasing.PurchaseOrderDetail  
 FOR DELETE  
 AS  
-   INSERT del_save;  
+   INSERT del_save
    SELECT * FROM deleted;  
 ```  
   

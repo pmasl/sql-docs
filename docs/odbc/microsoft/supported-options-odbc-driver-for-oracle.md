@@ -1,21 +1,17 @@
 ---
+description: "Supported Options (ODBC Driver for Oracle)"
 title: "Supported Options (ODBC Driver for Oracle) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "ODBC driver for Oracle [ODBC], supported options"
 ms.assetid: feefe0fd-5679-4c42-aa9e-e52b83f02544
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Supported Options (ODBC Driver for Oracle)
 > [!IMPORTANT]  

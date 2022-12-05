@@ -1,24 +1,19 @@
 ---
+description: "Use Built-in Security in Windows SharePoint Services for Report Server Items"
 title: "Use Built-in Security in Windows SharePoint Services for Report Server Items | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.date: 03/07/2017
+ms.service: reporting-services
+ms.subservice: security
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "permissions [Reporting Services], SharePoint integrated mode"
   - "SharePoint integration [Reporting Services], permissions"
   - "security [Reporting Services], SharePoint integrated mode"
 ms.assetid: 9577e88d-c22b-4934-936f-e0f1400cedf5
-caps.latest.revision: 14
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Use Built-in Security in Windows SharePoint Services for Report Server Items
   SharePoint provides built-in security features that you can use to access report server items from SharePoint sites and libraries. If you already assigned site and list permissions to users, those same users will have access to report server items and operations immediately after you configure the integration settings between SharePoint and a report server.  
@@ -33,6 +28,8 @@ manager: "erikre"
 |.rsds|A shared data source file that specifies connection information to an external data source. It is used by report definitions (.rdl) and report model (.smdl) files. Report models always use .rsds files to get connection information to an underlying data source. Report definitions can use .rsds files, or connection information that is defined in data source properties on the report.|  
 |.rsc|A report part file that defines the layout and structure of a report item or data region. It is used to publish the report part to a server so the item can be re-used by other report authors from the Report Part Gallery.|  
 |.rsd|A shared dataset file that defines query syntax and properties for a dataset. Shared datasets can be shared, stored, processed, and cached external from a report.|  
+
+[!INCLUDE [ssrs-report-parts-deprecated](../../includes/ssrs-report-parts-deprecated.md)]
   
  Schedules, subscriptions, and report history are not securable items. You can set permissions on the site or library that determine whether a user can create or use schedules, subscriptions, and report history, but you cannot secure those items directly.  
   

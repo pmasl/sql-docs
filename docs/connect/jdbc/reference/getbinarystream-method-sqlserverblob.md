@@ -1,19 +1,12 @@
 ---
-title: "getBinaryStream Method (SQLServerBlob) | Microsoft Docs"
-ms.custom: ""
+title: "getBinaryStream Method (SQLServerBlob)"
+description: "getBinaryStream Method (SQLServerBlob)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4fb5a2d3-5db6-4e62-8000-d0f486c7cf46
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getBinaryStream Method (SQLServerBlob)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

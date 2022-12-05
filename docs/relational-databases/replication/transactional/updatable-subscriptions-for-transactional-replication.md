@@ -1,14 +1,12 @@
 ---
-title: "Updatable Subscriptions for Transactional Replication | Microsoft Docs"
-ms.custom: ""
+title: "Updatable Subscriptions (Transactional)"
+description: Describes the Updatable Subscriptions feature available for Transactional Replication in SQL Server.
+ms.custom: seo-lt-2019
 ms.date: "07/21/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "transactional replication, updatable subscriptions"
   - "updatable subscriptions, about updatable subscriptions"
@@ -17,13 +15,11 @@ helpviewer_keywords:
   - "subscriptions [SQL Server replication], updatable"
   - "updatable subscriptions"
 ms.assetid: 8eec95cb-3a11-436e-bcee-bdcd05aa5c5a
-caps.latest.revision: 60
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # Updatable Subscriptions - For Transactional Replication
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
     
 > [!NOTE]  
@@ -124,7 +120,7 @@ manager: "jhubbard"
   
 ## See Also  
  [Peer-to-Peer Transactional Replication](../../../relational-databases/replication/transactional/peer-to-peer-transactional-replication.md)   
- [Publication Types for Transactional Replication](../../../relational-databases/replication/transactional/publication-types-for-transactional-replication.md)   
+ [Transactional Replication](../../../relational-databases/replication/transactional/transactional-replication.md)   
  [Publish Data and Database Objects](../../../relational-databases/replication/publish/publish-data-and-database-objects.md)   
  [Subscribe to Publications](../../../relational-databases/replication/subscribe-to-publications.md)  
   

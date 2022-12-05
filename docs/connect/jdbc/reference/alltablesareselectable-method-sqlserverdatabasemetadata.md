@@ -1,24 +1,15 @@
 ---
-title: "allTablesAreSelectable Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "allTablesAreSelectable Method (SQLServerDatabaseMetaData)"
+description: "allTablesAreSelectable Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.allTablesAreSelectable"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.allTablesAreSelectable"
 apitype: "Assembly"
-ms.assetid: eb340450-45a7-49c8-84bc-1b9dd5ee842f
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # allTablesAreSelectable Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

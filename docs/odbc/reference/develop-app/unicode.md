@@ -1,27 +1,23 @@
 ---
+description: "Unicode"
 title: "Unicode | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Unicode [ODBC]"
   - "Unicode [ODBC], about Unicode"
 ms.assetid: 113e1c9a-8333-4805-86f2-e4b57ab816a5
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Unicode
 Unicode defines encoding for characters in many languages.  
   
- For more information about the Unicode standard, see [The Unicode Consortium](http://www.unicode.org).  
+ For more information about the Unicode standard, see [The Unicode Consortium](https://www.unicode.org).  
   
  Unicode defines a universal character set. A Windows ANSI code page defines a character set, typically containing characters for one language. It may be more difficult to write an application that is required to use different code pages.  
   

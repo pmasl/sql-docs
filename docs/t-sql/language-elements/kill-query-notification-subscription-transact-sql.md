@@ -1,32 +1,28 @@
 ---
-title: "KILL QUERY NOTIFICATION SUBSCRIPTION (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/27/2017"
-ms.prod: "sql-non-specified"
+title: "KILL QUERY NOTIFICATION SUBSCRIPTION"
+titleSuffix: SQL Server (Transact-SQL)
+description: Remove query notification subscriptions from an instance. This statement can remove a specific subscription or all subscriptions.
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "07/27/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: "seo-lt-2019"
+f1_keywords:
   - "KILL QUERY NOTIFICATION SUBSCRIPTION"
   - "KILL_QUERY_NOTIFICATION_SUBSCRIPTION_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "KILL QUERY NOTIFICATION SUBSCRIPTION statement"
   - "removing subscriptions"
   - "subscriptions [SQL Server query notifications], stopping"
   - "query notifications [SQL Server], subscriptions"
-ms.assetid: 8aeadf51-286c-4748-bef2-d25858b250bf
-caps.latest.revision: 17
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # KILL QUERY NOTIFICATION SUBSCRIPTION (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Removes query notification subscriptions from the instance. This statement can remove a specific subscription or all subscriptions.  
   
@@ -34,13 +30,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 KILL QUERY NOTIFICATION SUBSCRIPTION   
    { ALL | subscription_id }  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  ALL  
  Removes all subscriptions in the instance.  
   
@@ -62,14 +59,14 @@ KILL QUERY NOTIFICATION SUBSCRIPTION
 ### A. Removing all query notification subscriptions in the instance  
  The following example removes all query notification subscriptions in the instance.  
   
-```  
+```sql  
 KILL QUERY NOTIFICATION SUBSCRIPTION ALL ;  
 ```  
   
 ### B. Removing a single query notification subscription  
  The following example removes the query notification subscription with the id `73`.  
   
-```  
+```sql  
 KILL QUERY NOTIFICATION SUBSCRIPTION 73 ;  
 ```  
   

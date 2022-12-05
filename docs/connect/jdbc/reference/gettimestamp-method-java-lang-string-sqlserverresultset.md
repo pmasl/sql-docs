@@ -1,24 +1,15 @@
 ---
-title: "getTimestamp Method (java.lang.String) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getTimestamp Method (java.lang.String) (SQLServerResultSet)"
+description: "getTimestamp Method (java.lang.String) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getTimestamp (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getTimestamp (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: 8b3c3938-e057-4919-9e9f-01eb8a4ad937
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getTimestamp Method (java.lang.String) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -46,7 +37,7 @@ public java.sql.Timestamp getTimestamp(java.lang.String columnName)
 ## Remarks  
  This getTimestamp method is specified by the getTimestamp method in the java.sql.ResultSet interface.  
   
- This method returns values only from [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] datetime and smalldatetime columns.  
+ This method returns values only from [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] datetime and smalldatetime columns.  
   
 ## See Also  
  [getTimestamp Method &#40;SQLServerResultSet&#41;](../../../connect/jdbc/reference/gettimestamp-method-sqlserverresultset.md)   

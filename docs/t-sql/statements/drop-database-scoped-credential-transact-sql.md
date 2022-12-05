@@ -1,28 +1,24 @@
 ---
-title: "DROP DATABASE SCOPED CREDENTIAL (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP DATABASE SCOPED CREDENTIAL (Transact-SQL)"
+description: DROP DATABASE SCOPED CREDENTIAL (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "02/27/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DROP DATABASE SCOPED CREDENTIAL"
   - "DROP_DATABASE_SCOPED_CREDENTIAL_TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "DROP DATABASE SCOPED CREDENTIAL statement"
   - "credential [SQL Server], DROP DATABASE SCOPED CREDENTIAL statement"
-ms.assetid: 319d59f4-fa82-47ca-869b-3a9cd52900b0
-caps.latest.revision: 11
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: "=azuresqldb-current||=azure-sqldw-latest"
 ---
 # DROP DATABASE SCOPED CREDENTIAL (Transact-SQL)
-[!INCLUDE[tsql-appliesto-xxxxxx-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-xxxxxx-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [asdb-asdbmi-asa](../../includes/applies-to-version/asdb-asdbmi-asa.md)]
 
   Removes a database scoped credential from the server.  
   
@@ -30,8 +26,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql  
 DROP DATABASE SCOPED CREDENTIAL credential_name  
 ```  
   
@@ -50,8 +45,8 @@ DROP DATABASE SCOPED CREDENTIAL credential_name
 ## Examples  
  The following example removes the database scoped credential called `SalesAccess`.  
   
-```tsql  
-DROP DATABASE SCOPED CREDENTIAL AppCred;  
+```sql  
+DROP DATABASE SCOPED CREDENTIAL SalesAccess;  
 GO  
 ```  
   

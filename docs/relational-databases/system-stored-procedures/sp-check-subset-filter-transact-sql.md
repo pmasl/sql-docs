@@ -1,38 +1,30 @@
 ---
-title: "sp_check_subset_filter (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+title: sp_check_subset_filter (Transact-SQL)
+description: "sp_check_subset_filter (Transact-SQL)"
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
 f1_keywords: 
-  - "sp_check_TSQL"
   - "sp_check_subset_filter"
-  - "filter"
-  - "subset"
-  - "subset_TSQL"
-  - "sp_check"
   - "sp_check_subset_filter_TSQL"
+dev_langs: 
+  - "TSQL"
 helpviewer_keywords: 
   - "sp_check_subset_filter"
-ms.assetid: 525cfcfc-f317-478d-ba84-72e62285f160
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "03/06/2017"
 ---
-# sp_check_subset_filter (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  Is used to check a filter clause against any table to determine if the filter clause is valid for the table. This stored procedure returns information about the supplied filter, including if the filter qualifies for use with precomputed partitions. This stored procedure is executed at the Publisher on the database containing the publication.  
+# sp_check_subset_filter (Transact-SQL)
+
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+
+Is used to check a filter clause against any table to determine if the filter clause is valid for the table. This stored procedure returns information about the supplied filter, including if the filter qualifies for use with precomputed partitions. This stored procedure is executed at the Publisher on the database containing the publication.  
   
- ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
+![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
@@ -44,13 +36,13 @@ sp_check_subset_filter [ @filtered_table = ] 'filtered_table'
 ```  
   
 ## Arguments  
- [ **@filtered_table**= ] **'***filtered_table***'**  
+`[ @filtered_table = ] 'filtered_table'`
  Is the name of a filtered table. *filtered_table* is **nvarchar(400)**, with no default.  
   
- [ **@subset_filterclause** = ] **'***subset_filterclause***'**  
+`[ @subset_filterclause = ] 'subset_filterclause'`
  Is the filter clause being tested. *subset_filterclause* is **nvarchar(1000)**, with no default.  
   
- [ **@has_dynamic_filters**= ] *has_dynamic_filters*  
+`[ @has_dynamic_filters = ] has_dynamic_filters`
  Is if the filter clause is a parameterized row filter. *has_dynamic_filters* is **bit**, with a default of NULL and is an output parameter. Returns a value of **1** when the filter clause is a parameterized row filter.  
   
 ## Result Sets  

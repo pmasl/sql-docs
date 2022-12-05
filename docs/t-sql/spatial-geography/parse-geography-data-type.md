@@ -1,27 +1,23 @@
 ---
+description: "Parse (geography Data Type)"
 title: "Parse (geography Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "07/30/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
   - "Parse method"
   - "Parse (geography Data Type)"
 ms.assetid: 21c402fa-fd0f-4d09-a097-49cee0316d4e
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # Parse (geography Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns a **geography** instance from an Open Geospatial Consortium (OGC) Well-Known Text (WKT) representation. Parse() is equivalent to [STGeomFromText](../../t-sql/spatial-geography/stgeomfromtext-geography-data-type.md), except that it assumes a spatial reference ID (SRID) of 4326 as a parameter. The input may carry optional Z (elevation) and M (measure) values.
   
@@ -34,7 +30,9 @@ This **geography** data type method supports **FullGlobe** instances or spatial 
 Parse ( 'geography_tagged_text' )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *geography_tagged_text*  
  Is the WKT representation of the **geography** instance to return. *geography_tagged_text* is an **nvarchar** expression.  
   
@@ -53,7 +51,7 @@ Parse ( 'geography_tagged_text' )
 ## Examples  
  The following example uses `Parse()` to create a `geography` instance.  
   
-```  
+```sql
 DECLARE @g geography;   
 SET @g = geography::Parse('LINESTRING(-122.360 47.656, -122.343 47.656)');  
 SELECT @g.ToString();  

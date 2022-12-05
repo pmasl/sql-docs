@@ -1,28 +1,21 @@
 ---
-title: "BeginTrans, CommitTrans, and RollbackTrans Methods Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "BeginTrans, CommitTrans, and RollbackTrans Methods Example (VB)"
+description: "BeginTrans, CommitTrans, and RollbackTrans Methods Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "RollbackTrans method [ADO], Visual Basic example"
   - "CommitTrans method [ADO], Visual Basic example"
   - "BeginTrans method [ADO], Visual Basic example"
-ms.assetid: aa7de324-cd71-4bd0-8043-24229f4a785e
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # BeginTrans, CommitTrans, and RollbackTrans Methods Example (VB)
-This example changes the book type of all psychology books in the ***Titles*** table of the database. After the [BeginTrans](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md) method starts a transaction that isolates all the changes made to the ***Titles*** table, the [CommitTrans](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md) method saves the changes. You can use the [RollbackTrans](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md) method to undo changes that you saved using the [Update](../../../ado/reference/ado-api/update-method.md) method.  
+This example changes the book type of all psychology books in the ***Titles*** table of the database. After the [BeginTrans](./begintrans-committrans-and-rollbacktrans-methods-ado.md) method starts a transaction that isolates all the changes made to the ***Titles*** table, the [CommitTrans](./begintrans-committrans-and-rollbacktrans-methods-ado.md) method saves the changes. You can use the [RollbackTrans](./begintrans-committrans-and-rollbacktrans-methods-ado.md) method to undo changes that you saved using the [Update](./update-method.md) method.  
   
 ```  
 'BeginBeginTransVB  
@@ -130,5 +123,5 @@ End Sub
 ```  
   
 ## See Also  
- [BeginTrans, CommitTrans, and RollbackTrans Methods (ADO)](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md)   
- [Connection Object (ADO)](../../../ado/reference/ado-api/connection-object-ado.md)
+ [BeginTrans, CommitTrans, and RollbackTrans Methods (ADO)](./begintrans-committrans-and-rollbacktrans-methods-ado.md)   
+ [Connection Object (ADO)](./connection-object-ado.md)

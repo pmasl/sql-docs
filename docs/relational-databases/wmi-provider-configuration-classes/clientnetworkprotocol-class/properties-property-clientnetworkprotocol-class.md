@@ -1,13 +1,11 @@
 ---
-title: "Properties Property (ClientNetworkProtocol Class) | Microsoft Docs"
-ms.custom: ""
+description: "Properties Property (ClientNetworkProtocol Class)"
+title: "Properties Property (ClientNetworkProtocol)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "Properties Property (ClientNetworkProtocol Class)"
@@ -17,13 +15,12 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "Properties property"
 ms.assetid: 7e0a4e38-4555-4750-8fd3-4425b29e6aa1
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Properties Property (ClientNetworkProtocol Class)
-  Gets the properties associated with the current client network protocol specified by the [Configure Client Protocols](http://technet.microsoft.com/library/ms181035.aspx).  
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
+  Gets the properties associated with the current client network protocol specified by the [Configure Client Protocols](../../../database-engine/configure-windows/configure-client-protocols.md).  
   
 ## Syntax  
   
@@ -42,6 +39,5 @@ object.Properties [= value]
 ## Remarks  
   
 ## See Also  
- [Configuring Client Network Protocols and Net-Libraries](http://technet.microsoft.com/library/ms181035.aspx)  
-  
+ [Configuring Client Network Protocols and Net-Libraries](../../../database-engine/configure-windows/configure-client-protocols.md)  
   

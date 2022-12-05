@@ -1,21 +1,20 @@
 ---
-title: "Staging Stored Procedure (Master Data Services) | Microsoft Docs"
+title: Staging Stored Procedure
+description: Use one of three stored procedures to initiate the staging process from SQL Server Management Studio in Master Data Services.
 ms.custom: ""
 ms.date: "04/01/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 ms.assetid: 6a613106-9f87-4caf-a23a-a726fc6561c5
-caps.latest.revision: 15
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Staging Stored Procedure (Master Data Services)
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   When initiating the staging process from [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)], you use one of three stored procedures.  
   
 -   stg.udp_\<name>_Leaf  
@@ -49,7 +48,7 @@ EXEC[stg].[udp_name_Leaf]
       @VersionName = N'VERSION_1',  
 @LogFlag = 1,  
 @BatchTag = N'batch1'  
-      @UserName=N’domain\user’  
+      @UserName=N'domain\user'  
   
 GO  
   

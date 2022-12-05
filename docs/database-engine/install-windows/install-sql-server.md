@@ -1,102 +1,114 @@
 ---
-title: "Install SQL Server | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "07/24/2017"
-ms.prod:
- - "sql-server-2016"
- - "sql-server-2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "setup-install"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-helpviewer_keywords: 
+title: "SQL Server installation guide"
+description: An index of content that helps you install SQL Server and associated components using options such as the installation wizard, command prompt, or sysprep.
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: randolphwest
+ms.date: 10/20/2022
+ms.service: sql
+ms.subservice: install
+ms.topic: conceptual
+helpviewer_keywords:
   - "AdventureWorks sample database"
   - "installing SQL Server, preparing to install"
   - "installation [SQL Server]"
-ms.assetid: 0300e777-d56b-4d10-9c33-c9ebd2489ee5
-caps.latest.revision: 59
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+monikerRange: ">=sql-server-2016"
 ---
-# Install SQL Server
+# SQL Server installation guide
 
- > For content related to previous versions of SQL Server, see [Install SQL Server 2014](https://msdn.microsoft.com/en-US/library/bb500395(SQL.120).aspx).
+[!INCLUDE [SQL Server - Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
 
- Beginning with [!INCLUDE[sssql15](../../includes/sssql15-md.md)], [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] is only available as a 64-bit application. Here are important details about how to get SQL Server and how to install it.
+This article is an index of content that provides guidance for installing [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] on Windows.
 
-## Installation details
-  
-*  **Options**: Install through the Installation Wizard, a command prompt, or through sysprep
- 
-*  **Requirements**: Before you install, take some time to review installation requirements, system configuration checks, and security considerations in [Planning a SQL Server Installation](../../sql-server/install/planning-a-sql-server-installation.md) 
+For other deployment scenarios, see:
 
-* **Process**: See [Installation for SQL Server](../../database-engine/install-windows/installation-for-sql-server-2016.md) for complete instructions on the installation process
+- [Linux](../../linux/sql-server-linux-setup.md)
+- [Docker containers](../../linux/sql-server-linux-docker-container-deployment.md)
+- [Kubernetes - Big Data Clusters](../../big-data-cluster/deploy-get-started.md) ([!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] only)
 
-* **Sample databases and sample code**: 
-    * They are not installed as part of SQL Server setup by default 
-    * To install them for non-Express editions of SQL Server, see the [GitHub](http://github.com/Microsoft/sql-server-samples)
-    
+Beginning with [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)], [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] is only available as a 64-bit application. Here are important details about how to get [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] and how to install it.
 
-## Get the installation media
+## Get started
+
+- **Editions and features**: Review the supported features for the different editions and versions of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] to determine which best suits your business needs.
+
+  - [[!INCLUDE[sssql22-md](../../includes/sssql22-md.md)]](../../sql-server/editions-and-components-of-sql-server-2022.md)
+  - [[!INCLUDE[sssql19-md](../../includes/sssql19-md.md)]](../../sql-server/editions-and-components-of-sql-server-2019.md)
+  - [[!INCLUDE[sssql17-md](../../includes/sssql17-md.md)]](../../sql-server/editions-and-components-of-sql-server-2017.md)
+  - [[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]](../../sql-server/editions-and-components-of-sql-server-2016.md)
+  - [[!INCLUDE[ss2014](../../includes/sssql14-md.md)]](/previous-versions/sql/2014/getting-started/features-supported-by-the-editions-of-sql-server-2014)
+
+- **Requirements**: Review hardware and software installation requirements for [SQL Server 2016 and SQL Server 2017](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md), [SQL Server 2019](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md), [SQL Server 2022](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md), or [SQL Server on Linux](../../linux/sql-server-linux-setup.md), as well as system configuration checks, and security considerations in [Planning a SQL Server Installation](../../sql-server/install/planning-a-sql-server-installation.md)
+
+- **Sample databases and sample code** aren't installed as part of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Setup by default, but can be installed for non-Express editions of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. For more information, see [Microsoft SQL samples](../../samples/sql-samples-where-are.md).
+
+## Installation media
 
 The download location for [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] depends on the edition:
 
-- **SQL Server Enterprise, Standard, and Express Editions** are licensed for production use. For Enterprise and Standard Editions, contact your software vendor for the installation media. You can find purchasing information and a directory of Microsoft partners on the [Microsoft purchasing website](https://www.microsoft.com/en-us/server-cloud/products/sql-server/overview.aspx). 
+- **[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Enterprise, Standard, and Express editions** are licensed for production use. For the Enterprise and Standard Editions, contact your software vendor for the installation media. You can find purchasing information and a directory of Microsoft partners on the [Microsoft licensing page](https://www.microsoft.com/licensing/product-licensing/sql-server).
+- If you have a volume licensing agreement, for example an [Enterprise Agreement](https://www.microsoft.com/licensing/licensing-programs/enterprise), you can download software from the [Volume Licensing Service Center (VLSC)](https://www.microsoft.com/licensing/servicecenter/default.aspx).
+- [Free versions](https://www.microsoft.com/sql-server/sql-server-downloads).
 
-- **Free editions** are available at [SQL Server Downloads](http://www.microsoft.com/sql-server/sql-server-downloads).
+Other [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] components can be found here:
 
-## How to install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]
- 
-|Title|Description|  
-|-----------|-----------------|  
-|[Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] on Server Core](../../database-engine/install-windows/install-sql-server-on-server-core.md)|Review this topic to install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] on Windows Server Core.|  
-|[Check Parameters for the System Configuration Checker](../../database-engine/install-windows/check-parameters-for-the-system-configuration-checker.md)|Discusses the function of the System Configuration Checker (SCC).|  
-|[Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] from the Installation Wizard &#40;Setup&#41;](../../database-engine/install-windows/install-sql-server-from-the-installation-wizard-setup.md)|Procedural topic for a typical [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] installation by using the Installation Wizard.|  
-|[Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] from the Command Prompt](../../database-engine/install-windows/install-sql-server-2016-from-the-command-prompt.md)|Procedural topic that provides sample syntax and installation parameters for running unattended Setup.|  
-|[Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Using a Configuration File](../../database-engine/install-windows/install-sql-server-2016-using-a-configuration-file.md)|Procedural topic that provides sample syntax and installation parameters for running Setup through a configuration file.|  
-|[Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Using SysPrep](../../database-engine/install-windows/install-sql-server-using-sysprep.md)|Procedural topic that provides sample syntax and installation parameters for running Setup through SysPrep.|  
-|[Add Features to an Instance of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] &#40;Setup&#41;](../../database-engine/install-windows/add-features-to-an-instance-of-sql-server-2016-setup.md)|Procedural topic for updating components of an existing instance of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].|  
-|[Repair a Failed [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Installation](../../database-engine/install-windows/repair-a-failed-sql-server-installation.md)|Procedural topic for repairing a corrupt [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] installation.|  
-|[Rename a Computer that Hosts a Stand-Alone Instance of SQL Server](../../database-engine/install-windows/rename-a-computer-that-hosts-a-stand-alone-instance-of-sql-server.md)|Procedural topic for updating system metadata that is stored in sys.servers.|  
-|[Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Servicing Updates](../../database-engine/install-windows/install-sql-server-servicing-updates.md)|Procedural topic for installing updates for [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].|  
-|[View and Read SQL Server Setup Log Files](../../database-engine/install-windows/view-and-read-sql-server-setup-log-files.md)|Procedural topic for checking errors in setup log files.|  
-|[Validate a SQL Server Installation](../../database-engine/install-windows/validate-a-sql-server-installation.md)|Review the use of the SQL Discovery report to verify the version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] features installed on the computer.|  
-  
-  
-## How to install individual components  
-  
-|Topic|Description|  
-|-----------|-----------------|  
-|[Install SQL Server Database Engine](../../database-engine/install-windows/install-sql-server-database-engine.md)|Describes how to install and configure the [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)].|  
-|[Install SQL Server Replication](../../database-engine/install-windows/install-sql-server-replication.md)|Describes how to install and configure [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Replication.|  
-|[Install Distributed Replay - Overview](../../tools/distributed-replay/install-distributed-replay-overview.md)|Lists down the topics to install the Distributed Replay feature.|  
-|[Install SQL Server Management Tools with SSMS](http://msdn.microsoft.com/library/af68d59a-a04d-4f23-9967-ad4ee2e63381)|Describes how to install and configure [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] management tools.|  
-|[Install SQL Server PowerShell](../../database-engine/install-windows/install-sql-server-powershell.md)|Describes the considerations for installing [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] PowerShell components.|  
-  
+- [All cumulative updates](https://sqlserverbuilds.blogspot.com/)
+- [SQL Server Reporting Services](https://www.microsoft.com/download/details.aspx?id=100122).
+- [SQL Server Management Studio](https://aka.ms/ssmsfullsetup)
+- [Azure Data Studio](https://go.microsoft.com/fwlink/?linkid=2109256)
 
-## How to configure SQL Server  
-  
-|Topic|Description|  
-|-----------|-----------------|  
-|[Configure the Windows Firewall to Allow SQL Server Access](../../sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access.md)|This topic provides an overview of firewall configuration and how to configure the Windows firewall.|  
-|[Configure a Multi-Homed Computer for SQL Server Access](../../sql-server/install/configure-a-multi-homed-computer-for-sql-server-access.md)|This topic describes how to configure [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and Windows Firewall with Advanced Security to provide for network connections to an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] in a multi-homed environment.|  
-|[Configure the Windows Firewall to Allow Analysis Services Access](../../analysis-services/instances/configure-the-windows-firewall-to-allow-analysis-services-access.md)|You can follow the steps provided in this topic to configure both port and firewall settings to allow access to [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] or [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint.|  
-  
-## Related sections  
-[Editions and Supported Features for [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)  
-[Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] Business Intelligence Features](../../sql-server/install/install-sql-server-business-intelligence-features.md)  
-  [SQL Server Failover Cluster Installation](../../sql-server/failover-clusters/install/sql-server-failover-cluster-installation.md)  
- 
-  
-## See also  
+## Considerations
 
-[Planning a SQL Server Installation](../../sql-server/install/planning-a-sql-server-installation.md)   
- [Upgrade to [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]](../../database-engine/install-windows/upgrade-sql-server.md)   
- [Uninstall [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]](../../sql-server/install/uninstall-sql-server.md)   
- [High Availability Solutions &#40;SQL Server&#41;](../../sql-server/failover-clusters/high-availability-solutions-sql-server.md)  
-  
-  
+- Installation fails if you launch setup through Remote Desktop Connection with the media on a local resource in the RDC client. To install remotely the media must be on a network share or local to the physical or virtual machine. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] installation media may be either on a network share, a mapped drive, a local drive, or presented as an ISO to a virtual machine.
+
+- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Setup installs the following software components required by the product:
+
+  - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client
+  - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Setup support files
+
+## SQL Server installation
+
+|Article|Description|
+|-----------|-----------------|
+|[Installation Wizard](install-sql-server-from-the-installation-wizard-setup.md)|Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] using the Installation Wizard GUI launched from the setup.exe setup media. |
+|[Command Prompt](install-sql-server-from-the-command-prompt.md)|Sample syntax and installation parameters for running a [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] installation from the command prompt. |
+|[Server Core](install-sql-server-on-server-core.md)|Install [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] on Windows Server Core.|
+|[Check Parameters for the System Configuration Checker](check-parameters-for-the-system-configuration-checker.md)|Discusses the function of the System Configuration Checker (SCC).|
+|[Configuration File](install-sql-server-using-a-configuration-file.md)|Sample syntax and installation parameters for running Setup through a configuration file.|
+|[SysPrep](install-sql-server-using-sysprep.md)|Sample syntax and installation parameters for running Setup through SysPrep.|
+|[Add Features to an Instance](add-features-to-an-instance-of-sql-server-setup.md)|Update components of an existing instance of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].|
+|[SQL Server Failover Cluster Installation](../../sql-server/failover-clusters/install/sql-server-failover-cluster-installation.md)| Install a SQL Server failover cluster instance.  |
+|[Repair a Failed SQL Server Installation](repair-a-failed-sql-server-installation.md)|Repair a corrupt [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] installation.|
+|[Rename a computer with SQL Server](rename-a-computer-that-hosts-a-stand-alone-instance-of-sql-server.md)|Update system metadata that is stored in `sys.servers` after the hostname of a computer hosting a stand-alone instance of SQL Server has been renamed. |
+|[Install SQL Server Servicing Updates](install-sql-server-servicing-updates.md)|Install updates for [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].|
+|[Setup Log Files](view-and-read-sql-server-setup-log-files.md)| View and read the errors in the SQL Server setup log files. |
+|[Validate an Installation](validate-a-sql-server-installation.md)|Review the use of the SQL Discovery report to verify the version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] features installed on the computer.|
+
+## Individual component installation
+
+|Article|Description|
+|-----------|-----------------|
+|[SQL Server Database Engine](install-sql-server-database-engine.md)|Install and configure the [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)].|
+|[SQL Server Replication](install-sql-server-replication.md)|Install and configure [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Replication.|
+|[Distributed Replay](../../tools/distributed-replay/install-distributed-replay.md)<sup>1</sup>|Lists articles to install the Distributed Replay feature.|
+|[SQL Server Management Tools with SSMS](../../ssms/download-sql-server-management-studio-ssms.md)|Install and configure [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] management tools.|
+|[SQL Server PowerShell](install-sql-server-powershell.md)|Considerations for installing [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] PowerShell components.|
+
+<sup>1</sup> Distributed Replay is deprecated in [!INCLUDE [sssql22-md](../../includes/sssql22-md.md)].
+
+## SQL Server configuration
+
+|Article|Description|
+|-----------|-----------------|
+|[Configure Windows Firewall (SQL Server)](../../sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access.md)|Overview of firewall configuration and how to configure the Windows firewall to allow access to [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].|
+|[Configure the Windows Firewall (SSAS)](/analysis-services/instances/configure-the-windows-firewall-to-allow-analysis-services-access)|Configure both port and firewall settings to allow access to [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] or [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint.|
+|[Configure a Multi-Homed Computer](../../sql-server/install/configure-a-multi-homed-computer-for-sql-server-access.md)|Configure [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and Windows Firewall with Advanced Security to provide for network connections to an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] in a multi-homed environment.|
+
+## See also
+
+- [Upgrade SQL Server](upgrade-sql-server.md)
+- [Uninstall SQL Server](../../sql-server/install/uninstall-sql-server.md)
+- [Install SQL Server Reporting Services (SSRS)](../../reporting-services/install-windows/install-reporting-services.md)
+- [Install SQL Server Analysis  Services (SSAS)](/analysis-services/instances/install-windows/install-analysis-services)
+- [Install SQL Server Business Intelligence Features](../../sql-server/install/install-sql-server-business-intelligence-features.md)
+- [Business continuity and high availability solutions (SQL Server)](../sql-server-business-continuity-dr.md)

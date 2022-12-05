@@ -1,24 +1,19 @@
 ---
-title: "Enter Passwords Page (Add Replica Wizard) | Microsoft Docs"
-ms.custom: ""
+title: "Add replica wizard: Enter Passwords Page for availability groups"
+description: "A description of the properties found on the 'Enter Passwords Page' of the 'Add Replica' wizard in SQL Server Management Studio."
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: end-user-help
+ms.custom: seo-lt-2019
+f1_keywords:
   - "sql13.swb.addreplicawizard.enterpasswords.f1"
-ms.assetid: e69207a0-c5c4-44e4-ae9a-4afbb67251d1
-caps.latest.revision: 7
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
-# Enter Passwords Page (Add Replica Wizard)
-  This help topic describes the options of the **Enter Passwords** page. This topic applies to the [!INCLUDE[ssAoAddRepWiz](../../../includes/ssaoaddrepwiz-md.md)] of [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)].  
+# Enter Passwords Page (Add Replica Wizard) for Always On availability groups
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
+  This help topic describes the options of the **Enter Passwords** page. This topic applies to the [!INCLUDE[ssAoAddRepWiz](../../../includes/ssaoaddrepwiz-md.md)] of [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)].  
   
  If the replicas that you selected on the **Specify Replicas** page contain databases that have a database master key, the Enter Passwords page appears.  
   

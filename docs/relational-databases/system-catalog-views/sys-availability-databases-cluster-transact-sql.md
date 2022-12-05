@@ -1,34 +1,28 @@
 ---
-title: "sys.availability_databases_cluster (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.availability_databases_cluster (Transact-SQL)"
+description: sys.availability_databases_cluster (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.availability_databases_cluster_TSQL"
   - "sys.availability_databases_cluster"
   - "availability_databases_cluster_TSQL"
   - "availability_databases_cluster"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Availability Groups [SQL Server], monitoring"
   - "Availability Groups [SQL Server], WSFC clusters"
   - "sys.availability_databases_cluster catalog view"
   - "Availability Groups [SQL Server], databases"
+dev_langs:
+  - "TSQL"
 ms.assetid: 8d9c57e5-7f39-4315-b466-92748231140a
-caps.latest.revision: 14
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # sys.availability_databases_cluster (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row for each availability database on the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] that is hosting an availability replica for any Always On availability group in the Windows Server Failover Clustering (WSFC) cluster, regardless of whether the local copy database has been joined to the availability group yet.  
   

@@ -1,20 +1,18 @@
 ---
-title: "@@TOTAL_ERRORS (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+title: "@@TOTAL_ERRORS (Transact-SQL)"
+description: "&#x40;&#x40;TOTAL_ERRORS (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "09/18/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "@@TOTAL_ERRORS"
   - "@@TOTAL_ERRORS_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "@@TOTAL_ERRORS function"
   - "total errors [SQL Server]"
   - "errors [SQL Server], read/write"
@@ -22,14 +20,11 @@ helpviewer_keywords:
   - "disks [SQL Server], errors"
   - "write errors [SQL Server]"
   - "read/write errors"
-ms.assetid: 09e62428-ee0e-4ef5-b969-da9d255f1199
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@TOTAL_ERRORS (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+# &#x40;&#x40;TOTAL_ERRORS (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Returns the number of disk write errors encountered by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] since [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] last started.  
   
@@ -37,12 +32,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 @@TOTAL_ERRORS  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **integer**  
   
 ## Remarks  
@@ -51,7 +47,7 @@ manager: "jhubbard"
 ## Examples  
  This example shows the number of errors encountered by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] as of the current date and time.  
   
-```  
+```sql
 SELECT @@TOTAL_ERRORS AS 'Errors', GETDATE() AS 'As of';  
 ```  
   

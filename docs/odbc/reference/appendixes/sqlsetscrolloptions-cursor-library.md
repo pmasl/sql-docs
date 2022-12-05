@@ -1,21 +1,17 @@
 ---
+description: "SQLSetScrollOptions (Cursor Library)"
 title: "SQLSetScrollOptions (Cursor Library) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "SQLSetScrollOptions function [ODBC], Cursor Library"
 ms.assetid: c5c0ac6d-a6c1-4077-8186-1644df1944f8
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLSetScrollOptions (Cursor Library)
 > [!IMPORTANT]  

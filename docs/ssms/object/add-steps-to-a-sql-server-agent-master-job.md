@@ -1,22 +1,19 @@
 ---
-title: "Add Steps to a SQL Server Agent Master Job | Microsoft Docs"
-ms.custom: ""
+description: "Add Steps to a SQL Server Agent Master Job"
+title: "Add Steps to a SQL Server Agent Master Job"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 ms.assetid: 9cc1e8ab-7ddc-427b-859e-203aa7e24642
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Add Steps to a SQL Server Agent Master Job
-This topic describes how to add steps to a SQL Server Agent master job in [!INCLUDE[ssCurrent](../../includes/sscurrent_md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)] or [!INCLUDE[tsql](../../includes/tsql_md.md)].  
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+This topic describes how to add steps to a SQL Server Agent master job in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
   
 **In This Topic**  
   
@@ -35,7 +32,7 @@ This topic describes how to add steps to a SQL Server Agent master job in [!INCL
 ## <a name="BeforeYouBegin"></a>Before You Begin  
   
 ### <a name="Restrictions"></a>Limitations and Restrictions  
-A [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Agent master job cannot be targeted at both local and remote servers.  
+A [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent master job cannot be targeted at both local and remote servers.  
   
 ### <a name="Security"></a>Security  
   
@@ -54,8 +51,8 @@ Unless you are a member of the **sysadmin** fixed server role, you can only modi
   
 4.  Right-click the job to which you want to add steps and select **Properties**.  
   
-5.  In the **Job Properties –***job_name* dialog box, under **Select a page**, select **Steps**. For more information on the available options on this page, see [Job Properties - New Job &#40;Steps Page&#41;](../../ssms/agent/job-properties-new-job-steps-page.md).  
-  
+5.  In the **Job Properties -**_job_name_ dialog box, under **Select a page**, select **Steps**. For more information on the available options on this page, see [Job Properties - New Job &#40;Steps Page&#41;](../../ssms/agent/job-properties-new-job-steps-page.md).  
+ 
 6.  When finished, click **OK**.  
   
 ## <a name="TsqlProcedure"></a>Using Transact-SQL  
@@ -84,5 +81,4 @@ Unless you are a member of the **sysadmin** fixed server role, you can only modi
     GO  
     ```  
   
-For more information, see [sp_add_jobstep (Transact-SQL)](http://msdn.microsoft.com/en-us/97900032-523d-49d6-9865-2734fba1c755).  
-  
+For more information, see [sp_add_jobstep (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-add-jobstep-transact-sql.md).  

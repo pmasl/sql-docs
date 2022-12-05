@@ -1,37 +1,17 @@
 ---
-title: "SELECT (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SELECT"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "browsing mining model [Analysis Services]"
-  - "TOP clause, SELECT"
-  - "FLATTENED option"
-  - "predictions [DMX]"
-  - "ORDER BY clause [DMX]"
-  - "SELECT statement [DMX]"
-  - "mining models [Analysis Services], browsing"
-  - "statements [DMX], SELECT statement"
-  - "WHERE clause, DMX"
-ms.assetid: 32d9e8fd-796b-4e1c-ae59-73cd6f645485
-caps.latest.revision: 43
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "SELECT (DMX)"
+description: "SELECT (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # SELECT (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   The **SELECT** statement in Data Mining Extensions (DMX) is used for the following tasks in data mining:  
   

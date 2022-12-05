@@ -1,29 +1,25 @@
 ---
-title: "Configure Severity Levels for DQS Log Files | Microsoft Docs"
-ms.custom: ""
+title: "Configure Severity Levels for DQS Log Files"
+description: "Configure Severity Levels for DQS Log Files"
+author: swinarko
+ms.author: sawinark
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
+f1_keywords:
   - "sql13.dqs.admin.config.log.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "severity levels"
   - "log files,severity levels"
   - "dqs log files,severity levels"
   - "logging,severity levels"
   - "configure severity levels"
-ms.assetid: 66ffcdec-4bf7-4dd5-a221-fd9baefeeef4
-caps.latest.revision: 11
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Configure Severity Levels for DQS Log Files
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
   This topic describes how to configure severity levels for various activities and modules in [!INCLUDE[ssDQSnoversion](../includes/ssdqsnoversion-md.md)] (DQS) by using [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)]. Severity levels define the intensity of events that occur in DQS. DQS events have the following severity levels, in the decreasing order of severity:  
   
 -   **Fatal**: Critical runtime errors that might cause severe/unexpected results.  
@@ -68,7 +64,7 @@ manager: "jhubbard"
   
  The log severity setting specified at the activity level determines the log severity setting of all the modules that constitute the activity. However, if there is any conflict between the log severity settings at the activity and module levels, the severity settings at the module level are considered.  
   
-> [!NOTE]  
+> [!NOTE]
 >  -   By default, the **Microsoft.Ssdqs.Core.Startup** module is preconfigured in the **Advanced** section with the severity level set as **Info**. This is done to enable logging of events of severity Info and higher (Warn, Error, and Fatal) that are related to starting and stopping of DQS services.  
 > -   You should configure log severity levels at the module level only if you are an advanced DQS user who is familiar with the DQS system assemblies.  
   

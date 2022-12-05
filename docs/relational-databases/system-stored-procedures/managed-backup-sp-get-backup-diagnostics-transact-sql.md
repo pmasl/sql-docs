@@ -1,14 +1,12 @@
 ---
+description: "managed_backup.sp_get_backup_diagnostics (Transact-SQL)"
 title: "managed_backup.sp_get_backup_diagnostics (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_get_backup_diagnostics_TSQL"
   - "sp_get_backup_diagnostics"
@@ -20,13 +18,11 @@ helpviewer_keywords:
   - "sp_get_backup_diagnostics"
   - "smart_admin.sp_get_backup_diagnostics"
 ms.assetid: 2266a233-6354-464b-91ec-824ca4eb9ceb
-caps.latest.revision: 12
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # managed_backup.sp_get_backup_diagnostics (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
   Returns the Extended Events logged by Smart Admin.  
   
@@ -36,13 +32,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```tsql  
+```sql  
 managed_backup.sp_get_backup_diagnostics [@xevent_channel = ] 'event type' [, [@begin_time = ] 'time1' ] [, [@end_time = ] 'time2'VARCHAR(255) = 'Xevent',@begin_time DATETIME = NULL,@end_time DATETIME = NULL  
 ```  
   
 ##  <a name="Arguments"></a> Arguments  
  @xevent_channel  
- The type of Extended Event. The default value is set to return all events logged for the previous 30 minutes. The events logged depend on the type of Extended Events enabled. You can use this parameter to filter the stored procedure to show only events of a certain type. You can either specify the full event name or specify a substring such as: **‘Admin’**, **‘Analytic’**, **‘Operational’**, and **‘Debug’**. The @event_channel is **VARCHAR (255)**.  
+ The type of Extended Event. The default value is set to return all events logged for the previous 30 minutes. The events logged depend on the type of Extended Events enabled. You can use this parameter to filter the stored procedure to show only events of a certain type. You can either specify the full event name or specify a substring such as: **'Admin'**, **'Analytic'**, **'Operational'**, and **'Debug'**. The @event_channel is **VARCHAR (255)**.  
   
  To get a list of event types currently enabled use the **managed_backup.fn_get_current_xevent_settings** function.  
   
@@ -55,9 +51,8 @@ managed_backup.sp_get_backup_diagnostics [@xevent_channel = ] 'event type' [, [@
 ## Table Returned  
  This stored procedure returns a table with the following information:  
   
-||||  
-|-|-|-|  
-|Column Name|Data Type|Description|  
+| Column Name | Data Type | Description |  
+| ----------- | --------- | ----------- |
 |event_type|NVARCHAR(512)|Type of Extended Event.|  
 |Event|NVARCHAR(512)|Summary of the event logs.|  
 |Timestamp|TIMESTAMP|Timestamp of the event that shows when the event was raised.|  

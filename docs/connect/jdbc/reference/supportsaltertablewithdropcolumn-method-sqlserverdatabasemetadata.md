@@ -1,24 +1,15 @@
 ---
-title: "supportsAlterTableWithDropColumn Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsAlterTableWithDropColumn Method"
+description: "supportsAlterTableWithDropColumn Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsAlterTableWithDropColumn"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsAlterTableWithDropColumn"
 apitype: "Assembly"
-ms.assetid: 55a182c1-28e5-4d32-aeb1-166a8ac76758
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsAlterTableWithDropColumn Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

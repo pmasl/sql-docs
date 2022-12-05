@@ -1,27 +1,24 @@
 ---
-title: "Check the Status of E-Mail Messages Sent With Database Mail | Microsoft Docs"
-ms.custom: ""
+description: "Check the Status of E-Mail Messages Sent With Database Mail"
+title: "Status of E-Mail Messages Sent With Database Mail"
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: 
+ms.topic: conceptual
 helpviewer_keywords: 
   - "e-mail [SQL Server], status information"
   - "mail [SQL Server], status information"
   - "Database Mail [SQL Server], message status"
   - "status information [Database Mail]"
 ms.assetid: eb290f24-b52f-46bc-84eb-595afee6a5f3
-caps.latest.revision: 30
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.custom: seo-dt-2019
 ---
 # Check the Status of E-Mail Messages Sent With Database Mail
-  This topic describes how to check the status of the e-mail message sent using Database Mail  in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[tsql](../../includes/tsql-md.md)].  
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+  This topic describes how to check the status of the e-mail message sent using Database Mail  in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[tsql](../../includes/tsql-md.md)].  
   
 -   **Before you begin:**  
   

@@ -1,34 +1,27 @@
 ---
-title: "ASYMKEY_ID (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "ASYMKEY_ID (Transact-SQL)"
+description: "ASYMKEY_ID (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.date: "07/24/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "AsymKey_ID"
   - "ASYMKEY_ID_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "asymmetric keys [SQL Server], AsymKey_ID"
   - "ASYMKEY_ID function"
   - "encryption [SQL Server], asymmetric keys"
   - "identification numbers [SQL Server], asymmetric keys"
   - "IDs [SQL Server], asymmetric keys"
   - "cryptography [SQL Server], asymmetric keys"
-ms.assetid: d697daf8-2106-4ebb-b09a-ca0be465d747
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ASYMKEY_ID (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns the ID of an asymmetric key.
   
@@ -36,22 +29,24 @@ Returns the ID of an asymmetric key.
   
 ## Syntax  
   
-```sql
+```syntaxsql
 ASYMKEY_ID ( 'Asym_Key_Name' )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
 *Asym_Key_Name*  
-Is the name of an asymmetric key in the database.
+The name of an asymmetric key in the database.
   
 ## Return types
  **int**  
   
 ## Permissions  
-Requires some permission on the asymmetric key and that the caller has not been denied VIEW permission on the asymmetric key.
+Requires appropriate permission(s) on the asymmetric key, and requires that the caller has not been denied VIEW permission on the asymmetric key. See [CREATE ASYMMETRIC KEY &#40;Transact-SQL&#41;](../../t-sql/statements/create-asymmetric-key-transact-sql.md) for more information about asymmetric key permissions.
   
 ## Examples  
-The following example returns the ID of asymmetric key `ABerglundKey11`.
+This example returns the ID of asymmetric key `ABerglundKey11`.
   
 ```sql
 SELECT ASYMKEY_ID('ABerglundKey11');  

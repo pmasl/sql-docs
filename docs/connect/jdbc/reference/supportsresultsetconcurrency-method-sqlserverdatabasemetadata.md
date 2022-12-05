@@ -1,24 +1,15 @@
 ---
-title: "supportsResultSetConcurrency Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "supportsResultSetConcurrency Method (SQLServerDatabaseMetaData)"
+description: "supportsResultSetConcurrency Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsResultSetConcurrency"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsResultSetConcurrency"
 apitype: "Assembly"
-ms.assetid: 8f7573b2-ac5c-4721-8a02-4b6cb60c74b2
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsResultSetConcurrency Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -60,12 +51,12 @@ public boolean supportsResultSetConcurrency(int type,
   
  An **int** that indicates the result set concurrency level, which can be one of the following values as defined in java.sql.ResultSet or SQLServerResultSet:  
   
-## java.sql.ResultSet Types  
+## Concurrency java.sql.ResultSet Types  
  CONCUR_READ_ONLY  
   
  CONCUR_UPDATABLE  
   
-## SQLServerResultSet Types  
+## Concurrency SQLServerResultSet Types  
  CONCUR_SS_OPTIMISTIC_CC  
   
  CONCUR_SS_SCROLL_LOCKS  

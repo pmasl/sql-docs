@@ -1,31 +1,23 @@
 ---
-title: "MSsubscription_agents (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSsubscription_agents (Transact-SQL)"
+description: MSsubscription_agents (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSsubscription_agents"
   - "MSsubscription_agents_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSsubscription_agents system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 86ad5891-0bef-4963-9381-7d5b45245a0c
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSsubscription_agents (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSsubscription_agents** table is used by Distribution Agent and triggers of updateable subscriptions to track subscription properties. This table is stored in the subscription database.  
   

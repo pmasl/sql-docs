@@ -1,28 +1,25 @@
 ---
-title: "Executing Template Files by Using the CommandText Property | Microsoft Docs"
-ms.custom: ""
+title: "Run template files with the CommandText property"
+description: View an example of how to use the SQLXML CommandText property to specify the name of a template file containing SQL or XPath queries.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "Managed Classes [SQLXML], executing template files"
   - "SQLXML Managed Classes, executing template files"
   - "templates [SQLXML], SQLXML Managed Classes"
   - "executing template files [SQLXML]"
   - "CommandText property"
 ms.assetid: f1b1278d-252d-4a06-836e-4ef77f338ef9
-caps.latest.revision: 21
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Executing Template Files by Using the CommandText Property
-  This example illustrates how template files that consist of SQL or XPath queries can be specified by using the CommandTextproperty. Instead of specifying the SQL or XPath query as the value of CommandText, you can specify a file name as the value. In the following example, the CommandType property is specified as SqlXmlCommandType.TemplateFile.  
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
+  This example illustrates how template files that consist of SQL or XPath queries can be specified by using the CommandText property. Instead of specifying the SQL or XPath query as the value of CommandText, you can specify a file name as the value. In the following example, the CommandType property is specified as SqlXmlCommandType.TemplateFile.  
   
  The sample application executes this template:  
   
@@ -88,8 +85,8 @@ class Test
      This creates an executable (DocSample.exe).  
   
 5.  At the command prompt, execute DocSample.exe.  
-  
- If you pass a parameter to a template, the parameter name must begin with at sign (@); for example, p.Name="@ContactID", where p is a SqlXmlParameter object.  
+
+ If you pass a parameter to a template, the parameter name must begin with at sign (@); for example, p.Name="\@ContactID", where p is a SqlXmlParameter object.  
   
  This is the updated template which takes one parameter.  
   

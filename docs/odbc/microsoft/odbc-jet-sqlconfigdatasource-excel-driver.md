@@ -1,22 +1,18 @@
 ---
+description: "ODBC Jet SQLConfigDataSource (Excel Driver)"
 title: "ODBC Jet SQLConfigDataSource (Excel Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLConfigDataSource function [ODBC], Excel Driver"
   - "Excel driver [ODBC], SqlConfigDataSource"
 ms.assetid: 885b3bea-f4b6-4902-b994-f78a912b612f
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # ODBC Jet SQLConfigDataSource (Excel Driver)
 > [!NOTE]  

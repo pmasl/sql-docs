@@ -1,24 +1,17 @@
 ---
-title: "Provider Support for ADOX (ADO) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Provider Support for ADOX (ADO)"
+description: "Provider Support for ADOX (ADO)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "ADOX provider support [ADO]"
-ms.assetid: 64234ce5-dc46-4c8a-a316-61956b6b9abb
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Provider Support for ADOX (ADO)
-Certain features of ADOX are unsupported, depending on your OLE DB data provider. ADOX is fully supported with the [OLE DB Provider for Microsoft Jet](../../../ado/guide/appendixes/microsoft-ole-db-provider-for-microsoft-jet.md). The unsupported features with the [Microsoft OLE DB Provider for SQL Server](../../../ado/guide/appendixes/microsoft-ole-db-provider-for-sql-server.md), the [Microsoft OLE DB Provider for ODBC](../../../ado/guide/appendixes/microsoft-ole-db-provider-for-odbc.md), or the [Microsoft OLE DB Provider for Oracle](../../../ado/guide/appendixes/microsoft-ole-db-provider-for-oracle.md) are listed in the following tables. ADOX is not supported by any other Microsoft OLE DB providers.  
+Certain features of ADOX are unsupported, depending on your OLE DB data provider. ADOX is fully supported with the [OLE DB Provider for Microsoft Jet](../appendixes/microsoft-ole-db-provider-for-microsoft-jet.md). The unsupported features with the [Microsoft OLE DB Provider for SQL Server](../appendixes/microsoft-ole-db-provider-for-sql-server.md), the [Microsoft OLE DB Provider for ODBC](../appendixes/microsoft-ole-db-provider-for-odbc.md), or the [Microsoft OLE DB Provider for Oracle](../appendixes/microsoft-ole-db-provider-for-oracle.md) are listed in the following tables. ADOX is not supported by any other Microsoft OLE DB providers.  
   
 ## Microsoft OLE DB Provider for SQL Server  
   

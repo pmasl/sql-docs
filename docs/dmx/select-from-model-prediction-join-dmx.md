@@ -1,39 +1,17 @@
 ---
-title: "SELECT FROM &lt;model&gt; PREDICTION JOIN (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "PREDICTION"
-  - "PREDICTION_JOIN"
-  - "SELECT"
-  - "join"
-  - "FROM"
-  - "PREDICTION JOIN"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "prediction joins [DMX]"
-  - "PREDICTION JOIN statement"
-  - "natural prediction joins [DMX]"
-  - "open query predictions"
-  - "singleton query predictions [DMX]"
-  - "SELECT FROM <model> PREDICTION JOIN statement"
-ms.assetid: 7ca37fec-4a50-4d79-b1d6-1c7c12176946
-caps.latest.revision: 43
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "SELECT FROM &lt;model&gt; PREDICTION JOIN (DMX)"
+description: "SELECT FROM &lt;model&gt; PREDICTION JOIN (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # SELECT FROM &lt;model&gt; PREDICTION JOIN (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Uses a mining model to predict the states of columns in an external data source. The **PREDICTION JOIN** statement matches each case from the source query to the model.  
   

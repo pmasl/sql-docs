@@ -1,26 +1,23 @@
 ---
+description: "LOCALDB_ERROR_CANNOT_CREATE_INSTANCE_FOLDER"
 title: "LOCALDB_ERROR_CANNOT_CREATE_INSTANCE_FOLDER | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: performance
 ms.topic: "reference"
 ms.assetid: 626b73d3-a257-4b45-82fb-c6299faa0001
-caps.latest.revision: 10
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # LOCALDB_ERROR_CANNOT_CREATE_INSTANCE_FOLDER
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |
+| --------- | ----- |
 |Product Name|SQL Server|  
 |Event ID|256|  
 |Event Source|SQL Server Local Database Runtime 12.0|  

@@ -1,24 +1,15 @@
 ---
-title: "getTime Method (int) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getTime Method (int) (SQLServerResultSet)"
+description: "getTime Method (int) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getTime (int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getTime (int)"
 apitype: "Assembly"
-ms.assetid: e18c84f5-7171-4057-8c9e-fe1d43ae9c20
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getTime Method (int) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -46,7 +37,7 @@ public java.sql.Time getTime(int columnIndex)
 ## Remarks  
  This getTime method is specified by the getTime method in the java.sql.ResultSet interface.  
   
- This method returns a valid time part of a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] datetime or smalldatetime data type, with the date part set to the Java baseline date of 1970/01/01.  
+ This method returns a valid time part of a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] datetime or smalldatetime data type, with the date part set to the Java baseline date of 1970/01/01.  
   
 ## See Also  
  [getTime Method &#40;SQLServerResultSet&#41;](../../../connect/jdbc/reference/gettime-method-sqlserverresultset.md)   

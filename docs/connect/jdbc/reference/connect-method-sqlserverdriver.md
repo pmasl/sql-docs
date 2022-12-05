@@ -1,24 +1,15 @@
 ---
-title: "connect Method (SQLServerDriver) | Microsoft Docs"
-ms.custom: ""
+title: "connect Method (SQLServerDriver)"
+description: "connect Method (SQLServerDriver)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDriver.connect"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDriver.connect"
 apitype: "Assembly"
-ms.assetid: 43813a4c-1cc7-4659-ba27-f1786f1371eb
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # connect Method (SQLServerDriver)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

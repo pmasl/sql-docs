@@ -1,27 +1,20 @@
 ---
-title: "KeyTypeEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "KeyTypeEnum"
+description: "KeyTypeEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "KeyTypeEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "KeyTypeEnum enumeration [ADOX]"
-ms.assetid: 3e597c52-caf4-4341-8471-d1ade563dbf7
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # KeyTypeEnum
-Specifies the type of [Key](../../../ado/reference/adox-api/key-object-adox.md): primary, foreign, or unique.  
+Specifies the type of [Key](./key-object-adox.md): primary, foreign, or unique.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -30,4 +23,4 @@ Specifies the type of [Key](../../../ado/reference/adox-api/key-object-adox.md):
 |**adKeyUnique**|3|The key is unique.|  
   
 ## Applies To  
- [Type Property (Key) (ADOX)](../../../ado/reference/adox-api/type-property-key-adox.md)
+ [Type Property (Key) (ADOX)](./type-property-key-adox.md)

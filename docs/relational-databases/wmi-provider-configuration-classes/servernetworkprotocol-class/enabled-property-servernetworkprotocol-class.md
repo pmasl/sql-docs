@@ -1,13 +1,11 @@
 ---
-title: "Enabled Property (ServerNetworkProtocol Class) | Microsoft Docs"
-ms.custom: ""
+description: "Enabled Property (ServerNetworkProtocol Class)"
+title: "Enabled Property (ServerNetworkProtocol)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "Enabled Property (ServerNetworkProtocol Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "Enabled property"
 ms.assetid: a514822a-91f1-4aca-9175-2b96cff29700
-caps.latest.revision: 32
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Enabled Property (ServerNetworkProtocol Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the Boolean property that specifies whether the server network protocol is enabled.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.Enabled [= value]
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

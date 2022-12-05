@@ -1,31 +1,26 @@
 ---
-title: "sys.credentials (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "02/27/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.credentials (Transact-SQL)"
+description: sys.credentials (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
+ms.date: "04/06/2020"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.credentials"
   - "sys.credentials_TSQL"
   - "credentials_TSQL"
   - "credentials"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.credentials catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: ea48cf80-904a-4273-a950-6d35b1b0a1b6
-caps.latest.revision: 33
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.credentials (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-pdw-md.md)]
+[!INCLUDE[tsql-appliesto-ss2008-asdbmi-asdw-pdw-md](../../includes/tsql-appliesto-ss2008-asdbmi-asdw-pdw-md.md)]
 
   Returns one row for each server-level credential.  
   

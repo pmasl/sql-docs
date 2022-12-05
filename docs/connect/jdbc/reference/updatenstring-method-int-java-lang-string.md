@@ -1,19 +1,12 @@
 ---
-title: "updateNString Method (int, java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "updateNString Method (int, java.lang.String)"
+description: "updateNString Method (int, java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1bb909f1-4a96-4be1-adea-36c8d9703112
-caps.latest.revision: 17
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # updateNString Method (int, java.lang.String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

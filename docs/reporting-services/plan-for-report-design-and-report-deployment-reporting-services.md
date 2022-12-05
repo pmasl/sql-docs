@@ -1,20 +1,15 @@
 ---
 title: "Plan for report design and report deployment | Reporting Services | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/12/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
+description:  Learn how to plan a report authoring and report server environment that work together using Reporting Services.
+ms.date: 09/12/2016
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+
+ms.topic: conceptual
 ms.assetid: 1c1e265e-52a2-4de3-96fd-ca4abae01c02
-caps.latest.revision: 19
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Plan for report design and report deployment | Reporting Services
 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] provides several approaches for authoring and deploying paginated reports. Learn how to plan a report authoring and report server environment that work together.
@@ -28,21 +23,21 @@ This topic is an overview of report definition support by [!INCLUDE[ssRSnoversio
   
 |Abbreviation|Schema version|  
 |------------------|--------------------|  
-|2016 RDL|`http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition`|
-|2010 RDL|`http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition`|  
-|2008 RDL|`http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition`|  
-|2005 RDL<br /><br /> 2005 RDLC|`http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition`|  
-|2000 RDL|`http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition`|  
+|2016 RDL|`https://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition`|
+|2010 RDL|`https://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition`|  
+|2008 RDL|`https://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition`|  
+|2005 RDL<br /><br /> 2005 RDLC|`https://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition`|  
+|2000 RDL|`https://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition`|  
   
  For more information on RDL and RDL schemas, see the following:  
   
--   [Microsoft SQL Server XML Schemas](http://go.microsoft.com/fwlink/?LinkId=31850)  
+-   [Microsoft SQL Server XML Schemas](https://go.microsoft.com/fwlink/?LinkId=31850)  
   
--   [Report Definition Language Specifications](http://go.microsoft.com/fwlink/?linkid=116865)  
+-   [Report Definition Language Specifications](/openspecs/sql_server_protocols/ms-rdl/53287204-7cd0-4bc9-a5cd-d42a5925dca1)  
   
 -   [Report Definition Language &#40;SSRS&#41;](../reporting-services/reports/report-definition-language-ssrs.md)  
   
- For more information about ReportViewer controls, see [ReportViewer Controls (Visual Studio)](http://msdn.microsoft.com/library/ms251671.aspx).  
+ For more information about ReportViewer controls, see [ReportViewer Controls (Visual Studio)](/previous-versions/ms251671(v=vs.140)).  
   
 ##  <a name="bkmk_report_server_rdl_schema_support"></a> Report Server and RDL Schema Support  
  A report definition file can be deployed to a [!INCLUDE[ssRSCurrent](../includes/ssrscurrent-md.md)] report server in the following ways:  
@@ -52,8 +47,12 @@ This topic is an overview of report definition support by [!INCLUDE[ssRSnoversio
 -   **Report Builder:** Save a report to the report server from Report Builder.  
   
 -   **Web Portal:** Upload a report to a native mode report server from the [!INCLUDE[ssRSWebPortal](../includes/ssrswebportal.md)].  
+
+::: moniker range="=sql-server-2016"
   
 -   **SharePoint:** Upload a report to a SharePoint site that is configured with a SharePoint mode report server.  
+
+::: moniker-end
   
 -   **Programmatically:** Programmatically publish a report by using the SOAP API interfaces to a report server. For more information, see [Report Server Web Service](../reporting-services/report-server-web-service/report-server-web-service.md).  
   
@@ -67,7 +66,13 @@ This topic is an overview of report definition support by [!INCLUDE[ssRSnoversio
   
  When you upload a report definition to the report server or upgrade a report server that contains existing reports, the report server preserves the report definition in the original format. **On first use**, the report server upgrades the report in the report server database to a binary format that is preserved for subsequent views. The report definition (.rdl) itself is not upgraded.  
   
- You can extract from the report server a read-only copy of the report definition file (.rdl). On a native mode report server, browse to the [!INCLUDE[ssRSWebPortal](../includes/ssrswebportal.md)], select the report and click **Download**. In a SharePoint mode deployment, browse to the document library, select the report and click **Download a Copy**.  
+ You can extract from the report server a read-only copy of the report definition file (.rdl). On a native mode report server, browse to the [!INCLUDE[ssRSWebPortal](../includes/ssrswebportal.md)], select the report and click **Download**. 
+
+::: moniker range="=sql-server-2016"
+
+In a SharePoint mode deployment, browse to the document library, select the report and click **Download a Copy**.  
+
+::: moniker-end
   
  To upgrade the report definition, you must open the report in a report authoring environment, such as SQL Server Data Tools or Report Builder, and then save it.  
   
@@ -90,27 +95,26 @@ This topic is an overview of report definition support by [!INCLUDE[ssRSnoversio
   
 -   [Deployment and Version Support in SQL Server Data Tools &#40;SSRS&#41;](../reporting-services/tools/deployment-and-version-support-in-sql-server-data-tools-ssrs.md)  
   
--   [SQL Server Data Tools for Visual Studio 2015](https://msdn.microsoft.com/library/mt204009.aspx).  
+-   [SQL Server Data Tools for Visual Studio 2015](../ssdt/download-sql-server-data-tools-ssdt.md).  
   
 ##  <a name="bkmk_reportviewer"></a> ReportViewer Controls  
  A [!INCLUDE[vsprvs](../includes/vsprvs-md.md)] ReportViewer control can display an .rdlc report in local preview mode or in remote mode, the control can display an .rdl file hosted on a [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] report server. The following table provides the list of RDL versions supported by the ReportViewer controls for local processing (.rdlc). Server side RDL support is summarized in the section [Report Server and RDL Schema Support](#bkmk_report_server_rdl_schema_support).  
   
 |ReportViewer control in product|Version of RDL for local preview|  
 |-------------------------------------|--------------------------------------|  
-|[!INCLUDE[vsprvs](../includes/vsprvs-md.md)] 2015 <br/><br/>Or<br/><br/>[!INCLUDE[vsprvs](../includes/vsprvs-md.md)] 2013<br /><br /> Or<br /><br /> [!INCLUDE[vsprvs](../includes/vsprvs-md.md)] 2012<br /><br /> Or<br /><br /> [!INCLUDE[vs_dev10_long](../includes/vs-dev10-long-md.md)]|2008 RDL|  
-|[!INCLUDE[vsprvslong](../includes/vsprvslong-md.md)]<br /><br /> Or<br /><br /> [!INCLUDE[vsOrcas](../includes/vsorcas-md.md)]|2005 RDL|  
+|[!INCLUDE[vsprvs](../includes/vsprvs-md.md)] 2015 <br/><br/>Or<br/><br/>[!INCLUDE[vsprvs](../includes/vsprvs-md.md)] 2013<br /><br /> Or<br /><br /> [!INCLUDE[vsprvs](../includes/vsprvs-md.md)] 2012<br /><br /> Or<br /><br /> [!INCLUDE[vsprvs](../includes/vsprvs-md.md)] 2010|2008 RDL|  
+|[!INCLUDE[vsprvs2005](../includes/vsprvs2005-md.md)]<br /><br /> Or<br /><br /> [!INCLUDE[vsprvs2008](../includes/vsprvs2008-md.md)]|2005 RDL|  
   
  For more information, see the following:  
   
--   [Converting RDLC Files to RDL Files](http://msdn.microsoft.com/library/ms252109.aspx)  
+-   [Converting RDLC Files to RDL Files](/previous-versions/ms252109(v=vs.140))  
   
--   [ReportViewer Controls (Visual Studio)](http://msdn.microsoft.com/library/ms251671.aspx)  
+-   [ReportViewer Controls (Visual Studio)](/previous-versions/ms251671(v=vs.140))  
   
--   [Adding and Configuring the ReportViewer Controls](http://msdn.microsoft.com/library/ms252104.aspx)  
+-   [Adding and Configuring the ReportViewer Controls](/previous-versions/ms252104(v=vs.140))  
   
 ## See Also  
  [Reports, Report Parts, and Report Definitions &#40;Report Builder and SSRS&#41;](../reporting-services/report-design/reports-report-parts-and-report-definitions-report-builder-and-ssrs.md)   
  [Reporting Services Tools](../reporting-services/tools/reporting-services-tools.md)   
  [Report Definition Language &#40;SSRS&#41;](../reporting-services/reports/report-definition-language-ssrs.md)  
-  
   

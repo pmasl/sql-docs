@@ -1,13 +1,11 @@
 ---
-title: "IpAddresses Property (ServerNetworkProtocol Class) | Microsoft Docs"
-ms.custom: ""
+description: "IpAddresses Property (ServerNetworkProtocol Class)"
+title: "IpAddresses Property (ServerNetworkProtocol)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "IpAddresses Property (ServerNetworkProtocol Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "IpAddresses property"
 ms.assetid: e5d66f7e-9719-436e-b723-12d56f914a05
-caps.latest.revision: 31
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # IpAddresses Property (ServerNetworkProtocol Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the IP addresses associated with the server network protocol.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.IpAddresses [= value]
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

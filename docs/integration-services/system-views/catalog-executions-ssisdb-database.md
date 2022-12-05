@@ -1,25 +1,22 @@
 ---
+description: "catalog.executions (SSISDB Database)"
 title: "catalog.executions (SSISDB Database) | Microsoft Docs"
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "04/13/2022"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "language-reference"
 helpviewer_keywords: 
   - "executions view [Integration Services]"
   - "catalog.executions view [Integration Services]"
 ms.assetid: 879f13b0-331d-4dee-a079-edfaca11ae5b
-caps.latest.revision: 32
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # catalog.executions (SSISDB Database)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
 
   Displays the instances of package execution in the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] catalog. Packages that are executed with the Execute Package task run in the same instance of execution as the parent package.  
   
@@ -37,6 +34,8 @@ manager: "jhubbard"
 |executed_as_sid|**varbinary(85)**|The SID of the user who started the instance of execution.|  
 |executed_as_name|**nvarchar(128)**|The name of the database principal that was used to start the instance of execution.|  
 |use32bitruntime|**bit**|Indicates if the 32-bit runtime is used to run the package on a 64-bit operating system. When the value is `1`, the execution is performed with the 32-bit runtime. When the value is `0`, the execution is performed with the 64-bit runtime.|  
+|operation_type|**smallint**|The type of operation. The operation_type of 200 means create/start execution.|  
+|created_time|**datetimeoffset**|The time when the instance was initiated.  Keep in mind that there is a lag time between initiation and actual start time.| 
 |object_type|**smallint**|The type of object. The object may be a project (`20`) or a package (`30`).|  
 |object_id|**bigint**|The ID of the object affected by the operation.|  
 |status|**int**|The status of the operation. The possible values are created (`1`), running (`2`), canceled (`3`), failed (`4`), pending (`5`), ended unexpectedly (`6`), succeeded (`7`), stopping (`8`), and completed (`9`).|  
@@ -47,14 +46,17 @@ manager: "jhubbard"
 |process_id|**int**|The process ID of the external process, if applicable.|  
 |stopped_by_sid|**varbinary(85)**|The security ID (SID) of the user who stopped the instance of execution.|  
 |stopped_by_name|**nvarchar(128)**|The name of the user who stopped the instance of execution.|  
-|total_physical_memory_kb|**bigint**|The total physical memory (in megabytes) on the server when the execution is started.|  
-|available_physical_memory_kb|**bigint**|The available physical memory (in megabytes) on the server when the execution is started.|  
-|total_page_file_kb|**bigint**|The total page memory (in megabytes) on the server when the execution is started.|  
-|available_page_file_kb|**bigint**|The available page memory (in megabytes) on the server when the execution is started.|  
-|cpu_count|**int**|The number of logical CPUs on the server when the execution is started.|  
+|dump_id|**uniqueidentifier**|The ID of an execution dump.|
 |server_name|**nvarchar(128)**|The Windows server and instance information for a specified instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
-|machine_name|**nvarchar(128)**|The computer name on which the server instance is running.|  
-|dump_id|**uniqueidentifier**|The ID of an execution dump.|  
+|machine_name|**nvarchar(128)**|The computer name on which the server instance is running.|
+|worker_agent_id|**uniqueidentifier**|The worker agent ID of Scale Out Worker.|
+|total_physical_memory_kb|**bigint**|The total physical memory (in kilobytes) on the server when the execution is started.|  
+|available_physical_memory_kb|**bigint**|The available physical memory (in kilobytes) on the server when the execution is started.|  
+|total_page_file_kb|**bigint**|The total page memory (in kilobytes) on the server when the execution is started.|  
+|available_page_file_kb|**bigint**|The available page memory (in kilobytes) on the server when the execution is started.|  
+|cpu_count|**int**|The number of logical CPUs on the server when the execution is started.|   
+|executed_count|**int**|The number of times the operation was executed.|   
+  
   
 ## Remarks  
  This view displays a row for each instance of execution in the catalog.  

@@ -1,13 +1,11 @@
 ---
-title: "SetServiceAccount Method (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "SetServiceAccount Method (SqlService Class)"
+title: "SetServiceAccount Method (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "SetServiceAccount Method (SqlService Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "SetServiceAccount method"
 ms.assetid: d5782892-e9d8-4d48-92af-b3afe9610f84
-caps.latest.revision: 36
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SetServiceAccount Method (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Attempts to change the user name and password that the service instance runs under.  
   
 ## Syntax  
@@ -55,6 +52,6 @@ object.SetServiceAccount(ServiceStartName , ServiceStartPassword)
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

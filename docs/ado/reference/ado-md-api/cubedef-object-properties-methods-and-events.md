@@ -1,37 +1,30 @@
 ---
-title: "CubeDef Object Properties, Methods, and Events | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "CubeDef Object Properties, Methods, and Events"
+description: "CubeDef Object Properties, Methods, and Events"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "CubeDef object [ADO MD], members"
-ms.assetid: 5dac737a-b77e-47d3-9228-cd52b7a97b0a
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # CubeDef Object Properties, Methods, and Events
 ## Properties/Collections  
- [Description Property](../../../ado/reference/ado-md-api/description-property-ado-md.md)  
+ [Description Property](./description-property-ado-md.md)  
   
- [Dimensions Collection](../../../ado/reference/ado-md-api/dimensions-collection-ado-md.md)  
+ [Dimensions Collection](./dimensions-collection-ado-md.md)  
   
- [Name Property](../../../ado/reference/ado-md-api/name-property-ado-md.md)  
+ [Name Property](./name-property-ado-md.md)  
   
- [Properties Collection](../../../ado/reference/ado-api/properties-collection-ado.md)  
+ [Properties Collection](../ado-api/properties-collection-ado.md)  
   
 ## Methods  
- [GetSchemaObject Method](../../../ado/reference/ado-md-api/getschemaobject-method-ado-md.md)  
+ [GetSchemaObject Method](./getschemaobject-method-ado-md.md)  
   
 ## Events  
  None.  
   
 ## See Also  
- [CubeDef Object (ADO MD)](../../../ado/reference/ado-md-api/cubedef-object-ado-md.md)
+ [CubeDef Object (ADO MD)](./cubedef-object-ado-md.md)

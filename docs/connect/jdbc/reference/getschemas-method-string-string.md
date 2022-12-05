@@ -1,19 +1,12 @@
 ---
-title: "getSchemas Method (String, String) | Microsoft Docs"
-ms.custom: ""
+title: "getSchemas Method (String, String)"
+description: "getSchemas Method (String, String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 672171ac-976f-4605-9bee-2a5e141d92cb
-caps.latest.revision: 17
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getSchemas Method (String, String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

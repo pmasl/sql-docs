@@ -1,22 +1,17 @@
 ---
 title: "Mapping MySQL and SQL Server Character Set (MySQLToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+description: Learn how to specify a character set for MySQL character data types, expressions, and literals to use during character data type conversion by SSMA for MySQL.
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 20b3f22e-16a2-4a87-b4eb-c277be6bf5c8
-caps.latest.revision: 4
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
+f1_keywords: 
+    - "ssma.mysql.charsetmappingpanel.f1"
 ---
 # Mapping MySQL and SQL Server Character Set (MySQLToSQL)
 Character set (Charset) can be specified for MySQL character data types, expressions and literals.  
@@ -78,9 +73,8 @@ Charset Mapping varies at different node levels, namely:
   
     The Charset mapping between MySQL database and the target database on Root Metadata Node Level is given below:  
   
-    ||||  
+    |Charset Name|Charset Description|Target Charset Type (Default)|  
     |-|-|-|  
-    |**Charset Name**|**Charset Description**|**Target Charset Type (Default)**|  
     |big5|Big5 Traditional Chinese|NCHAR/NVARCHAR (Default)|  
     |dec8|DEC West European|CHAR/VARCHAR (Default)|  
     |cp850|DOS West European|CHAR/VARCHAR (Default)|  

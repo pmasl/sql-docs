@@ -1,19 +1,12 @@
 ---
-title: "SQLServerParameterMetaData Methods | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerParameterMetaData Methods"
+description: "SQLServerParameterMetaData Methods"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c72ad4b1-8363-4e0d-af7a-236998dc4a5c
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerParameterMetaData Methods
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,26 +1,24 @@
 ---
-title: "Select Rows That Do Not Match a Value (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Select Rows That Do Not Match a Value (Visual Database Tools)"
+title: Select Rows That Do Not Match a Value
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "search conditions [SQL Server], rows not matching value"
   - "row not matching value [SQL Server]"
   - "NOT operator [Visual Database Tools]"
   - "search criteria [SQL Server], rows not matching value"
 ms.assetid: 19898578-7b2f-401c-bb8f-9f2a017efdf7
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Select Rows That Do Not Match a Value (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 To find rows that do not match a value, use the NOT operator.  
   
 ### To find rows that do not match a value  
@@ -36,6 +34,6 @@ NOT LIKE 'A%'
 ```  
   
 ## See Also  
-[Rules for Entering Search Values (Visual Database Tools)](../../ssms/visual-db-tools/rules-for-entering-search-values-visual-database-tools.md)  
-[Specify Search Criteria (Visual Database Tools)](../../ssms/visual-db-tools/specify-search-criteria-visual-database-tools.md)  
+[Rules for Entering Search Values](../../ssms/visual-db-tools/rules-for-entering-search-values-visual-database-tools.md)  
+[Specify Search Criteria](../../ssms/visual-db-tools/specify-search-criteria-visual-database-tools.md)  
   

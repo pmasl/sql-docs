@@ -1,22 +1,17 @@
 ---
+description: "Instr (MDX)"
 title: "Instr (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-ms.assetid: 5638c358-47da-40ad-b988-1a5214c05492
-caps.latest.revision: 6
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # Instr (MDX)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+
 
   Returns the position of the first occurrence of one string within another.  
   
@@ -95,9 +90,8 @@ from [Adventure Works]
   
  The following table displays the obtained results.  
   
-|||  
+|Field in measures|Results|  
 |-|-|  
-||Results|  
 |lowercase found in lowercase string|16|  
 |uppercase found in lowercase string|16|  
 |searched string is empty|0|  

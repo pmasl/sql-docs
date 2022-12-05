@@ -1,32 +1,17 @@
 ---
-title: "SELECT FROM &lt;model&gt;.CASES (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SELECT"
-  - "CASES"
-  - "FROM"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "SELECT FROM <model>.CASES statement"
-  - "drillthrough [DMX]"
-ms.assetid: d58acb47-aaa6-40b7-b8c4-6a6700fbc1dd
-caps.latest.revision: 55
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "SELECT FROM &lt;model&gt;.CASES (DMX)"
+description: "SELECT FROM &lt;model&gt;.CASES (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # SELECT FROM &lt;model&gt;.CASES (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Supports drillthrough, and returns the cases that were used to train the model. You can also return structure columns that are not included in the model, if drillthrough has been enabled on the mining structure and on the mining model, and if you have the appropriate permissions.  
   
@@ -71,7 +56,7 @@ SELECT [FLATTENED] [TOP <n>] <expression list> FROM <model>.CASES
  Using the [IsInNode &#40;DMX&#41;](../dmx/isinnode-dmx.md) function in the **WHERE** clause returns only cases that are associated with the node that is specified by the NODE_UNIQUE_NAME column of the schema rowset.  
   
 ## Examples  
- The following examples are based on the mining structure Targeted Mailing, which is based on the [!INCLUDE[ssSampleDBDWobject](../includes/sssampledbdwobject-md.md)]database and its associated mining models. For more information, see [Basic Data Mining Tutorial](http://msdn.microsoft.com/library/6602edb6-d160-43fb-83c8-9df5dddfeb9c).  
+ The following examples are based on the mining structure Targeted Mailing, which is based on the [!INCLUDE[ssSampleDBDWobject](../includes/sssampledbdwobject-md.md)]database and its associated mining models. For more information, see [Basic Data Mining Tutorial](/previous-versions/sql/sql-server-2016/ms167167(v=sql.130)).  
   
 ### Example 1: Drillthrough to Model Cases and Structure Columns  
  The following example returns the columns for all the cases that were used to test the Targeted Mailing model. If the mining structure on which the model is built does not have a holdout test data set, this query would return 0 cases. You can use the expression list to return only the columns that you need.  
@@ -94,12 +79,11 @@ AND IsInNode('002')
  To return a structure column, drillthrough permissions must be enabled on both the mining model and the mining structure.  
   
 > [!NOTE]  
->  Not all mining model types support drillthrough. For information about the models that support drillthrough, see [Drillthrough Queries &#40;Data Mining&#41;](../analysis-services/data-mining/drillthrough-queries-data-mining.md).  
+>  Not all mining model types support drillthrough. For information about the models that support drillthrough, see [Drillthrough Queries &#40;Data Mining&#41;](/analysis-services/data-mining/drillthrough-queries-data-mining).  
   
 ## See Also  
  [SELECT &#40;DMX&#41;](../dmx/select-dmx.md)   
  [Data Mining Extensions &#40;DMX&#41; Data Definition Statements](../dmx/dmx-statements-data-definition.md)   
  [Data Mining Extensions &#40;DMX&#41; Data Manipulation Statements](../dmx/dmx-statements-data-manipulation.md)   
  [Data Mining Extensions &#40;DMX&#41; Statement Reference](../dmx/data-mining-extensions-dmx-statements.md)  
-  
   

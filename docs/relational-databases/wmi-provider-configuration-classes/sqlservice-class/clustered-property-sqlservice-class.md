@@ -1,13 +1,11 @@
 ---
-title: "Clustered Property (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "Clustered Property (SqlService Class)"
+title: "Clustered Property (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "Clustered Property (SqlService Class)"
@@ -16,12 +14,11 @@ apilocation:
 helpviewer_keywords: 
   - "Clustered property"
 ms.assetid: f714e7f5-c2db-45c6-9536-6ca2cb5b42aa
-caps.latest.revision: 35
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Clustered Property (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the Boolean property value that specifies whether the service is part of a clustered instance.  
   
 ## Syntax  
@@ -41,6 +38,6 @@ object.Clustered [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

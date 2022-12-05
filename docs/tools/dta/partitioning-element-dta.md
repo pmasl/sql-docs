@@ -1,26 +1,26 @@
 ---
-title: "Partitioning Element (DTA) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Partitioning Element (DTA)"
+description: In the dta utility, the Partitioning element contains the partitioning scheme that you would like Database Engine Tuning Advisor to use during analysis.
+ms.service: sql
+ms.subservice: tools-other
+ms.topic: conceptual
 dev_langs: 
   - "XML"
 helpviewer_keywords: 
   - "Partitioning element"
 ms.assetid: 9bc5d1d5-27a7-4434-966f-c3935794af27
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: 03/01/2017
 ---
+
 # Partitioning Element (DTA)
-  Contains the partitioning scheme that you would like Database Engine Tuning Advisor to use during analysis.  
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Contains the partitioning scheme that you would like Database Engine Tuning Advisor to use during analysis.  
   
 ## Syntax  
   

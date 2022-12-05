@@ -1,24 +1,23 @@
 ---
+description: "Hadoop File System Task"
 title: "Hadoop File System Task | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
+ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.ssis.designer.hadoopfiletask.f1"
 ms.assetid: 594aaf5d-7703-4788-897d-fb95aca798c5
-caps.latest.revision: 7
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Hadoop File System Task
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   The Hadoop File System Task enables an SSIS package to copy files from, to, or within a Hadoop cluster.  
   
  To add a Hadoop File System Task, drag and drop it to the designer. Then double-click on the task, or right-click and click **Edit**, to open the **Hadoop File System Task Editor** dialog box.  

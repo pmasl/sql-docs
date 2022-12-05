@@ -1,15 +1,13 @@
 ---
-title: "Nullability and Three-Value Logic Comparisons | Microsoft Docs"
-ms.custom: ""
+title: "Nullability and Three-Value Logic Comparisons"
+description: This article covers how SQL Server data types differ from types in System.Data.SqlTypes in the .NET Framework, which have similar semantics and precision.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "precision [CLR integration]"
   - "overflow detections [CLR integration]"
   - "null values [CLR integration]"
@@ -17,12 +15,9 @@ helpviewer_keywords:
   - "data types [CLR integration]"
   - "SqlBoolean data type"
 ms.assetid: 13da4c7f-1010-4b2d-a63c-c69b6bfd96f1
-caps.latest.revision: 38
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Nullability and Three-Value Logic Comparisons
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   If you are familiar with the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] data types, you will find similar semantics and precision in the **System.Data.SqlTypes** namespace in the [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]. There are some differences, however, and this topic covers the most important of these differences.  
   
 ## NULL Values  

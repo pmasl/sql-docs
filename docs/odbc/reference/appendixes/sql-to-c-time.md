@@ -1,23 +1,19 @@
 ---
+description: "SQL to C: Time"
 title: "SQL to C: Time | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "converting data from SQL to C types [ODBC], time"
   - "time data type [ODBC]"
   - "data conversions from SQL to C types [ODBC], time"
 ms.assetid: 6dc59973-7bb5-40f1-87c8-5bf68b3bf2ee
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQL to C: Time
 The identifier for the time ODBC SQL data type is:  
@@ -42,4 +38,4 @@ The identifier for the time ODBC SQL data type is:
   
  [d]   This is the size of the corresponding C data type.  
   
- When time SQL data is converted to character C data, the resulting string is in the "*hh*:*mm*:*ss*" format. This format is not affected by the Windows® country setting.
+ When time SQL data is converted to character C data, the resulting string is in the "*hh*:*mm*:*ss*" format. This format is not affected by the Windows® country/region setting.

@@ -1,33 +1,28 @@
 ---
-title: "@@TIMETICKS (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
+title: "@@TIMETICKS (Transact-SQL)"
+description: "&#x40;&#x40;TIMETICKS (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "09/18/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "@@TIMETICKS_TSQL"
   - "@@TIMETICKS"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ticks [SQL Server]"
   - "@@TIMETICKS function"
   - "microseconds per tick [SQL Server]"
   - "time [SQL Server], ticks"
   - "number of microseconds per tick"
-ms.assetid: 9d036633-837f-4309-9c45-3d9600258018
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@TIMETICKS (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+# &#x40;&#x40;TIMETICKS (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Returns the number of microseconds per tick.  
   
@@ -35,12 +30,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 @@TIMETICKS  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **integer**  
   
 ## Remarks  
@@ -48,7 +44,7 @@ manager: "jhubbard"
   
 ## Examples  
   
-```  
+```sql
 SELECT @@TIMETICKS AS 'Time Ticks';  
 ```  
   

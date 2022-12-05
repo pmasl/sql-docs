@@ -1,26 +1,25 @@
 ---
 title: "sp_addsubscription (Transact-SQL) | Microsoft Docs"
-ms.date: "10/28/2015"
-ms.prod: "sql-server-2016"
+description: Adds a subscription to a publication and sets the Subscriber status. This stored procedure runs at the Publisher on the publication database.
+ms.date: "03/29/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.custom: ""
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_addsubscription"
   - "sp_addsubscription_TSQL"
 helpviewer_keywords: 
   - "sp_addsubscription"
 ms.assetid: 61ddf287-1fa0-4c1a-8657-ced50cebf0e0
-caps.latest.revision: 53
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_addsubscription (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[sql-asdb](../../includes/applies-to-version/sql-asdb.md)]
 
   Adds a subscription to a publication and sets the Subscriber status. This stored procedure is executed at the Publisher on the publication database.  
   
@@ -80,6 +79,14 @@ sp_addsubscription [ @publication = ] 'publication'
   
  [ @subscriber=] '*subscriber*'  
  Is the name of the Subscriber. *subscriber* is **sysname**, with a default of NULL.  
+
+<!--SQL Server 2019 on Linux-->
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
+
+> [!NOTE]
+> Server name can be specified as `<Hostname>,<PortNumber>`. You may need to specify the port number for your connection when SQL Server is deployed on Linux or Windows with a custom port, and browser service is disabled. The use of custom port numbers for remote distributor applies to SQL Server 2019 only.
+
+::: moniker-end
   
  [ @destination_db=] '*destination_db*'  
  Is the name of the destination database in which to place replicated data. *destination_db* is **sysname**, with a default of NULL. When NULL, *destination_db* is set to the name of the publication database. For Oracle Publishers, *destination_db* must be specified. For a non-SQL Server Subscriber, specify a value of (default destination) for *destination_db*.  
@@ -226,7 +233,7 @@ sp_addsubscription [ @publication = ] 'publication'
  [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]  
   
  [ @publisher= ] '*publisher*'  
- Specifies a non-[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Publisher. *publisher* is **sysname**, with a default of NULL.  
+ Specifies a non- [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Publisher. *publisher* is **sysname**, with a default of NULL.  
   
 > [!NOTE]  
 >  *publisher* should not be specified for a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Publisher.  
@@ -252,7 +259,7 @@ sp_addsubscription [ @publication = ] 'publication'
 >  [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]  
   
  [ @password= ] '*password*'  
- Specifies a password for the backup if a password was set when the backup was created. *password*is **sysname**, with a default value of NULL.  
+ Specifies a password for the backup if a password was set when the backup was created. *password* is **sysname**, with a default value of NULL.  
   
  [ @fileidhint= ] *fileidhint*  
  Identifies an ordinal value of the backup set to be restored. *fileidhint* is **int**, with a default value of NULL.  
@@ -264,7 +271,7 @@ sp_addsubscription [ @publication = ] 'publication'
  Specifies the log sequence number (LSN) at which a subscription should start delivering changes to a node in a peer-to-peer transactional replication topology. Used with a @sync_type value of initialize from lsn to make sure that all relevant transactions are replicated to a new node. For more information, see [Peer-to-Peer Transactional Replication](../../relational-databases/replication/transactional/peer-to-peer-transactional-replication.md).  
   
  [ @subscriptionstreams= ] *subscriptionstreams*  
- Is the number of connections allowed per Distribution Agent to apply batches of changes in parallel to a Subscriber, while maintaining many of the transactional characteristics present when using a single thread. *subscriptionstreams* is **tinyint**, with a default value of NULL. A range of values from 1 to 64 is supported. This parameter is not supported for non-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Subscribers, Oracle Publishers or peer-to-peer subscriptions. Whenever subscription streams is used additional rows are added in the msreplication_subscriptions table (1 per stream) with an agent_id set to NULL.  
+ Is the number of connections allowed per Distribution Agent to apply batches of changes in parallel to a Subscriber, while maintaining many of the transactional characteristics present when using a single thread. *subscriptionstreams* is **tinyint**, with a default value of NULL. A range of values from 1 to 64 is supported. This parameter is not supported for non- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Subscribers, Oracle Publishers or peer-to-peer subscriptions. Whenever subscription streams is used additional rows are added in the msreplication_subscriptions table (1 per stream) with an agent_id set to NULL.  
   
 > [!NOTE]  
 >  Subscriptionstreams do not work for articles configured to deliver [!INCLUDE[tsql](../../includes/tsql-md.md)]. To use subscriptionstreams, configure articles to deliver stored procedure calls instead.  

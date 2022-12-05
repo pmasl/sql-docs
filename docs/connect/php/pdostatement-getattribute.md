@@ -1,19 +1,12 @@
 ---
-title: "PDOStatement::getAttribute | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/13/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 41d0cca3-8556-4573-bb90-8e9402d9379f
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+title: "PDOStatement::getAttribute"
+description: "API reference for the PDOStatement::getAttribute function in the Microsoft PDO_SQLSRV Driver for PHP for SQL Server."
+author: David-Engel
+ms.author: v-davidengel
+ms.date: "08/10/2020"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # PDOStatement::getAttribute
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -39,6 +32,7 @@ See [PDOStatement::setAttribute](../../connect/php/pdostatement-setattribute.md)
 Support for PDO was added in version 2.0 of the [!INCLUDE[ssDriverPHP](../../includes/ssdriverphp_md.md)].  
   
 ## See Also  
-[PDOStatement Class](../../connect/php/pdostatement-class.md)  
-[PDO](http://go.microsoft.com/fwlink/?LinkID=187441)  
+[PDOStatement Class](../../connect/php/pdostatement-class.md)
+
+[PDO](https://php.net/manual/book.pdo.php)  
   

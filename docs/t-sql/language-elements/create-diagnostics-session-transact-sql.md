@@ -1,24 +1,20 @@
 ---
-title: "CREATE DIAGNOSTICS SESSION (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/04/2017"
-ms.prod: "sql-non-specified"
+title: "CREATE DIAGNOSTICS SESSION (Transact-SQL)"
+description: "CREATE DIAGNOSTICS SESSION (Transact-SQL)"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.date: "03/04/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+dev_langs:
   - "TSQL"
-ms.assetid: 662d019e-f217-49df-9e2f-b5662fa0342d
-caps.latest.revision: 9
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">= aps-pdw-2016"
 ---
 # CREATE DIAGNOSTICS SESSION (Transact-SQL)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]
 
   Diagnostics sessions allow you to save detailed, user-defined diagnostic information on system or query performance.  
   
@@ -29,33 +25,33 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for Parallel Data Warehouse  
-  
-Creating a new diagnostics session:  
-CREATE DIAGNOSTICS SESSION diagnostics_name AS N’{<session_xml>}’;  
+```syntaxsql
+-- Creating a new diagnostics session:  
+CREATE DIAGNOSTICS SESSION diagnostics_name AS N'{<session_xml>}';  
   
 <session_xml>::  
 <Session>  
    [ <MaxItemCount>max_item_count_num</MaxItemCount> ]  
    <Filter>  
-      { \<Event Name=”event_name”/>  
-         [ <Where>\<filter_property_name Name=”value” ComparisonType="comp_type"/></Where> ] [ ,...n ]  
+      { \<Event Name="event_name"/>  
+         [ <Where>\<filter_property_name Name="value" ComparisonType="comp_type"/></Where> ] [ ,...n ]  
       } [ ,...n ]  
    </Filter> ]   
    <Capture>  
-      \<Property Name=”property_name”/> [ ,...n ]  
+      \<Property Name="property_name"/> [ ,...n ]  
    </Capture>  
 <Session>  
   
-Retrieving results for a diagnostics session:  
+-- Retrieving results for a diagnostics session:  
 SELECT * FROM master.sysdiag.diagnostics_name ;  
   
-Removing results for a diagnostics session:  
+-- Removing results for a diagnostics session:  
 DROP DIAGNOSTICS SESSION diagnostics_name ;  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *diagnostics_name*  
  The name of the diagnostics session. Diagnostics session names can include characters a-z, A-Z, and 0-9 only. Also, diagnostics session names must start with a character. *diagnostics_name* is limited to 127 characters.  
   
@@ -63,7 +59,7 @@ DROP DIAGNOSTICS SESSION diagnostics_name ;
  The number of events to be persisted in a view. For example, if 100 is specified, the 100 most recent events matching the filter criteria will be persisted to the diagnostics session. If fewer than 100 matching events are found, the diagnostics session will contain less than 100 events. *max_item_count_num* must be at least 100 and less than or equal to 100,000.  
   
  *event_name*  
- Defines the actual events to be collected in the diagnostics session.  *event_name* is one of the events listed in [sys.pdw_diag_events](http://msdn.microsoft.com/en-us/d813aac0-cea1-4f53-b8e8-d26824bc2587) where `sys.pdw_diag_events.is_enabled='True'`.  
+ Defines the actual events to be collected in the diagnostics session.  *event_name* is one of the events listed in [sys.pdw_diag_events](../../relational-databases/system-catalog-views/sys-pdw-diag-events-transact-sql.md) where `sys.pdw_diag_events.is_enabled='True'`.  
   
  *filter_property_name*  
  The name of the property on which to restrict results. For example, if you want to limit based on session id, *filter_property_name* should be *SessionId*. See *property_name* below for a list of potential values for *filter_property_name*.  
@@ -89,7 +85,7 @@ DROP DIAGNOSTICS SESSION diagnostics_name ;
 |SPID|The Service Process ID.|  
   
 ## Remarks  
- Each user is allowed a maximum of 10 concurrent diagnostics sessions. See [sys.pdw_diag_sessions](http://msdn.microsoft.com/en-us/ca111ddc-2787-4205-baf0-1a242c0257a9) for a list of your current sessions, and drop any unneeded sessions using `DROP DIAGNOSTICS SESSION`.  
+ Each user is allowed a maximum of 10 concurrent diagnostics sessions. See [sys.pdw_diag_sessions](../../relational-databases/system-catalog-views/sys-pdw-diag-sessions-transact-sql.md) for a list of your current sessions, and drop any unneeded sessions using `DROP DIAGNOSTICS SESSION`.  
   
  Diagnostics sessions will continue to collect metadata until dropped.  
   
@@ -104,7 +100,7 @@ DROP DIAGNOSTICS SESSION diagnostics_name ;
 ### A. Creating a diagnostics session  
  This example creates a diagnostics session to record metrics of the database engine performance. The example creates a diagnostics session that listens for Engine Query running/end events and a blocking DMS event. What is returned is the command text, machine name, request id (query id) and the session that the event was created on.  
   
-```  
+```sql  
 CREATE DIAGNOSTICS SESSION MYDIAGSESSION AS N'  
 <Session>  
    <MaxItemCount>100</MaxItemCount>  
@@ -128,13 +124,13 @@ CREATE DIAGNOSTICS SESSION MYDIAGSESSION AS N'
   
  After creation of the diagnostics session, run a query.  
   
-```  
+```sql  
 SELECT COUNT(EmployeeKey) FROM AdventureWorksPDW2012..FactSalesQuota;  
 ```  
   
  Then view the diagnostics session results by selecting from the sysdiag schema.  
   
-```  
+```sql  
 SELECT * FROM master.sysdiag.MYDIAGSESSION;  
 ```  
   
@@ -144,14 +140,14 @@ SELECT * FROM master.sysdiag.MYDIAGSESSION;
   
  When you are finished with the diagnostics session, drop it using the **DROP DIAGNOSTICS** command.  
   
-```  
+```sql  
 DROP DIAGNOSTICS SESSION MYDIAGSESSION;  
 ```  
   
 ### B. Alternative diagnostic session  
  A second example with slightly different properties.  
   
-```  
+```sql  
 -- Determine the session_id of your current session  
 SELECT TOP 1 session_id();  
 -- Replace \<*session_number*> in the code below with the numbers in your session_id  
@@ -182,7 +178,7 @@ CREATE DIAGNOSTICS SESSION PdwOptimizationDiagnostics AS N'
   
  Run a query, such as:  
   
-```  
+```sql  
 USE ssawPDW;  
 GO  
 SELECT * FROM dbo.FactFinance;  
@@ -190,7 +186,7 @@ SELECT * FROM dbo.FactFinance;
   
  The following query returns the authorization timing:  
   
-```  
+```sql  
 SELECT *   
 FROM master.sysdiag.PdwOptimizationDiagnostics   
 ORDER BY DateTimePublished;  
@@ -198,7 +194,7 @@ ORDER BY DateTimePublished;
   
  When you are finished with the diagnostics session, drop it using the **DROP DIAGNOSTICS** command.  
   
-```  
+```sql  
 DROP DIAGNOSTICS SESSION PdwOptimizationDiagnostics;  
 ```  
   

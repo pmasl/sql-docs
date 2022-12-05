@@ -1,26 +1,28 @@
 ---
-title: "Banner Element (ssbdiagnose) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Banner Element (ssbdiagnose)"
+title: Banner Element
+diagnose: In SQL Server, the Banner element identifies which utility generated the ssbdiagnose output XML file.
+ms.service: sql
+ms.subservice: tools-other
+ms.topic: conceptual
 helpviewer_keywords: 
   - "banner element"
   - "XML output file format [ssbdiagnose], banner element"
   - "ssbdiagnose"
 ms.assetid: cc6cd49a-acf0-4cfb-8c6a-554692b89de2
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: 03/01/2017
 ---
+
 # Banner Element (ssbdiagnose)
-  Identifies which utility generated the **ssbdiagnose** output XML file.  
+
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Identifies which utility generated the **ssbdiagnose** output XML file.  
   
 ## Syntax  
   

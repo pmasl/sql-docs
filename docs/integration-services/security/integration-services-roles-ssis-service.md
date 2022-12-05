@@ -1,14 +1,12 @@
 ---
+description: "Integration Services Roles (SSIS Service)"
 title: "Integration Services Roles (SSIS Service) | Microsoft Docs"
-ms.custom: ""
+ms.custom: security
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.dtsserver.packageroles.f1"
 helpviewer_keywords: 
@@ -20,12 +18,14 @@ helpviewer_keywords:
   - "roles [Integration Services]"
   - "db_ssisltduser role"
 ms.assetid: 9702e90c-fada-4978-a473-1b1423017d80
-caps.latest.revision: 50
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Integration Services Roles (SSIS Service)
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] provides certain fixed database-level roles to help secure access to packages that are stored in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. The available roles are different depending on whether you're saving packages in the SSIS Catalog database (SSISDB) or in the msdb database.  
   
 ## Roles in the SSIS Catalog database (SSISDB)  
@@ -36,6 +36,8 @@ manager: "jhubbard"
 -   **ssis_logreader** This role provides permissions to access all the views related SSISDB operational logs.  
   
      The list of views includes: [catalog].[projects], [catalog].[packages], [catalog].[operations], [catalog].[extended_operation_info], [catalog].[operation_messages], [catalog].[event_messages], [catalog].[execution_data_statistics], [catalog].[execution_component_phases], [catalog].[execution_data_taps], [catalog].[event_message_context], [catalog].[executions], [catalog].[executables], [catalog].[executable_statistics], [catalog].[validations], [catalog].[execution_parameter_values], and [catalog].[execution_property_override_values].  
+
+By design, there are permissions granted on views and stored procedures that are assigned to the SQL server fixed role **public** role. The permissions don't give users access to execute or edit packages, only permissions to interact with the internal mechanism of the SSISDB which in turn determine actual permissions.
   
 ## Roles in the msdb database  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] includes the three fixed database-level roles, **db_ssisadmin**, **db_ssisltduser**, and **db_ssisoperator**, for controlling access to packages that are saved to the **msdb** database. You assign roles to a package using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]. The role assignments are saved to the **msdb** database.  
@@ -51,7 +53,7 @@ manager: "jhubbard"
 |**Windows administrators**|View execution details of all running packages.|Stop all currently running packages.|  
   
 ### Sysssispackages Table  
- The **sysssispackages** table in **msdb** contains the packages that are saved to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For more information, see [sysssispackages &#40;Transact-SQL&#41;](../../relational-databases/system-tables/sysssispackages-transact-sql.md).  
+ The **sysssispackages** table in **msdb** contains the packages that are saved to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For more information, see [sysssispackages \(Transact-SQL\)](../../relational-databases/system-tables/sysssispackages-transact-sql.md).  
   
  The **sysssispackages** table includes columns that contain information about the roles that are assigned to packages.  
   

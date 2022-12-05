@@ -1,23 +1,20 @@
 ---
-title: "New Peer Initialization (Peer-to-Peer Replication) | Microsoft Docs"
-ms.custom: ""
+title: "New Peer Initialization (Peer-to-Peer) | Microsoft Docs"
+description: Describes the 'New Peer Initialization' used for Peer to Peer Replication in SQL Server Management Studio (SSMS).
+ms.custom: seo-lt-2019
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.rep.p2pwizard.init.f1"
 ms.assetid: 050c00e1-78bd-4d9c-affe-40e22feb4d94
-caps.latest.revision: 20
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # New Peer Initialization (Peer-to-Peer Replication)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use the **New Peer Initialization** page to specify how peer databases were initialized. (Peers must be initialized before you complete this wizard.) Peers are initialized manually or by using the **initialize with backup** functionality that is provided by transactional replication. (Peer-to-peer transactional replication does not support initializing peers by using a snapshot.) If different peers have to be initialized using different methods, you must add the peers separately by running the wizard multiple times.  
   
 ## Options  

@@ -1,24 +1,15 @@
 ---
-title: "prepare Method (SQLServerXAResource) | Microsoft Docs"
-ms.custom: ""
+title: "prepare Method (SQLServerXAResource)"
+description: "prepare Method (SQLServerXAResource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerXAResource.prepare"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerXAResource.prepare"
 apitype: "Assembly"
-ms.assetid: f800c966-3fae-41b3-963a-464988f80da3
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # prepare Method (SQLServerXAResource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

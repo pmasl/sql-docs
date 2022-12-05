@@ -1,22 +1,15 @@
 ---
-title: "Field (ADO - WFC Syntax) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Field (ADO - WFC Syntax)"
+description: "Field (ADO - WFC Syntax)"
+author: rothja
+ms.author: jroth
 ms.date: "02/15/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Field collection [ADO], ADO/WFC syntax"
-ms.assetid: 7e01cb24-2338-4f92-ad46-8d97248e1a4d
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Field (ADO - WFC Syntax)
 ## package com.ms.wfc.data  
@@ -66,7 +59,7 @@ public AdoProperties getProperties()
   
  ADO/WFC implements the **Value** property with the **getValue** method, which returns a VARIANT object; and the **setValue** method, which takes a VARIANT as an argument. VARIANTs are highly efficient in certain languages, such as Microsoft Visual Basic.  
   
- In addition to the **Value** property, ADO/WFC provides *accessor* methods that use Java data types to get and set the content of **Field** objects. Most of these methods have names of the form **get***DataType* or **set***DataType*.  
+ In addition to the **Value** property, ADO/WFC provides *accessor* methods that use Java data types to get and set the content of **Field** objects. Most of these methods have names of the form **get**_DataType_ or **set**_DataType_.  
   
  There are two noteworthy exceptions: One of the **getObject** methods returns an object coerced into a specified class. There is no **getNull** property; instead, there is an **isNull** property that returns a Boolean value indicating whether the field is null.  
   

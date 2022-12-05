@@ -1,29 +1,24 @@
 ---
+description: "MSSQLSERVER_41368"
 title: "MSSQLSERVER_41368 | Microsoft Docs"
 ms.custom: ""
-ms.date: "04/04/2017"
-ms.prod: "sql-server-2016"
+ms.date: "05/25/2022"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 helpviewer_keywords: 
   - "41368 (Database Engine error)"
-ms.assetid: abc71559-4c4d-4cce-a08f-3299dd167842
-caps.latest.revision: 9
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
-robots: noindex,nofollow
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_41368
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |Event ID|41368|  
 |Event Source|MSSQLSERVER|  

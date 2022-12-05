@@ -1,14 +1,12 @@
 ---
-title: "Add an Existing Project to a Solution | Microsoft Docs"
-ms.custom: ""
+description: "Add an Existing Project to a Solution"
+title: "Add an Existing Project to a Solution"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vs.addexistingproject"
 helpviewer_keywords: 
@@ -16,12 +14,11 @@ helpviewer_keywords:
   - "solutions [SQL Server Management Studio], project additions"
   - "projects [SQL Server Management Studio], adding"
 ms.assetid: 7b0c8ac0-5941-4ac6-b960-87d9830d00de
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Add an Existing Project to a Solution
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 You can add one or more projects to an existing solution. A project can be associated with more than one solution.  
   
 ### To add an existing project to a solution  
@@ -36,8 +33,9 @@ You can add one or more projects to an existing solution. A project can be assoc
   
 > [!NOTE]  
 > Before adding an existing project from shared directories in a multideveloper environment, you should attempt to ensure that your changes do not adversely affect or overwrite another developer's changes.  
-  
-## See Also  
+
+## See Also
+
 [Projects &#40;SQL Server Management Studio&#41;](../../ssms/solution/projects-sql-server-management-studio.md)  
 [Solutions &#40;SQL Server Management Studio&#41;](../../ssms/solution/solutions-sql-server-management-studio.md)  
   

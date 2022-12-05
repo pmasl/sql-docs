@@ -1,13 +1,11 @@
 ---
-title: "PropertyNumVal Property (ClientNetworkProtocolProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "PropertyNumVal Property (ClientNetworkProtocolProperty Class)"
+title: "PropertyNumVal Property (ClientNetworkProtocolProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "PropertyNumVal Property (ClientNetworkProtocolProperty Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "PropertyNumVal property"
 ms.assetid: 12b02d97-702b-434f-baf6-e49a6b2cd4de
-caps.latest.revision: 28
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # PropertyNumVal Property (ClientNetworkProtocolProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the numeric value of the current property referenced by the [PropertyIdx Property (ClientNetworkProtocolProperty Class)](../../../relational-databases/wmi-provider-configuration-classes/clientnetworkprotocolproperty-class/propertyidx-property-clientnetworkprotocolproperty-class.md) value.  
   
 ## Syntax  

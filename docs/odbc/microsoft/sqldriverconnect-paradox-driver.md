@@ -1,22 +1,18 @@
 ---
+description: "SQLDriverConnect (Paradox Driver)"
 title: "SQLDriverConnect (Paradox Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLDriverConnect function [ODBC], Paradox Driver"
   - "Paradox driver [ODBC], SQLDriverConnect"
 ms.assetid: c2ba486e-5e01-4e67-adb1-68511f5f0206
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLDriverConnect (Paradox Driver)
 > [!NOTE]  

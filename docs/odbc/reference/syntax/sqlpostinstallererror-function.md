@@ -1,14 +1,12 @@
 ---
+description: "SQLPostInstallerError Function"
 title: "SQLPostInstallerError Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLPostInstallerError"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLPostInstallerError function [ODBC]"
 ms.assetid: 4c60d827-b2d2-4f27-b220-daa9e1fcdd8d
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLPostInstallerError Function
 **Conformance**  
@@ -33,11 +29,11 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 RETCODE SQLPostInstallerError(  
-     DWORD    fErrorCode,  
-     LPSTR    szErrorMsg);  
+     DWORD    fErrorCode,  
+     LPSTR    szErrorMsg);  
 ```  
   
 ## Arguments  

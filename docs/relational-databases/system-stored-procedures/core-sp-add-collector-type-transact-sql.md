@@ -1,14 +1,12 @@
 ---
+description: "core.sp_add_collector_type (Transact-SQL)"
 title: "core.sp_add_collector_type (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_add_collector_type"
   - "sp_add_collector_type_TSQL"
@@ -20,13 +18,11 @@ helpviewer_keywords:
   - "sp_add_collector_type"
   - "data collector [SQL Server], stored procedures"
 ms.assetid: 1d981037-2147-464e-a456-7d8e479bce89
-caps.latest.revision: 18
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # core.sp_add_collector_type (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Adds a new entry to the core.supported_collector_types view in the management data warehouse database. The procedure must be executed in the context of the management data warehouse database.  
   

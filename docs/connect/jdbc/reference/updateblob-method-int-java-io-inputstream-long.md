@@ -1,19 +1,12 @@
 ---
-title: "updateBlob Method (int, java.io.InputStream, long) | Microsoft Docs"
-ms.custom: ""
+title: "updateBlob Method (int, java.io.InputStream, long)"
+description: "updateBlob Method (int, java.io.InputStream, long)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 2edf9b51-63e1-4c28-afdf-2d4af593d5f7
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # updateBlob Method (int, java.io.InputStream, long)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

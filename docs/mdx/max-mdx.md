@@ -1,28 +1,17 @@
 ---
+description: "Max (MDX)"
 title: "Max (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "MAX"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "Max function [MDX]"
-ms.assetid: 745c2b3e-022b-471a-ac16-e39ecb3297ea
-caps.latest.revision: 29
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # Max (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Returns the maximum value of a numeric expression that is evaluated over a set.  
   
@@ -47,7 +36,7 @@ Max( Set_Expression [ , Numeric_Expression ] )
 >  [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] ignores nulls when calculating the maximum value in a set of numbers.  
   
 ## Example  
- The following example returns the maximum monthly sales for each quarter, subcategory, and country in the Adventure Works cube.  
+ The following example returns the maximum monthly sales for each quarter, subcategory, and country/region in the Adventure Works cube.  
   
 ```  
 WITH MEMBER Measures.x AS Max   

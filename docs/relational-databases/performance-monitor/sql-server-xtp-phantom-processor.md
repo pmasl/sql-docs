@@ -1,24 +1,23 @@
 ---
-title: "SQL Server XTP Phantom Processor | Microsoft Docs"
+title: "SQL Server XTP Phantom Processor object"
+description: Learn about the SQL Server XTP Phantom Processor performance object, which contains counters for the In-Memory OLTP engine's phantom processing subsystem.
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/13/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 0f691b3d-a8fd-4459-ad21-2cfc8574a8c0
-caps.latest.revision: 7
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.subservice: performance
+ms.topic: conceptual
+helpviewer_keywords: 
+  - "SQL Server 2016 XTP Phantom Processor"
+  - "SQL Server 2017 XTP Phantom Processor"
+  - "SQL Server XTP Phantom Processor"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server XTP Phantom Processor
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# SQL Server XTP Phantom Processor object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  The SQL Server XTP Phantom Processor performance object contains counters related to the In-Memory OLTP engine's phantom processing subsystem. This component is responsible for detecting phantom rows in transactions running at the SERIALIZABLE isolation level, as well as constraint validation in concurrency scenarios.  
+  The **SQL Server XTP Phantom Processor** performance object contains counters related to the In-Memory OLTP engine's phantom processing subsystem. This component is responsible for detecting phantom rows in transactions running at the SERIALIZABLE isolation level, as well as constraint validation in concurrency scenarios.  
   
  This table describes the **SQL Server XTP Phantom Processor** counters.  
   
@@ -30,8 +29,17 @@ manager: "jhubbard"
 |**Phantom expiring rows touched/sec**|The number of expiring rows touched by phantom scans (on average), per second.|  
 |**Phantom rows touched/sec**|The number of rows touched by phantom scans (on average), per second.|  
 |**Phantom scans started/sec**|The number of phantom scans started (on average), per second.|  
+ 
+## Example
+
+You begin to explore the query performance counters in this object using this T-SQL query on the [sys.dm_os_performance_counters](../system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md) dynamic management view:
+
+```sql
+SELECT * FROM sys.dm_os_performance_counters
+WHERE object_name LIKE '%XTP Phantom Processor%';
+```  
   
-## See Also  
- [SQL Server XTP &#40;In-Memory OLTP&#41; Performance Counters](../../relational-databases/performance-monitor/sql-server-xtp-in-memory-oltp-performance-counters.md)  
-  
+## See also  
+- [In-Memory OLTP and Memory-Optimization](../in-memory-oltp/overview-and-usage-scenarios.md)
+- [SQL Server XTP &#40;In-Memory OLTP&#41; Performance Counters](../../relational-databases/performance-monitor/sql-server-xtp-in-memory-oltp-performance-counters.md)
   

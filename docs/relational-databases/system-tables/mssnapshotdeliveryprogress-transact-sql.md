@@ -1,31 +1,23 @@
 ---
-title: "MSsnapshotdeliveryprogress (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSsnapshotdeliveryprogress (Transact-SQL)"
+description: MSsnapshotdeliveryprogress (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSsnapshotdeliveryprogress_TSQL"
   - "MSsnapshotdeliveryprogress"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSsnapshotdeliveryprogress system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 9164bfe2-6fc4-4b52-946a-09ea3cf67041
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSsnapshotdeliveryprogress (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSsnapshotdeliveryprogress** table is used to track files that have been successfully delivered to the Subscriber when a snapshot is being applied. This data is used to resume the delivery of files in case the Merge Agent fails to deliver all of the files during the session so that the same files are not delivered again the next time that the Merge Agent is run. This table is stored at the Subscriber in the subscription database.  
   

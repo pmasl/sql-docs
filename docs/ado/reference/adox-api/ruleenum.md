@@ -1,27 +1,20 @@
 ---
-title: "RuleEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "RuleEnum"
+description: "RuleEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "RuleEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "RuleEnum enumeration [ADOX]"
-ms.assetid: 738fd3ff-3daf-483d-a0b9-88bef1be54c1
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # RuleEnum
-Specifies the rule to follow when a [Key](../../../ado/reference/adox-api/key-object-adox.md) is deleted.  
+Specifies the rule to follow when a [Key](./key-object-adox.md) is deleted.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -31,4 +24,4 @@ Specifies the rule to follow when a [Key](../../../ado/reference/adox-api/key-ob
 |**adRISetNull**|2|Foreign key value is set to null.|  
   
 ## Applies To  
- [DeleteRule Property (ADOX)](../../../ado/reference/adox-api/deleterule-property-adox.md)
+ [DeleteRule Property (ADOX)](./deleterule-property-adox.md)

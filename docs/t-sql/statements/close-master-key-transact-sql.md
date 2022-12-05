@@ -1,33 +1,27 @@
 ---
-title: "CLOSE MASTER KEY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "CLOSE MASTER KEY (Transact-SQL)"
+description: CLOSE MASTER KEY (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "05/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "CLOSE MASTER KEY"
   - "CLOSE_MASTER_KEY_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "encryption [SQL Server], Database Master Key"
   - "CLOSE MASTER KEY statement"
   - "database master key [SQL Server], closing"
   - "cryptography [SQL Server], Database Master Key"
   - "closing Database Master Keys"
-ms.assetid: bb04ef7a-9f3a-437e-a6f9-ba0204082cb9
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # CLOSE MASTER KEY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Closes the master key of the current database.  
   
@@ -35,11 +29,16 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql  
 CLOSE MASTER KEY  
 ```  
+
+> [!NOTE]
+> [!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  Takes no arguments.  
   
 ## Remarks  
@@ -50,7 +49,7 @@ CLOSE MASTER KEY
   
 ## Examples  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 CLOSE MASTER KEY;  
 GO  
@@ -58,7 +57,7 @@ GO
   
 ## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
   
-```  
+```sql  
 USE master;  
 OPEN MASTER KEY DECRYPTION BY PASSWORD = '43987hkhj4325tsku7';  
 GO   

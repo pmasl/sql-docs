@@ -1,13 +1,11 @@
 ---
-title: "Removing a Column from a SQL Server Table | Microsoft Docs"
+description: "Removing a Column from a SQL Server Table (Native Client OLE DB provider)"
+title: Remove column from SQL Server table (Native Client OLE DB provider)
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "columns [OLE DB]"
@@ -15,13 +13,12 @@ helpviewer_keywords:
   - "DropColumn function"
   - "SQL Server Native Client OLE DB provider, columns"
 ms.assetid: 210811b7-cbd6-421e-bc6e-df9482236768
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Removing a Column from a SQL Server Table
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# Removing a Column from a SQL Server Table (Native Client OLE DB provider)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider exposes the **ITableDefinition::DropColumn** function. This allows consumers to remove a column from a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] table.  
   

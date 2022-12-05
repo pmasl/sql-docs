@@ -1,23 +1,19 @@
 ---
-title: "ODBC Driver for Oracle User&#39;s Guide | Microsoft Docs"
+description: "ODBC Driver for Oracle User's Guide"
+title: "ODBC Driver for Oracle User's Guide | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "ODBC driver for Oracle [ODBC], using ODBC driver for Oracle"
 ms.assetid: c506aaa1-0b4f-440b-b069-98e0a463a5f6
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
-# ODBC Driver for Oracle User&#39;s Guide
+# ODBC Driver for Oracle User's Guide
 > [!IMPORTANT]  
 >  This feature will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Instead, use the ODBC driver provided by Oracle.  
   

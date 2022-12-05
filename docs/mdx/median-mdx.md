@@ -1,28 +1,17 @@
 ---
+description: "Median (MDX)"
 title: "Median (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "MEDIAN"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "Median function"
-ms.assetid: 7a326a3f-0123-45c4-9b18-31f83b90d986
-caps.latest.revision: 31
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # Median (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Returns the median value of a numeric expression that is evaluated over a set.  
   
@@ -49,7 +38,7 @@ Median(Set_Expression [ ,Numeric_Expression ] )
 >  [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] ignores nulls when calculating the median value in a set of ordered numbers.  
   
 ## Example  
- The following example returns the median monthly sales for each quarter, each subcategory, and each country in the Adventure Works cube.  
+ The following example returns the median monthly sales for each quarter, each subcategory, and each country/region in the Adventure Works cube.  
   
 ```  
 WITH MEMBER Measures.x AS Median   

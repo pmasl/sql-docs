@@ -1,33 +1,30 @@
 ---
-title: "Slash Star Comment (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/27/2017"
-ms.prod: "sql-non-specified"
+title: "Slash Star (Block Comment) (Transact-SQL)"
+description: "Slash Star (Block Comment) (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "07/27/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "/*...*/_TSQL"
   - "Comment"
   - "/*...*/"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "nonexecuting text strings [SQL Server]"
   - "/*...*/ (comment)"
   - "remarks [SQL Server]"
   - "comments [SQL Server]"
-ms.assetid: 4d9ab1b2-4bbb-4c16-beb1-cafc1af7417c
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: "= azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqledge-current || = azure-sqldw-latest || >= aps-pdw-2016"
 ---
-# Slash Star Comment (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+
+# Slash Star (Block Comment) (Transact-SQL)
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Indicates user-provided text. The text between the /* and \*/ is not evaluated by the server.  
   
@@ -35,14 +32,15 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 /*  
 text_of_comment  
 */  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *text_of_comment*  
  Is the text of the comment. This is one or more character strings.  
   
@@ -55,8 +53,8 @@ text_of_comment
   
  For example, the following code generates an error.  
   
-```  
-DECLARE @comment AS varchar(20);  
+```sql  
+DECLARE @comment AS VARCHAR(20);  
 GO  
 /*  
 SELECT @comment = '/*';  
@@ -67,21 +65,20 @@ GO
   
  To work around this error, make the following change.  
   
-```  
-DECLARE @comment AS varchar(20);  
+```sql  
+DECLARE @comment AS VARCHAR(20);  
 GO  
 /*  
 SELECT @comment = '/*';  
 */ */  
 SELECT @@VERSION;  
 GO  
-  
 ```  
   
 ## Examples  
  The following example uses comments to explain what the section of the code is supposed to do.  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 /*  

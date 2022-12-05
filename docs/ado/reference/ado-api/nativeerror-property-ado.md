@@ -1,29 +1,22 @@
 ---
-title: "NativeError Property (ADO) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "NativeError Property (ADO)"
+description: "NativeError Property (ADO)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Error::GetNativeError"
   - "Error::get_NativeError"
   - "Error::NativeError"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "NativeError property [ADO]"
-ms.assetid: b9b47e57-18a4-4186-aef5-5bd18d7b1d74
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # NativeError Property (ADO)
-Indicates the provider-specific error code for a given [Error](../../../ado/reference/ado-api/error-object.md) object.  
+Indicates the provider-specific error code for a given [Error](./error-object.md) object.  
   
 ## Return Value  
  Returns a **Long** value that indicates the error code.  
@@ -32,8 +25,8 @@ Indicates the provider-specific error code for a given [Error](../../../ado/refe
  Use the **NativeError** property to retrieve the database-specific error information for a particular **Error** object. For example, when using the Microsoft ODBC Provider for OLE DB with a Microsoft SQL Server database, native error codes that originate from SQL Server pass through ODBC and the ODBC Provider to the ADO **NativeError** property.  
   
 ## Applies To  
- [Error Object](../../../ado/reference/ado-api/error-object.md)  
+ [Error Object](./error-object.md)  
   
 ## See Also  
- [Description, HelpContext, HelpFile, NativeError, Number, Source, and SQLState Properties Example (VB)](../../../ado/reference/ado-api/description-helpcontext-helpfile-nativeerror-number-source-example-vb.md)   
- [Description, HelpContext, HelpFile, NativeError, Number, Source, and SQLState Properties Example (VC++)](../../../ado/reference/ado-api/description-helpcontext-helpfile-nativeerror-number-source-example-vc.md)   
+ [Description, HelpContext, HelpFile, NativeError, Number, Source, and SQLState Properties Example (VB)](./description-helpcontext-helpfile-nativeerror-number-source-example-vb.md)   
+ [Description, HelpContext, HelpFile, NativeError, Number, Source, and SQLState Properties Example (VC++)](./description-helpcontext-helpfile-nativeerror-number-source-example-vc.md)

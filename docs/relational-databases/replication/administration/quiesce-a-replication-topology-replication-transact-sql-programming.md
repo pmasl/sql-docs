@@ -1,14 +1,12 @@
 ---
-title: "Quiesce a Replication Topology (Replication Transact-SQL Programming) | Microsoft Docs"
-ms.custom: ""
+title: "Quiesce a Replication topology (Replication SP)"
+description: Learn how to use Replication stored procedures to quiesce a replication topology for SQL Server. 
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
@@ -16,12 +14,12 @@ helpviewer_keywords:
   - "quiesce [SQL Server replication]"
   - "transactional replication, backup and restore"
 ms.assetid: 7626d575-9994-47be-b772-5b6f1b7ef7ca
-caps.latest.revision: 34
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # Quiesce a Replication Topology (Replication Transact-SQL Programming)
+[!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
   *Quiescing* a system involves stopping activity on published tables at all nodes and ensuring that each node has received all changes from all other nodes. This topic explains how to quiesce a replication topology, which is required for a number of administrative tasks, and how to ensure that a node has received all changes from other nodes.  
   
 ### To quiesce a transactional replication topology with read-only subscriptions  
@@ -33,7 +31,7 @@ manager: "jhubbard"
 3.  At the Publisher on the publication database, execute [sp_helptracertokenhistory](../../../relational-databases/system-stored-procedures/sp-helptracertokenhistory-transact-sql.md).  
   
 4.  Ensure that each Subscriber has received the tracer token.  
-  
+
 ### To quiesce a transactional replication topology with updatable subscriptions  
   
 1.  Stop activity on all published tables at the Publisher and all Subscribers.  

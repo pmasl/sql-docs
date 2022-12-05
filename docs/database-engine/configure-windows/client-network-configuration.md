@@ -1,15 +1,13 @@
 ---
-title: "Client Network Configuration | Microsoft Docs"
-ms.custom: ""
+title: "Client Network Configuration"
+description: Find out how client computers connect to an instance of SQL Server on a network. Learn about the tools that you can use to manage clients.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: configuration
+ms.topic: conceptual
+helpviewer_keywords:
   - "client configuration [SQL Server], connections"
   - "Database Engine [SQL Server], network configurations"
   - "connections [SQL Server], client configuration"
@@ -17,13 +15,9 @@ helpviewer_keywords:
   - "client computers [SQL Server]"
   - "client connections [SQL Server]"
   - "network connections [SQL Server], client configuration"
-ms.assetid: c382eacd-0a0c-40a4-958f-9b774eb2d734
-caps.latest.revision: 38
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # Client Network Configuration
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Client software enables client computers to connect to an instance of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] on a network. A "client" is a front-end application that uses the services provided by a server such as the [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]. The computer that hosts this application is referred to as the *client computer*.  
   
  At the simplest level, a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] client can reside on the same machine as an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Typically, however, a client connects to one or more remote servers over a network. The client/server architecture of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] allows it to seamlessly manage multiple clients and servers on a network. The default client configurations suffice in most situations.  

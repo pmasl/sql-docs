@@ -1,14 +1,9 @@
 ---
-title: "Download SQL Server Management Studio (SSMS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Download SQL Server Management Studio (SSMS)
+description: Download the latest version of SQL Server Management Studio (SSMS).
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 keywords: 
   - "install ssms, download ssms, latest ssms"
   - "SQL Server Management Studio"
@@ -22,176 +17,154 @@ keywords:
   - "ssms download"
   - "sql server ssms"
   - "ssms express"
-ms.assetid: adafeeef-4255-4924-8042-02f503d599ca
-caps.latest.revision: 145
-author: "stevestein"
-ms.author: "sstein"
-manager: "craigg"
+author: erinstellato-ms
+ms.author: erinstellato
+ms.reviewer: maghan
+ms.custom: seo-lt-2019
+ms.date: 06/21/2022
 ---
+
 # Download SQL Server Management Studio (SSMS)
 
-SSMS is an integrated environment for managing any SQL infrastructure, from SQL Server to SQL Database. SSMS provides tools to configure, monitor, and administer instances of SQL. Use SSMS to deploy, monitor, and upgrade the data-tier components used by your applications, as well as build queries and scripts.
+[!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
 
-Use SQL Server Management Studio (SSMS) to query, design, and manage your databases and data warehouses, wherever they are - on your local computer, or in the cloud.
+SQL Server Management Studio (SSMS) is an integrated environment for managing any SQL infrastructure, from SQL Server to Azure SQL Database. SSMS provides tools to configure, monitor, and administer instances of SQL Server and databases. Use SSMS to deploy, monitor, and upgrade the data-tier components used by your applications, and build queries and scripts.
 
-**SSMS is free!**
+Use SSMS to query, design, and manage your databases and data warehouses, wherever they are - on your local computer, or in the cloud.
 
-SSMS 17.x is the latest generation of *SQL Server Management Studio* and provides support for SQL Server 2017.
+## Download SSMS
 
-**[![download](../ssdt/media/download.png) Download SQL Server Management Studio 17.2](https://go.microsoft.com/fwlink/?linkid=854085)**
+To download SSMS 19 Preview 3, visit [Download SSMS 19](download-sql-server-management-studio-ssms-19.md).
 
-**[![download](../ssdt/media/download.png) Download SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2)](https://go.microsoft.com/fwlink/?linkid=854087)**
+:::image type="icon" source="../includes/media/download.svg" border="false":::**[Free Download for SQL Server Management Studio (SSMS) 18.12.1](https://aka.ms/ssmsfullsetup)**
 
-The SSMS 17.x installation does not upgrade or replace SSMS versions 16.x or earlier. SSMS 17.x installs side by side with previous versions so both versions are available for use.
-If a computer contains side by side installations of SSMS, verify you start the correct version for your specific needs. The latest version is labeled *Microsoft SQL Server Management Studio 17*, and has a new icon: 
- 
-   ![SSMS 17.x](media/download-sql-server-management-studio-ssms/version-icons.png)
+SSMS 18.12.1 is the latest general availability (GA) version. If you have a previous GA version of SSMS 18 installed, installing SSMS 18.12.1 upgrades it to 18.12.1.
 
+- Release number: 18.12.1
+- Build number: 15.0.18424.0
+- Release date: June 21, 2022
+
+By using SQL Server Management Studio, you agree to its [license terms](/Legal/sql/sql-server-management-studio-license-terms) and [privacy statement](https://privacy.microsoft.com/privacystatement). If you have comments or suggestions, or you want to report issues, the best way to contact the SSMS team is at [SQL Server user feedback](https://aka.ms/sqlfeedback).
+
+The SSMS 18.x installation doesn't upgrade or replace SSMS versions 17.x or earlier. SSMS 18.x installs side by side with previous versions, so both versions are available for use. However, if you have a *preview* version of SSMS 18.x installed, you must uninstall it before installing SSMS 18.12. You can see if you have the preview version by going to the **Help > About** window.
+
+If a computer contains side-by-side installations of SSMS, verify you start the correct version for your specific needs. The latest version is labeled **Microsoft SQL Server Management Studio 18**.
+
+[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
+
+## Available languages
+
+This release of SSMS can be installed in the following languages:
+
+SQL Server Management Studio 18.12.1:  
+[Chinese (Simplified)](https://aka.ms/ssmsfullsetup?clcid=0x804) | [Chinese (Traditional)](https://aka.ms/ssmsfullsetup?clcid=0x404) | [English (United States)](https://aka.ms/ssmsfullsetup?clcid=0x409) | [French](https://aka.ms/ssmsfullsetup?clcid=0x40c) | [German](https://aka.ms/ssmsfullsetup?clcid=0x407) | [Italian](https://aka.ms/ssmsfullsetup?clcid=0x410) | [Japanese](https://aka.ms/ssmsfullsetup?clcid=0x411) | [Korean](https://aka.ms/ssmsfullsetup?clcid=0x412) | [Portuguese (Brazil)](https://aka.ms/ssmsfullsetup?clcid=0x416) | [Russian](https://aka.ms/ssmsfullsetup?clcid=0x419) | [Spanish](https://aka.ms/ssmsfullsetup?clcid=0x40a)
+
+> [!TIP]
+> If you are accessing this page from a non-English language version, and want to see the most up-to-date content, please select **Read in English** at the top of this page. You can download different languages from the US-English version site by selecting [available languages](#available-languages).
 
 > [!NOTE]
-> The SQL Server PowerShell module is now a separate install through the PowerShell Gallery.  For more information, see [download instructions](download-sql-server-ps-module.md).
+> The SQL Server PowerShell module is a separate install through the PowerShell Gallery. For more information, see [Download SQL Server PowerShell Module](../powershell/download-sql-server-ps-module.md).
 
-## SQL Server Management Studio
+## What's new
 
-**Version Information**
+For details and more information about what's new in this release, see [Release notes for SQL Server Management Studio](release-notes-ssms.md).
 
-The release number: 17.2
-The build number for this release: 14.0.17177.0
+## Previous versions
 
-## New in this Release
+This article is for the latest version of SSMS only. To download previous versions of SSMS, visit [Previous SSMS releases](../ssms/release-notes-ssms.md#previous-ssms-releases).
 
-SSMS 17.2 is the latest version of SQL Server Management Studio. The 17.x generation of SSMS provides support for almost all feature areas on SQL Server 2008 through SQL Server 2017. Version 17.x also supports SQL Analysis Service PaaS.
+[!INCLUDE[ssms-connect-azure-ad](../includes/ssms-connect-azure-ad.md)]
 
-Version 17.2 includes:
+## Unattended install
 
-- Multi-Factor Authentication (MFA)
-  - Multiple-user Azure AD authentication for Universal Authentication with Multi-factor authentication (UA with MFA)
-  - A new user credential input field was added for Universal Authentication with MFA to support multi-user authentication.
-- The connection dialog box now supports the following 5 authentication methods:
-  - Windows Authentication
-  - SQL Server Authentication
-  - Active Directory - Universal with MFA support
-  - Active Directory - Password
-  - Active Directory - Integrated
+You can also install SSMS using a command prompt script.
 
-- Database import/export for DacFx wizard can now use Universal Authentication with MFA.
-- For API support, see [IUniversalAuthProvider Interface](https://msdn.microsoft.com/library/microsoft.sqlserver.dac.iuniversalauthprovider.aspx).
-- ADAL managed library used by Azure AD Universal Authentication with MFA was upgraded to version 3.13.9.
-- A new CLI interface supporting Azure AD admin setting for SQL Database and SQL Data Warehouse.
+If you want to install SSMS in the background with no GUI prompts, then follow the steps below.
 
- For more information on the Active Directory authentication methods, see [Universal Authentication with SQL Database and SQL Data Warehouse (SSMS support for MFA)](https://docs.microsoft.com/azure/sql-database/sql-database-ssms-mfa-authentication) and [Configure Azure SQL Database multi-factor authentication for SQL Server Management Studio](https://docs.microsoft.com/azure/sql-database/sql-database-ssms-mfa-authentication-configure).
+1. Launch the command prompt with elevated permissions.
 
-- Output window has entries for queries run during expansion of Object Explorer nodes
-- Enabled View designer for Azure SQL Databases
-- The default scripting options for scripting objects from Object Explorer in SSMS have changed:
-  - Previously, the default on a new install was to have the generated script target the latest version of SQL Server (currently SQL Server 2017).
-  - In SSMS 17.2 a new option has been added: *Match Script Settings to Source*. When set to *True*, the generated script targets the same version, engine type, and engine edition as the server the object being scripted is from.
-  - The *Match Script Settings to Source* value is set to *True* by default, so new installs of SSMS will automatically default to always scripting objects to the same target as the original server.
-  - When the *Match Script Settings to Source* value is set to *False*, the normal scripting target options will be enabled and function as they did previously.
-  - Additionally, all the scripting options have been moved to their own section - *Version Options*. They are no longer under *General Scripting Options*.
+2. Type the command below in the command prompt.
 
-- Added support for National Clouds in "Restore from URL"
-- QueryStoreUI reports now supports additional metrics (RowCount, DOP, CLR Time etc.) from sys.query_store_runtime_stats.
-- IntelliSense is now supported for Azure SQL Database
-	- https://connect.microsoft.com/SQLServer/feedback/details/3100677/ssms-2016-would-be-nice-to-have-intellisense-on-azure-sql-databases
-- Security: connection dialog will default to not trusting server certificates and to requesting encryption for Azure SQL Database connections
-- General improvements around support for SQL Server on Linux:
- - Database Mail node is back
- - Addressed some issues related to paths
- - Activity Monitor stability improvements
- - Connection Properties dialog displays the correct platform
-- Performance Dashboard server report now available as a default report:
-  - Can connect to SQL Server 2008 and newer versions.
-  - Missing indexes sub-report uses scoring to assist in identifying most useful indexes.
-  - Historical wait stats sub-report now aggregates waits be category. Idle and sleep waits filtered out by default.
-  - New Historical latches sub-report.
-- Showplan node search allows searching in plan properties. Easily look for any operator property such as table name. To use this option when viewing a plan:
-  - Right-click on plan, and in the context menu click on Find Node option
-  - Use CTRL+F
+    ```console
+    start "" /w <path where SSMS-Setup-ENU.exe file is located> /Quiet SSMSInstallRoot=<path where you want to install SSMS>
+    ```
 
-For the full list of changes, see [SQL Server Management Studio - Changelog (SSMS)](../ssms/sql-server-management-studio-changelog-ssms.md).
+    Example:
 
-For information about user data collection, see [SQL Server Privacy Statement](http://www.microsoft.com/privacystatement/en-us/SQLServer/Default.aspx).
+    ```console
+    start "" /w %systemdrive%\SSMSfrom\SSMS-Setup-ENU.exe /Quiet SSMSInstallRoot=%systemdrive%\SSMSto
+    ```
+
+    You can also pass */Passive* instead of */Quiet* to see the setup UI.
+
+3. If all goes well, you can see SSMS installed at %systemdrive%\SSMSto\Common7\IDE\Ssms.exe" based on the example. If something went wrong, you could inspect the error code returned and take a peek at the %TEMP%\SSMSSetup for the log file.
+
+## Installation with Azure Data Studio
+
+- Starting with SSMS 18.7, SSMS installs a system version of Azure Data Studio by default. If an equal or greater system version of Azure Data Studio stable or insiders is already present on the workstation compared to the included version of Azure Data Studio, the installation of Azure Data Studio by SSMS is skipped. The Azure Data Studio version can be found in the release notes.
+- The Azure Data Studio system installer requires the same security rights as the SSMS installer.
+- The Azure Data Studio installation is completed with the default Azure Data Studio installation options. These are to create a Start Menu folder and add Azure Data Studio to PATH. A desktop shortcut isn't created and Azure Data Studio isn't registered as a default editor for any file types.
+- Localization of Azure Data Studio is accomplished through Language Pack extensions. To localize Azure Data Studio, download the corresponding language pack from the [extension marketplace](../azure-data-studio/extensions/add-extensions.md).
+- At this time, the installation of Azure Data Studio can be skipped by launching the SSMS installer with the command line flag `DoNotInstallAzureDataStudio=1`.
+
+## Uninstall
+
+SSMS may install shared components if it's determined that they're missing during SSMS installation. SSMS won't automatically uninstall these components when you uninstall SSMS.
+
+The shared components are:
+
+- Azure Data Studio
+- Microsoft .NET Framework 4.7.2
+- Microsoft OLE DB Driver for SQL Server
+- Microsoft ODBC Driver 17 for SQL Server
+- Microsoft Visual C++ 2013 Redistributable (x86)
+- Microsoft Visual C++ 2017 Redistributable (x86)
+- Microsoft Visual C++ 2017 Redistributable (x64)
+- Microsoft Visual Studio Tools for Applications 2017
+
+These components aren't uninstalled because they can be shared with other products. If uninstalled, you may run the risk of disabling other products.
 
 ## Supported SQL offerings
 
-* This version of SSMS works with all [supported versions of SQL Server 2008 - SQL Server 2017](https://support.microsoft.com/lifecycle?C2=1044) and provides the greatest level of support for working with the latest cloud features in Azure SQL Database and Azure SQL Data Warehouse.
-* There is no explicit block for SQL Server 2000 or SQL Server 2005, but some features may not work properly.
-* Additionally, SSMS 17.x can be installed side by side with SSMS 16.x or SQL Server 2014 SSMS and earlier.
+- This version of SSMS works with all [supported versions of SQL Server 2008 - [!INCLUDE[sql-server-2019](../includes/sssql19-md.md)]](/lifecycle/products/?products=sql-server.md) and provides the greatest level of support for working with the latest cloud features in Azure SQL Database and Azure Synapse Analytics.
+- Additionally, SSMS 18.x can be installed side by side with SSMS 17.x, SSMS 16.x, or SQL Server 2014 SSMS and earlier.
+- SQL Server Integration Services (SSIS) - SSMS version 17.x or later doesn't support connecting to the legacy SQL Server Integration Services service. To connect to an earlier version of the legacy Integration Services, use the version of SSMS aligned with the version of SQL Server. For example, use SSMS 16.x to connect to the legacy SQL Server 2016 Integration Services service. SSMS 17.x and SSMS 16.x can be installed side by side on the same computer. Since the release of SQL Server 2012, the SSIS Catalog database, SSISDB, is the recommended way to store, manage, run, and monitor Integration Services packages. For details, see [SSIS Catalog](../integration-services/catalog/ssis-catalog.md).
 
-## Supported Operating systems
-  
-This release of SSMS supports the following 64-bit platforms when used with the latest available service pack:
-- Windows 10 (64-bit)
+## SSMS System Requirements
+
+The current release of SSMS supports the following 64-bit platforms when used with the latest available service pack:
+
+Supported Operating Systems:
+
+- Windows 11 (64-bit)
+- Windows 10 (64-bit) version 1607 (10.0.14393) or later
 - Windows 8.1 (64-bit)
-- Windows 8 (64-bit)
-- Windows 7 (SP1) (64-bit)
-- Windows Server 2016 *
+- Windows Server 2022 (64-bit)
+- Windows Server 2019 (64-bit)
+- Windows Server 2016 (64-bit)
 - Windows Server 2012 R2 (64-bit)
 - Windows Server 2012 (64-bit)
 - Windows Server 2008 R2 (64-bit)
 
-\* SSMS 17.X is based on the Visual Studio 2015 Isolated shell, which was released before Windows Server 2016. Microsoft takes app compatibility seriously and ensures that already-shipped applications continue to run on the latest Windows releases. To minimize issues running SSMS on Windows Server 2016, ensure SSMS has all of the latest updates applied. If you experience any issues with SSMS on Windows Server 2016, contact support. The support team determines if the issue is with SSMS, Visual Studio, or with Windows compatibility. The support team then routes the issue to the appropriate team for further investigation.
+Supported hardware:
 
-## SSMS installation tips and issues
-
-### Minimize Installation Reboots
-
-* Take the following actions to reduce the chances of SSMS setup requiring a reboot at the end of installation:
-  * Make sure you are running an up-to-date version of the Visual C++ 2013 Redistributable Package. Version 12.00.40649.5 (or greater) is required. Only the x64 version is needed.
-  * Verify the version of .NET Framework on the computer is 4.6.1 (or greater).
-  * Close any other instances of Visual Studio that are open on the computer.
-  * Make sure all the latest OS updates are installed on the computer.
-  * The noted actions are typically required only once. There are few cases where a reboot is required during additional upgrades to the same major version of SSMS. For minor upgrades, all the prerequirements for SSMS are already be installed on the computer.
-
-* To see the list of known issues and work-arounds, see [SQL Server Management Studio -  Release Notes](../ssms/sql-server-management-studio-release-notes.md)
-
-## Available Languages
+- 1.8 GHz or faster x86 (Intel, AMD) processor. Dual-core or better recommended
+- 2 GB of RAM; 4 GB of RAM recommended (2.5 GB minimum if running on a virtual machine)
+- Hard disk space: Minimum of 2 GB up to 10 GB of available space
 
 > [!NOTE]
-> Non-English localized releases of SSMS require the [KB 2862966 security update package](https://support.microsoft.com/en-us/kb/2862966) if installing on: Windows 8, Windows 7, Windows Server 2012, and Windows Server 2008 R2.
+> SSMS is available only as a 32-bit application for Windows. If you need a tool that runs on operating systems other than Windows, we recommend Azure Data Studio. Azure Data Studio is a cross-platform tool that runs on macOS, Linux, as well as Windows. For details, see [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md).
 
-This release of SSMS can be installed in the following languages:
+[!INCLUDE[get-help-sql-tools](../includes/paragraph-content/get-help-sql-tools.md)]
 
-SQL Server Management Studio 17.2:<br>
-[Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804) | [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x404) | [English (United States)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x409) | [French](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x40c) | [German](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x407) | [Italian](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x410) | [Japanese](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x411) | [Korean](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x412) | [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x416) | [Russian](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x419) | [Spanish](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x40a)
+## Next steps
 
-SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2):<br>
-[Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x804) | [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x404) | [English (United States)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x409) | [French](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x40c) | [German](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x407) | [Italian](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x410) | [Japanese](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x411) | [Korean](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x412) | [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x416) | [Russian](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x419) | [Spanish](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x40a)
-
-## Release Notes
-
-The following are issues and limitations with this 17.2 release:
-
-- Query windows using "Active Directory - Universal with MFA Support" authentication may experience an error similar to the following, when attempting to execute a query after being open for about an hour or more:
-
-   `Msg 0, Level 11, State 0, Line 0
-The connection is broken and recovery is not possible. The client driver attempted to recover the connection one or more times and all attempts failed. Increase the value of *ConnectRetryCount* to increase the number of recovery attempts.`
-
-   Re-running the query should get past the error and succeed.
-
-- The following SSMS functionality is not supported for Azure AD using Universal Authentication with MFA:
-  - The **New Table/View** designer shows the old-style login prompt, and does not work for Azure AD authentication.
-  - The **Edit Top 200 Rows** feature doesn't support Azure AD authentication.
-  - The **Registered Server** component does not support Azure AD authentication.
-  - The **Database Engine Tuning Advisor** is not supported for Azure AD authentication. There is a known issue where the error message presented to the user is less than helpful: *Could not load file or assembly 'Microsoft.IdentityModel.Clients.ActiveDirectory,…* instead of the expected *Database Engine Tuning Advisor does not support Microsoft Azure SQL Database. (DTAClient)*.
-
-**AS**
-
-- Object Explorer in SSAS will not show the Windows Auth username in AS Azure connection properties.
-For more information, see the [SSMS changelog](sql-server-management-studio-changelog-ssms.md).
-
-## Previous releases
-
-[Previous SQL Server Management Studio Releases](../ssms/sql-server-management-studio-changelog-ssms.md#previous-ssms-releases)
-
-## Feedback
-
-![needhelp_person_icon](../ssms/media/needhelp_person_icon.png) [SQL Client Tools Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqltools) |  [Log an issue or suggestion at Microsoft Connect](https://connect.microsoft.com/SQLServer/Feedback)
-
-## See Also
-
-- [Tutorial: SQL Server Management Studio](tutorials/tutorial-sql-server-management-studio.md)
+- [SQL tools](../tools/overview-sql-tools.md)
 - [SQL Server Management Studio documentation](sql-server-management-studio-ssms.md)
-- [Additional updates and service packs](https://technet.microsoft.com/sqlserver/ff803383.aspx)
+- [Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md)
 - [Download SQL Server Data Tools (SSDT)](../ssdt/download-sql-server-data-tools-ssdt.md)
+- [Latest updates](../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md)
+- [Azure Data Architecture Guide](/azure/architecture/data-guide/)
+- [SQL Server Blog](https://cloudblogs.microsoft.com/sqlserver/)
+
+[!INCLUDE[contribute-to-content](../includes/paragraph-content/contribute-to-content.md)]

@@ -1,14 +1,9 @@
 ---
-title: "Work with Database Diagrams (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Work with Database Diagrams
+description: "Work with Database Diagrams (Visual Database Tools)"
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.workingwithsql2000diagrams"
 helpviewer_keywords: 
@@ -16,13 +11,17 @@ helpviewer_keywords:
   - "diagrams [SQL Server], about diagrams"
   - "database diagrams [SQL Server]"
   - "diagrams [SQL Server]"
-ms.assetid: 2dec7e0b-99cd-4185-8334-111795e52f45
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+ms.custom: seo-lt-2019
+ms.date: 07/09/2017
 ---
+
 # Work with Database Diagrams (Visual Database Tools)
+
+[!INCLUDE[SQL Server Azure SQL Database PDW](../../includes/applies-to-version/sql-asdb-asdbmi-pdw.md)]
+
 You can create a visual diagram of your database using the Database Designer. The following topics cover the basics of using the designer to work with database diagrams.  
   
 ## In This Section  
@@ -42,8 +41,8 @@ You can create a visual diagram of your database using the Database Designer. Th
   
 [Show Diagram Properties &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/show-diagram-properties-visual-database-tools.md)  
   
-## Related Sections  
+## Related Sections
+
 [Work with Tables in Database Diagram &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/work-with-tables-in-database-diagram-visual-database-tools.md)  
   
-[Work with Diagram Layout &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/work-with-diagram-layout-visual-database-tools.md)  
-  
+[Work with Diagram Layout &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/work-with-diagram-layout-visual-database-tools.md)

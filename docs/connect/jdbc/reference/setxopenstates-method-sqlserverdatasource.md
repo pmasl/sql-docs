@@ -1,24 +1,15 @@
 ---
-title: "setXopenStates Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "setXopenStates Method (SQLServerDataSource)"
+description: "setXopenStates Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDataSource.setXopenStates"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDataSource.setXopenStates"
 apitype: "Assembly"
-ms.assetid: 9723591f-e987-426f-b70a-07f5c70dc094
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setXopenStates Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,40 +1,36 @@
 ---
-title: "Microsoft OLE DB Provider for SQL Server | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: "H1Hack27Feb2017"
+title: "Microsoft OLE DB Provider for SQL Server"
+description: "Microsoft OLE DB Provider for SQL Server Overview"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
 helpviewer_keywords:
   - "providers [ADO], OLE DB provider for SQL Server"
   - "OLE DB provider for SQL Server [ADO]"
   - "SQLOLEDB [ADO]"
-ms.assetid: 99bc40c4-9181-4ca1-a06f-9a1a914a0b7b
-caps.latest.revision: 19
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Microsoft OLE DB Provider for SQL Server Overview
 The Microsoft OLE DB Provider for SQL Server, SQLOLEDB, allows ADO to access Microsoft SQL Server.
 
-## Connection String Parameters
- To connect to this provider, set the *Provider* argument to the [ConnectionString](../../../ado/reference/ado-api/connectionstring-property-ado.md) property to:
+> [!IMPORTANT]
+> [!INCLUDE[snac-removed-oledb-only](../../../includes/snac-removed-oledb-only.md)]
 
-```
+## Connection String Parameters
+ To connect to this provider, set the *Provider* argument to the [ConnectionString](../../reference/ado-api/connectionstring-property-ado.md) property to:
+
+```vb
 SQLOLEDB
 ```
 
- This value can also be set or read using the [Provider](../../../ado/reference/ado-api/provider-property-ado.md) property.
+ This value can also be set or read using the [Provider](../../reference/ado-api/provider-property-ado.md) property.
 
 ## Typical Connection String
  A typical connection string for this provider is:
 
-```
+```vb
 "Provider=SQLOLEDB;Data Source=serverName;"
 Initial Catalog=databaseName;
 User ID=MyUserID;Password=MyPassword;"
@@ -54,11 +50,11 @@ User ID=MyUserID;Password=MyPassword;"
 >  If you are connecting to a data source provider that supports Windows authentication, you should specify **Trusted_Connection=yes** or **Integrated Security = SSPI** instead of user ID and password information in the connection string.
 
 ## Provider-Specific Connection Parameters
- The provider supports several provider-specific connection parameters in addition to those defined by ADO. As with the ADO connection properties, these provider-specific properties can be set via the [Properties](../../../ado/reference/ado-api/properties-collection-ado.md) collection of a [Connection](../../../ado/reference/ado-api/connection-object-ado.md) or can be set as part of the **ConnectionString**.
+ The provider supports several provider-specific connection parameters in addition to those defined by ADO. As with the ADO connection properties, these provider-specific properties can be set via the [Properties](../../reference/ado-api/properties-collection-ado.md) collection of a [Connection](../../reference/ado-api/connection-object-ado.md) or can be set as part of the **ConnectionString**.
 
 |Parameter|Description|
 |---------------|-----------------|
-|Trusted_Connection|Indicates the user authentication mode. This can be set to **Yes** or **No**. The default value is **No**. If this property is set to **Yes**, SQLOLEDB uses Microsoft Windows NT Authentication Mode to authorize user access to the SQL Server database specified by the **Location** and [Datasource](../../../ado/reference/ado-api/datasource-property-ado.md) property values. If this property is set to **No**, SQLOLEDB uses Mixed Mode to authorize user access to the SQL Server database. The SQL Server login and password are specified in the **User Id** and **Password** properties.|
+|Trusted_Connection|Indicates the user authentication mode. This can be set to **Yes** or **No**. The default value is **No**. If this property is set to **Yes**, SQLOLEDB uses Microsoft Windows NT Authentication Mode to authorize user access to the SQL Server database specified by the **Location** and [Datasource](../../reference/ado-api/datasource-property-ado.md) property values. If this property is set to **No**, SQLOLEDB uses Mixed Mode to authorize user access to the SQL Server database. The SQL Server login and password are specified in the **User Id** and **Password** properties.|
 |Current Language|Indicates a SQL Server language name. Identifies the language used for system message selection and formatting. The language must be installed on the SQL Server, otherwise opening the connection will fail.|
 |Network Address|Indicates the network address of the SQL Server specified by the **Location** property.|
 |Network Library|Indicates the name of the network library (DLL) used to communicate with the SQL Server. The name should not include the path or the .dll file name extension. The default is provided by the SQL Server client configuration.|
@@ -71,14 +67,14 @@ User ID=MyUserID;Password=MyPassword;"
 ## Command Object Usage
  SQLOLEDB accepts an amalgam of ODBC, ANSI, and SQL Server-specific Transact-SQL as valid syntax. For example, the following SQL statement uses an ODBC SQL escape sequence to specify the LCASE string function:
 
-```
+```sql
 SELECT customerid={fn LCASE(CustomerID)} FROM Customers
 
 ```
 
  LCASE returns a character string, converting all uppercase characters to their lowercase equivalents. The ANSI SQL string function LOWER performs the same operation, so the following SQL statement is an ANSI equivalent to the ODBC statement presented earlier:
 
-```
+```sql
 SELECT customerid=LOWER(CustomerID) FROM Customers
 
 ```
@@ -90,20 +86,20 @@ SELECT customerid=LOWER(CustomerID) FROM Customers
 
 ## ODBC SQL
 
-```
+```vb
 {call SalesByCategory('Produce', '1995')}
 
 ```
 
 ## Transact-SQL
 
-```
+```sql
 EXECUTE SalesByCategory 'Produce', '1995'
 
 ```
 
 ## SQL Server Features
- With SQL Server, ADO can use XML for **Command** input and retrieve results in XML stream format instead of in **Recordset** objects. For more information, see [Using Streams for Command Input](../../../ado/guide/data/command-streams.md) and [Retrieving Resultsets Into Streams](../../../ado/guide/data/retrieving-resultsets-into-streams.md).
+ With SQL Server, ADO can use XML for **Command** input and retrieve results in XML stream format instead of in **Recordset** objects. For more information, see [Using Streams for Command Input](../data/command-streams.md) and [Retrieving Resultsets Into Streams](../data/retrieving-resultsets-into-streams.md).
 
 ### Accessing sql_variant data using MDAC 2.7, MDAC 2.8, or Windows DAC 6.0
  Microsoft SQL Server has a data type called **sql_variant**. Similar to OLE DB's **DBTYPE_VARIANT**, the **sql_variant** data type can store data of several different types. However, there are a few key differences between **DBTYPE_VARIANT** and **sql_variant**. ADO also handles data stored as a **sql_variant** value differently than how it handles other data types. The following list describes issues to consider when you access SQL Server data stored in columns of type **sql_variant**.
@@ -128,9 +124,9 @@ EXECUTE SalesByCategory 'Produce', '1995'
  Scrollable SQLOLEDB recordsets are supported by SQL Server cursors. SQL Server imposes limitations on cursors that are sensitive to changes made by other users of the database. Specifically, the rows in some cursors cannot be ordered, and attempting to create a recordset using a command containing an SQL ORDER BY clause can fail.
 
 ## Dynamic Properties
- The Microsoft OLE DB Provider for SQL Server inserts several dynamic properties into the **Properties** collection of the unopened [Connection](../../../ado/reference/ado-api/connection-object-ado.md), [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md), and [Command](../../../ado/reference/ado-api/command-object-ado.md) objects.
+ The Microsoft OLE DB Provider for SQL Server inserts several dynamic properties into the **Properties** collection of the unopened [Connection](../../reference/ado-api/connection-object-ado.md), [Recordset](../../reference/ado-api/recordset-object-ado.md), and [Command](../../reference/ado-api/command-object-ado.md) objects.
 
- The following tables are a cross-index of the ADO and OLE DB names for each dynamic property. The OLE DB Programmer's Reference refers to an ADO property name by the term "Description." You can find more information about these properties in the OLE DB Programmer's Reference. Search for the OLE DB property name in the Index or see [Appendix C: OLE DB Properties](http://msdn.microsoft.com/en-us/deded3ff-f508-4e1b-b2b1-fd9afd3bd292).
+ The following tables are a cross-index of the ADO and OLE DB names for each dynamic property. The OLE DB Programmer's Reference refers to an ADO property name by the term "Description." You can find more information about these properties in the OLE DB Programmer's Reference. Search for the OLE DB property name in the Index or see [Appendix C: OLE DB Properties](/previous-versions/windows/desktop/ms723130(v=vs.85)).
 
 ## Connection Dynamic Properties
  The following properties are added to the **Properties** collection of the **Connection** object.
@@ -350,9 +346,9 @@ EXECUTE SalesByCategory 'Produce', '1995'
 |XML Root|SSPROP_STREAM_XMLROOT|
 |XSL|SSPROP_STREAM_XSL|
 
- For specific implementation details and functional information about the Microsoft SQL Server OLE DB Provider, see the [SQL Server Provider](http://msdn.microsoft.com/en-us/adf1d6c4-5930-444a-9248-ff1979729635).
+ For specific implementation details and functional information about the Microsoft SQL Server OLE DB Provider, see the [SQL Server Provider](/previous-versions/windows/desktop/ms720897(v=vs.85)).
 
 ## See Also
- [ConnectionString Property (ADO)](../../../ado/reference/ado-api/connectionstring-property-ado.md)
- [Provider Property (ADO)](../../../ado/reference/ado-api/provider-property-ado.md)
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [ConnectionString Property (ADO)](../../reference/ado-api/connectionstring-property-ado.md)
+ [Provider Property (ADO)](../../reference/ado-api/provider-property-ado.md)
+ [Recordset Object (ADO)](../../reference/ado-api/recordset-object-ado.md)

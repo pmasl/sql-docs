@@ -1,14 +1,12 @@
 ---
-title: "replace value of (XML DML) | Microsoft Docs"
+description: "replace value of (XML DML)"
+title: replace value of (XML DML)
 ms.custom: ""
 ms.date: "07/26/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
@@ -18,39 +16,38 @@ helpviewer_keywords:
   - "updating node values"
   - "replace value of XML DML statement"
 ms.assetid: c310f6df-7adf-493b-b56b-8e3143b13ae7
-caps.latest.revision: 28
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
 ---
 # replace value of (XML DML)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  Updates the value of a node in the document.  
+Updates the value of a node in the document.  
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 replace value of Expression1   
 with Expression2  
 ```  
   
-## Arguments  
- *Expression1*  
- Identifies a node whose value is to be updated. It must identify only a single node. That is, *Expression1* must be a statical singleton. If the XML is typed, the type of the node must be a simple type. If multiple nodes are selected, an error is raised. If *Expression1* returns an empty sequence, no value replacement occurs and no errors are returned. *Expression1* must return a single element that has simply typed content (list or atomic types), a text node, or an attribute node. *Expression1* cannot be a union type, a complex type, a processing instruction, a document node, or a comment node. If it is, an error is returned.  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+*Expression1*  
+Identifies a node whose value is to be updated. It must identify only a single node. That is, *Expression1* must be a static singleton. If the XML is typed, the type of the node must be a simple type. When multiple nodes are selected, an error is raised. If *Expression1* returns an empty sequence, no value replacement occurs and no errors are returned. *Expression1* must return a single element that has simple type content (list or atomic types), a text node, or an attribute node. *Expression1* can't be a union type, a complex type, a processing instruction, a document node, or a comment node, or an error is returned.  
   
- *Expression2*  
- Identifies the new value of the node. This can be an expression that returns a simply typed node, because **data()** will be used implicitly. If the value is a list of values, the **update** statement replaces the old value with the list. In modifying a typed XML instance, *Expression2* must be the same type or a subtype of *Expression*1. Otherwise, an error is returned. In modifying an untyped XML instance, *Expression2* must be an expression that can be atomized. Otherwise, an error is returned.  
+*Expression2*  
+Identifies the new value of the node. It can be an expression that returns a simple type node, because **data()** will be used implicitly. If the value is a list of values, the **update** statement replaces the old value with the list. In modifying a typed XML instance, *Expression2* must be the same type or a subtype of *Expression*1. Otherwise, an error is returned. In modifying an untyped XML instance, *Expression2* must be an expression that can be atomized. Otherwise, an error is returned.  
   
 ## Examples  
- The following examples of the **replace value of** XML DML statement illustrates how to update nodes in an XML document.  
+The following examples of the **replace value of** XML DML statement illustrates how to update nodes in an XML document.  
   
 ### A. Replacing values in an XML instance  
- In the following example, a document instance is first assigned to a variable of **xml** type. Then, **replace value of** XML DML statements update values in the document.  
+In the following example, a document instance is first assigned to a variable of **xml** type. Then, **replace value of** XML DML statements update values in the document.  
   
-```  
-DECLARE @myDoc xml;  
+```sql
+DECLARE @myDoc XML;  
 SET @myDoc = '<Root>  
 <Location LocationID="10"   
             LaborHours="1.1"  
@@ -64,24 +61,24 @@ SELECT @myDoc;
 -- update text in the first manufacturing step  
 SET @myDoc.modify('  
   replace value of (/Root/Location/step[1]/text())[1]  
-  with     "new text describing the manu step"  
+  with "new text describing the manu step"  
 ');  
 SELECT @myDoc;  
 -- update attribute value  
 SET @myDoc.modify('  
   replace value of (/Root/Location/@LaborHours)[1]  
-  with     "100.0"  
+  with "100.0"  
 ');  
 SELECT @myDoc;  
 ```  
   
- Note that the target being updated must be, at most, one node that is explicitly specified in the path expression by adding a "[1]" at the end of the expression.  
+The target being updated must be, at most, one node that is explicitly specified in the path expression by adding a "[1]" at the end of the expression.  
   
 ### B. Using the if expression to determine replacement value  
- You can specify the **if** expression in Expression2 of the **replace value of XML DML** statement, as shown in the following example. Expression1 identifies that the LaborHours attribute from the first work center is to be updated. Expression2 uses an **if** expression to determine the new value of the LaborHours attribute.  
+You can specify the **if** expression in Expression2 of the **replace value of XML DML** statement, as shown in the following example. Expression1 identifies   the LaborHours attribute from the first work center is to be updated. Expression2 uses an **if** expression to determine the new value of the LaborHours attribute.  
   
-```  
-DECLARE @myDoc xml  
+```sql
+DECLARE @myDoc XML  
 SET @myDoc = '<Root>  
 <Location LocationID="10"   
             LaborHours=".1"  
@@ -105,13 +102,13 @@ SELECT @myDoc
 ```  
   
 ### C. Updating XML stored in an untyped XML column  
- The following example updates XML stored in a column:  
+The following example updates XML stored in a column:  
   
-```  
-drop table T  
-go  
-CREATE TABLE T (i int, x xml)  
-go  
+```sql
+DROP TABLE T  
+GO  
+CREATE TABLE T (i INT, x XML)  
+GO  
 INSERT INTO T VALUES(1,'<Root>  
 <ProductDescription ProductID="1" ProductName="Road Bike">  
 <Features>  
@@ -135,65 +132,66 @@ FROM T
 ```  
   
 ### D. Updating XML stored in a typed XML column  
- This example replaces values in a manufacturing instructions document stored in a typed XML column.  
+This example replaces values in a manufacturing instructions document stored in a typed XML column.  
   
- In the example, you first create a table (T) with a typed XML column in the AdventureWorks database. You then copy a manufacturing instructions XML instance from the Instructions column in the ProductModel table into table T. Insertions are then applied to XML in table T.  
+In the example, you first create a table (T) with a typed XML column in the AdventureWorks database. You then copy a manufacturing instructions XML instance from the Instructions column in the ProductModel table into table T. Insertions are then applied to XML in table T.  
   
-```  
-use AdventureWorks  
-go  
-drop table T  
-go  
-create table T(ProductModelID int primary key,   
-Instructions xml (Production.ManuInstructionsSchemaCollection))  
-go  
-insert  T   
-select ProductModelID, Instructions  
-from Production.ProductModel  
-where ProductModelID=7  
-go  
+```sql
+USE AdventureWorks  
+GO  
+DROP TABLE T  
+GO  
+CREATE TABLE T(
+  ProductModelID INT PRIMARY KEY,   
+  Instructions XML (Production.ManuInstructionsSchemaCollection))  
+GO  
+INSERT T   
+SELECT ProductModelID, Instructions  
+FROM Production.ProductModel  
+WHERE ProductModelID=7  
+GO
 --insert a new location - <Location 1000/>.   
-update T  
-set Instructions.modify('  
-  declare namespace MI="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
+UPDATE T  
+SET Instructions.modify('  
+  declare namespace MI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
 insert <MI:Location LocationID="1000"  LaborHours="1000"  LotSize="1000" >  
            <MI:step>Do something using <MI:tool>hammer</MI:tool></MI:step>  
          </MI:Location>  
   as first  
-  into   (/MI:root)[1]  
+  into (/MI:root)[1]  
 ')  
-go  
-select Instructions  
-from T  
-go  
+GO  
+SELECT Instructions  
+FROM T  
+GO  
 -- Now replace manu. tool in location 1000  
-update T  
-set Instructions.modify('  
-  declare namespace MI="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
+UPDATE T  
+SET Instructions.modify('  
+  declare namespace MI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
   replace value of (/MI:root/MI:Location/MI:step/MI:tool)[1]   
-  with   "screwdriver"  
+  with "screwdriver"  
 ')  
-go  
-select Instructions  
-from T  
+GO  
+SELECT Instructions  
+FROM T  
 -- Now replace value of lot size  
-update T  
-set Instructions.modify('  
-  declare namespace MI="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
+UPDATE T  
+SET Instructions.modify('  
+  declare namespace MI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
   replace value of (/MI:root/MI:Location/@LotSize)[1]   
-  with   500 cast as xs:decimal ?  
+  with 500 cast as xs:decimal ?  
 ')  
-go  
-select Instructions  
-from T  
+GO  
+SELECT Instructions  
+FROM T  
 ```  
   
- Note the use of **cast** when replacing LotSize value. This is required when the value must be of a specific type. In this example, if 500 were the value, explicit casting would not be necessary.  
+Note the use of **cast** when replacing LotSize value. It's required when the value must be of a specific type. In this example, if 500 were the value, explicit casting wouldn't be necessary.  
   
 ## See Also  
- [Compare Typed XML to Untyped XML](../../relational-databases/xml/compare-typed-xml-to-untyped-xml.md)   
- [Create Instances of XML Data](../../relational-databases/xml/create-instances-of-xml-data.md)   
- [xml Data Type Methods](../../t-sql/xml/xml-data-type-methods.md)   
- [XML Data Modification Language &#40;XML DML&#41;](../../t-sql/xml/xml-data-modification-language-xml-dml.md)  
+[Compare Typed XML to Untyped XML](../../relational-databases/xml/compare-typed-xml-to-untyped-xml.md)   
+[Create Instances of XML Data](../../relational-databases/xml/create-instances-of-xml-data.md)   
+[xml Data Type Methods](../../t-sql/xml/xml-data-type-methods.md)   
+[XML Data Modification Language &#40;XML DML&#41;](../../t-sql/xml/xml-data-modification-language-xml-dml.md)  
   
   

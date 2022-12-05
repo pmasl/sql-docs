@@ -1,24 +1,15 @@
 ---
-title: "getColumnName Method (SQLServerResultSetMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getColumnName Method (SQLServerResultSetMetaData)"
+description: "getColumnName Method (SQLServerResultSetMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSetMetaData.getColumnName"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSetMetaData.getColumnName"
 apitype: "Assembly"
-ms.assetid: 0330ca1d-5e24-4ce3-9d2a-b931f20a0fcf
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getColumnName Method (SQLServerResultSetMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

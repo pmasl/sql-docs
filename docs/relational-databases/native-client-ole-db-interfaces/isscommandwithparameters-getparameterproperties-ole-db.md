@@ -1,13 +1,11 @@
 ---
-title: "ISSCommandWithParameters::GetParameterProperties (OLE DB) | Microsoft Docs"
+description: "ISSCommandWithParameters::GetParameterProperties in SQL Server Native Client (OLE DB)"
+title: "ISSCommandWithParameters::GetParameterProperties (OLE DB)"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 apiname: 
   - "ISSCommandWithParameters::GetParameterProperties (OLE DB)"
@@ -15,20 +13,21 @@ apitype: "COM"
 helpviewer_keywords: 
   - "GetParameterProperties method"
 ms.assetid: 7f4cc5ea-d028-4fe5-9192-bd153ab3c26c
-caps.latest.revision: 29
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# ISSCommandWithParameters::GetParameterProperties (OLE DB)
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# ISSCommandWithParameters::GetParameterProperties in SQL Server Native Client (OLE DB)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+> [!IMPORTANT]
+> [!INCLUDE[snac-removed-oledb-only](../../includes/snac-removed-oledb-only.md)]
 
   Returns an array of SSPARAMPROPS property set structures, one SSPARAMPROPS property set for each UDT or XML parameter.  
   
 ## Syntax  
   
-```  
-  
+```cpp
 HRESULT GetParameterProperties(  
       DB_UPARAMS *pcParams,  
       SSPARAMPROPS **prgParamProperties);  
@@ -48,23 +47,21 @@ HRESULT GetParameterProperties(
  **ISSCommandWithParameters::GetParameterProperties** behaves consistently with respect to **GetParameterInfo**. If [ISSCommandWithParameters::SetParameterProperties](../../relational-databases/native-client-ole-db-interfaces/isscommandwithparameters-setparameterproperties-ole-db.md) or **SetParameterInfo** have not been called or have been called with cParams equal to zero, **GetParameterInfo** derives parameter information and returns this. If **ISSCommandWithParameters::SetParameterProperties** or **SetParameterInfo** have been called for at least one parameter, **ISSCommandWithParameters::GetParameterProperties** returns properties only for those parameters for which **ISSCommandWithParameters::SetParameterProperties** has been called. If **ISSCommandWithParameters::SetParameterProperties** is called after **ISSCommandWithParameters::GetParameterProperties** or **GetParameterInfo**, subsequent calls to **ISSCommandWithParameters::GetParameterProperties** return the overridden values for those parameters for which **ISSCommandWithParameters::SetParameterProperties** has been called.  
   
  The SSPARAMPROPS structure is defined as follows:  
-  
- `struct SSPARAMPROPS {`  
-  
- `DBORDINAL iOrdinal;`  
-  
- `ULONG cPropertySets;`  
-  
- `DBPROPSET *rgPropertySets;`  
-  
- `};`  
-  
+
+```cpp
+struct SSPARAMPROPS {
+    DBORDINAL iOrdinal;
+    ULONG cPropertySets;
+    DBPROPSET *rgPropertySets;
+};
+```
+
 |Member|Description|  
 |------------|-----------------|  
 |*iOrdinal*|The ordinal of the passed parameter.|  
 |*cPropertySets*|The number of DBPROPSET structures in *rgPropertySets*.|  
 |*rgPropertySets*|A pointer to memory in which to return an array of DBPROPSET structures.|  
-  
+
 ## See Also  
  [ISSCommandWithParameters &#40;OLE DB&#41;](../../relational-databases/native-client-ole-db-interfaces/isscommandwithparameters-ole-db.md)  
   

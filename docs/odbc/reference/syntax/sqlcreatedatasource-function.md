@@ -1,14 +1,12 @@
 ---
+description: "SQLCreateDataSource Function"
 title: "SQLCreateDataSource Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLCreateDataSource"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLCreateDataSource function [ODBC]"
 ms.assetid: 76ee851a-dca9-40cc-8e9e-eb3f74e560ee
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLCreateDataSource Function
 **Conformance**  
@@ -33,11 +29,11 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 BOOL SQLCreateDataSource(  
-     HWND    hwnd,  
-     LPSTR   lpszDS);  
+     HWND    hwnd,  
+     LPSTR   lpszDS);  
 ```  
   
 ## Arguments  

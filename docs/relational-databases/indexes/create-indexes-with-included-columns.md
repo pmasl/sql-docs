@@ -1,15 +1,13 @@
 ---
-title: "Create Indexes with Included Columns | Microsoft Docs"
-ms.custom: ""
+title: "Create indexes with included columns"
+description: Create indexes with included columns
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/09/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-indexes"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: table-view-index
+ms.topic: conceptual
+helpviewer_keywords:
   - "index size [SQL Server]"
   - "index keys [SQL Server]"
   - "index columns [SQL Server]"
@@ -20,50 +18,34 @@ helpviewer_keywords:
   - "designing indexes [SQL Server], included columns"
   - "nonkey columns"
 ms.assetid: d198648d-fea5-416d-9f30-f9d4aebbf4ec
-caps.latest.revision: 29
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Create Indexes with Included Columns
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+# Create indexes with included columns
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   This topic describes how to add included (or nonkey) columns to extend the functionality of nonclustered indexes in [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)]. By including nonkey columns, you can create nonclustered indexes that cover more queries. This is because the nonkey columns have the following benefits:  
   
 -   They can be data types not allowed as index key columns.  
-  
 -   They are not considered by the [!INCLUDE[ssDE](../../includes/ssde-md.md)] when calculating the number of index key columns or index key size.  
   
  An index with nonkey columns can significantly improve query performance when all columns in the query are included in the index either as key or nonkey columns. Performance gains are achieved because the query optimizer can locate all the column values within the index; table or clustered index data is not accessed resulting in fewer disk I/O operations.  
   
 > [!NOTE]  
->  When an index contains all the columns referenced by a query it is typically referred to as *covering the query*.  
-  
- **In This Topic**  
-  
--   **Before you begin:**  
-  
-     [Design Recommendations](#DesignRecs)  
-  
-     [Limitations and Restrictions](#Restrictions)  
-  
-     [Security](#Security)  
-  
--   **To create an index with nonkey columns, using:**  
-  
-     [SQL Server Management Studio](#SSMSProcedure)  
-  
-     [Transact-SQL](#TsqlProcedure)  
-  
+> When an index contains all the columns referenced by a query it is typically referred to as *covering the query*.  
+   
 ##  <a name="BeforeYouBegin"></a> Before You Begin  
   
 ###  <a name="DesignRecs"></a> Design Recommendations  
   
--   Redesign nonclustered indexes with a large index key size so that only columns used for searching and lookups are key columns. Make all other columns that cover the query into nonkey columns. In this way, you will have all columns needed to cover the query, but the index key itself is small and efficient.  
+-   Redesign nonclustered indexes that have a large index key size so that only columns used for searching and lookups are key columns. Make all other columns that cover the query into nonkey columns. In this way, you will have all columns needed to cover the query, but the index key itself is small and efficient.  
   
--   Include nonkey columns in a nonclustered index to avoid exceeding the current index size limitations of a maximum of 32 key columns and a maximum index key size of 1,700 bytes (16 key columns and 900 bytes prior to [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)]). The [!INCLUDE[ssDE](../../includes/ssde-md.md)] does not consider nonkey columns when calculating the number of index key columns or index key size.  
+-   Include nonkey columns in a nonclustered index to avoid exceeding the current index size limitations of a maximum of 32 key columns and a maximum index key size of 1,700 bytes (16 key columns and 900 bytes prior to [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)]). The [!INCLUDE[ssDE](../../includes/ssde-md.md)] does not consider nonkey columns when calculating the number of index key columns or index key size.
+
+-   The order of nonkey columns in the index definition does not impact the performance of queries that use the index.
+
+-   Avoid very wide nonclustered indexes where the included columns don't represent a narrow enough subset of the underlying table columns. If adding wide indexes, always verify if the cost of updating one extra wide index offsets the cost of reading directly from the table.
   
-###  <a name="Restrictions"></a> Limitations and Restrictions  
+###  <a name="Restrictions"></a> Limitations and restrictions  
   
 -   Nonkey columns can only be defined on nonclustered indexes.  
   
@@ -73,7 +55,7 @@ manager: "jhubbard"
   
 -   Computed columns derived from **image**, **ntext**, and **text** data types can be nonkey columns as long as the computed column data type is allowed as a nonkey index column.  
   
--   Nonkey columns cannot be dropped from a table unless that table’s index is dropped first.  
+-   Nonkey columns cannot be dropped from a table unless that table's index is dropped first.  
   
 -   Nonkey columns cannot be changed, except to do the following:  
   
@@ -96,19 +78,19 @@ manager: "jhubbard"
   
 3.  Click the plus sign to expand the table on which you want to create an index with nonkey columns.  
   
-4.  Right-click the **Indexes** folder, point to **New Index**, and select **Non-Clustered Index…**.  
+4.  Right-click the **Indexes** folder, point to **New Index**, and select **Non-Clustered Index...**.  
   
 5.  In the **New Index** dialog box, on the **General** page, enter the name of the new index in the **Index name** box.  
   
-6.  Under the **Index key columns** tab, click **Add…**.  
+6.  Under the **Index key columns** tab, click **Add...**.  
   
-7.  In the **Select Columns from***table_name* dialog box, select the check box or check boxes of the table column or columns to be added to the index.  
+7.  In the **Select Columns from**_table\_name_ dialog box, select the check box or check boxes of the table column or columns to be added to the index.  
   
 8.  Click **OK**.  
   
-9. Under the **Included columns** tab, click **Add…**.  
+9. Under the **Included columns** tab, click **Add...**.  
   
-10. In the **Select Columns from***table_name* dialog box, select the check box or check boxes of the table column or columns to be added to the index as nonkey columns.  
+10. In the **Select Columns from**_table\_name_ dialog box, select the check box or check boxes of the table column or columns to be added to the index as nonkey columns.  
   
 11. Click **OK**.  
   
@@ -124,7 +106,7 @@ manager: "jhubbard"
   
 3.  Copy and paste the following example into the query window and click **Execute**.  
   
-    ```  
+    ```sql  
     USE AdventureWorks2012;  
     GO  
     -- Creates a nonclustered index on the Person.Address table with four included (nonkey) columns.   
@@ -135,7 +117,7 @@ manager: "jhubbard"
     INCLUDE (AddressLine1, AddressLine2, City, StateProvinceID);  
     GO  
     ```  
-  
- For more information, see [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md).  
-  
-  
+
+## Related content  
+[CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)    
+[SQL Server Index Design Guide](../../relational-databases/sql-server-index-design-guide.md)   

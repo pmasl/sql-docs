@@ -1,15 +1,13 @@
 ---
-title: "Index Disk Space Example | Microsoft Docs"
-ms.custom: ""
+title: "Index Disk Space Example"
+description: Index Disk Space Example
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/02/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-indexes"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: table-view-index
+ms.topic: conceptual
+helpviewer_keywords:
   - "online index disk space"
   - "disk space [SQL Server], indexes"
   - "index disk space [SQL Server]"
@@ -17,12 +15,9 @@ helpviewer_keywords:
   - "indexes [SQL Server], disk space requirements"
   - "offline index disk space [SQL Server]"
 ms.assetid: e5c71f55-0be3-4c93-97e9-7b3455c8f581
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # Index Disk Space Example
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Whenever an index is created, rebuilt, or dropped, disk space for both the old (source) and new (target) structures is required in their appropriate files and filegroups. The old structure is not deallocated until the index creation transaction commits. Additional temporary disk space for sorting operations may also be needed. For more information, see [Disk Space Requirements for Index DDL Operations](../../relational-databases/indexes/disk-space-requirements-for-index-ddl-operations.md).  
   
  In this example, disk space requirements to create a clustered index are determined.  
@@ -59,16 +54,16 @@ manager: "jhubbard"
   
      Clustered index: 1 million * 200 bytes / 80% ~ 250 MB  
   
-     Nonclustered index A: 1 million * (50 – 8 + 24) bytes / 80% ~ 83 MB  
+     Nonclustered index A: 1 million * (50 - 8 + 24) bytes / 80% ~ 83 MB  
   
-     Nonclustered index B: 1 million * (80 – 8 + 24) bytes / 80% ~ 120 MB  
+     Nonclustered index B: 1 million * (80 - 8 + 24) bytes / 80% ~ 120 MB  
   
      Total size of new structures: 453 MB  
   
      Total disk space required to support both the source and target structures for the duration of the index operation is 816 MB (363 + 453). The space currently allocated to the source structures will be deallocated after the index operation is committed.  
   
 3.  Determine additional temporary disk space for sorting.  
-  
+
      Space requirements are shown for sorting in **tempdb** (with SORT_IN_TEMPDB set to ON) and sorting in the target location (with SORT_IN_TEMPDB set to OFF).  
   
     1.  When SORT_IN_TEMPDB is set to ON, **tempdb** must have sufficient disk space to hold the largest index (1 million * 200 bytes ~ 200 MB). Fill factor is not considered in the sorting operation.  

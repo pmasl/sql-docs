@@ -1,20 +1,15 @@
 ---
-title: "Print a Report (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Print a Report (Report Builder) | Microsoft Docs"
+description: You can view and print a report from a browser, the Reporting Services web portal, or any application that you use to view an exported report.
+ms.date: 03/30/2017
+ms.service: reporting-services
+ms.subservice: report-builder
+
+
+ms.topic: conceptual
 ms.assetid: b96936c9-c387-41a9-8c19-6eb325769ffd
-caps.latest.revision: 7
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Print a Report (Report Builder and SSRS)
   After you save a report to a report server, you can view and print the report from a browser, the Reporting Services web portal, or any application that you use to view an exported report. Before saving a report, you can print it when you preview it.  
@@ -79,7 +74,7 @@ manager: "erikre"
   
 1.  Right-click outside of the report body and click **Report Properties**.  
   
-2.  In **Page Setup**, select a value from the **Paper Size** list. Each option populates the **Width** and **Height** properties. You can also specify a custom size by typing numeric values in the **Width** and **Height** boxes. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+2.  In **Page Setup**, select a value from the **Paper Size** list. Each option populates the **Width** and **Height** properties. You can also specify a custom size by typing numeric values in the **Width** and **Height** boxes. Select **OK**.
   
     > [!NOTE]  
     >  Size values have a default unit based on the user's locale settings. To designate a different unit, type a physical unit designator such as cm, mm, pt, or pc after the numeric value.  
@@ -95,7 +90,6 @@ manager: "erikre"
 ## See Also  
  [Print Reports &#40;Report Builder and SSRS&#41;](../../reporting-services/report-builder/print-reports-report-builder-and-ssrs.md)   
  [Export Reports &#40;Report Builder and SSRS&#41;](../../reporting-services/report-builder/export-reports-report-builder-and-ssrs.md)   
- [Report Properties Dialog Box, Page Setup &#40;Report Builder&#41;](http://msdn.microsoft.com/library/eb3b5d01-7b82-4808-a58b-9e096742f8c6)   
+ [Report Properties Dialog Box, Page Setup &#40;Report Builder&#41;](/previous-versions/sql/sql-server-2016/dd220640(v=sql.130))   
  [Report Design View &#40;Report Builder&#41;](../../reporting-services/report-builder/report-design-view-report-builder.md)  
-  
   

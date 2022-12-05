@@ -1,31 +1,24 @@
 ---
-title: "DENY Asymmetric Key Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DENY Asymmetric Key Permissions (Transact-SQL)"
+description: DENY Asymmetric Key Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "denying permissions [SQL Server], asymmetric keys"
   - "encryption [SQL Server], asymmetric keys"
   - "permissions [SQL Server], asymmetric keys"
   - "asymmetric keys [SQL Server], permissions"
   - "DENY statement, asymmetric keys"
   - "cryptography [SQL Server], asymmetric keys"
-ms.assetid: dd7d8cd5-536b-460c-ab5b-cb4752bbdfaa
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DENY Asymmetric Key Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
   Denies permissions on an asymmetric key.  
    
@@ -34,7 +27,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 DENY { permission  [ ,...n ] }   
     ON ASYMMETRIC KEY :: asymmetric_key_name   
@@ -43,11 +36,13 @@ DENY { permission  [ ,...n ] }
         [ AS denying_principal ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be denied on an asymmetric key. Listed below.  
   
- ON ASYMMETRIC KEY **::***asymmetric_key_name*  
+ ON ASYMMETRIC KEY **::**_asymmetric_key_name_  
  Specifies the asymmetric key on which the permission is being denied. The scope qualifier "::" is required.  
   
  *database_principal*  

@@ -1,24 +1,20 @@
 ---
+description: "Managed Backup Stored Procedures (Transact-SQL)"
 title: "Managed Backup Stored Procedures (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 dev_langs: 
   - "TSQL"
 ms.assetid: bc9d5273-b47d-4c32-a3af-839d963e0548
-caps.latest.revision: 5
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Managed Backup Stored Procedures (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
   The following stored procedures can be used to configure [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)].  
   

@@ -1,32 +1,27 @@
 ---
-title: "TEXTPTR (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+title: "TEXTPTR (Transact-SQL)"
+description: "Text and Image Functions - TEXTPTR (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "10/23/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "TEXTPTR_TSQL"
   - "TEXTPTR"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "TEXTPTR function"
   - "viewing text pointer values"
   - "text-pointer values"
   - "displaying text pointer values"
-ms.assetid: 2672b8cb-f747-46f3-9358-9b49b3583b8e
-caps.latest.revision: 36
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # Text and Image Functions - TEXTPTR (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Returns the text-pointer value that corresponds to a **text**, **ntext**, or **image** column in **varbinary** format. The retrieved text pointer value can be used in READTEXT, WRITETEXT, and UPDATETEXT statements.  
   
@@ -37,12 +32,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 TEXTPTR ( column )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *column*  
  Is the **text**, **ntext**, or **image** column that will be used.  
   
@@ -60,10 +56,10 @@ TEXTPTR ( column )
   
 |Function or statement|Description|  
 |---------------------------|-----------------|  
-|PATINDEX**('***%pattern%***' ,** *expression***)**|Returns the character position of a specified character string in **text** or **ntext** columns.|  
-|DATALENGTH**(***expression***)**|Returns the length of data in **text**, **ntext**, and **image** columns.|  
+|PATINDEX<b>('</b>_%pattern%_**' ,** _expression_**)**|Returns the character position of a specified character string in **text** or **ntext** columns.|  
+|DATALENGTH<b>(</b>_expression_**)**|Returns the length of data in **text**, **ntext**, and **image** columns.|  
 |SET TEXTSIZE|Returns the limit, in bytes, of the **text**, **ntext**, or **image** data to be returned with a SELECT statement.|  
-|SUBSTRING**(***text_column*, *start*, *length***)**|Returns a **varchar** string specified by the specified *start* offset and *length*. The length should be less than 8 KB.|  
+|SUBSTRING<b>(</b>_text_column_, _start_, _length_**)**|Returns a **varchar** string specified by the specified *start* offset and *length*. The length should be less than 8 KB.|  
   
 ## Examples  
   
@@ -73,10 +69,10 @@ TEXTPTR ( column )
 ### A. Using TEXTPTR  
  The following example uses the `TEXTPTR` function to locate the **image** column `logo` associated with `New Moon Books` in the `pub_info` table of the `pubs` database. The text pointer is put into a local variable `@ptrval.`  
   
-```  
+```sql
 USE pubs;  
 GO  
-DECLARE @ptrval varbinary(16);  
+DECLARE @ptrval VARBINARY(16);  
 SELECT @ptrval = TEXTPTR(logo)  
 FROM pub_info pr, publishers p  
 WHERE p.pub_id = pr.pub_id   
@@ -87,8 +83,8 @@ GO
 ### B. Using TEXTPTR with in-row text  
  In [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], the in-row text pointer must be used inside a transaction, as shown in the following example.  
   
-```  
-CREATE TABLE t1 (c1 int, c2 text);  
+```sql
+CREATE TABLE t1 (c1 INT, c2 TEXT);  
 EXEC sp_tableoption 't1', 'text in row', 'on';  
 INSERT t1 VALUES ('1', 'This is text.');  
 GO  
@@ -104,7 +100,7 @@ COMMIT;
 ### C. Returning text data  
  The following example selects the `pub_id` column and the 16-byte text pointer of the `pr_info` column from the `pub_info` table.  
   
-```  
+```sql
 USE pubs;  
 GO  
 SELECT pub_id, TEXTPTR(pr_info)  
@@ -132,7 +128,7 @@ pub_id
   
  The following example shows how to return the first `8000` bytes of text without using TEXTPTR.  
   
-```  
+```sql
 USE pubs;  
 GO  
 SET TEXTSIZE 8000;  
@@ -163,10 +159,10 @@ This is sample text data for Lucerne Publishing, publisher 9999 in the pubs data
 ### D. Returning specific text data  
  The following example locates the `text` column (`pr_info`) associated with `pub_id``0736` in the `pub_info` table of the `pubs` database. It first declares the local variable `@val`. The text pointer (a long binary string) is then put into `@val` and supplied as a parameter to the `READTEXT` statement. This returns 10 bytes starting at the fifth byte (offset of 4).  
   
-```  
+```sql
 USE pubs;  
 GO  
-DECLARE @val varbinary(16);  
+DECLARE @val VARBINARY(16);  
 SELECT @val = TEXTPTR(pr_info)   
 FROM pub_info  
 WHERE pub_id = '0736';  
@@ -188,8 +184,7 @@ pr_info
  [PATINDEX &#40;Transact-SQL&#41;](../../t-sql/functions/patindex-transact-sql.md)   
  [READTEXT &#40;Transact-SQL&#41;](../../t-sql/queries/readtext-transact-sql.md)   
  [SET TEXTSIZE &#40;Transact-SQL&#41;](../../t-sql/statements/set-textsize-transact-sql.md)   
- [Text and Image Functions &#40;Transact-SQL&#41;](http://msdn.microsoft.com/library/b9c70488-1bf5-4068-a003-e548ccbc5199)   
+ [Text and Image Functions &#40;Transact-SQL&#41;]()   
  [UPDATETEXT &#40;Transact-SQL&#41;](../../t-sql/queries/updatetext-transact-sql.md)   
  [WRITETEXT &#40;Transact-SQL&#41;](../../t-sql/queries/writetext-transact-sql.md)  
-  
   

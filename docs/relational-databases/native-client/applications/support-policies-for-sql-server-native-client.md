@@ -1,26 +1,27 @@
 ---
-title: "Support Policies for SQL Server Native Client | Microsoft Docs"
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+title: Support Policies
+description: Learn about SQL Server Native Client supported SQL Server versions, operating systems, and support policies for ADO, BCP, ODBC, and OLE DB.
+ms.date: 09/06/2022
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.custom: ""
+ms.subservice: native-client
 ms.topic: "reference"
 ms.assetid: 09c80cf4-23e6-4027-a24f-cdb9c87af811
-caps.latest.revision: 27
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Support Policies for SQL Server Native Client
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  This topic discusses how various data-access components can be used with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client.  
+> [!IMPORTANT] 
+> [!INCLUDE[snac-removed-oledb-and-odbc](../../../includes/snac-removed-oledb-and-odbc.md)]
+
+  This topic discusses how various data-access components can be used with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client (SNAC).  
   
 ## Server Support  
- [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client 11.0 supports connections to, [!INCLUDE[ssKatmai](../../../includes/sskatmai-md.md)], [!INCLUDE[ssKilimanjaro](../../../includes/sskilimanjaro-md.md)], [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)], [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)], and [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)].  
+ [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client 11.0 supports connections to, [!INCLUDE[ssKatmai](../../../includes/sskatmai-md.md)], [!INCLUDE[ssKilimanjaro](../../../includes/sskilimanjaro-md.md)], [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)], [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)], and [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)].  
   
 ## Supported Operating System Versions  
  The following table lists which operating systems support [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client.  
@@ -49,8 +50,20 @@ manager: "jhubbard"
  OLE DB applications that have not been certified for use with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client can use [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native client if they specify `DataTypeCompatibility=80` in their connection strings.  
   
  OLE DB applications that use OLE DB Service Components can only use [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native client if they specify `DataTypeCompatibility=80` in their connection strings. However, no features added after [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] will be available in this case.  
+ 
+ ## Support Lifecycle 
   
+  SQL Server Native Client support lifecycle can be found on the [SNAC lifecycle explained blog](https://techcommunity.microsoft.com/t5/sql-server-blog/snac-lifecycle-explained/ba-p/385381). This lifecycle applies to building database applications using SQL Server Native Client. 
+ 
+ ### Support Lifecycle exception
+ 
+Limited support is provided for the SQL Native Client 11.0 that gets installed by SQL Server 2012 through 2019 until the SQL Server respective end-of-support lifecycles. This support exception only applies to the SNAC 11 driver that is installed and used by SQL Server components (e.g. SQL Server Engine Linked Servers). This means the driver is supported on Windows versions where SQL Server 2012 through SQL Server 2019 are supported. Do not remove the SQL Native Client provider that gets installed by SQL Server on the system. The support exception only covers critical security fixes and does not include enhancements or fixes to SQL Native Client 11.0.
+
+This support exception does not cover using SQL Native Client 11.0 as a driver for database applications to connect to SQL Server. Any applications using SNAC 11.0 must be updated to use newer versions (see [Download ODBC Driver for SQL Server - ODBC Driver for SQL Server](../../../connect/odbc/download-odbc-driver-for-sql-server.md) and [Download Microsoft OLE DB Driver for SQL Server - OLE DB Driver for SQL Server](../../../connect/oledb/download-oledb-driver-for-sql-server.md)). 
+
+
+
+
 ## See Also  
  [Building Applications with SQL Server Native Client](../../../relational-databases/native-client/applications/building-applications-with-sql-server-native-client.md)  
-  
   

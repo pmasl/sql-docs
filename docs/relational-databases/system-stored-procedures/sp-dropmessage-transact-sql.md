@@ -1,14 +1,12 @@
 ---
+description: "sp_dropmessage (Transact-SQL)"
 title: "sp_dropmessage (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_dropmessage_TSQL"
   - "sp_dropmessage"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_dropmessage"
 ms.assetid: 17287a15-cdde-43d1-bb18-9f920bc15db8
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_dropmessage (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Drops a specified user-defined error message from an instance of the [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]. User-defined messages can be viewed using the **sys.messages** catalog view.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -42,10 +34,10 @@ sp_dropmessage [ @msgnum = ] message_number
 ```  
   
 ## Arguments  
- [ **@msgnum =** ] *message_number*  
+`[ @msgnum = ] message_number`
  Is the message number to drop. *message_number* must be a user-defined message that has a message number greater than 50000. *message_number* is **int**, with a default of NULL.  
   
- [ **@lang =** ] **'***language***'**  
+`[ @lang = ] 'language'`
  Is the language of the message to drop. If **all** is specified, all language versions of *message_number* are dropped. *language* is **sysname**, with a default of NULL.  
   
 ## Return Code Values  

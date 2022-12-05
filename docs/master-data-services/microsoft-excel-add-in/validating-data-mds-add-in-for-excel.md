@@ -1,21 +1,20 @@
 ---
-title: "Validating Data (MDS Add-in for Excel) | Microsoft Docs"
-ms.custom: ""
+description: "Validating Data (MDS Add-in for Excel)"
+title: Validating Data
+ms.custom: microsoft-excel-add-in
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 ms.assetid: 71eda98f-01a4-4fff-8246-be3133782523
-caps.latest.revision: 9
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Validating Data (MDS Add-in for Excel)
+
+[!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   In the [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)][!INCLUDE[ssMDSXLS](../../includes/ssmdsxls-md.md)], when you publish data, two types of validation take place:  
   
 -   Any defined business rules are applied to the data.  
@@ -44,7 +43,7 @@ manager: "jhubbard"
   
 |Status|Description|  
 |------------|-----------------|  
-|Error|One or more values in the row don’t meet system requirements like length or data type. The value is not updated in the MDS repository.|  
+|Error|One or more values in the row don't meet system requirements like length or data type. The value is not updated in the MDS repository.|  
 |New Row|The values in the row have not yet been published to the MDS repository.|  
 |Read Only|The logged in user has Read-only permissions to one or more values in the row and the value(s) cannot be updated.|  
 |Unchanged|No values in the row have been changed in the worksheet. This does not mean the values in the repository have not changed; to get the latest data in the sheet, in the **Connect and Load** group, click **Load or Refresh**.<br /><br /> This is the default setting for each row.|  

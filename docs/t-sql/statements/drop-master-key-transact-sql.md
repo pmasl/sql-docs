@@ -1,20 +1,16 @@
 ---
-title: "DROP MASTER KEY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP MASTER KEY (Transact-SQL)"
+description: DROP MASTER KEY (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DROP MASTER KEY"
   - "DROP_MASTER_KEY_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "removing Database Master Keys"
   - "database master key [SQL Server], removing"
   - "encryption [SQL Server], Database Master Key"
@@ -22,14 +18,12 @@ helpviewer_keywords:
   - "cryptography [SQL Server], Database Master Key"
   - "dropping Database Master Keys"
   - "deleting Database Master Keys"
-ms.assetid: 5ccef797-408f-4964-80da-965d8e1ccba7
-caps.latest.revision: 34
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # DROP MASTER KEY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-pdw-md.md)]
+[!INCLUDE[tsql-appliesto-ss2008-asdb-asdw-pdw-md](../../includes/appliesto-ss-xxxx-asdw-pdw-md.md)]
 
   Removes the master key from the current database.  
   
@@ -37,9 +31,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql  
 DROP MASTER KEY  
 ```  
   
@@ -55,7 +47,7 @@ DROP MASTER KEY
 ## Examples  
  The following example removes the master key for the `AdventureWorks2012` database.  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 DROP MASTER KEY;  
 GO  
@@ -64,7 +56,7 @@ GO
 ## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  The following example removes the master key.  
   
-```  
+```sql  
 USE master;  
 DROP MASTER KEY;  
 GO  

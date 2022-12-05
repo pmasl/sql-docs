@@ -1,27 +1,20 @@
 ---
-title: "IsolationLevel and Mode Properties Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "IsolationLevel and Mode Properties Example (VC++)"
+description: "IsolationLevel and Mode Properties Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Mode property [ADO], VC++ example"
   - "IsolationLevel property [ADO], VC++ example"
-ms.assetid: 92ddec5d-e3dc-4e8e-997a-c5417cceab69
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # IsolationLevel and Mode Properties Example (VC++)
-This example uses the [Mode](../../../ado/reference/ado-api/mode-property-ado.md) property to open an exclusive connection, and the [IsolationLevel](../../../ado/reference/ado-api/isolationlevel-property.md) property to open a transaction that is conducted in isolation of other transactions.  
+This example uses the [Mode](./mode-property-ado.md) property to open an exclusive connection, and the [IsolationLevel](./isolationlevel-property.md) property to open a transaction that is conducted in isolation of other transactions.  
   
 ## Example  
   
@@ -242,5 +235,5 @@ void PrintComError(_com_error &e) {
 **Fifty Years in Buckingham Palace Kitchens -  trad_cook**  
 **Sushi, Anyone? -  trad_cook**   
 ## See Also  
- [IsolationLevel Property](../../../ado/reference/ado-api/isolationlevel-property.md)   
- [Mode Property (ADO)](../../../ado/reference/ado-api/mode-property-ado.md)
+ [IsolationLevel Property](./isolationlevel-property.md)   
+ [Mode Property (ADO)](./mode-property-ado.md)

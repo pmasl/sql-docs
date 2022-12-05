@@ -1,25 +1,26 @@
 ---
-title: "Create a Shared Dataset or Embedded Dataset (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "10/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Create a Shared Dataset or Embedded Dataset (Report Builder) | Microsoft Docs"
+description: Learn how to create embedded datasets and shared datasets for use in various reports. To create a dataset, you need an embedded or shared data source.
+
+ms.date: 05/10/2021
+ms.service: reporting-services
+ms.subservice: report-data
+
+
+ms.topic: conceptual
 ms.assetid: d1d7bc71-f0e9-4ce5-b3ad-6fee54388a31
-caps.latest.revision: 9
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Create a Shared Dataset or Embedded Dataset (Report Builder and SSRS)
-Embedded datasets are for use in a single [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] report. Shared datasets on a report server can be used by multiple reports, both mobile and paginated. To create a dataset, you need an embedded or shared data source.  
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-not-pbi-rb](../../includes/ssrs-appliesto-not-pbi-rb.md)]
+
+Embedded datasets are for use in a single paginated report. Shared datasets on a report server can be used by multiple [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] reports, both mobile and paginated. To create a dataset, you need an embedded or shared data source.  
   
- Use **Report Builder** for the following tasks:  
+## Report Builder tasks
+
+Use Report Builder for the following tasks:  
   
 1.  Create a shared dataset in Dataset Design View. Shared datasets must use published shared data sources.  
   
@@ -27,7 +28,9 @@ Embedded datasets are for use in a single [!INCLUDE[ssRSnoversion_md](../../incl
   
 3.   Save the dataset directly to the report server or SharePoint site.  
   
- Use **Report Designer** in [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] for the following tasks:  
+## Report Designer tasks
+
+Use Report Designer in [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] for the following tasks:  
   
 1.  Create a shared dataset in Solution Explorer. Shared datasets must use data sources from the Shared Data Sources folder in Solution Explorer.  
   
@@ -40,7 +43,7 @@ Embedded datasets are for use in a single [!INCLUDE[ssRSnoversion_md](../../incl
 > [!NOTE]  
 >  [!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]  
   
-## To open Report Builder and create a shared dataset  
+## To create a shared dataset in Report Builder
   
 1.  Open Report Builder. The **New report or dataset pane** opens, as shown in the following figure:  
   
@@ -77,7 +80,7 @@ Embedded datasets are for use in a single [!INCLUDE[ssRSnoversion_md](../../incl
   
 7.  Click **Parameters**. On this page, set a default value to a constant or an expression, mark the parameter as read-only, nullable, or **Omit From Query**. For more information, see [Report Parameters](../../reporting-services/report-design/report-parameters-report-builder-and-report-designer.md).  
   
-8.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+8.  Select **OK**.
 
   
 ## To create a dataset from a SQL Server relational database  
@@ -105,7 +108,7 @@ Embedded datasets are for use in a single [!INCLUDE[ssRSnoversion_md](../../incl
   
 6.  In **Timeout**, type the number of seconds that the report server waits for a response from the database. The default value is 0 seconds. When the time out value is 0 seconds, the query does not time out.  
   
-7.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+7.  Select **OK**.
   
      The dataset and its field collection appear in the Report Data pane under the data source node.  
   
@@ -113,7 +116,7 @@ Embedded datasets are for use in a single [!INCLUDE[ssRSnoversion_md](../../incl
  [Report Embedded Datasets and Shared Datasets &#40;Report Builder and SSRS&#41;](../../reporting-services/report-data/report-embedded-datasets-and-shared-datasets-report-builder-and-ssrs.md)   
  [Dataset Fields Collection &#40;Report Builder and SSRS&#41;](../../reporting-services/report-data/dataset-fields-collection-report-builder-and-ssrs.md)   
  [Report Datasets &#40;SSRS&#41;](../../reporting-services/report-data/report-datasets-ssrs.md)   
- [Data Connections, Data Sources, and Connection Strings &#40;Report Builder and SSRS&#41;](http://msdn.microsoft.com/library/7e103637-4371-43d7-821c-d269c2cc1b34)   
+ [Create data connection strings - Report Builder & SSRS](data-connections-data-sources-and-connection-strings-report-builder-and-ssrs.md)   
  [Embedded and Shared Datasets &#40;Report Builder and SSRS&#41;](../../reporting-services/report-data/embedded-and-shared-datasets-report-builder-and-ssrs.md)  
   
   

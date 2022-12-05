@@ -1,40 +1,35 @@
 ---
-title: "ALTER DATABASE ENCRYPTION KEY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/20/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "ALTER DATABASE ENCRYPTION KEY (Transact-SQL)"
+description: ALTER DATABASE ENCRYPTION KEY (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
+ms.date: "04/16/2018"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER_DATABASE_ENCRYPTION_KEY_TSQL"
   - "ALTER DATABASE ENCRYPTION"
   - "ALTER_DATABASE_ENCRYPTION_TSQL"
   - "ALTER DATABASE ENCRYPTION KEY"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "database encryption key, alter"
   - "ALTER DATABASE ENCRYPTION KEY"
-ms.assetid: f88dac4b-efe0-47ed-9808-972a4381377e
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: "=azuresqldb-current||=azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017"
 ---
 # ALTER DATABASE ENCRYPTION KEY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-pdw-md.md)]
 
-  Alters an encryption key and certificate that is used for transparently encrypting a database. For more information about transparent database encryption, see [Transparent Data Encryption &#40;TDE&#41;](../../relational-databases/security/encryption/transparent-data-encryption-tde.md).  
+[!INCLUDE [sql-pdw](../../includes/applies-to-version/sql-pdw.md)]
+
+  Alters an encryption key and certificate that is used for transparently encrypting a database. For more information about transparent database encryption, see [Transparent Data Encryption &#40;TDE&#41;](../../relational-databases/security/encryption/transparent-data-encryption.md).  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
+```syntaxsql
 -- Syntax for SQL Server  
   
 ALTER DATABASE ENCRYPTION KEY  
@@ -46,10 +41,11 @@ ALTER DATABASE ENCRYPTION KEY
         ASYMMETRIC KEY Encryptor_Name  
     }  
 [ ; ]  
-```  
+```
   
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+  
+```syntaxsql
+-- Syntax for Parallel Data Warehouse  
   
 ALTER DATABASE ENCRYPTION KEY  
     {  
@@ -62,9 +58,11 @@ ALTER DATABASE ENCRYPTION KEY
     }  
 [ ; ]  
 ```  
-  
-## Arguments  
- REGENERATE WITH ALGORITHM = { AES_128 | AES_192 | AES_256 | TRIPLE_DES_3KEY }  
+ 
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+ REGENERATE WITH ALGORITHM = { AES_128 \| AES_192 \| AES_256 \| TRIPLE_DES_3KEY }  
  Specifies the encryption algorithm that is used for the encryption key.  
   
  ENCRYPTION BY SERVER CERTIFICATE *Encryptor_Name*  
@@ -76,7 +74,7 @@ ALTER DATABASE ENCRYPTION KEY
 ## Remarks  
  The certificate or asymmetric key that is used to encrypt the database encryption key must be located in the master system database.  
   
- The database encryption key does not have to be regenerated when a database owner (dbo) is changed.  
+ When the database owner (dbo) is changed, the database encryption key does not have to be regenerated.
   
  After a database encryption key has been modified twice, a log backup must be performed before the database encryption key can be modified again.  
   
@@ -86,18 +84,7 @@ ALTER DATABASE ENCRYPTION KEY
 ## Examples  
  The following example alters the database encryption key to use the `AES_256` algorithm.  
   
-```  
-USE AdventureWorks2012;  
-GO  
-ALTER DATABASE ENCRYPTION KEY  
-REGENERATE WITH ALGORITHM = AES_256;  
-GO  
-```  
-  
-## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
- The following example alters the database encryption key to use the `AES_256` algorithm.  
-  
-```  
+```sql  
 -- Uses AdventureWorks  
   
 ALTER DATABASE ENCRYPTION KEY  
@@ -106,7 +93,7 @@ GO
 ```  
   
 ## See Also  
- [Transparent Data Encryption &#40;TDE&#41;](../../relational-databases/security/encryption/transparent-data-encryption-tde.md)   
+ [Transparent Data Encryption &#40;TDE&#41;](../../relational-databases/security/encryption/transparent-data-encryption.md)   
  [SQL Server Encryption](../../relational-databases/security/encryption/sql-server-encryption.md)   
  [SQL Server and Database Encryption Keys &#40;Database Engine&#41;](../../relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine.md)   
  [Encryption Hierarchy](../../relational-databases/security/encryption/encryption-hierarchy.md)   

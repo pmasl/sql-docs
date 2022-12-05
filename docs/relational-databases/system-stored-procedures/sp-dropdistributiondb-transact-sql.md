@@ -1,29 +1,25 @@
 ---
 title: "sp_dropdistributiondb (Transact-SQL) | Microsoft Docs"
+description: Drops a distribution database and files used by it if they are not used by another database. This stored procedure runs at the Distributor on any database.
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_dropdistributiondb_TSQL"
   - "sp_dropdistributiondb"
 helpviewer_keywords: 
   - "sp_dropdistributiondb"
 ms.assetid: b6dd1846-2259-4d29-93af-a70a5d25a0c5
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_dropdistributiondb (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Drops a distribution database. Drops the physical files used by the database if they are not used by another database. This stored procedure is executed at the Distributor on any database.  
   
@@ -37,7 +33,7 @@ sp_dropdistributiondb [ @database= ] 'database'
 ```  
   
 ## Arguments  
- [ **@database=**] **'***database***'**  
+`[ @database = ] 'database'`
  Is the database to drop. *database* is **sysname**, with no default.  
   
 ## Return Code Values  

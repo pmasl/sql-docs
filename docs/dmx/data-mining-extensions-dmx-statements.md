@@ -1,33 +1,17 @@
 ---
-title: "Data Mining Extensions (DMX) Statement Reference | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "Data Mining Extensions [Analysis Services], statements"
-  - "DMX [Analysis Services], statements"
-  - "statements [DMX], reference"
-  - "mining models [Analysis Services], training"
-  - "mining structures [DMX]"
-  - "mining models [Analysis Services], options"
-  - "mining structures [DMX], options"
-ms.assetid: 9cfa1db4-0f21-4fa3-8158-f94c48987e1b
-caps.latest.revision: 31
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "Data Mining Extensions (DMX) Statement Reference"
+description: "Data Mining Extensions (DMX) Statement Reference"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # Data Mining Extensions (DMX) Statements
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Working with data mining models in [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] involves the following primary tasks:  
   

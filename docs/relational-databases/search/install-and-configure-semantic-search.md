@@ -1,24 +1,22 @@
 ---
+description: "Install and Configure Semantic Search"
 title: "Install and Configure Semantic Search | Microsoft Docs"
-ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-search"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: search
+ms.topic: conceptual
+helpviewer_keywords:
   - "semantic search [SQL Server], installing"
   - "semantic search [SQL Server], configuring"
 ms.assetid: 2cdd0568-7799-474b-82fb-65d79df3057c
-caps.latest.revision: 31
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
+ms.custom:
+  - intro-installation
 ---
 # Install and Configure Semantic Search
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Describes the prerequisites for statistical semantic search and how to install or check them.  
   
 ## Install Semantic Search  
@@ -28,7 +26,7 @@ manager: "jhubbard"
   
  A return value of 1 indicates that Full-Text Search and Semantic Search are installed; a return value of 0 indicates that they are not installed.  
   
-```tsql  
+```sql  
 SELECT SERVERPROPERTY('IsFullTextInstalled');  
 GO  
 ```  
@@ -46,7 +44,7 @@ GO
   
  If the semantic language statistics database is installed and registered for the instance, then the query results contain a single row of information about the database.  
   
-```tsql  
+```sql  
 SELECT * FROM sys.fulltext_semantic_language_statistics_database;  
 GO  
 ```  
@@ -60,7 +58,7 @@ GO
   
         1.  Locate the Windows installer package named **SemanticLanguageDatabase.msi** on the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] installation media.  
   
-        2.  Download the installer package from the [Microsoft® SQL Server® 2016 Semantic Language Statistics](https://www.microsoft.com/en-us/download/details.aspx?id=52681) page on the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Download Center.  
+        2.  Download the installer package from the [Microsoft® SQL Server® 2016 Semantic Language Statistics](https://www.microsoft.com/download/details.aspx?id=52681) page on the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Download Center.  
   
 2.  Run the **SemanticLanguageDatabase.msi** Windows installer package to extract the database and log file.  
   
@@ -75,11 +73,11 @@ GO
   
  **2. Attach the semantic language statistics database.**
    
- Attach the database to the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] or by calling [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-sql-server-transact-sql.md) with the **FOR ATTACH** syntax. For more information, see [Database Detach and Attach &#40;SQL Server&#41;](../../relational-databases/databases/database-detach-and-attach-sql-server.md).  
+ Attach the database to the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] or by calling [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-transact-sql.md) with the **FOR ATTACH** syntax. For more information, see [Database Detach and Attach &#40;SQL Server&#41;](../../relational-databases/databases/database-detach-and-attach-sql-server.md).  
   
  By default, the name of the database is **semanticsdb**. You can optionally give the database a different name when you attach it. You have to provide this name when you register the database in the subsequent step.  
   
-```tsql  
+```sql  
 CREATE DATABASE semanticsdb  
             ON ( FILENAME = 'C:\Microsoft Semantic Language Database\semanticsdb.mdf' )  
             LOG ON ( FILENAME = 'C:\Microsoft Semantic Language Database\semanticsdb_log.ldf' )  
@@ -93,7 +91,7 @@ GO
   
  Call the stored procedure [sp_fulltext_semantic_register_language_statistics_db &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-fulltext-semantic-register-language-statistics-db-transact-sql.md) and provide the name that you gave to the database when you attached it.  
   
-```tsql  
+```sql  
 EXEC sp_fulltext_semantic_register_language_statistics_db @dbname = N'semanticsdb';  
 GO  
 ```  
@@ -118,7 +116,7 @@ GO
    
  Call the stored procedure [sp_fulltext_semantic_unregister_language_statistics_db &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-fulltext-semantic-unregister-language-statistics-db-transact-sql.md). You do not have to provide the name of the database since an instance can have only one semantic language statistics database.  
   
-```tsql  
+```sql  
 EXEC sp_fulltext_semantic_unregister_language_statistics_db;  
 GO  
 ```  
@@ -127,7 +125,7 @@ GO
  
  Call the stored procedure [sp_detach_db &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-detach-db-transact-sql.md) and provide the name of the database.  
   
-```tsql  
+```sql  
 USE master;  
 GO  
   
@@ -142,6 +140,5 @@ GO
 ## Install optional support for newer document types  
   
 ###  <a name="office"></a> Install the latest filters for Microsoft Office and other Microsoft document types  
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] installs the latest [!INCLUDE[msCoName](../../includes/msconame-md.md)] word breakers and stemmers, but does not install the latest filters for [!INCLUDE[msCoName](../../includes/msconame-md.md)] Office documents and other [!INCLUDE[msCoName](../../includes/msconame-md.md)] document types. These filters are required for indexing documents created with recent versions of [!INCLUDE[msCoName](../../includes/msconame-md.md)] Office and other [!INCLUDE[msCoName](../../includes/msconame-md.md)] applications. To download the latest filters, see [Microsoft Office 2010 Filter Packs](http://go.microsoft.com/fwlink/?LinkId=218293). (There does not appear to be a Filter Pack release for Office 2013 or Office 2016.)
-  
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] installs the latest [!INCLUDE[msCoName](../../includes/msconame-md.md)] word breakers and stemmers, but does not install the latest filters for [!INCLUDE[msCoName](../../includes/msconame-md.md)] Office documents and other [!INCLUDE[msCoName](../../includes/msconame-md.md)] document types. These filters are required for indexing documents created with recent versions of [!INCLUDE[msCoName](../../includes/msconame-md.md)] Office and other [!INCLUDE[msCoName](../../includes/msconame-md.md)] applications. To download the latest filters, see [Microsoft Office 2010 Filter Packs](https://www.microsoft.com/download/details.aspx?id=17062). (There does not appear to be a Filter Pack release for Office 2013 or Office 2016.)
   

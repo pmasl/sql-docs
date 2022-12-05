@@ -1,14 +1,12 @@
 ---
 title: "Estimate the Size of a Nonclustered Index | Microsoft Docs"
+description: Use this procedure to estimate the amount of space that is required to store a nonclustered index in SQL Server.
 ms.custom: ""
 ms.date: "03/13/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql 
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: conceptual
 helpviewer_keywords: 
   - "space allocation [SQL Server], index size"
   - "size [SQL Server], tables"
@@ -19,12 +17,14 @@ helpviewer_keywords:
   - "designing databases [SQL Server], estimating size"
   - "calculating table size"
 ms.assetid: c183b0e4-ef4c-4bfc-8575-5ac219c25b0a
-caps.latest.revision: 40
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: "= azuresqldb-current || >= sql-server-2016"
 ---
 # Estimate the Size of a Nonclustered Index
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+
   Follow these steps to estimate the amount of space that is required to store a nonclustered index:  
   
 1.  Calculate variables for use in steps 2 and 3.  
@@ -169,17 +169,17 @@ manager: "jhubbard"
   
 4.  Calculate the variable length data size:  
   
-     If there are variable-length columns in the index key, including any necessary clustering key columns as described previously in Step 2.2, determine how much space is used to store the columns within the index row:  
+     If there are variable-length columns (key columns or included), including any necessary clustering key columns as described previously in Step 2.2, determine how much space is used to store the columns within the index row:  
   
      ***Variable_Leaf_Size***  = 2 + (***Num_Variable_Leaf_Cols*** x 2) + ***Max_Var_Leaf_Size***  
   
      The bytes added to ***Max_Var_Key_Size*** are for tracking each variable column.This formula assumes that all variable-length columns are 100 percent full. If you anticipate that a smaller percentage of the variable-length column storage space will be used, you can adjust the ***Max_Var_Leaf_Size*** value by that percentage to yield a more accurate estimate of the overall table size.  
   
-     If there are no variable-length columns, set ***Variable_Leaf_Size*** to 0.  
+     If there are no variable-length columns (key columns or included), set ***Variable_Leaf_Size*** to 0.  
   
 5.  Calculate the index row size:  
   
-     ***Leaf_Row_Size***  = ***Fixed_Leaf_Size*** + ***Variable_Leaf_Size*** + ***Leaf_Null_Bitmap*** + 1 (for row header overhead of an index row) + 6 (for the child page ID pointer)  
+     ***Leaf_Row_Size***  = ***Fixed_Leaf_Size*** + ***Variable_Leaf_Size*** + ***Leaf_Null_Bitmap*** + 1 (for row header overhead of an index row)  
   
 6.  Calculate the number of index rows per page (8096 free bytes per page):  
   

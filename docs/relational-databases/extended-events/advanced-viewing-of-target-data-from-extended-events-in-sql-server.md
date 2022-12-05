@@ -1,29 +1,26 @@
 ---
-title: "Advanced Viewing of Target Data from Extended Events in SQL Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "10/04/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "xevents"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Advanced view of target data from Extended Events"
+description: Use the advanced features of SQL Server Management Studio to view target data from Extended Events in rich detail. You can view, export, and manipulate data.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: "05/24/2019"
+ms.service: sql
+ms.subservice: xevents
+ms.topic: tutorial
+ms.custom: seo-lt-2019
 ms.assetid: b2e839d7-1872-46d9-b7b7-6dcb3984829f
-caps.latest.revision: 4
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Advanced Viewing of Target Data from Extended Events in SQL Server
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 
-This article illustrates how you can use the advanced features of SQL Server Management Studio (SSMS.exe) to view the target data from extended events in rich detail. The article explains how to:
+This article illustrates how you can use the advanced features of SQL Server Management Studio (SSMS.exe) to view the target data from Extended Events in rich detail. The article explains how to:
 
 
 - Open and view the target data, in various ways.
-- Export the target data to various formats, by using the special menu or toolbar for extended events.
+- Export the target data to various formats, by using the special menu or toolbar for Extended Events.
 - Manipulate the data while viewing, or before exporting.
 
 
@@ -37,14 +34,14 @@ The present article assumes you already know how to create and start an event se
 
 This article also assumes you have installed a very recent monthly release of SSMS. Installation help is at:
 
-- [Download SQL Server Management Studio (SSMS)](http://msdn.microsoft.com/library/mt238290.aspx)
+- [Download SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md)
 
 
 
 ### Differences with Azure SQL Database
 
 
-There is a high degree of parity in the implementation and capabilities of extended events in the two products Microsoft SQL Server and Azure SQL Database. But there are some differences that affect the SSMS UI (user interface).
+There is a high degree of parity in the implementation and capabilities of Extended Events in the two products Microsoft SQL Server and Azure SQL Database. But there are some differences that affect the SSMS UI (user interface).
 
 
 - For SQL Database, the package0.event_file target cannot be a file on the local disk drive. Instead, an Azure Storage container must be used. Therefore when you are connected to SQL Database, the SSMS UI asks for a storage container, instead of a local path and file name.
@@ -53,15 +50,15 @@ There is a high degree of parity in the implementation and capabilities of exten
 - In the SSMS UI when you see the check box **Watch live data** is grayed and disabled, it is because that feature is not available for SQL Database.
 
 
-- A few extended events are installed with SQL Server. Under the **Sessions** node we can see **AlwaysOn_health** plus a couple others. These are not visible when connected to SQL Database because they do not exist for SQL Database.
+- A few Extended Events sessions are installed with SQL Server. Under the **Sessions** node we can see **AlwaysOn_health** plus a couple others. These are not visible when connected to SQL Database because they do not exist for SQL Database.
 
 
 The present article is written from the perspective of SQL Server. The article uses the event_file target, which is one area of differences. Further mentions of any differences are limited to important or non-obvious differences.
 
 
-For documentation about extended events that is specific to Azure SQL Database, see:
+For documentation about Extended Events that is specific to Azure SQL Database, see:
 
-- [Extended Events in Azure SQL Database](http://azure.microsoft.com/documentation/articles/sql-database-xevent-db-diff-from-svr/)
+- [Extended Events in Azure SQL Database](/azure/azure-sql/database/xevent-db-diff-from-svr)
 
 
 
@@ -73,7 +70,7 @@ Generally the advanced options are accessed by the following means:
 
 - The regular menu of **File** > **Open** > **File**.
 - Right-clicks in the **Object Explorer** under **Management** > **Extended Events**.
-- The special menu **Extended Events**, and the special toolbar for extended events.
+- The special menu **Extended Events**, and the special toolbar for Extended Events.
 - Right-clicks in the tabbed pane that displays the target data.
 
 
@@ -176,7 +173,8 @@ After you have the target data in SSMS, you can export the data to various forma
 
 
 1. Give focus to the data display.
-    - Suddenly a new toolbar and a new menu item for extended events both become visible.
+
+    - Suddenly a new toolbar and a new menu item for Extended Events both become visible.
 
 	![Export displayed data, Extended Events > Export to > (.csv, or .xel, or to a table)](../../relational-databases/extended-events/media/xevents-ssms-ui75-menuextevent-exportto-xel.png)
 
@@ -218,7 +216,7 @@ The following screenshot shows the context menu from a right-click of the **time
 ![Right-click a column header, in the data display. Also, details grid.](../../relational-databases/extended-events/media/xevents-ssms-ui40-toolbar.png)
 
 
-The preceding screenshot also shows the special toolbar for extended events. The brightness of the Details button indicates the button is active. Therefore the image also shows the **Details** tab and grid is present as a second portion of the data display.
+The preceding screenshot also shows the special toolbar for Extended Events. The brightness of the Details button indicates the button is active. Therefore the image also shows the **Details** tab and grid is present as a second portion of the data display.
 
 
 
@@ -228,7 +226,7 @@ The preceding screenshot also shows the special toolbar for extended events. The
 The **Choose Columns** option enables you to control which data columns are and are not displayed. You can find the **Choose Columns** menu item in a few different places:
 
 - On the **Extended Events** menu.
-- On the extended events toolbar.
+- On the Extended Events toolbar.
 - On the context menu of a header in the data display.
 
 
@@ -252,7 +250,7 @@ The **Choose Columns** dialog has a section devoted to the merging of multiple c
 ### D.3 Filters
 
 
-In the area of extended events there are two major type of filters that you can specify:
+In the area of Extended Events there are two major type of filters that you can specify:
 
 - *Pre-target filters:* Filters that reduce the amount of data that is sent by the events engine to your target.
 
@@ -282,9 +280,9 @@ Grouping rows together by matching values in a given column, is the first step t
 #### D.4.1 Grouping
 
 
-On the extended events toolbar, the **Grouping** button starts a dialog you can use to group the displayed data by a given column. The next screenshot shows a dialog being used to group by the *name* column.
+On the Extended Events toolbar, the **Grouping** button starts a dialog you can use to group the displayed data by a given column. The next screenshot shows a dialog being used to group by the *name* column.
 
-![Toolbar > Grouping button, then the Grouping dialog](../../relational-databases/extended-events/media/xevents-ssms-ui53-grouping.png)
+![Screenshot showing the toolbar with Grouping selected and the Grouping dialog box.](../../relational-databases/extended-events/media/xevents-ssms-ui53-grouping.png)
 
 After the grouping is achieved, the display has a new look, as shown next.
 
@@ -297,11 +295,11 @@ After the grouping is achieved, the display has a new look, as shown next.
 
 After the displayed data has been grouped, you can proceed to aggregate data in other columns.  The next screenshot shows the grouped data is being aggregated by *count*.
 
-![Toolbar > Aggregation button, then the Aggregation dialog](../../relational-databases/extended-events/media/xevents-ssms-ui51-aggregdialogcount.png)
+![Screenshot showing the toolbar with Aggregation selected and the Aggregation dialog box.](../../relational-databases/extended-events/media/xevents-ssms-ui51-aggregdialogcount.png)
 
 After the aggregation is achieved, the display has a new look, as shown next.
 
-![Toolbar > Aggregation button, then the Aggregation dialog](../../relational-databases/extended-events/media/xevents-ssms-ui52-aggregnewdisplay.png)
+![Screenshot of the display showing that a COUNT value has been added.](../../relational-databases/extended-events/media/xevents-ssms-ui52-aggregnewdisplay.png)
 
 
 
@@ -313,4 +311,8 @@ The **query_post_execution_showplan** event enables you to see the actual query 
 
 ![Query Plan, with properties list for one node](../../relational-databases/extended-events/media/xevents-ssms-ui60-showplangraph.png)
 
+## See also
 
+[XELite: Cross-platform library to read XEvents from XEL files or live SQL streams](https://www.nuget.org/packages/Microsoft.SqlServer.XEvent.XELite/), released May 2019.
+
+[Read-SQLXEvent PowerShell cmdlet](https://www.powershellgallery.com/packages/SqlServer), released July 2019.

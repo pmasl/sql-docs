@@ -1,22 +1,18 @@
 ---
-title: "DBCC UPDATEUSAGE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "7/17/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+title: DBCC UPDATEUSAGE (Transact-SQL)
+description: "DBCC UPDATEUSAGE (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "11/14/2017"
+ms.service: sql
+ms.subservice: t-sql
 ms.topic: "language-reference"
-f1_keywords: 
+f1_keywords:
   - "UPDATEUSAGE"
   - "UPDATEUSAGE_TSQL"
   - "DBCC_UPDATEUSAGE_TSQL"
   - "DBCC UPDATEUSAGE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "inaccurate page or row counts [SQL Server]"
   - "space [SQL Server], usage reports"
   - "updating space usage information"
@@ -32,14 +28,13 @@ helpviewer_keywords:
   - "counting rows"
   - "row count accuracy [SQL Server]"
   - "page count accuracy [SQL Server]"
-ms.assetid: b8752ecc-db45-4e23-aee7-13b8bc3cbae2
-caps.latest.revision: 56
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
+
 # DBCC UPDATEUSAGE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Reports and corrects pages and row count inaccuracies in the catalog views. These inaccuracies may cause incorrect space usage reports returned by the sp_spaceused system stored procedure.
   
@@ -47,7 +42,7 @@ Reports and corrects pages and row count inaccuracies in the catalog views. Thes
   
 ## Syntax  
   
-```sql
+```syntaxsql
 DBCC UPDATEUSAGE   
 (   { database_name | database_id | 0 }   
     [ , { table_name | table_id | view_name | view_id }   
@@ -55,14 +50,16 @@ DBCC UPDATEUSAGE
 ) [ WITH [ NO_INFOMSGS ] [ , ] [ COUNT_ROWS ] ]   
 ```  
   
-## Arguments  
-*database_name* | *database_id* | 0  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+*database_name* \| *database_id* \| 0  
 Is the name or ID of the database for which to report and correct space usage statistics. If 0 is specified, the current database is used. Database names must comply with the rules for [identifiers](../../relational-databases/databases/database-identifiers.md).  
   
-*table_name* | *table_id* | *view_name* | *view_id*  
+*table_name* \| *table_id* \| *view_name* \| *view_id*  
 Is the name or ID of the table or indexed view for which to report and correct space usage statistics. Table and view names must comply with the rules for identifiers.  
   
-*index_id* | *index_name*  
+*index_id* \| *index_name*  
 Is the ID or name of the index to use. If not specified, the statement processes all indexes for the specified table or view.  
   
 WITH  
@@ -81,7 +78,7 @@ DBCC CHECKDB has been enhanced to detect when page or row counts become negative
   
 ## Best Practices  
 We recommend the following:
--   Do not run DBCC UPDATEUSAGE routinely. Because DBCC UPDATEUSAGE can take some time to run on large tables or databases, it should not be used only unless you suspect incorrect values are being returned by sp_spaceused.
+-   Do not run DBCC UPDATEUSAGE routinely, as [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] maintains the metadata under most circumstances. DBCC UPDATEUSAGE should be run on an as-needed basis, for example, when you suspect incorrect values are being returned by sp_spaceused. DBCC UPDATEUSAGE can take some time to run on large tables or databases.
 -   Consider running DBCC UPDATEUSAGE routinely (for example, weekly) only if the database undergoes frequent Data Definition Language (DDL) modifications, such as CREATE, ALTER, or DROP statements.  
   
 ## Result Sets  

@@ -1,15 +1,14 @@
 ---
-title: "Active Secondaries Backup on Secondary Replicas-Always On Availability | Microsoft Docs"
-ms.custom: ""
-ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "Offload backups to secondary availability group replica"
+description: "Learn about the different supported backup types when offloading backups to a secondary replica of an Always On availability group."
+author: MashaMSFT
+ms.author: mathoma
+ms.date: "09/01/2017"
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "backup priority"
   - "backup on secondary replicas"
   - "Availability Groups [SQL Server], availability replicas"
@@ -17,38 +16,32 @@ helpviewer_keywords:
   - "active secondary replicas [SQL Server], backup on"
   - "automated backup preference"
   - "Availability Groups [SQL Server], active secondary replicas"
-ms.assetid: 82afe51b-71d1-4d5b-b20a-b57afc002405
-caps.latest.revision: 34
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
-# Active Secondaries: Backup on Secondary Replicas (Always On Availability Groups)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# Offload supported backups to secondary replicas of an availability group
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  The [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] active secondary capabilities include support for performing backup operations on secondary replicas. Backup operations can put significant strain on I/O and CPU (with backup compression). Offloading backups to a synchronized or synchronizing secondary replica allows you to use the resources on server instance that hosts the primary replica for your tier-1 workloads.  
-  
+  The [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] active secondary capabilities include support for taking backups on secondary replicas. Backup operations can put significant strain on I/O and CPU (with backup compression). Offloading backups to a synchronized or synchronizing secondary replica allows you to use the resources on server instance that hosts the primary replica for your tier-1 workloads.  
+
 > [!NOTE]  
 >  RESTORE statements are not allowed on either the primary or secondary databases of an availability group.  
   
--   [Supported Backup Types](#SupportedBuTypes)  
-  
--   [Configuring Where Backup Jobs Run](#WhereBuJobsRun)  
-  
--   [Related Tasks](#RelatedTasks)  
-  
+ 
 ##  <a name="SupportedBuTypes"></a> Backup Types Supported on Secondary Replicas  
   
--   **BACKUP DATABASE** supports only copy-only full backups of databases, files, or filegroups when it is executed on secondary replicas. Note that copy-only backups do not impact the log chain or clear the differential bitmap.  
+-   **BACKUP DATABASE** supports only copy-only full backups of databases, files, or filegroups when it's executed on secondary replicas. Copy-only backups don't impact the log chain or clear the differential bitmap.  
   
--   Differential backups are not supported on secondary replicas.  
+-   Differential backups aren't supported on secondary replicas.
+
+-   Concurrent backups, such as executing a transaction log backup on the primary replica while a full database backup is executing on the secondary replica, is currently not supported. 
   
 -   **BACKUP LOG** supports only regular log backups (the COPY_ONLY option is not supported for log backups on secondary replicas).  
   
      A consistent log chain is ensured across log backups taken on any of the replicas (primary or secondary), irrespective of their availability mode (synchronous-commit or asynchronous-commit).  
   
 -   To back up a secondary database, a secondary replica must be able to communicate with the primary replica and must be **SYNCHRONIZED** or **SYNCHRONIZING**.  
-  
+
+In a distributed availability group, backups can be performed on secondary replicas in the same availability group as the active primary replica, or on the primary replica of any secondary availability groups. Backups cannot be performed on a secondary replica in a secondary availability group because secondary replicas only communicate with the primary replica in their own availability group. Only replicas that communicate directly with the global primary replica can perform backup operations.
+
 ##  <a name="WhereBuJobsRun"></a> Configuring Where Backup Jobs Run  
  Performing backups on a secondary replica to offload the backup workload from the primary production server is a great benefit. However, performing backups on secondary replicas introduce significant complexity to the process of determining where backup jobs should run. To address this, configure where backup jobs run as follows:  
   
@@ -69,7 +62,7 @@ manager: "jhubbard"
   
 -   [Use the Maintenance Plan Wizard](../../../relational-databases/maintenance-plans/use-the-maintenance-plan-wizard.md)  
   
--   [Implement Jobs](http://msdn.microsoft.com/library/69e06724-25c7-4fb3-8a5b-3d4596f21756)  
+-   [Implement Jobs](../../../ssms/agent/implement-jobs.md)  
   
 ## See Also  
  [Overview of Always On Availability Groups &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server.md)   

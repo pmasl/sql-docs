@@ -1,13 +1,11 @@
 ---
-title: "Creating a SQL Server Native Client ODBC Driver Application | Microsoft Docs"
+description: "Creating a Driver Application"
+title: "Create an Application"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "ODBC, architecture"
@@ -23,13 +21,15 @@ helpviewer_keywords:
   - "ODBC, driver extensions"
   - "function calls [ODBC]"
 ms.assetid: c83c36e2-734e-4960-bc7e-92235910bc6f
-caps.latest.revision: 42
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Creating a Driver Application
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+> [!IMPORTANT] 
+> [!INCLUDE[snac-removed-oledb-and-odbc](../../../includes/snac-removed-oledb-and-odbc.md)]
 
   ODBC architecture has four components that perform the following functions.  
   
@@ -107,7 +107,7 @@ LIB=c:\Program Files\Microsoft Data Access SDK 2.8\Libs\x86\lib;C:\Program Files
 INCLUDE=c:\Program Files\Microsoft Data Access SDK 2.8\inc;C:\Program Files\Microsoft SQL Server\100\Tools\SDK\Include;  
 ```  
   
- One design decision made early in the process of building an application is whether the application needs to have multiple ODBC calls outstanding at the same time. There are two methods for supporting multiple concurrent ODBC calls, which are described in the remaining topics in this section. For more information, see the [ODBC Programmer's Reference](http://go.microsoft.com/fwlink/?LinkId=45250).  
+ One design decision made early in the process of building an application is whether the application needs to have multiple ODBC calls outstanding at the same time. There are two methods for supporting multiple concurrent ODBC calls, which are described in the remaining topics in this section. For more information, see the [ODBC Programmer's Reference](../../../odbc/reference/odbc-programmer-s-reference.md).  
   
 ## In This Section  
   
@@ -117,5 +117,4 @@ INCLUDE=c:\Program Files\Microsoft Data Access SDK 2.8\inc;C:\Program Files\Micr
   
 ## See Also  
  [SQL Server Native Client &#40;ODBC&#41;](../../../relational-databases/native-client/odbc/sql-server-native-client-odbc.md)  
-  
   

@@ -1,14 +1,11 @@
 ---
+description: "Create, Modify, and Drop Spatial Indexes"
 title: "Create, Modify, and Drop Spatial Indexes | Microsoft Docs"
-ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-spatial"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: 
+ms.topic: conceptual
 helpviewer_keywords: 
   - "indexes [SQL Server], creating"
   - "spatial indexes [SQL Server], dropping"
@@ -17,12 +14,12 @@ helpviewer_keywords:
   - "indexes [SQL Server], modifying"
   - "spatial indexes [SQL Server], modifying"
 ms.assetid: 00c1b927-8ec5-44cf-87c2-c8de59745735
-caps.latest.revision: 23
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Create, Modify, and Drop Spatial Indexes
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
   A spatial index can more efficiently perform certain operations on a column of the **geometry** or **geography** data type (a *spatial column*). More than one spatial index can be specified on a spatial column. This is useful, for example, for indexing different tessellation parameters in a single column.  
   
  There are a number of restrictions on creating spatial indexes. For more information, see [Restrictions on Spatial Indexes](#restrictions) in this topic.  
@@ -61,7 +58,7 @@ manager: "jhubbard"
   
 11. On the **Spatial** page, specify the values that you want to use for the spatial properties of the index.  
   
-     When creating an index on a **geometry** type column, you must specify the **(***X-min***,***Y-min***)** and **(***X-max***,***Y-max***)** coordinates of the bounding box. For an index on a **geography** type column, the bounding-box fields become read-only after you specify the **Geography grid** tessellation scheme, because geography grid tessellation does not use a bounding box.  
+     When creating an index on a **geometry** type column, you must specify the **(**_X-min_**,**_Y-min_**)** and **(**_X-max_**,**_Y-max_**)** coordinates of the bounding box. For an index on a **geography** type column, the bounding-box fields become read-only after you specify the **Geography grid** tessellation scheme, because geography grid tessellation does not use a bounding box.  
   
      Optionally, you can specify nondefault values for the **Cells Per Object** field and for the grid density at any level of the tessellation scheme. The default number of cells per object is 16 for [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] or 8 for [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] or higher, and the default grid density is **Medium** for [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)].  
   
@@ -88,7 +85,7 @@ manager: "jhubbard"
   
 4.  In the **Spatial Indexes** dialog box, click **Add**.  
   
-5.  Select the new index in the **Selected Spatial Index** list, and in the grid to the right, set the properties for the spatial index. For information about the properties, see [Spatial Indexes Dialog Box &#40;Visual Database Tools&#41;](http://msdn.microsoft.com/library/4d84239a-68c7-4aa2-8602-2b51dd07260f).  
+5.  Select the new index in the **Selected Spatial Index** list, and in the grid to the right, set the properties for the spatial index. For information about the properties, see [Spatial Indexes Dialog Box &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/spatial-indexes-dialog-box-visual-database-tools.md).  
   
   
 ###  <a name="alter"></a> To alter a spatial index  
@@ -153,5 +150,4 @@ manager: "jhubbard"
   
 ## See Also  
  [Spatial Indexes Overview](../../relational-databases/spatial/spatial-indexes-overview.md)  
-  
   

@@ -1,24 +1,15 @@
 ---
-title: "getPrecision Method (SQLServerResultSetMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getPrecision Method (SQLServerResultSetMetaData)"
+description: "getPrecision Method (SQLServerResultSetMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSetMetaData.getPrecision"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSetMetaData.getPrecision"
 apitype: "Assembly"
-ms.assetid: de46c96e-6ad6-4946-883e-807123658500
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getPrecision Method (SQLServerResultSetMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

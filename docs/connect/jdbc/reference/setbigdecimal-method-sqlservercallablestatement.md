@@ -1,24 +1,15 @@
 ---
-title: "setBigDecimal Method (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setBigDecimal Method (SQLServerCallableStatement)"
+description: "setBigDecimal Method (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.setBigDecimal"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.setBigDecimal"
 apitype: "Assembly"
-ms.assetid: b50a920c-3839-40f0-9411-c60bbc2a9f34
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setBigDecimal Method (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

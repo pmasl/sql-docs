@@ -1,14 +1,12 @@
 ---
+description: "OPTION Clause (Transact-SQL)"
 title: "OPTION Clause (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "OPTION clause"
   - "OPTION_TSQL"
@@ -20,13 +18,12 @@ helpviewer_keywords:
   - "clauses [SQL Server], OPTION"
   - "OPTION clause"
 ms.assetid: f47e2f3f-9302-4711-9d66-16b1a2a7ffe3
-caps.latest.revision: 35
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # OPTION Clause (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Specifies that the indicated query hint should be used throughout the entire query. Each query hint can be specified only one time, although multiple query hints are permitted. Only one OPTION clause can be specified with the statement.  
   
@@ -36,15 +33,15 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server and Azure SQL Database  
-  
+### Syntax for [!INCLUDE[ssnoversion-md.md](../../includes/ssnoversion-md.md)] and [!INCLUDE[ssazure_md.md](../../includes/ssazure_md.md)].
+
+```syntaxsql
 [ OPTION ( <query_hint> [ ,...n ] ) ]   
 ```  
   
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
-  
+### Syntax for [!INCLUDE[sssdw-md.md](../../includes/sssdw-md.md)] and [!INCLUDE[sspdw-md.md](../../includes/sspdw-md.md)]
+
+```syntaxsql
 OPTION ( <query_option> [ ,...n ] )  
   
 <query_option> ::=  
@@ -59,7 +56,18 @@ OPTION ( <query_option> [ ,...n ] )
     | { FORCE | DISABLE } EXTERNALPUSHDOWN  
 ```  
   
-## Arguments  
+### Syntax for [!INCLUDE[sssodfull-md.md](../../includes/sssodfull-md.md)]
+
+```syntaxsql
+OPTION ( <query_option> [ ,...n ] )
+
+<query_option> ::=
+    LABEL = label_name
+```  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *query_hint*  
  Keywords that indicate which optimizer hints are used to customize the way the Database Engine processes the statement. For more information, see [Query Hints &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-query.md).  
   
@@ -68,7 +76,7 @@ OPTION ( <query_option> [ ,...n ] )
 ### A. Using an OPTION clause with a GROUP BY clause  
  The following example shows how the `OPTION` clause is used with a `GROUP BY` clause.  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO  
 SELECT ProductID, OrderQty, SUM(LineTotal) AS Total  
@@ -85,7 +93,7 @@ GO
 ### B. SELECT statement with a label in the OPTION clause  
  The following example shows a simple [!INCLUDE[ssDW](../../includes/ssdw-md.md)] SELECT statement with a label in the OPTION clause.  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT * FROM FactResellerSales  
@@ -95,7 +103,7 @@ SELECT * FROM FactResellerSales
 ### C. SELECT statement with a query hint in the OPTION clause  
  The following example shows a SELECT statement that uses a HASH JOIN query hint in the OPTION clause.  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT COUNT (*) FROM dbo.DimCustomer a  
@@ -107,7 +115,7 @@ OPTION (HASH JOIN);
 ### D. SELECT statement with a label and multiple query hints in the OPTION clause  
  The following example is a [!INCLUDE[ssDW](../../includes/ssdw-md.md)] SELECT statement that contains a label and multiple query hints. When the query is run on the Compute nodes, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] will apply a hash join or merge join, according to the strategy that [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] decides is the most optimal.  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT COUNT (*) FROM dbo.DimCustomer a  
@@ -119,31 +127,30 @@ OPTION ( Label = 'CustJoin', HASH JOIN, MERGE JOIN);
 ### E. Using a query hint when querying a view  
  The following example creates a view named CustomerView and then uses a HASH JOIN query hint in a query that references a view and a table.  
   
-```  
--- Uses AdventureWorks  
+```sql
+-- Uses the AdventureWorks sample database
   
 CREATE VIEW CustomerView  
 AS  
 SELECT CustomerKey, FirstName, LastName FROM ssawPDW..DimCustomer;  
-  
+GO
 SELECT COUNT (*) FROM dbo.CustomerView a  
 INNER JOIN dbo.FactInternetSales b  
 ON (a.CustomerKey = b.CustomerKey)  
 OPTION (HASH JOIN);  
-  
-DROP VIEW CustomerView;  
-  
+GO
+DROP VIEW CustomerView;
+GO
 ```  
   
 ### F. Query with a subselect and a query hint  
  The following example shows a query that contains both a subselect and a query hint. The query hint is applied globally. Query hints are not allowed to be appended to the subselect statement.  
   
-```  
--- Uses AdventureWorks  
-  
+```sql
+-- Uses the AdventureWorks sample database
 CREATE VIEW CustomerView AS  
 SELECT CustomerKey, FirstName, LastName FROM ssawPDW..DimCustomer;  
-  
+GO
 SELECT * FROM (  
 SELECT COUNT (*) AS a FROM dbo.CustomerView a  
 INNER JOIN dbo.FactInternetSales b  
@@ -154,7 +161,7 @@ OPTION (HASH JOIN);
 ### G. Force the join order to match the order in the query  
  The following example uses the FORCE ORDER hint to force the query plan to use the join order specified by the query. This will improve performance on some queries; not all queries.  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 -- Obtain partition numbers, boundary values, boundary value types, and rows per boundary  
@@ -172,10 +179,10 @@ OPTION ( FORCE ORDER )
 ;  
 ```  
   
-### H. Using EXERNALPUSHDOWN  
+### H. Using EXTERNALPUSHDOWN  
  The following example forces the pushdown of the WHERE clause to the MapReduce job on the external Hadoop table.  
   
-```  
+```sql
 SELECT ID FROM External_Table_AS A   
 WHERE ID < 1000000  
 OPTION (FORCE EXTERNALPUSHDOWN);  
@@ -183,7 +190,7 @@ OPTION (FORCE EXTERNALPUSHDOWN);
   
  The following example prevents the pushdown of the WHERE clause to the MapReduce job on the external Hadoop table. All rows are returned to PDW where the WHERE clause is applied.  
   
-```  
+```sql
 SELECT ID FROM External_Table_AS A   
 WHERE ID < 10  
 OPTION (DISABLE EXTERNALPUSHDOWN);  

@@ -1,22 +1,19 @@
 ---
-title: "Send Data to a FILESTREAM Column Using IRowsetFastUpload (OLE DB) | Microsoft Docs"
+description: "Send Data to a FILESTREAM Column Using IRowsetFastUpload SQL Server Native Client (OLE DB)"
+title: "Data FILESTREAM, IRowsetFastUpload (OLE DB)"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 ms.assetid: fdb47319-83bc-4ff2-b46d-8d8ccfeb5bab
-caps.latest.revision: 7
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Send Data to a FILESTREAM Column Using IRowsetFastUpload (OLE DB)
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+# Send Data to a FILESTREAM Column Using IRowsetFastUpload SQL Server Native Client (OLE DB)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   This sample uses the IRowsetFastUpload interface to send between 4MB and 4GB of data to a filestream column.  
   
@@ -39,9 +36,9 @@ manager: "jhubbard"
   
  When you run this sample, you must pass the name of a server, or a server\instance_name, as well as a value between 4 MB (0x400001) and 4 GB (0xFFFFFFFF) indicating the amount of data to write.  
   
- The fourth ([!INCLUDE[tsql](../../../includes/tsql-md.md)]) code listing deletes the database created by this sample.  
+ The fourth ( [!INCLUDE[tsql](../../../includes/tsql-md.md)]) code listing deletes the database created by this sample.  
   
-```  
+```cpp
 // ISSHelper.h: interface for the CISSHelper class.  
 #if !defined(AFX_ISSHELPER_H__7B88E5F3_263F_11D2_9D1F_00C04F96B8B2__INCLUDED_)  
 #define AFX_ISSHELPER_H__7B88E5F3_263F_11D2_9D1F_00C04F96B8B2__INCLUDED_  
@@ -92,7 +89,7 @@ private:
 #endif // !defined(AFX_ISSHELPER_H__7B88E5F3_263F_11D2_9D1F_00C04F96B8B2__INCLUDED_)  
 ```  
   
-```  
+```cpp
 // ISSHelper.cpp: implementation of the CISSHelper class.  
 #pragma once  
   
@@ -237,7 +234,7 @@ return S_OK;
 }  
 ```  
   
-```  
+```cpp
 //  IRowsetFastLoadUpload.cpp  
 #pragma once  
   
@@ -585,9 +582,14 @@ MainCleanup:
 }  
 ```  
   
-```  
-sp_detach_db 'DBFsa'  
-IF EXISTS (SELECT name FROM master..sysdatabases WHERE name = 'DBFsa') DROP DATABASE [DBFsa] |  
+```sql
+EXEC sp_detach_db 'DBFsa'
+GO
+
+IF EXISTS (SELECT name
+           FROM   master..sysdatabases
+           WHERE  name = 'DBFsa')
+    DROP DATABASE [DBFsa];
 ```  
   
   

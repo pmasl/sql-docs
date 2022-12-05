@@ -1,52 +1,30 @@
 ---
-title: "Monitor Availability Groups (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "Monitor availability groups using Transact-SQL (T-SQL)"
+description: "Use Transact-SQL SELECT statements to monitor Always On availability groups and their replicas and databases."
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: conceptual
+ms.custom: seodec18
+helpviewer_keywords:
   - "Availability Groups [SQL Server], monitoring"
   - "dynamic management views [SQL Server], AlwaysOn Availability Groups"
+  - "dynamic management views [SQL Server], Always On Availability Groups"
   - "Availability Groups [SQL Server], availability replicas"
   - "Availability Groups [SQL Server], listeners"
   - "Availability Groups [SQL Server], databases"
   - "catalog views [SQL Server], AlwaysOn Availability Groups"
-ms.assetid: 881a34de-8461-4811-8c62-322bf7226bed
-caps.latest.revision: 49
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+  - "catalog views [SQL Server], Always On Availability Groups"
 ---
 # Monitor Availability Groups (Transact-SQL)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   For monitoring availability groups and replicas and the associated databases by using [!INCLUDE[tsql](../../../includes/tsql-md.md)], [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] provides a set of catalog and dynamic management views and server properties. Using [!INCLUDE[tsql](../../../includes/tsql-md.md)] SELECT statements, you can use the views to monitor availability groups and their replicas and databases. The information returned for a given availability group depends on whether you are connected to the instance of [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] that is hosting the primary replica or a secondary replica.  
   
 > [!TIP]  
 >  Many of these views can be joined using their ID columns to return information from multiple views in a single query.  
   
- **In This Topic:**  
-  
--   [Permissions](#Permissions)  
-  
--   **Using Transact-SQL to monitor:**  
-  
-     [Always On Availability Groups feature on a server instance](#AoAgFeatureOnSI)  
-  
-     [Availability groups on the WSFC cluster](#WSFC)  
-  
-     [Availability groups](#AvGroups)  
-  
-     [Availability replicas](#AvReplicas)  
-  
-     [Availability databases](#AvDbs)  
-  
-     [Availability group listeners](#AGlisteners)  
-  
--   [Related Tasks](#RelatedTasks)  
   
 ##  <a name="Permissions"></a> Permissions  
  [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] catalog views require VIEW ANY DEFINITION permission on the server instance. [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] dynamic management views require VIEW SERVER STATE permission on the server.  

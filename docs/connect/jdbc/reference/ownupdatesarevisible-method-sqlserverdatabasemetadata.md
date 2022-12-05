@@ -1,24 +1,15 @@
 ---
-title: "ownUpdatesAreVisible Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "ownUpdatesAreVisible Method (SQLServerDatabaseMetaData)"
+description: "ownUpdatesAreVisible Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.ownUpdatesAreVisible"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.ownUpdatesAreVisible"
 apitype: "Assembly"
-ms.assetid: eacbb1a8-ac9a-4f44-832e-ae0af476522e
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # ownUpdatesAreVisible Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

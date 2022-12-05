@@ -1,25 +1,22 @@
 ---
-title: "SQL Server, Wait Statistics Object | Microsoft Docs"
+title: "SQL Server, Wait Statistics object"
+description: Learn about the SQLServer:Wait Statistics performance object, which contains performance counters that report information about wait status.
 ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/13/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Wait Statistics object"
   - "SQLServer:Wait Statistics"
-ms.assetid: cb7f917d-4291-4115-9b78-ee7692ebbb2d
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server, Wait Statistics Object
-  The **SQLServer:Wait Statistics** performance object contains performance counters that report information about wait status.  
+# SQL Server, Wait Statistics object
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  The **SQLServer:Wait Statistics** performance object contains performance counters that report information about broad categorizations of waits. 
   
  The table below lists the counters that the Wait Statistics object contains.  
   
@@ -47,7 +44,18 @@ manager: "jhubbard"
 |**Waits in progress**|Number of processes currently waiting on the following type.|  
 |**Waits started per second**|Number of waits started per second of the selected type of wait.|  
   
-## See Also  
- [Monitor Resource Usage &#40;System Monitor&#41;](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)  
   
+## Example
+
+You begin to explore the query performance counters in this object using this T-SQL query on the [sys.dm_os_performance_counters](../system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md) dynamic management view:
+
+```sql
+SELECT * FROM sys.dm_os_performance_counters
+WHERE object_name LIKE '%Wait Statistics%';
+```  
+
+## See also  
+ - [sys.dm_os_wait_stats (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md) 
+ - [Monitor Resource Usage &#40;System Monitor&#41;](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)  
+ - [Monitoring performance by using the Query Store](../../relational-databases/performance/monitoring-performance-by-using-the-query-store.md) 
   

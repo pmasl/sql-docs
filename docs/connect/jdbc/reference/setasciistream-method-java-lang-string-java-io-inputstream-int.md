@@ -1,24 +1,15 @@
 ---
-title: "setAsciiStream Method  to input stream bytes - int | Microsoft Docs"
-ms.custom: ""
+title: "setAsciiStream Method  to input stream bytes - int"
+description: "setAsciiStream Method  (java.lang.String, java.io.InputStream, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.setAsciiStream"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.setAsciiStream"
 apitype: "Assembly"
-ms.assetid: 6ea23386-201f-41af-8232-225de3476765
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setAsciiStream Method  (java.lang.String, java.io.InputStream, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

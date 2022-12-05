@@ -1,38 +1,32 @@
 ---
+description: "SQLCancelHandle Function"
 title: "SQLCancelHandle Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 f1_keywords: 
   - "SQLCancelHandle"
 helpviewer_keywords: 
   - "SQLCancelHandle function [ODBC]"
 ms.assetid: 16049b5b-22a7-4640-9897-c25dd0f19d21
-caps.latest.revision: 22
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLCancelHandle Function
 **Conformance**  
- Version Introduced: ODBC 3.8  
+ Version Introduced: ODBC 3.8 Standards Compliance: None  
   
- Standards Compliance: None  
-  
- It is expected that most ODBC 3.8 (and later) drivers will implement this function. If a driver does not, a call to **SQLCancelHandle** with a connection handle in the *Handle* parameter will return SQL_ERROR with a SQLSTATE of IM001 and message 'Driver does not support this function’' A call to **SQLCancelHandle** with a statement handle as the *Handle* parameter will be mapped to a call to **SQLCancel** by the Driver Manager and can be processed if the driver implements **SQLCancel**. An application can use **SQLGetFunctions** to determine if a driver supports **SQLCancelHandle**.  
+ It is expected that most ODBC 3.8 (and later) drivers will implement this function. If a driver does not, a call to **SQLCancelHandle** with a connection handle in the *Handle* parameter will return SQL_ERROR with a SQLSTATE of IM001 and message 'Driver does not support this function'' A call to **SQLCancelHandle** with a statement handle as the *Handle* parameter will be mapped to a call to **SQLCancel** by the Driver Manager and can be processed if the driver implements **SQLCancel**. An application can use **SQLGetFunctions** to determine if a driver supports **SQLCancelHandle**.  
   
  **Summary**  
  **SQLCancelHandle** cancels the processing on a connection or statement. The Driver Manager maps a call to **SQLCancelHandle** to a call to **SQLCancel** when *HandleType* is SQL_HANDLE_STMT.  
   
 ## Syntax  
   
-```  
+```cpp  
   
 SQLRETURN SQLCancelHandle(  
       SQLSMALLINT  HandleType,  

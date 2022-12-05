@@ -1,15 +1,14 @@
 ---
-title: "SQL Server In-Process Specific Extensions to ADO.NET | Microsoft Docs"
-ms.custom: ""
+title: "SQL Server In-Process Extensions to ADO.NET"
+description: Links to articles about the four main functional extensions to ADO.NET that are specifically for in-process use.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "data access [CLR integration]"
   - "ADO.NET [CLR integration]"
   - "common language runtime [SQL Server], ADO.NET"
@@ -17,12 +16,9 @@ helpviewer_keywords:
   - "in-process data access providers [CLR integration]"
   - "extensions [CLR integration]"
 ms.assetid: 781b812e-eb14-472a-85fa-aa4cdb929bee
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # SQL Server In-Process Specific Extensions to ADO.NET
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   There are four main functional extensions to ADO.NET that are specifically for in-process use. The following topics will cover these extensions in detail.  
   
 ## In This Section  

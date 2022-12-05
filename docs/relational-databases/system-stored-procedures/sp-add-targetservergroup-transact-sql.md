@@ -1,14 +1,12 @@
 ---
+description: "sp_add_targetservergroup (Transact-SQL)"
 title: "sp_add_targetservergroup (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_add_targetservergroup"
   - "sp_add_targetservergroup_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_add_targetservergroup"
 ms.assetid: acb69343-d766-46ff-b771-0c7655c5231a
-caps.latest.revision: 32
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_add_targetservergroup (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Adds the specified server group.  
   
@@ -37,7 +33,7 @@ sp_add_targetservergroup [ @name = ] 'name'
 ```  
   
 ## Arguments  
- [ **@name=**] **'***name***'**  
+`[ @name = ] 'name'`
  The name of the server group to create. *name* is **sysname**, with no default. *name* cannot contain commas.  
   
 ## Return Code Values  

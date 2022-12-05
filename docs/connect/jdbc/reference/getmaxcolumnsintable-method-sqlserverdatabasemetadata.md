@@ -1,24 +1,15 @@
 ---
-title: "getMaxColumnsInTable Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getMaxColumnsInTable Method (SQLServerDatabaseMetaData)"
+description: "getMaxColumnsInTable Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getMaxColumnsInTable"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getMaxColumnsInTable"
 apitype: "Assembly"
-ms.assetid: dbcad2e1-7508-49ff-9f6d-db11200d87b6
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getMaxColumnsInTable Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

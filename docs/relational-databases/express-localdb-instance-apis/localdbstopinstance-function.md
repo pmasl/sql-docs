@@ -1,13 +1,11 @@
 ---
+description: "LocalDBStopInstance Function"
 title: "LocalDBStopInstance Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: 
 ms.topic: "reference"
 apiname: 
   - "LocalDBStopInstance"
@@ -15,15 +13,14 @@ apilocation:
   - "sqluserinstance.dll"
 apitype: "DLLExport"
 ms.assetid: 4bd73187-0aac-4f03-ac54-2b78e41917e5
-caps.latest.revision: 17
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # LocalDBStopInstance Function
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Stops the specified SQL Server Express LocalDB instance from running.  
   
- **Header file:** sqlncli.h  
+ **Header file:** msoledbsql.h  
   
 ## Syntax  
   

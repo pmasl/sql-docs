@@ -1,24 +1,15 @@
 ---
-title: "getConnection Method (SQLServerPooledConnection) | Microsoft Docs"
-ms.custom: ""
+title: "getConnection Method (SQLServerPooledConnection)"
+description: "getConnection Method (SQLServerPooledConnection)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPooledConnection.getConnection"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPooledConnection.getConnection"
 apitype: "Assembly"
-ms.assetid: 05bdb61f-26e8-480f-a1c1-1e46a8ed4b70
-caps.latest.revision: 4
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getConnection Method (SQLServerPooledConnection)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

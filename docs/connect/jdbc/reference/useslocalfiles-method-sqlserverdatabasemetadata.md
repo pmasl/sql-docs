@@ -1,24 +1,15 @@
 ---
-title: "usesLocalFiles Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "usesLocalFiles Method (SQLServerDatabaseMetaData)"
+description: "usesLocalFiles Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.usesLocalFiles"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.usesLocalFiles"
 apitype: "Assembly"
-ms.assetid: 69afb3a9-ed56-4191-88b8-bc46c03b817b
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # usesLocalFiles Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

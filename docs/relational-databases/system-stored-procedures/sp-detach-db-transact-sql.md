@@ -1,14 +1,12 @@
 ---
+description: "sp_detach_db (Transact-SQL)"
 title: "sp_detach_db (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "09/30/2015"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_detach_db"
   - "sp_detach_db_TSQL"
@@ -18,13 +16,11 @@ helpviewer_keywords:
   - "sp_detach_db"
   - "detaching databases [SQL Server]"
 ms.assetid: abcb1407-ff78-4c76-b02e-509c86574462
-caps.latest.revision: 86
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_detach_db (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Detaches a database that is currently not in use from a server instance and, optionally, runs UPDATE STATISTICS on all tables before detaching.  
   
@@ -43,19 +39,19 @@ sp_detach_db [ @dbname= ] 'database_name'
 ```  
   
 ## Arguments  
- [ **@dbname =** ] **'***database_name***'**  
+`[ @dbname = ] 'database_name'`
  Is the name of the database to be detached. *database_name* is a **sysname** value, with a default value of NULL.  
   
- [ **@skipchecks =** ] **'***skipchecks***'**  
+`[ @skipchecks = ] 'skipchecks'`
  Specifies whether to skip or run UPDATE STATISTIC. *skipchecks* is a **nvarchar(10)** value, with a default value of NULL. To skip UPDATE STATISTICS, specify **true**. To explicitly run UPDATE STATISTICS, specify **false**.  
   
  By default, UPDATE STATISTICS is performed to update information about the data in the tables and indexes. Performing UPDATE STATISTICS is useful for databases that are to be moved to read-only media.  
   
- [ **@keepfulltextindexfile=** ] **'***KeepFulltextIndexFile***'**  
+`[ @keepfulltextindexfile = ] 'KeepFulltextIndexFile'`
  Specifies that the full-text index file associated with the database that is being detached will not be dropped during the database detach operation. *KeepFulltextIndexFile* is a **nvarchar(10)** value with a default of **true**. If *KeepFulltextIndexFile* is **false**, all the full-text index files associated with the database and the metadata of the full-text index are dropped, unless the database is read-only. If NULL or **true**, full-text related metadata are kept.  
   
-> [!IMPORTANT]  
->  The**@keepfulltextindexfile** parameter will be removed in a future version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Do not use this parameter in new development work, and modify applications that currently use this parameter as soon as possible.  
+> [!IMPORTANT]
+>  The **\@keepfulltextindexfile** parameter will be removed in a future version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Do not use this parameter in new development work, and modify applications that currently use this parameter as soon as possible.  
   
 ## Return Code Values  
  0 (success) or 1 (failure)  
@@ -99,8 +95,10 @@ sp_detach_db [ @dbname= ] 'database_name'
 -   The database is a system database.  
   
 ## Obtaining Exclusive Access  
- Detaching a database requires exclusive access to the database. If the database that you want to detach is in use, before you can detach it, set the database to SINGLE_USER mode to obtain exclusive access.  
-  
+ Detaching a database requires exclusive access to the database. If the database that you want to detach is in use, before you can detach it, set the database to SINGLE_USER mode to obtain exclusive access.
+
+ Before you set the database to SINGLE_USER, verify that the AUTO_UPDATE_STATISTICS_ASYNC option is set to OFF. When this option is set to ON, the background thread that is used to update statistics takes a connection against the database, and you will be unable to access the database in single-user mode. For more information, see [set a database to single user mode](../databases/set-a-database-to-single-user-mode.md).
+
  For example, the following `ALTER DATABASE` statement obtains exclusive access to the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database after all current users disconnect from the database.  
   
 ```  
@@ -136,7 +134,6 @@ exec sp_detach_db @dbname='AdventureWorks2012'
 ## See Also  
  [ALTER DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql.md)   
  [Database Detach and Attach &#40;SQL Server&#41;](../../relational-databases/databases/database-detach-and-attach-sql-server.md)   
- [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-sql-server-transact-sql.md)   
+ [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-transact-sql.md)   
  [Detach a Database](../../relational-databases/databases/detach-a-database.md)  
-  
   

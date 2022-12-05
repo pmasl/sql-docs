@@ -1,22 +1,18 @@
 ---
+description: "Connecting to a Visual FoxPro Data Source"
 title: "Connecting to a Visual FoxPro Data Source | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "connecting to data source [ODBC], Visual FoxPro"
   - "Visual FoxPro data source [ODBC], connecting"
 ms.assetid: dfd404aa-c455-41b5-b69d-b6739575033c
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Connecting to a Visual FoxPro Data Source
 You can connect to a Visual FoxPro data source using your Microsoft Office application or using the SQL API.  

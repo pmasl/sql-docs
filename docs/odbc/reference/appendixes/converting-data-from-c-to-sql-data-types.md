@@ -1,14 +1,12 @@
 ---
+description: "Converting Data from C to SQL Data Types"
 title: "Converting Data from C to SQL Data Types | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "converting data from c to SQL types [ODBC], about converting"
   - "converting data from c to SQL types [ODBC]"
@@ -20,17 +18,15 @@ helpviewer_keywords:
   - "data conversions from C to SQL types [ODBC]"
   - "C data types [ODBC], converting to SQL types"
 ms.assetid: ee0afe78-b58f-4d34-ad9b-616bb23653bd
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Converting Data from C to SQL Data Types
 When an application calls **SQLExecute** or **SQLExecDirect**, the driver retrieves the data for any parameters bound with **SQLBindParameter** from storage locations in the application. When an application calls **SQLSetPos**, the driver retrieves the data for an update or add operation from columns bound with **SQLBindCol**. For data-at-execution parameters, the application sends the parameter data with **SQLPutData**. If necessary, the driver converts the data from the data type specified by the *ValueType* argument in **SQLBindParameter** to the data type specified by the *ParameterType* argument in **SQLBindParameter**,and then sends the data to the data source.  
   
  The following table shows the supported conversions from ODBC C data types to ODBC SQL data types. A filled circle indicates the default conversion for an SQL data type (the C data type from which the data will be converted when the value of *ValueType* or the SQL_DESC_CONCISE_TYPE descriptor field is SQL_C_DEFAULT). A hollow circle indicates a supported conversion.  
   
- The format of the converted data is not affected by the Windows® country setting.  
+ The format of the converted data is not affected by the Windows® country or region setting.  
   
  ![Supported conversions: ODBC C to SQL data types](../../../odbc/reference/appendixes/media/apd1b.gif "apd1b")  
   
@@ -42,16 +38,16 @@ When an application calls **SQLExecute** or **SQLExecDirect**, the driver retrie
   
  The following terms are used in the tables:  
   
--   **Byte length of data** — Number of bytes of SQL data available to send to the data source, whether or not the data will be truncated before it is sent to the data source. For string data, this does not include space for the null-termination character.  
+-   **Byte length of data** - Number of bytes of SQL data available to send to the data source, whether or not the data will be truncated before it is sent to the data source. For string data, this does not include space for the null-termination character.  
   
--   **Column byte length** — Number of bytes required to store the data at the data source.  
+-   **Column byte length** - Number of bytes required to store the data at the data source.  
   
--   **Character byte length** — Maximum number of bytes needed to display data in character form. This is as defined for each SQL data type in [Display Size](../../../odbc/reference/appendixes/display-size.md), except character byte length is in bytes, while the display size is in characters.  
+-   **Character byte length** - Maximum number of bytes needed to display data in character form. This is as defined for each SQL data type in [Display Size](../../../odbc/reference/appendixes/display-size.md), except character byte length is in bytes, while the display size is in characters.  
   
--   **Number of digits** — Number of characters used to represent a number, including the minus sign, decimal point, and exponent (if needed).  
+-   **Number of digits** - Number of characters used to represent a number, including the minus sign, decimal point, and exponent (if needed).  
   
 -   **Words in**   
-     ***italics***  — Elements of the SQL grammar. For the syntax of grammar elements, see [Appendix C: SQL Grammar](../../../odbc/reference/appendixes/appendix-c-sql-grammar.md).  
+     ***italics***  - Elements of the SQL grammar. For the syntax of grammar elements, see [Appendix C: SQL Grammar](../../../odbc/reference/appendixes/appendix-c-sql-grammar.md).  
   
  This section contains the following topics.  
   

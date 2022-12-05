@@ -1,20 +1,15 @@
 ---
 title: "Interactive Functionality - Different Report Rendering Extensions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Reporting Services allows you to interact with a paginated report at runtime. This article describes how the interactive features work in specific formats.
+ms.date: 03/07/2017
+ms.service: reporting-services
+ms.subservice: report-builder
+
+
+ms.topic: conceptual
 ms.assetid: f0bd1c4c-e8b5-467f-b5a1-541f19c7e3e2
-caps.latest.revision: 7
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Interactive Functionality - Different Report Rendering Extensions
   [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] provides features for interacting with a paginated report at run time. Not all of the report rendering formats support the full range of interactive features. Use the following table to understand how each interactive feature works in specific formats.  
@@ -61,7 +56,7 @@ manager: "erikre"
   
 |Export Option|Support Information|  
 |-------------------|-------------------------|  
-|Preview/Report Viewer, HTML|For tabular repots, users click sort arrows on column to change how the data is sorted.|  
+|Preview/Report Viewer, HTML|For tabular reports, users click sort arrows on column to change how the data is sorted.|  
 |PDF|Not available in PDF.|  
 |Excel|Not available in Excel.|  
 |Word|Not available in Word.|  

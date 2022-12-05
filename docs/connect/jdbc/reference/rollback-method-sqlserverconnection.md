@@ -1,24 +1,15 @@
 ---
-title: "rollback Method (SQLServerConnection) | Microsoft Docs"
-ms.custom: ""
+title: "rollback Method (SQLServerConnection)"
+description: "rollback Method (SQLServerConnection)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.rollback"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.rollback"
 apitype: "Assembly"
-ms.assetid: cda48c7e-9ce1-42c4-8fba-f6641cecb093
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # rollback Method (SQLServerConnection)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

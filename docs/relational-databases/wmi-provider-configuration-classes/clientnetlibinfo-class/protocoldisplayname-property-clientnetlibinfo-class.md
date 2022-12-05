@@ -1,13 +1,11 @@
 ---
-title: "ProtocolDisplayName Property (ClientNetLibInfo Class) | Microsoft Docs"
-ms.custom: ""
+description: "ProtocolDisplayName Property (ClientNetLibInfo Class)"
+title: "ProtocolDisplayName Property (ClientNetLibInfo)"
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "ProtocolDisplayName Property (ClientNetLibInfo Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "ProtocolDisplayName property"
 ms.assetid: b90755fd-7cac-4bdb-8e45-e95119a7665c
-caps.latest.revision: 31
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # ProtocolDisplayName Property (ClientNetLibInfo Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets or sets the name used to display the protocol.  
   
 ## Syntax  
@@ -42,6 +39,5 @@ object.ProtocolDisplayName [= value]
 ## Remarks  
   
 ## See Also  
- [Configure Client Protocols](http://technet.microsoft.com/library/ms181035.aspx)  
-  
+ [Configure Client Protocols](../../../database-engine/configure-windows/configure-client-protocols.md)  
   

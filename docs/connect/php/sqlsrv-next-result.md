@@ -1,27 +1,19 @@
 ---
-title: "sqlsrv_next_result | Microsoft Docs"
-ms.custom: ""
+title: "sqlsrv_next_result"
+description: "sqlsrv_next_result"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "sqlsrv_next_result"
-apitype: "NA"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+helpviewer_keywords:
   - "multiple result sets"
   - "sqlsrv_next_result"
   - "stored procedure support"
   - "API Reference, sqlsrv_next_result"
-ms.assetid: 41270d16-0003-417c-b837-ea51439654cd
-caps.latest.revision: 26
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apiname: "sqlsrv_next_result"
+apitype: "NA"
 ---
 # sqlsrv_next_result
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -44,13 +36,13 @@ sqlsrv_next_result( resource $stmt )
 ## Return Value  
 If the next result was successfully made active, the Boolean value **true** is returned. If an error occurred in making the next result active, **false** is returned. If no more results are available, **null** is returned.  
   
-## Example  
+## Example 1  
 The following example creates and executes a stored procedure that inserts a product review into the *Production.ProductReview* table, and then selects all reviews for the specified product. After execution of the stored procedure, the first result (the number of rows affected by the INSERT query in the stored procedure) is consumed without calling **sqlsrv_next_result**. The next result (the rows returned by the SELECT query in the stored procedure) is made available by calling **sqlsrv_next_result** and consumed using [sqlsrv_fetch_array](../../connect/php/sqlsrv-fetch-array.md).  
   
 > [!NOTE]  
-> Calling stored procedures using canonical syntax is the recommended practice. For more information about canonical syntax, see [Calling a Stored Procedure](http://go.microsoft.com/fwlink/?linkid=119517).  
+> Calling stored procedures using canonical syntax is the recommended practice. For more information about canonical syntax, see [Calling a Stored Procedure](../../relational-databases/native-client-odbc-stored-procedures/calling-a-stored-procedure.md).  
   
-The example assumes that SQL Server and the [AdventureWorks](http://go.microsoft.com/fwlink/?LinkID=67739) database are installed on the local computer. All output is written to the console when the example is run from the command line.  
+The example assumes that SQL Server and the [AdventureWorks](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) database are installed on the local computer. All output is written to the console when the example is run from the command line.  
   
 ```  
 <?php  
@@ -177,13 +169,13 @@ sqlsrv_close( $conn );
   
 When executing a stored procedure that has output parameters, it is recommended that all other results are consumed before accessing the values of output parameters. For more information see [How to: Specify Parameter Direction Using the SQLSRV Driver](../../connect/php/how-to-specify-parameter-direction-using-the-sqlsrv-driver.md).  
   
-## Example  
+## Example 2  
 The following example executes a batch query that retrieves product review information for a specified product ID, inserts a review for the product, then again retrieves the product review information for the specified product ID. The newly inserted product review will be included in the final result set of the batch query. The example uses [sqlsrv_next_result](../../connect/php/sqlsrv-next-result.md) to move from one result of the batch query to the next.  
   
 > [!NOTE]  
 > The first (or only) result returned by a batch query or stored procedure is active without a call to **sqlsrv_next_result**.  
   
-The example uses the *Purchasing.ProductReview* table of the [AdventureWorks](http://go.microsoft.com/fwlink/?linkid=67739) database, and assumes that this database is installed on the server. All output is written to the console when the example is run from the command line.  
+The example uses the *Purchasing.ProductReview* table of the [AdventureWorks](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) database, and assumes that this database is installed on the server. All output is written to the console when the example is run from the command line.  
   
 ```  
 <?php  
@@ -263,9 +255,14 @@ sqlsrv_close( $conn );
 ```  
   
 ## See Also  
-[SQLSRV Driver API Reference](../../connect/php/sqlsrv-driver-api-reference.md)  
-[About Code Examples in the Documentation](../../connect/php/about-code-examples-in-the-documentation.md)  
-[Retrieving Data](../../connect/php/retrieving-data.md)  
-[Updating Data &#40;Microsoft Drivers for PHP for SQL Server&#41;](../../connect/php/updating-data-microsoft-drivers-for-php-for-sql-server.md)  
-[Example Application &#40;SQLSRV Driver&#41;](../../connect/php/example-application-sqlsrv-driver.md)  
+[SQLSRV Driver API Reference](../../connect/php/sqlsrv-driver-api-reference.md)
+
+[About Code Examples in the Documentation](../../connect/php/about-code-examples-in-the-documentation.md)
+
+[Retrieving Data](../../connect/php/retrieving-data.md)
+
+[Updating Data &#40;Microsoft Drivers for PHP for SQL Server&#41;](../../connect/php/updating-data-microsoft-drivers-for-php-for-sql-server.md)
+
+[Example Application &#40;SQLSRV Driver&#41;](../../connect/php/example-application-sqlsrv-driver.md)
+
   

@@ -1,19 +1,15 @@
 ---
+description: "Pseudo-Type Identifiers"
 title: "Pseudo-Type Identifiers | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 ms.assetid: 8fa365d2-9de0-40c6-bcd2-a85613061baf
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Pseudo-Type Identifiers
 For application programming convenience, ODBC defines a number of pseudo-type identifiers. These identifiers do not actually correspond to actual data types, but instead, depending on the situation, resolve to existing data types.  

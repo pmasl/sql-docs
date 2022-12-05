@@ -1,24 +1,15 @@
 ---
-title: "setDouble Method (SQLServerPreparedStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setDouble Method (SQLServerPreparedStatement)"
+description: "setDouble Method (SQLServerPreparedStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.setDouble"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.setDouble"
 apitype: "Assembly"
-ms.assetid: 295c16b7-1532-40e1-93ef-64462a2c0ab6
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setDouble Method (SQLServerPreparedStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

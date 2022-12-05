@@ -1,29 +1,23 @@
 ---
-title: "cdc.&lt;capture_instance&gt;_CT (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "cdc.&lt;capture_instance&gt;_CT (Transact-SQL)"
+description: cdc.&lt;capture_instance&gt;_CT (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "05/01/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "cdc"
   - "cdc_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "cdc.<capture_instance>_CT"
+dev_langs:
+  - "TSQL"
 ms.assetid: 979c8110-3c54-4e76-953c-777194bc9751
-caps.latest.revision: 27
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # cdc.&lt;capture_instance&gt;_CT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Is the change table created when change data capture is enabled on a source table. The table returns one row for each insert and delete operation performed against the source table, and two rows for each update operation performed against the source table. When the name of the change table is not specified at the time the source table is enabled, the name is derived. The format of the name is cdc.*capture_instance*_CT where *capture_instance* is the schema name of the source table and the source table name in the format *schema_table*. For example, if the table **Person.Address** in the **AdventureWorks** sample database is enabled for change data capture, the derived change table name would be **cdc.Person_Address_CT**.  
   
@@ -43,7 +37,7 @@ manager: "jhubbard"
   
 ## Remarks  
 
-The `__$command_id` column was column was introduced in a cumulative update in versions 2012 through 2016. For version and download information, see KB article 3030352 at [FIX: The change table is ordered incorrectly for updated rows after you enable change data capture for a Microsoft SQL Server database](https://support.microsoft.com/help/3030352/fix-the-change-table-is-ordered-incorrectly-for-updated-rows-after-you).  For more information, see [CDC functionality may break after upgrading to the latest CU for SQL Server 2012, 2014 and 2016](https://blogs.msdn.microsoft.com/sql_server_team/cdc-functionality-may-break-after-upgrading-to-the-latest-cu-for-sql-server-2012-2014-and-2016/).
+The `__$command_id` column was column was introduced in a cumulative update in versions 2012 through 2016. For version and download information, see KB article 3030352 at [FIX: The change table is ordered incorrectly for updated rows after you enable change data capture for a Microsoft SQL Server database](https://support.microsoft.com/help/3030352/fix-the-change-table-is-ordered-incorrectly-for-updated-rows-after-you).  For more information, see [CDC functionality may break after upgrading to the latest CU for SQL Server 2012, 2014 and 2016](/archive/blogs/sql_server_team/cdc-functionality-may-break-after-upgrading-to-the-latest-cu-for-sql-server-2012-2014-and-2016).
 
 ## Captured Column Data Types  
  Captured columns included in this table have the same data type and value as their corresponding source columns with the following exceptions:  
@@ -71,10 +65,12 @@ The `__$command_id` column was column was introduced in a cumulative update in v
 2.  In the change table, perform the same update operation to the equivalent column.  
   
 3.  Alter the source table by specifying the new data type. The data type change is propagated successfully to the change table.  
-  
+
 ## Data Manipulation Language Modifications  
- When insert, update, and delete operations are performed on a change data capture enabled source table, a record of those DML operations appears in the database transaction log. The change data capture capture process retrieves information about those changes from the transaction log, and adds either one or two rows to the change table to record the change. Entries are added to the change table in the same order that they were committed to the source table, although the commit of change table entries must typically be performed on a group of changes instead of for a single entry.  
-  
+ When insert, update, and delete operations are performed on a change data capture enabled source table, a record of those DML operations appears in the database transaction log. The change data capture process retrieves information about those changes from the transaction log, and adds either one or two rows to the change table to record the change. Entries are added to the change table in the same order that they were committed to the source table. That said, the commit of change table entries must typically be performed on a group of changes rather than performed per each entry.
+ 
+ An insert operation results in one row added to the change table; a delete operation results in one row added to the change table; if SQL Server implements an update as a "deferred update", which means as a pair of delete and insert operations, the update operation results in two rows added to the change table: the first row reflecting the deletion of the captured data, and the second row reflecting the insertion of the updated, captured data; if SQL Server does not implement an update as a "deferred update", the update operation results in two rows added to the change table: the first row reflecting the captured data before the update, and the second row reflecting the captured data after the update.
+
  Within the change table entry, the **__$start_lsn** column is used to record the commit LSN that is associated with the change to the source table, and the **__$seqval column** is used to order the change within its transaction. Together, these metadata columns can be used to make sure that the commit order of the source changes is preserved. Because the capture process obtains its change information from the transaction log, it is important to note that change table entries do not appear synchronously with their corresponding source table changes. Instead, corresponding changes appear asynchronously, after the capture process has processed the relevant change entries from the transaction log.  
   
  For insert and delete operations, all the bits in the update mask are set. For update operations, the update mask in both the update old and update new rows will be modified to reflect the columns that changed during update.  
@@ -82,5 +78,4 @@ The `__$command_id` column was column was introduced in a cumulative update in v
 ## See Also  
  [sys.sp_cdc_enable_table &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-enable-table-transact-sql.md)   
  [sys.sp_cdc_get_ddl_history &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-get-ddl-history-transact-sql.md)  
-  
   

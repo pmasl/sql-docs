@@ -1,24 +1,15 @@
 ---
-title: "setSelectMethod Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "setSelectMethod Method (SQLServerDataSource)"
+description: "setSelectMethod Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDataSource.setSelectMethod"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDataSource.setSelectMethod"
 apitype: "Assembly"
-ms.assetid: 7934276d-5ac9-4cbc-a2a0-2c65c93733ac
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setSelectMethod Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,23 +1,20 @@
 ---
-title: "Create and Edit an Oracle CDC Service | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/20/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Create and Edit an Oracle CDC Service
+description: "Create and Edit an Oracle CDC Service"
+ms.service: sql
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "createSrv"
-ms.assetid: 10cd612e-d8f1-4af2-97d3-a0c22e1e2326
-caps.latest.revision: 9
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "03/20/2017"
 ---
+
 # Create and Edit an Oracle CDC Service
+
   You create and edit a new Oracle CDC Windows Service from the CDC Service Configuration Console.  
   
  To create a new Oracle CDC Windows service, select **Local CDC Services** from the left pane, then click **New Service** from the **Actions** pane. You can also right-click **Local CDC Services** and select **New Service**. The New Oracle CDC Windows Service dialog box opens.  
@@ -28,7 +25,7 @@ manager: "jhubbard"
   
  Enter the following information in the New Oracle CDC Windows Service dialog box or the CDC Service Properties dialog box.  
   
-** Service Name**  
+**Service Name**  
  Type the name of the new Oracle CDC Windows Service. You should not use long names, if possible. The characters / and \ cannot be used in the service name.  
   
 > [!NOTE]  
@@ -48,7 +45,7 @@ manager: "jhubbard"
   
      On Windows Vista or Windows Server 2008, the default service account is the NETWORK SERVICE account.  
   
-     On Windows 7, Windows Server 2008 R2 and later, the default service account is NT Service\\<service-name>.  
+     On Windows 7, Windows Server 2008 R2 and later, the default service account is NT Service\\\\<service-name\>.  
   
      Using these accounts lets you work without using passwords because a password is not necessary for these accounts. In addition these accounts provide only the necessary permissions required for the Oracle CDC Service to run.  
   

@@ -1,31 +1,26 @@
 ---
-title: "sys.xml_schema_component_placements (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.xml_schema_component_placements (Transact-SQL)"
+description: sys.xml_schema_component_placements (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.xml_schema_component_placements"
   - "xml_schema_component_placements_TSQL"
   - "xml_schema_component_placements"
   - "sys.xml_schema_component_placements_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.xml_schema_component_placements catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 2d3c8828-e4b3-423d-bf11-990464c1341b
-caps.latest.revision: 32
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
 ---
 # sys.xml_schema_component_placements (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row per placement for XML schema components.  
    

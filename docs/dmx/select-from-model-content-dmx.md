@@ -1,32 +1,17 @@
 ---
-title: "SELECT FROM &lt;model&gt;.CONTENT (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SELECT"
-  - "FROM"
-  - "Content"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "schema rowsets [Analysis Services], data mining"
-  - "SELECT FROM <model>.CONTENT statement"
-ms.assetid: a270b33f-77be-41fa-9340-2f6cb0dd75e5
-caps.latest.revision: 43
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "SELECT FROM &lt;model&gt;.CONTENT (DMX)"
+description: "SELECT FROM &lt;model&gt;.CONTENT (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # SELECT FROM &lt;model&gt;.CONTENT (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Returns the mining model schema rowset for the specified data mining model.  
   
@@ -56,12 +41,12 @@ SELECT [FLATTENED] [TOP <n>] <expression list> FROM <model>.CONTENT
  Optional. An expression that returns a scalar value.  
   
 ## Remarks  
- The **SELECT FROM** *\<model>***.CONTENT** statement returns content that is specific to each algorithm. For example, you might want to use the descriptions of all the rules of an association rules model in a custom application. You can use a **SELECT FROM \<model>.CONTENT** statement to return values in the NODE_RULE column of the model.  
+ The **SELECT FROM** _\<model>_**.CONTENT** statement returns content that is specific to each algorithm. For example, you might want to use the descriptions of all the rules of an association rules model in a custom application. You can use a **SELECT FROM \<model>.CONTENT** statement to return values in the NODE_RULE column of the model.  
   
  The following table lists the columns that are included in the mining model content.  
   
 > [!NOTE]  
->  Algorithms might interpret the columns differently in order to correctly represent the content. For a description of the mining model content for each algorithm, and tips on how to interpret and query the mining model content for each model type, see [Mining Model Content &#40;Analysis Services - Data Mining&#41;](../analysis-services/data-mining/mining-model-content-analysis-services-data-mining.md).  
+>  Algorithms might interpret the columns differently in order to correctly represent the content. For a description of the mining model content for each algorithm, and tips on how to interpret and query the mining model content for each model type, see [Mining Model Content &#40;Analysis Services - Data Mining&#41;](/analysis-services/data-mining/mining-model-content-analysis-services-data-mining).  
   
 |CONTENT rowset column|Description|  
 |---------------------------|-----------------|  
@@ -111,7 +96,7 @@ WHERE ISDESCENDANT('0')
   
  Expected results:  
   
- Because the model is a decision trees model, the descendants of the model parent node include a single marginal statistics node, a node that represents the predictable attribute, and multiple nodes that contain input attributes and values. For more information, see [Mining Model Content for Decision Tree Models &#40;Analysis Services - Data Mining&#41;](../analysis-services/data-mining/mining-model-content-for-decision-tree-models-analysis-services-data-mining.md).  
+ Because the model is a decision trees model, the descendants of the model parent node include a single marginal statistics node, a node that represents the predictable attribute, and multiple nodes that contain input attributes and values. For more information, see [Mining Model Content for Decision Tree Models &#40;Analysis Services - Data Mining&#41;](/analysis-services/data-mining/mining-model-content-for-decision-tree-models-analysis-services-data-mining).  
   
 ## Using the FLATTENED Keyword  
  The mining model content frequently contains interesting information about the model in nested table columns. The FLATTENED keyword lets you retrieve data from a nested table column without using a provider that supports hierarchical rowsets.  
@@ -156,5 +141,4 @@ WHERE NODE_TYPE = 26
  [SELECT &#40;DMX&#41;](../dmx/select-dmx.md)   
  [Data Mining Extensions &#40;DMX&#41; Data Manipulation Statements](../dmx/dmx-statements-data-manipulation.md)   
  [Data Mining Extensions &#40;DMX&#41; Statement Reference](../dmx/data-mining-extensions-dmx-statements.md)  
-  
   

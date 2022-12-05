@@ -1,19 +1,15 @@
 ---
+description: "Introduction to SQL and ODBC"
 title: "Introduction to SQL and ODBC | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 ms.assetid: 27ed4223-89ff-4044-8bb9-19c8eafa8ad8
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Introduction to SQL and ODBC
 ODBC was created to provide a uniform method of access to different, or heterogeneous, database management systems (DBMSs). This introduction discusses concepts related to the development of ODBC.  

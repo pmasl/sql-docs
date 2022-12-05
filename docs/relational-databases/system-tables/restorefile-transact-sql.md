@@ -1,31 +1,25 @@
 ---
-title: "restorefile (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "restorefile (Transact-SQL)"
+description: restorefile (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "restorefile"
   - "restorefile_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "restorefile system table"
   - "restoring files [SQL Server], restorefile system table"
   - "file restores [SQL Server], restorefile system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 8e40145a-8559-4abe-8e2a-39b818928009
-caps.latest.revision: 34
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # restorefile (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row for each restored file, including files restored indirectly by filegroup name. This table is stored in the **msdb** database.  
   

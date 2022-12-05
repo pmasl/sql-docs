@@ -1,28 +1,25 @@
 ---
-title: "PropertyNumVal Property (ServerNetworkProtocolProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "PropertyNumVal Property (ServerNetworkProtocolProperty Class)"
+title: "PropertyNumVal Property (ServerNetworkProtocolProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
-  - "PropertyNumVal Property (ServerNetworkProtocolProperty Class)"
+  - "PropertyNumVal Property (ServerNetworkProtocolProperty"
 apilocation: 
   - "sqlmgmproviderxpsp2up.mof"
 apitype: "MOFDef"
 helpviewer_keywords: 
   - "PropertyNumVal property"
 ms.assetid: 93fce2e8-adf5-48cf-8106-1fead7501a6f
-caps.latest.revision: 32
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # PropertyNumVal Property (ServerNetworkProtocolProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the numeric value of a referenced property.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.PropertyNumVal [= value]
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

@@ -1,14 +1,12 @@
 ---
+description: "SQLGetInfo Returned Values for Paradox"
 title: "SQLGetInfo Returned Values for Paradox | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "ODBC desktop database drivers [ODBC], Paradox driver"
   - "SQLGetInfo function [ODBC], returned values for Paradox"
@@ -16,10 +14,8 @@ helpviewer_keywords:
   - "Paradox driver [ODBC], SQLGetInfo"
   - "Jet-based ODBC drivers [ODBC], Paradox driver"
 ms.assetid: 543526fb-7c54-42f7-9371-926730ca5483
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLGetInfo Returned Values for Paradox
 The following table lists the C-language #defines for the *fInfoType* argument and the corresponding values returned by **SQLGetInfo**. This information can be retrieved by passing the listed C-language #defines to **SQLGetInfo** in the *fInfoType* argument. For more information about the values returned by **SQLGetInfo**, see the *ODBC Programmer's Reference*.  
@@ -109,7 +105,7 @@ The following table lists the C-language #defines for the *fInfoType* argument a
 |SQL_GETDATA_EXTENSIONS|Multiple values|  
 |SQL_GROUP_BY|SQL_GB_GROUP_BY_CONTAINS_SELECT|  
 |SQL_IDENTIFIER_CASE|SQL_IC_MIXED|  
-|SQL_IDENTIFIER_QUOTE_CHAR|"`" (back quote)|  
+|SQL_IDENTIFIER_QUOTE_CHAR|"\`" (back quote)|  
 |SQL_KEYWORDS|Multiple values|  
 |SQL_LIKE_ESCAPE_CLAUSE|"N"|  
 |SQL_MAX_BINARY_LITERAL_LEN|255|  
@@ -154,7 +150,7 @@ The following table lists the C-language #defines for the *fInfoType* argument a
 |SQL_SCROLL_OPTIONS|Multiple values|  
 |SQL_SEARCH_PATTERN_ESCAPE|"\\"|  
 |SQL_SERVER_NAME|"PARADOX"|  
-|SQL_SPECIAL_CHARACTERS|"~`@#$%^&*_-+=\\}{"';:?/><,.!'[]&#124;"|  
+|SQL_SPECIAL_CHARACTERS|"~\`@#$%^&*_-+=\\}{"';:?/><,.!'[]&#124;"|  
 |SQL_STRING_FUNCTIONS|Multiple values|  
 |SQL_SUBQUERIES|Multiple values|  
 |SQL_SYSTEM_FUNCTIONS|0|  

@@ -1,15 +1,13 @@
 ---
-title: "Using DiffGrams to Modify Data in SQLXML 4.0 | Microsoft Docs"
-ms.custom: ""
+title: "Using DiffGrams to Modify Data in SQLXML 4.0"
+description: View information about using Microsoft .NET Framework DiffGrams in SQLXML 4.0 to modify data in Microsoft SQL Server database tables.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "data deletions [SQLXML]"
   - "updating data [SQLXML]"
   - "DiffGrams [SQLXML]"
@@ -25,12 +23,10 @@ helpviewer_keywords:
   - "record updates [SQLXML]"
   - "record deletions [SQLXML]"
 ms.assetid: 48b8a8f9-f3af-404f-8c84-f4c3703364d9
-caps.latest.revision: 22
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # SQLXML 4.0 .NET Framework Support - Using DiffGrams to Modify Data
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   The DiffGram format is introduced in the **DataSet** component of the [!INCLUDE[msCoName](../../../includes/msconame-md.md)] .NET Framework. Within the .NET Framework, you can create DiffGrams and use them to modify data in tables in a Microsoft [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] database.  
   
 > [!NOTE]  

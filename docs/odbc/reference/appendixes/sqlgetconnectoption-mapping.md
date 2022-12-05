@@ -1,25 +1,21 @@
 ---
+description: "SQLGetConnectOption Mapping"
 title: "SQLGetConnectOption Mapping | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "mapping deprecated functions [ODBC], SQLGetConnectOption"
   - "SQLGetConnectOption function [ODBC], mapping"
 ms.assetid: e3792fe4-a955-473a-a297-c1b2403660c4
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLGetConnectOption Mapping
-When an application calls **SQLGetConnectOption** through an ODBC 3*.x* driver, the call to  
+When an application calls **SQLGetConnectOption** through an ODBC *3.x* driver, the call to  
   
 ```  
 SQLGetConnectOption(hdbc, fOption, pvParam)   
@@ -49,4 +45,4 @@ SQLGetConnectOption(hdbc, fOption, pvParam)
   
  For ODBC-defined string connection options, the Driver Manager sets the *BufferLength* argument in the call to **SQLGetConnectAttr** to the predefined maximum length (SQL_MAX_OPTION_STRING_LENGTH); for a nonstring connection option, *BufferLength* is set to 0.  
   
- For an ODBC 3*.x* driver, the Driver Manager no longer checks to see if *Option* is in between SQL_CONN_OPT_MIN and SQL_CONN_OPT_MAX, or is greater than SQL_CONNECT_OPT_DRVR_START. The driver must check the validity of the option values.
+ For an ODBC *3.x* driver, the Driver Manager no longer checks to see if *Option* is in between SQL_CONN_OPT_MIN and SQL_CONN_OPT_MAX, or is greater than SQL_CONNECT_OPT_DRVR_START. The driver must check the validity of the option values.

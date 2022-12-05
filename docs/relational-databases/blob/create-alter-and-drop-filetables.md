@@ -1,25 +1,22 @@
 ---
 title: "Create, Alter, and Drop FileTables | Microsoft Docs"
+description: In SQL Server, the FileTables feature uses a directory structure to store files. Learn how to create a new FileTable or alter or drop an existing FileTable.
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-blob"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: filestream
+ms.topic: conceptual
 helpviewer_keywords: 
   - "FileTables [SQL Server], altering"
   - "FileTables [SQL Server], dropping"
   - "FileTables [SQL Server], creating"
 ms.assetid: 47d69e37-8778-4630-809b-2261b5c41c2c
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
 ---
 # Create, Alter, and Drop FileTables
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Describes how to create a new FileTable, or alter or drop an existing FileTable.  
   
 ##  <a name="BasicsCreate"></a> Creating a FileTable  
@@ -54,7 +51,7 @@ manager: "jhubbard"
     2.  If you do not provide a value for **FILETABLE_COLLATE_FILENAME**, or you specify **database_default**, the column inherits the collation of the current database. If the current database collation is case-sensitive, an error is raised and the **CREATE TABLE** operation fails.  
   
 3.  You can also specify the names to be used for the 3 primary key and unique constraints that are automatically created. If you do not provide names, then the system generates names as described later in this topic.  
-  
+
     -   **FILETABLE_PRIMARY_KEY_CONSTRAINT_NAME**  
   
     -   **FILETABLE_STREAMID_UNIQUE_CONSTRAINT_NAME**  
@@ -65,7 +62,7 @@ manager: "jhubbard"
   
  The following example creates a new FileTable and specifies user-defined values for both **FILETABLE_DIRECTORY** and **FILETABLE_COLLATE_FILENAME**.  
   
-```tsql  
+```sql  
 CREATE TABLE DocumentStore AS FileTable  
     WITH (   
           FileTable_Directory = 'DocumentTable',  
@@ -76,7 +73,7 @@ GO
   
  The following example also creates a new FileTable. Since user-defined values are not specified, the value of **FILETABLE_DIRECTORY** becomes the name of the FileTable, the value of **FILETABLE_COLLATE_FILENAME** becomes database_default, and the primary key and unique contraints receive system-generated names.  
   
-```tsql  
+```sql  
 CREATE TABLE DocumentStore AS FileTable;  
 GO  
 ```  
@@ -94,7 +91,7 @@ GO
   
 -   A FileTable requires a valid FILESTREAM filegroup, since a FileTable contains a FILESTREAM column. You can optionally specify a valid FILESTREAM filegroup as part of the **CREATE TABLE** command for creating a FileTable. If you do not specify a filegroup, then the FileTable uses the default FILESTREAM filegroup for the database. If the database does not have a FILESTREAM filegroup, then an error is raised.  
   
--   You cannot create a table constraint as part of a **CREATE TABLE…AS FILETABLE** statement. However you can add the constraint later by using an **ALTER TABLE** statement.  
+-   You cannot create a table constraint as part of a **CREATE TABLE...AS FILETABLE** statement. However you can add the constraint later by using an **ALTER TABLE** statement.  
   
 -   You cannot create a FileTable in the **tempdb** database or in any of the other system databases.  
   
@@ -111,7 +108,7 @@ GO
   
  **Example**  
   
-```tsql  
+```sql  
 ALTER TABLE filetable_name  
     SET ( FILETABLE_DIRECTORY = N'directory_name' );  
 GO  
@@ -137,12 +134,12 @@ GO
   
 -   The FileTable directory and the sub-directories that it contained disappear from the FILESTREAM file and directory hierarchy of the database.  
   
- The DROP TABLE command fails if there are open file handles in the FileTable’s file namespace. For information about closing open handles, see [Manage FileTables](../../relational-databases/blob/manage-filetables.md).  
+ The DROP TABLE command fails if there are open file handles in the FileTable's file namespace. For information about closing open handles, see [Manage FileTables](../../relational-databases/blob/manage-filetables.md).  
   
 ##  <a name="BasicsOtherObjects"></a> Other Database Objects Are Created When You Create a FileTable  
  When you create a new FileTable, some system-defined indexes and constraints are also created. You cannot alter or drop these objects; they disappear only when the FileTable itself is dropped. To see the list of these objects, query the catalog view [sys.filetable_system_defined_objects &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-filetable-system-defined-objects-transact-sql.md).  
   
-```tsql  
+```sql  
 --View all objects for all filetables, unsorted  
 SELECT * FROM sys.filetable_system_defined_objects;  
 GO  
@@ -157,12 +154,11 @@ GO
  **Indexes that are created when you create a new FileTable**  
  When you create a new FileTable, the following system-defined indexes are also created:  
   
-|||  
+|Columns|Index type|  
 |-|-|  
-|**Columns**|**Index type**|  
-|[path_locator] ASC|Primary Key, non-clustered|  
-|[parent_path_locator] ASC,<br /><br /> [name] ASC|Unique, non-clustered|  
-|[stream_id] ASC|Unique, non-clustered|  
+|[path_locator] ASC|Primary Key, nonclustered|  
+|[parent_path_locator] ASC,<br /><br /> [name] ASC|Unique, nonclustered|  
+|[stream_id] ASC|Unique, nonclustered|  
   
  **Constraints that are created when you create a new FileTable**  
  When you create a new FileTable, the following system-defined constraints are also created:  
@@ -173,7 +169,7 @@ GO
 |Check constraints|The system-defined check constraints enforce the following requirements:<br /><br /> Valid filenames.<br /><br /> Valid file attributes.<br /><br /> Parent object must be a directory.<br /><br /> Namespace hierarchy is locked during file manipulation.|  
   
  **Naming convention for the system-defined constraints**  
- The system-defined constaints described above are named in the format **\<constraintType>_\<tablename>[\_\<columnname>]\_\<uniquifier>** where:  
+ The system-defined constraints described above are named in the format **\<constraintType>_\<tablename>[\_\<columnname>]\_\<uniquifier>** where:  
   
 -   *<constraint_type>* is CK (check constraint), DF (default constraint), FK (foreign key), PK (primary key), or UQ (unique constraint).  
   

@@ -1,24 +1,17 @@
 ---
-title: "Collections (ADO - WFC Syntax) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Collections (ADO - WFC Syntax)"
+description: "Collections (ADO - WFC Syntax)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "syntax indexes [ADO], ADO/WFC"
   - "collections [ADO], ADO/WFC syntax"
   - "ADO/WFC syntax index [ADO]"
-ms.assetid: 073f9a0e-c755-42dd-9f71-4647d68e331a
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Collections (ADO - WFC Syntax)
 **package com.ms.wfc.data**  
@@ -81,6 +74,6 @@ public int getCount()
 ```  
   
 ## See Also  
- [Errors Collection (ADO)](../../../ado/reference/ado-api/errors-collection-ado.md)   
- [Fields Collection (ADO)](../../../ado/reference/ado-api/fields-collection-ado.md)   
- [Parameters Collection (ADO)](../../../ado/reference/ado-api/parameters-collection-ado.md)
+ [Errors Collection (ADO)](./errors-collection-ado.md)   
+ [Fields Collection (ADO)](./fields-collection-ado.md)   
+ [Parameters Collection (ADO)](./parameters-collection-ado.md)

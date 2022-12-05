@@ -1,23 +1,20 @@
 ---
 title: "Log File Viewer | Microsoft Docs"
+description: Use Log File Viewer in SQL Server Management Studio for information about errors and events that are captured in log files.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Log File Viewer"
 ms.assetid: a4ea7fc8-1cb2-4c98-bc86-8991c5e748b2
-caps.latest.revision: 26
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # Log File Viewer
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Log File Viewer in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] is used to access information about errors and events that are captured in log files.  
   
 ## Benefits of using Log File Viewer  
@@ -51,6 +48,6 @@ manager: "jhubbard"
   
 ## See Also  
  [SQL Server Audit &#40;Database Engine&#41;](../../relational-databases/security/auditing/sql-server-audit-database-engine.md)   
- [SQL Server Agent Error Log](http://msdn.microsoft.com/library/0b2d6e6e-cd2d-4b8b-9fa2-2bbd2fc0da41)  
+ [SQL Server Agent Error Log](../../ssms/agent/sql-server-agent-error-log.md)  
   
   

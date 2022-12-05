@@ -1,22 +1,17 @@
 ---
-title: "Bind a Database with Memory-Optimized Tables to a Resource Pool | Microsoft Docs"
-ms.custom: ""
+title: "Bind database with memory-optimized tables to resource pool"
+description: Learn how to create a separate resource pool to manage memory consumption for a SQL Server database with memory-optimized tables.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "08/29/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine-imoltp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: in-memory-oltp
+ms.topic: conceptual
+ms.custom: seo-dt-2019
 ms.assetid: f222b1d5-d2fa-4269-8294-4575a0e78636
-caps.latest.revision: 24
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Bind a Database with Memory-Optimized Tables to a Resource Pool
-[!INCLUDE[tsql-appliesto-ss2014-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-xxxx-xxxx-xxx-md.md)]
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   A resource pool represents a subset of physical resources that can be governed. By default, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] databases are bound to and consume the resources of the default resource pool. To protect [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] from having its resources consumed by one or more memory-optimized tables, and to prevent other memory users from consuming memory needed by memory-optimized tables, you should create a separate resource pool to manage memory consumption for the database with memory-optimized tables.  
   
@@ -54,7 +49,7 @@ manager: "jhubbard"
 ###  <a name="bkmk_CreateDatabase"></a> Create the database  
  The following [!INCLUDE[tsql](../../includes/tsql-md.md)] creates a database named IMOLTP_DB which will contain one or more memory-optimized tables. The path \<driveAndPath> must exist prior to running this command.  
   
-```tsql  
+```sql  
 CREATE DATABASE IMOLTP_DB  
 GO  
 ALTER DATABASE IMOLTP_DB ADD FILEGROUP IMOLTP_DB_fg CONTAINS MEMORY_OPTIMIZED_DATA  
@@ -84,11 +79,11 @@ For this example we will assume that from your calculations you determined that 
 ###  <a name="bkmk_CreateResourcePool"></a> Create a resource pool and configure memory  
  When configuring memory for memory-optimized tables, the capacity planning should be done based on MIN_MEMORY_PERCENT, not on MAX_MEMORY_PERCENT.  See [ALTER RESOURCE POOL &#40;Transact-SQL&#41;](../../t-sql/statements/alter-resource-pool-transact-sql.md) for information on MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT. This provides more predictable memory availability for memory-optimized tables as MIN_MEMORY_PERCENT causes memory pressure to other resource pools to make sure it is honored. To ensure that memory is available and help avoid out-of-memory conditions, the values for MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT should be the same. See [Percent of memory available for memory-optimized tables and indexes](../../relational-databases/in-memory-oltp/bind-a-database-with-memory-optimized-tables-to-a-resource-pool.md#bkmk_PercentAvailable) below for the percent of memory available for memory-optimized tables based on the amount of committed memory.  
   
- See [Best Practices: Using In-Memory OLTP in a VM environment](http://msdn.microsoft.com/library/27ec7eb3-3a24-41db-aa65-2f206514c6f9) for more information when working in a VM environment.  
+ See [Best Practices: Using In-Memory OLTP in a VM environment](/previous-versions/sql/sql-server-2016/dn529286(v=sql.130)) for more information when working in a VM environment.  
   
  The following [!INCLUDE[tsql](../../includes/tsql-md.md)] code creates a resource pool named Pool_IMOLTP with half of the memory available for its use.  After the pool is created Resource Governor is reconfigured to include Pool_IMOLTP.  
   
-```tsql  
+```sql  
 -- set MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT to the same value  
 CREATE RESOURCE POOL Pool_IMOLTP   
   WITH   
@@ -105,7 +100,7 @@ GO
   
  The following [!INCLUDE[tsql](../../includes/tsql-md.md)] defines a binding of the database IMOLTP_DB to the resource pool Pool_IMOLTP. The binding does not become effective until you bring the database online.  
   
-```tsql  
+```sql  
 EXEC sp_xtp_bind_db_resource_pool 'IMOLTP_DB', 'Pool_IMOLTP'  
 GO  
 ```  
@@ -115,7 +110,7 @@ GO
 ##  <a name="bkmk_ConfirmBinding"></a> Confirm the binding  
  Confirm the binding, noting the resource pool id for IMOLTP_DB. It should not be NULL.  
   
-```tsql  
+```sql  
 SELECT d.database_id, d.name, d.resource_pool_id  
 FROM sys.databases d  
 GO  
@@ -124,7 +119,7 @@ GO
 ##  <a name="bkmk_MakeBindingEffective"></a> Make the binding effective  
  You must take the database offline and back online after binding it to the resource pool for binding to take effect. If your database was bound to an a different pool earlier, this removes the allocated memory from the previous resource pool and memory allocations for your memory-optimized table and indexes will now come from the resource pool newly bound with the database.  
   
-```tsql  
+```sql  
 USE master  
 GO  
   
@@ -140,15 +135,15 @@ GO
  And now, the database is bound to the resource pool.  
   
 ##  <a name="bkmk_ChangeAllocation"></a> Change MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT on an existing pool  
- If you add additional memory to the server or the amount of memory needed for your memory-optimized tables changes, you may need to alter the value of MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT. The following steps show you how to alter the value of MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT on a resource pool. See the section below, for guidance on what values to use for MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT.  See the topic [Best Practices: Using In-Memory OLTP in a VM environment](http://msdn.microsoft.com/library/27ec7eb3-3a24-41db-aa65-2f206514c6f9) for more information.  
+ If you add additional memory to the server or the amount of memory needed for your memory-optimized tables changes, you may need to alter the value of MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT. The following steps show you how to alter the value of MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT on a resource pool. See the section below, for guidance on what values to use for MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT.  See the topic [Best Practices: Using In-Memory OLTP in a VM environment](/previous-versions/sql/sql-server-2016/dn529286(v=sql.130)) for more information.  
   
 1.  Use `ALTER RESOURCE POOL` to change the value of both MIN_MEMORY_PERCENT and MAX_MEMORY_PERCENT.  
   
-2.  Use `ALTER RESURCE GOVERNOR` to reconfigure the Resource Governor with the new values.  
+2.  Use `ALTER RESOURCE GOVERNOR` to reconfigure the Resource Governor with the new values.  
   
  **Sample Code**  
   
-```tsql  
+```sql  
 ALTER RESOURCE POOL Pool_IMOLTP  
 WITH  
      ( MIN_MEMORY_PERCENT = 70,  
@@ -161,9 +156,9 @@ GO
 ```  
   
 ##  <a name="bkmk_PercentAvailable"></a> Percent of memory available for memory-optimized tables and indexes  
- If you map a database with memory-optimized tables and a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] workload to the same resource pool, the Resource Governor sets an internal threshold for [!INCLUDE[hek_2](../../includes/hek-2-md.md)] use so that the users of the pool do not have conflicts over pool usage. Generally speaking, the threshold for [!INCLUDE[hek_2](../../includes/hek-2-md.md)] use is about 80% of the pool. The following table shows actual thresholds for various memory sizes.  
+ If you map a database with memory-optimized tables and a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] workload to the same resource pool, the Resource Governor sets an internal threshold for [!INCLUDE[inmemory](../../includes/inmemory-md.md)] use so that the users of the pool do not have conflicts over pool usage. Generally speaking, the threshold for [!INCLUDE[inmemory](../../includes/inmemory-md.md)] use is about 80% of the pool. The following table shows actual thresholds for various memory sizes.  
   
- When you create a dedicated resource pool for the [!INCLUDE[hek_2](../../includes/hek-2-md.md)] database, you need to estimate how much physical memory you need for the in-memory tables after accounting for row versions and data growth. Once estimate the memory needed, you create a resource pool with a percent of the commit target memory for SQL Instance as reflected by column ‘committed_target_kb’ in the DMV `sys.dm_os_sys_info` (see [sys.dm_os_sys_info](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md)). For example, you can create a resource pool P1 with 40% of the total memory available to the instance. Out of this 40%, the [!INCLUDE[hek_2](../../includes/hek-2-md.md)] engine gets a smaller percent to store [!INCLUDE[hek_2](../../includes/hek-2-md.md)] data.  This is done to make sure [!INCLUDE[hek_2](../../includes/hek-2-md.md)] does not consume all the memory from this pool.  This value of the smaller percent depends upon the Target committed Memory. The following table describes memory available to [!INCLUDE[hek_2](../../includes/hek-2-md.md)] database in a resource pool (named or default) before an OOM error is raised.  
+ When you create a dedicated resource pool for the [!INCLUDE[inmemory](../../includes/inmemory-md.md)] database, you need to estimate how much physical memory you need for the in-memory tables after accounting for row versions and data growth. Once you estimate the memory needed, you create a resource pool with a percent of the commit target memory for SQL Instance as reflected by column 'committed_target_kb' in the DMV [`sys.dm_os_sys_info`](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md). For example, you can create a resource pool P1 with 40% of the total memory available to the instance. Out of this 40%, the [!INCLUDE[inmemory](../../includes/inmemory-md.md)] engine gets a smaller percent to store [!INCLUDE[inmemory](../../includes/inmemory-md.md)] data.  This is done to make sure [!INCLUDE[inmemory](../../includes/inmemory-md.md)] does not consume all the memory from this pool.  This value of the smaller percent depends upon the Target committed Memory. The following table describes memory available to [!INCLUDE[inmemory](../../includes/inmemory-md.md)] database in a resource pool (named or default) before an OOM error is raised.  
   
 |Target Committed Memory|Percent available for in-memory tables|  
 |-----------------------------|---------------------------------------------|  
@@ -173,11 +168,11 @@ GO
 |\<= 96 GB|85%|  
 |>96 GB|90%|  
   
- For example, if your ‘target committed memory’ is 100 GB, and you estimate your memory-optimized tables and indexes need 60GBof memory, then you can create a resource pool with MAX_MEMORY_PERCENT = 67 (60GB needed / 0.90 = 66.667GB – round up to 67GB; 67GB / 100GB installed = 67%) to ensure that your [!INCLUDE[hek_2](../../includes/hek-2-md.md)] objects have the 60GB they need.  
+ For example, if your 'target committed memory' is 100 GB, and you estimate your memory-optimized tables and indexes need 60GB of memory, then you can create a resource pool with MAX_MEMORY_PERCENT = 67 (60GB needed / 0.90 = 66.667GB - round up to 67GB; 67GB / 100GB installed = 67%) to ensure that your [!INCLUDE[inmemory](../../includes/inmemory-md.md)] objects have the 60GB they need.  
   
  Once a database has been bound to a named resource pool, use the following query to see memory allocations across different resource pools.  
   
-```tsql  
+```sql  
 SELECT pool_id  
      , Name  
      , min_memory_percent  
@@ -198,12 +193,12 @@ pool_id     Name        min_memory_percent max_memory_percent max_memory_mb used
 ----------- ----------- ------------------ ------------------ ------------- -------------- ----------------   
 1           internal    0                  100                3845          125            3845  
 2           default     0                  100                3845          32             3845  
-259         PoolIMOLTP 0                  100                3845          1356           2307  
+259         Pool_IMOLTP 0                  100                3845          1356           2307  
 ```  
   
- For more information see [sys.dm_resource_governor_resource_pools (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pools-transact-sql.md).  
+ For more information, see [sys.dm_resource_governor_resource_pools (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pools-transact-sql.md).  
   
- If you do not bind your database to a named resource pool, it is bound to the ‘default’ pool. Since default resource pool is used by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] for most other allocations, you will not be able to monitor memory consumed by memory-optimized tables using the DMV sys.dm_resource_governor_resource_pools accurately for the database of interest.  
+ If you do not bind your database to a named resource pool, it is bound to the 'default' pool. Since default resource pool is used by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] for most other allocations, you will not be able to monitor memory consumed by memory-optimized tables using the DMV sys.dm_resource_governor_resource_pools accurately for the database of interest.  
   
 ## See Also  
  [sys.sp_xtp_bind_db_resource_pool &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sys-sp-xtp-bind-db-resource-pool-transact-sql.md)   
@@ -213,5 +208,4 @@ pool_id     Name        min_memory_percent max_memory_percent max_memory_mb used
  [Create a Resource Pool](../../relational-databases/resource-governor/create-a-resource-pool.md)   
  [Change Resource Pool Settings](../../relational-databases/resource-governor/change-resource-pool-settings.md)   
  [Delete a Resource Pool](../../relational-databases/resource-governor/delete-a-resource-pool.md)  
-  
   

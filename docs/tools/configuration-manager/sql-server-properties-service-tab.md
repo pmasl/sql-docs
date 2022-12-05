@@ -1,21 +1,19 @@
 ---
-title: "SQL Server Properties (Service Tab) | Microsoft Docs"
-ms.custom: ""
+title: "SQL Server Properties (Service Tab)"
+description: Learn about the options on the Service tab of the MSSQLSERVER Properties dialog box, such as the binary path, the host name, and the start mode.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: tools-other
+ms.topic: conceptual
 ms.assetid: e4ae0c6b-6fd8-4325-b54e-1758fc659958
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=sql-server-2016"
 ---
 # SQL Server Properties (Service Tab)
+[!INCLUDE [SQL Server Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
   Use the **Service**tab on the **MSSQLSERVER Properties** dialog box to view or specify the following options.  
   
 ## Options  
@@ -50,6 +48,6 @@ manager: "jhubbard"
 -   Disabled: This service cannot be started.  
   
  **State**  
- Indicates whether this service is running, stopped, or disabled. "**…**" indicates a state change is pending.  
+ Indicates whether this service is running, stopped, or disabled. "**...**" indicates a state change is pending.  
   
   

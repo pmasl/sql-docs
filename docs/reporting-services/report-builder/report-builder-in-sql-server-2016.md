@@ -1,28 +1,26 @@
 ---
-title: "Report Builder in SQL Server 2016 | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
+title: "Microsoft Report Builder in SQL Server | Microsoft Docs"
+description: Microsoft Report Builder is a tool for authoring paginated reports for SQL Server Reporting Services and Power BI Report Server. To create a report, you specify data to retrieve, where to get it, and how to display it.
+ms.date: 05/10/2019
+ms.service: reporting-services
+ms.subservice: report-builder
+
+
+ms.topic: conceptual
 f1_keywords: 
   - "10428"
 helpviewer_keywords: 
   - "overview of Report Builder"
   - "getting started"
 ms.assetid: 55bf4f9c-d037-412f-ae57-3fc39ce32fa5
-caps.latest.revision: 35
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Report Builder in SQL Server 2016
-  [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion-md.md)] is a tool for authoring paginated reports, for business users who prefer to work in a stand-alone environment instead of using Report Designer in Visual Studio.  When you design a paginated report, you're creating a report definition that specifies where to get the data, which data to get, and how to display the data. When you run the report, the report processor takes the report definition you have specified, retrieves the data, and combines it with the report layout to generate the report. You can preview your report in [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion-md.md)] and publish your report to a [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] report server in native mode or  in SharePoint integrated mode, where others can run it.  
+# Microsoft Report Builder in SQL Server
+
+Microsoft [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] is a tool for authoring paginated reports, for business users who prefer to work in a stand-alone environment instead of using Report Designer in Visual Studio / SSDT.  When you design a paginated report, you're creating a report definition that specifies what data to retrieve, where to get it, and how to display it. When you run the report, the report processor takes the report definition you have specified, retrieves the data, and combines it with the report layout to generate the report. You can preview your report in [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)]. Then publish your report to a [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] report server in native mode or in SharePoint integrated mode (2016 and earlier). 
+
+You can also publish a paginated report to the Power BI service. If so, we recommend using [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi). Read more about [paginated reports in Power BI Premium](/power-bi/paginated-reports-report-builder-power-bi) (Preview).
   
  ![rs_GettingStartedReport](../../reporting-services/report-builder/media/rs-gettingstartedreport.png "rs_GettingStartedReport")  
   
@@ -36,7 +34,9 @@ manager: "erikre"
   
 -   **Start with the Map wizard** to create reports that display aggregated data against a geographic or geometric background. Map data can be spatial data from a [!INCLUDE[tsql](../../includes/tsql-md.md)] query or an Environmental Systems Research Institute, Inc. (ESRI) shapefile. You can also add a [!INCLUDE[msCoName](../../includes/msconame-md.md)] Bing map tile background.  
   
--   **Start your report with report parts**. Report parts are report items that have been published separately to a [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] report server in native mode or  in SharePoint integrated mode. Report parts can be reused in other reports. Report items such as tables, matrices, charts, and images can be published as report parts.  
+-   **Start your report with report parts**. Report parts are report items that have been published separately to a [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] report server in native mode or  in SharePoint integrated mode. Report parts can be reused in other reports. Report items such as tables, matrices, charts, and images can be published as report parts.
+
+    [!INCLUDE [ssrs-report-parts-deprecated](../../includes/ssrs-report-parts-deprecated.md)] 
   
 ##  <a name="DesignRept"></a> Design Your Report  
   
@@ -44,10 +44,9 @@ manager: "erikre"
   
 -   **Report from a variety of data sources.** Build reports using data from any data source type that has a [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]-managed data provider, OLE DB provider, or ODBC data source. You can create reports that use relational and multidimensional data from [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], Oracle, Hyperion, and other databases. You can use an XML data processing extension to retrieve data from any XML data source. You can use table-valued functions to design custom data sources.  
   
--   **Modify existing reports.** By using [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion-md.md)], you can customize and update reports that were created in [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)]Report Designer.  
+-   **Modify existing reports.** By using [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)], you can customize and update reports that were created in [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)]Report Designer.  
   
 -   **Modify your data** by filtering, grouping, and sorting data, or by adding formulas or expressions.  
-  
 -   **Add charts, gauges, sparklines, and indicators** to summarize data in a visual format, and present large volumes of aggregated information at a glance.  
   
 -   **Add interactive features** such as document maps, show/hide buttons, and drillthrough links to subreports and drillthrough reports. Use parameters and filters to filter data for customized views.  
@@ -72,16 +71,16 @@ manager: "erikre"
   
   [Install Report Builder](../../reporting-services/install-windows/install-report-builder.md)
 
-  [What's New in Reporting Services and Report Builder for SQL Server 2016](~/reporting-services/what-s-new-in-sql-server-reporting-services-ssrs.md)  
-  Describes the new features in this version of [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] and [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion-md.md)].   
+  [What's New in SQL Server Reporting Services and Report Builder](~/reporting-services/what-s-new-in-sql-server-reporting-services-ssrs.md)  
+  Describes the new features in this version of [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] and [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)].   
   [Tutorial: Creating a Quick Chart Report Offline](../../reporting-services/report-builder/tutorial-create-a-quick-chart-report-offline-report-builder.md)  
- Introduces [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion-md.md)] and the wizards available to help you create reports. The tutorial provides a set of data for you to work with so you do not need to connect to a data source to get started.  
+ Introduces [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] and the wizards available to help you create reports. The tutorial provides a set of data for you to work with so you do not need to connect to a data source to get started.  
   
  [Planning a Report &#40;Report Builder&#41;](../../reporting-services/report-design/planning-a-report-report-builder.md)  
  Provides information on what you should consider before you start to build your report.  
   
- [Report Authoring Concepts &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/report-authoring-concepts-report-builder-and-ssrs.md)  
- Defines key concepts used in throughout [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion-md.md)] documentation.  
+ [Reporting Services Concepts (SSRS)](../reporting-services-concepts-ssrs.md)  
+ Defines key concepts used in throughout [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] documentation.  
   
  [Report Design View &#40;Report Builder&#41;](../../reporting-services/report-builder/report-design-view-report-builder.md)  
  Explains the different panes and regions of report design view.  
@@ -90,6 +89,4 @@ manager: "erikre"
  Explains the different panes and regions of shared dataset design view.  
   
  [Keyboard Shortcuts &#40;Report Builder&#41;](../../reporting-services/report-builder/keyboard-shortcuts-report-builder.md)  
- Outlines the shortcut keys available for navigating and designing reports in [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion-md.md)].  
-  
-
+ Outlines the shortcut keys available for navigating and designing reports in [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)].  

@@ -1,14 +1,12 @@
 ---
+description: "sp_syscollector_set_warehouse_database_name (Transact-SQL)"
 title: "sp_syscollector_set_warehouse_database_name (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_syscollector_set_warehouse_database_name"
   - "sp_syscollector_set_warehouse_database_name_TSQL"
@@ -18,13 +16,11 @@ helpviewer_keywords:
   - "sp_syscollector_set_warehouse_database_name"
   - "data collector [SQL Server], stored procedures"
 ms.assetid: a85aca1b-8135-4c81-9a05-da5aec76f1ed
-caps.latest.revision: 17
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_syscollector_set_warehouse_database_name (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Specifies the database name defined in the connection string used to connect to the management data warehouse.  
   

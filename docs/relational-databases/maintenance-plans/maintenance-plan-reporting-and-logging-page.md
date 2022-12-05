@@ -1,23 +1,18 @@
 ---
-title: "Maintenance Plan (Reporting and Logging Page) | Microsoft Docs"
-ms.custom: ""
+title: "Maintenance Plan (Reporting and Logging Page)"
+description: Maintenance Plan (Reporting and Logging Page)
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: supportability
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.maint.reportinglogging.f1"
 ms.assetid: 3a30b17a-3deb-446f-900a-62f88934a90f
-caps.latest.revision: 22
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Maintenance Plan (Reporting and Logging Page)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use the **Reporting and Logging** dialog box to configure the reports and logs that are generated when maintenance plans are executed.  
   
 ## Options  

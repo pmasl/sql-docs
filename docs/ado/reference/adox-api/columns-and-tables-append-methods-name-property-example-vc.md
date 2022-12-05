@@ -1,24 +1,17 @@
 ---
-title: "Columns and Tables Append Methods, Name Property Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Columns and Tables Append Methods, Name Property Example (VC++)"
+description: "Columns and Tables Append Methods, Name Property Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Name property [ADOX], VC++ example"
   - "Append method [ADOX], VC++ example"
-ms.assetid: 2b6dfef9-bcdf-483d-a164-2fa3ec81a43f
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Columns and Tables Append Methods, Name Property Example (VC++)
 The following code demonstrates how to create a new table.  
@@ -72,7 +65,7 @@ int main() {
    }  
   
    catch(...) {  
-      cout << "Error occured in include files...."<< endl;  
+      cout << "Error occurred in include files...."<< endl;  
    }  
   
    ::CoUninitialize();  
@@ -80,6 +73,6 @@ int main() {
 ```  
   
 ## See Also  
- [Append Method (ADOX Columns)](../../../ado/reference/adox-api/append-method-adox-columns.md)   
- [Append Method (ADOX Tables)](../../../ado/reference/adox-api/append-method-adox-tables.md)   
- [Name Property (ADOX)](../../../ado/reference/adox-api/name-property-adox.md)
+ [Append Method (ADOX Columns)](./append-method-adox-columns.md)   
+ [Append Method (ADOX Tables)](./append-method-adox-tables.md)   
+ [Name Property (ADOX)](./name-property-adox.md)

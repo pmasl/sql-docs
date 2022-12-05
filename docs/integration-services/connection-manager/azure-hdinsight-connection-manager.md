@@ -1,24 +1,24 @@
 ---
+description: "Azure HDInsight Connection Manager"
 title: "Azure HDInsight Connection Manager | Microsoft Docs"
 ms.custom: ""
 ms.date: "02/28/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "SQL13.DTS.DESIGNER.AFPHDICM.F1"
   - "SQL14.DTS.DESIGNER.AFPHDICM.F1"
 ms.assetid: 29d01bd9-8b38-43b1-b937-67f8aea57c0f
-caps.latest.revision: 4
 author: "Lingxi-Li"
 ms.author: "lingxl"
-manager: "jhubbard"
 ---
 # Azure HDInsight Connection Manager
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
 The **Azure HDInsight Connection Manager** enables an SSIS package to connect to an Azure HDInsight cluster.
 
 The **Azure HDInsight Connection Manager** is a component of the [SQL Server Integration Services (SSIS) Feature Pack for Azure](../../integration-services/azure-feature-pack-for-integration-services-ssis.md).

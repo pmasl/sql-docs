@@ -1,36 +1,33 @@
 ---
+description: "bcp_init"
 title: "bcp_init | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 apiname: 
   - "bcp_init"
+  - "bcp_initW"
 apilocation: 
   - "sqlncli11.dll"
 apitype: "DLLExport"
 helpviewer_keywords: 
   - "bcp_init function"
 ms.assetid: 6a25862c-7f31-4873-ab65-30f3abde89d2
-caps.latest.revision: 40
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # bcp_init
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  Initializes the bulk copy operation.  
-  
+Initializes the bulk copy operation.  
+
 ## Syntax  
   
 ```  
-  
 RETCODE bcp_init (  
         HDBC hdbc,  
         LPCTSTR szTable,  
@@ -38,7 +35,11 @@ RETCODE bcp_init (
         LPCTSTR szErrorFile,  
         INT eDirection);  
 ```  
-  
+
+Unicode and ANSI names:
+- bcp_initA (ANSI)
+- bcp_initW (Unicode)
+
 ## Arguments  
  *hdbc*  
  Is the bulk copy-enabled ODBC connection handle.  
@@ -48,7 +49,7 @@ RETCODE bcp_init (
   
  If *eDirection* is DB_OUT, *szTable* can also be the name of a database view.  
   
- If *eDirection* is DB_OUT and a SELECT statement is specified using [bcp_control](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-control.md) before [bcp_exec](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-exec.md) is called, **bcp_init***szTable* must be set to NULL.  
+ If *eDirection* is DB_OUT and a SELECT statement is specified using [bcp_control](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-control.md) before [bcp_exec](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-exec.md) is called, **bcp_init** *szTable* must be set to NULL.  
   
  *szDataFile*  
  Is the name of the user file to be copied into or out of. If data is being copied directly from variables by using [bcp_sendrow](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-sendrow.md), set *szDataFile* to NULL.  
@@ -85,7 +86,7 @@ RETCODE bcp_init (
   
  Bulk copies to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] can be optimized for tables that do not contain indexes by setting the database recovery model to SIMPLE or BULK_LOGGED. For more information, see [Prerequisites for Minimal Logging in Bulk Import](../../relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import.md) and [ALTER DATABASE](../../t-sql/statements/alter-database-transact-sql.md).  
   
- If no data file is used, you must call [bcp_bind](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-bind.md) to specify the format and location in memory of the data fsor each column, then copy data rows to the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] using [bcp_sendrow](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-sendrow.md).  
+ If no data file is used, you must call [bcp_bind](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-bind.md) to specify the format and location in memory of the data for each column, then copy data rows to the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] using [bcp_sendrow](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-sendrow.md).  
   
 ## Example  
  This sample shows how to use the ODBC bcp_init function with a format file.  
@@ -215,7 +216,7 @@ int main() {
 }  
   
 ```  
-  
+
 ## See Also  
  [Bulk Copy Functions](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md)  
   

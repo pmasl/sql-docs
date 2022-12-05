@@ -1,15 +1,14 @@
 ---
-title: "SqlXmlCommand Object (SQLXML Managed Classes) | Microsoft Docs"
-ms.custom: ""
+title: "SqlXmlCommand Object (SQLXML)"
+description: Learn about the methods and properties of the SqlXmlCommand object.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "void ExecuteNonQuery() method"
   - "namespaces property"
   - "Stream ExecuteStream() method"
@@ -30,19 +29,17 @@ helpviewer_keywords:
   - "ClientSideXML property"
   - "CommandStream property"
 ms.assetid: c1f9e0bb-a89d-4d6a-a96e-289ef516a3a6
-caps.latest.revision: 23
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # SQLXML Managed Classes - SqlXmlCommand Object
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   This is the constructor for the SqlXmlCommand object:  
   
 ```  
 public SqlXmlCommand(string cnString)  
 ```  
   
- Where `cnString` is the ADO or OLEDB connection string that identifies the server, database, and the login information—for example, `Provider=SQLOLEDB; Server=(local); database=AdventureWorks; Integrated Security=SSPI"`.  
+ Where `cnString` is the ADO or OLEDB connection string that identifies the server, database, and the login information-for example, `Provider=SQLOLEDB; Server=(local); database=AdventureWorks; Integrated Security=SSPI"`.  
   
  In the connection string, the `Provider` must be SQLOLEDB and the `Data Provider` should not be included in the provider string).  
   

@@ -1,27 +1,20 @@
 ---
-title: "OriginalValue and UnderlyingValue Properties Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "OriginalValue and UnderlyingValue Properties Example (VB)"
+description: "OriginalValue and UnderlyingValue Properties Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "UnderlyingValue property [ADO], Visual Basic example"
   - "OriginalValue property [ADO]"
-ms.assetid: 1750804b-d7ef-47d6-8d73-1f51fa1cbe4a
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # OriginalValue and UnderlyingValue Properties Example (VB)
-This example demonstrates the [OriginalValue](../../../ado/reference/ado-api/originalvalue-property-ado.md) and [UnderlyingValue](../../../ado/reference/ado-api/underlyingvalue-property.md) properties by displaying a message if a record's underlying data has changed during a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) batch update.  
+This example demonstrates the [OriginalValue](./originalvalue-property-ado.md) and [UnderlyingValue](./underlyingvalue-property.md) properties by displaying a message if a record's underlying data has changed during a [Recordset](./recordset-object-ado.md) batch update.  
   
 ```  
 'BeginOriginalValueVB  
@@ -118,6 +111,6 @@ End Sub
 ```  
   
 ## See Also  
- [OriginalValue Property (ADO)](../../../ado/reference/ado-api/originalvalue-property-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)   
- [UnderlyingValue Property](../../../ado/reference/ado-api/underlyingvalue-property.md)
+ [OriginalValue Property (ADO)](./originalvalue-property-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)   
+ [UnderlyingValue Property](./underlyingvalue-property.md)

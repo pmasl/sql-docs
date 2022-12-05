@@ -1,14 +1,12 @@
 ---
-title: "sp_statistics (Transact-SQL) | Microsoft Docs"
+description: "The sp_statistics system stored procedure returns a list of all indexes and statistics on a specified table or indexed view."
+title: "sp_statistics (Transact-SQL)"
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.date: "03/11/2022"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_statistics_TSQL"
   - "sp_statistics"
@@ -16,14 +14,12 @@ dev_langs:
   - "TSQL"
 helpviewer_keywords: 
   - "sp_statistics"
-ms.assetid: 0bb6495f-258a-47ec-9f74-fd16671d23b8
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sp_statistics (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns a list of all indexes and statistics on a specified table or indexed view.  
   
@@ -31,9 +27,9 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql  
+-- Syntax for SQL Server, Azure SQL Database, Azure Synapse Analytics, Parallel Data Warehouse  
+
 sp_statistics [ @table_name = ] 'table_name'    
      [ , [ @table_owner = ] 'owner' ]   
      [ , [ @table_qualifier = ] 'qualifier' ]   
@@ -41,27 +37,31 @@ sp_statistics [ @table_name = ] 'table_name'
      [ , [ @is_unique = ] 'is_unique' ]  
      [ , [ @accuracy = ] 'accuracy' ]  
 ```  
-  
+
+> [!NOTE]
+> [!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
+
 ## Arguments  
- [ **@table_name=** ] **'***table_name***'**  
- Specifies the table used to return catalog information. *table_name* is **sysname**, with no default. Wildcard pattern matching is not supported.  
+
+#### `[ @table_name = ] 'table_name'`
+ Specifies the table used to return catalog information. `table_name` is **sysname**, with no default. Wildcard pattern matching is not supported.  
   
- [ **@table_owner=** ] **'***owner***'**  
- Is the name of the table owner of the table used to return catalog information. *table_owner* is **sysname**, with a default of NULL. Wildcard pattern matching is not supported. If *owner* is not specified, the default table visibility rules of the underlying DBMS apply.  
+#### `[ @table_owner = ] 'owner'`
+ Is the name of the table owner of the table used to return catalog information. `table_owner` is **sysname**, with a default of NULL. Wildcard pattern matching is not supported. If `owner` is not specified, the default table visibility rules of the underlying DBMS apply.  
   
- In [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], if the current user owns a table with the specified name, the indexes of that table are returned. If *owner* is not specified and the current user does not own a table with the specified *name*, this procedure looks for a table with the specified *name* owned by the database owner. If one exists, the indexes of that table are returned.  
+ In [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], if the current user owns a table with the specified name, the indexes of that table are returned. If `owner` is not specified and the current user does not own a table with the specified `name`, this procedure looks for a table with the specified `name` owned by the database owner. If one exists, the indexes of that table are returned.  
   
- [ **@table_qualifier=** ] **'***qualifier***'**  
- Is the name of the table qualifier. *qualifier* is **sysname**, with a default of NULL. Various DBMS products support three-part naming for tables (*qualifier***.***owner***.***name*). In [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], this parameter represents the database name. In some products, it represents the server name of the table's database environment.  
+#### `[ @table_qualifier = ] 'qualifier'`
+ Is the name of the table qualifier. `qualifier` is **sysname**, with a default of NULL. Various DBMS products support three-part naming for tables (`_qualifier_**.**_owner_**.**_name_`). In [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], this parameter represents the database name. In some products, it represents the server name of the table's database environment.  
   
- [ **@index_name=** ] **'***index_name***'**  
- Is the index name. *index_name* is **sysname**, with a default of %. Wildcard pattern matching is supported.  
+#### `[ @index_name = ] 'index_name'`
+ Is the index name. `index_name` is **sysname**, with a default of %. Wildcard pattern matching is supported.  
   
- [ **@is_unique=** ] **'***is_unique***'**  
- Is whether only unique indexes (if **Y**) are to be returned. *is_unique* is **char(1)**, with a default of **N**.  
+#### `[ @is_unique = ] 'is_unique'`
+ Is whether only unique indexes (if **Y**) are to be returned. `is_unique` is **char(1)**, with a default of **N**.  
   
- [ **@accuracy=** ] **'***accuracy***'**  
- Is the level of cardinality and page accuracy for statistics. *accuracy* is **char(1)**, with a default of **Q**. Specify **E** to make sure that statistics are updated so that cardinality and pages are accurate.  
+#### `[ @accuracy = ] 'accuracy'`
+ Is the level of cardinality and page accuracy for statistics. `accuracy` is **char(1)**, with a default of **Q**. Specify **E** to make sure that statistics are updated so that cardinality and pages are accurate.  
   
  The value **E** (SQL_ENSURE) asks the driver to unconditionally retrieve the statistics.  
   
@@ -89,29 +89,31 @@ sp_statistics [ @table_name = ] 'table_name'
  None  
   
 ## Remarks  
- The indexes in the result set appear in ascending order by the columns **NON_UNIQUE**, **TYPE**, **INDEX_NAME**, and **SEQ_IN_INDEX**.  
+ The indexes in the result set appear in ascending order by the columns `NON_UNIQUE`, `TYPE`, `INDEX_NAME`, and `SEQ_IN_INDEX`.  
   
  The index type clustered refers to an index in which table data is stored in the order of the index. This corresponds to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] clustered indexes.  
   
  The index type Hashed accepts exact match or range searches, but pattern matching searches do not use the index.  
   
- **sp_statistics** is equivalent to **SQLStatistics** in ODBC. The results returned are ordered by **NON_UNIQUE**, **TYPE**, **INDEX_QUALIFIER**, **INDEX_NAME**, and **SEQ_IN_INDEX**. For more information, see the [ODBC API Reference](http://go.microsoft.com/fwlink/?LinkId=68323).  
+ The `sp_statistics` system stored procedure is equivalent to **SQLStatistics** in ODBC. The results returned are ordered by `NON_UNIQUE`, `TYPE`, `INDEX_QUALIFIER`, `INDEX_NAME`, and `SEQ_IN_INDEX`. For more information, see the [ODBC API Reference](../../odbc/reference/syntax/odbc-reference.md).
   
 ## Permissions  
  Requires SELECT permission on the schema.  
   
 ## Example: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
- The following example returns information about the `DimEmployee` table.  
+ The following example returns information about the `DimEmployee` table from the `AdventureWorks` sample database.  
   
-```  
--- Uses AdventureWorks  
-  
+```sql  
 EXEC sp_statistics DimEmployee;  
 ```  
   
-## See Also  
- [Catalog Stored Procedures &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/catalog-stored-procedures-transact-sql.md)   
- [System Stored Procedures &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)  
-  
-  
+## See also  
 
+- [Catalog Stored Procedures &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/catalog-stored-procedures-transact-sql.md)   
+- [System Stored Procedures &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)  
+- [Statistics for Memory-Optimized Tables](../in-memory-oltp/statistics-for-memory-optimized-tables.md)
+
+## Next steps
+
+- [Statistics](../statistics/statistics.md)
+- [Update Statistics](../statistics/update-statistics.md)

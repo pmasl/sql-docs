@@ -1,14 +1,9 @@
 ---
-title: "ssbdiagnose Utility (Service Broker) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ssbdiagnose Utility (Service Broker)
+description: The ssbdiagnose utility reports issues in Service Broker conversations or the configuration of Service Broker services.
+ms.service: sql
+ms.subservice: tools-other
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Service Broker, runtime reports"
   - "Service Broker, command prompt utilities"
@@ -25,14 +20,19 @@ helpviewer_keywords:
   - "Service Broker, ssbdiagnose utility"
   - "ssbdiagnose"
 ms.assetid: 0c1636e8-a3db-438e-be4c-1ea40d1f4877
-caps.latest.revision: 45
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: 03/14/2017
 ---
+
 # ssbdiagnose Utility (Service Broker)
-  The **ssbdiagnose** utility reports issues in [!INCLUDE[ssSB](../../includes/sssb-md.md)] conversations or the configuration of [!INCLUDE[ssSB](../../includes/sssb-md.md)] services. Configuration checks can be made for either two services or a single service. Issues are reported either in the command prompt window as human-readable text, or as formatted XML that can be redirected to a file or another program.  
-  
+
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+
+The **ssbdiagnose** utility reports issues in [!INCLUDE[ssSB](../../includes/sssb-md.md)] conversations or the configuration of [!INCLUDE[ssSB](../../includes/sssb-md.md)] services. Configuration checks can be made for either two services or a single service. Issues are reported either in the command prompt window as human-readable text, or as formatted XML that can be redirected to a file or another program.
+
 ## Syntax  
   
 ```  
@@ -89,7 +89,7 @@ ssbdiagnose
   [ CONNECT TO <connectionoptions> ] [ ...n]  
   
 <connectionoptions> ::=  
-    [ –E | { -U login_id [ -P password ] } ]  
+    [ -E | { -U login_id [ -P password ] } ]  
   [ -S server_name[\instance_name] ]  
   [ -d database_name ]  
   [ -l login_timeout ]  
@@ -111,7 +111,7 @@ ssbdiagnose
   
  The default setting is **WARNING**.  
   
- **-IGNORE** *error_id*  
+ **-IGNORE** _error_id_  
  Specifies that errors or messages that have the specified *error_id* not be included in reports. You can specify **-IGNORE** multiple times to suppress multiple message IDs.  
   
  **\<baseconnectionoptions>**  
@@ -120,13 +120,13 @@ ssbdiagnose
  **CONFIGURATION**  
  Requests a report of configuration errors between a pair of [!INCLUDE[ssSB](../../includes/sssb-md.md)] services, or for a single service.  
   
- **FROM SERVICE** *service_name*  
+ **FROM SERVICE** _service_name_  
  Specifies the service that initiates conversations.  
   
  **\<fromconnectionoptions>**  
  Specifies the information that is required to connect to the database that holds the initiator service. If **fromconnectionoptions** is not specified, **ssbdiagnose** uses the connection information from **baseconnectionoptions** to connect to the initiator database. If **fromconnectionoptions** is specified it must include the database that contains the initiator service. If **fromconnectionoptions** is not specified, the **baseconnectionoptions** must specify the initiator database.  
   
- **TO SERVICE** *service_name*[, *broker_id* ]  
+ **TO SERVICE** _service_name_[, *broker_id* ]  
  Specifies the service that is the target for the conversations.  
   
  *service_name*: specifies the name of the target service.  
@@ -148,7 +148,7 @@ WHERE database_id = DB_ID();
  **\<mirrorconnectionoptions>**  
  Specifies the information that is required to connect to the mirror database. If **mirrorconnectionoptions** is not specified, **ssbdiagnose** uses the connection information from **baseconnectionoptions** to connect to the mirror database.  
   
- **ON CONTRACT** *contract_name*  
+ **ON CONTRACT** _contract_name_  
  Requests that **ssbdiagnose** only check configurations that use the specified contract. If ON CONTRACT is not specified, **ssbdiagnose** reports on the contract named DEFAULT.  
   
  **ENCRYPTION** { **ON** | **OFF** | **ANONYMOUS** }  
@@ -181,14 +181,14 @@ WHERE database_id = DB_ID();
  *conversation_handle*  
  A unique identifier that identifies a conversation endpoint in an application. Conversation handles are unique to one endpoint of a conversation, the initiator and target endpoints have separate conversation handles.  
   
- Conversation handles are returned to applications by the *@dialog_handle* parameter of the **BEGIN DIALOG** statement, and the **conversation_handle** column in the result set of a **RECEIVE** statement.  
+ Conversation handles are returned to applications by the *\@dialog_handle* parameter of the **BEGIN DIALOG** statement, and the **conversation_handle** column in the result set of a **RECEIVE** statement.  
   
  Conversation handles are reported in the **conversation_handle** column of the **sys.transmission_queue** and **sys.conversation_endpoints** catalog views.  
   
  *conversation_group_id*  
  The unique identifier that identifies a conversation group.  
   
- Conversation group IDs are returned to applications by the *@conversation_group_id* parameter of the **GET CONVERSATION GROUP** statement and the **conversation_group_id** column in the result set of a **RECEIVE** statement.  
+ Conversation group IDs are returned to applications by the *\@conversation_group_id* parameter of the **GET CONVERSATION GROUP** statement and the **conversation_group_id** column in the result set of a **RECEIVE** statement.  
   
  Conversation group IDs are reported in the **conversation_group_id** columns of the **sys.conversation_groups** and **sys.conversation_endpoints** catalog views.  
   
@@ -197,13 +197,13 @@ WHERE database_id = DB_ID();
   
  Conversation IDs are reported in the **conversation_id** column of the **sys.conversation_endpoints** catalog view.  
   
- **-TIMEOUT** *timeout_interval*  
+ **-TIMEOUT** _timeout_interval_  
  Specifies the number of seconds for a **RUNTIME** report to run. If **-TIMEOUT** is not specified the runtime report runs indefinitely. **-TIMEOUT** is used only on **RUNTIME** reports, not **CONFIGURATION** reports. Use ctrl + C to quit **ssbdiagnose** if **-TIMEOUT** was not specified or to end a runtime report before the time**-**out interval expires. *timeout_interval* must be a number between 1 and 2,147,483,647.  
   
  **\<runtimeconnectionoptions>**  
  Specifies the connection information for the databases that contain the services associated with conversation elements being monitored. If all the services are in the same database, you only have to specify one **CONNECT TO** clause. If the services are in separate databases you must supply a **CONNECT TO** clause for each database. If **runtimeconnectionoptions** is not specified, **ssbdiagnose** uses the connection information from **baseconnectionoptions**.  
   
- **–E**  
+ **-E**  
  Open a Windows Authentication connection to an instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] by using your current Windows account as the login ID. The login must be a member of the **sysadmin** fixed-server role.  
   
  The -E option ignores the user and password settings of the SQLCMDUSER and SQLCMDPASSWORD environment variables.  
@@ -212,14 +212,14 @@ WHERE database_id = DB_ID();
   
  If the **-E** option is used together with the **-U** option or the **-P** option, an error message is generated.  
   
- **-U** *login_id*  
+ **-U** _login_id_  
  Open a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication connection by using the specified login ID. The login must be a member of the **sysadmin** fixed-server role.  
   
  If neither **-E** nor **-U** is specified, **ssbdiagnose** uses the value from the SQLCMDUSER environment variable. If SQLCMDUSER is not set either, **ssbdiagnose** tries to connect by using Windows Authentication mode based on the Windows account of the user who is running **ssbdiagnose**.  
   
- If the **-U** option is used together with the **-E** option, an error message is generated. If the **–U** option is followed by more than one argument, an error message is generated and the program exits.  
+ If the **-U** option is used together with the **-E** option, an error message is generated. If the **-U** option is followed by more than one argument, an error message is generated and the program exits.  
   
- **-P** *password*  
+ **-P** _password_  
  Specifies the password for the **-U** login ID. Passwords are case sensitive. If the **-U** option is used and the **-P** option is not used, **ssbdiagnose** uses the value from the SQLCMDPASSWORD environment variable. If SQLCMDPASSWORD is not set either, **ssbdiagnose** prompts the user for a password.  
   
 > [!IMPORTANT]  
@@ -238,15 +238,15 @@ WHERE database_id = DB_ID();
   
  If the **-P** option is followed by more than one argument, an error message is generated.  
   
- **-S** *server_name*[\\*instance_name*]  
+ **-S** _server_name_[\\*instance_name*]  
  Specifies the instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] that holds the [!INCLUDE[ssSB](../../includes/sssb-md.md)] services to be analyzed.  
   
- Specify *server_name* to connect to the default instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] on that server. Specify *server_name***\\***instance_name* to connect to a named instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] on that server. If **-S** is not specified, **ssbdiagnose** uses the value of the SQLCMDSERVER environment variable. If SQLCMDSERVER is not set either, **ssbdiagnose** connects to the default instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] on the local computer.  
+ Specify *server_name* to connect to the default instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] on that server. Specify _server\_name_**\\**_instance\_name_ to connect to a named instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] on that server. If **-S** is not specified, **ssbdiagnose** uses the value of the SQLCMDSERVER environment variable. If SQLCMDSERVER is not set either, **ssbdiagnose** connects to the default instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] on the local computer.  
   
- **-d** *database_name*  
+ **-d** _database_name_  
  Specifies the database that holds the [!INCLUDE[ssSB](../../includes/sssb-md.md)] services to be analyzed. If the database does not exist, an error message is generated. If **-d** is not specified, the default is the database specified in the default-database property for your login.  
   
- **-l** *login_timeout*  
+ **-l** _login_timeout_  
  Specifies the number of seconds before an attempt to connect to a server times out. If **-l** is not specified, **ssbdiagnose** uses the value set for the SQLCMDLOGINTIMEOUT environment variable. If SQLCMDLOGINTIMEOUT is not set either, the default time-out is thirty seconds. The login time-out must be a number between 0 and 65534. If the value that is supplied is not numeric or does not fall into that range, **ssbdiagnose** generates an error message. A value of 0 specifies time-out to be infinite.  
   
  **-?**  
@@ -266,7 +266,7 @@ WHERE database_id = DB_ID();
 -   Get a report of any errors that occur in a set of [!INCLUDE[ssSB](../../includes/sssb-md.md)] conversation elements.  
   
 ## Configuration Reporting  
- To correctly analyze the configuration used by a conversation, run a **ssbdiagnose** configuration report that uses the same options that are used by the conversation. If you specify a lower level of options for **ssbdiagnose** than are used by the conversation, **ssbdiagnose** might not report conditions that are required by the conversation. If you specify a higher level of options for **ssbdiagnose**, it might report items that are not required by the conversation. For example, a conversation between two services in the same database can be run with ENCPRYPTION OFF. If you run **ssbdiagnose** to validate the configuration between the two services, but use the default ENCRYPTION ON setting, **ssbdiagnose** reports that the database is missing a master key. A master key is not required for the conversation.  
+ To correctly analyze the configuration used by a conversation, run a **ssbdiagnose** configuration report that uses the same options that are used by the conversation. If you specify a lower level of options for **ssbdiagnose** than are used by the conversation, **ssbdiagnose** might not report conditions that are required by the conversation. If you specify a higher level of options for **ssbdiagnose**, it might report items that are not required by the conversation. For example, a conversation between two services in the same database can be run with ENCRYPTION OFF. If you run **ssbdiagnose** to validate the configuration between the two services, but use the default ENCRYPTION ON setting, **ssbdiagnose** reports that the database is missing a master key. A master key is not required for the conversation.  
   
  The **ssbdiagnose** configuration report analyzes only one [!INCLUDE[ssSB](../../includes/sssb-md.md)] service or a single pair of services every time it is run. To report on multiple pairs of [!INCLUDE[ssSB](../../includes/sssb-md.md)] services, build a .cmd command file that calls **ssbdiagnose** multiple times.  
   
@@ -304,7 +304,7 @@ WHERE database_id = DB_ID();
  Reports an issue that is preventing **ssbdiagnose** from completing a configuration analysis or from monitoring conversations.  
   
 ## sqlcmd Environment Variables  
- The **ssbdiagnose** utility supports the SQLCMDSERVER, SQLCMDUSER, SQLCMDPASSWORD, and SQLCMDLOGINTIMOUT environment variables that are also used by the **sqlcmd** utility. You can set the environment variables either by using the command prompt SET command, or by using the **setvar** command in [!INCLUDE[tsql](../../includes/tsql-md.md)] scripts that you run by using **sqlcmd**. For more information about how to use **setvar** in **sqlcmd**, see [Use sqlcmd with Scripting Variables](../../relational-databases/scripting/sqlcmd-use-with-scripting-variables.md).  
+ The **ssbdiagnose** utility supports the SQLCMDSERVER, SQLCMDUSER, SQLCMDPASSWORD, and SQLCMDLOGINTIMOUT environment variables that are also used by the **sqlcmd** utility. You can set the environment variables either by using the command prompt SET command, or by using the **setvar** command in [!INCLUDE[tsql](../../includes/tsql-md.md)] scripts that you run by using **sqlcmd**. For more information about how to use **setvar** in **sqlcmd**, see [Use sqlcmd with Scripting Variables](../../ssms/scripting/sqlcmd-use-with-scripting-variables.md).  
   
 ## Permissions  
  In each **connectionoptions** clause, the login specified with either **-E** or **-U** must be a member of the **sysadmin** fixed-server role in the instance specified in **-S**.  
@@ -460,5 +460,4 @@ ssbdiagnose -XML -E -d MyDatabase CONFIGURATION FROM SERVICE
  [sys.transmission_queue &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-transmission-queue-transact-sql.md)   
  [sys.conversation_endpoints &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-conversation-endpoints-transact-sql.md)   
  [sys.conversation_groups &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-conversation-groups-transact-sql.md)  
-  
   

@@ -1,14 +1,12 @@
 ---
+description: "sp_trace_generateevent (Transact-SQL)"
 title: "sp_trace_generateevent (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_trace_generateevent_TSQL"
   - "sp_trace_generateevent"
@@ -17,17 +15,16 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_trace_generateevent"
 ms.assetid: 3ef05bfb-b467-4403-89cc-6e77ef9247dd
-caps.latest.revision: 35
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_trace_generateevent (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Creates a user-defined event in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
->**NOTE:**  This stored procedure is **not** deprecated. All other trace-related stored procedures are deprecated.  
+> [!NOTE]  
+> This stored procedure is **not** deprecated. All other trace-related stored procedures are deprecated.  
   
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
@@ -42,13 +39,13 @@ sp_trace_generateevent [ @eventid = ] event_id
 ```  
   
 ## Arguments  
- [ **@eventid=**] *event_id*  
+`[ @eventid = ] event_id`
  Is the ID of the event to turn on. *event_id* is **int**, with no default. The ID must be one of the event numbers from 82 through 91, which represent user-defined events as set with [sp_trace_setevent](../../relational-databases/system-stored-procedures/sp-trace-setevent-transact-sql.md).  
   
- [ **@userinfo**= ] **'***user_info***'**  
+`[ @userinfo = ] 'user_info'`
  Is the optional user-defined string identifying the reason for the event. *user_info* is **nvarchar(128)**, with a default of NULL.  
   
- [ **@userdata**= ] *user_data*  
+`[ @userdata = ] user_data`
  Is the optional user-specified data for the event. *user_data* is **varbinary(8000)**, with a default of NULL.  
   
 ## Return Code Values  

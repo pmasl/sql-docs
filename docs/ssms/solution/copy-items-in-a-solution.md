@@ -1,25 +1,22 @@
 ---
-title: "Copy Items in a Solution | Microsoft Docs"
-ms.custom: ""
+description: "Copy Items in a Solution"
+title: "Copy Items in a Solution"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "copying items"
   - "projects [SQL Server Management Studio], copying"
   - "solutions [SQL Server Management Studio], item copying"
 ms.assetid: f95f084e-9f3d-4d15-90b4-1094ab2eda51
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Copy Items in a Solution
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 You can copy items using Solution Explorer or Windows Explorer.  
   
 ### To copy items within Solution Explorer  

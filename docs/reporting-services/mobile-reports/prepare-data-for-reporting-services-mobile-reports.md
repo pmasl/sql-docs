@@ -1,36 +1,33 @@
 ---
 title: "Prepare data for Reporting Services mobile reports | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "02/08/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: SQL Server Mobile Report Publisher supports complex data operations, like filtering, aggregation, and time slicing. Learn to prepare data for these operations.
+ms.date: 07/21/2022
+ms.service: reporting-services
+ms.subservice: mobile-reports
+
+ms.topic: conceptual
 ms.assetid: 8adce9ad-6a08-4d20-b1cf-d3c45544d8de
-caps.latest.revision: 15
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Prepare data for Reporting Services mobile reports
+
+[!INCLUDE [ssrs-mobile-report-deprecated](../../includes/ssrs-mobile-report-deprecated.md)]
   
 [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-long.md)] supports a number of complex data operations, including filtering, aggregation, and time slicing. This article offers some points to keep in mind while preparing data. Pre-aggregating data can optimize both mobile report creation and use, and some mobile report designs require it.   
   
 ## Date and time formats 
 When dealing with date and time intervals for use in a mobile report, particularly with the TimeNavigator, it's important to format the date/time column properly so the [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] can identify it as such. Here are examples of valid date/time formats:  
   
-    05/01/2009    
-    2009-05-01    
-    05/01/2009 14:57:32.8    
-    2009-05-01 14:57:32.8    
-    2009-05-01T14:57:32.8375298-04:00    
-    5/01/2008 14:57:32.80 -07:00    
-    1 May 2008 2:57:32.8 PM    
-    Fri, 15 May 2009 20:10:57 GMT    
+`05/01/2009`    
+`2009-05-01`    
+`05/01/2009 14:57:32.8`    
+`2009-05-01 14:57:32.8`    
+`2009-05-01T14:57:32.8375298-04:00`    
+`5/01/2008 14:57:32.80 -07:00`    
+`1 May 2008 2:57:32.8 PM`    
+`Fri, 15 May 2009 20:10:57 GMT`    
+
   
 Date- and time-based datasets can, in most cases, be described by one or more date/time intervals, such as hourly, daily, monthly, quarterly, and yearly. [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] can combine multiple tables of different granularity and display them on a single mobile report. However, keep in mind the relevant intervals from the original dataset(s), as they can help when deciding what date/time filter options to present to the user in the final mobile report.  
 
@@ -39,7 +36,7 @@ Date fields in [!INCLUDE[ssASnoversion_md](../../includes/ssasnoversion-md.md)] 
 ## Preparing filter data ##  
 [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] can filter data based on both date/time fields and key fields. Though key fields can be numeric, in most cases they're either an ID or a string value. To prepare a filter field for use with a navigator element such as the Selection List, the filter key should be a single column in the data table. That way, you can group the table rows according to the value in the filter column. Having multiple columns contain different filter keys, or filter criteria, allows for mobile reports with multiple filter navigators to be used together hierarchically or individually.  
   
-| Industry  | Country   | Region    |  
+| Industry  | Location   | Region    |  
 | ------------- | ------------- | ------------- |  
 | Banks     | AFGHANISTAN   | ASIA      |  
 | Commercial & Professional Services | AFGHANISTAN | ASIA |  

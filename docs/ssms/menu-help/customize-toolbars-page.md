@@ -1,27 +1,23 @@
 ---
-title: "Customize (Toolbars Page) | Microsoft Docs"
-ms.custom: ""
+description: "Customize (Toolbars Page)"
+title: "Customize (Toolbars Page)"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.customize.toolbars"
+ms.subservice: ssms
+ms.topic: ui-reference
+f1_keywords:
   - "sql13.swb.vs.customizetool.f1"
 ms.assetid: 51ce6254-5682-43ff-8beb-4116a75c652e
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Customize (Toolbars Page)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 The **Toolbars** tab enables you to create, rename, remove, and reset toolbars. You can access this tab by clicking **Customize** on the **Tools** menu and then clicking **Toolbars**.  
   
-## UIElement List  
+## UI element list  
 **Toolbars**  
 Displays the built-in toolbars and any other toolbars you create. When a toolbar is displayed, a check mark appears to the left of it in this dialog box.  
   
@@ -51,4 +47,3 @@ Specifies whether shortcut key combinations appear in ToolTips for commands on t
   
 **Keyboard**  
 Displays the **Keyboard** pane of the **Options** dialog box, which allows you to change and define shortcut key combinations for commands.  
-  

@@ -1,14 +1,12 @@
 ---
+description: "semanticsimilaritydetailstable (Transact-SQL)"
 title: "semanticsimilaritydetailstable (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "semanticsimilaritydetailstable"
   - "semanticsimilaritydetailstable_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "semanticsimilaritydetailstable function"
 ms.assetid: 038d751a-fca5-4b4c-9129-cba741a4e173
-caps.latest.revision: 16
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
 ---
 # semanticsimilaritydetailstable (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a table of zero, one, or more rows of key phrases that are common across two documents (a source document and a matched document) whose content is semantically similar.  
   
@@ -33,7 +29,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```tsql  
+```sql  
 SEMANTICSIMILARITYDETAILSTABLE  
     (  
     table,  
@@ -92,7 +88,7 @@ SEMANTICSIMILARITYDETAILSTABLE
 ## Examples  
  The following example retrieves the 5 key phrases that had the highest similarity score between the specified candidates in **HumanResources.JobCandidate** table of the AdventureWorks2012 sample database. The @CandidateId and @MatchedID variables represent values from the key column of the full-text index.  
   
-```tsql  
+```sql  
 SELECT TOP(5) KEY_TBL.keyphrase, KEY_TBL.score  
 FROMSEMANTICSIMILARITYDETAILSTABLE  
     (  

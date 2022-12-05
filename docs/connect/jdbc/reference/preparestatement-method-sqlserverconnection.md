@@ -1,24 +1,15 @@
 ---
-title: "prepareStatement Method (SQLServerConnection) | Microsoft Docs"
-ms.custom: ""
+title: "prepareStatement Method (SQLServerConnection)"
+description: "prepareStatement Method (SQLServerConnection)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.prepareStatement"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.prepareStatement"
 apitype: "Assembly"
-ms.assetid: bd4e4085-f704-4a73-b6a7-7d443d564728
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # prepareStatement Method (SQLServerConnection)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

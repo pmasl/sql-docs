@@ -1,23 +1,18 @@
 ---
+description: "Configure Windows Authentication on the Report Server"
 title: "Configure Windows Authentication on the Report Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/26/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.date: 06/22/2020
+ms.service: reporting-services
+ms.subservice: security
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Windows authentication [Reporting Services]"
   - "Reporting Services, configuration"
 ms.assetid: 4de9c3dd-0ee7-49b3-88bb-209465ca9d86
-caps.latest.revision: 25
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Configure Windows Authentication on the Report Server
   By default, [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] accepts requests that specify Negotiate or NTLM authentication. If your deployment includes client applications and browsers that use these security providers, you can use the default values without additional configuration. If you want to use a different security provider for Windows integrated security (for example, if you want to use Kerberos directly), or if you modified the default values and want to restore the original settings, you can use the information in this topic to specify authentication settings on the report server.  
@@ -26,7 +21,7 @@ manager: "erikre"
   
  The following additional requirements must also be met:  
   
--   The RSeportServer.config files must have **AuthenticationType** set to **RSWindowsNegotiate**, **RSWindowsKerberos**, or **RSWindowsNTLM**. By default, the RSReportServer.config file includes the **RSWindowsNegotiate** setting if the Report Server service account is either NetworkService or LocalSystem; otherwise, the **RSWindowsNTLM** setting is used. You can add **RSWindowsKerberos** if you have applications that only use Kerberos authentication.  
+-   The RSReportServer.config files must have **AuthenticationType** set to **RSWindowsNegotiate**, **RSWindowsKerberos**, or **RSWindowsNTLM**. By default, the RSReportServer.config file includes the **RSWindowsNegotiate** setting if the Report Server service account is either NetworkService or LocalSystem; otherwise, the **RSWindowsNTLM** setting is used. You can add **RSWindowsKerberos** if you have applications that only use Kerberos authentication.  
   
     > [!IMPORTANT]  
     >  Using **RSWindowsNegotiate** will result in a Kerberos authentication error if you configured the Report Server service to run under a domain user account and you did not register a Service Principal Name (SPN) for the account. For more information, see [Resolving Kerberos Authentication Errors When Connecting to a report server](#proxyfirewallRSWindowsNegotiate) in this topic.  
@@ -74,11 +69,10 @@ manager: "erikre"
           <AuthenticationTypes>  
                  <RSWindowsNTLM />  
           </AuthenticationTypes>  
-          <EnableAuthPersistence>true</EnableAuthPersistence>  
+          <EnableAuthPersistence>true</EnableAuthPersistence>
+    </Authentication>
     ```  
-  
-     \</Authentication>  
-  
+    
      The third XML structure specifies all of the security packages that are used in Windows integrated security:  
   
     ```  
@@ -131,7 +125,7 @@ manager: "erikre"
   
 -   Register an SPN for the Report Server service under the domain user account. For more information, see [Register a Service Principal Name &#40;SPN&#41; for a Report Server](../../reporting-services/report-server/register-a-service-principal-name-spn-for-a-report-server.md).  
   
--   Change the service account to run under a built-in account such as Network Service. Built-in accounts map HTTP SPN to the Host SPN, which is defined when you join a computer to your network. For more information, see [Configure a Service Account &#40;SSRS Configuration Manager&#41;](http://msdn.microsoft.com/library/25000ad5-3f80-4210-8331-d4754dc217e0).  
+-   Change the service account to run under a built-in account such as Network Service. Built-in accounts map HTTP SPN to the Host SPN, which is defined when you join a computer to your network. For more information, see [Configure a Service Account &#40;Report Server Configuration Manager&#41;](../install-windows/configure-the-report-server-service-account-ssrs-configuration-manager.md).
   
 -   Use NTLM. NTLM will generally work in cases where Kerberos authentication fails. To use NTLM, remove **RSWindowsNegotiate** from the RSReportServer.config file and verify that only **RSWindowsNTLM** is specified. If you choose this approach, you can continue to use a domain user account for the Report Server service even if you do not define an SPN for it.  
   
@@ -149,7 +143,7 @@ manager: "erikre"
   
 -   One option for converting the value Decimal value to hexadecimal form is to us the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows Calculator. Windows Calculator supports several modes that show the 'Dec' option and 'Hex' options. Select the 'Dec' option, paste or type in the decimal value you found in the log file and then select the 'Hex' option.  
   
--   Then refer to the topic [User-Account-Control Attribute](http://go.microsoft.com/fwlink/?LinkId=183366) to derive the attribute for the service account.  
+-   Then refer to the topic [User-Account-Control Attribute](/windows/win32/adschema/a-useraccountcontrol) to derive the attribute for the service account.  
   
 ##### SPNs Configured in Active Directory for the Reporting Services service account.  
  To log the SPNs in the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] service trace log file, you can enable the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] Extended Protection feature temporarily.  
@@ -161,15 +155,9 @@ manager: "erikre"
     <RSWindowsExtendedProtectionScenario>Any</RSWindowsExtendedProtectionScenario>  
     ```  
   
--   Restart the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] service and look for entries similar to the following in the trace log file:  
-  
-    ```  
-    rshost!rshost!e44!01/14/2010-14:43:51:: i INFO: Registered valid SPNs list for endpoint 2: rshost!rshost!e44!01/14/2010-14:43:52:: i INFO: SPN Whitelist Added <Explicit> - \<HTTP/sqlpod064-13.w2k3.net>.  
-    ```  
-  
--   The values under \<Explicit> will contain the SPNs configured in Active Directory for the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] service account.  
-  
- If you do not want continue using Extended Protection, then set the configuration values back to defaults and restart the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] Service account.  
+-   Restart the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] service.
+
+ If you don't want to continue using Extended Protection, then set the configuration values back to defaults and restart the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] Service account.  
   
 ```  
 <RSWindowsExtendedProtectionLevel>Off</RSWindowsExtendedProtectionLevel>  
@@ -203,7 +191,7 @@ manager: "erikre"
   
 ## External resources  
   
--   For additional information regarding Kerberos and report servers, see [Deploying a Business Intelligence Solution Using SharePoint, Reporting Services, and PerformancePoint Monitoring Server with Kerberos.](http://go.microsoft.com/fwlink/?LinkID=177751)  
+-   For additional information regarding Kerberos and report servers, see [Deploying a Business Intelligence Solution Using SharePoint, Reporting Services, and PerformancePoint Monitoring Server with Kerberos.](https://www.kasperonbi.com/deploying-a-business-intelligence-solution-using-sharepoint-reporting-services-and-performancepoint-monitoring-server-with-kerberos/)  
   
 ## See Also  
  [Authentication with the Report Server](../../reporting-services/security/authentication-with-the-report-server.md)   
@@ -212,5 +200,4 @@ manager: "erikre"
  [Configure Basic Authentication on the Report Server](../../reporting-services/security/configure-basic-authentication-on-the-report-server.md)   
  [Configure Custom or Forms Authentication on the Report Server](../../reporting-services/security/configure-custom-or-forms-authentication-on-the-report-server.md)   
  [Extended Protection for Authentication with Reporting Services](../../reporting-services/security/extended-protection-for-authentication-with-reporting-services.md)  
-  
   

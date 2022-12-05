@@ -1,24 +1,17 @@
 ---
-title: "Recordset (Visual C++ Syntax Index with #import) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Recordset (Visual C++ Syntax Index with #import)"
+description: "Recordset (Visual C++ Syntax Index with #import)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Recordset collection [ADO], Visual C++ syntax index with #import"
-ms.assetid: fe41da71-b607-4329-94da-60964b8efcdc
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
+apitype: "COM"
 ---
 # Recordset (Visual C++ Syntax Index with #import)
 ## Methods  
@@ -202,4 +195,4 @@ __declspec(property(get=GetStayInSync,put=PutStayInSync)) VARIANT_BOOL
 ```  
   
 ## See Also  
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [Recordset Object (ADO)](./recordset-object-ado.md)

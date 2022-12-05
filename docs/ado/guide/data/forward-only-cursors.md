@@ -1,22 +1,15 @@
 ---
-title: "Forward-Only Cursors | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Forward-Only Cursors"
+description: "Forward-Only Cursors"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "cursors [ADO], forward-only"
   - "forward-only cursors [ADO]"
-ms.assetid: 2b1e062f-3294-4a6f-8241-a17045c4df18
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Forward-Only Cursors
 The typical default cursor type, called a forward-only (or non-scrollable) cursor, can move only forward through the result set. A forward-only cursor does not support scrolling (the ability to move forward and backward in the result set); it only supports fetching rows from the start to the end of the result set. With some forward-only cursors (such as with the SQL Server cursor library), all insert, update, and delete statements made by the current user (or committed by other users) that affect rows in the result set are visible as the rows are fetched. Because the cursor cannot be scrolled backward, however, changes made to rows in the database after the row was fetched are not visible through the cursor.  
@@ -28,6 +21,6 @@ The typical default cursor type, called a forward-only (or non-scrollable) curso
  If your application does not require scrolling through the result set, the forward-only cursor is the best way to retrieve data quickly with the least amount of overhead. Use the **adOpenForwardOnly CursorTypeEnum** to indicate that you want to use a forward-only cursor in ADO.  
   
 ## See Also  
- [Static Cursors](../../../ado/guide/data/static-cursors.md)   
- [Keyset Cursors](../../../ado/guide/data/keyset-cursors.md)   
- [Dynamic Cursors](../../../ado/guide/data/dynamic-cursors.md)
+ [Static Cursors](./static-cursors.md)   
+ [Keyset Cursors](./keyset-cursors.md)   
+ [Dynamic Cursors](./dynamic-cursors.md)

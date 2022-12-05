@@ -1,28 +1,26 @@
 ---
 title: "Add a custom map to a Reporting Services mobile report | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: You can add a custom map to a Reporting Services mobile report. This article describes how to load and connect data to a custom map.
+ms.date: 07/21/2022
+ms.service: reporting-services
+ms.subservice: mobile-reports
+
+ms.topic: conceptual
 ms.assetid: fd259b95-bb58-4eb1-a436-6aa12fc6f5f2
-caps.latest.revision: 6
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Add a custom map to a Reporting Services mobile report
+
+[!INCLUDE [ssrs-mobile-report-deprecated](../../includes/ssrs-mobile-report-deprecated.md)]
+
 Custom maps require two files:  
 * An .SHP file for shape geometries  
 * A .DBF file for metadata  
   
 Read more about [custom maps in Reporting Services mobile reports](../../reporting-services/mobile-reports/custom-maps-in-reporting-services-mobile-reports.md).  
   
-Store the two files in the same folder. The file names of the two must match (e.g., canada.shp and canada.dbf). The metadata (DBF file) must include the field "NAME" with the value of the corresponding shape's name (key), to be used when populating the map with data.   
+Store the two files in the same folder. The file names of the two must match (e.g., canada.shp and canada.dbf). The first column of the metadata (DBF file) is used to match with the key value of the corresponding shape's name (key), to be used when populating the map with data.
   
 ## Load a custom map  
   

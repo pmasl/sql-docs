@@ -1,23 +1,19 @@
 ---
+description: "ODBC Subkey"
 title: "ODBC Subkey | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "registry entries for data sources [ODBC], ODBC subkey"
   - "subkeys [ODBC], ODBC subkey"
   - "ODBC subkey [ODBC]"
 ms.assetid: f9534144-8f42-4946-b0fb-638e9dcde9c8
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # ODBC Subkey
 The values under the ODBC subkey specify ODBC tracing options. These options are set through the Tracing tab of the ODBC Data Source Administrator dialog box displayed by **SQLManageDataSources**. The ODBC subkey itself is optional. The format of these values is as shown in the following table.  

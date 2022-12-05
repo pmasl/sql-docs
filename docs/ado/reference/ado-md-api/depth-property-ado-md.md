@@ -1,28 +1,21 @@
 ---
-title: "Depth Property (ADO MD) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Depth Property (ADO MD)"
+description: "Depth Property (ADO MD)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Level::Depth"
   - "Depth"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Depth property [ADO MD]"
-ms.assetid: e41f2644-617d-4c09-80a4-feb5cf736186
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Depth Property (ADO MD)
-Indicates the number of levels between the [Level](../../../ado/reference/ado-md-api/level-object-ado-md.md) and the root of the hierarchy.  
+Indicates the number of levels between the [Level](./level-object-ado-md.md) and the root of the hierarchy.  
   
 ## Return Values  
  Returns an integer, and is read-only.  
@@ -31,7 +24,7 @@ Indicates the number of levels between the [Level](../../../ado/reference/ado-md
  A **Level** at the root of a hierarchy has a **Depth** value of zero (0).  
   
 ## Applies To  
- [Level Object (ADO MD)](../../../ado/reference/ado-md-api/level-object-ado-md.md)  
+ [Level Object (ADO MD)](./level-object-ado-md.md)  
   
 ## See Also  
- [LevelDepth Property (ADO MD)](../../../ado/reference/ado-md-api/leveldepth-property-ado-md.md)
+ [LevelDepth Property (ADO MD)](./leveldepth-property-ado-md.md)

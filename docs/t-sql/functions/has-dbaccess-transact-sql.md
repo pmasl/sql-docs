@@ -1,20 +1,16 @@
 ---
-title: "HAS_DBACCESS (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "HAS_DBACCESS (Transact-SQL)"
+description: "HAS_DBACCESS (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
+ms.date: "10/23/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "HAS_DBACCESS_TSQL"
   - "HAS_DBACCESS"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "permissions [SQL Server], verifying"
   - "permissions [SQL Server], user access status"
   - "HAS_DBACCESS"
@@ -23,14 +19,12 @@ helpviewer_keywords:
   - "users [SQL Server], access rights status"
   - "testing permissions"
   - "status information [SQL Server], user access"
-ms.assetid: 99b43a72-0722-4a7b-a493-bdee1c74c7b9
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # HAS_DBACCESS (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-pdw-md.md)]
+[!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]
 
   Returns information about whether the user has access to the specified database.  
   
@@ -38,13 +32,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql  
 HAS_DBACCESS ( 'database_name' )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  '*database_name*'  
  The name of the database for which the user wants access information. *database_name* is **sysname**.  
   
@@ -64,7 +58,7 @@ HAS_DBACCESS ( 'database_name' )
 ## Examples  
  The following example tests whether current user has access to the `AdventureWorks2012` database.  
   
-```  
+```sql  
 SELECT HAS_DBACCESS('AdventureWorks2012');  
 GO  
 ```  
@@ -72,7 +66,7 @@ GO
 ## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  The following example tests whether current user has access to the `AdventureWorksPDW2012` database.  
   
-```  
+```sql  
 SELECT HAS_DBACCESS('AdventureWorksPDW2012');  
 GO  
 ```  

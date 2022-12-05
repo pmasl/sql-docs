@@ -1,38 +1,30 @@
 ---
-title: "_ (Wildcard - Match One Character) (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/06/2016"
-ms.prod: "sql-non-specified"
+title: "_ (Wildcard - Match One Character) (Transact-SQL)"
+description: "_ (Wildcard - Match One Character) (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server (starting with 2008)"
-f1_keywords: 
+ms.date: "12/06/2016"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "Match"
   - "wildcard"
   - "_TSQL"
   - "Match One"
   - "_"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "wildcard characters [SQL Server]"
   - "_ (wildcard - match one character)"
-ms.assetid: 11a2ed36-9e21-4bdf-ae20-a31db1434b97
-caps.latest.revision: 33
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # _ (Wildcard - Match One Character) (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  Use the underscore character `_` to match any single character in a string comparison operation that involves pattern matching, such as `LIKE` and `PATINDEX`.  
+Use the underscore character _ to match any single character in a string comparison operation that involves pattern matching, such as `LIKE` and `PATINDEX`.  
   
 ## Examples  
 
@@ -40,7 +32,7 @@ manager: "jhubbard"
 
 The following example returns all database names that begin with the letter `m` and have the letter `d` as the third letter. The underscore character specifies that the second character of the name can be any letter. The `model` and `msdb` databases meet this criteria. The `master` database does not.
 
-```tsql
+```sql
 SELECT name FROM sys.databases
 WHERE name LIKE 'm_d%';
 ```   
@@ -56,10 +48,10 @@ You may have additional databases that meet this criteria.
 You can use multiple underscores to represent multiple characters. Changing the `LIKE` criteria to include two underscores `'m__%` includes the master database in the result.
 
 ### B: More complex example
- The following example uses the `_` operator to find all the people in the `Person` table, who have a three-letter first name that ends in `an`.  
+ The following example uses the _ operator to find all the people in the `Person` table, who have a three-letter first name that ends in `an`.  
   
-```tsql  
--- Uses AdventureWorks  
+```sql  
+-- USE AdventureWorks2012
   
 SELECT FirstName, LastName  
 FROM Person.Person  
@@ -69,14 +61,14 @@ ORDER BY FirstName;
 ## C: Escaping the underscore character   
 The following example returns the names of the fixed database roles like `db_owner` and `db_ddladmin`, but it also returns the `dbo` user. 
 
-```tsql
+```sql
 SELECT name FROM sys.database_principals
 WHERE name LIKE 'db_%';
 ```
 
 The underscore in the third character position is taken as a wildcard, and is not filtering for only principals starting with the letters `db_`. To escape the underscore enclose it in brackets `[_]`. 
 
-```tsql
+```sql
 SELECT name FROM sys.database_principals
 WHERE name LIKE 'db[_]%';
 ```   
@@ -98,5 +90,4 @@ db_securityadmin
   [% (Wildcard - Character(s) to Match)](../../t-sql/language-elements/percent-character-wildcard-character-s-to-match-transact-sql.md)   
   [&#91; &#93; (Wildcard - Character(s) to Match)](../../t-sql/language-elements/wildcard-character-s-to-match-transact-sql.md)   
  [&#91;^&#93; (Wildcard - Character(s) Not to Match)](../../t-sql/language-elements/wildcard-character-s-not-to-match-transact-sql.md)     
-  
   

@@ -1,37 +1,27 @@
 ---
-title: "sys.dm_server_audit_status (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/19/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.dm_server_audit_status (Transact-SQL)"
+description: sys.dm_server_audit_status (Transact-SQL)
+author: sravanisaluru
+ms.author: srsaluru
+ms.date: "03/23/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_server_audit_status_TSQL"
   - "sys.dm_server_audit_status"
   - "dm_server_audit_status"
   - "sys.dm_server_audit_status_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_server_audit_status dynamic management view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 4aa32d54-2ae1-437e-bbaa-7f1df1404b44
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.dm_server_audit_status (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Returns a row for each server audit indicating the current state of the audit. For more information, see [SQL Server Audit &#40;Database Engine&#41;](../../relational-databases/security/auditing/sql-server-audit-database-engine.md).  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
@@ -40,12 +30,12 @@ manager: "jhubbard"
 |**status**|**smallint**|Numeric status of the server audit:<br /><br /> 0 = Not Started<br /><br /> 1 =<br />        Started<br /><br /> 2 =<br />      Runtime Fail<br /><br /> 3 = Target Create Fail<br /><br /> 4 = Shutting Down|  
 |**status_desc**|**nvarchar(256)**|String that shows the status of the server audit:<br /><br /> NOT_STARTED<br /><br /> STARTED<br /><br /> RUNTIME_FAIL<br /><br /> TARGET_CREATION_FAILED<br /><br /> SHUTTING_DOWN|  
 |**status_time**|**datetime2**|Timestamp in UTC of the last status change for the audit.|  
-|**event_session_address**|**varbinary(8)**|Address of the Extended Events session associated with the audit. Related to the **sys.db_xe_sessions.address** catalog view.|  
+|**event_session_address**|**varbinary(8)**|Address of the Extended Events session associated with the audit. Related to the **sys.dm_xe_sessions.address** catalog view.|  
 |**audit_file_path**|**nvarchar(256)**|Full path and file name of the audit file target that is currently being used. Only populated for file audits.|  
 |**audit_file_size**|**bigint**|Approximate size of the audit file, in bytes. Only populated for file audits.|  
   
 ## Permissions  
- Principals must have **VIEW SERVER STATE** and **SELECT** permissions.  
+ Principals must have the **VIEW SERVER SECURITY STATE** permission.  
   
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] For more information, see [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md).  
   

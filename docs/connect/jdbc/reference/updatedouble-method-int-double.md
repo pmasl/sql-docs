@@ -1,24 +1,15 @@
 ---
-title: "updateDouble Method (int, double) | Microsoft Docs"
-ms.custom: ""
+title: "updateDouble Method (int, double)"
+description: "updateDouble Method (int, double)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateDouble (int, double)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateDouble (int, double)"
 apitype: "Assembly"
-ms.assetid: 90c47643-e27e-425d-85a0-63866f858367
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateDouble Method (int, double)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

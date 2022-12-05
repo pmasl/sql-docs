@@ -1,19 +1,15 @@
 ---
+description: "Edit Type Mapping (OracleToSQL)"
 title: "Edit Type Mapping (OracleToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 7078b4ed-c779-4bf3-8db8-f9dcb3edd50f
-caps.latest.revision: 4
-author: "sabotta"
-ms.author: "carlasab"
-manager: "v-thobro"
+author: cpichuka 
+ms.author: cpichuka 
 ---
 # Edit Type Mapping (OracleToSQL)
 The **Edit Type Mapping** dialog box lets you specify how types are mapped between the source and destination database objects.  
@@ -28,7 +24,7 @@ Table-specific type mappings override database and project type mappings. Databa
   
 ## Options  
 **Source type**  
-Select the source data type to map to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] data type.  
+Select the source data type to map to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] data type.  
   
 If the data type is of variable length, the following fields will appear under **Source type**:  
   
@@ -39,7 +35,7 @@ Specify the minimum length for this mapping. For example, for the **nchar** data
 Specify the maximum length for this mapping. For example, for the **nchar** data type, you can enter 20 to specify that this mapping is for a range ending at **nchar(20)**.  
   
 **Target type**  
-Select the [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] data type to which the source data type is mapped. When SSMA creates the table or stored procedure in [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)], the source data type will change to this data type.  
+Select the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] data type to which the source data type is mapped. When SSMA creates the table or stored procedure in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], the source data type will change to this data type.  
   
 If the data type is of variable length, the following field will appear under **Target type**:  
   

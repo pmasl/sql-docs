@@ -1,33 +1,26 @@
 ---
 title: "Tutorial: Creating Drillthrough and Main Reports (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-applies_to: 
-  - "SQL Server 2016"
+description: "Learn how to create two kinds of Reporting Services paginated reports: a drillthrough report and a main report."
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+ms.topic: conceptual
 ms.assetid: 7168c8d3-cef5-4c4a-a0bf-fff1ac5b8b71
-caps.latest.revision: 14
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Tutorial: Creating Drillthrough and Main Reports (Report Builder)
 This tutorial teaches you how to create two kinds of [!INCLUDE[ssRSnoversion_md](../includes/ssrsnoversion-md.md)] paginated reports: a drillthrough report and a main report. The sample sales data used in these reports is retrieved from an Analysis Services cube. 
 
-The following illustration shows the reports you will create, and shows how the field value, Games and Toys, in the main report displays in the drillthrough report’s title. The data in the drillthrough report pertains to the Games and Toys product category.  
+The following illustration shows the reports you will create, and shows how the field value, Games and Toys, in the main report displays in the drillthrough report's title. The data in the drillthrough report pertains to the Games and Toys product category.  
   
 ![rs_DrillthroughCubeTutorial](../reporting-services/media/rs-drillthroughcubetutorial.gif "rs_DrillthroughCubeTutorial")  
    
 Estimated time to complete this tutorial: 30 minutes.  
   
 ## Requirements  
-This tutorial requires access to the Contoso Sales cube for both the drillthrough and the main reports. This dataset comprises the ContosoDW data warehouse and the Contoso_Retail online analytical processing (OLAP) database. The reports you will create in this tutorial retrieve report data from the Contoso Sales cube. The Contoso_Retail OLAP database can be downloaded from [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkID=191575). You need only download the file ContosoBIdemoABF.exe. It contains the OLAP database.  
+This tutorial requires access to the Contoso Sales cube for both the drillthrough and the main reports. This dataset comprises the ContosoDW data warehouse and the Contoso_Retail online analytical processing (OLAP) database. The reports you will create in this tutorial retrieve report data from the Contoso Sales cube. The Contoso_Retail OLAP database can be downloaded from [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=18279). You need only download the file ContosoBIdemoABF.exe. It contains the OLAP database.  
   
 The other file, ContosoBIdemoBAK.exe, is for the ContosoDW data warehouse, which is not used in this tutorial.  
   
@@ -71,7 +64,7 @@ A data connection contains the information necessary to connect to an external d
   
 7.  In **Select or enter a database name**, select the Contoso cube.  
   
-8.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+8.  Select **OK**.
   
 9. Verify that **Connection string** contains the following syntax:  
   
@@ -86,7 +79,7 @@ A data connection contains the information necessary to connect to an external d
     > [!NOTE]  
     > Depending on how permissions are configured on the data source, you might need to change the default authentication options. For more information, see [Security &#40;Report Builder&#41;](../reporting-services/report-builder/security-report-builder.md).  
   
-11. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+11. Select **OK**.
   
     The **Choose a connection to a data source** page appears.  
   
@@ -94,7 +87,7 @@ A data connection contains the information necessary to connect to an external d
   
     The message **Connection created successfully** appears.  
   
-13. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+13. Select **OK**.
   
 14. Click **Next**.  
   
@@ -103,7 +96,7 @@ In a report, you can use a shared dataset that has a predefined query, or you ca
   
 #### To create query filters  
   
-1.  On the **Design a query** page, in the Metadata pane, click the button **(…)**.  
+1.  On the **Design a query** page, in the Metadata pane, click the button **(...)**.  
   
 2.  In the **Cube Selection** dialog box, click Sales, and then click **OK**.  
   
@@ -111,7 +104,7 @@ In a report, you can use a shared dataset that has a predefined query, or you ca
     > If you do not want to build the MDX query manually, click the ![Switch to Design mode](../reporting-services/media/rsqdicon-designmode.gif "Switch to Design mode") icon, toggle the query designer to Query mode, paste the completed MDX to the query designer, and then proceed to step 6 in [To create the dataset](#DSkip).  
   
     ```  
-    SELECT NON EMPTY { [Measures].[Sales Amount], [Measures].[Sales Return Amount] } ON COLUMNS, NON EMPTY { ([Channel].[Channel Name].[Channel Name].ALLMEMBERS * [Product].[Product Category Name].[Product Category Name].ALLMEMBERS * [Product].[Product Subcategory Name].[Product Subcategory Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( { [Date].[Calendar Year].&[2009] } ) ON COLUMNS FROM ( SELECT ( { [Sales Territory].[Sales Territory Group].&[North America] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@ProductProductCategoryName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Channel].[Channel Name].&[2], [Channel].[Channel Name].&[4] } ) ON COLUMNS FROM [Sales])))) WHERE ( [Sales Territory].[Sales Territory Group].&[North America], [Date].[Calendar Year].&[2009] ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS  
+    SELECT NON EMPTY { [Measures].[Sales Amount], [Measures].[Sales Return Amount] } ON COLUMNS, NON EMPTY { ([Channel].[Channel Name].[Channel Name].ALLMEMBERS * [Product].[Product Category Name].[Product Category Name].ALLMEMBERS * [Product].[Product Subcategory Name].[Product Subcategory Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( { [Date].[Calendar Year].&[2009] } ) ON COLUMNS FROM ( SELECT ( { [Sales Territory].[Sales Territory Group].&[North America] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(\@ProductProductCategoryName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Channel].[Channel Name].&[2], [Channel].[Channel Name].&[4] } ) ON COLUMNS FROM [Sales])))) WHERE ( [Sales Territory].[Sales Territory Group].&[North America], [Date].[Calendar Year].&[2009] ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS  
     ```  
   
 3.  In the Measure Group pane, expand Channel, and then drag Channel Name to the **Hierarchy** column in the filter pane.  
@@ -167,7 +160,7 @@ In a report, you can use a shared dataset that has a predefined query, or you ca
   
 7.  Click **Next**.  
   
-## <a name="DLayout"></a>1c. Organize Data into Groups  
+## <a name="DLayout"></a>1c. Organize Drillthrough Report Data into Groups  
 When you select the fields on which to group the data, you design a matrix with rows and columns that displays detail and aggregated data.  
   
 #### To organize data into groups  
@@ -193,7 +186,7 @@ When you select the fields on which to group the data, you design a matrix with 
   
 6.  Click **Next**.  
   
-## <a name="DTotals"></a>1d. Add Subtotals and Totals  
+## <a name="DTotals"></a>1d. Add Drillthrough Report Subtotals and Totals  
 After you create groups, you can add and format rows where the aggregate values for the fields will display. You can also choose whether to show all the data or to let a user expand and collapse grouped data interactively.  
   
 #### To add subtotals and totals  
@@ -238,7 +231,7 @@ Instead of showing sales and sales returns as currency values, the report shows 
   
 5.  In the **Select Sparkline Type** dialog box, verify that **Column** type is selected.  
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
 7.  Right-click the sparkline.  
   
@@ -281,17 +274,17 @@ A report title appears at the top of the report. You can place the report title 
   
 The report title includes the name of the first product category. Later, after you run this report as a drillthrough report, the product category name will dynamically change to reflect the name of the product category that was clicked in the main report.  
   
-## <a name="DParameter"></a>5. Update Parameter Properties  
+## <a name="DParameter"></a>5. Set Hidden Parameter Property  
 By default parameters are visible, which is not appropriate for this report. You will update the parameter properties for the drillthrough report.  
   
 #### To hide a parameter  
   
 1.  In the Report Data pane, expand **Parameters**.  
   
-2.  Right-click @ProductProductCategoryName, and then click **Parameter Properties**.  
+2.  Right-click \@ProductProductCategoryName, and then click **Parameter Properties**.  
   
     > [!NOTE]  
-    > The @ character next to the name indicates that this is a parameter.  
+    > The \@ character next to the name indicates that this is a parameter.  
   
 3.  On the **General** tab, click **Hidden**.  
   
@@ -302,10 +295,10 @@ By default parameters are visible, which is not appropriate for this report. You
   
 5.  Optionally, click **Available Values** and **Default Values** and review their options. Do not change any options on these tabs.  
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
 ## <a name="DSave"></a>6. Save the Report to a SharePoint Library  
-You can save the report to a SharePoint library, report server, or your computer. If you save the report to your computer, a number of [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] features such as report parts and subreports are not available. In this tutorial, you will save the report to a SharePoint library.  
+You can save the report to a SharePoint library, report server, or your computer. If you save the report to your computer, a number of [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] features such as subreports are not available. In this tutorial, you will save the report to a SharePoint library.  
   
 #### To save the report  
   
@@ -350,7 +343,7 @@ From the **Getting Started** dialog box, create a matrix report by using the **T
  
 2.  In the **Getting Started** dialog box, verify that **New Report** is selected, and then click **Table or Matrix Wizard**.  
   
-## <a name="MConnection"></a>1a. Specify a Data Connection  
+## <a name="MConnection"></a>1a. Add embedded data source  
 You will add an embedded data source to the main report.  
   
 #### To create an embedded data source  
@@ -369,7 +362,7 @@ You will add an embedded data source to the main report.
   
 7.  In **Select or enter a database name**, select the Contoso cube.  
   
-8.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+8.  Select **OK**.
   
 9. Verify that the **Connection string** contains the following syntax:  
   
@@ -381,20 +374,20 @@ You will add an embedded data source to the main report.
   
     Depending on how permissions are configured on the data source, you might need to change the default authentication.  
   
-11. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+11. Select **OK**.
   
 12. To verify that you can connect to the data source, click **Test Connection**.  
   
-13. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+13. Select **OK**.
   
 14. Click **Next**.  
   
-## <a name="MMDXQuery"></a>1b. Create an MDX Query  
+## <a name="MMDXQuery"></a>1b. Create embedded dataset  
 Next, create an embedded dataset. To do so, you will use the query designer to create filters, parameters, and calculated members as well as the dataset itself.  
   
 #### To create query filters  
   
-1.  On the **Design a query** page, in the Metadata pane, in the cube section, click the ellipsis **(…)**.  
+1.  On the **Design a query** page, in the Metadata pane, in the cube section, click the ellipsis **(...)**.  
   
 2.  In the **Cube Selection** dialog box, click Sales, and then click **OK**.  
   
@@ -402,7 +395,7 @@ Next, create an embedded dataset. To do so, you will use the query designer to c
     > If you do not want to build the MDX query manually, click the ![Switch to Design mode](../reporting-services/media/rsqdicon-designmode.gif "Switch to Design mode") icon, toggle the query designer to Query mode, paste the completed MDX to the query designer, and then proceed to step 5 in [To create the dataset](#MSkip).  
   
     ```  
-    WITH MEMBER [Measures].[Net QTY] AS [Measures].[Sales Quantity] -[Measures].[Sales Return Quantity] MEMBER [Measures].[Net Sales] AS [Measures].[Sales Amount] - [Measures].[Sales Return Amount] SELECT NON EMPTY { [Measures].[Net QTY], [Measures].[Net Sales] } ON COLUMNS, NON EMPTY { ([Channel].[Channel Name].[Channel Name].ALLMEMBERS * [Product].[Product Category Name].[Product Category Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( { [Date].[Calendar Year].&[2009] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(@ProductProductCategoryName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Sales Territory].[Sales Territory Group].&[North America] } ) ON COLUMNS FROM ( SELECT ( { [Channel].[Channel Name].&[2], [Channel].[Channel Name].&[4] } ) ON COLUMNS FROM [Sales])))) WHERE ( [Sales Territory].[Sales Territory Group].&[North America], [Date].[Calendar Year].&[2009] ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGSQuery text: Code.  
+    WITH MEMBER [Measures].[Net QTY] AS [Measures].[Sales Quantity] -[Measures].[Sales Return Quantity] MEMBER [Measures].[Net Sales] AS [Measures].[Sales Amount] - [Measures].[Sales Return Amount] SELECT NON EMPTY { [Measures].[Net QTY], [Measures].[Net Sales] } ON COLUMNS, NON EMPTY { ([Channel].[Channel Name].[Channel Name].ALLMEMBERS * [Product].[Product Category Name].[Product Category Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( { [Date].[Calendar Year].&[2009] } ) ON COLUMNS FROM ( SELECT ( STRTOSET(\@ProductProductCategoryName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( { [Sales Territory].[Sales Territory Group].&[North America] } ) ON COLUMNS FROM ( SELECT ( { [Channel].[Channel Name].&[2], [Channel].[Channel Name].&[4] } ) ON COLUMNS FROM [Sales])))) WHERE ( [Sales Territory].[Sales Territory Group].&[North America], [Date].[Calendar Year].&[2009] ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGSQuery text: Code.  
     ```  
   
 3.  In the Measure Group pane, expand Channel, and then drag Channel Name to the **Hierarchy** column in the filter pane.  
@@ -487,7 +480,7 @@ Next, create an embedded dataset. To do so, you will use the query designer to c
   
 6.  Click **Next**.  
   
-## <a name="MLayout"></a>1c. Organize Data into Groups  
+## <a name="MLayout"></a>1c. Organize Main Report Data into Groups  
 When you select the fields on which to group data, you design a matrix with rows and columns that displays detail and aggregated data.  
   
 #### To organize data into groups  
@@ -506,7 +499,7 @@ When you select the fields on which to group data, you design a matrix with rows
   
     Steps 3 and 4 specify the data to display in the matrix.  
   
-## <a name="MTotals"></a>1d. Add Subtotals and Totals  
+## <a name="MTotals"></a>1d. Add Main Report Subtotals and Totals  
 You can show subtotals and grand totals in reports. The data in the main report displays as an indicator; you will remove the grand total after you complete the wizard.  
   
 #### To add subtotals and grand totals  
@@ -558,7 +551,7 @@ To enable the drillthrough, specify an action on a text box in the main report.
     > [!IMPORTANT]  
     > You must include the **UniqueName** property because the drillthrough action requires a unique value.  
   
-9. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+9. Select **OK**.
   
 #### To format the drillthrough field  
   
@@ -570,7 +563,7 @@ To enable the drillthrough, specify an action on a text box in the main report.
   
 4.  In the **Color** list, select **Blue**.  
   
-5.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+5.  Select **OK**.
   
 6.  To preview your report, click **Run**.  
   
@@ -607,7 +600,7 @@ Use indicators to show the state of quantities and sales for Online and Reseller
   
 6.  To preview your report, click **Run**.  
   
-## <a name="MParameter"></a>5. Update Parameter Properties  
+## <a name="MParameter"></a>5. Set Internal Parameter Property  
 By default, parameters are visible, which is not appropriate for this report. You will update the parameter properties to make the parameter internal.  
   
 #### To make the parameter internal  
@@ -620,7 +613,7 @@ By default, parameters are visible, which is not appropriate for this report. Yo
   
 4.  Optionally, click the **Available Values** and **Default Values** tabs and review their options. Do not change any options on these tabs.  
   
-5.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+5.  Select **OK**.
   
 ## <a name="MTitle"></a>6. Add a Report Title  
 Add a title to the main report.  

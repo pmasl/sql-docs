@@ -1,19 +1,12 @@
 ---
-title: "SQLServerDatabaseMetaData Class | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerDatabaseMetaData Class"
+description: "SQLServerDatabaseMetaData Class"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8b8049d0-8c6d-4476-866b-098709f37eec
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerDatabaseMetaData Class
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

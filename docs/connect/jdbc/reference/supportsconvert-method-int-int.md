@@ -1,24 +1,15 @@
 ---
-title: "supportsConvert Method (int, int) | Microsoft Docs"
-ms.custom: ""
+title: "supportsConvert Method (int, int)"
+description: "supportsConvert Method (int, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsConvert (int, int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsConvert (int, int)"
 apitype: "Assembly"
-ms.assetid: 54741cfd-32ac-46c5-8b09-fd60fd8833d7
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsConvert Method (int, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

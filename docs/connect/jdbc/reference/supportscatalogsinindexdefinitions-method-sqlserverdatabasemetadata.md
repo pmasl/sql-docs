@@ -1,24 +1,15 @@
 ---
-title: "supportsCatalogsInIndexDefinitions Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsCatalogsInIndexDefinitions Method"
+description: "supportsCatalogsInIndexDefinitions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsCatalogsInIndexDefinitions"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsCatalogsInIndexDefinitions"
 apitype: "Assembly"
-ms.assetid: a19423a0-e7b6-4f5c-94be-80ddf3fa4717
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsCatalogsInIndexDefinitions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

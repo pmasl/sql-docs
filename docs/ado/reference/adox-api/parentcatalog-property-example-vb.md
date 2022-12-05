@@ -1,26 +1,19 @@
 ---
-title: "ParentCatalog Property Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ParentCatalog Property Example (VB)"
+description: "ParentCatalog Property Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "ParentCatalog property [ADOX], Visual Basic example"
-ms.assetid: 448bc850-7584-4c5f-89f3-5f4fee88b259
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # ParentCatalog Property Example (VB)
-The following code demonstrates how to use the [ParentCatalog](../../../ado/reference/adox-api/parentcatalog-property-adox.md) property to access a provider-specific property prior to appending a table to a catalog. The property is **AutoIncrement**, which creates an AutoIncrement field in a Microsoft Jet database.  
+The following code demonstrates how to use the [ParentCatalog](./parentcatalog-property-adox.md) property to access a provider-specific property prior to appending a table to a catalog. The property is **AutoIncrement**, which creates an AutoIncrement field in a Microsoft Jet database.  
   
 ```  
 ' BeginCreateAutoIncrColumnVB  
@@ -82,12 +75,12 @@ End Sub
 ```  
   
 ## See Also  
- [Append Method (ADOX Columns)](../../../ado/reference/adox-api/append-method-adox-columns.md)   
- [Append Method (ADOX Tables)](../../../ado/reference/adox-api/append-method-adox-tables.md)   
- [Catalog Object (ADOX)](../../../ado/reference/adox-api/catalog-object-adox.md)   
- [Column Object (ADOX)](../../../ado/reference/adox-api/column-object-adox.md)   
- [Columns Collection (ADOX)](../../../ado/reference/adox-api/columns-collection-adox.md)   
- [Name Property (ADOX)](../../../ado/reference/adox-api/name-property-adox.md)   
- [ParentCatalog Property (ADOX)](../../../ado/reference/adox-api/parentcatalog-property-adox.md)   
- [Table Object (ADOX)](../../../ado/reference/adox-api/table-object-adox.md)   
- [Type Property (Column) (ADOX)](../../../ado/reference/adox-api/type-property-column-adox.md)
+ [Append Method (ADOX Columns)](./append-method-adox-columns.md)   
+ [Append Method (ADOX Tables)](./append-method-adox-tables.md)   
+ [Catalog Object (ADOX)](./catalog-object-adox.md)   
+ [Column Object (ADOX)](./column-object-adox.md)   
+ [Columns Collection (ADOX)](./columns-collection-adox.md)   
+ [Name Property (ADOX)](./name-property-adox.md)   
+ [ParentCatalog Property (ADOX)](./parentcatalog-property-adox.md)   
+ [Table Object (ADOX)](./table-object-adox.md)   
+ [Type Property (Column) (ADOX)](./type-property-column-adox.md)

@@ -1,33 +1,26 @@
 ---
-title: "@@MAX_CONNECTIONS (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "@@MAX_CONNECTIONS (Transact-SQL)"
+description: "@@MAX_CONNECTIONS (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
+ms.date: "09/18/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "@@MAX_CONNECTIONS"
   - "@@MAX_CONNECTIONS_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "simultaneous connections [SQL Server]"
   - "maximum number of simultaneous user connections"
   - "@@MAX_CONNECTIONS function"
   - "connections [SQL Server], simultaneous"
   - "number of simultaneous user connections"
-ms.assetid: 57eb9f4b-548f-4212-9684-a11d831c4732
-caps.latest.revision: 29
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@MAX_CONNECTIONS (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+# &#x40;&#x40;MAX_CONNECTIONS (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Returns the maximum number of simultaneous user connections allowed on an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. The number returned is not necessarily the number currently configured.  
   
@@ -35,12 +28,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql  
 @@MAX_CONNECTIONS  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **integer**  
   
 ## Remarks  
@@ -51,7 +45,7 @@ manager: "jhubbard"
 ## Examples  
  The following example shows returning the maximum number of user connections on an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. The example assumes that [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] has not been reconfigured for fewer user connections.  
   
-```  
+```sql 
 SELECT @@MAX_CONNECTIONS AS 'Max Connections';  
 ```  
   

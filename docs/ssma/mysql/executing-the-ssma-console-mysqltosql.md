@@ -1,17 +1,12 @@
 ---
+description: "Executing the SSMA Console (MySQLToSQL)"
 title: "Executing the SSMA Console (MySQLToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Script file commands, Database connection commands"
   - "Script file commands, Manageability commands"
@@ -21,10 +16,8 @@ helpviewer_keywords:
   - "Script file commands, Report commands"
   - "Script file commands, Script generation commands"
 ms.assetid: e3e9f7e4-0619-4861-a202-3d5d39953b26
-caps.latest.revision: 25
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
 ---
 # Executing the SSMA Console (MySQLToSQL)
 Microsoft provides you with a robust set of script file commands to execute and control SSMA activities.  
@@ -47,7 +40,7 @@ The Project commands handle creating projects, opening, saving, and exiting proj
   
 3.  `overwrite-if-exists`Optional attribute indicates if an existing project should be overwritten. {boolean}  
   
-4.  `project-type:`Optional attribute. Indicates the project type i.e. “sql-server-2005” project or “sql-server-2008” project or “sql-server-2012” or “sql-server-2014” project or “sql-azure” project. Default is “sql-server-2008”.  
+4.  `project-type:`Optional attribute. Indicates the project type i.e. "sql-server-2005" project or "sql-server-2008" project or "sql-server-2012" or "sql-server-2014" project or "sql-azure" project. Default is "sql-server-2008".  
   
 **Syntax Example:**  
   
@@ -60,13 +53,13 @@ The Project commands handle creating projects, opening, saving, and exiting proj
   
    overwrite-if-exists="<true/false>"   (optional)  
   
-   project-type==”<sql-server-2008 | sql-server-2005 | sql-server-2012 | sql-server-2014 | sql-azure>”   (optional)  
+   project-type=="<sql-server-2008 | sql-server-2005 | sql-server-2012 | sql-server-2014 | sql-azure>"   (optional)  
   
 />  
 ```  
-Attribute ‘overwrite-if-exists’ is **false** by default.  
+Attribute 'overwrite-if-exists' is **false** by default.  
   
-Attribute ‘project-type’ is **sql-server-2008** by default.  
+Attribute 'project-type' is **sql-server-2008** by default.  
   
 **Command**  
   
@@ -132,7 +125,7 @@ close-project
   
 />  
 ```  
-Attribute ‘if-modified’ is optional, **ignore** by default.  
+Attribute 'if-modified' is optional, **ignore** by default.  
   
 ## Database Connection Script File Commands  
 The Database Connection commands help connect to the database.  
@@ -141,13 +134,13 @@ The Database Connection commands help connect to the database.
   
 2.  The **windows-authentication** and **port** parameters are not applicable when connecting to SQL Azure.  
   
-3.  For more information on ‘Creating Script Files’, see [Creating Script Files &#40;MySQLToSQL&#41;](../../ssma/mysql/creating-script-files-mysqltosql.md).  
+3.  For more information on 'Creating Script Files', see [Creating Script Files &#40;MySQLToSQL&#41;](../../ssma/mysql/creating-script-files-mysqltosql.md).  
   
 **Command**  
   
 connect-source-database  
   
--   Performs connection to the source database and loads high level metadata of the source database but not all of the metadata.  
+-   Performs connection to the source database and loads high-level metadata of the source database but not all of the metadata.  
   
 -   If the connection to the source cannot be established, an error is generated and the console application stops further execution  
   
@@ -172,7 +165,7 @@ force-load-source/target-database
   
 **Script**  
   
-Requires one or several metabase nodes as command line parameter.  
+Requires one or several metabase nodes as command-line parameter.  
   
 **Syntax Example:**  
   
@@ -202,7 +195,7 @@ reconnect-source-database
   
 connect-target-database  
   
-1.  Connects to the target SQL Server or SQL Azure database and loads high level metadata of the target database but not the metadata entirely.  
+1.  Connects to the target SQL Server or Azure SQL Database and loads high-level metadata of the target database but not the metadata entirely.  
   
 2.  If the connection to the target cannot be established, an error is generated and the console application stops further execution.  
   
@@ -246,7 +239,7 @@ generate-assessment-report
   
 **Script**  
   
-1.  `assessment-report-folder:` Specifies folder where the assessment report can to be stored.(optional attribute)  
+1.  `assessment-report-folder:` Specifies folder where the assessment report is stored.(optional attribute)  
   
 2.  `object-name:` Specifies the object(s) considered for assessment report generation (It can have individual object names or a group object name).  
   
@@ -258,7 +251,7 @@ generate-assessment-report
   
 5.  `write-summary-report-to:` Specifies the path where the summary report will be generated.  
   
-    If only the folder path is mentioned,then file by name **AssessmentReport&lt;n&gt;.XML** is created. (optional attribute)  
+    If only the folder path is mentioned, then file by name **AssessmentReport&lt;n&gt;.XML** is created. (optional attribute)  
   
     Report creation has two further sub-categories:  
   
@@ -320,9 +313,9 @@ convert-schema
   
 **Script**  
   
-1.  `conversion-report-folder:` Specifies folder where the assessment report can to be stored.(optional attribute)  
+1.  `conversion-report-folder:` Specifies folder where the assessment report is stored.(optional attribute)  
   
-2.  `object-name:` Specifies the object(s) considered for converting schema (It can have indivdual object names or a group object name).  
+2.  `object-name:` Specifies the object(s) considered for converting schema (It can have individual object names or a group object name).  
   
 3.  `object-type:` specifies the type of the object specified in the object-name attribute (if object category is specified then object type will be "category").  
   
@@ -332,7 +325,7 @@ convert-schema
   
 5.  `write-summary-report-to:` Specifies the path where the summary report will be generated.  
   
-    If only the folder path is mentioned,then file by name **SchemaConversionReport&lt;n&gt;.XML** is created. (optional attribute)  
+    If only the folder path is mentioned, then file by name **SchemaConversionReport&lt;n&gt;.XML** is created. (optional attribute)  
   
     Summary report creation has two further sub-categories:  
   
@@ -384,7 +377,7 @@ migrate-data
   
 **Script**  
   
-1.  `object-name:` Specifies the source object(s) considered for migrating data (It can have indivdual object names or a group object name).  
+1.  `object-name:` Specifies the source object(s) considered for migrating data (It can have individual object names or a group object name).  
   
 2.  `object-type:` specifies the type of the object specified in the object-name attribute (if object category is specified then object type will be "category").  
   
@@ -403,7 +396,7 @@ migrate-data
 ```xml  
 <migrate-data  
   
-   write-summary-report-to="<file-name/folder-name>”  
+   write-summary-report-to="<file-name/folder-name>"  
   
    report-errors="true" verbose="true">  
   
@@ -430,7 +423,7 @@ or
   
    object-type="<object-category>"  
   
-   write-summary-report-to="<file-name/folder-name>”  
+   write-summary-report-to="<file-name/folder-name>"  
   
    report-errors="true" verbose="true"/>  
 ```  
@@ -464,7 +457,7 @@ Schema mapping of source database to the target schema.
 The Manageability commands help synchronize the target database objects with the source database.  
   
 > [!NOTE]  
-> The default console output setting for the migration commands is ‘Full' output report with no detailed error reporting: Only summary at the source object tree root node.  
+> The default console output setting for the migration commands is 'Full' output report with no detailed error reporting: Only summary at the source object tree root node.  
   
 **Command**  
   
@@ -478,7 +471,7 @@ synchronize-target
   
 **Script**  
   
-1.  `object-name:` Specifies the object(s) considered for synchronizing with target database (It can have indivdual object names or a group object name).  
+1.  `object-name:` Specifies the object(s) considered for synchronizing with target database (It can have individual object names or a group object name).  
   
 2.  `object-type:` specifies the type of the object specified in the object-name attribute (if object category is specified then object type will be "category").  
   
@@ -541,7 +534,7 @@ refresh-from-database
   
 **Script**  
   
-1.  `object-name:` Specifies the source object(s) considered for refreshing from source database (It can have indivdual object names or a group object name).  
+1.  `object-name:` Specifies the source object(s) considered for refreshing from source database (It can have individual object names or a group object name).  
   
 2.  `object-type:` Specifies the type of the object specified in the object-name attribute (if object category is specified then object type will be "category").  
   
@@ -555,7 +548,7 @@ refresh-from-database
   
 4.  `report-errors-to:` Specifies location of error report for the synchronization operation (optional attribute)           if only folder path is given, then file by name **SourceDBRefreshReport.XML** is created.  
   
-Requires one or several metabase nodes as command line parameter.  
+Requires one or several metabase nodes as command-line parameter.  
   
 **Syntax Example:**  
   
@@ -604,9 +597,9 @@ Used to save the Scripts of the objects to a file mentioned when metabase=target
   
 **Script**  
   
-Requires one or several metabase nodes as command line parameter.  
+Requires one or several metabase nodes as command-line parameter.  
   
-1.  `object-name:` Specifies the object(s) whose scripts are to be saved . (It can have indivdual object names or a group object name)  
+1.  `object-name:` Specifies the object(s) whose scripts are to be saved . (It can have individual object names or a group object name)  
   
 2.  `object-type:` specifies the type of the object specified in the object-name attribute (if object category is specified then object type will be "category").  
   
@@ -627,7 +620,7 @@ Requires one or several metabase nodes as command line parameter.
   
    object-type="<object-category>"  
   
-   destination="<file-name/folder-name>”  
+   destination="<file-name/folder-name>"  
   
    overwrite="<true/false>"   (optional)  
   
@@ -640,7 +633,7 @@ or
   
    metabase="<source/target>"  
   
-   destination="<file-name/folder-name>”  
+   destination="<file-name/folder-name>"  
   
       <metabase-object object-name="<object-name>"  
   
@@ -658,7 +651,7 @@ convert-sql-statement
   
     If this attribute is not specified, then the converted T-SQL statement is displayed on the console. (optional attribute)  
   
-3.  `conversion-report-folder` specifies folder where the assessment report can to be stored.(optional attribute)  
+3.  `conversion-report-folder` specifies folder where the assessment report is stored.(optional attribute)  
   
 4.  `conversion-report-overwrite` specifies whether to overwrite the assessment report folder if it already exists.  
   
@@ -666,7 +659,7 @@ convert-sql-statement
   
 5.  `write-converted-sql-to` specifies the file (or) folder path where the converted T-SQL is to be stored. When a folder path is specified along with the `sql-files` attribute, each source file will have a corresponding target T-SQL file created under the specified folder. When a folder path is specified along with the `sql` attribute, the converted T-SQL is written to a file named Result.out under the specified folder.  
   
-6.  `sql` specifies the MySQL sql statements to be converted, one or more statements can be seperated using a ";"  
+6.  `sql` specifies the MySQL sql statements to be converted, one or more statements can be separated using a ";"  
   
 7.  `sql-files` specifies the path of the sql files which has to be converted to T-SQL code.  
   
@@ -680,7 +673,7 @@ convert-sql-statement
   
 **Script**  
   
-Requires one or several metabase nodes as command line parameter.  
+Requires one or several metabase nodes as command-line parameter.  
   
 **Syntax Example:**  
   
@@ -751,7 +744,7 @@ or
 ```  
   
 ## Next Step  
-For information on command line options, see [Command Line Options in SSMA Console &#40;MySQLToSQL&#41;](../../ssma/mysql/command-line-options-in-ssma-console-mysqltosql.md) .  
+For information on command-line options, see [command-line Options in SSMA Console &#40;MySQLToSQL&#41;](../../ssma/mysql/command-line-options-in-ssma-console-mysqltosql.md) .  
   
 For more information on Sample console script files, see [Working with the Sample Console Script Files &#40;MySQLToSQL&#41;](../../ssma/mysql/working-with-the-sample-console-script-files-mysqltosql.md)  
   

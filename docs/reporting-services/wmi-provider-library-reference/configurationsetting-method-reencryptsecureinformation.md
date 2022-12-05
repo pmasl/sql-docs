@@ -1,27 +1,22 @@
 ---
+description: "ReencryptSecureInformation Method (WMI MSReportServer_ConfigurationSetting)"
 title: "ReencryptSecureInformation Method (WMI MSReportServer_ConfigurationSetting) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: wmi-provider-library-reference
+
+
+ms.topic: conceptual
 apiname: 
   - "ReencryptSecureInformation (WMI MSReportServer_ConfigurationSetting Class)"
 apilocation: 
   - "reportingservices.mof"
-apitype: "MOFDef"
+apitype: MOFDef
 helpviewer_keywords: 
   - "ReencryptSecureInformation method"
 ms.assetid: 8a487497-c207-45b2-8c92-87c58cc68716
-caps.latest.revision: 18
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # ConfigurationSetting Method - ReencryptSecureInformation
   Generates a new encryption key and re-encrypts all secure information in the catalog using this new key.  

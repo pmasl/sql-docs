@@ -1,25 +1,22 @@
 ---
-title: "Using an Updategram in a Sample ASP Application (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Use Updategram in a sample ASP Application (SQLXML)"
+description: View an example of using an SQLXML updategram in an Active Server Pages (ASP) application.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "ASP applications [SQLXML]"
   - "Active Server Pages"
   - "updategrams [SQLXML], ASP applications"
 ms.assetid: 10eff799-4c39-4b52-8b38-7ea6f68454a8
-caps.latest.revision: 26
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Using an Updategram in a Sample ASP Application (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   This Active Server Pages (ASP) application allows you to update customer information in the Person.Contact table in the AdventureWorks sample database in Microsoft [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. The application does the following:  
   
 -   Asks the user to enter a contact ID.  
@@ -100,7 +97,7 @@ Enter ContactID: <input type=text name="cid"><br>
 <%  
   else  
 %>  
-<form name="Contacts" action="http://localhost/AdventureWorks/Template/UpdateContact.xml" method="POST">  
+<form name="Contacts" action="https://localhost/AdventureWorks/Template/UpdateContact.xml" method="POST">  
 You may update customer information below.<br><br>  
 <!-- A comment goes here to separate the parts of the application or page. -->  
 <br>  
@@ -110,7 +107,7 @@ You may update customer information below.<br><br>
     ObjXML.setProperty "ServerHTTPRequest", TRUE  
   
     objXML.async=False  
-    objXML.Load("http://localhost/AdventureWorks/Template/GetContact.xml?cid=" & ContactID)  
+    objXML.Load("https://localhost/AdventureWorks/Template/GetContact.xml?cid=" & ContactID)  
     set objCustomer=objXML.documentElement.childNodes.Item(0)  
   
   ' In retrieving data from the database, if a value in the column is NULL there  

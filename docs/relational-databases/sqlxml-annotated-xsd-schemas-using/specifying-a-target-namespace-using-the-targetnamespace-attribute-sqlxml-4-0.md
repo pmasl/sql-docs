@@ -1,30 +1,23 @@
 ---
-title: "Specifying a Target Namespace Using the targetNamespace Attribute (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Specify a target namespace with targetNamespace (SQLXML)"
+description: Learn how to specify a target namespace in an XSD schema by using the targetNamespace attribute in SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "namespaces [SQLXML], annotated XSD schemas"
   - "targetNamespace attribute"
   - "XSD schemas [SQLXML], target namespaces"
   - "annotated XSD schemas, target namespaces"
-  - "xsd:targetNamespace"
-  - "attributeFormDefault attribute"
-  - "elementFormDefault attribute"
-  - "target namespaces [SQLXML]"
 ms.assetid: f3df9877-6672-4444-8245-2670063c9310
-caps.latest.revision: 27
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Specifying a Target Namespace Using the targetNamespace Attribute (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   In writing XSD schemas, you can use the XSD **targetNamespace** attribute to specify a target namespace. This topic describes how the XSD **targetNamespace**, **elementFormDefault**, and **attributeFormDefault** attributes work, how they affect the XML instance that is generated, and how XPath queries are specified with namespaces.  
   
  You can use the **xsd:targetNamespace** attribute to place elements and attributes from the default namespace into a different namespace. You can also specify whether the locally declared elements and attributes of the schema should appear qualified by a namespace, either explicitly by using a prefix or implicitly by default. You can use the **elementFormDefault** and **attributeFormDefault** attributes on the **\<xsd:schema>** element to globally specify the qualification of local elements and attributes, or you can use the **form** attribute to specify individual elements and attributes separately.  

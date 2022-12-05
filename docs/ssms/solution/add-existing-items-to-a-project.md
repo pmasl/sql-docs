@@ -1,25 +1,22 @@
 ---
-title: "Add Existing Items to a Project | Microsoft Docs"
-ms.custom: ""
+description: "Add Existing Items to a Project"
+title: "Add Existing Items to a Project"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "projects [SQL Server Management Studio], item additions"
   - "adding project items"
 ms.assetid: 084b3879-e96b-45a7-b421-6a4b0db2b92b
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Add Existing Items to a Project
-Add new items to a project to extend application functionality. An existing item can be a query or a miscellaneous file. [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)] has two project types: [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Script Project, and Analysis Services Script Project. The project type determines the query files that you can add to the project. For example, you can add a [!INCLUDE[tsql](../../includes/tsql_md.md)] query (a file with a .sql extension) to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Script project, but you cannot add it to an Analysis Services Script Project. To associate additional file extensions to a project type, see [How to: Associate File Extensions to a Code Editor](http://msdn.microsoft.com/en-us/193630f4-93de-4950-8f36-68702531f925).  
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+Add new items to a project to extend application functionality. An existing item can be a query or a miscellaneous file. [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] has two project types: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Script Project, and Analysis Services Script Project. The project type determines the query files that you can add to the project. For example, you can add a [!INCLUDE[tsql](../../includes/tsql-md.md)] query (a file with a .sql extension) to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Script project, but you cannot add it to an Analysis Services Script Project. To associate additional file extensions to a project type, see [How to: Associate File Extensions to a Code Editor](../scripting/associate-file-extensions-to-a-code-editor.md).  
   
 ### To add an existing query or a miscellaneous file to a project  
   
@@ -43,7 +40,7 @@ Add new items to a project to extend application functionality. An existing item
     Use this option to filter the files and folders that are displayed. Enter the full or partial file name on which to filter; use an asterisk (`*`) as a wildcard.  
   
     > [!NOTE]  
-    > Navigate to Web and network locations by entering the URL or network path in the **File name** box. For example, **http://mywebsite** displays the files available at the mywebsite Web location, and **\\\myserver\myshare** displays the files available at the myshare location on myserver.  
+    > Navigate to Web and network locations by entering the URL or network path in the **File name** box. For example, **`https://mywebsite`** displays the files available at the mywebsite Web location, and **\\\myserver\myshare** displays the files available at the myshare location on myserver.  
   
     **Files of type**  
     Use this option to filter files based on file extension. Each product lists default filters of the most common file types.  
@@ -67,4 +64,3 @@ Add new items to a project to extend application functionality. An existing item
 [Solution Explorer](../../ssms/solution/solution-explorer.md)  
 [Add New Items to a Project](../../ssms/solution/add-new-items-to-a-project.md)  
 [Remove or Delete an Item or Project](../../ssms/solution/remove-or-delete-an-item-or-project.md)  
-  

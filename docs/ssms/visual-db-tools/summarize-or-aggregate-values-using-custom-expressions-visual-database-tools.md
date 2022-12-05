@@ -1,24 +1,22 @@
 ---
-title: "Summarize or Aggregate Values Using Custom Expressions | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Summarize or Aggregate Values Using Custom Expressions (Visual Database Tools)"
+title: Summarize or Aggregate Values Using Custom Expressions
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "summarizing query results"
   - "custom expressions to aggregate values [SQL Server]"
 ms.assetid: 34130ac1-0106-4766-b324-acb0b7bb6f6e
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Summarize or Aggregate Values Using Custom Expressions (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 In addition to using aggregate functions to aggregate data, you can create custom expressions to produce aggregate values. You can use custom expressions in place of aggregate functions anywhere in an aggregate query.  
   
 For example, in the `titles` table you might want to create a query that shows not just the average price, but what the average price would be if it were discounted.  

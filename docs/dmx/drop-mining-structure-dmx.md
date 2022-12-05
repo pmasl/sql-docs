@@ -1,34 +1,17 @@
 ---
-title: "DROP MINING STRUCTURE (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "DROP MINING STRUCTURE"
-  - "DROP_MINING_STRUCTURE"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "removing mining structures"
-  - "dropping mining structures"
-  - "DROP MINING STRUCTURE statement"
-  - "deleting mining structures"
-  - "mining structures [DMX], deleting"
-ms.assetid: 30df8c36-3a15-4d8c-98f3-0f8917be9fc8
-caps.latest.revision: 15
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "DROP MINING STRUCTURE (DMX)"
+description: "DROP MINING STRUCTURE (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # DROP MINING STRUCTURE (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Drops the specified mining structure from the database. All the mining models that are associated with the structure are also dropped from the database.  
   

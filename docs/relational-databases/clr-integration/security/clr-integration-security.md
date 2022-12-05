@@ -1,26 +1,23 @@
 ---
-title: "CLR Integration Security | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+title: "CLR Integration Security"
+description: SQL Server integration with the .NET Framework CLR security manages access between objects. Security checks performed on objects depend on the calls involved.
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: 07/22/2020
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "security [CLR integration]"
   - "authorization [CLR integration]"
   - "common language runtime [SQL Server], security"
   - "database objects [CLR integration], security"
 ms.assetid: 05d7a471-c5d5-4730-b903-e4edc8157bb4
-caps.latest.revision: 55
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
+
 # CLR Integration Security
+
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   The security model of the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] integration with the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] common language runtime (CLR) manages and secures access between different types of CLR and non-CLR objects running within [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. These objects may be called by a [!INCLUDE[tsql](../../../includes/tsql-md.md)] statement or another CLR object running in the server. The calls between objects are referred to as links. The types of security checks performed on these objects depend on the types of links involved.  
   
  The CLR integration security model has the following goals:  
@@ -43,19 +40,17 @@ manager: "jhubbard"
  [Host Protection Attributes and CLR Integration Programming](../../../relational-databases/clr-integration-security-host-protection-attributes/host-protection-attributes-and-clr-integration-programming.md)  
  Provides information about the host protection attribute (HPA) values that are disallowed in SAFE and EXTERNAL_ACCESS assemblies.  
   
- [Links in CLR Integration Security](http://msdn.microsoft.com/library/168efd01-d12e-4bdf-a1b3-0b5c76474eaf)  
+ [Links in CLR Integration Security]()  
  Describes how pieces of user-code can call each other in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)].  
   
- [Impersonation and CLR Integration Security](http://msdn.microsoft.com/library/1495a7af-2248-4cee-afdb-9269fb3a7774)  
+ [Impersonation and CLR Integration Security](../data-access/impersonation-and-credentials-for-connections.md)  
  Discusses how managed code accesses external resources using impersonation.  
   
- [Allowing Partially Trusted Callers](http://msdn.microsoft.com/library/20b0248f-36da-4fc3-97d2-3789fcf6e084)  
  Discusses issues that arise when a managed method invokes a method in a class contained in another assembly.  
   
- [Application Domains and CLR Integration Security](http://msdn.microsoft.com/library/54ee904e-e21a-4ee7-b4ad-a6f6f71bd473)  
+ [Application Domains and CLR Integration Security](/previous-versions/sql/2014/database-engine/dev-guide/allowing-partially-trusted-callers?view=sql-server-2014&preserve-view=true)  
  Describes how assemblies are loaded into application domains.  
   
 ## See Also  
  [Managing CLR Integration Assemblies](../../../relational-databases/clr-integration/assemblies/managing-clr-integration-assemblies.md)  
-  
   

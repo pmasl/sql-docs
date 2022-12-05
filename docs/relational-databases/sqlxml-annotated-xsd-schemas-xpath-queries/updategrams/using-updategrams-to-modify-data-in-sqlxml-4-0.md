@@ -1,15 +1,13 @@
 ---
-title: "Using Updategrams to Modify Data in SQLXML 4.0 | Microsoft Docs"
-ms.custom: ""
+title: "Using Updategrams to Modify Data in SQLXML 4.0"
+description: View information and examples about updategrams and how they are used for modifying data in SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SQLXML, updategrams"
   - "data insertions [SQLXML]"
   - "data deletions [SQLXML]"
@@ -24,12 +22,10 @@ helpviewer_keywords:
   - "deleting data"
   - "inserting data"
 ms.assetid: b8b3b892-cb73-41d0-b945-bce148d81d9b
-caps.latest.revision: 26
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Using Updategrams to Modify Data in SQLXML 4.0
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   You can modify (insert, update, or delete) a database in [!INCLUDE[msCoName](../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] from an existing XML document by using an updategram or the OPENXML [!INCLUDE[tsql](../../../includes/tsql-md.md)] function.  
   
  This section provides information about updategrams and examples of their usage.  
@@ -59,10 +55,9 @@ manager: "jhubbard"
  [Handling Database Concurrency Issues in Updategrams &#40;SQLXML 4.0&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/updategrams/handling-database-concurrency-issues-in-updategrams-sqlxml-4-0.md)  
  Describes the various levels of protection possible for handling concurrency issues in updategrams, and provides examples.  
   
- [Updategram Sample Applications &#40;SQLXML 4.0&#41;](http://msdn.microsoft.com/library/d2287e10-4007-4ba4-ad84-4e2b6adfede5)  
+ [Updategram Sample Applications &#40;SQLXML 4.0&#41;]()  
  Provides sample applications that use updategrams.  
   
  [Guidelines and Limitations of XML Updategrams &#40;SQLXML 4.0&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/updategrams/guidelines-and-limitations-of-xml-updategrams-sqlxml-4-0.md)  
  Lists some things to remember when working with updategrams.  
-  
   

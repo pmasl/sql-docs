@@ -1,24 +1,15 @@
 ---
-title: "supportsSchemasInTableDefinitions Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsSchemasInTableDefinitions Method"
+description: "supportsSchemasInTableDefinitions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsSchemasInTableDefinitions"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsSchemasInTableDefinitions"
 apitype: "Assembly"
-ms.assetid: 3326b1b0-53e2-42ae-9ff7-98e8c7017ffa
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsSchemasInTableDefinitions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

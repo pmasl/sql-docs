@@ -1,69 +1,70 @@
 ---
-title: "DECOMPRESS (Transact-SQL) | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "11/30/2015"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "DECOMPRESS (Transact-SQL)"
+description: "DECOMPRESS (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
+ms.date: "10/11/2018"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DECOMPRESS"
   - "DECOMPRESS_TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "DECOMPRESS function"
-ms.assetid: 738d56be-3870-4774-b112-3dce27becc11
-caps.latest.revision: 8
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: "= azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqledge-current || = azure-sqldw-latest"
 ---
 # DECOMPRESS (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
 
-  Decompress input expression using GZIP algorithm. Result of the compression is byte array (VARBINARY(MAX) type).  
+This function will decompress an input expression value, using the GZIP algorithm. `DECOMPRESS` will return a byte array (VARBINARY(MAX) type).  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
+```syntaxsql  
 DECOMPRESS ( expression )  
 ```  
   
-## Arguments  
+## Arguments
  *expression*  
- Is a **varbinary(***n***)**, **varbinary(max)**, or **binary(***n***)**. For more information, see [Expressions &#40;Transact-SQL&#41;](../../t-sql/language-elements/expressions-transact-sql.md).  
+A **varbinary(**_n_**)**, **varbinary(max)**, or **binary(**_n_**)** value. See [Expressions &#40;Transact-SQL&#41;](../../t-sql/language-elements/expressions-transact-sql.md) for more information.  
   
 ## Return Types  
- Returns the data type of **varbinary(max)** type. The input argument is decompressed using the ZIP algorithm. The user should explicitly cast result to a target type if needed.  
+A value of data type **varbinary(max)**. `DECOMPRESS` will use the ZIP algorithm to decompress the input argument. The user should explicitly cast result to a target type if necessary.  
   
 ## Remarks  
   
 ## Examples  
   
 ### A. Decompress Data at Query Time  
- The following example shows how to show compress data from a table:  
+This example shows how to return compressed table data:  
+
+
   
-```  
+```sql  
 SELECT _id, name, surname, datemodified,  
              CAST(DECOMPRESS(info) AS NVARCHAR(MAX)) AS info  
 FROM player;  
 ```  
   
-### B. Display Compressed Data Using Computed Column  
- The following example shows how to create a table to store decompressed data:  
+### B. Display Compressed Data Using Computed Column
+
+> [!NOTE]
+> This example does not apply to Azure Synapse Analytics.
+
+This example shows how to create a table for decompressed data storage:  
   
-```  
-CREATE TABLE (  
-    _id int primary key identity,  
-    name nvarchar(max),  
-    surname nvarchar(max),  
-    info varbinary(max),  
-    info_json as CAST(decompress(info) as nvarchar(max))  
+```sql  
+CREATE TABLE example_table (  
+    _id INT PRIMARY KEY IDENTITY,  
+    name NVARCHAR(max),  
+    surname NVARCHAR(max),  
+    info VARBINARY(max),  
+    info_json as CAST(DECOMPRESS(info) as NVARCHAR(max))  
 );  
 ```  
   

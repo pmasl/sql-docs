@@ -1,28 +1,25 @@
 ---
+description: "Installing the Software (ODBC)"
 title: "Installing the Software (ODBC) | Microsoft Docs"
-ms.custom: ""
+ms.custom:
+  - intro-installation
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.subservice: connectivity
+ms.topic: conceptual
+helpviewer_keywords:
   - "ODBC driver for Oracle [ODBC], installing"
   - "installing ODBC driver for Oracle [ODBC]"
 ms.assetid: dfac8ade-eebe-4ebe-a199-feb740ed5bae
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Installing the Software (ODBC)
 > [!IMPORTANT]  
 >  This feature will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Instead, use the ODBC driver provided by Oracle.  
   
- The ODBC Driver for Oracle is one of the data access components. It accompanies other ODBC components, such as the ODBC Data Source Administrator, and should already be installed. The driver also can be found under "Drivers and Other Downloads" on the Microsoft Product Support Services Online Web site at www.microsoft.com.  
+ The ODBC Driver for Oracle is one of the data access components. It accompanies other ODBC components, such as the ODBC Data Source Administrator, and should already be installed. The driver also can be found under "Drivers and Other Downloads" on the Microsoft Product Support Services Online Web site at [www.microsoft.com](https://www.microsoft.com).  
   
  Network software must be installed according to its own documentation. The ODBC Driver for Oracle requires no special installation considerations as long as the network software is supported.  
   

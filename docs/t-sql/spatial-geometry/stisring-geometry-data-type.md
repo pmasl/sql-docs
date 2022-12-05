@@ -1,14 +1,12 @@
 ---
+description: "STIsRing (geometry Data Type)"
 title: "STIsRing (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "STIsRing_TSQL"
   - "STIsRing (geometry Data Type)"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "STIsRing (geometry Data Type)"
 ms.assetid: ea0063be-1c74-4cc4-ac6f-b65321ddfa54
-caps.latest.revision: 21
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # STIsRing (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns 1 if a **geometry** instance fulfills the following requirements:
 -   It is a **LineString** instance.  
@@ -40,7 +36,9 @@ Returns 1 if a **geometry** instance fulfills the following requirements:
 .STIsRing ( )  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] return type: **bit**  
   
  CLR return type: **SqlBoolean**  
@@ -51,7 +49,7 @@ Returns 1 if a **geometry** instance fulfills the following requirements:
 ## Examples  
  The following example creates a `LineString` instance and uses `STIsRing()` to test whether the instance is a ring.  
   
-```  
+```sql
 DECLARE @g geometry;  
 SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0, 0 0)', 0);  
 SELECT @g.STIsRing();  

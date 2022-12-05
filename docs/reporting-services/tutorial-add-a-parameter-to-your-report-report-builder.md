@@ -1,26 +1,19 @@
 ---
 title: "Tutorial: Add a Parameter to Your Report (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-applies_to: 
-  - "SQL Server 2016"
+description: Learn how to add a parameter to a Reporting Services paginated report so report readers can filter report data for one or more values.
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+ms.topic: conceptual
 ms.assetid: eab34ec4-b3ad-4a76-95cc-07b2f75ee6d7
-caps.latest.revision: 12
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Tutorial: Add a Parameter to Your Report (Report Builder)
 In this tutorial, you add a parameter to a [!INCLUDE[ssRSnoversion_md](../includes/ssrsnoversion-md.md)] paginated report so report readers can filter report data for one or more values. 
   
-![report-builder-parameter-tutorial](../reporting-services/media/report-builder-parameter-tutorial.png)
+![Screenshot showing that you can add a parameter to a paginated report.](../reporting-services/media/report-builder-parameter-tutorial.png)
 
 Report parameters are created automatically for each query parameter that you include in a dataset query. The parameter data type determines how it appears on the report view toolbar. 
    
@@ -144,21 +137,21 @@ When you add a query parameter to a query, Report Builder automatically creates 
     WHERE StoreID = (@StoreID)  
     ```  
   
-    The **WHERE** clause limits the retrieved data to the store identifier that is specified by the query parameter *@StoreID*.  
+    The **WHERE** clause limits the retrieved data to the store identifier that is specified by the query parameter *\@StoreID*.  
   
-4.  On the query designer toolbar, click **Run** (**!**). The **Define Query Parameters** dialog box opens and prompts for a value for the query parameter *@StoreID*.  
+4.  On the query designer toolbar, click **Run** (**!**). The **Define Query Parameters** dialog box opens and prompts for a value for the query parameter *\@StoreID*.  
   
 5.  In **Parameter Value**, type **200**.  
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
     The result set displays the quantities sold for Accessories, Camcorders, and Digital SLR Cameras for the store identifier **200**.  
   
-7.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 8.  In the Report Data pane, expand the **Parameters** folder.  
   
-Note there is now a report parameter named *@StoreID*, and a Parameters pane where you can lay out the report parameters.   
+Note there is now a report parameter named *\@StoreID*, and a Parameters pane where you can lay out the report parameters.   
   
 ![ssRB_ParamPane](../reporting-services/media/ssrb-parampane.png)  
   
@@ -171,7 +164,7 @@ After you create a report parameter, you can adjust the default values for prope
   
 By default, the parameter you created has the data type **Text**. Because the store identifier is an integer, you can change the data type to Integer.  
   
-1.  In the Report Data pane under the **Parameters** node, right-click *@StoreID*, then click **Parameter Properties**.  
+1.  In the Report Data pane under the **Parameters** node, right-click *\@StoreID*, then click **Parameter Properties**.  
   
 2.  In **Prompt**, type **Store identifier?** This text appears on the report viewer toolbar when you run the report.  
   
@@ -179,9 +172,9 @@ By default, the parameter you created has the data type **Text**. Because the st
   
 4.  Accept the remaining default values in the dialog box.  
   
-5.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+5.  Select **OK**.
   
-6.  Click **Run** to preview the report. The report viewer displays the prompt **Store Identifier?** for *@StoreID*.  
+6.  Click **Run** to preview the report. The report viewer displays the prompt **Store Identifier?** for *\@StoreID*.  
   
 7.  On the report viewer toolbar, next to Store ID, type **200**, and then click **View Report**.  
   
@@ -213,7 +206,7 @@ To make sure your report readers type only valid values for a parameter, you can
     UNION SELECT 306 AS StoreID, 'Contoso Europe Online Store' as StoreName  
     ```  
   
-8.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+8.  Select **OK**.
   
     The Report Data pane displays the fields StoreID and StoreName under the **Stores** dataset node.  
   
@@ -222,7 +215,7 @@ After you create a dataset to provide available values, you change the report pr
   
 ### To provide available values for a parameter from a dataset  
   
-1.  In the Report Data pane, right-click the parameter *@StoreID*, then click **Parameter Properties**.  
+1.  In the Report Data pane, right-click the parameter *\@StoreID*, then click **Parameter Properties**.  
   
 2.  Click **Available Values**, and then click **Get values from a query**.  
   
@@ -238,7 +231,7 @@ After you create a dataset to provide available values, you change the report pr
   
     Report readers will now select from a list of store names instead of store identifiers. Note that the parameter data type remains **Integer** because the parameter is based on the store identifier, not the store name.  
   
-8.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+8.  Select **OK**.
   
 9. Preview the report.  
   
@@ -255,7 +248,7 @@ You can specify a default value for each parameter so the report runs automatica
   
 1.  Switch to Design view.  
   
-2.  In the Report Data pane, right-click *@StoreID*, then click **Parameter Properties**.  
+2.  In the Report Data pane, right-click *\@StoreID*, then click **Parameter Properties**.  
   
 3.  Click **Default Values**, then click **Get values from a query**.  
   
@@ -263,27 +256,27 @@ You can specify a default value for each parameter so the report runs automatica
   
 5.  In **Value field**, from the drop-down list, click StoreID.  
   
-6.  [!INCLUDE[clickOK_md](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
 7.  Preview the report.  
   
-For *@StoreID*, the report viewer displays the value "Contoso North America Online Store" because it's the first value from the result set for the dataset **Stores**. The report displays the quantity sold for Digital Cameras for store identifier **199**.  
+For *\@StoreID*, the report viewer displays the value "Contoso North America Online Store" because it's the first value from the result set for the dataset **Stores**. The report displays the quantity sold for Digital Cameras for store identifier **199**.  
   
 ### To specify a custom default value  
   
 1.  Switch to Design view.  
   
-2.  In the Report Data pane, right-click *@StoreID*, and then click **Parameter Properties**.  
+2.  In the Report Data pane, right-click *\@StoreID*, and then click **Parameter Properties**.  
   
 3.  Click **Default Values** > **Specify values** > **Add**. A new value row is added.  
   
 4.  In **Value**, type **200**.  
   
-5.  [!INCLUDE[clickOK_md](../includes/clickok-md.md)] 
+5.  Select **OK**.
   
 6.  Preview the report.  
   
-For *@StoreID*, the report viewer displays "Contoso Catalog Store" because it's the display name for store identifier **200**. The report displays the quantity sold for Accessories, Camcorders, and Digital SLR Cameras for the store identifier **200**.  
+For *\@StoreID*, the report viewer displays "Contoso Catalog Store" because it's the display name for store identifier **200**. The report displays the quantity sold for Accessories, Camcorders, and Digital SLR Cameras for the store identifier **200**.  
   
 ## <a name="NameValue"></a>4d. Look up a Name/Value Pair  
 A dataset might contain both the identifier and the corresponding name field. When you only have an identifier, you can look up the corresponding name in a dataset that you created that includes name/value pairs.  
@@ -308,7 +301,7 @@ A dataset might contain both the identifier and the corresponding name field. Wh
   
     The Lookup function takes the value for StoreID, looks it up in the "Stores" dataset, and returns the StoreName value.  
   
-7.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+7.  Select **OK**.
   
     The store column header contains the display text for a complex expression: **Expr**.  
   
@@ -325,13 +318,13 @@ When your report readers have questions about a report, it helps to know which p
   
 2.  Right-click the page footer > **Insert** > **Text Box**. Drag the text box next to the text box with the time stamp. Grab the side handle of the text box and expand the width.  
   
-3.  From the Report Data pane, drag the parameter *@StoreID* to the text box. The text box displays `[@StoreID]`.  
+3.  From the Report Data pane, drag the parameter *\@StoreID* to the text box. The text box displays `[@StoreID]`.  
   
 4.  To display the parameter label, click in the text box until the insert cursor appears after the existing expression, type a space, and then drag another copy of the parameter from the Report Data pane to the text box. The text box displays `[@StoreID] [@StoreID]`.  
   
 5.  Right-click the first `[@StoreID]` and click **Expression**. The **Expression** dialog box opens. Replace the text `Value` with `Label`.  
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
     The text displays: `[@StoreID.Label] [@StoreID]`.  
   
@@ -356,7 +349,7 @@ Filters help control which data to use in a report after it is retrieved from an
 
     `[@StoreID]` is the simple expression syntax that represents `=Parameters!StoreID.Value`.  
   
-7.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 8.  Preview the report.  
   
@@ -373,11 +366,11 @@ To change a parameter from single to multivalued, you must change the query and 
   
 1.  Switch to Design view.  
   
-2.  In the Report Data pane, right-click *@StoreID*, and then click **Parameter Properties**.  
+2.  In the Report Data pane, right-click *\@StoreID*, and then click **Parameter Properties**.  
   
 3.  Select **Allow multiple values**.  
   
-4.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+4.  Select **OK**.
   
 5.  In the Report Data pane, expand the **Datasets** folder, right-click **DataSet1**, and then click **Query**.  
   
@@ -389,7 +382,7 @@ To change a parameter from single to multivalued, you must change the query and 
   
     The **IN** operator tests a value for inclusion in a set of values.  
   
-7.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 8.  Right-click a row or column header handle on the matrix, and then click **Tablix Properties**.  
   
@@ -397,7 +390,7 @@ To change a parameter from single to multivalued, you must change the query and 
   
 10. In **Operator**, select **In**.  
   
-11. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+11. Select **OK**.
   
 12. In the text box that displays the parameter in the page footer, delete all text.  
   
@@ -405,7 +398,7 @@ To change a parameter from single to multivalued, you must change the query and 
   
     This expression concatenates all store names that the user selected, separated by a comma and a space.  
   
-14. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+14. Select **OK**.
   
 15. Click in the text box in front of the expression that you just created, and then type the following: 
 
@@ -423,7 +416,7 @@ To change a parameter from single to multivalued, you must change the query and 
   
 19. From the drop-down list, click **Select All** to clear the list, click "Contoso Catalog Store" and "Contoso Asia Online Store", and then click **View Report**.  
 
-    ![report-builder-parameter-multiselect](../reporting-services/media/report-builder-parameter-multiselect.png)
+    ![Screenshot showing that you can multi-select parameters to add to a report.](../reporting-services/media/report-builder-parameter-multiselect.png)
   
  
 ## <a name="Boolean"></a>8. Add a Boolean Parameter for Conditional Visibility  
@@ -444,7 +437,7 @@ To change a parameter from single to multivalued, you must change the query and 
   
 7.  In **Value**, type **False**.  
   
-8.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+8.  Select **OK**.
   
 ### To set visibility based on a Boolean parameter  
   
@@ -458,9 +451,9 @@ To change a parameter from single to multivalued, you must change the query and 
   
     The text box Visibility option is controlled by the property Hidden. Apply the **Not** operator so that when the parameter is selected, the Hidden property is false, and the text box will be displayed.  
   
-5.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+5.  Select **OK**.
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
 7.  Preview the report.  
   
@@ -503,5 +496,5 @@ This concludes the walkthrough for how to add a parameter to your report. To lea
   
 ## See Also  
 * [Report Builder Tutorials](../reporting-services/report-builder-tutorials.md)
-* [Report Builder in SQL Server 2016](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
+* [Report Builder in SQL Server](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
 *  [Lookup Function](../reporting-services/report-design/report-builder-functions-lookup-function.md)   

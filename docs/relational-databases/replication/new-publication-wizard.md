@@ -1,14 +1,12 @@
 ---
+description: "New Publication Wizard"
 title: "New Publication Wizard | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.dbpublishin"
   - "sql13.swb.dbpublishingwizard.choosetables.f1"
@@ -40,12 +38,11 @@ f1_keywords:
 helpviewer_keywords: 
   - "New Publication Wizard"
 ms.assetid: 57d65d16-90d1-4b4c-b68e-6418a7064e76
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # New Publication Wizard
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This section provides information on the following pages of the New Publication Wizard:  
   
 -   [Oracle Publisher](../../relational-databases/replication/oracle-publisher.md)  
@@ -77,6 +74,6 @@ manager: "jhubbard"
 ## See Also  
  [Create a Publication](../../relational-databases/replication/publish/create-a-publication.md)   
  [Publish Data and Database Objects](../../relational-databases/replication/publish/publish-data-and-database-objects.md)   
- [Properties Reference &#40;Replication&#41;](../../relational-databases/replication/properties-reference-replication.md)  
+
   
   

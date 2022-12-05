@@ -1,26 +1,26 @@
 ---
-title: "Subscription Validation Options (Transactional Subscriptions) | Microsoft Docs"
-ms.custom: ""
+title: "Subscription validation options dialog box (Transactional)"
+description: Describes the 'Subscription Validation Options' dialog box for Transactional Replication in SQL Server Management Studio (SSMS).
+ms.custom: seo-lt-2019
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.rep.validate.options.f1"
 helpviewer_keywords: 
   - "Subscription Validation Options dialog box"
 ms.assetid: fd66ad1f-df01-4240-9e89-8f41bff12c1e
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-current||>=sql-server-2016"
 ---
 # Subscription Validation Options (Transactional Subscriptions)
-  Use the **Subscription Validation Options** dialog box to specify whether validation should use a row count only, or a row count and a binary checksum.  
+[!INCLUDE[sql-asdb](../../includes/applies-to-version/sql-asdb.md)]
+  Use the **Subscription Validation Options** dialog box to specify whether validation should use a row count only, or a row count and a binary checksum. 
+
+[!INCLUDE[azure-sql-db-replication-supportability-note](../../includes/azure-sql-db-replication-supportability-note.md)]
   
 ## Options  
  **Verify that the Subscriber has the same number of rows of replicated data as the Publisher**  
@@ -34,6 +34,6 @@ manager: "jhubbard"
   
 ## See Also  
  [Validate Data at the Subscriber](../../relational-databases/replication/validate-data-at-the-subscriber.md)   
- [Validate Replicated Data](../../relational-databases/replication/validate-replicated-data.md)  
+ [Validate Replicated Data](../../relational-databases/replication/validate-data-at-the-subscriber.md)  
   
   

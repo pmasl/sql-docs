@@ -1,29 +1,22 @@
 ---
-title: "DENY Type Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DENY Type Permissions (Transact-SQL)"
+description: DENY Type Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/09/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "DENY statement, types"
   - "permissions [SQL Server], types"
   - "type permissions [SQL Server]"
   - "denying permissions [SQL Server], types"
-ms.assetid: 564e3500-c567-43dc-993b-9ab50e99cf3f
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DENY Type Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Denies permissions on a type in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
 
@@ -31,7 +24,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 DENY permission  [ ,...n ] ON TYPE :: [ schema_name . ] type_name  
         TO <database_principal> [ ,...n ]  
     [ CASCADE ]  
@@ -48,11 +41,13 @@ DENY permission  [ ,...n ] ON TYPE :: [ schema_name . ] type_name
     | Database_user_with_no_login  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be denied on a type. For a list of the permissions, see the Remarks section later in this topic.  
   
- ON TYPE **::** [ *schema_name***.** ] *type_name*  
+ ON TYPE **::** [ _schema_name_**.** ] *type_name*  
  Specifies the type on which the permission is being denied. The scope qualifier (**::**) is required. If *schema_name* is not specified, the default schema is used. If *schema_name* is specified, the schema scope qualifier (**.**) is required.  
   
  TO \<database_principal>  
@@ -115,7 +110,7 @@ DENY permission  [ ,...n ] ON TYPE :: [ schema_name . ] type_name
 ## Examples  
  The following example denies `VIEW DEFINITION` permission with `CASCADE` on the user-defined type `PhoneNumber` to the `KhalidR`. `PhoneNumber` is located in schema `Telemarketing`.  
   
-```  
+```sql 
 DENY VIEW DEFINITION ON TYPE::Telemarketing.PhoneNumber   
     TO KhalidR CASCADE;  
 GO  

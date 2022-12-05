@@ -1,71 +1,65 @@
 ---
-title: "ERROR_LINE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: ERROR_LINE (Transact-SQL)
+description: "ERROR_LINE (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ERROR_LINE"
   - "ERROR_LINE_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "errors [SQL Server], line number"
   - "messages [SQL Server], line number"
   - "TRY...CATCH [SQL Server]"
   - "line number of error [SQL Server]"
   - "ERROR_LINE function"
   - "CATCH block"
-ms.assetid: 47335734-0baf-45a6-8b3b-6c4fd80d2cb8
-caps.latest.revision: 39
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# ERROR_LINE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
 
-  Returns the line number at which an error occurred that caused the CATCH block of a TRY…CATCH construct to be run.  
+# ERROR_LINE (Transact-SQL)
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+
+This function returns the line number of occurrence of an error that caused the CATCH block of a TRY...CATCH construct to execute.  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
-## Syntax  
-  
-```  
-  
-ERROR_LINE ( )  
-```  
-  
-## Return Type  
- **int**  
-  
+## Syntax
+
+```syntaxsql
+ERROR_LINE ( )
+```
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Type
+**int**
+
 ## Return Value  
- When called in a CATCH block:  
+When called in a CATCH block, `ERROR_LINE` returns  
   
--   Returns the line number at which the error occurred.  
-  
--   Returns the line number in a routine if the error occurred within a stored procedure or trigger.  
-  
- Returns NULL if called outside the scope of a CATCH block.  
+-   the line number where the error occurred    
+-   the line number in a routine, if the error occurred within a stored procedure or trigger  
+-   NULL, if called outside the scope of a CATCH block.  
   
 ## Remarks  
- This function may be called anywhere within the scope of a CATCH block.  
+A call to `ERROR_LINE` can happen anywhere within the scope of a CATCH block.  
   
- ERROR_LINE returns the line number at which the error occurred regardless of the number of times it is called or where it is called within the scope of the CATCH block. This contrasts with functions, such as @@ERROR, which return an error number in the statement immediately following the one that causes an error or in the first statement of a CATCH block.  
+`ERROR_LINE` returns the line number at which the error occurred. This happens regardless of the location of the `ERROR_LINE` call within the scope of the CATCH block, and regardless of the number of calls to `ERROR_LINE`. This contrasts with functions, such as @@ERROR. @@ERROR returns an error number in the statement immediately following the one that causes an error, or in the first statement of a CATCH block.  
   
- In nested CATCH blocks, ERROR_LINE returns the error line number specific to the scope of the CATCH block in which it is referenced. For example, the CATCH block of a TRY…CATCH construct could contain a nested TRY…CATCH construct. Within the nested CATCH block, ERROR_LINE returns the line number for the error that invoked the nested CATCH block. If ERROR_LINE is run in the outer CATCH block, it returns the line number for the error that invoked that CATCH block.  
+In nested CATCH blocks, `ERROR_LINE` returns the error line number specific to the scope of the CATCH block in which it is referenced. For example, the CATCH block of a TRY...CATCH construct could contain a nested TRY...CATCH construct. Within the nested CATCH block, `ERROR_LINE` returns the line number for the error that invoked the nested CATCH block. If `ERROR_LINE` runs in the outer CATCH block, it returns the line number for the error that invoked that specific CATCH block.  
   
 ## Examples  
   
 ### A. Using ERROR_LINE in a CATCH block  
- The following code example shows a `SELECT` statement that generates a divide-by-zero error. The line number at which the error occurred is returned.  
+This code example shows a `SELECT` statement that generates a divide-by-zero error. `ERROR_LINE` returns the line number where the error occurred.  
   
-```  
+```sql  
 BEGIN TRY  
     -- Generate a divide-by-zero error.  
     SELECT 1/0;  
@@ -77,15 +71,15 @@ GO
 ```  
   
 ### B. Using ERROR_LINE in a CATCH block with a stored procedure  
- The following code example shows a stored procedure that will generate a divide-by-zero error. `ERROR_LINE` returns the line number in the stored procedure in which the error occurred.  
+This example shows a stored procedure that generates a divide-by-zero error. `ERROR_LINE` returns the line number where the error occurred.  
   
-```  
+```sql  
 -- Verify that the stored procedure does not already exist.  
 IF OBJECT_ID ( 'usp_ExampleProc', 'P' ) IS NOT NULL   
     DROP PROCEDURE usp_ExampleProc;  
 GO  
   
--- Create a stored procedure that   
+-- Create a stored procedure that  
 -- generates a divide-by-zero error.  
 CREATE PROCEDURE usp_ExampleProc  
 AS  
@@ -100,12 +94,13 @@ BEGIN CATCH
     SELECT ERROR_LINE() AS ErrorLine;  
 END CATCH;  
 GO  
-```  
-  
+``` 
+
+
 ### C. Using ERROR_LINE in a CATCH block with other error-handling tools  
- The following code example shows a `SELECT` statement that generates a divide-by-zero error. Along with the line number at which the error occurred, information that relates to the error is returned.  
+This code example shows a `SELECT` statement that generates a divide-by-zero error. `ERROR_LINE` returns the line number where the error occurred, and information relating to the error itself.  
   
-```  
+```sql  
 BEGIN TRY  
     -- Generate a divide-by-zero error.  
     SELECT 1/0;  
@@ -120,7 +115,7 @@ BEGIN CATCH
         ERROR_MESSAGE() AS ErrorMessage;  
 END CATCH;  
 GO  
-```  
+``` 
   
 ## See Also  
  [TRY...CATCH &#40;Transact-SQL&#41;](../../t-sql/language-elements/try-catch-transact-sql.md)   

@@ -1,26 +1,20 @@
 ---
-title: "Conversion Functions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "Conversion Functions (Transact-SQL)"
+description: "Conversion Functions (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "07/24/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+dev_langs:
   - "TSQL"
-ms.assetid: 4147c593-96ba-402f-8bff-a7a32536b304
-caps.latest.revision: 6
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # Conversion Functions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-The following functions support data type casting and converting.
+These functions support data type casting and conversion:
   
 ## In This Section  
 [CAST and CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)  

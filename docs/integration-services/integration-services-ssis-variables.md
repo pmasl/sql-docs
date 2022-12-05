@@ -1,14 +1,12 @@
 ---
+description: "Integration Services (SSIS) Variables"
 title: "Integration Services (SSIS) Variables | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "variables [Integration Services], passing between packages"
   - "user-defined variables [Integration Services]"
@@ -18,12 +16,14 @@ helpviewer_keywords:
   - "variables [Integration Services], about variables"
   - "values [Integration Services]"
 ms.assetid: c1e81ad6-628b-46d4-9b09-d2866517b6ca
-caps.latest.revision: 60
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Integration Services (SSIS) Variables
+
+[!INCLUDE[sqlserver-ssis](../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Variables store values that a [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] package and its containers, tasks, and event handlers can use at run time. The scripts in the Script task and the Script component can also use variables. The precedence constraints that sequence tasks and containers into a workflow can use variables when their constraint definitions include expressions.  
   
  You can use variables in [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] packages for the following purposes:  
@@ -43,7 +43,7 @@ manager: "jhubbard"
 ## System and user-defined variables  
  [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] supports two types of variables: user-defined variables and system variables. User-defined variables are defined by package developers, and system variables are defined by [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)]. You can create as many user-defined variables as a package requires, but you cannot create additional system variables.  
   
- All variables—system and user-defined—can be used in the parameter bindings that the Execute SQL task uses to map variables to parameters in SQL statements. For more information, see [Execute SQL Task](../integration-services/control-flow/execute-sql-task.md) and [Parameters and Return Codes in the Execute SQL Task](http://msdn.microsoft.com/library/a3ca65e8-65cf-4272-9a81-765a706b8663).  
+ All variables-system and user-defined-can be used in the parameter bindings that the Execute SQL task uses to map variables to parameters in SQL statements. For more information, see [Execute SQL Task](../integration-services/control-flow/execute-sql-task.md) and [Parameters and Return Codes in the Execute SQL Task](./control-flow/execute-sql-task.md).  
   
 > [!NOTE]  
 >  The names of user-defined and system variables are case sensitive.  
@@ -72,7 +72,7 @@ manager: "jhubbard"
   
  A different set of system variables is available for different container types. For more information about the system variables used by packages and their elements, see [System Variables](../integration-services/system-variables.md).  
   
- For more information about real-life use scenarios for variables, see [Use Variables in Packages](http://msdn.microsoft.com/library/7742e92d-46c5-4cc4-b9a3-45b688ddb787).  
+ For more information about real-life use scenarios for variables, see [Use Variables in Packages]().  
   
 ## Properties of variables  
  You can configure user-defined variables by setting the following properties in either the **Variables** window or the **Properties** window. Certain properties are available only in the Properties window.  
@@ -107,7 +107,7 @@ manager: "jhubbard"
   
  A variable is created within the scope of a package or within the scope of a container, task, or event handler in the package. Because the package container is at the top of the container hierarchy, variables with package scope function like global variables and can be used by all containers in the package. Similarly, variables defined within the scope of a container such as a For Loop container can be used by all tasks or containers within the For Loop container.  
   
- If a package runs other packages by using the Execute Package task, the variables defined in the scope of the calling package or the Execute Package task can be made available to the called package by using the Parent Package Variable configuration type. For more information, see [Package Configurations](../integration-services/packages/package-configurations.md).  
+ If a package runs other packages by using the Execute Package task, the variables defined in the scope of the calling package or the Execute Package task can be made available to the called package by using the Parent Package Variable configuration type. For more information, see [Package Configurations](./packages/legacy-package-deployment-ssis.md).  
   
 **IncludeInDebugDump**  
  Indicate whether the variable value is included in the debug dump files.  
@@ -125,7 +125,16 @@ manager: "jhubbard"
  When the system resets the **IncludeInDebugDump** option to **false**, this might override the value selected by the user.  
   
 **Value**    
- The value of a user-defined variable can be a literal or an expression. A variable includes options for setting the variable value and the data type of the value. The two properties must be compatible: for example, the use of a string value together with an integer data type is not valid.  
+The value of a user-defined variable can be a literal or an expression. The value of a variable can't be null. Variables have the following default values:
+
+| Data type | Default value |
+|---|---|
+| Boolean | False |
+| Numeric and binary data types | 0 (zero) |
+| Char and string data types | (empty string) |
+| Object | System.Object |
+
+A variable has options for setting the variable value and the data type of the value. The two properties must be compatible: for example, the use of a string value together with an integer data type is not valid.  
   
  If the variable is configured to evaluate as an expression, you must provide an expression. At run time, the expression is evaluated, and the variable is set to the evaluation result. For example, if a variable uses the expression `DATEPART("month", GETDATE())` the value of the variable is the number equivalent of the month for the current date. The expression must be a valid expression that uses the [!INCLUDE[ssIS](../includes/ssis-md.md)] expression grammar syntax. When an expression is used with variables, the expression can use literals and the operators and functions that the expression grammar provides, but the expression cannot reference the columns from a data flow in the package. The maximum length of an expression is 4000 characters. For more information, see [Integration Services &#40;SSIS&#41; Expressions](../integration-services/expressions/integration-services-ssis-expressions.md).  
   
@@ -142,13 +151,13 @@ manager: "jhubbard"
   
  **Data Flow Expressions** Use variables to provide values in the expressions that the Derived Column and Conditional Split transformations use to populate columns, or to direct data rows to different transformation outputs. For example, the expression, `@varSalutation + LastName`, concatenates the value in the `VarSalutation` variable and the `LastName` column. The expression, `Income < @HighIncome`, directs data rows in which the value of the `Income` column is less than the value in the `HighIncome` variable to an output. For more information, see [Derived Column Transformation](../integration-services/data-flow/transformations/derived-column-transformation.md), [Conditional Split Transformation](../integration-services/data-flow/transformations/conditional-split-transformation.md), and [Integration Services &#40;SSIS&#41; Expressions](../integration-services/expressions/integration-services-ssis-expressions.md).  
   
- **Precedence Constraint Expressions** Provide values to use in precedence constraints to determine whether a constrained executable runs. The expressions can be used either together with an execution outcome (success, failure, completion), or instead of an execution outcome. For example, if the expression, `@varMax > @varMin`, evaluates to **true**, the executable runs. For more information, see [Add Expressions to Precedence Constraints](http://msdn.microsoft.com/library/5574d89a-a68e-4b84-80ea-da93305e5ca1).  
+ **Precedence Constraint Expressions** Provide values to use in precedence constraints to determine whether a constrained executable runs. The expressions can be used either together with an execution outcome (success, failure, completion), or instead of an execution outcome. For example, if the expression, `@varMax > @varMin`, evaluates to **true**, the executable runs. For more information, see [Add Expressions to Precedence Constraints](./control-flow/precedence-constraints.md).  
   
- **Parameters and Return Codes** Provide values to input parameters, or store the values of output parameters and return codes. You do this by mapping the variables to parameters and return values. For example, if you set the variable `varProductId` to 23 and run the SQL statement, `SELECT * from Production.Product WHERE ProductID = ?`, the query retrieves the product with a `ProductID` of 23. For more information, see [Execute SQL Task](../integration-services/control-flow/execute-sql-task.md) and [Parameters and Return Codes in the Execute SQL Task](http://msdn.microsoft.com/library/a3ca65e8-65cf-4272-9a81-765a706b8663).  
+ **Parameters and Return Codes** Provide values to input parameters, or store the values of output parameters and return codes. You do this by mapping the variables to parameters and return values. For example, if you set the variable `varProductId` to 23 and run the SQL statement, `SELECT * from Production.Product WHERE ProductID = ?`, the query retrieves the product with a `ProductID` of 23. For more information, see [Execute SQL Task](../integration-services/control-flow/execute-sql-task.md) and [Parameters and Return Codes in the Execute SQL Task](./control-flow/execute-sql-task.md).  
   
  **For Loop Expressions** Provide values to use in the initialization, evaluation, and assignment expressions of the For Loop. For example, if the variable `varCount` is 2 and `varMaxCount` is 10, the initialization expression is `@varCount`, the evaluation expression is  `@varCount < @varMaxCount`, and the assignment expression is `@varCount =@varCount +1`, then the loop repeats 8 times. For more information, see [For Loop Container](../integration-services/control-flow/for-loop-container.md).  
   
- **Parent Package Variable Configurations** Pass values from parent packages to child packages. Child packages can access variables in the parent package by using parent package variable configurations. For example, if the child package must use the same date as the parent package, the child package can define a parent package variable configuration that specifies a variable set by the GETDATE function in the parent package. For more information, see [Execute Package Task](../integration-services/control-flow/execute-package-task.md) and [Package Configurations](../integration-services/packages/package-configurations.md).  
+ **Parent Package Variable Configurations** Pass values from parent packages to child packages. Child packages can access variables in the parent package by using parent package variable configurations. For example, if the child package must use the same date as the parent package, the child package can define a parent package variable configuration that specifies a variable set by the GETDATE function in the parent package. For more information, see [Execute Package Task](../integration-services/control-flow/execute-package-task.md) and [Package Configurations](./packages/legacy-package-deployment-ssis.md).  
   
  **Script Task and Script Component** Provide a list of read-only and read/write variable to the Script task or Script component, update the read/write variables within the script, and then use the updated values in or outside the script. For example, in the code, `numberOfCars = CType(Dts.Variables("NumberOfCars").Value, Integer)`, the script variable `numberOfCars` is updated by the value in the variable, `NumberOfCars`. For more information, see [Using Variables in the Script Task](../integration-services/extending-packages-scripting/task/using-variables-in-the-script-task.md).  
 
@@ -172,7 +181,7 @@ manager: "jhubbard"
   
 6.  Optionally, click the **Grid Options** icon, select additional columns to show in the **Variables Grid Options** dialog box, and then click **OK**.  
   
-7.  Optionally, set the variable properties. For more information, see [Set the Properties of a User-Defined Variable](http://msdn.microsoft.com/library/f98ddbec-f668-4dba-a768-44ac3ae0536f).  
+7.  Optionally, set the variable properties. For more information, see [Set the Properties of a User-Defined Variable]().  
   
 8.  To save the updated package, click **Save Selected Items** on the **File** menu.  
 
@@ -208,7 +217,7 @@ Use the **Add Variable** dialog box to specify the properties of a new variable.
   
 4.  Select the variable to delete, and then click **Delete Variable**.  
   
-     If you don’t see the variable in the Variables window, click **Grid Options** and then select **Show variables of all scopes**.  
+     If you don't see the variable in the Variables window, click **Grid Options** and then select **Show variables of all scopes**.  
   
 5.  If the **Confirm Deletion of Variables** dialog box opens, click **Yes** to confirm.  
   
@@ -224,7 +233,7 @@ Use the **Add Variable** dialog box to specify the properties of a new variable.
   
 4.  Select the variable and then click **Move Variable**.  
   
-     If you don’t see the variable in the Variables window, click **Grid Options** and then select **Show variables of all scopes**.  
+     If you don't see the variable in the Variables window, click **Grid Options** and then select **Show variables of all scopes**.  
   
 5.  In the **Select New Scope** dialog box, select the package or a container, task, or event handler in the package, to change the variable scope.  
   
@@ -303,9 +312,9 @@ Use the **Add Variable** dialog box to specify the properties of a new variable.
 8.  To save the updated package, on the **File** menu, click **Save Selected Items**.  
 
 ## Update a variable dynamically with configurations  
- To dynamically update variables, you can create configurations for the variables, deploy the configurations with the package, and then update the variable values in the configuration file when you deploy the packages. At run time, the package uses the updated variable values. For more information, see [Create Package Configurations](../integration-services/packages/create-package-configurations.md).  
+ To dynamically update variables, you can create configurations for the variables, deploy the configurations with the package, and then update the variable values in the configuration file when you deploy the packages. At run time, the package uses the updated variable values. For more information, see [Create Package Configurations](./packages/legacy-package-deployment-ssis.md).  
 
 ## Related Tasks  
  [Use the Values of Variables and Parameters in a Child Package](../integration-services/packages/legacy-package-deployment-ssis.md#child)  
   
- [Map Query Parameters to Variables in a Data Flow Component](../integration-services/data-flow/map-query-parameters-to-variables-in-a-data-flow-component.md)  
+ [Map Query Parameters to Variables in a Data Flow Component](../integration-services/data-flow/map-query-parameters-to-variables-in-a-data-flow-component.md)

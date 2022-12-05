@@ -1,23 +1,18 @@
 ---
 title: "Report Server ExecutionLog and the ExecutionLog3 View | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Learn about the report server execution log in Reporting Services, which contains information about reports on servers in native mode or a SharePoint farm.
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: report-server
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "logs [Reporting Services], execution"
   - "execution logs [Reporting Services]"
 ms.assetid: a7ead67d-1404-4e67-97e7-4c7b0d942070
-caps.latest.revision: 41
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Report Server ExecutionLog and the ExecutionLog3 View
   The [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], report server execution log contains information about the reports that execute on the server or on multiple servers in a native mode scale-out deployment or a SharePoint farm. You can use the report execution log to find out how often a report is requested, what output formats are used the most, and how many milliseconds of processing time is spent on each processing phase. The log contains information on the length of time spent executing a report's dataset query and the time spent processing the data. If you are a report server administrator, you can review the log information and identify long running tasks and make suggestions to the report authors on the areas of the report (dataset or processing) they may be able to improve.  
@@ -27,7 +22,7 @@ manager: "erikre"
 ##  <a name="bkmk_top"></a> Viewing Log Information  
  The report server execution logs data about report execution into an internal database table. The information from the table is available from SQL Server views.  
   
- The report execution log is stored in the report server database that by default is named **ReportServer**. The SQL views provide the execution log information. The “2” and “3” views were added in more recent releases and contain new fields or they contain fields with friendlier names than the previous releases. The older views remain in the product so custom applications that depend on them are not impacted. If you do not have a dependence on an older view, for example ExecutionLog, it is recommended you use the most recent view, ExecutionLog**3**.  
+ The report execution log is stored in the report server database that by default is named **ReportServer**. The SQL views provide the execution log information. The "2" and "3" views were added in more recent releases and contain new fields or they contain fields with friendlier names than the previous releases. The older views remain in the product so custom applications that depend on them are not impacted. If you do not have a dependence on an older view, for example ExecutionLog, it is recommended you use the most recent view, ExecutionLog**3**.  
   
  In this topic:  
   
@@ -79,7 +74,7 @@ manager: "erikre"
   
  **To enable execution logging:**  
   
-1.  Start SQL Server Management Studio with administrative privileges. For example right-click the Management Studio icon and click ‘Run as administrator’.  
+1.  Start SQL Server Management Studio with administrative privileges. For example right-click the Management Studio icon and click 'Run as administrator'.  
   
 2.  Connect to the desired report server.  
   
@@ -261,8 +256,6 @@ select * from ExecutionLog3 order by TimeStart DESC
   
 -   **ExternalImages**  
   
-     Added in [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]  
-  
      The value is in miliseconds. This data can be used to diagnose performance issues. The time needed to retrieve images from an external webserver may slow the overall report execution.  
   
     ```  
@@ -274,8 +267,6 @@ select * from ExecutionLog3 order by TimeStart DESC
     ```  
   
 -   **Connections**  
-  
-     Added in [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]  
   
      A multi-leveled structure  
   
@@ -323,20 +314,20 @@ select * from ExecutionLog2 order by TimeStart DESC
  The following table describes the data that is captured in the report execution log  
   
 |Column|Description|  
-|------------|-----------------|  
+|------------|------------------------------------------------------------|  
 |InstanceName|Name of the report server instance that handled the request.|  
-|ReportPath|The path structure to the report.  For example a report named ”test” which is the in root folder in Report Manager, would have a ReportPath of “/test”.<br /><br /> A report named “test” that is saved in the folder “samples” on Report Manager , will have a ReportPath of “/Samples/test/”|  
+|ReportPath|The path structure to the report. A repost saved in the root folder as "test", has a ReportPath of "/test".<br /><br /> A report named "test" that is saved in the folder "samples", would have a ReportPath of "/Samples/test/"|  
 |UserName|User identifier.|  
 |ExecutionID||  
 |RequestType|Request type (either user or system).|  
 |Format|Rendering format.|  
 |Parameters|Parameter values used for a report execution.|  
 |ReportAction|Possible values: Render, Sort, BookMarkNavigation, DocumentNavigation, GetDocumentMap, Findstring|  
-|TimeStart|Start and stop times that indicate the duration of a report process.|  
-|TimeEnd||  
-|TimeDataRetrieval|Number of milliseconds spent retrieving the data, processing the report, and rendering the report.|  
-|TimeProcessing||  
-|TimeRendering||  
+|TimeStart|Start time that indicate the duration of a report process.|
+|TimeEnd|End time that indicate the duration of a report process.|
+|TimeDataRetrieval|Number of milliseconds spent retrieving the data.|
+|TimeProcessing|Number of milliseconds spent processing the report.|
+|TimeRendering|Number of milliseconds spent rendering the report.|
 |Source|Source of the report execution (1=Live, 2=Cache, 3=Snapshot, 4=History).|  
 |Status|Status (either rsSuccess or an error code; if multiple errors occur, only the first error is recorded).|  
 |ByteCount|Size of rendered reports in bytes.|  

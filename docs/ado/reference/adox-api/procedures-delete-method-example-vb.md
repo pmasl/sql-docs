@@ -1,26 +1,19 @@
 ---
-title: "Procedures Delete Method Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Procedures Delete Method Example (VB)"
+description: "Procedures Delete Method Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Delete method [ADOX], Visual Basic example"
-ms.assetid: 94f1ac93-e778-4a40-a85e-94bce5316ac7
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Procedures Delete Method Example (VB)
-The following code demonstrates how to delete a procedure by using the [Delete](../../../ado/reference/adox-api/delete-method-adox-collections.md) method of the [Procedures](../../../ado/reference/adox-api/procedures-collection-adox.md) collection.  
+The following code demonstrates how to delete a procedure by using the [Delete](./delete-method-adox-collections.md) method of the [Procedures](./procedures-collection-adox.md) collection.  
   
 ```  
 ' BeginDeleteProcedureVB  
@@ -53,8 +46,8 @@ End Sub
 ```  
   
 ## See Also  
- [ActiveConnection Property (ADOX)](../../../ado/reference/adox-api/activeconnection-property-adox.md)   
- [Catalog Object (ADOX)](../../../ado/reference/adox-api/catalog-object-adox.md)   
- [Delete Method (ADOX Collections)](../../../ado/reference/adox-api/delete-method-adox-collections.md)   
- [Procedure Object (ADOX)](../../../ado/reference/adox-api/procedure-object-adox.md)   
- [Procedures Collection (ADOX)](../../../ado/reference/adox-api/procedures-collection-adox.md)
+ [ActiveConnection Property (ADOX)](./activeconnection-property-adox.md)   
+ [Catalog Object (ADOX)](./catalog-object-adox.md)   
+ [Delete Method (ADOX Collections)](./delete-method-adox-collections.md)   
+ [Procedure Object (ADOX)](./procedure-object-adox.md)   
+ [Procedures Collection (ADOX)](./procedures-collection-adox.md)

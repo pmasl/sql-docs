@@ -1,23 +1,21 @@
 ---
+description: "Add or Edit Join"
 title: "Add or Edit Join | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.rep.newpubwizard.addeditjoin.f1"
+  - "sql13.sql13.swb.agdashboard.arp4joinstate.issues.f1"
 ms.assetid: 3b546560-720f-48b8-9d63-cf159290e9d4
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # Add or Edit Join
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   The **Add Join** and **Edit Join** dialog boxes allow you to add and edit join filters for merge publications.  
   
 > [!NOTE]  
@@ -50,7 +48,7 @@ manager: "jhubbard"
     -   If you are editing an existing join, you must make edits manually.  
   
 3.  **Specify join options**  
-  
+
     -   If the column on which you join in the filtered table is unique, select **Unique key**. The merge process has special performance optimizations available if the column is unique.  
   
         > [!CAUTION]  

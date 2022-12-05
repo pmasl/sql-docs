@@ -1,31 +1,29 @@
 ---
+description: "Deploy a Database By Using a DAC"
 title: "Deploy a Database By Using a DAC | Microsoft Docs"
-ms.custom: ""
+ms.custom:
+  - intro-deployment
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-data-tier-apps"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.subservice: 
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.dbdeployment.settings.f1"
   - "sql13.swb.dbdeployment.progress.f1"
   - "sql13.swb.dbdeployment.summary.f1"
   - "sql13.swb.dbdeployment.results.f1"
   - "sql13.swb.dbdeployment.welcome.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "deploy database wizard"
   - "database deploy [SQL Server]"
 ms.assetid: 08c506e8-4ba0-4a19-a066-6e6a5c420539
-caps.latest.revision: 12
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # Deploy a Database By Using a DAC
-  Use the **Deploy a Database to SQL Azure** Wizard to deploy a database between an instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] and a [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)] server, or between two [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]servers.  
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
+  Use the **Deploy Database to Microsoft Azure SQL Database** Wizard to deploy a database between an instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)] and a [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)] server, or between two [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]servers.  
   
 ##  <a name="BeforeBegin"></a> Before You Begin  
  The wizard uses a Data-tier Application (DAC) BACPAC archive file to deploy both the data and the definitions of database objects. It performs a DAC export operation from the source database, and a DAC import to the destination.  
@@ -65,7 +63,7 @@ manager: "jhubbard"
   
 3.  Expand the **Databases** node.  
   
-4.  Right click the database you want to deploy, select **Tasks**, and then select **Deploy Database to SQL Azure…**  
+4.  Right click the database you want to deploy, select **Tasks**, and then select **Deploy Database to Microsoft Azure SQL Database**  
   
 5.  Complete the Wizard dialogs:  
   
@@ -88,22 +86,22 @@ manager: "jhubbard"
   
 -   **Next** - Proceeds to the **Deployment Settings** page.  
   
--   **Cancel** – Cancels the operation and closes the Wizard.  
+-   **Cancel** - Cancels the operation and closes the Wizard.  
   
 ##  <a name="Deployment_settings"></a> Deployment Settings Page  
  Use this page to specify the destination server and to provide details about your new database.  
   
  **Local host:**  
   
--   **Server connection** – Specify server connection details and then click **Connect** to verify the connection.  
+-   **Server connection** - Specify server connection details and then click **Connect** to verify the connection.  
   
--   **New database name** – Specify a name for the new database.  
+-   **New database name** - Specify a name for the new database.  
   
  **[!INCLUDE[ssSDS](../../includes/sssds-md.md)] database settings:**  
   
--   **[!INCLUDE[ssSDS](../../includes/sssds-md.md)] edition** – Select the edition of [!INCLUDE[ssSDS](../../includes/sssds-md.md)] from the drop-down menu.  
+-   **[!INCLUDE[ssSDS](../../includes/sssds-md.md)] edition** - Select the edition of [!INCLUDE[ssSDS](../../includes/sssds-md.md)] from the drop-down menu.  
   
--   **Maximum database size** – Select the maximum database size from the drop-down menu.  
+-   **Maximum database size** - Select the maximum database size from the drop-down menu.  
   
  **Other settings:**  
   
@@ -122,8 +120,6 @@ manager: "jhubbard"
   
 ## Using a .Net Framework Application  
  **To deploy a database using the DacStoreExport() and Import() methods in a .Net Framework application.**  
-  
- To view a code example, download the DAC sample application on [Codeplex](http://go.microsoft.com/fwlink/?LinkId=219575)  
   
 1.  Create a SMO Server object and set it to the instance or server that contains the database to be deployed.  
   

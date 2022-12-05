@@ -1,31 +1,26 @@
 ---
-title: "sys.parameter_xml_schema_collection_usages (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.parameter_xml_schema_collection_usages (Transact-SQL)"
+description: sys.parameter_xml_schema_collection_usages (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.parameter_xml_schema_collection_usages"
   - "parameter_xml_schema_collection_usages"
   - "parameter_xml_schema_collection_usages_TSQL"
   - "sys.parameter_xml_schema_collection_usages_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.parameter_xml_schema_collection_usages catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: bffb91a3-492c-4375-bd2a-db8fc1a3ace4
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.parameter_xml_schema_collection_usages (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns a row for each parameter that is validated by an XML schema.  
   

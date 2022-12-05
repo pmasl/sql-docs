@@ -1,21 +1,20 @@
 ---
-title: "Change the Attribute Type (MDS Add-in for Excel) | Microsoft Docs"
-ms.custom: ""
+description: "Change the Attribute Type (MDS Add-in for Excel)"
+title: Change the Attribute Type
+ms.custom: microsoft-excel-add-in
 ms.date: "03/15/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 ms.assetid: 9d3001d9-8d0f-4e4a-8e04-4f666bf0df69
-caps.latest.revision: 8
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Change the Attribute Type (MDS Add-in for Excel)
+
+[!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   In the [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)][!INCLUDE[ssMDSXLS](../../includes/ssmdsxls-md.md)], administrators can change the attribute type when the data type or number of allowed characters is incorrect.  
   
  If you want to change the attribute type to create a constrained list (domain-based attribute), see [Create a Domain-based Attribute &#40;MDS Add-in for Excel&#41;](../../master-data-services/microsoft-excel-add-in/create-a-domain-based-attribute-mds-add-in-for-excel.md).  
@@ -51,7 +50,7 @@ manager: "jhubbard"
   
 -   Changes the data type of the attribute.  
   
--   Generates a copy of the attribute with the suffix “_old” that contains the previous values. This is called a deprecated attribute.  
+-   Generates a copy of the attribute with the suffix "_old" that contains the previous values. This is called a deprecated attribute.  
   
 ## See Also  
  [Attributes &#40;Master Data Services&#41;](../../master-data-services/attributes-master-data-services.md)   

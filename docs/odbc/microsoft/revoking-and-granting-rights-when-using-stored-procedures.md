@@ -1,22 +1,18 @@
 ---
+description: "Revoking and Granting Rights When Using Stored Procedures"
 title: "Revoking and Granting Rights When Using Stored Procedures | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "stored procedures [ODBC], ODBC driver for Oracle"
   - "ODBC driver for Oracle [ODBC], stored procedures"
 ms.assetid: 24070039-03ab-4623-a681-6308802eb399
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Revoking and Granting Rights When Using Stored Procedures
 > [!IMPORTANT]  

@@ -1,13 +1,11 @@
 ---
-title: "PauseService Method (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "PauseService Method (SqlService Class)"
+title: "PauseService Method (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "PauseService Method (SqlService Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "PauseService method"
 ms.assetid: 5c3a8feb-58b8-4385-b4c8-bf33cf4d276d
-caps.latest.revision: 34
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # PauseService Method (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Attempts to place the service in the paused state.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.PauseService()
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

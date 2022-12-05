@@ -1,23 +1,20 @@
 ---
 title: "Access FileTables with File Input-Output APIs | Microsoft Docs"
+description: Find out how to use file I/O APIs with FileTables, and learn which file system operations are compatible with FileTables.
 ms.custom: ""
 ms.date: "08/25/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-blob"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: filestream
+ms.topic: conceptual
 helpviewer_keywords: 
   - "FileTables [SQL Server], accessing files with file APIs"
 ms.assetid: fa504c5a-f131-4781-9a90-46e6c2de27bb
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
 ---
 # Access FileTables with File Input-Output APIs
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Describes how file system I/O works on a FileTable.  
   
 ##  <a name="accessing"></a> Get Started Using File I/O APIs with FileTables  
@@ -26,7 +23,7 @@ manager: "jhubbard"
 1.  File I/O API access typically begins by acquiring a logical UNC path for the file or directory. Applications can use a [!INCLUDE[tsql](../../includes/tsql-md.md)] statement with the [GetFileNamespacePath &#40;Transact-SQL&#41;](../../relational-databases/system-functions/getfilenamespacepath-transact-sql.md) function to obtain the logical path for the file or directory. For more information, see [Work with Directories and Paths in FileTables](../../relational-databases/blob/work-with-directories-and-paths-in-filetables.md).  
   
 2.  Then the application uses this logical path to obtain a handle to the file or directory and do something with the object. The path can be passed to any supported file system API function, such as CreateFile() or CreateDirectory(), to create or open a file and obtain a handle. The handle can then be used to stream data, to enumerate or organize directories, to get or set file attributes, to delete files or directories, and so forth.  
-  
+
 ##  <a name="create"></a> Creating Files and Directories in a FileTable  
  A file or directory can be created in a FileTable by calling file I/O APIs such as CreateFile or CreateDirectory.  
   
@@ -54,7 +51,7 @@ manager: "jhubbard"
 ##  <a name="delete"></a> Deleting Files and Directories in a FileTable  
  All Windows file I/O API semantics are enforced when you delete a file or directory.  
   
--   Deleting a directory fails if the directory contains any files subdirectories.  
+-   Deleting a directory fails if the directory contains any files or subdirectories.  
   
 -   Deleting a file or directory removes the corresponding row from the FileTable. This is equivalent to deleting the row through a [!INCLUDE[tsql](../../includes/tsql-md.md)] operation.  
   
@@ -109,7 +106,7 @@ manager: "jhubbard"
 |**Named Streams**|No||  
 |**Sparse Files**|Yes|Sparseness can be set only on files, and affects the storage of the data stream. Since FILESTREAM data is stored on NTFS volumes, the FileTable feature supports sparse files by forwarding the requests to the NTFS file system.|  
 |**Compression**|Yes||  
-|**Encryptiion**|Yes||  
+|**Encryption**|Yes||  
 |**TxF**|No||  
 |**File Ids**|No||  
 |**Object Ids**|No||  

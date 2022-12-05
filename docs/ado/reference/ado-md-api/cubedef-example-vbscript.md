@@ -1,23 +1,16 @@
 ---
-title: "CubeDef Example (VBScript) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "CubeDef Example (VBScript)"
+description: "CubeDef Example (VBScript)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "ADO MD code examples [ADO MD], VBScript"
-ms.assetid: 4d72a912-ef53-4989-9fca-214937574116
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # CubeDef Example (VBScript)
 This example displays cube metadata on a web page.  

@@ -1,28 +1,22 @@
 ---
-title: "SQL Server Properties (FILESTREAM Page) | Microsoft Docs"
-ms.custom: ""
+title: "SQL Server Properties (FILESTREAM Page)"
+description: Get acquainted with FILESTREAM settings in SQL Server. Learn how to turn on FILESTREAM, and see how to configure remote client access and other properties.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: configuration
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.serverproperties.filestream.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "FILESTREAM [SQL Server], properties page"
-ms.assetid: 8a8d38d3-e97a-4b09-a40b-659b2e3a5c47
-caps.latest.revision: 10
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Server Properties - FILESTREAM Page
-  Use this page to enable FILESTREAM for this installation of [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  Use this page to enable FILESTREAM for this installation of [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].  
   
-## UIElement List  
+## UI element list  
  **Enable FILESTREAM for Transact-SQL access**  
  Select to enable FILESTREAM for [!INCLUDE[tsql](../../includes/tsql-md.md)] access. This control must be checked before the other control options will be available.  
   

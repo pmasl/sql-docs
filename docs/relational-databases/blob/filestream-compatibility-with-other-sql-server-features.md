@@ -1,24 +1,22 @@
 ---
-title: "FILESTREAM Compatibility with Other SQL Server Features | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+title: "FILESTREAM compatibility | Microsoft Docs"
+description: FILESTREAM stores data in the file system. Read about guidelines, limitations, and tips to keep in mind when using FILESTREAM with various SQL Server features.
+ms.custom: "seo-lt-2019"
+ms.date: "12/13/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-blob"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: filestream
+ms.topic: conceptual
 helpviewer_keywords: 
   - "FILESTREAM [SQL Server], other SQL Server features and"
   - "FILESTREAM [SQL Server], limitations"
 ms.assetid: d2c145dc-d49a-4f5b-91e6-89a2b0adb4f3
-caps.latest.revision: 42
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
 ---
-# FILESTREAM Compatibility with Other SQL Server Features
+# FILESTREAM compatibility with other SQL Server features
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Because FILESTREAM data is in the file system, this topic provides some considerations, guidelines, and limitations for using FILESTREAM with the following features in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]:  
   
 -   [SQL Server Integration Services (SSIS)](#ssis)  
@@ -67,7 +65,7 @@ manager: "jhubbard"
  A **varbinary(max)** column that has the FILESTREAM attribute enabled at the Publisher can be replicated to a Subscriber with or without the FILESTREAM attribute. To specify the way in which the column is replicated, use the **Article Properties - \<Article>** dialog box or the @schema_option parameter of [sp_addarticle](../../relational-databases/system-stored-procedures/sp-addarticle-transact-sql.md) or [sp_addmergearticle](../../relational-databases/system-stored-procedures/sp-addmergearticle-transact-sql.md). Data that is replicated to a **varbinary(max)** column that does not have the FILESTREAM attribute must not exceed the 2-GB limit for that data type; otherwise, a run-time error is generated. We recommend that you replicate the FILESTREAM attribute, unless you are replicating data to [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]. Replicating tables that have FILESTREAM columns to [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] Subscribers is not supported, regardless of the schema option that is specified.  
   
 > [!NOTE]  
->  Replicating large data values from [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] to [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] Subscribers is limited to a maximum of 256 MB data values. For more information, see [Maximum Capacity Specifications](http://go.microsoft.com/fwlink/?LinkId=103810).  
+>  Replicating large data values from [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] to [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] Subscribers is limited to a maximum of 256 MB data values. For more information, see [Maximum Capacity Specifications](../../sql-server/maximum-capacity-specifications-for-sql-server.md).  
   
 ### Considerations for Transactional Replication  
  If you use FILESTREAM columns in tables that are published for transactional replication, note the following considerations:  
@@ -119,5 +117,4 @@ manager: "jhubbard"
   
 ## See Also  
  [Binary Large Object &#40;Blob&#41; Data &#40;SQL Server&#41;](../../relational-databases/blob/binary-large-object-blob-data-sql-server.md)  
-  
   

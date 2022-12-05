@@ -1,26 +1,26 @@
 ---
+description: "Broker Event Category"
 title: "Broker Event Category | Microsoft Docs"
 ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.date: "05/24/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: reference
 helpviewer_keywords: 
   - "SQL Server event classes, Broker event category"
   - "Broker event category [SQL Server]"
   - "event classes [SQL Server], Broker event category"
 ms.assetid: 470dc93c-0dda-4d89-829b-937738d59b31
-caps.latest.revision: 17
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Broker Event Category
-  The **Broker** event category contains general Service Broker events.  
+
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+
+The **Broker** event category contains general Service Broker events.  
   
 ## In This Section  
   
@@ -40,6 +40,5 @@ manager: "jhubbard"
  Two security audit events are also provided for Service Broker. For more information on those events, see [Audit Broker Login Event Class](../../relational-databases/event-classes/audit-broker-login-event-class.md) and [Audit Broker Conversation Event Class](../../relational-databases/event-classes/audit-broker-conversation-event-class.md).  
   
 ## See Also  
- [Security Audit Event Category](../../analysis-services/trace-events/security-audit-event-category.md)  
-  
+ [Security Audit Event Category](/analysis-services/trace-events/security-audit-event-category)  
   

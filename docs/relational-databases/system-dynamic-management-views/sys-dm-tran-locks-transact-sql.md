@@ -1,38 +1,33 @@
 ---
-title: "sys.dm_tran_locks (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_tran_locks (Transact-SQL)"
+description: sys.dm_tran_locks (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/30/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_tran_locks"
   - "sys.dm_tran_locks"
   - "sys.dm_tran_locks_TSQL"
   - "dm_tran_locks_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_tran_locks dynamic management view"
+dev_langs:
+  - "TSQL"
 ms.assetid: f0d3b95a-8a00-471b-9da4-14cb8f5b045f
-caps.latest.revision: 61
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.dm_tran_locks (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  Returns information about currently active lock manager resources in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Each row represents a currently active request to the lock manager for a lock that has been granted or is waiting to be granted.  
+  Returns information about currently active lock manager resources in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. Each row represents a currently active request to the lock manager for a lock that has been granted or is waiting to be granted.  
   
  The columns in the result set are divided into two main groups: resource and request. The resource group describes the resource on which the lock request is being made, and the request group describes the lock request.  
   
 > [!NOTE]  
->  To call this from [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] or [!INCLUDE[ssPDW](../../includes/sspdw-md.md)], use the name **sys.dm_pdw_nodes_tran_locks**.  
+> To call this from [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] or [!INCLUDE[ssPDW](../../includes/sspdw-md.md)], use the name **sys.dm_pdw_nodes_tran_locks**. [!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)] 
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
@@ -42,7 +37,7 @@ manager: "jhubbard"
 |**resource_description**|**nvarchar(256)**|Description of the resource that contains only information that is not available from other resource columns.|  
 |**resource_associated_entity_id**|**bigint**|ID of the entity in a database with which a resource is associated. This can be an object ID, Hobt ID, or an Allocation Unit ID, depending on the resource type.|  
 |**resource_lock_partition**|**Int**|ID of the lock partition for a partitioned lock resource. The value for nonpartitioned lock resources is 0.|  
-|**request_mode**|**nvarchar(60)**|Mode of the request. For granted requests, this is the granted mode; for waiting requests, this is the mode being requested.|  
+|**request_mode**|**nvarchar(60)**|Mode of the request. For granted requests, this is the granted mode; for waiting requests, this is the mode being requested. <br /><br /> NULL = No access is granted to the resource. Serves as a placeholder.<br /><br /> Sch-S (Schema stability) = Ensures that a schema element, such as a table or index, is not dropped while any session holds a schema stability lock on the schema element.<br /><br /> Sch-M (Schema modification) = Must be held by any session that wants to change the schema of the specified resource. Ensures that no other sessions are referencing the indicated object.<br /><br /> S (Shared) = The holding session is granted shared access to the resource.<br /><br /> U (Update) = Indicates an update lock acquired on resources that may eventually be updated. It is used to prevent a common form of deadlock that occurs when multiple sessions lock resources for potential update in the future.<br /><br /> X (Exclusive) = The holding session is granted exclusive access to the resource.<br /><br /> IS (Intent Shared) = Indicates the intention to place S locks on some subordinate resource in the lock hierarchy.<br /><br /> IU (Intent Update) = Indicates the intention to place U locks on some subordinate resource in the lock hierarchy.<br /><br /> IX (Intent Exclusive) = Indicates the intention to place X locks on some subordinate resource in the lock hierarchy.<br /><br /> SIU (Shared Intent Update) = Indicates shared access to a resource with the intent of acquiring update locks on subordinate resources in the lock hierarchy.<br /><br /> SIX (Shared Intent Exclusive) = Indicates shared access to a resource with the intent of acquiring exclusive locks on subordinate resources in the lock hierarchy.<br /><br /> UIX (Update Intent Exclusive) = Indicates an update lock hold on a resource with the intent of acquiring exclusive locks on subordinate resources in the lock hierarchy.<br /><br /> BU = Used by bulk operations.<br /><br /> RangeS_S (Shared Key-Range and Shared Resource lock) = Indicates serializable range scan.<br /><br /> RangeS_U (Shared Key-Range and Update Resource lock) = Indicates serializable update scan.<br /><br /> RangeI_N (Insert Key-Range and Null Resource lock) = Used to test ranges before inserting a new key into an index.<br /><br /> RangeI_S = Key-Range Conversion lock, created by an overlap of RangeI_N and S locks.<br /><br /> RangeI_U = Key-Range Conversion lock, created by an overlap of RangeI_N and U locks.<br /><br /> RangeI_X = Key-Range Conversion lock, created by an overlap of RangeI_N and X locks.<br /><br /> RangeX_S = Key-Range Conversion lock, created by an overlap of RangeI_N and RangeS_S. locks.<br /><br /> RangeX_U = Key-Range Conversion lock, created by an overlap of RangeI_N and RangeS_U locks.<br /><br /> RangeX_X (Exclusive Key-Range and Exclusive Resource lock) = This is a conversion lock used when updating a key in a range.|  
 |**request_type**|**nvarchar(60)**|Request type. The value is LOCK.|  
 |**request_status**|**nvarchar(60)**|Current status of this request. Possible values are GRANTED, CONVERT, WAIT, LOW_PRIORITY_CONVERT, LOW_PRIORITY_WAIT, or ABORT_BLOCKERS. For more information about low priority waits and abort blockers, see the *low_priority_lock_wait* section of [ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md).|  
 |**request_reference_count**|**smallint**|Returns an approximate number of times the same requestor has requested this resource.|  
@@ -51,18 +46,17 @@ manager: "jhubbard"
 |**request_exec_context_id**|**int**|Execution context ID of the process that currently owns this request.|  
 |**request_request_id**|**int**|Request ID (batch ID) of the process that currently owns this request. This value will change every time that the active Multiple Active Result Set (MARS) connection for a transaction changes.|  
 |**request_owner_type**|**nvarchar(60)**|Entity type that owns the request. Lock manager requests can be owned by a variety of entities. Possible values are:<br /><br /> TRANSACTION = The request is owned by a transaction.<br /><br /> CURSOR = The request is owned by a cursor.<br /><br /> SESSION = The request is owned by a user session.<br /><br /> SHARED_TRANSACTION_WORKSPACE = The request is owned by the shared part of the transaction workspace.<br /><br /> EXCLUSIVE_TRANSACTION_WORKSPACE = The request is owned by the exclusive part of the transaction workspace.<br /><br /> NOTIFICATION_OBJECT = The request is owned by an internal [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] component. This component has requested the lock manager to notify it when another component is waiting to take the lock. The FileTable feature is a component that uses this value.<br /><br /> **Note:** Work spaces are used internally to hold locks for enlisted sessions.|  
-|**request_owner_id**|**bigint**|ID of the specific owner of this request.<br /><br /> When a transaction is the owner of the request, this value contains the transaction ID.<br /><br /> When a FileTable is the owner of the request, **request_owner_id** has one of the following values.<br /><br /> <br /><br /> -4 : A FileTable has taken a database lock.<br /><br /> -3 : A FileTable has taken a table lock.<br /><br /> Other value : The value represents a file handle. This value also appears as **fcb_id** in the dynamic management view [sys.dm_filestream_non_transacted_handles &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-filestream-non-transacted-handles-transact-sql.md).|  
+|**request_owner_id**|**bigint**|ID of the specific owner of this request.<br /><br /> When a transaction is the owner of the request, this value contains the transaction ID.<br /><br /> When a FileTable is the owner of the request, **request_owner_id** has one of the following values:<br /> <ul><li>**-4** : A FileTable has taken a database lock.<li> **-3** : A FileTable has taken a table lock.<li> **Other value** : The value represents a file handle. This value also appears as **fcb_id** in the dynamic management view [sys.dm_filestream_non_transacted_handles &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-filestream-non-transacted-handles-transact-sql.md).</li></ul>|  
 |**request_owner_guid**|**uniqueidentifier**|GUID of the specific owner of this request. This value is only used by a distributed transaction where the value corresponds to the MS DTC GUID for that transaction.|  
 |**request_owner_lockspace_id**|**nvarchar(32)**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)] This value represents the lockspace ID of the requestor. The lockspace ID determines whether two requestors are compatible with each other and can be granted locks in modes that would otherwise conflict with one another.|  
 |**lock_owner_address**|**varbinary(8)**|Memory address of the internal data structure that is used to track this request. This column can be joined the with **resource_address** column in **sys.dm_os_waiting_tasks**.|  
-|**pdw_node_id**|**int**|**Applies to**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)], [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> <br /><br /> The identifier for the node that this distribution is on.|  
+|**pdw_node_id**|**int**|**Applies to**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)], [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> The identifier for the node that this distribution is on.|  
   
-## Permissions  
-On [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)], requires `VIEW SERVER STATE` permission.   
-On [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)] Premium Tiers, requires the `VIEW DATABASE STATE` permission in the database. On [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)] Standard and Basic Tiers, requires the  **Server admin** or an **Azure Active Directory admin** account.  
- 
+## Permissions
+On [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] and SQL Managed Instance, requires `VIEW SERVER STATE` permission.
 
-  
+On SQL Database **Basic**, **S0**, and **S1** service objectives, and for databases in **elastic pools**, the [server admin](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) account, the [Azure Active Directory admin](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) account, or membership in the `##MS_ServerStateReader##` [server role](/azure/azure-sql/database/security-server-roles) is required. On all other SQL Database service objectives, either the `VIEW DATABASE STATE` permission on the database, or membership in the `##MS_ServerStateReader##` server role is required.   
+ 
 ## Remarks  
  A granted request status indicates that a lock has been granted on a resource to the requestor. A waiting request indicates that the request has not yet been granted. The following waiting-request types are returned by the **request_status** column:  
   
@@ -70,7 +64,7 @@ On [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)] Premium Tiers, requires the 
   
 -   A wait request status indicates that the requestor does not currently hold a granted request on the resource.  
   
- Because **sys.dm_tran_locks** is populated from internal lock manager data structures, maintaining this information does not add extra overhead to regular processing. Materializing the view does require access to the lock manager internal data structures. This can have minor effects on the regular processing in the server. These effects should be unnoticeable and should only affect heavily used resources. Because the data in this view corresponds to live lock manager state, the data can change at any time, and rows are added and removed as locks are acquired and released. This view has no historical information.  
+ Because **sys.dm_tran_locks** is populated from internal lock manager data structures, maintaining this information does not add extra overhead to regular processing. Materializing the view does require access to the lock manager internal data structures. This can have minor effects on the regular processing in the server. These effects should be unnoticeable and should only affect heavily used resources. Because the data in this view corresponds to live lock manager state, the data can change at any time, and rows are added and removed as locks are acquired and released. Applications querying this view might experience unpredictable performance due to the nature of protecting the integrity of lock manager structures. This view has no historical information.  
   
  Two requests operate on the same resource only if all the resource-group columns are equal.  
   
@@ -87,7 +81,10 @@ On [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)] Premium Tiers, requires the 
  Multiple cursors that run under one session are indistinguishable and are treated as one entity.  
   
  Distributed transactions that are not associated with a session ID value are orphaned transactions and are assigned the session ID value of -2. For more information, see [KILL &#40;Transact-SQL&#41;](../../t-sql/language-elements/kill-transact-sql.md).  
-  
+
+## <a name="locks"></a> Locks
+Locks are held on [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] resources, such as rows read or modified during a transaction, to prevent concurrent use of resources by different transactions. For example, if an exclusive (X) lock is held on a row within a table by a transaction, no other transaction can modify that row until the lock is released. Minimizing locks increases concurrency, which can improve performance. 
+
 ## Resource Details  
  The following table lists the resources that are represented in the **resource_associated_entity_id** column.  
   
@@ -104,6 +101,8 @@ On [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)] Premium Tiers, requires the 
 |METADATA|Represents metadata information.|Not applicable|  
 |HOBT|Represents a heap or a B-tree. These are the basic access path structures.|HoBt ID. This value corresponds to **sys.partitions.hobt_id**.|  
 |ALLOCATION_UNIT|Represents a set of related pages, such as an index partition. Each allocation unit covers a single Index Allocation Map (IAM) chain.|Allocation Unit ID. This value corresponds to **sys.allocation_units.allocation_unit_id**.|  
+
+[!INCLUDE [sql-b-tree](../../includes/sql-b-tree.md)]
   
  The following table lists the subtypes that are associated with each resource type.  
   
@@ -286,7 +285,7 @@ On [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)] Premium Tiers, requires the 
 ### A. Using sys.dm_tran_locks with other tools  
  The following example works with a scenario in which an update operation is blocked by another transaction. By using **sys.dm_tran_locks** and other tools, information about locking resources is provided.  
   
-```  
+```sql  
 USE tempdb;  
 GO  
   
@@ -324,7 +323,7 @@ BEGIN TRAN
   
  The following query will display lock information. The value for `<dbid>` should be replaced with the **database_id** from **sys.databases**.  
   
-```  
+```sql  
 SELECT resource_type, resource_associated_entity_id,  
     request_status, request_mode,request_session_id,  
     resource_description   
@@ -342,7 +341,7 @@ SELECT object_name(object_id), *
   
  The following query will show blocking information.  
   
-```  
+```sql  
 SELECT   
         t1.resource_type,  
         t1.resource_database_id,  
@@ -357,7 +356,7 @@ SELECT
   
  Release the resources by rolling back the transactions.  
   
-```  
+```sql  
 -- Session 1  
 ROLLBACK;  
 GO  
@@ -370,7 +369,7 @@ GO
 ### B. Linking session information to operating system threads  
  The following example returns information that associates a session ID with a Windows thread ID. The performance of the thread can be monitored in the Windows Performance Monitor. This query does not return session IDs that are currently sleeping.  
   
-```  
+```sql  
 SELECT STasks.session_id, SThreads.os_thread_id  
     FROM sys.dm_os_tasks AS STasks  
     INNER JOIN sys.dm_os_threads AS SThreads  
@@ -381,10 +380,7 @@ GO
 ```  
   
 ## See Also  
- [sys.dm_tran_database_transactions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql.md)   
- [Dynamic Management Views and Functions &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
- [Transaction Related Dynamic Management Views and Functions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/transaction-related-dynamic-management-views-and-functions-transact-sql.md)  
-  
-  
-
-
+[sys.dm_tran_database_transactions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql.md)      
+[Dynamic Management Views and Functions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)     
+[Transaction Related Dynamic Management Views and Functions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/transaction-related-dynamic-management-views-and-functions-transact-sql.md)      
+[SQL Server, Locks Object](../../relational-databases/performance-monitor/sql-server-locks-object.md)

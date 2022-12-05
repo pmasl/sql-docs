@@ -1,13 +1,11 @@
 ---
-title: "Version Property (ClientNetLibInfo Class) | Microsoft Docs"
-ms.custom: ""
+description: "Version Property (ClientNetLibInfo Class)"
+title: "Version Property (ClientNetLibInfo)"
+ms.custom: seo-lt-2019
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "Version Property (ClientNetLibInfo Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "Version property"
 ms.assetid: eb02d4be-0363-4ad1-9e7e-553601f09349
-caps.latest.revision: 29
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Version Property (ClientNetLibInfo Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the version of the client network library file.  
   
 ## Syntax  
@@ -42,6 +39,5 @@ object.Version [= value]
 ## Remarks  
   
 ## See Also  
- [Configure Client Protocols](http://technet.microsoft.com/library/ms181035.aspx)  
-  
+ [Configure Client Protocols](../../../database-engine/configure-windows/configure-client-protocols.md)  
   

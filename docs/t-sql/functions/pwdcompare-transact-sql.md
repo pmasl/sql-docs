@@ -1,31 +1,26 @@
 ---
-title: "PWDCOMPARE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+title: "PWDCOMPARE (Transact-SQL)"
+description: "PWDCOMPARE (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/14/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "PWDCOMPARE"
   - "PWDCOMPARE_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sa account"
   - "passwords [SQL Server], blank"
   - "PWDCOMPARE function [Transact-SQL]"
-ms.assetid: 5f84ff9e-c1ec-46aa-8501-50f854ebcc3a
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # PWDCOMPARE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Hashes a password and compares the hash to the hash of an existing password. PWDCOMPARE can be used to search for blank [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login passwords or common weak passwords.  
   
@@ -33,14 +28,15 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 PWDCOMPARE ( 'clear_text_password'  
    , password_hash   
    [ , version ] )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  **'** *clear_text_password* **'**  
  Is the unencrypted password. *clear_text_password* is **sysname** (**nvarchar(128)**).  
   
@@ -51,7 +47,7 @@ PWDCOMPARE ( 'clear_text_password'
  Obsolete parameter that can be set to 1 if *password_hash* represents a value from a login earlier than [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] that was migrated to [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] or later but never converted to the [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] system. *version* is **int**.  
   
 > [!CAUTION]  
->  This parameter is provided for backwards compatibility, but is ignored because password hash blobs now contain their own version descriptions. [!INCLUDE[ssNoteDepNextDontUse](../../includes/ssnotedepnextdontuse-md.md)]  
+>  This parameter is provided for backwards compatibility, but is ignored because password hash blobs now contain their own version descriptions. [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]  
   
 ## Return Types  
  **int**  
@@ -73,7 +69,7 @@ PWDCOMPARE ( 'clear_text_password'
 ### A. Identifying logins that have no passwords  
  The following example identifies [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins that have no passwords.  
   
-```  
+```sql  
 SELECT name FROM sys.sql_logins   
 WHERE PWDCOMPARE('', password_hash) = 1 ;  
 ```  
@@ -81,7 +77,7 @@ WHERE PWDCOMPARE('', password_hash) = 1 ;
 ### B. Searching for common passwords  
  To search for common passwords that you want to identify and change, specify the password as the first parameter. For example, execute the following statement to search for a password specified as `password`.  
   
-```  
+```sql  
 SELECT name FROM sys.sql_logins   
 WHERE PWDCOMPARE('password', password_hash) = 1 ;  
 ```  

@@ -1,27 +1,24 @@
 ---
-title: "Security Considerations for SQL Server Compact Replication | Microsoft Docs"
-ms.custom: ""
+title: "Security considerations (Compact Replication)"
+description: Describes some security considerations for SQL Server Compact Replication.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "security [SQL Server replication], SQL Server Compact"
 ms.assetid: 09f591a1-cfae-4a08-b04d-50bd02e7b71a
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # Security Considerations for SQL Server Compact Replication
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Securing connectivity between an instance of [!INCLUDE[msCoName](../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Database Engine and [!INCLUDE[ssEW](../../../includes/ssew-md.md)] involves properly configuring security for both Microsoft Internet Information Services (IIS) and [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)].  
   
 ## See Also  
- [Security and Protection &#40;Replication&#41;](../../../relational-databases/replication/security/security-and-protection-replication.md)   
+ [View and modify replication security settings](../../../relational-databases/replication/security/view-and-modify-replication-security-settings.md)   
  [Replication Security Best Practices](../../../relational-databases/replication/security/replication-security-best-practices.md)  
   
   

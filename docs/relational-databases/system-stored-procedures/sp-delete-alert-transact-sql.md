@@ -1,14 +1,12 @@
 ---
+description: "sp_delete_alert (Transact-SQL)"
 title: "sp_delete_alert (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_delete_alert_TSQL"
   - "sp_delete_alert"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_delete_alert"
 ms.assetid: a831315e-793d-41c4-8333-b324bb2bc614
-caps.latest.revision: 23
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_delete_alert (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Removes an alert.  
   
@@ -37,7 +33,7 @@ sp_delete_alert [ @name = ] 'name'
 ```  
   
 ## Arguments  
- [ **@name=** ] **'***name***'**  
+`[ @name = ] 'name'`
  The name of the alert. *name* is **sysname**, with no default.  
   
 ## Return Code Values  

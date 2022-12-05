@@ -1,28 +1,23 @@
 ---
 title: "rsInternalError - Reporting Services Error | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "In this error reference page, learn about event ID 'rsInternalError': An internal error occurred on the report server. See the error log for more details."
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: troubleshooting
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "rsInternalError"
 ms.assetid: 52613d52-fc78-4870-93f0-7d393ab9c335
-caps.latest.revision: 23
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # rsInternalError - Reporting Services Error
     
 ## Details  
   
-|||  
+|Category|Value|  
 |-|-|  
 |Product Name|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |Event ID|rsInternalError|  

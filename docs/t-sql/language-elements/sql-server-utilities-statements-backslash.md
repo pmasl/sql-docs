@@ -1,25 +1,21 @@
 ---
-title: "(Backslash) (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/27/2017"
-ms.prod: "sql-non-specified"
+title: "Backslash (Line Continuation) (Transact-SQL)"
+description: "Backslash (Line Continuation) (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server (starting with 2008)"
-f1_keywords: 
+ms.date: "07/25/2019"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "\\_TSQL"
   - "\\"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "backwhack"
   - "backslash"
-  - "excape character"
+  - "escape character"
   - "hack character"
   - "\\ (backslash)"
   - "backslant"
@@ -29,29 +25,27 @@ helpviewer_keywords:
   - "reversed virgule"
   - "line continuation character"
   - "reverse solidus"
-ms.assetid: c97fbb20-3d12-4d0b-9b52-62a229bc83c0
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# SQL Server Utilities Statements - Backslash
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+# Backslash (Line Continuation) (Transact-SQL)
 
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] provides commands that are not [!INCLUDE[tsql](../../includes/tsql-md.md)] statements, but are recognized by the **sqlcmd** and **osql** utilities and [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] Code Editor. These commands can be used to facilitate the readability and execution of batches and scripts.  
-  
-\  breaks a long string constant into two or more lines for readability.  
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+
+`\`  breaks a long string constant, character or binary, into two or more lines for readability.  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
+```syntaxsql  
 <first section of string> \  
 <continued section of string>  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  \<first section of string>  
  Is the start of a string.  
   
@@ -59,17 +53,17 @@ manager: "jhubbard"
  Is the continuation of a string.  
   
 ## Remarks  
- This command returns the first and continued sections of the string as one string, without the backslash.  
-  
- The backslash is not a [!INCLUDE[tsql](../../includes/tsql-md.md)] statement. It is a command that is recognized by the **sqlcmd** and **osql** utilities and [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] Code Editor.  
-  
+This command returns the first and continued sections of the string as one string, without the backslash. The new line after the backslash must either be a line feed character (U+000A) or a combination of carriage return (U+000D) and line feed (U+000A) in that order. 
+
 ## Examples  
- The following example uses a backslash and a carriage return to split the string into two lines.  
+
+### A. Splitting a character string  
+
+The following example uses a backslash and a carriage return to split a character string into two lines.  
   
-```  
+```sql  
 SELECT 'abc\  
-def' AS ColumnResult;  
-  
+def' AS [ColumnResult];  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
@@ -79,13 +73,30 @@ def' AS ColumnResult;
  ------------  
  abcdef
  ```    
+
+### B. Splitting a binary string  
+
+The following example uses a backslash and a carriage return to split a binary string into two lines.  
+
+```sql  
+SELECT 0xabc\
+def AS [ColumnResult];  
+```  
   
+ [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
+  
+ ```  
+ ColumnResult  
+ ------------  
+ 0xABCDEF
+ ```    
+
 ## See Also  
  [Data Types &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)   
  [Built-in Functions &#40;Transact-SQL&#41;](~/t-sql/functions/functions.md)   
  [Operators &#40;Transact-SQL&#41;](../../t-sql/language-elements/operators-transact-sql.md)   
- [&#40;Divide&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/divide-transact-sql.md)   
- [&#40;Divide EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/divide-equals-transact-sql.md)   
+ [&#40;Division&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/divide-transact-sql.md)   
+ [&#40;Division Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/divide-equals-transact-sql.md)   
  [Compound Operators &#40;Transact-SQL&#41;](../../t-sql/language-elements/compound-operators-transact-sql.md)  
   
   

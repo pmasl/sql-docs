@@ -1,24 +1,15 @@
 ---
-title: "setNull Method (SQLServerPreparedStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setNull Method (SQLServerPreparedStatement)"
+description: "setNull Method (SQLServerPreparedStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.setNull"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.setNull"
 apitype: "Assembly"
-ms.assetid: 90dcd2f1-ad58-440c-8bf2-0f146fa727a3
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setNull Method (SQLServerPreparedStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,24 +1,15 @@
 ---
-title: "getSystemFunctions Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getSystemFunctions Method (SQLServerDatabaseMetaData)"
+description: "getSystemFunctions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getSystemFunctions"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getSystemFunctions"
 apitype: "Assembly"
-ms.assetid: 6d390ec5-9ee2-49c4-b661-a93b55691dd1
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getSystemFunctions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

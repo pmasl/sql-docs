@@ -1,24 +1,17 @@
 ---
-title: "Field (ADO for Visual C++ Syntax) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Field (ADO for Visual C++ Syntax)"
+description: "Field (ADO for Visual C++ Syntax)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Field collection [ADO], ADO for Visual C++ syntax"
-ms.assetid: 04631b08-3937-440b-ac09-cd166f239908
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
+apitype: "COM"
 ---
 # Field (ADO for Visual C++ Syntax)
 ## Methods  

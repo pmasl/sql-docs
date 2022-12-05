@@ -1,31 +1,23 @@
 ---
-title: "MSsync_states (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSsync_states (Transact-SQL)"
+description: MSsync_states (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSsync_states"
   - "MSsync_states_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSsync_states system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: b25e17e1-7718-432e-a442-c4946741d474
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSsync_states (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSsync_states** table tracks which publication is still in concurrent snapshot mode. This table is stored in the distribution database.  
   

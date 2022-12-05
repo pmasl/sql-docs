@@ -1,33 +1,26 @@
 ---
-title: "ADOStreamConstruction Interface | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ADOStreamConstruction Interface"
+description: "ADOStreamConstruction Interface"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "ADOStreamConstruction"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ADOStreamConstruction interface [ADO]"
-ms.assetid: 92f5a939-3e1a-4b14-a9dd-90e6ce2dec74
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ADOStreamConstruction Interface
 The **ADOStreamConstruction** interface is used to construct an ADO **Stream** object from an OLE DB **IStream** object in a C/C++ application.  
   
 ## Properties  
   
-|||  
+|Property|Description|  
 |-|-|  
-|[Stream Property](../../../ado/reference/ado-api/stream-property.md)|Read/Write. Gets/sets an OLE DB **Stream** object.|  
+|[Stream](./stream-property.md)|Read/Write. Gets/sets an OLE DB **Stream** object.|  
   
 ## Methods  
  None.  
@@ -71,4 +64,4 @@ adoStrConstruct->put_Stream(pUnk);
  **UUID:** 00000283-0000-0010-8000-00AA006D2EA4  
   
 ## See Also  
- [ADO API Reference](../../../ado/reference/ado-api/ado-api-reference.md)
+ [ADO API Reference](./ado-api-reference.md)

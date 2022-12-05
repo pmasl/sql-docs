@@ -1,26 +1,22 @@
 ---
+description: "Arguments and Properties of Spatial Index Stored Procedures"
 title: "Arguments and Properties of Spatial Index Stored Procedures | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
   - "spatial indexes [SQL Server], stored procedures"
 ms.assetid: ee26082b-c0ed-40ff-b5ad-f5f6b00f0475
-caps.latest.revision: 10
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Spatial Index Stored Procedures - Arguments and Properties
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   This topic documents the arguments and properties for spatial index stored procedures.  
   
@@ -38,15 +34,15 @@ manager: "jhubbard"
 -   [sp_help_spatial_geography_index_xml &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-help-spatial-geography-index-xml-transact-sql.md)  
   
 ## Arguments  
- [ **@tabname =**] **'***tabname***'**  
+`[ @tabname = ] 'tabname'`
  Is the qualified or nonqualified name of the table for which the spatial index has been specified.  
   
  Quotation marks are required only if a qualified table is specified. If a fully qualified name, including a database name, is provided, the database name must be the name of the current database. *tabname* is **nvarchar**(776), with no default.  
   
- [ **@indexname =** ] **'***indexname***'**  
+`[ @indexname = ] 'indexname'`
  Is the name of the spatial index specified. *indexname* is **sysname** with no default.  
   
- [ **@verboseoutput =** ] **'***verboseoutput***'**  
+`[ @verboseoutput = ] 'verboseoutput'`
  Is the range of property names and values to be returned.  
   
  0 = core properties  
@@ -55,14 +51,14 @@ manager: "jhubbard"
   
  *verboseoutput* is **tinyint** with no default.  
   
- [ **@query_sample =** ] **'***query_sample***'**  
+`[ @query_sample = ] 'query_sample'`
  Is a representative query sample that can be used to test the usefulness of the index. It may be a representative object or a query window. *query_sample* is **geometry** with no default.  
   
- [ **@xml_output =** ] **'***xml_output***'**  
+`[ @xml_output = ] 'xml_output'`
  Is an output parameter that returns the result set in an XML fragment. *xml_output* is **xml** with no default.  
   
 ## Properties  
- Set **@verboseoutput** =0 to return core properties as shown in the table below; **@verboseoutput** > 0 to return all properties of the spatial index.  
+ Set **\@verboseoutput** =0 to return core properties as shown in the table below; **\@verboseoutput** > 0 to return all properties of the spatial index.  
   
  **Base_Table_Rows**  
  Number of rows in the base table. Value is **bigint**.  
@@ -320,10 +316,9 @@ manager: "jhubbard"
 ## Requirements  
   
 ## See Also  
- [Spatial Index Stored Procedures &#40;Transact-SQL&#41;](http://msdn.microsoft.com/library/1be0f34e-3d5a-4a1f-9299-bd482362ec7a)   
+ [Spatial Index Stored Procedures &#40;Transact-SQL&#41;]()   
  [sp_help_spatial_geometry_index &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-help-spatial-geometry-index-transact-sql.md)   
  [Spatial Indexes Overview](../../relational-databases/spatial/spatial-indexes-overview.md)   
  [XQuery Basics](../../xquery/xquery-basics.md)   
  [XQuery Language Reference &#40;SQL Server&#41;](../../xquery/xquery-language-reference-sql-server.md)  
-  
   

@@ -1,24 +1,20 @@
 ---
+description: "Function Conformance"
 title: "Function Conformance | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "conformance levels [ODBC], function"
   - "function conformance levels [ODBC]"
   - "data sources [ODBC], conformance levels"
   - "ODBC drivers [ODBC], conformance levels"
 ms.assetid: bb5d68cf-d238-481e-babc-2e9401b4700e
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Function Conformance
 The following table indicates the conformance level of each ODBC function, where this is well defined.  

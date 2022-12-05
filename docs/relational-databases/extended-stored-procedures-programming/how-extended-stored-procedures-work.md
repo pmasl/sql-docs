@@ -1,26 +1,21 @@
 ---
-title: "How Extended Stored Procedures Work | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+title: "How Extended Stored Procedures Work"
+description: How Extended Stored Procedures Work
+author: VanMSFT
+ms.author: vanto
+ms.date: "03/15/2017"
+ms.service: sql
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "extended stored procedures [SQL Server], about extended stored procedures"
 ms.assetid: 6e946d8c-3268-4b59-8a1c-1637909cd701
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # How Extended Stored Procedures Work
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 > [!IMPORTANT]  
->  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] Use CLR Integration instead.  
+>  [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)] Use CLR Integration instead.  
   
  The process by which an extended stored procedure works is:  
   
@@ -31,8 +26,4 @@ manager: "jhubbard"
 3.  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] calls the requested extended stored procedure (implemented as a function inside the DLL).  
   
 4.  The extended stored procedure passes result sets and return parameters back to the server by through the Extended Stored Procedure API.  
-  
-## See Also  
- [Database Engine Extended Stored Procedure Programming](../../relational-databases/database-engine-extended-stored-procedure-programming.md)  
-  
-  
+

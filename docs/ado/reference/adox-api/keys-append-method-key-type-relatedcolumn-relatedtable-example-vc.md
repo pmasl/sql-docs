@@ -1,28 +1,21 @@
 ---
-title: "Create a New Foreign Key Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Create a New Foreign Key Example (VC++)"
+description: "Keys Append Method, Key Type, RelatedColumn, RelatedTable and UpdateRule Properties Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "RelatedTable property [ADOX], VC++ example"
   - "Key Type property [ADOX], VC++ example"
   - "UpdateRule property [ADOX], VC++ example"
   - "Append method [ADOX], VC++ example"
   - "Keys Append method [ADOX], VC++ example"
   - "RelatedColumn property [ADOX], VC++ example"
-ms.assetid: 28495b8f-18dc-482c-995d-a120f6ae2006
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Keys Append Method, Key Type, RelatedColumn, RelatedTable and UpdateRule Properties Example (VC++)
 The following code demonstrates how to create a new foreign key. It assumes two tables (Customers and Orders) exist.  
@@ -90,7 +83,7 @@ int main() {
    }  
   
    catch(...) {  
-      cout << "Error occured in include files...." << endl;  
+      cout << "Error occurred in include files...." << endl;  
    }  
    ::CoUninitialize();  
 }  

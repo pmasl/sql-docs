@@ -1,27 +1,25 @@
 ---
 title: "Join a Role | Microsoft Docs"
+description: Learn how to assign roles to logins and database users in SQL Server by using SQL Server Management Studio or Transact-SQL. Use roles to manage permissions.
 ms.custom: ""
 ms.date: "07/14/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: security
+ms.topic: conceptual
 f1_keywords: 
   - "SQL13.SWB.DATABASEUSER.MEMBERSHIP.F1"
 helpviewer_keywords: 
   - "adding a member to a role"
   - "join a role"
 ms.assetid: 05c8d10d-5823-46c6-8b1a-81722da6a42b
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Join a Role
-  This topic describes how to assign roles to logins and database users in [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../../includes/tsql-md.md)]. Use roles in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] to efficiently manage permissions. Assign permissions to roles, and then add and remove users and logins to the roles. By using roles, permissions do not have to be individually maintained for each user.  
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+  This topic describes how to assign roles to logins and database users in [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../../includes/tsql-md.md)]. Use roles in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] to efficiently manage permissions. Assign permissions to roles, and then add and remove users and logins to the roles. By using roles, permissions do not have to be individually maintained for each user.  
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] supports four types of roles.  
   
@@ -63,6 +61,9 @@ manager: "jhubbard"
  Requires **ALTER ANY ROLE** permission on the database, **ALTER** permission on the role, or membership in **db_securityadmin**.  
   
 ##  <a name="SSMSProcedure"></a> Using SQL Server Management Studio  
+
+> [!NOTE]
+> The two procedures in this section only apply to [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)].
   
 #### To add a member to a fixed server role  
   
@@ -74,11 +75,11 @@ manager: "jhubbard"
   
 4.  Right-click the role you want to edit and select **Properties**.  
   
-5.  In the **Server Role Properties –***server_role_name* dialog box, on the **Members** page, click **Add**.  
+5.  In the **Server Role Properties -**_server\_role\_name_ dialog box, on the **Members** page, click **Add**.  
   
-6.  In the **Select Server Login or Role** dialog box, under **Enter the object names to select (examples)**, enter the login or server role to add to this server role. Alternately, click **Browse…** and select any or all of the available objects in the **Browse for Objects** dialog box. Click **OK** to return to the **Server Role Properties –***server_role_name* dialog box.  
+6.  In the **Select Server Login or Role** dialog box, under **Enter the object names to select (examples)**, enter the login or server role to add to this server role. Alternately, click **Browse...** and select any or all of the available objects in the **Browse for Objects** dialog box. Click **OK** to return to the **Server Role Properties -**_server\_role\_name_ dialog box.  
   
-7.  [!INCLUDE[clickOK](../../../includes/clickok-md.md)]  
+7.  Select **OK**.
   
 #### To add a member to a user-defined database role  
   
@@ -92,15 +93,15 @@ manager: "jhubbard"
   
 5.  Expand the **Roles** folder.  
   
-6.  Expand the **Server Roles** folder.  
+6.  Expand the **Database Roles** folder.  
   
 7.  Right-click the role you want to edit and select **Properties**.  
   
-8.  In the **Database Role Properties –***database_role_name* dialog box, in the **General** page, click **Add**.  
+8.  In the **Database Role Properties -**_database\_role\_name_ dialog box, in the **General** page, click **Add**.  
   
-9. In the **Select Database User or Role** dialog box, under **Enter the object names to select (examples)**, enter the login or database role to add to this database role. Alternately, click **Browse…** and select any or all of the available objects in the **Browse for Objects** dialog box. Click **OK** to return to the **Database Role Properties –***database_role_name* dialog box.  
+9. In the **Select Database User or Role** dialog box, under **Enter the object names to select (examples)**, enter the login or database role to add to this database role. Alternately, click **Browse...** and select any or all of the available objects in the **Browse for Objects** dialog box. Click **OK** to return to the **Database Role Properties -**_database\_role\_name_ dialog box.  
   
-10. [!INCLUDE[clickOK](../../../includes/clickok-md.md)]  
+10. Select **OK**.
   
 ##  <a name="TsqlProcedure"></a> Using Transact-SQL  
   

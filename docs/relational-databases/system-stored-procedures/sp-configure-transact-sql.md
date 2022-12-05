@@ -1,14 +1,12 @@
 ---
+description: "sp_configure (Transact-SQL)"
 title: "sp_configure (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
-ms.date: "03/16/2016"
-ms.prod: "sql-non-specified"
+ms.date: 11/04/2019
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_configure"
   - "sp_configure_TSQL"
@@ -17,24 +15,23 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_configure"
 ms.assetid: d18b251d-b37a-4f5f-b50c-502d689594c8
-caps.latest.revision: 60
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017"
 ---
 # sp_configure (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-pdw-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-pdw-md.md)]
 
-  Displays or changes global configuration settings for the current server.  
-  
+  Displays or changes global configuration settings for the current server.
+
 > [!NOTE]  
->  For database-level configuration options, see [ALTER DATABASE SCOPED CONFIGURATION &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-scoped-configuration-transact-sql.md). To configure Soft-NUMA, see [Soft-NUMA &#40;SQL Server&#41;](../../database-engine/configure-windows/soft-numa-sql-server.md).  
+> For database-level configuration options, see [ALTER DATABASE SCOPED CONFIGURATION &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-scoped-configuration-transact-sql.md). To configure Soft-NUMA, see [Soft-NUMA &#40;SQL Server&#41;](../../database-engine/configure-windows/soft-numa-sql-server.md).  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
+```syntaxsql  
 -- Syntax for SQL Server  
   
 sp_configure [ [ @configname = ] 'option_name'   
@@ -57,12 +54,12 @@ RECONFIGURE
 ```  
   
 ## Arguments  
- [ **@configname=** ] **'***option_name***'**  
+`[ @configname = ] 'option_name'`
  Is the name of a configuration option. *option_name* is **varchar(35)**, with a default of NULL. The [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] recognizes any unique string that is part of the configuration name. If not specified, the complete list of options is returned.  
   
  For information about the available configuration options and their settings, see [Server Configuration Options &#40;SQL Server&#41;](../../database-engine/configure-windows/server-configuration-options-sql-server.md).  
   
- [ **@configvalue=** ] **'***value***'**  
+`[ @configvalue = ] 'value'`
  Is the new configuration setting. *value* is **int**, with a default of NULL. The maximum value depends on the individual option.  
   
  To see the maximum value for each option, see the **maximum** column of the **sys.configurations** catalog view.  
@@ -84,19 +81,27 @@ RECONFIGURE
 |**run_value**|**int**|Currently running value of the configuration option (value in **sys.configurations.value_in_use**).<br /><br /> For more information, see [sys.configurations &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-configurations-transact-sql.md).|  
   
 ## Remarks  
- Use **sp_configure** to display or change server-level settings. To change database-level settings, use ALTER DATABASE. To change settings that affect only the current user session, use the SET statement.  
+ Use **sp_configure** to display or change server-level settings. To change database-level settings, use `ALTER DATABASE`. To change settings that affect only the current user session, use the `SET` statement.  
+ 
+ Some server configuration options are only available through [ALTER SERVER CONFIGURATION &#40;Transact-SQL&#41;](../../t-sql/statements/alter-server-configuration-transact-sql.md).
   
+### [!INCLUDE [ssbigdataclusters-ss-nover](../../includes/ssbigdataclusters-ss-nover.md)]
+
+[!INCLUDE [big-data-clusters-master-instance-ha-endpoint-requirement](../../includes/big-data-clusters-master-instance-ha-endpoint-requirement.md)]
+
 ## Updating the Running Configuration Value  
  When you specify a new *value* for an *option*, the result set shows this value in the **config_value** column. This value initially differs from the value in the **run_value** column, which shows the currently running configuration value. To update the running configuration value in the **run_value** column, the system administrator must run either RECONFIGURE or RECONFIGURE WITH OVERRIDE.  
   
  Both RECONFIGURE and RECONFIGURE WITH OVERRIDE work with every configuration option. However, the basic RECONFIGURE statement rejects any option value that is outside a reasonable range or that may cause conflicts among options. For example, RECONFIGURE generates an error if the **recovery interval** value is larger than 60 minutes or if the **affinity mask** value overlaps with the **affinity I/O mask** value. RECONFIGURE WITH OVERRIDE, in contrast, accepts any option value with the correct data type and forces reconfiguration with the specified value.  
   
 > [!CAUTION]  
->  An inappropriate option value can adversely affect the configuration of the server instance. Use RECONFIGURE WITH OVERRIDE cautiously.  
+> An inappropriate option value can adversely affect the configuration of the server instance. Use RECONFIGURE WITH OVERRIDE cautiously.  
   
  The RECONFIGURE statement updates some options dynamically; other options require a server stop and restart. For example, the **min server memory** and **max server memory** server memory options are updated dynamically in the [!INCLUDE[ssDE](../../includes/ssde-md.md)]; therefore, you can change them without restarting the server. By contrast, reconfiguring the running value of the **fill factor** option requires restarting the [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
  After running RECONFIGURE on a configuration option, you can see whether the option has been updated dynamically by executing **sp_configure'***option_name***'**. The values in the **run_value** and **config_value** columns should match for a dynamically updated option. You can also check to see which options are dynamic by looking at the **is_dynamic** column of the **sys.configurations** catalog view.  
+ 
+ The change is also written to the SQL Server error log.
   
 > [!NOTE]  
 >  If a specified *value* is too high for an option, the **run_value** column reflects the fact that the [!INCLUDE[ssDE](../../includes/ssde-md.md)] has defaulted to dynamic memory rather than use a setting that is not valid.  
@@ -104,7 +109,10 @@ RECONFIGURE
  For more information, see [RECONFIGURE &#40;Transact-SQL&#41;](../../t-sql/language-elements/reconfigure-transact-sql.md).  
   
 ## Advanced Options  
- Some configuration options, such as **affinity mask** and **recovery interval**, are designated as advanced options. By default, these options are not available for viewing and changing. To make them available, set the **ShowAdvancedOptions** configuration option to 1.  
+ Some configuration options, such as **affinity mask** and **recovery interval**, are designated as advanced options. By default, these options are not available for viewing and changing. To make them available, set the **Show Advanced Options** configuration option to 1. 
+ 
+> [!CAUTION]  
+> When the option **Show Advanced Options** is set to 1, this setting applies to all users. It is recommended to only use this state temporarily and switch back to 0 when done with the task that required viewing the advanced options.  
   
  For more information about the configuration options and their settings, see [Server Configuration Options &#40;SQL Server&#41;](../../database-engine/configure-windows/server-configuration-options-sql-server.md).  
   
@@ -114,19 +122,19 @@ RECONFIGURE
 ## Examples  
   
 ### A. Listing the advanced configuration options  
- The following example shows how to set and list all configuration options. Advanced configuration options are displayed by first setting `show advanced option` to `1`. After this option has been changed, executing `sp_configure` with no parameters displays all configuration options.  
+ The following example shows how to set and list all configuration options. Advanced configuration options are displayed by first setting `show advanced options` to `1`. After this option has been changed, executing `sp_configure` with no parameters displays all configuration options.  
   
-```  
+```sql  
 USE master;  
 GO  
-EXEC sp_configure 'show advanced option', '1';  
+EXEC sp_configure 'show advanced options', '1';  
 ```  
   
  Here is the message: "Configuration option 'show advanced options' changed from 0 to 1. Run the RECONFIGURE statement to install."  
   
  Run `RECONFIGURE` and show all configuration options:  
   
-```  
+```sql  
 RECONFIGURE;  
 EXEC sp_configure;  
 ```  
@@ -134,7 +142,7 @@ EXEC sp_configure;
 ### B. Changing a configuration option  
  The following example sets the system `recovery interval` to `3` minutes.  
   
-```  
+```sql  
 USE master;  
 GO  
 EXEC sp_configure 'recovery interval', '3';  
@@ -146,7 +154,7 @@ RECONFIGURE WITH OVERRIDE;
 ### C. List all available configuration settings  
  The following example shows how to list all configuration options.  
   
-```  
+```sql  
 EXEC sp_configure;  
 ```  
   
@@ -154,7 +162,7 @@ EXEC sp_configure;
   
 ### D. List the configuration settings for one configuration name  
   
-```  
+```sql  
 EXEC sp_configure @configname='hadoop connectivity';  
 ```  
   
@@ -162,6 +170,7 @@ EXEC sp_configure @configname='hadoop connectivity';
  Setting Hadoop connectivity requires a few more steps in addition to running sp_configure. For the full procedure, see [CREATE EXTERNAL DATA SOURCE &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-data-source-transact-sql.md).  
   
 ## See Also  
+ [ALTER SERVER CONFIGURATION &#40;Transact-SQL&#41;](../../t-sql/statements/alter-server-configuration-transact-sql.md)   
  [RECONFIGURE &#40;Transact-SQL&#41;](../../t-sql/language-elements/reconfigure-transact-sql.md)   
  [SET Statements &#40;Transact-SQL&#41;](../../t-sql/statements/set-statements-transact-sql.md)   
  [Server Configuration Options &#40;SQL Server&#41;](../../database-engine/configure-windows/server-configuration-options-sql-server.md)   

@@ -1,21 +1,19 @@
 ---
+description: "SQL Server Express LocalDB Reference"
 title: "SQL Server Express LocalDB Reference | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: 
+
 ms.topic: "reference"
 ms.assetid: 25b71829-bdb1-46f4-ac36-80ddced52f3d
-caps.latest.revision: 11
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SQL Server Express LocalDB Reference
+[!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
   This section contains information about the SQL Server Express LocalDB:  
   
 -   [SQL Server Express LocalDB Error Message Reference](../relational-databases/express-localdb-error-messages/sql-server-express-localdb-reference-error-messages.md)  
@@ -23,18 +21,18 @@ manager: "jhubbard"
 -   [SQL Server Express LocalDB Instance API Reference](../relational-databases/express-localdb-instance-apis/sql-server-express-localdb-reference-instance-apis.md)  
   
 ## Code Sample  
- The following sample demonstrates the LocalDB API.  Make sure that LocalDB is installed on the computer before running this sample.  You can install LocalDB from setup in the [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] Express.  
+ The following sample demonstrates the LocalDB API.  Make sure that LocalDB is installed on the computer before running this sample. You can install LocalDB from setup in [!INCLUDE [ssnoversion-md](../includes/ssnoversion-md.md)] Express.  
   
 ```  
 // compile with: Advapi32.lib  
 #include <SDKDDKVer.h>  
 #include <stdio.h>  
   
-// To use LocalDB API, you must define LOCALDB_DEFINE_PROXY_FUNCTIONS before you include sqlncli.h in one (and only one) of the   
+// To use LocalDB API, you must define LOCALDB_DEFINE_PROXY_FUNCTIONS before you include msoledbsql.h in one (and only one) of the   
 // source files in your program. LOCALDB_DEFINE_PROXY_FUNCTIONS causes code to be generated that binds to the LocalDB API at runtime.  
   
 #define LOCALDB_DEFINE_PROXY_FUNCTIONS  
-#include "sqlncli.h"  
+#include "msoledbsql.h"  
   
 HRESULT CreateAndStartLocalDBInstance(PWCHAR wszVersion, PWCHAR wszInstanceName) {  
    HRESULT hr;  

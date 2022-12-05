@@ -1,27 +1,20 @@
 ---
-title: "PropertyAttributesEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "PropertyAttributesEnum"
+description: "PropertyAttributesEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "PropertyAttributesEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "PropertyAttributesEnum enumeration [ADO]"
-ms.assetid: 96a01955-a6b4-4cbf-9c73-52bcd1e9fb25
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # PropertyAttributesEnum
-Specifies the attributes of a [Property](../../../ado/reference/ado-api/property-object-ado.md) object.  
+Specifies the attributes of a [Property](./property-object-ado.md) object.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -43,4 +36,4 @@ Specifies the attributes of a [Property](../../../ado/reference/ado-api/property
 |AdoEnums.PropertyAttributes.WRITE|  
   
 ## Applies To  
- [Attributes Property (ADO)](../../../ado/reference/ado-api/attributes-property-ado.md)
+ [Attributes Property (ADO)](./attributes-property-ado.md)

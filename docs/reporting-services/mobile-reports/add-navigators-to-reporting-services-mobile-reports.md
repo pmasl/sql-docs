@@ -1,21 +1,19 @@
 ---
 title: "Add navigators to Reporting Services mobile reports | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: In Mobile Report Publisher, add navigators to filter data by time or by selection. Navigators are similar to slicers in Power BI and Excel PivotTables.
+ms.date: 07/21/2022
+ms.service: reporting-services
+ms.subservice: mobile-reports
+
+ms.topic: conceptual
 ms.assetid: e141f50e-49a9-46c6-983c-f656013aa07c
-caps.latest.revision: 12
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Add navigators to Reporting Services mobile reports
+
+[!INCLUDE [ssrs-mobile-report-deprecated](../../includes/ssrs-mobile-report-deprecated.md)]
+
 In [!INCLUDE[SS_MobileReptPub_Long](../../includes/ss-mobilereptpub-long.md)], you add *navigators* to filter the data in visualizations by time or by selection. 
 
 Navigators are similar to slicers in Power BI and Excel PivotTables, but navigators have some unique traits, too.
@@ -64,13 +62,13 @@ For each visualization in the mobile report that you want the selection list to 
 
 1. Select the visualization, select the **Data** tab, and in the **Data properties** pane, select **Options** next to the field name.
 
-   ![mobile-report-set-selection-list](../../reporting-services/mobile-reports/media/mobile-report-set-selection-list.png)
+   ![Screenshot of the Category Column's Options expanded with the Filter by State / Regions option selected.](../../reporting-services/mobile-reports/media/mobile-report-set-selection-list.png)
 
 2. Under **Filtered by**, select the selection list.
 
 When you view the mobile report in Preview or in the [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] web portal and select a value in the selection list, it filters the other visualizations in the mobile report.
 
-![mobile-report-selection-list-filtering](../../reporting-services/mobile-reports/media/mobile-report-selection-list-filtering.png) 
+![Screenshot showing the mobile report with Washington selected from the States / Regions list and cities in Washington represented in the returned results.](../../reporting-services/mobile-reports/media/mobile-report-selection-list-filtering.png) 
      
 ## Scorecard grid  
   
@@ -95,13 +93,13 @@ The scorecard grid filter functions much like the selection list filter, but it 
 
 7. Name the value indicator as desired, choose its source column from the table, and select how it will be formatted.  
 
-   ![mobile-report-scorecard-grid-data-properties](../../reporting-services/mobile-reports/media/mobile-report-scorecard-grid-data-properties.png)
+   ![Screenshot showing the options that are available for a new score.](../../reporting-services/mobile-reports/media/mobile-report-scorecard-grid-data-properties.png)
 
 8. After you've set the data properties, under **Tables FIltered by Selection List**, select the tables to be filtered and the column to filter by. This column needs to match values in the selection list's key column. 
 
 When you view the mobile report in Preview or in the [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] web portal and select a value in the scorecard grid, it filters the other visualizations in the mobile report.
 
-![mobile-report-scorecard-grid](../../reporting-services/mobile-reports/media/mobile-report-scorecard-grid.png)
+![Screenshot of a mobile report scorecard grid.](../../reporting-services/mobile-reports/media/mobile-report-scorecard-grid.png)
     
 ## Set which visualizations are filtered  
   
@@ -111,7 +109,7 @@ You can decide which visualizations in the mobile report that a navigator will f
 
 1. Select the visualization, select the **Data** tab, and in the **Data properties** pane, select **Options** next to the field name.
 
-   ![mobile-report-set-selection-list](../../reporting-services/mobile-reports/media/mobile-report-set-selection-list.png)
+   ![Another screenshot of the Category Column's Options expanded with the Filter by State / Regions option selected.](../../reporting-services/mobile-reports/media/mobile-report-set-selection-list.png)
 
 2. Under **Filtered by**, select the navigator. Each visualization can be filtered by multiple navigators.
   

@@ -1,29 +1,23 @@
 ---
-title: "dbo.cdc_jobs (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "dbo.cdc_jobs (Transact-SQL)"
+description: dbo.cdc_jobs (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "cdc_jobs"
   - "cdc_jobs_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "dbo.cdc_jobs"
+dev_langs:
+  - "TSQL"
 ms.assetid: 85e2d580-1c54-4b81-b7e6-2e12997199fd
-caps.latest.revision: 17
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # dbo.cdc_jobs (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Stores the change data capture configuration parameters for capture and cleanup jobs. This table is stored in **msdb**.  
   

@@ -1,31 +1,26 @@
 ---
-title: "IS_SRVROLEMEMBER (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: IS_SRVROLEMEMBER (Transact-SQL)
+description: "IS_SRVROLEMEMBER (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "IS_SRVROLEMEMBER_TSQL"
   - "IS_SRVROLEMEMBER"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "roles [SQL Server], members"
   - "IS_SRVROLEMEMBER function"
   - "members [SQL Server], verifying"
-ms.assetid: 3241a44a-6958-415b-b8b7-2a1207c36ab3
-caps.latest.revision: 65
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
+
 # IS_SRVROLEMEMBER (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Indicates whether a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login is a member of the specified server role.  
   
@@ -33,24 +28,27 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 IS_SRVROLEMEMBER ( 'role' [ , 'login' ] )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  **'** *role* **'**  
  Is the name of the server role that is being checked. *role* is **sysname**.  
   
  Valid values for *role* are user-defined server roles, and the following fixed server roles:  
-  
-|||  
-|-|-|  
-|sysadmin|serveradmin|  
-|dbcreator|setupadmin|  
-|bulkadmin|securityadmin|  
-|diskadmin|**Applies to**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br /><br /> public|  
-|processadmin||  
+
+- sysadmin
+- serveradmin
+- dbcreator
+- setupadmin  
+- bulkadmin
+- securityadmin  
+- diskadmin
+- public  
+- processadmin
   
  **'** *login* **'**  
  Is the name of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login to check. *login* is **sysname**, with a default of NULL. If no value is specified, the result is based on the current Execution context. If the parameter contains the word NULL will return NULL.  
@@ -75,7 +73,7 @@ IS_SRVROLEMEMBER ( 'role' [ , 'login' ] )
   
  When the login parameter is a domain login or based on a Windows group and the domain controller is inaccessible, calls to IS_SRVROLEMEMBER will fail and might return incorrect or incomplete data.  
   
- If the domain controller is not available, the call to IS_SRVROLEMEMBER will return accurate information when the Windows principle can be authenticated locally, such as a local Windows account or a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login.  
+ If the domain controller is not available, the call to IS_SRVROLEMEMBER will return accurate information when the Windows principal can be authenticated locally, such as a local Windows account or a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login.  
   
  **IS_SRVROLEMEMBER** always returns 0 when a Windows group is used as the login argument, and this Windows group is a member of another Windows group which is, in turn, a member of the specified server role.  
   
@@ -92,7 +90,7 @@ IS_SRVROLEMEMBER ( 'role' [ , 'login' ] )
 ## Examples  
  The following example indicates whether the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login for the current user is a member of the `sysadmin` fixed server role.  
   
-```  
+```sql  
 IF IS_SRVROLEMEMBER ('sysadmin') = 1  
    print 'Current user''s login is a member of the sysadmin role'  
 ELSE IF IS_SRVROLEMEMBER ('sysadmin') = 0  
@@ -103,7 +101,7 @@ ELSE IF IS_SRVROLEMEMBER ('sysadmin') IS NULL
   
  The following example indicates whether the domain login Pat is a member of the **diskadmin** fixed server role.  
   
-```  
+```sql  
 SELECT IS_SRVROLEMEMBER('diskadmin', 'Contoso\Pat');  
 ```  
   

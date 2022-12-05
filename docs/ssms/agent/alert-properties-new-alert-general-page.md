@@ -1,25 +1,28 @@
 ---
-title: "Alert Properties - New Alert (General Page) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Alert Properties - New Alert (General Page)"
+title: "Alert Properties - New Alert (General Page)"
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.ag.alert.general.f1"
 ms.assetid: f5c11610-62e3-44df-9800-a5dc35be4a09
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+monikerRange: "= azuresqldb-mi-current || >= sql-server-2016"
 ---
 # Alert Properties - New Alert (General Page)
-Use this page to view and modify the general properties of [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Agent alerts.  
-  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+
+> [!IMPORTANT]  
+> On [Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance), most, but not all SQL Server Agent features are currently supported. See [Azure SQL Managed Instance T-SQL differences from SQL Server](/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent) for details.
+
+Use this page to view and modify the general properties of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent alerts.  
+
 ## Options  
 **Name**  
 Change the name of the alert.  
@@ -30,7 +33,7 @@ Enable the alert. When the alert is not enabled, the actions specified in the al
 **Type**  
 Select the type of alert:  
   
--   **SQL Server event alert** responds to messages in the [!INCLUDE[msCoName](../../includes/msconame_md.md)] Windows event log.  
+-   **SQL Server event alert** responds to messages in the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows event log.  
   
 -   **SQL Server performance condition alert** responds to a specific condition in a performance counter.  
   
@@ -70,14 +73,13 @@ Specify a value for the counter.
   
 ## WMI Event Alert Options  
 **Namespace**  
-Specify the namespace to use for the WMI Query Language (WQL) statement. Only namespaces on the computer that runs [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Agent are supported.  
+Specify the namespace to use for the WMI Query Language (WQL) statement. Only namespaces on the computer that runs [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent are supported.  
   
 **Query**  
 Specify the WQL statement that identifies the event that the alert responds to.  
   
 ## See Also  
 [Alerts](../../ssms/agent/alerts.md)  
-[Using WQL with the WMI Provider for Server Events](http://msdn.microsoft.com/en-us/58b67426-1e66-4445-8e2c-03182e94c4be)  
+[Using WQL with the WMI Provider for Server Events](../../relational-databases/wmi-provider-server-events/using-wql-with-the-wmi-provider-for-server-events.md)  
 [Create an Alert Using an Error Number](../../ssms/agent/create-an-alert-using-an-error-number.md)  
 [Create an Alert Using Severity Level](../../ssms/agent/create-an-alert-using-severity-level.md)  
-  

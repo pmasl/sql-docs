@@ -1,27 +1,29 @@
 ---
+description: "Script Task"
 title: "Script Task | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.designer.scripttask.f1"
+  - "sql13.dts.designer.scripttask.general.f1"
+  - "sql13.dts.designer.scripttask.script.f1"
 helpviewer_keywords: 
   - "scripts [Integration Services], tasks"
   - "Script task [Integration Services], about Script task"
   - "Script task [Integration Services]"
 ms.assetid: f6cce7df-4bd6-4b75-9f89-6c37b4bb5558
-caps.latest.revision: 67
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Script Task
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   The Script task provides code to perform functions that are not available in the built-in tasks and transformations that [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] provides. The Script task can also combine functions in one script instead of using multiple tasks and transformations. You use the Script task for work that must be done once in a package (or once per enumerated object), instead than once per data row.  
   
  You can use the Script task for the following purposes:  
@@ -43,7 +45,7 @@ manager: "jhubbard"
   
  VSTA provides all the standard features of the [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] environment, such as the color-coded [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] editor, IntelliSense, and **Object Explorer**. VSTA also uses the same debugger that other [!INCLUDE[msCoName](../../includes/msconame-md.md)] development tools use. Breakpoints in the script work seamlessly with breakpoints on [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] tasks and containers. VSTA supports both the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Visual Basic and [!INCLUDE[msCoName](../../includes/msconame-md.md)] Visual C# programming languages.  
   
- To run a script, you must have VSTA installed on the computer where the package runs. When the package runs, the task loads the script engine and runs the script. You can access external .NET assemblies in scripts by adding references to the assemblies in the project.  
+ To run a script, you must have VSTA installed on the computer where the package runs. When the package runs, the task loads the script engine and runs the script. You can access external .NET assemblies in scripts by adding references to the assemblies in the project. Currently we dont support .NET Core and .NET standard assembly references.  
   
 > [!NOTE]  
 >  Unlike earlier versions where you could indicate whether the scripts were precompiled, all scripts are precompiled in [!INCLUDE[ssISversion10](../../includes/ssisversion10-md.md)] and later versions. When a script is precompiled, the language engine is not loaded at run time and the package runs more quickly. However, precompiled binary files consume significant disk space.  
@@ -70,23 +72,73 @@ manager: "jhubbard"
   
  For more information about the properties that you can set in [!INCLUDE[ssIS](../../includes/ssis-md.md)] Designer, see the following topics:  
   
--   [Script Task Editor &#40;General Page&#41;](../../integration-services/control-flow/script-task-editor-general-page.md)  
+-   [Script Task Editor &#40;General Page&#41;]()  
   
--   [Script Task Editor &#40;Script Page&#41;](../../integration-services/control-flow/script-task-editor-script-page.md)  
+-   [Script Task Editor &#40;Script Page&#41;]()  
   
 -   [Expressions Page](../../integration-services/expressions/expressions-page.md)  
   
  For more information about how to set these properties in [!INCLUDE[ssIS](../../includes/ssis-md.md)] Designer, see the following topic:  
   
--   [Set the Properties of a Task or Container](http://msdn.microsoft.com/library/52d47ca4-fb8c-493d-8b2b-48bb269f859b)  
+-   [Set the Properties of a Task or Container](./add-or-delete-a-task-or-a-container-in-a-control-flow.md)  
   
 ### Configuring the Script Task Programmatically  
  For more information about programmatically setting these properties, see the following topic:  
   
 -   <xref:Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask>  
   
+## Script Task Editor (General Page)
+  Use the **General** page of the **Script Task Editor** dialog box to name and describe the Script task.  
+  
+ To learn more about the Script task, see [Script Task](../../integration-services/control-flow/script-task.md) and [Configuring the Script Task in the Script Task Editor](../../integration-services/extending-packages-scripting/task/configuring-the-script-task-in-the-script-task-editor.md). To learn about programming the Script task, see [Extending the Package with the Script Task](../../integration-services/extending-packages-scripting/task/extending-the-package-with-the-script-task.md).  
+  
+### Options  
+ **Name**  
+ Provide a unique name for the Script task. This name is used as the label in the task icon.  
+  
+> [!NOTE]  
+>  Task names must be unique within a package.  
+  
+ **Description**  
+ Type a description of the Script task.  
+  
+## Script Task Editor (Script Page)
+  Use the **Script** page of the **Script Task Editor** dialog box to set script properties and specify variables that can be accessed by the script.  
+  
+> [!NOTE]  
+>  In [!INCLUDE[ssISversion10](../../includes/ssisversion10-md.md)] and later versions, all scripts are precompiled. In earlier versions, you set a **PrecompileScriptIntoBinaryCode** property to specify that the script was precompiled.  
+  
+ To learn more about the Script task, see [Script Task](../../integration-services/control-flow/script-task.md) and [Configuring the Script Task in the Script Task Editor](../../integration-services/extending-packages-scripting/task/configuring-the-script-task-in-the-script-task-editor.md). To learn about programming the Script task, see [Extending the Package with the Script Task](../../integration-services/extending-packages-scripting/task/extending-the-package-with-the-script-task.md).  
+  
+### Options  
+ **ScriptLanguage**  
+ Select the scripting language for the task, either [!INCLUDE[msCoName](../../includes/msconame-md.md)] Visual Basic or [!INCLUDE[msCoName](../../includes/msconame-md.md)] Visual C#.  
+  
+ After you have created a script for the task, you cannot change the value of the **ScriptLanguage** property.  
+  
+ To set the default scripting language for the Script task, use the **Scripting language** option on **General** page of the **Options** dialog box. For more information, see [General Page]().  
+  
+ **EntryPoint**  
+ Specify the method that the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] runtime calls as the entry point into the code of the Script task. The specified method must be in the ScriptMain class of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] Tools for Applications (VSTA) project The ScriptMain class is the default class generated by the script templates.  
+  
+ If you change the name of the method in the VSTA project, you must change the value of the **EntryPoint** property.  
+  
+ **ReadOnlyVariables**  
+ Type a comma-separated list of read-only variables that are available to the script, or click the ellipsis (**...**) button and select the variables in the **Select variables** dialog box.  
+  
+> [!NOTE]  
+>  Variable names are case sensitive.  
+  
+ **ReadWriteVariables**  
+ Type a comma-separated list of read/write variables that are available to the script, or click the ellipsis (**...**) button and select the variables in the **Select variables** dialog box.  
+  
+> [!NOTE]  
+>  Variable names are case sensitive.  
+  
+ **Edit Script**  
+ Opens the VSTA IDE where you can create or modify the script.  
+  
 ## Related Content  
   
--   Technical article, [How to send email with delivery notification in C#](http://go.microsoft.com/fwlink/?LinkId=237625), on shareourideas.com  
-  
+-   Technical article, [How to send email with delivery notification in C#](https://go.microsoft.com/fwlink/?LinkId=237625), on shareourideas.com  
   

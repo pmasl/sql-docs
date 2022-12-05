@@ -1,41 +1,34 @@
 ---
-title: "ALTER COLUMN ENCRYPTION KEY (Transact-SQL) | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "10/28/2015"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "ALTER COLUMN ENCRYPTION KEY (Transact-SQL)"
+description: ALTER COLUMN ENCRYPTION KEY (Transact-SQL)
+author: jaszymas
+ms.author: jaszymas
+ms.date: "10/15/2019"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER COLUMN ENCRYPTION"
   - "ALTER_COLUMN_ENCRYPTION_TSQL"
   - "ALTER COLUMN ENCRYPTION KEY"
   - "ALTER_COLUMN_ENCRYPTION_KEY_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "column encryption key, alter"
   - "ALTER COLUMN ENCRYPTION KEY statement"
-ms.assetid: c79a220d-e178-4091-a330-c924cc0f0ae0
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ALTER COLUMN ENCRYPTION KEY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
 
-  Alters a column encryption key in a database, adding or dropping an encrypted value. A CEK can have up to two values which allows for the rotation of the corresponding column master key. A CEK is used when encrypting columns using the [Always Encrypted &#40;Database Engine&#41;](../../relational-databases/security/encryption/always-encrypted-database-engine.md) feature. Before adding a CEK value, you must define the column master key that was used to encrypt the value by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or the [CREATE MASTER KEY](../../t-sql/statements/create-column-master-key-transact-sql.md) statement.  
+[!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
+
+  Alters a column encryption key in a database, adding or dropping an encrypted value. A column encryption key can have up to two values, which allows for the rotation of the corresponding column master key. A column encryption key is used when encrypting columns using [Always Encrypted](../../relational-databases/security/encryption/always-encrypted-database-engine.md) or [Always Encrypted with secure enclaves](../../relational-databases/security/encryption/always-encrypted-enclaves.md). Before adding a column encryption key value, you must define the column master key that was used to encrypt the value by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or the [CREATE MASTER KEY](../../t-sql/statements/create-column-master-key-transact-sql.md) statement.  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
+```syntaxsql
 ALTER COLUMN ENCRYPTION KEY key_name   
     [ ADD | DROP ] VALUE   
     (  
@@ -43,8 +36,8 @@ ALTER COLUMN ENCRYPTION KEY key_name
         [, ALGORITHM = 'algorithm_name' , ENCRYPTED_VALUE =  varbinary_literal ]   
     ) [;]  
 ```  
-  
-## Arguments  
+
+## Arguments
  *key_name*  
  The column encryption key that you are changing.  
   
@@ -55,15 +48,24 @@ ALTER COLUMN ENCRYPTION KEY key_name
  Name of the encryption algorithm used to encrypt the value. The algorithm for the system providers must be **RSA_OAEP**. This argument is not valid when dropping a column encryption key value.  
   
  *varbinary_literal*  
- The CEK BLOB encrypted with the specified master encryption key. . This argument is not valid when dropping a column encryption key value.  
+ The CEK BLOB encrypted with the specified master encryption key. This argument is not valid when dropping a column encryption key value.  
   
 > [!WARNING]  
 >  Never pass plaintext CEK values in this statement. Doing so will comprise the benefit of this feature.  
-  
-## Remarks  
- Typically, a column encryption key is created with just one encrypted value. When a column master key needs to be rotated (the current column master key needs to be replaced with the new column master key), you can add a new value of the column encryption key, encrypted with the new column master key. This will allow you to ensure client applications can access data encrypted with the column encryption key, while the new column master key is being made available to client applications. An Always Encrypted enabled driver in a client application that does not have access to the new master key, will be able to use the column encryption key value encrypted with the old column master key to access sensitive data. The encryption algorithms, Always Encrypted supports, require the plaintext value to have 256 bits. An encrypted value should be generated using a key store provider that encapsulates the key store holding the column master key.  
-  
- Use [sys.columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md), [sys.column_encryption_keys  &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-column-encryption-keys-transact-sql.md) and [sys.column_encryption_key_values &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-column-encryption-key-values-transact-sql.md) to view information about column encryption keys.  
+
+## Remarks
+Typically, a column encryption key is created with just one encrypted value. When a column master key needs to be rotated (the current column master key needs to be replaced with the new column master key), you can add a new value of the column encryption key, encrypted with the new column master key. This workflow allows you to ensure client applications can access data encrypted with the column encryption key, while the new column master key is being made available to client applications. An Always Encrypted enabled driver in a client application that does not have access to the new master key, will be able to use the column encryption key value encrypted with the old column master key to access sensitive data. The encryption algorithms, Always Encrypted supports, require the plaintext value to have 256 bits. 
+ 
+It is recommended you use tools, such as SQL Server Management Studio (SSMS) or PowerShell to rotate column master keys. See [Rotate Always Encrypted keys using SQL Server Management Studio](../../relational-databases/security/encryption/rotate-always-encrypted-keys-using-ssms.md) and [Rotate Always Encrypted keys using PowerShell](../../relational-databases/security/encryption/rotate-always-encrypted-keys-using-powershell.md).
+
+An encrypted value should be generated using a key store provider that encapsulates the key store holding the column master key.  
+
+ Column master keys are rotated for following reasons:
+- Compliance regulations may require keys are periodically rotated.
+- A column master key is compromised, and it needs to be rotated for security reasons.
+- To enable or disable sharing column encryption keys with a secure enclave on the server side. For example, if your current column master key does not support enclave computations (has not been defined with the ENCLAVE_COMPUTATIONS property) and you want to enable enclave computations on columns protected with a column encryption key that your column master key encrypts, you need to replace the column master key with the new key with the ENCLAVE_COMPUTATIONS property. [Overview of key management for Always Encrypted](../../relational-databases/security/encryption/overview-of-key-management-for-always-encrypted.md) and [Manage keys for Always Encrypted with secure enclaves](../../relational-databases/security/encryption/always-encrypted-enclaves-manage-keys.md).
+
+Use [sys.columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md), [sys.column_encryption_keys  &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-column-encryption-keys-transact-sql.md) and [sys.column_encryption_key_values &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-column-encryption-key-values-transact-sql.md) to view information about column encryption keys.  
   
 ## Permissions  
  Requires **ALTER ANY COLUMN ENCRYPTION KEY** permission on the database.  
@@ -73,7 +75,7 @@ ALTER COLUMN ENCRYPTION KEY key_name
 ### A. Adding a column encryption key value  
  The following example alters a column encryption key called `MyCEK`.  
   
-```  
+```sql  
 ALTER COLUMN ENCRYPTION KEY MyCEK  
 ADD VALUE  
 (  
@@ -88,7 +90,7 @@ GO
 ### B. Dropping a column encryption key value  
  The following example alters a column encryption key called `MyCEK` by dropping a value.  
   
-```  
+```sql  
 ALTER COLUMN ENCRYPTION KEY MyCEK  
 DROP VALUE  
 (  
@@ -105,5 +107,8 @@ GO
  [sys.column_encryption_keys  &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-column-encryption-keys-transact-sql.md)   
  [sys.column_encryption_key_values &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-column-encryption-key-values-transact-sql.md)   
  [sys.columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)  
+ [Always Encrypted](../../relational-databases/security/encryption/always-encrypted-database-engine.md)   
+ [Overview of Key Management for Always Encrypted](../../relational-databases/security/encryption/overview-of-key-management-for-always-encrypted.md)   
+ [Manage keys for Always Encrypted with secure enclaves](../../relational-databases/security/encryption/always-encrypted-enclaves-manage-keys.md)   
   
   

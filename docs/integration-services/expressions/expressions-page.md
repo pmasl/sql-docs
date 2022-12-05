@@ -1,25 +1,25 @@
 ---
+description: "Expressions Page"
 title: "Expressions Page | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.designer.expressionspage.f1"
 helpviewer_keywords: 
   - "Expressions Page dialog box"
 ms.assetid: c9016ec6-11c1-4ebd-b2a7-0fa6631fd9e4
-caps.latest.revision: 17
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Expressions Page
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Use the **Expressions** page to edit property expressions and to access the **Property Expressions Editor** and **Property Expression Builder** dialog boxes.  
   
  Property expressions update the values of properties when the package is run. Property expressions can be used with the properties of packages, tasks, containers, connection managers, as well as some data flow components. The expressions are evaluated and their results are used instead of the values to which you set the properties when you configured the package and package objects. The expressions can include variables and the functions and operators that the expression language provides. For example, you can generate the subject line for the Send Mail task by concatenating the value of a variable that contains the string "Weather forecast for " and the return results of the GETDATE() function to make the string "Weather forecast for 4/5/2006".  
@@ -27,7 +27,7 @@ manager: "jhubbard"
  To learn more about writing expressions and using property expressions, see [Integration Services &#40;SSIS&#41; Expressions](../../integration-services/expressions/integration-services-ssis-expressions.md) and [Use Property Expressions in Packages](../../integration-services/expressions/use-property-expressions-in-packages.md).  
   
 ## Options  
- **Expressions (…)**  
+ **Expressions (...)**  
  Click the ellipsis to open the **Property Expressions Editor** dialog box. For more information, see [Property Expressions Editor](../../integration-services/expressions/property-expressions-editor.md).  
   
  **\<property name>**  

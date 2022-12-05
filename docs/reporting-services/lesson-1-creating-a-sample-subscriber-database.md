@@ -1,21 +1,14 @@
 ---
 title: "Lesson 1: Creating a Sample Subscriber Database | Microsoft Docs"
-ms.custom: ""
-ms.date: "05/30/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "SQL Server 2016"
+description: Learn how to create a small "subscriber" database to store subscription data that will be used by a data-driven subscription.
+ms.date: 05/30/2017
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+ms.topic: conceptual
 ms.assetid: 47a882b7-efe5-4ee6-bef4-06118eb56903
-caps.latest.revision: 45
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 
 # Lesson 1: Creating a Sample Subscriber Database
@@ -31,8 +24,9 @@ This lesson assumes you are using [!INCLUDE[ssManStudioFull_md](../includes/ssma
 2.  Right-click on Databases, select **New Database...**.  
   
 3.  In the New Database dialog box, in **Database Name**, type *Subscribers*. 
-4. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
-  
+
+4.  Select **OK**.
+
 5.  Click the **New Query** button on the toolbar.  
   
 6.  Copy the following [!INCLUDE[tsql](../includes/tsql-md.md)] statements into the empty query:  
@@ -73,4 +67,4 @@ This lesson assumes you are using [!INCLUDE[ssManStudioFull_md](../includes/ssma
 [Create a Database](../relational-databases/databases/create-a-database.md)  
 [Create a Basic Table Report](../reporting-services/create-a-basic-table-report-ssrs-tutorial.md)  
 
-More questions? [Try asking the Reporting Services forum](http://go.microsoft.com/fwlink/?LinkId=620231)
+More questions? [Try asking the Reporting Services forum](https://go.microsoft.com/fwlink/?LinkId=620231)

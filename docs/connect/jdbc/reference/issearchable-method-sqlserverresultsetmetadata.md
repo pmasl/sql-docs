@@ -1,24 +1,15 @@
 ---
-title: "isSearchable Method (SQLServerResultSetMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "isSearchable Method (SQLServerResultSetMetaData)"
+description: "isSearchable Method (SQLServerResultSetMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSetMetaData.isSearchable"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSetMetaData.isSearchable"
 apitype: "Assembly"
-ms.assetid: 10cf54f9-ef42-475e-8397-790306934573
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # isSearchable Method (SQLServerResultSetMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

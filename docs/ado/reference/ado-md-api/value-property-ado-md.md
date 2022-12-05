@@ -1,34 +1,27 @@
 ---
-title: "Value Property (ADO MD) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Value Property (ADO MD)"
+description: "Value Property (ADO MD)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Value"
   - "Cell::Value"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Value property [ADO MD]"
-ms.assetid: 70dc5cff-0b05-456d-b86b-2686fe4e7ce6
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Value Property (ADO MD)
-Indicates the value of the current [cell](../../../ado/reference/ado-md-api/cell-object-ado-md.md).  
+Indicates the value of the current [cell](./cell-object-ado-md.md).  
   
 ## Return Values  
  Returns a **Variant** and is read-only.  
   
 ## Applies To  
- [Cell Object (ADO MD)](../../../ado/reference/ado-md-api/cell-object-ado-md.md)  
+ [Cell Object (ADO MD)](./cell-object-ado-md.md)  
   
 ## See Also  
- [FormattedValue Property (ADO MD)](../../../ado/reference/ado-md-api/formattedvalue-property-ado-md.md)
+ [FormattedValue Property (ADO MD)](./formattedvalue-property-ado-md.md)

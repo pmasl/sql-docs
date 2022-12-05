@@ -1,14 +1,12 @@
 ---
+description: "HasM (geography Data Type)"
 title: "HasM (geography Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "05/04/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "HasM_TSQL"
   - "HasM"
@@ -17,33 +15,33 @@ dev_langs:
 helpviewer_keywords: 
   - "HasM geography"
 ms.assetid: e752e97f-1619-437d-b962-48c188b4e94c
-caps.latest.revision: 7
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # HasM (geography Data Type)
-[!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  Returns 1 (true) if a spatial object contains at least one M value; otherwise, it returns 0 (false).  
+Returns 1 (true) if a spatial object contains at least one M value; otherwise, it returns 0 (false).  
   
 ## Syntax  
   
-```  
+```sql  
   
 .HasM  
 ```  
   
-## Return Types  
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] return type: **bit**  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] return type: **bit**  
   
- CLR return type: **Boolean**  
+CLR return type: **Boolean**  
   
 ## Remarks  
   
 ## Examples  
   
-```tsql  
+```sql  
 DECLARE @p GEOGRAPHY = 'Point(1 1 1 1)'  
 SELECT @p.HasM   
 --Returns: 1 (true)  

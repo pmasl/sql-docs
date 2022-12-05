@@ -1,24 +1,15 @@
 ---
-title: "setBytes Method (long, byte) | Microsoft Docs"
-ms.custom: ""
+title: "setBytes Method (long, byte)"
+description: "setBytes Method (long, byte)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerBlob.setBytes (long.byte[])"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerBlob.setBytes (long.byte[])"
 apitype: "Assembly"
-ms.assetid: ffb8f107-0f9d-4410-957f-62b718e1e872
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setBytes Method (long, byte)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,24 +1,15 @@
 ---
-title: "setInt Method (SQLServerPreparedStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setInt Method (SQLServerPreparedStatement)"
+description: "setInt Method (SQLServerPreparedStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.setInt"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.setInt"
 apitype: "Assembly"
-ms.assetid: 5e46b129-9fe1-469f-b2e8-7ce7fb832996
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setInt Method (SQLServerPreparedStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,13 +1,11 @@
 ---
+description: "Using Database Mirroring in SQL Server Native Client"
 title: "Using Database Mirroring | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "database mirroring [SQL Server], interoperability"
@@ -18,18 +16,22 @@ helpviewer_keywords:
   - "SQL Server Native Client ODBC driver, database mirroring"
   - "SQL Server Native Client OLE DB provider, database mirroring"
 ms.assetid: 71b15712-7972-4465-9274-e0ddc271eedc
-caps.latest.revision: 55
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Using Database Mirroring
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+# Using Database Mirroring in SQL Server Native Client
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
     
 > [!NOTE]  
 >  [!INCLUDE[ssNoteDepFutureAvoid](../../../includes/ssnotedepfutureavoid-md.md)] Use [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] instead.  
   
+
+> [!IMPORTANT] 
+> [!INCLUDE[snac-removed-oledb-and-odbc](../../../includes/snac-removed-oledb-and-odbc.md)]
+
+
  Database mirroring, introduced in [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)], is a solution for increasing database availability and data redundancy. [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client provides implicit support for database mirroring, so the developer does not need to write any code or take any other action once it has been configured for the database.  
   
  Database mirroring, which is implemented on a per-database basis, keeps a copy of a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] production database on a standby server. This server is either a hot or warm standby server, depending on the configuration and state of the database mirroring session. A hot standby server supports rapid failover with no loss of committed transactions, and a warm standby server supports forcing service (with possible data loss).  

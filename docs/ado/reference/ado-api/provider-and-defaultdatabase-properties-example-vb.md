@@ -1,27 +1,20 @@
 ---
-title: "Provider and DefaultDatabase Properties Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Provider and DefaultDatabase Properties Example (VB)"
+description: "Provider and DefaultDatabase Properties Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "DefaultDatabase property [ADO], Visual Basic example"
   - "provider property [ADO], Visual Basic example"
-ms.assetid: 677e1dbe-bcf6-4028-a62c-e99b1c88bf7b
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Provider and DefaultDatabase Properties Example (VB)
-This example demonstrates the [Provider](../../../ado/reference/ado-api/provider-property-ado.md) property by opening three [Connection](../../../ado/reference/ado-api/connection-object-ado.md) objects using different providers. It also uses the [DefaultDatabase](../../../ado/reference/ado-api/defaultdatabase-property.md) property to set the default database for the Microsoft ODBC Provider.  
+This example demonstrates the [Provider](./provider-property-ado.md) property by opening three [Connection](./connection-object-ado.md) objects using different providers. It also uses the [DefaultDatabase](./defaultdatabase-property.md) property to set the default database for the Microsoft ODBC Provider.  
   
 > [!NOTE]
 >  If you are connecting to a data source provider that supports Windows authentication, you should specify **Trusted_Connection=yes** or **Integrated Security = SSPI** instead of user ID and password information in the connection string.  
@@ -103,6 +96,6 @@ End Sub
 ```  
   
 ## See Also  
- [Connection Object (ADO)](../../../ado/reference/ado-api/connection-object-ado.md)   
- [DefaultDatabase Property](../../../ado/reference/ado-api/defaultdatabase-property.md)   
- [Provider Property (ADO)](../../../ado/reference/ado-api/provider-property-ado.md)
+ [Connection Object (ADO)](./connection-object-ado.md)   
+ [DefaultDatabase Property](./defaultdatabase-property.md)   
+ [Provider Property (ADO)](./provider-property-ado.md)

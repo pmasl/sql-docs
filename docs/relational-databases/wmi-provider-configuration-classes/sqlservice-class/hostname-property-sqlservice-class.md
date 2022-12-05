@@ -1,13 +1,11 @@
 ---
-title: "HostName Property (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "HostName Property (SqlService Class)"
+title: "HostName Property (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "HostName Property (SqlService Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "HostName property"
 ms.assetid: 3df0ca15-9eca-4cbd-8c39-cb00be6a0215
-caps.latest.revision: 34
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # HostName Property (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the host name of the service.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.HostName [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

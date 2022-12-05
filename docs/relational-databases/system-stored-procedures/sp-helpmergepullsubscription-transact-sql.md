@@ -1,29 +1,25 @@
 ---
+description: "sp_helpmergepullsubscription (Transact-SQL)"
 title: "sp_helpmergepullsubscription (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_helpmergepullsubscription"
   - "sp_helpmergepullsubscription_TSQL"
 helpviewer_keywords: 
   - "sp_helpmergepullsubscription"
 ms.assetid: 6f3125f3-0dfa-40bd-b725-8aa1591234f6
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_helpmergepullsubscription (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns information about pull subscriptions that exist at a Subscriber. This stored procedure is executed at the Subscriber on the subscription database.  
   
@@ -40,16 +36,16 @@ sp_helpmergepullsubscription [ [ @publication=] 'publication']
 ```  
   
 ## Argument  
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication. *publication* is **sysname**, with a default of **%**. If *publication* is **%**, information about all merge publications and subscriptions in the current database is returned.  
   
- [ **@publisher=**] **'***publisher***'**  
+`[ @publisher = ] 'publisher'`
  Is the name of the Publisher. *publisher*is **sysname**, with a default of **%**.  
   
- [ **@publisher_db=**] **'***publisher_db***'**  
+`[ @publisher_db = ] 'publisher_db'`
  Is the name of the Publisher database. *publisher_db*is **sysname**, with a default of **%**.  
   
- [ **@subscription_type=**] **'***subscription_type***'**  
+`[ @subscription_type = ] 'subscription_type'`
  Is whether to show pull subscriptions. *subscription_type*is **nvarchar(10)**, with a default of **'pull'**. Valid values are **'push'**, **'pull'**, or **'both'**.  
   
 ## Result Sets  
@@ -61,7 +57,7 @@ sp_helpmergepullsubscription [ [ @publication=] 'publication']
 |**publisher**|**sysname**|Name of the Publisher.|  
 |**publisher_db**|**sysname**|Name of the Publisher database.|  
 |**subscriber**|**sysname**|Name of the Subscriber.|  
-|**subscription_db**|**sysname**|Name of the subscription database.|  
+|**subscriber_db**|**sysname**|Name of the subscription database.|  
 |**status**|**int**|Subscription status:<br /><br /> **0** = Inactive subscription<br /><br /> **1** = Active subscription<br /><br /> **2** = Deleted subscription<br /><br /> **3** = Detached subscription<br /><br /> **4** = Attached subscription<br /><br /> **5** = Subscription has been marked for reinitialization with upload<br /><br /> **6** = Attaching the subscription failed<br /><br /> **7** = Subscription restored from backup|  
 |**subscriber_type**|**int**|Type of Subscriber:<br /><br /> **1** = Global<br /><br /> **2** = Local<br /><br /> **3** = Anonymous|  
 |**subscription_type**|**int**|Type of subscription:<br /><br /> **0** = Push<br /><br /> **1** = Pull<br /><br /> **2** = Anonymous|  

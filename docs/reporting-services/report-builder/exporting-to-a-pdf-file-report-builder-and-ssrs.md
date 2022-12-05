@@ -1,25 +1,23 @@
 ---
-title: "Exporting to a PDF File (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "10/21/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Export a paginated report to a PDF File (Report Builder) | Microsoft Docs"
+description: In Report Builder, the PDF rendering extension renders paginated reports to files that can be opened in Adobe Acrobat and other third-party PDF viewers.
+ms.date: 03/29/2022
+ms.service: reporting-services
+ms.subservice: report-builder
+
+
+ms.topic: conceptual
 ms.assetid: f22497b7-f6c1-4c7b-b831-8c731e26ae37
-caps.latest.revision: 13
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Exporting to a PDF File (Report Builder and SSRS)
-  The PDF rendering extension renders [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] paginated reports to files that can be opened in Adobe Acrobat and other third-party PDF viewers that support PDF 1.3. Although PDF 1.3 is compatible with Adobe Acrobat 4.0 and later versions, [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] supports Adobe Acrobat 11.0 or later. The rendering extension does not require Adobe software to render the report. However, PDF viewers such as Adobe Acrobat are required to view or print a report in PDF format.  
+# Export a paginated report to a PDF File (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+The PDF rendering extension renders paginated reports to files that can be opened in Adobe Acrobat and other third-party PDF viewers that support PDF 1.3. Although PDF 1.3 is compatible with Adobe Acrobat 4.0 and later versions, [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] supports Adobe Acrobat 11.0 or later. The rendering extension does not require Adobe software to render the report. However, PDF viewers such as Adobe Acrobat are required to view or print a report in PDF format.  
   
- The PDF rendering extension supports ANSI characters and can translate Unicode characters from Japanese, Korean, Traditional Chinese, Simplified Chinese, Cyrillic, Hebrew, and Arabic with certain limitations. For more information about the limitations, see [Export Reports &#40;Report Builder and SSRS&#41;](../../reporting-services/report-builder/export-reports-report-builder-and-ssrs.md).  
+ The PDF rendering extension supports ANSI characters and can translate Unicode characters from Japanese, Korean, Traditional Chinese, Simplified Chinese, Cyrillic, Hebrew, and Arabic with certain limitations. For more information about the limitations, see [Export Reports &#40;Report Builder and SSRS&#41;](../../reporting-services/report-builder/export-reports-report-builder-and-ssrs.md). The PDF rendering extension also conforms to  ISO 14289-1 (PDF/UA) standards for Accessible PDF. See [PDF Rendering Extension conformance to ISO 14289-1, Power BI Report Server & SSRS](/power-bi/report-server/rendering-extension-support) for details.
   
  The PDF renderer is a physical page renderer and, therefore, has pagination behavior that differs from other renderers such as HTML and Excel. This topic provides PDF renderer-specific information and describes exceptions to the rules.  
   
@@ -51,9 +49,11 @@ manager: "erikre"
 ### Verifying Fonts in a PDF File  
  Differences in PDF output occur most often when a font that does not support non-Latin characters is used in a report and then non-Latin characters are added to the report. You should test the PDF rendering output on both the report server and the client computers to verify that the report renders correctly.  
   
- Do not rely on viewing the report in Preview or exporting to HTML because the report will look correct due to automatic font substitution performed by the graphical design interface or by Microsoft Internet Explorer, respectively. If there are Unicode Glyphs missing on the server, you may see characters replaced with a question mark (?). If there is a font missing on the client, you may see characters replaced with boxes (□).  
+ Don't rely on viewing the report in Preview or exporting to HTML. The report will look correct due to automatic font substitution performed by Report Builder or by the browser, respectively. If Unicode Glyphs are missing on the server, you may see characters replaced with a question mark (?). If a font is missing on the client, you may see characters replaced with boxes (□).  
   
- The fonts that are embedded in the PDF file are included in the Fonts property that is saved with the file, as metadata.  
+ The fonts that are embedded in the PDF file are included in the Fonts property that is saved with the file, as metadata.
+ 
+Windows 10 introduced a recommended Universal Windows Platform (UWP) font set that's common across all editions that support UWP, including Desktop, Server, and Xbox. Check this list for supported fonts: [Font List Windows 10 - Typography | Microsoft Docs](/typography/fonts/windows_10_font_list#introduction).
   
 ##  <a name="Metadata"></a> Metadata  
  In addition to the report layout, the PDF rendering extension writes the following metadata to the PDF Document Information Dictionary.  
@@ -95,7 +95,7 @@ manager: "erikre"
  To preserve any compression for images included in the PDF file when possible, JPEG images are stored as JPEG and all other image types are stored as BMP.  
   
 > [!NOTE]  
->  PDF files don’t support embedding PNG images.  
+>  PDF files don't support embedding PNG images.  
   
   
 ##  <a name="DeviceInfo"></a> Device Information Settings  

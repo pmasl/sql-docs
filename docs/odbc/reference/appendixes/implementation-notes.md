@@ -1,19 +1,15 @@
 ---
+description: "Implementation Notes"
 title: "Implementation Notes | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 ms.assetid: 7ec14b9c-69b8-4c6e-838a-88d1ebdc8725
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Implementation Notes
 > [!IMPORTANT]  

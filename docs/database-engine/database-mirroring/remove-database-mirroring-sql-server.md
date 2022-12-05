@@ -1,25 +1,19 @@
 ---
-title: "Remove Database Mirroring (SQL Server) | Microsoft Docs"
-ms.custom: ""
+title: "Remove Database Mirroring (SQL Server)"
+description: Learn how to remove database mirroring from a database by using SQL Server Management Studio or Transact-SQL in SQL Server.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+helpviewer_keywords:
   - "database mirroring [SQL Server], removing"
   - "removing database mirroring [SQL Server]"
-ms.assetid: bbc4d7f7-3bc7-40d6-a822-af195fe7f8c0
-caps.latest.revision: 42
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Remove Database Mirroring (SQL Server)
-  This topic describes how to remove database mirroring from a database in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  At any time, the database owner can manually stop a database mirroring session by removing mirroring from the database.  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  This topic describes how to remove database mirroring from a database in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  At any time, the database owner can manually stop a database mirroring session by removing mirroring from the database.  
   
  **In This Topic**  
   
@@ -90,7 +84,7 @@ manager: "jhubbard"
   
      Any log backups taken on the principal database after mirroring was removed must all be applied to the mirror database before you can restart mirroring.  
   
--   **If you do not intent to restart mirroring**  
+-   **If you do not intend to restart mirroring**  
   
      Optionally, you can recover the former mirror database. On the server instance that was the mirror server, you can use the following [!INCLUDE[tsql](../../includes/tsql-md.md)] statement:  
   
@@ -99,7 +93,7 @@ manager: "jhubbard"
     ```  
   
     > [!IMPORTANT]  
-    >  If you recover this database, two divergent databases with the same name are online. Therefore, you need to ensure that clients can access only one of them—typically the most recent principal database.  
+    >  If you recover this database, two divergent databases with the same name are online. Therefore, you need to ensure that clients can access only one of them-typically the most recent principal database.  
   
 ##  <a name="RelatedTasks"></a> Related Tasks  
   

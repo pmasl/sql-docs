@@ -1,24 +1,17 @@
 ---
-title: "ADORecordsetConstruction Interface | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ADORecordsetConstruction Interface"
+description: "ADORecordsetConstruction Interface"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "ADORecordsetConstruction"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ADORecordsetConstruction interface [ADO]"
-ms.assetid: 08386eba-f1f7-4879-8ffd-8733930ecb2f
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ADORecordsetConstruction Interface
 The **ADORecordsetConstruction** interface is used to construct an ADO **Recordset** object from an OLE DB **Rowset** object in a C/C++ application.  
@@ -27,11 +20,11 @@ The **ADORecordsetConstruction** interface is used to construct an ADO **Records
   
 ## Properties  
   
-|||  
+|Property|Description|  
 |-|-|  
-|[Chapter](../../../ado/reference/ado-api/chapter-property-ado.md)|Read/Write.<br />Gets/sets an OLE DB **Chapter** object from/on this ADO **Recordset** object.|  
-|[RowPosition](../../../ado/reference/ado-api/rowposition-property-ado.md)|Read/Write.<br />Gets/sets an OLE DB **RowPosition** object from/on this ADO **Recordset** object.|  
-|[Rowset](../../../ado/reference/ado-api/rowset-property-ado.md)|Read/Write.<br />Gets/sets an OLE DB **Rowset** object from/on this ADO **Recordset** object.|  
+|[Chapter](./chapter-property-ado.md)|Read/Write.<br />Gets/sets an OLE DB **Chapter** object from/on this ADO **Recordset** object.|  
+|[RowPosition](./rowposition-property-ado.md)|Read/Write.<br />Gets/sets an OLE DB **RowPosition** object from/on this ADO **Recordset** object.|  
+|[Rowset](./rowset-property-ado.md)|Read/Write.<br />Gets/sets an OLE DB **Rowset** object from/on this ADO **Recordset** object.|  
   
 ## Methods  
  None.  
@@ -77,5 +70,5 @@ The **ADORecordsetConstruction** interface is used to construct an ADO **Records
  **UUID:** 00000283-0000-0010-8000-00AA006D2EA4  
   
 ## See Also  
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)   
- [Rowset Property (ADO)](../../../ado/reference/ado-api/rowset-property-ado.md)
+ [Recordset Object (ADO)](./recordset-object-ado.md)   
+ [Rowset Property (ADO)](./rowset-property-ado.md)

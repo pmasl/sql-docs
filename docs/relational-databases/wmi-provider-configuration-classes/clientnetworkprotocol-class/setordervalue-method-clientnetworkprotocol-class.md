@@ -1,13 +1,11 @@
 ---
-title: "SetOrderValue Method (ClientNetworkProtocol Class) | Microsoft Docs"
-ms.custom: ""
+description: "SetOrderValue Method (ClientNetworkProtocol Class)"
+title: "SetOrderValue Method (ClientNetworkProtocol)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "SetOrderValue Method (ClientNetworkProtocol Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "SetOrderValue method"
 ms.assetid: 15f693fd-37f6-41d9-9dab-d2c93db19895
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SetOrderValue Method (ClientNetworkProtocol Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Selects the protocol with the specified order value from the client protocol list.  
   
 ## Syntax  
@@ -48,6 +45,5 @@ object.SetOrderValue(OrderValue)
 ## Remarks  
   
 ## See Also  
- [Client Protocols Properties (Order Tab)](http://technet.microsoft.com/library/ms187884.aspx)  
-  
+ [Client Protocols Properties (Order Tab)](../../../tools/configuration-manager/client-protocols-properties-order-tab.md)  
   

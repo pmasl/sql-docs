@@ -1,24 +1,15 @@
 ---
-title: "setReadOnly Method (SQLServerConnection) | Microsoft Docs"
-ms.custom: ""
+title: "setReadOnly Method (SQLServerConnection)"
+description: "setReadOnly Method (SQLServerConnection)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.setReadOnly"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.setReadOnly"
 apitype: "Assembly"
-ms.assetid: bd11fd50-f092-43a0-a6bc-c63e70cff8da
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setReadOnly Method (SQLServerConnection)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

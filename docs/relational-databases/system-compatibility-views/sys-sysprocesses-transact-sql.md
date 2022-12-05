@@ -1,14 +1,12 @@
 ---
+description: "sys.sysprocesses (Transact-SQL)"
 title: "sys.sysprocesses (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sysprocesses_TSQL"
   - "sys.sysprocesses_TSQL"
@@ -20,22 +18,16 @@ helpviewer_keywords:
   - "sys.sysprocesses compatibility view"
   - "sysprocesses system table"
 ms.assetid: 60a36d36-54b3-4bd6-9cac-702205a21b16
-caps.latest.revision: 57
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
 ---
 # sys.sysprocesses (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains information about processes that are running on an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. These processes can be client processes or system processes. To access sysprocesses, you must be in the master database context, or you must use the master.dbo.sysprocesses three-part name.  
   
 > [!IMPORTANT]  
 >  [!INCLUDE[ssnoteCompView](../../includes/ssnotecompview-md.md)]  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
@@ -60,7 +52,7 @@ manager: "jhubbard"
 |hostname|**nchar(128)**|Name of the workstation.|  
 |program_name|**nchar(128)**|Name of the application program.|  
 |hostprocess|**nchar(10)**|Workstation process ID number.|  
-|cmd|**nchar(16)**|Command currently being executed.|  
+|cmd|**nchar(52)**|Command currently being executed.|  
 |nt_domain|**nchar(128)**|Windows domain for the client, if using Windows Authentication, or a trusted connection.|  
 |nt_username|**nchar(128)**|Windows user name for the process, if using Windows Authentication, or a trusted connection.|  
 |net_address|**nchar(12)**|Assigned unique identifier for the network adapter on the workstation of each user. When a user logs in, this identifier is inserted in the net_address column.|  
@@ -70,7 +62,8 @@ manager: "jhubbard"
 |sql_handle|**binary(20)**|Represents the currently executing batch or object.<br /><br /> **Note** This value is derived from the batch or memory address of the object. This value is not calculated by using the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] hash-based algorithm.|  
 |stmt_start|**int**|Starting offset of the current SQL statement for the specified sql_handle.|  
 |stmt_end|**int**|Ending offset of the current SQL statement for the specified sql_handle.<br /><br /> -1 = Current statement runs to the end of the results returned by the fn_get_sql function for the specified sql_handle.|  
-|request_id|**int**|ID of request. Used to identify requests running in a specific session.|  
+|request_id|**int**|ID of request. Used to identify requests running in a specific session.|
+|page_resource |**binary(8)** |**Applies to**: [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] <br /><br /> An 8-byte hexadecimal representation of the page resource if the `waitresource` column contains a page. |  
   
 ## Remarks  
  If a user has VIEW SERVER STATE permission on the server, the user will see all executing sessions in the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]; otherwise, the user will see only the current session.  

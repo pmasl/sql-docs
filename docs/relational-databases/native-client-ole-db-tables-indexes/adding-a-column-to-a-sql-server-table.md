@@ -1,13 +1,11 @@
 ---
-title: "Adding a Column to a SQL Server Table | Microsoft Docs"
+description: "Add column to SQL Server table (Native Client OLE DB provider)"
+title: "Add column to SQL Server table (Native Client OLE DB provider) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "columns [OLE DB]"
@@ -15,13 +13,12 @@ helpviewer_keywords:
   - "SQL Server Native Client OLE DB provider, columns"
   - "adding columns"
 ms.assetid: 22bae18a-bc9d-4617-8660-ed8b17a468d4
-caps.latest.revision: 30
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Adding a Column to a SQL Server Table
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# Adding a Column to a Table in SQL Server Native Client
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider exposes the **ITableDefinition::AddColumn** function. This allows consumers to add a column to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] table.  
   

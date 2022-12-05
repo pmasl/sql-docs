@@ -1,29 +1,25 @@
 ---
+description: "sp_addqueued_artinfo (Transact-SQL)"
 title: "sp_addqueued_artinfo (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_addqueued_artinfo"
   - "sp_addqueued_artinfo_TSQL"
 helpviewer_keywords: 
   - "sp_addqueued_artinfo"
 ms.assetid: decdb6eb-3dcd-4053-a21d-fd367c3fbafb
-caps.latest.revision: 20
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_addqueued_artinfo (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   
   
@@ -49,28 +45,28 @@ sp_addqueued_artinfo [ @artid= ] 'artid'
 ```  
   
 ## Arguments  
- [ **@artid=** ] **'***artid***'**  
+`[ @artid = ] 'artid'`
  Is the name of the article ID. *artid* is **int**, with no default  
   
- [ **@article=**] **'***article***'**  
+`[ @article = ] 'article'`
  Is the name of the article to be scripted. *article* is **sysname**, with no default  
   
- [ **@publisher=**] **'***publisher***'**  
+`[ @publisher = ] 'publisher'`
  Is the name of the Publisher server. *publisher* is **sysname**, with no default.  
   
- [ **@publisher_db=**] **'***publisher_db***'**  
+`[ @publisher_db = ] 'publisher_db'`
  Is the name of the Publisher database. *publisher_db* is **sysname**, with no default.  
   
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication to be scripted. *publication* is **sysname**, with no default.  
   
- [ **@dest_table=** ] *'dest_table***'**  
+`[ @dest_table = ] _'dest_table'`
  Is the name of the destination table. *dest_table* is **sysname**, with no default.  
   
- [**@owner =** ] **'***owner***'**  
+ [**@owner =** ] **'**_owner_**'**  
  Is the owner of the subscription. *owner* is **sysname**, with no default.  
   
- [ **@cft_table=** ] **'***cft_table***'**  
+`[ @cft_table = ] 'cft_table'`
  Name of the queued updating conflict table for this article. *cft_table*is **sysname**, with no default.  
   
 ## Return Code Values  

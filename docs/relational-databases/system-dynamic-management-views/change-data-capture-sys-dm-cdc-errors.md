@@ -1,32 +1,26 @@
 ---
-title: "sys.dm_cdc_errors (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.dm_cdc_errors (Transact-SQL)"
+description: The Change Data Capture DMV sys.dm_cdc_errors returns one row for each error encountered during the change data capture log scan session.
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: 05/10/2022
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+ms.custom: event-tier1-build-2022
+f1_keywords:
   - "dm_cdc_errors_TSQL"
   - "dm_cdc_errors"
   - "sys.dm_cdc_errors"
   - "sys.dm_cdc_errors_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_cdc_errors dynamic management view"
   - "change data capture [SQL Server], error reporting"
-ms.assetid: 898f2d76-9e63-45ef-94da-8034e86004ab
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # Change Data Capture - sys.dm_cdc_errors
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns one row for each error encountered during the change data capture log scan session.  
  
@@ -45,14 +39,14 @@ manager: "jhubbard"
 |**sequence_value**|**nvarchar(23)**|LSN value of the rows being processed when the error occurred.<br /><br /> 0 = the error did not occur within a log scan session.|  
   
 ## Remarks  
- **sys.dm_cdc_errors** contains error information for the previous 32 sessions.  
+The DMV `sys.dm_cdc_errors` contains error information for the previous 32 sessions.  
   
 ## Permissions  
- Requires VIEW DATABASE STATE permission to query the **sys.dm_cdc_errors** dynamic management view. For more information about permissions on dynamic management views, see [Dynamic Management Views and Functions &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md).  
+ Requires VIEW DATABASE STATE permission to query the `sys.dm_cdc_errors` dynamic management view. For more information about permissions on dynamic management views, see [Dynamic Management Views and Functions &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md).  
   
-## See Also  
- [sys.dm_cdc_log_scan_sessions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-log-scan-sessions.md)   
- [sys.dm_repl_traninfo &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-repl-traninfo-transact-sql.md)  
+## Next steps
+ 
+ - [sys.dm_cdc_log_scan_sessions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/change-data-capture-sys-dm-cdc-log-scan-sessions.md)   
+ - [sys.dm_repl_traninfo &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-repl-traninfo-transact-sql.md)  
   
   
-

@@ -1,28 +1,25 @@
 ---
-title: "PropertyStrVal Property (ClientNetworkProtocolProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "PropertyStrVal Property (ClientNetworkProtocolProperty Class)"
+title: "PropertyStrVal Property (ClientNetworkProtocolProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
-  - "PropertyStrVal Property (ClientNetworkProtocolProperty Class)"
+  - "PropertyStrVal Property (ClientNetworkProtocolProperty)"
 apilocation: 
   - "sqlmgmproviderxpsp2up.mof"
 apitype: "MOFDef"
 helpviewer_keywords: 
   - "PropertyStrVal property"
 ms.assetid: eeb15b13-4fee-47ac-81c3-cba19d450bd9
-caps.latest.revision: 29
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # PropertyStrVal Property (ClientNetworkProtocolProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the string value of the current property referenced by the [PropertyIdx Property (ClientNetworkProtocolProperty Class)](../../../relational-databases/wmi-provider-configuration-classes/clientnetworkprotocolproperty-class/propertyidx-property-clientnetworkprotocolproperty-class.md) value.  
   
 ## Syntax  

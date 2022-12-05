@@ -1,15 +1,14 @@
 ---
-title: "Executing XPath Queries with Namespaces (SQLXML Managed Classes) | Microsoft Docs"
-ms.custom: ""
+title: "Executing XPath Queries with Namespaces (SQLXML)"
+description: Learn how to include namespaces in SQLXML XPath queries.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "namespaces property"
   - "XPath queries [SQLXML], SQLXML Managed Classes"
   - "queries [SQLXML], SQLXML Managed Classes"
@@ -18,12 +17,10 @@ helpviewer_keywords:
   - "SQLXML Managed Classes, executing XPath queries"
   - "namespaces [SQLXML], XPath queries"
 ms.assetid: c6fc46d8-6b42-4992-a8f1-a8d4b8886e6e
-caps.latest.revision: 22
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Executing XPath Queries with Namespaces (SQLXML Managed Classes)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   XPath queries can include namespaces. If the schema elements are namespace-qualified (use a target namespace), the XPath queries against the schema must specify the namespace.  
   
  Because the wildcard character (*) is not supported in [!INCLUDE[msCoName](../../../includes/msconame-md.md)] SQLXML 4.0, you must specify the XPath query by using a namespace prefix. To resolve the prefix, use the namespaces property to specify the namespace binding.  
@@ -105,5 +102,4 @@ class Test
      This creates an executable (DocSample.exe).  
   
 4.  At the command prompt, execute DocSample.exe.  
-  
-  
+

@@ -1,24 +1,15 @@
 ---
-title: "usesLocalFilePerTable Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "usesLocalFilePerTable Method (SQLServerDatabaseMetaData)"
+description: "usesLocalFilePerTable Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.usesLocalFilePerTable"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.usesLocalFilePerTable"
 apitype: "Assembly"
-ms.assetid: 1fafb076-2bb7-4845-9c02-788479f00ca2
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # usesLocalFilePerTable Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

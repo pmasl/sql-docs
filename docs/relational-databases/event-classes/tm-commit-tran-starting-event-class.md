@@ -1,23 +1,21 @@
 ---
+description: "TM: Commit Tran Starting Event Class"
 title: "TM: Commit Tran Starting Event Class | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: reference
 helpviewer_keywords: 
   - "TM: Commit Tran Starting event class"
 ms.assetid: 3e1ac37e-6093-4dc9-9e5d-4270db18b547
-caps.latest.revision: 24
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # TM: Commit Tran Starting Event Class
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
   The TM: Commit Tran Starting event class indicates that a COMMIT TRANSACTION request is starting. The request is sent from the client through the transaction management interface. The EventSubClass column indicates if a new transaction will be started after the current transaction is committed.  
   
 ## TM: Commit Tran Starting Event Class Data Columns  

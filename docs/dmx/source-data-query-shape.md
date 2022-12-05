@@ -1,30 +1,17 @@
 ---
-title: "SHAPE (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SHAPE"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "SHAPE statement"
-  - "multiple data sources"
-ms.assetid: b9526ec2-40bc-4bf5-b4e5-774f71075065
-caps.latest.revision: 37
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "SHAPE (DMX)"
+description: "&lt;source data query&gt; - SHAPE"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # &lt;source data query&gt; - SHAPE
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Combines queries from multiple data sources into a single hierarchical table (that is, a table with nested tables), which becomes the case table for the mining model.  
   
@@ -34,30 +21,30 @@ manager: "erikre"
   
 ```  
   
-SHAPE {<master query>}  
+SHAPE {<primary query>}  
 APPEND ({ <child table query> }   
-     RELATE <master column> TO <child column>)   
+     RELATE <primary column> TO <child column>)   
           AS <column table name>  
 [  
      ({ <child table query> }   
-     RELATE <master column> TO <child column>)   
+     RELATE <primary column> TO <child column>)   
           AS < column table name>  
 ...  
 ]       
 ```  
   
 ## Arguments  
- *master query*  
+ *primary query*  
  The query returning the parent table.  
   
  *child table query*  
  The query returning the nested table.  
   
- *master column*  
+ *primary column*  
  The column in the parent table to identify child rows from the result of a child table query.  
   
  *child column*  
- The column in the child table to identify the parent row from the result of a master query.  
+ The column in the child table to identify the parent row from the result of a primary query.  
   
  *column table name*  
  The newly appended column name in the parent table for the nested table.  

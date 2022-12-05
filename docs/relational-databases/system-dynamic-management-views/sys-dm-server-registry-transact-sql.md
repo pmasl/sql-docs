@@ -1,31 +1,25 @@
 ---
-title: "sys.dm_server_registry (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_server_registry (Transact-SQL)"
+description: sys.dm_server_registry (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_server_registry_TSQL"
   - "sys.dm_server_registry"
   - "dm_server_registry"
   - "sys.dm_server_registry_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_server_registry dynamic management view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 9b3e0c74-2e99-4996-a383-104d51831e97
-caps.latest.revision: 7
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.dm_server_registry (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns configuration and installation information that is stored in the Windows registry for the current instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Returns one row per registry key. Use this dynamic management view to return information such as the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] services that are available on the host machine or network configuration values for the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
@@ -66,7 +60,7 @@ WHERE registry_key LIKE N'%SQLAgent%';
 ```  
 SELECT registry_key, value_name, value_data  
 FROM sys.dm_server_registry  
-WHERE registry_key = N'CurrentVersion';  
+WHERE value_name = N'CurrentVersion';  
 ```  
   
 ### D. Display the parameters passed to the instance of SQL Server during startup  

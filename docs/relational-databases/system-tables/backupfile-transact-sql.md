@@ -1,30 +1,24 @@
 ---
-title: "backupfile (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "backupfile (Transact-SQL)"
+description: backupfile (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "backupfile"
   - "backupfile_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "file backups [SQL Server], backupfile system table"
   - "backupfile system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: f1a7fc0a-f4b4-47eb-9138-eebf930dc9ac
-caps.latest.revision: 36
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # backupfile (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row for each data or log file of a database. The columns describes the file configuration at the time the backup was taken. Whether or not the file is included in the backup is determined by the **is_present** column. This table is stored in the **msdb** database.  
   

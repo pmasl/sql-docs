@@ -1,25 +1,25 @@
 ---
-title: "Convert Data Type by Using Data Conversion Transformation | Microsoft Docs"
+description: "Convert Data Type with Data Conversion Transformation"
+title: "Convert Data Type with Data Conversion Transformation | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 helpviewer_keywords: 
   - "converting data types [Integration Services]"
   - "Data Conversion transformation"
   - "data types [Integration Services], converting"
 ms.assetid: 4aabbe4f-7666-4672-865a-9627bd25fbfd
-caps.latest.revision: 41
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
-# Convert Data Type by Using Data Conversion Transformation
+# Convert Data Type with Data Conversion Transformation
+
+[!INCLUDE[sqlserver-ssis](../../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   To add and configure a Data Conversion transformation, the package must already include at least one Data Flow task and one source.  
   
 ### To convert data to a different data type  

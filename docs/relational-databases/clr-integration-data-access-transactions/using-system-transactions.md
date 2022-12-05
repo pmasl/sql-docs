@@ -1,28 +1,23 @@
 ---
-title: "Using System.Transactions | Microsoft Docs"
-ms.custom: ""
+title: "Using System.Transactions"
+description: The System.Transactions namespace provides a transaction framework that is fully integrated with ADO.NET and SQL Server CLR integration.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "TransactionScope class"
   - "Dispose method"
   - "System.Transactions namespace"
+dev_langs:
+  - "VB"
+  - "CSharp"
 ms.assetid: 79656ce5-ce46-4c5e-9540-cf9869bd774b
-caps.latest.revision: 16
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Using System.Transactions
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   The **System.Transactions** namespace provides a transaction framework that is fully integrated with ADO.NET and [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] common language runtime (CLR) integration. The **System.Transactions.TransactionScope** class makes a code block transactional by implicitly enlisting connections in a distributed transaction. You must call the **Complete** method at the end of the code block marked by the **TransactionScope**. The **Dispose** method is invoked when program execution leaves a code block, causing the transaction to be discontinued if the **Complete** method is not called. If an exception has been thrown that causes the code to leave scope, the transaction is considered to be discontinued.  
   
  We recommend that you employ a **using** block to ensure that the **Dispose** method is called on the **TransactionScope** object when the **using** block is exited. Failure to commit or roll back pending transactions can seriously degrade performance because the default time-out for the **TransactionScope** is one minute. If you do not use a **using** statement, you must perform all work in a **Try** block and explicitly call the **Dispose** method in the **Finally** block.  

@@ -1,25 +1,21 @@
 ---
+description: "SQLFreeEnv Mapping"
 title: "SQLFreeEnv Mapping | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "SQLFreeEnv function [ODBC], mapping"
   - "mapping deprecated functions [ODBC], SQLFreeEnv"
 ms.assetid: c0f76455-d072-4bae-bee7-452277dfa479
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLFreeEnv Mapping
-When an application calls **SQLFreeEnv** through an ODBC 3*.x* driver, the call to  
+When an application calls **SQLFreeEnv** through an ODBC *3.x* driver, the call to  
   
 ```  
 SQLFreeEnv(henv)   

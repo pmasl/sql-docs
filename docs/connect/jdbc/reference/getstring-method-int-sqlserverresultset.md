@@ -1,24 +1,15 @@
 ---
-title: "getString Method (int) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getString Method (int) (SQLServerResultSet)"
+description: "getString Method (int) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getString (int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getString (int)"
 apitype: "Assembly"
-ms.assetid: bfa493c4-fe07-449b-b4d0-384e1a1fce48
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getString Method (int) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -46,7 +37,7 @@ public java.lang.String getString(int columnIndex)
 ## Remarks  
  This getString method is specified by the getString method in the java.sql.ResultSet interface.  
   
- All columns in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] can be returned as a String. This means that a **String** representation of all number-based and character-based types, and a hex-string representation of binary columns such as binary, varbinary, varbinary(max), image, timestamp, and uniqueidentifier, can be returned.  
+ All columns in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] can be returned as a String. This means that a **String** representation of all number-based and character-based types, and a hex-string representation of binary columns such as binary, varbinary, varbinary(max), image, timestamp, and uniqueidentifier, can be returned.  
   
  Location-sensitive types such as money, smallmoney, datetime, smalldatetime, float, real, decimal, and numeric will return the canonical toString() format for the underlying value of the type.  
   

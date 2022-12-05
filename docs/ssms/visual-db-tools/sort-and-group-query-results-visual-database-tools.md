@@ -1,14 +1,11 @@
 ---
-title: "Sort and Group Query Results (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Sort and Group Query Results (Visual Database Tools)"
+title: Sort and Group Query Results
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "View Designer, Results pane"
   - "result sets [SQL Server], queries"
@@ -22,12 +19,13 @@ helpviewer_keywords:
   - "Results pane"
   - "sorting query results [SQL Server]"
 ms.assetid: b004e1c0-cacc-4241-9426-9fd426978918
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Sort and Group Query Results (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 You can create a query result in which each result row corresponds to an entire group of rows from the original data.  
   
 To learn the details about creating such queries, see the topics listed in the following table.  

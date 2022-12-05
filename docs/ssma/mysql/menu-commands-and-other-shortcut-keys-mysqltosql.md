@@ -1,22 +1,15 @@
 ---
 title: "Menu commands and other shortcut keys (MySQLToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+description: Learn about keyboard shortcuts to access menu commands and other shortcut keys used in various dialog boxes of the SSMA for MySQL application.
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 9ae780dc-b33f-4861-a996-176bae9e7211
-caps.latest.revision: 4
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
 ---
 # Menu commands and other shortcut keys (MySQLToSQL)
 The following sections describe the keyboard shortcuts to access menu commands and other shortcut keys used in various dialog boxes of SSMA for MySQL application.  
@@ -81,7 +74,7 @@ To access Tools menu, the keyboard shortcut used is ALT + T. The following table
 |Create report.|ALT + T + C|  
 |Convert schema.|ALT + T + N or CTRL + R|  
 |Refresh from MySQL database.|ALT + T + R|  
-|Synchronize with SQL Server or SQL Azure database.|ALT + T + S|  
+|Synchronize with SQL Server or Azure SQL Database.|ALT + T + S|  
 |Save as script.|ALT + T + A|  
 |Migrate data.|ALT + T + M|  
 |Stop the current operation.|ALT + T + O|  

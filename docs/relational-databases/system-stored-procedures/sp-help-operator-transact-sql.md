@@ -1,14 +1,12 @@
 ---
+description: "sp_help_operator (Transact-SQL)"
 title: "sp_help_operator (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/01/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_help_operator"
   - "sp_help_operator_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_help_operator"
 ms.assetid: caedc43d-44b8-415a-897e-92923f6de3b8
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_help_operator (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Reports information about the operators defined for the server.  
   
@@ -40,10 +36,10 @@ sp_help_operator
 ```  
   
 ## Arguments  
- [ **@operator_name=** ] **'***operator_name***'**  
+`[ @operator_name = ] 'operator_name'`
  The operator name. *operator_name* is **sysname**. If *operator_name* is not specified, information about all operators is returned.  
   
- [ **@operator_id=** ] *operator_id*  
+`[ @operator_id = ] operator_id`
  The identification number of the operator for which information is requested. *operator_id*is **int**, with a default of NULL.  
   
 > [!NOTE]  
@@ -89,7 +85,7 @@ sp_help_operator
   
 -   **SQLAgentOperatorRole**  
   
- For details about the permissions of these roles, see [SQL Server Agent Fixed Database Roles](http://msdn.microsoft.com/library/719ce56b-d6b2-414a-88a8-f43b725ebc79).  
+ For details about the permissions of these roles, see [SQL Server Agent Fixed Database Roles](../../ssms/agent/sql-server-agent-fixed-database-roles.md).  
   
 ## Examples  
  The following example reports information about operator `François Ajenstat`.  

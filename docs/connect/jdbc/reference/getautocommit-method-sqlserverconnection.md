@@ -1,24 +1,15 @@
 ---
-title: "getAutoCommit Method (SQLServerConnection) | Microsoft Docs"
-ms.custom: ""
+title: "getAutoCommit Method (SQLServerConnection)"
+description: "getAutoCommit Method (SQLServerConnection)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.getAutoCommit"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.getAutoCommit"
 apitype: "Assembly"
-ms.assetid: af1f67f4-f568-4e58-abcc-5c809a89b547
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getAutoCommit Method (SQLServerConnection)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

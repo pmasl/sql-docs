@@ -1,33 +1,27 @@
 ---
-title: "sys.conversation_priorities (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.conversation_priorities (Transact-SQL)"
+description: sys.conversation_priorities (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "conversation_priorities_TSQL"
   - "conversation_priorities"
   - "sys.conversation_priorities_TSQL"
   - "sys.conversation_priorities"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "conversations [Service Broker], priorities"
   - "Service Broker, conversations"
   - "sys.conversation_priorities catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 7cbb9171-3310-4aae-8458-755c882d6462
-caps.latest.revision: 20
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # sys.conversation_priorities (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains a row for each conversation priority created in the current database, as shown in the following table: 
   

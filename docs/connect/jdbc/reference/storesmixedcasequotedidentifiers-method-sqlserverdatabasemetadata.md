@@ -1,24 +1,15 @@
 ---
-title: "storesMixedCaseQuotedIdentifiers Method | Microsoft Docs"
-ms.custom: ""
+title: "storesMixedCaseQuotedIdentifiers Method"
+description: "storesMixedCaseQuotedIdentifiers Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.storesMixedCaseQuotedIdentifiers"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.storesMixedCaseQuotedIdentifiers"
 apitype: "Assembly"
-ms.assetid: 1ffa599c-d0c8-43b6-8e9b-7c856a846630
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # storesMixedCaseQuotedIdentifiers Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

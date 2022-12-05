@@ -1,33 +1,27 @@
 ---
-title: "sys.dm_hadr_availability_replica_cluster_nodes (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_hadr_availability_replica_cluster_nodes (Transact-SQL)"
+description: sys.dm_hadr_availability_replica_cluster_nodes (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_hadr_availability_replica_cluster_nodes"
   - "sys.dm_hadr_availability_replica_cluster_nodes_TSQL"
   - "dm_hadr_availability_replica_cluster_nodes_TSQL"
   - "sys.dm_hadr_availability_replica_cluster_nodes"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Availability Groups [SQL Server], monitoring"
   - "Availability Groups [SQL Server], WSFC clusters"
   - "sys.dm_hadr_availability_replica_cluster_nodes dynamic management view"
+dev_langs:
+  - "TSQL"
 ms.assetid: dbd7e416-badd-4332-a45c-438aa0145a99
-caps.latest.revision: 13
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # sys.dm_hadr_availability_replica_cluster_nodes (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row for every availability replica (regardless of join state) of the Always On availability groups in the Windows Server Failover Clustering (WSFC) cluster.  
 

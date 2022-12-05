@@ -1,24 +1,19 @@
 ---
-title: "sys.pdw_diag_sessions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.pdw_diag_sessions (Transact-SQL)"
+description: sys.pdw_diag_sessions (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+dev_langs:
   - "TSQL"
 ms.assetid: 4d23688a-cddb-4eed-8231-ecde2a0b0e65
-caps.latest.revision: 7
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016"
 ---
 # sys.pdw_diag_sessions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]
 
   Holds information regarding the various diagnostic sessions that have been created on the system.  
   
@@ -32,6 +27,6 @@ manager: "jhubbard"
 |**database_id**|**int**|ID of the database that is the scope of the diagnostic session.|  
   
 ## See Also  
- [SQL Data Warehouse and Parallel Data Warehouse Catalog Views](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
+ [Azure Synapse Analytics and Parallel Data Warehouse Catalog Views](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
   
   

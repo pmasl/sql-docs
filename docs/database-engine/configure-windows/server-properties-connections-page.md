@@ -1,23 +1,17 @@
 ---
-title: "Server Properties (Connections Page) | Microsoft Docs"
-ms.custom: ""
+title: "Server Properties (Connections Page)"
+description: Get acquainted with connection settings in SQL Server. Learn about options that determine deferred constraint checking, NULL handling, and other behavior.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: configuration
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.serverproperties.connections.f1"
-ms.assetid: 33be8ac5-12dd-4b8a-99e0-68261c219dd2
-caps.latest.revision: 27
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # Server Properties - Connections Page
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use this page to view or modify your connection options.  
   
 ## Connections  
@@ -69,7 +63,6 @@ manager: "jhubbard"
  View the currently running values for the options on this pane. These values are read-only.  
   
 ## See Also  
- [Options &#40;Query Execution: SQL Server: Advanced Page&#41;](http://msdn.microsoft.com/library/3ec788c7-22c3-4216-9ad0-81a168d17074)   
+ [Options &#40;Query Execution: SQL Server: Advanced Page&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md)   
  [Server Configuration Options &#40;SQL Server&#41;](../../database-engine/configure-windows/server-configuration-options-sql-server.md)  
-  
   

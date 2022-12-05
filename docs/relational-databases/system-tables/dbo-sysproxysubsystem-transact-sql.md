@@ -1,31 +1,25 @@
 ---
-title: "dbo.sysproxysubsystem (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "dbo.sysproxysubsystem (Transact-SQL)"
+description: dbo.sysproxysubsystem (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dbo.sysproxysubsystem_TSQL"
   - "dbo.sysproxysubsystem"
   - "sysproxysubsystem_TSQL"
   - "sysproxysubsystem"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysproxysubsystem system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 6d7713f5-1253-4a19-b1fb-635c377c95c1
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # dbo.sysproxysubsystem (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Records which [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent subsystem is used by each proxy account. This table is stored in the **msdb** database.  
   

@@ -1,24 +1,17 @@
 ---
-title: "SortOrderEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "SortOrderEnum"
+description: "SortOrderEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "SortOrderEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SortOrderEnum enumeration [ADOX]"
-ms.assetid: 0b9d46e7-29d9-4ca1-a23a-056403106a71
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # SortOrderEnum
 Specifies the sort sequence for an indexed column.  
@@ -29,4 +22,4 @@ Specifies the sort sequence for an indexed column.
 |**adSortDescending**|2|The sort sequence for the column is descending.|  
   
 ## Applies To  
- [SortOrder Property (ADOX)](../../../ado/reference/adox-api/sortorder-property-adox.md)
+ [SortOrder Property (ADOX)](./sortorder-property-adox.md)

@@ -1,39 +1,27 @@
 ---
-title: "Replication Subscribers and Always On Availability Groups (SQL Server) | Microsoft Docs"
-ms.custom: ""
-ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "Replication Subscribers & availability groups (SQL Server)"
+description: Learn what happens if an Always On availability group containing a database that is a replication subscriber fails over in SQL Server.
+author: MashaMSFT
+ms.author: mathoma
+ms.date: "08/08/2019"
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "failover subscribers with AlwaysOn"
+  - "failover subscribers with Always On"
   - "Availability Groups [SQL Server], interoperability"
   - "replication [SQL Server], AlwaysOn Availability Groups"
-ms.assetid: 0995f269-0580-43ed-b8bf-02b9ad2d7ee6
-caps.latest.revision: 19
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+  - "replication [SQL Server], Always On Availability Groups"
 ---
 # Replication Subscribers and Always On Availability Groups (SQL Server)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  When an Always On availability group containing a database that is a replication subscriber fails over, the replication subscription might fail. For transactional subscribers, the distribution agent will continue to replicate automatically if the subscription is using the name of the availability group listener of the subscriber. For merge subscribers, a replication administrator must manually reconfigure the subscriber, by recreating the subscription.  
+  When an Always On availability group containing a database that is a replication subscriber fails over, the replication subscription might fail. For transactional replication push subscribers, the distribution agent will continue to replicate automatically after a failover if the subscription was created using the AG listener name. For transactional replication pull subscribers, the distribution agent will continue to replicate automatically after a failover, if the subscription was created using the AG listener name and the original subscriber server is up and running. This is because the distribution agent jobs only get created on the original subscriber (primary replica of the AG). For merge subscribers, a replication administrator must manually reconfigure the subscriber, by recreating the subscription.  
   
 ## What is Supported  
- [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] replication supports the automatic failover of the publisher, the automatic failover of transactional subscribers, and the manual failover of merge subscribers. The failover of a distributor on an availability database is not supported. Always On cannot be combined with Websync and ssNoVersion Compact scenarios.  
-  
- **Failover of a Merge Pull Subscription**  
-  
- A pull subscription fails upon availability group failover, because pull agent cannot find the jobs stored in the **msdb** database of the server instance that hosts the primary replica; which is not available because the server instance has failed.  
-  
- **Failover of a Merge Push Subscription**  
-  
- A push subscription fails upon availability group failover, because the push agent can no longer connect to original subscription database on original subscriber.  
+ [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] replication supports the automatic failover of the publisher and the automatic failover of transactional subscribers. Merge subscribers can be part of an availability group, however manual actions are required to configure the new subscriber after a failover. Availability Groups cannot be combined with WebSync and SQL Server Compact scenarios.  
   
 ## How to Create Transactional Subscription in an Always On Environment  
  For transactional replication, use the following steps to configure and failover a subscriber availability group:  
@@ -47,17 +35,13 @@ manager: "jhubbard"
     > [!NOTE]  
     >  The subscription must be created by using a [!INCLUDE[tsql](../../../includes/tsql-md.md)] script and cannot be created using [!INCLUDE[ssManStudio](../../../includes/ssmanstudio-md.md)].  
   
-4.  If creating a pull subscription:  
+4.  To create a pull subscription:  
   
-    1.  In [!INCLUDE[ssManStudio](../../../includes/ssmanstudio-md.md)], on the primary subscriber node, open the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Agent tree.  
+    1.  Using the sample script in the **Creating a Transactional Replication Pull Subscription** section below, create the subscription using the name of the availability group listener of the subscriber. 
+   
+    2.  After a failover, create the distribution agent job on the new Primary replica using the **sp_addpullsubscription_agent** stored procedure. 
   
-    2.  Identify the **Pull Distribution Agent** job and edit the job.  
-  
-    3.  On the **Run Agent** job step, check the `-Publisher` and `-Distributor` parameters. Make sure that these parameters contain the correct direct server and instance names of the publisher and distributor server.  
-  
-    4.  Change the `-Subscriber` parameter to the subscriber's availability group listener name.  
-  
- When you create your subscription following these steps, then you won’t have to do anything after a failover.  
+ When you create a pull subscription, with the subscription database in an Availability Group, after every failover, it is recommended to disable the distribution agent job on the old Primary replica and enable the job on the new primary replica.
   
 ## Creating a Transactional Replication Push Subscription  
   
@@ -77,6 +61,28 @@ EXEC sp_addpushsubscription_agent @publication = N'<publication name>',
        @job_login = null, @job_password = null, @subscriber_security_mode = 1;  
 GO  
 ```  
+
+## Creating a Transactional Replication Pull Subscription
+
+```  
+-- commands to execute at the subscriber, in the subscriber database:  
+use [<subscriber database name>]  
+EXEC sp_addpullsubscription @publisher= N'<publisher name>',
+        @publisher_db= N'<publisher database name>',
+        @publication= N'<publication name>',
+        @subscription_type = N'pull';
+Go
+
+EXEC sp_addpullsubscription_agent 
+        @publisher =  N'<publisher name>', 
+        @subscriber = N'<availability group listener name>',
+        @publisher_db= N'<publisher database name>',
+        @publication= N'<publication name>' ;
+        @job_login = null, @job_password = null, @subscriber_security_mode = 1;  
+GO
+```  
+> [!NOTE]
+> When running [sp_addpullsubscription_agent](../../../relational-databases/system-stored-procedures/sp-addpullsubscription-agent-transact-sql.md) for a subscriber that is part of an Always On Availability Group, it is necessary to pass the **@Subscriber** parameter value to the stored procedure as the AG Listener name. If you are running [!INCLUDE[sssql15-md](../../../includes/sssql16-md.md)] and earlier versions, or [!INCLUDE[sssql17-md](../../../includes/sssql17-md.md)] prior to CU16, the stored procedure will not reference the AG Listener name; it will be created with the subscriber server name on which the command is executed. To amend this issue, manually update the **Subscriber** parameter on the [Distribution Agent job](../../../relational-databases/replication/agents/replication-distribution-agent.md) with the AG Listener name value.
   
 ## To Resume the Merge Agents After the Availability Group of the Subscriber Fails Over  
  For merge replication, a replication administrator must manually reconfigure the subscriber with the following steps:  

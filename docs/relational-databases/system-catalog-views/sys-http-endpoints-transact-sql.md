@@ -1,31 +1,27 @@
 ---
-title: "sys.http_endpoints (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.http_endpoints (Transact-SQL)"
+description: sys.http_endpoints (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.http_endpoints"
   - "http_endpoints"
   - "sys.http_endpoints_TSQL"
   - "http_endpoints_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.http_endpoints catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 16f59695-ecd9-457e-8874-055af63f8ea7
-caps.latest.revision: 42
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.http_endpoints (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+ [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]  
 
   Contains a row for each endpoint created in the server that uses the HTTP protocol.  
   

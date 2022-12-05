@@ -1,24 +1,20 @@
 ---
-title: "sys.dm_db_column_store_row_group_operational_stats (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_db_column_store_row_group_operational_stats (Transact-SQL)"
+description: sys.dm_db_column_store_row_group_operational_stats (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+dev_langs:
   - "TSQL"
 ms.assetid: 31b71c68-50a0-4fd8-a7fe-2d2292be1163
-caps.latest.revision: 6
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.dm_db_column_store_row_group_operational_stats (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 
   Returns current row-level I/O, locking, and access method activity for compressed rowgroups in a columnstore index. Use **sys.dm_db_column_store_row_group_operational_stats** to track the length of time a user query must wait to read or write to a compressed rowgroup or partition of a columnstore index, and identify rowgroups that are encountering significant I/O activity or hot spots.  
   
@@ -32,12 +28,14 @@ manager: "jhubbard"
 |**partition_number**|**int**|1-based partition number within the index or heap.|  
 |**row_group_id**|**int**|ID of the rowgroup in the columnstore index. This is unique within a partition.|  
 |**scan_count**|**int**|Number of scans through the rowgroup since the last SQL restart.|  
-|**delete_buffer_scan_count**|**int**|Number of times the delete buffer was used to determine deleted rows in this rowgroup. This includes accessing the in-memory hashtable and the underlying btree.|  
+|**delete_buffer_scan_count**|**int**|Number of times the delete buffer was used to determine deleted rows in this rowgroup. This includes accessing the in-memory hashtable and the underlying B-tree.|  
 |**index_scan_count**|**int**|Number of times the columnstore index partition was scanned. This is the same for all rowgroups in the partition.|  
 |**rowgroup_lock_count**|**bigint**|Cumulative count of lock requests for this rowgroup since the last SQL restart.|  
 |**rowgroup_lock_wait_count**|**bigint**|Cumulative number of times the database engine waited on this rowgroup lock since the last SQL restart.|  
 |**rowgroup_lock_wait_in_ms**|**bigint**|Cumulative number of milliseconds the database engine waited on this rowgroup lock since the last SQL restart.|  
-  
+
+[!INCLUDE [sql-b-tree](../../includes/sql-b-tree.md)]
+
 ## Permissions  
  Requires the following permissions:  
   

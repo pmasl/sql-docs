@@ -1,32 +1,17 @@
 ---
-title: "Identifiers (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "Data Mining Extensions [Analysis Services], identifiers"
-  - "delimited identifiers [DMX]"
-  - "DMX [Analysis Services], identifiers"
-  - "identifiers [DMX]"
-  - "regular identifiers [DMX]"
-  - "names [DMX]"
-ms.assetid: fbb487a7-1b89-482a-977e-f079379d44fc
-caps.latest.revision: 35
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "Identifiers (DMX)"
+description: "Identifiers (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # Identifiers (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   All objects in [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] must have an identifier. An object's name is its identifier. Servers, databases, and database objects such as data sources, data source views, cubes, dimensions, mining models, and so on have identifiers.  
   
@@ -85,7 +70,7 @@ SELECT * FROM [Targeted Mailing].CONTENT;
   
 -   When you use reserved words for object names or parts of object names.  
   
-     We recommend that you do not use reserved keywords as object names. Databases that you upgrade from earlier versions of [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] may contain identifiers that include words that were not reserved in the earlier version of [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] but that are reserved words for[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]. You can use a delimited identifier to refer to such an object until you can change the object's name.  
+     We recommend that you do not use reserved keywords as object names. Databases that you upgrade from earlier versions of [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] may contain identifiers that include words that were not reserved in the earlier version of [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] but that are reserved words for[!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]. You can use a delimited identifier to refer to such an object until you can change the object's name.  
   
 -   When you use characters that are not listed as qualified identifiers.  
   

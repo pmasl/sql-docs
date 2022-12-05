@@ -1,24 +1,15 @@
 ---
-title: "getAsciiStream Method (java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "getAsciiStream Method (java.lang.String)"
+description: "getAsciiStream Method (java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getAsciiStream (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getAsciiStream (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: b2d24a6b-f029-4691-981b-125c690b8ba5
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getAsciiStream Method (java.lang.String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

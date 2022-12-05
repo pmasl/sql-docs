@@ -1,22 +1,19 @@
 ---
-title: "sys.pdw_health_component_properties (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/04/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "sys.pdw_health_component_properties (Transact-SQL)"
+description: sys.pdw_health_component_properties (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: "05/12/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: reference
+dev_langs:
+  - "TSQL"
 ms.assetid: 66999c0c-dc43-4327-99fb-8366f465e69d
-caps.latest.revision: 7
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016"
 ---
 # sys.pdw_health_component_properties (Transact-SQL)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]
 
   Stores properties that describe a device. Some properties show device status and some properties describe the device itself.  
   
@@ -29,6 +26,6 @@ manager: "jhubbard"
 |is_key|**bit**|Determines whether the device instance is unique or not unique.|NOT NULL<br /><br /> 0 - Device instance is unique.<br /><br /> 1 - Device instance is not unique.|  
   
 ## See Also  
- [SQL Data Warehouse and Parallel Data Warehouse Catalog Views](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
+ [Azure Synapse Analytics and Parallel Data Warehouse Catalog Views](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
   
   

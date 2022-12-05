@@ -1,13 +1,11 @@
 ---
-title: "View the Size of the Sparse File of a Database Snapshot (Transact-SQL) | Microsoft Docs"
+title: "View size of sparse file of a Database Snapshot (T-SQL)"
+description: Use Transact-SQL to verify that a SQL Server database file is a sparse file and find its actual and maximum sizes. Database snapshots use sparse files.
 ms.date: "07/28/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: conceptual
 helpviewer_keywords: 
   - "snapshots [SQL Server database snapshots], sparse files"
   - "space [SQL Server], sparse files"
@@ -17,12 +15,12 @@ helpviewer_keywords:
   - "database snapshots [SQL Server], sparse files"
   - "space [SQL Server], database snapshots"
 ms.assetid: 1867c5f8-d57c-46d3-933d-3642ab0a8e24
-caps.latest.revision: 41
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.custom: "seo-lt-2019"
 ---
 # View the Size of the Sparse File of a Database Snapshot (Transact-SQL)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This topic describes how to use [!INCLUDE[tsql](../../includes/tsql-md.md)] to verify that a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database file is a sparse file and to find out its actual and maximum sizes. Sparse files, which are a feature of the NTFS file system, are used by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database snapshots.  
   
 > [!NOTE]  
@@ -31,7 +29,7 @@ manager: "jhubbard"
 ## Verify that a Database File is a Sparse File  
   
 1.  On the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]:  
-  
+
      Select the **is_sparse** column from either **sys.database_files** in the database snapshot or from **sys.master_files**. The value indicates whether the file is a sparse file, as follows:  
   
      1 = File is a sparse file.  
@@ -43,7 +41,7 @@ manager: "jhubbard"
 > [!NOTE]  
 >  Sparse files grow in 64-kilobyte (KB) increments; thus, the size of a sparse file on disk is always a multiple of 64 KB.  
   
- To view the number of bytes that each sparse file of a snapshot is currently using on disk, query the **size_on_disk_bytes** column of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)][sys.dm_io_virtual_file_stats](../../relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql.md) dynamic management view.  
+ To view the number of bytes that each sparse file of a snapshot is currently using on disk, query the **size_on_disk_bytes** column of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [sys.dm_io_virtual_file_stats](../../relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql.md) dynamic management view.  
   
  To view the disk space used by a sparse file, right-click the file in Microsoft Windows, click **Properties**, and look at the **Size on disk** value.  
   
@@ -65,7 +63,7 @@ manager: "jhubbard"
 ## Example
 The following script will show the size on disk in kilobytes for each sparse file.  The script will also show the maximum size in megabytes to which a sparse file can grow.  Execute the Transact-SQL script in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)].
 
-```tsql
+```sql
 SELECT  DB_NAME(sd.source_database_id) AS [SourceDatabase], 
 		sd.name AS [Snapshot],
 		mf.name AS [Filename], 

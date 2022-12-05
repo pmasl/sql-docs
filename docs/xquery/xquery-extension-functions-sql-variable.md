@@ -1,29 +1,23 @@
 ---
 title: "sql:variable() Function (XQuery) | Microsoft Docs"
+description: Learn how to use the XQuery Extension function sql:variable() to expose a variable that contains a SQL relational value inside an XQuery expression.
 ms.custom: ""
 ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: xml
 ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
 dev_langs: 
   - "XML"
 helpviewer_keywords: 
   - "sql:variable() function"
   - "sql:variable function"
 ms.assetid: 6e2e5063-c1cf-4b5a-b642-234921e3f4f7
-caps.latest.revision: 36
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "rothja"
+ms.author: "jroth"
 ---
 # XQuery Extension Functions - sql:variable()
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
 
   Exposes a variable that contains a SQL relational value inside an XQuery expression.  
   
@@ -58,12 +52,12 @@ sql:variable("variableName") as xdt:anyAtomicType?
   
  This is the query:  
   
-```  
+```sql
 DECLARE @price money  
   
 SET @price=2500.00  
 SELECT ProductID, Production.ProductModel.ProductModelID,CatalogDescription.query('  
-declare namespace pd="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelDescription";  
+declare namespace pd="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelDescription";  
   
        <Product   
            ProductID="{ sql:column("Production.Product.ProductID") }"  
@@ -86,18 +80,17 @@ WHERE ProductID=771
   
  This is the result:  
   
-```  
+```xml
 <Product ProductID="771" ProductModelID="19"   
          ProductModelName="Mountain 100"   
          ListPrice="3399.99" DiscountPrice="2500" />  
 ```  
   
 ## See Also  
- [SQL Server XQuery Extension Functions](http://msdn.microsoft.com/library/4bc5d499-5fec-4c3f-b11e-5ab5ef9d8f97)   
+ [SQL Server XQuery Extension Functions](./xquery-extension-functions-sql-column.md)   
  [Compare Typed XML to Untyped XML](../relational-databases/xml/compare-typed-xml-to-untyped-xml.md)   
  [XML Data &#40;SQL Server&#41;](../relational-databases/xml/xml-data-sql-server.md)   
  [Create Instances of XML Data](../relational-databases/xml/create-instances-of-xml-data.md)   
  [xml Data Type Methods](../t-sql/xml/xml-data-type-methods.md)   
  [XML Data Modification Language &#40;XML DML&#41;](../t-sql/xml/xml-data-modification-language-xml-dml.md)  
-  
   

@@ -1,37 +1,25 @@
 ---
-title: "Updating Data Using XML Updategrams (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Updating Data Using XML Updategrams (SQLXML)"
+description: Learn how to update existing data using an XML updategram in SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "IDREF type attribute [SQLXML]"
   - "before attribute"
   - "<sync> block"
   - "<after> block"
   - "id attribute"
   - "<before> block"
-  - "updg:after attribute"
-  - "mapping-schema attribute"
-  - "IDREFS type attribute [SQLXML]"
-  - "updg:id attribute"
-  - "multiple record updates"
-  - "after attribute"
-  - "updategrams [SQLXML], updating data"
-  - "updg:before attribute"
-  - "record updates [SQLXML]"
 ms.assetid: 90ef8a33-5ae3-4984-8259-608d2f1d727f
-caps.latest.revision: 28
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Updating Data Using XML Updategrams (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   When you update existing data, you must specify both the **\<before>** and **\<after>** blocks. The elements specified in the **\<before>** and **\<after>** blocks describe the desired change. The updategram uses the element(s) that are specified in the **\<before>** block to identify the existing record(s) in the database. The corresponding element(s) in the **\<after>** block indicate how the records should look after executing the update operation. From this information, the updategram creates an SQL statement that matches the **\<after>** block. The updategram then uses this statement to update the database.  
   
  This is the updategram format for an update operation:  
@@ -114,7 +102,7 @@ manager: "jhubbard"
 1.  Copy the updategram template above and paste it into a text file. Save the file as UpdateLastName.xml.  
   
 2.  Create and use the SQLXML 4.0 Test Script (Sqlxml4test.vbs) to execute the updategram.  
-  
+
      For more information, see [Using ADO to Execute SQLXML 4.0 Queries](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md).  
   
 ### B. Updating multiple records by using the updg:id attribute  

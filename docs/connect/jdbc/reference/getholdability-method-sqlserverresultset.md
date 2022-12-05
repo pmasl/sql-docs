@@ -1,19 +1,12 @@
 ---
-title: "getHoldability Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getHoldability Method (SQLServerResultSet)"
+description: "getHoldability Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 4508d90f-c3c4-4eac-8001-fb0b93b66734
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getHoldability Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

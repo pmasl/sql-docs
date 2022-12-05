@@ -1,31 +1,23 @@
 ---
-title: "MSmerge_agents (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSmerge_agents (Transact-SQL)"
+description: MSmerge_agents (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSmerge_agents"
   - "MSmerge_agents_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSmerge_agents system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 639d2ebb-2c37-4fe0-b14b-1637bc5fc221
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSmerge_agents (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSmerge_agents** table contains one row for each Merge Agent running at the Subscriber. This table is stored in the distribution database.  
   

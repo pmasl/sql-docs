@@ -1,24 +1,15 @@
 ---
-title: "getReference Method (SQLServerConnectionPoolDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "getReference Method (SQLServerConnectionPoolDataSource)"
+description: "getReference Method (SQLServerConnectionPoolDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnectionPoolDataSource.getReference"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnectionPoolDataSource.getReference"
 apitype: "Assembly"
-ms.assetid: 8c48de91-de55-4f25-a5f1-36a8e8c4629e
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getReference Method (SQLServerConnectionPoolDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

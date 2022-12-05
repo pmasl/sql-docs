@@ -1,26 +1,24 @@
 ---
 title: "View the Dependencies of a Stored Procedure | Microsoft Docs"
+description: Learn  how to view stored procedure dependencies in SQL Server 2019 (15.x) by using SQL Server Management Studio or Transact-SQL.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
+ms.subservice: stored-procedures
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-stored-Procs"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.topic: conceptual
 helpviewer_keywords: 
   - "stored procedures [SQL Server], dependencies"
   - "displaying stored procedure dependencies"
   - "viewing stored procedure dependencies"
 ms.assetid: 6ae0a369-1bc7-4ae4-be89-2b483697cd1f
-caps.latest.revision: 26
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # View the Dependencies of a Stored Procedure
-  This topic describes how to view stored procedure dependencies in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
+[!INCLUDE[appliesto-ss-asdb-xxxx-pdw-md](../../includes/appliesto-ss-asdb-xxxx-pdw-md.md)]
+  This topic describes how to view stored procedure dependencies in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
   
 ##  <a name="Top"></a>   
 -   **Before you begin:**  [Limitations and Restrictions](#Restrictions), [Security](#Security)  
@@ -66,6 +64,9 @@ manager: "jhubbard"
 6.  Click **OK**.  
   
 ###  <a name="TsqlProcedure"></a> Using Transact-SQL  
+
+These examples use the `AdventureWorks2019` database, available for download at [AdventureWorks sample databases](../../samples/adventureworks-install-configure.md).
+
  **To view the dependencies of a procedure in Query Editor**  
   
  System Function: **sys.dm_sql_referencing_entities**  
@@ -80,7 +81,7 @@ manager: "jhubbard"
 4.  Copy and paste the following examples into the query editor. The first example creates the `uspVendorAllInfo` procedure, which returns the names of all the vendors in the [!INCLUDE[ssSampleDBCoFull](../../includes/sssampledbcofull-md.md)] database, the products they supply, their credit ratings, and their availability.  
   
     ```  
-    USE AdventureWorks2008R2;  
+    USE AdventureWorks2019;  
     GO  
     IF OBJECT_ID ( 'Purchasing.uspVendorAllInfo', 'P' ) IS NOT NULL   
         DROP PROCEDURE Purchasing.uspVendorAllInfo;  
@@ -104,7 +105,7 @@ manager: "jhubbard"
 5.  After the procedure is created, the second example uses the sys.dm_sql_referencing_entities function to display the objects that depend on the procedure.  
   
     ```  
-    USE AdventureWorks2012;  
+    USE AdventureWorks2019;  
     GO  
     SELECT referencing_schema_name, referencing_entity_name, referencing_id, referencing_class_desc, is_caller_dependent  
     FROM sys.dm_sql_referencing_entities ('Purchasing.uspVendorAllInfo', 'OBJECT');   
@@ -124,7 +125,7 @@ manager: "jhubbard"
 4.  Copy and paste the following examples into the query editor. The first example creates the `uspVendorAllInfo` procedure, which returns the names of all the vendors in the [!INCLUDE[ssSampleDBCoFull](../../includes/sssampledbcofull-md.md)] database, the products they supply, their credit ratings, and their availability.  
   
     ```  
-    USE AdventureWorks2008R2;  
+    USE AdventureWorks2019;  
     GO  
     IF OBJECT_ID ( 'Purchasing.uspVendorAllInfo', 'P' ) IS NOT NULL   
         DROP PROCEDURE Purchasing.uspVendorAllInfo;  
@@ -148,12 +149,12 @@ manager: "jhubbard"
 5.  After the procedure is created, the second example uses the sys.dm_sql_referenced_entities function to display the objects that the procedure depends on.  
   
     ```  
-    USE AdventureWorks2012;  
+    USE AdventureWorks2019;  
     GO  
     SELECT referenced_schema_name, referenced_entity_name,  
     referenced_minor_name,referenced_minor_id, referenced_class_desc,  
     is_caller_dependent, is_ambiguous  
-    FROM sys.dm_sql_referencing_entities ('Purchasing.uspVendorAllInfo', 'OBJECT');  
+    FROM sys.dm_sql_referenced_entities ('Purchasing.uspVendorAllInfo', 'OBJECT');  
     GO  
     ```  
   
@@ -170,7 +171,7 @@ manager: "jhubbard"
 4.  Copy and paste the following examples into the query editor. The first example creates the `uspVendorAllInfo` procedure, which returns the names of all the vendors in the [!INCLUDE[ssSampleDBCoFull](../../includes/sssampledbcofull-md.md)] database, the products they supply, their credit ratings, and their availability.  
   
     ```  
-    USE AdventureWorks2008R2;  
+    USE AdventureWorks2019;  
     GO  
     IF OBJECT_ID ( 'Purchasing.uspVendorAllInfo', 'P' ) IS NOT NULL   
         DROP PROCEDURE Purchasing.uspVendorAllInfo;  
@@ -194,7 +195,7 @@ manager: "jhubbard"
 5.  After the procedure is created, the second example uses the sys.sql_expression_dependencies view to display the objects that depend on the procedure.  
   
     ```  
-    USE AdventureWorks2012;  
+    USE AdventureWorks2019;  
     GO  
     SELECT OBJECT_SCHEMA_NAME ( referencing_id ) AS referencing_schema_name,  
         OBJECT_NAME(referencing_id) AS referencing_entity_name,   
@@ -221,7 +222,7 @@ manager: "jhubbard"
 4.  Copy and paste the following examples into the query editor. The first example creates the `uspVendorAllInfo` procedure, which returns the names of all the vendors in the [!INCLUDE[ssSampleDBCoFull](../../includes/sssampledbcofull-md.md)] database, the products they supply, their credit ratings, and their availability.  
   
     ```  
-    USE AdventureWorks2008R2;  
+    USE AdventureWorks2019;  
     GO  
     IF OBJECT_ID ( 'Purchasing.uspVendorAllInfo', 'P' ) IS NOT NULL   
         DROP PROCEDURE Purchasing.uspVendorAllInfo;  
@@ -245,7 +246,7 @@ manager: "jhubbard"
 5.  After the procedure is created, the second example uses the sys.sql_expression_dependencies view to display the objects the procedure depends on.  
   
     ```  
-    USE AdventureWorks2012;  
+    USE AdventureWorks2019;  
     GO  
     SELECT OBJECT_NAME(referencing_id) AS referencing_entity_name,   
         o.type_desc AS referencing_desciption,   

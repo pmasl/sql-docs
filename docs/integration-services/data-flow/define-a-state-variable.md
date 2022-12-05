@@ -1,21 +1,21 @@
 ---
+description: "Define a State Variable"
 title: "Define a State Variable | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: 45d66152-883a-49a7-a877-2e8ab45f8f79
-caps.latest.revision: 12
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Define a State Variable
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   This procedure describes how to define a package variable where the CDC state is stored.  
   
  The CDC state variable is loaded, initialized, and updated by the CDC Control task and is used by the CDC Source data flow component to determine the current processing range for change records. The CDC state variable can be defined on any container common to the CDC Control task and the CDC source. This may be at the package level but may also be on other containers such as a loop container.  
@@ -30,7 +30,7 @@ manager: "jhubbard"
 |**CS**|This marks the current processing range start point (Current Start).|  
 |**\<cs-lsn>**|This is the last (Log Sequence Number) LSN processed in the previous CDC run.|  
 |**CE**|This marks the current processing range end point (Current End). The presence of the CE component in the CDC state is an indication that either a CDC package is currently processing or that a CDC package failed before fully processing its CDC processing range.|  
-|**\<ce-lsn>**|This is the last LSN to be processed in the current CDC Run. It is always assumed that the last sequence number to be processed is the maximum (0xFFF…).|  
+|**\<ce-lsn>**|This is the last LSN to be processed in the current CDC Run. It is always assumed that the last sequence number to be processed is the maximum (0xFFF...).|  
 |**IR**|This marks the initial processing range.|  
 |**\<ir-start>**|This is an LSN of a change just before the initial load began.|  
 |**\<ir-end>**|This is an LSN of a change just after the initial load ended.|  
@@ -78,12 +78,11 @@ manager: "jhubbard"
   
  Do not give the variable a value as part of its definition. The value must be set by the CDC Control task.  
   
- If you plan to use the CDC Control task with **Automatic State Persistence**, the CDC State variable will be read from the database state table you specify and will be updated back to that same table when its value changes. For more information about the State table, see [CDC Control Task](../../integration-services/control-flow/cdc-control-task.md)and [CDC Control Task Editor](../../integration-services/control-flow/cdc-control-task-editor.md).  
+ If you plan to use the CDC Control task with **Automatic State Persistence**, the CDC State variable will be read from the database state table you specify and will be updated back to that same table when its value changes. For more information about the State table, see [CDC Control Task](../../integration-services/control-flow/cdc-control-task.md)and [CDC Control Task Editor](../control-flow/cdc-control-task.md).  
   
  If you are not using the CDC Control task with Automatic State Persistence then you must load the variable value from persistent storage where its value was saved the last time the package ran and to write it back to the persistent storage when the processing of the current processing range was completed.  
   
 ## See Also  
  [CDC Control Task](../../integration-services/control-flow/cdc-control-task.md)   
- [CDC Control Task Editor](../../integration-services/control-flow/cdc-control-task-editor.md)  
-  
+ [CDC Control Task Editor](../control-flow/cdc-control-task.md)  
   

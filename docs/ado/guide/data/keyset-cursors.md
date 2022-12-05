@@ -1,22 +1,15 @@
 ---
-title: "Keyset Cursors | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Keyset Cursors"
+description: "Keyset Cursors"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "Keyset cursors [ADO]"
   - "cursors [ADO], Keyset"
-ms.assetid: 14b51b17-6fd9-4146-af45-ca4b0fe6d48a
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Keyset Cursors
 The keyset cursor provides functionality between a static and a dynamic cursor in its ability to detect changes. Like a static cursor, it does not always detect changes to the membership and order of the result set. Like a dynamic cursor, it does detect changes to the values of rows in the result set.  
@@ -36,6 +29,6 @@ The keyset cursor provides functionality between a static and a dynamic cursor i
  The keyset-driven cursor is difficult to use correctly because the sensitivity to data changes depends on many differing circumstances, as described above. However, if your application is not concerned with concurrent updates, can programmatically handle bad keys, and must directly access certain keyed rows, the keyset-driven cursor might work for you. Use the **adOpenKeyset CursorTypeEnum** to indicate that you want to use a keyset cursor in ADO.  
   
 ## See Also  
- [Forward-Only Cursors](../../../ado/guide/data/forward-only-cursors.md)   
- [Static Cursors](../../../ado/guide/data/static-cursors.md)   
- [Dynamic Cursors](../../../ado/guide/data/dynamic-cursors.md)
+ [Forward-Only Cursors](./forward-only-cursors.md)   
+ [Static Cursors](./static-cursors.md)   
+ [Dynamic Cursors](./dynamic-cursors.md)

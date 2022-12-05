@@ -1,24 +1,15 @@
 ---
-title: "setBoolean Method (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setBoolean Method (SQLServerCallableStatement)"
+description: "setBoolean Method (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.setBoolean"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.setBoolean"
 apitype: "Assembly"
-ms.assetid: 8cd810b1-9858-4e51-9535-239d864cd288
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setBoolean Method (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

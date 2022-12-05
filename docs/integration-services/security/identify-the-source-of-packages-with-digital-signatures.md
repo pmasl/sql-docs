@@ -1,14 +1,12 @@
 ---
+description: "Identify the Source of Packages with Digital Signatures"
 title: "Identify the Source of Packages with Digital Signatures | Microsoft Docs"
-ms.custom: ""
+ms.custom: security
 ms.date: "08/24/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.digitalsigning.f1"
 helpviewer_keywords: 
@@ -18,12 +16,14 @@ helpviewer_keywords:
   - "security [Integration Services], certificates"
   - "signing policies [Integration Services]"
 ms.assetid: a433fbef-1853-4740-9d5e-8a32bc4ffbb2
-caps.latest.revision: 46
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Identify the Source of Packages with Digital Signatures
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   An [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] package can be signed with a digital certificate to identify its source. After a package has been signed with a digital certificate, you can have [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] check the digital signature before loading the package. To have [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] check the signature, you set an option in either [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] or in the **dtexec** utility (dtexec.exe), or set an optional registry value.  
   
 ## Sign a package with a digital certificate  
@@ -37,14 +37,22 @@ manager: "jhubbard"
 -   To check the digital signature of an individual package, specify the **/VerifyS[igned]** option when you use the **dtexec** utility to run the package. For more information, see [dtexec Utility](../../integration-services/packages/dtexec-utility.md).  
   
 ## Set a Registry value to check package signature  
- [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] also supports an optional registry value, **BlockedSignatureStates**, that you can use to manage an organization's policy for loading signed and unsigned packages. The registry value can prevent packages from loading if the packages are unsigned, or have invalid or untrusted signatures. For more information about how to set this registry value, see [Implement a Signing Policy by Setting a Registry Value](#registry).  
+[!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] also supports an optional registry value, **BlockedSignatureStates**, that you can use to manage an organization's policy for loading signed and unsigned packages. The registry value can prevent packages from loading if the packages are unsigned, or have invalid or untrusted signatures. For more information about how to set this registry value, see [Implement a Signing Policy by Setting a Registry Value](#registry).  
   
-> **NOTE:** The optional **BlockedSignatureStates** registry value can specify a setting that is more restrictive than the digital signature option set in [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] or at the **dtexec** command line. In this situation, the more restrictive registry setting overrides the other settings.  
+> [!NOTE]
+> The optional **BlockedSignatureStates** registry value can specify a setting that is more restrictive than the digital signature option set in [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] or at the **dtexec** command line. In this situation, the more restrictive registry setting overrides the other settings.  
 
 ## <a name="registry"></a> Implement a Signing Policy by Setting a Registry Value
-  You can use an optional registry value to manage an organization's policy for loading signed or unsigned packages. If you use this registry value, you must create this registry value on each computer on which [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] packages will run and on which you want to enforce the policy. After the registry value has been set, [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] will check or verify the signatures before loading packages.  
+You can use an optional registry value to manage an organization's policy for loading signed or unsigned packages. If you use this registry value, you must create this registry value on each computer on which [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] packages will run and on which you want to enforce the policy. After the registry value has been set, [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] will check or verify the signatures before loading packages.  
   
- This procedure in this topic describes how to add the optional **BlockedSignatureStates** DWORD value to the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\100\SSIS registry key. The data value in **BlockedSignatureStates** determines whether a package should be blocked if it has an untrusted signature, has an invalid signature, or is unsigned. With regard to the status of signatures used to sign packages, the **BlockedSignatureStates** registry value uses the following definitions:  
+The procedure in this article describes how to add the optional **BlockedSignatureStates** DWORD value to the HKLM\SOFTWARE\Microsoft\Microsoft SQL Server\150\SSIS\Setup\DTSPath registry key. 
+ 
+ > [!NOTE]
+ > A registry location under 150 represents SQL Server 2019, under 140 represents SQL Server 2017, under 130 represents SQL Server 2016, under 120 represents SQL Server 2014, and under 110 represents SQL Server 2012.
+ 
+The data value in **BlockedSignatureStates** determines whether a package should be blocked if it has an untrusted signature, has an invalid signature, or is unsigned.
+
+For the status of signatures used to sign packages, the **BlockedSignatureStates** registry value uses the following definitions:  
   
 -   A *valid signature* is one that can be read successfully.  
   
@@ -64,7 +72,7 @@ manager: "jhubbard"
 |3|Block invalid and untrusted signatures and unsigned packages<br /><br /> This setting also blocks self-generated signatures.|  
   
 > [!NOTE]  
->  The recommended setting for **BlockedSignatureStates** is 3. This setting provides the greatest protection against unsigned packages or signatures that are either not valid or untrusted. However, the recommended setting may not be appropriate in all circumstances. For more information about signing digital assets, see the topic, "[Introduction to Code Signing](http://go.microsoft.com/fwlink/?LinkId=51414)," in the MSDN Library.  
+>  The recommended setting for **BlockedSignatureStates** is 3. This setting provides the greatest protection against unsigned packages or signatures that are either not valid or untrusted. However, the recommended setting may not be appropriate in all circumstances. For more information about signing digital assets, see the topic, "[Introduction to Code Signing](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85))," in the MSDN Library.  
   
 ### To implement a signing policy for packages  
   
@@ -97,11 +105,11 @@ manager: "jhubbard"
   
     -   Obtain a certificate from a public, commercial certification authority that issues certificates.  
   
-    -   Obtain a certificate from a certificate server, that enables an organization to internally issue certificates. You have to add the root certificate that is used to sign the certificate to the **Trusted Root Certification Authorities** store. To add the root certificate, you can use the Certificates snap-in for the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Management Console (MMC). For more information, see the topic, "[Certificate Services](http://go.microsoft.com/fwlink/?LinkId=100755)," in the MSDN library.  
+    -   Obtain a certificate from a certificate server, that enables an organization to internally issue certificates. You have to add the root certificate that is used to sign the certificate to the **Trusted Root Certification Authorities** store. To add the root certificate, you can use the Certificates snap-in for the [!INCLUDE[msCoName](../../includes/msconame-md.md)] Management Console (MMC). For more information, see the topic, "[Certificate Services](/windows/win32/seccrypto/certificate-services)," in the MSDN library.  
   
-    -   Create your own certificate for testing purposes only. The Certificate Creation Tool (Makecert.exe) generates X.509 certificates for testing purposes. For more information, see the topic, "[Certificate Creation Tool (Makecert.exe)](http://go.microsoft.com/fwlink/?LinkId=100756)," in the MSDN Library.  
+    -   Create your own certificate for testing purposes only. The Certificate Creation Tool (Makecert.exe) generates X.509 certificates for testing purposes. For more information, see the topic, "[Certificate Creation Tool (Makecert.exe)](/previous-versions/dotnet/netframework-2.0/bfsktky3(v=vs.80))," in the MSDN Library.  
   
-     For more information about certificates, see the online Help for the Certificates snap-in. For more information about how to sign digital assets, see the topic, "[Signing and Checking Code with Authenticode](http://go.microsoft.com/fwlink/?LinkId=78100)," in the MSDN Library.  
+     For more information about certificates, see the online Help for the Certificates snap-in. For more information about how to sign digital assets, see the topic, "[Signing and Checking Code with Authenticode](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537364(v=vs.85))," in the MSDN Library.  
   
 -   Make sure that the certificate has been enabled for code signing. To determine whether a certificate is enabled for code signing, review the properties of the certificate in the Certificates snap-in.  
   
@@ -144,7 +152,6 @@ manager: "jhubbard"
  Click to remove the digital signature.  
 
 ## See also  
- [Integration Services &#40;SSIS&#41; Packages](../../integration-services/integration-services-ssis-packages.md)   
- [Security Overview &#40;Integration Services&#41;](../../integration-services/security/security-overview-integration-services.md)  
-  
+ [Integration Services \(SSIS\) Packages](../../integration-services/integration-services-ssis-packages.md)   
+ [Security Overview \(Integration Services\)](../../integration-services/security/security-overview-integration-services.md)  
   

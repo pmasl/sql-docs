@@ -1,37 +1,34 @@
 ---
+description: "MSSQLSERVER_10536"
 title: "MSSQLSERVER_10536 | Microsoft Docs"
 ms.custom: ""
 ms.date: "04/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 helpviewer_keywords: 
   - "10536 (Database Engine error)"
 ms.assetid: 9f97b41f-0ef8-4ad2-aec0-906a5d7522ba
-caps.latest.revision: 9
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_10536
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|SQL Server|  
 |Event ID|10536|  
 |Event Source|MSSQLSERVER|  
 |Component|SQLEngine|  
 |Symbolic Name|PG_TOO_MANY_STMTS|  
-|Message Text|Cannot create plan guide '%.\*ls' because the batch or module corresponding to the specified **@plan_handle** contains more than 1000 eligible statements. Create a plan guide for each statement in the batch or module by specifying a **statement_start_offset** value for each statement.|  
+|Message Text|Cannot create plan guide '%.\*ls' because the batch or module corresponding to the specified **\@plan_handle** contains more than 1000 eligible statements. Create a plan guide for each statement in the batch or module by specifying a **statement_start_offset** value for each statement.|  
   
 ## Explanation  
-The batch or module corresponding to the specified **@plan_handle** contains more than 1000 eligible statements.  
+The batch or module corresponding to the specified **\@plan_handle** contains more than 1000 eligible statements.  
   
 ## User Action  
 Create a plan guide for each statement in the batch or module by specifying a **statement_start_offset** value for each statement.  

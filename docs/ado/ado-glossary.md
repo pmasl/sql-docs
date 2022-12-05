@@ -1,21 +1,14 @@
 ---
-title: "ADO Glossary | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: "H1Hack27Feb2017"
-ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "ADO Glossary Terms"
+description: "ADO Glossary Terms"
+author: rothja
+ms.author: jroth
+ms.date: 11/08/2018
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
 helpviewer_keywords:
   - "ADO, glossary"
-ms.assetid: b0478836-4123-4357-969a-c5784fc28be5
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # ADO Glossary Terms
 This topic defines terms relevant to ADO.
@@ -78,7 +71,7 @@ This topic defines terms relevant to ADO.
  A mapping of a set of characters to their numeric values. For example, Unicode is a 16-bit character set capable of encoding all known characters and used as a worldwide character-encoding standard.
 
  child
- The dependant side of a hierarchical relationship. A child is a node in a hierarchical structure that has another node above it (closer to the root). See also *child-alias*, *parent-child relationship*, *parent*.
+ The dependent side of a hierarchical relationship. A child is a node in a hierarchical structure that has another node above it (closer to the root). See also *child-alias*, *parent-child relationship*, *parent*.
 
  child-alias
  An alias that refers to the child. See also *alias*, *child*.
@@ -93,7 +86,7 @@ This topic defines terms relevant to ADO.
  A binary standard that enables objects to interoperate in a networked environment regardless of the language in which they were developed or on which computers they reside. COM-based technologies include ActiveX Controls, Automation, and object linking and embedding (OLE). COM allows an object to expose its functionality to other components and to host applications. It defines both how the object exposes itself and how this exposure works across processes and across networks. COM also defines the object's life cycle.
 
  COM component
- Binary file — such as .dll, .ocx, and some .exe files — that supports the COM standard for providing objects. Such a file contains code for one or more class factories, COM classes, registry-entry mechanisms, loading code, and so on.
+ Binary file - such as .dll, .ocx, and some .exe files - that supports the COM standard for providing objects. Such a file contains code for one or more class factories, COM classes, registry-entry mechanisms, loading code, and so on.
 
  comparison operator
  An operator that compares two expressions and returns a Boolean value.
@@ -175,14 +168,14 @@ This topic defines terms relevant to ADO.
  hierarchical Recordset
  A **Recordset** that contains another **Recordset**. See also data shaping, chapter.
 
- For more information, see [Accessing Rows in a Hierarchical Recordset](../ado/guide/data/accessing-rows-in-a-hierarchical-recordset.md).
+ For more information, see [Accessing Rows in a Hierarchical Recordset](./guide/data/accessing-rows-in-a-hierarchical-recordset.md).
 
  hierarchy
  In general, a hierarchy is a ranked structure with a top level and subordinate levels. In ADO, hierarchical **Recordsets** are used to represent the parent-child relationship between a record and a chapter. Also in ADO, **Record** and **Stream** objects can be used to access hierarchical tree structures such as a folder and documents. ADO MD also includes **Hierarchy** objects to represent a relationship between the levels of a dimension in an OLAP cube. See also hierarchical Recordsets, parent-child relationship, chapter, tree.
 
 ## I-L
  ISAPI (Internet Server Application Programming Interface)
- A set of functions for Internet servers, such as a Windows NT® Server/Windows 2000 Server running Microsoft® Internet Information Services (IIS).
+ A set of functions for Internet servers, such as a Windows NT&reg; Server/Windows 2000 Server running Microsoft&reg; Internet Information Services (IIS).
 
  Key
  A column or columns in a table that uniquely identify a row; often used to index a table.

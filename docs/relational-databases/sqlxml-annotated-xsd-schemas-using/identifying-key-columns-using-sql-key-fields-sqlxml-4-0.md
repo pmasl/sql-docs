@@ -1,32 +1,21 @@
 ---
-title: "Identifying Key Columns Using sql:key-fields (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Identify key columns using sql:key-fields (SQLXML)"
+description: "Learn how to ensure proper nesting in an SQLXML 4.0 query result by specifying the sql:key-fields annotation in an XPath query to identify key columns."
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "nesting XML results"
   - "proper nesting in results [SQLXML]"
-  - "sql:key-fields"
-  - "XSD schemas [SQLXML], key columns"
-  - "identifying key columns [SQLXML]"
-  - "annotated XSD schemas, key columns"
-  - "key columns [SQLXML]"
-  - "relationships [SQLXML], key columns"
-  - "hierarchical relationships [SQLXML]"
-  - "key-fields annotation"
 ms.assetid: 1a5ad868-8602-45c4-913d-6fbb837eebb0
-caps.latest.revision: 27
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Identifying Key Columns Using sql:key-fields (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   When an XPath query is specified against an XSD schema, key information is required in most cases to obtain proper nesting in the result. Specifying the **sql:key-fields** annotation is a way of ensuring that the appropriate hierarchy is generated.  
   
 > [!NOTE]  
@@ -102,7 +91,7 @@ manager: "jhubbard"
     ```  
   
 3.  Create and use the SQLXML 4.0 Test Script (Sqlxml4test.vbs) to execute the template.  
-  
+
      For more information, see [Using ADO to Execute SQLXML Queries](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md).  
   
  This is the partial result set:  

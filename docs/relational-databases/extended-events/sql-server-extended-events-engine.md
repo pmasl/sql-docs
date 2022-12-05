@@ -1,25 +1,20 @@
 ---
-title: "SQL Server Extended Events Engine | Microsoft Docs"
-ms.custom: ""
+title: "SQL Server Extended Events Engine"
+description: The SQL Server Extended Events engine enables the definition of events and processing of event data, manages Extended Events, and maintains a list of sessions.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-  - "xevents"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: xevents
+ms.topic: conceptual
+helpviewer_keywords:
   - "extended events [SQL Server], engine"
 ms.assetid: d74642a5-42b9-4a15-aa3d-f98bfe695050
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # SQL Server Extended Events Engine
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Extended Events engine is a collection of services and objects that:  
   
@@ -35,7 +30,7 @@ manager: "jhubbard"
   
  The following illustration shows a simplified view of an Extended Events session. For more information, see [SQL Server Extended Events Sessions](../../relational-databases/extended-events/sql-server-extended-events-sessions.md).  
   
- ![Detailed extended events architecture](../../relational-databases/extended-events/media/xearchitecturedetailed.gif "Detailed extended events architecture")  
+ ![Detailed Extended Events architecture](../../relational-databases/extended-events/media/xearchitecturedetailed.gif "Detailed Extended Events architecture")  
   
  Note the following:  
   

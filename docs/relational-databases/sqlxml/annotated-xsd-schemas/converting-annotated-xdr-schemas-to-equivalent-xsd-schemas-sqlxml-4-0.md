@@ -1,15 +1,14 @@
 ---
-title: "Converting Annotated XDR Schemas to Equivalent XSD Schemas (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Convert annotated XDR schemas to XSD (SQLXML)"
+description: Learn how to convert an annotated XDR schema to an equivalent XSD schema by using the XDR to XSD Converter tool in SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "annotated XDR schemas, converting schemas"
   - "annotated XSD schemas, converting schemas"
   - "XDR to XSD Converter tool [SQLXML]"
@@ -18,12 +17,10 @@ helpviewer_keywords:
   - "mapping schema [SQLXML], conversions"
   - "XSD schemas [SQLXML], converting schemas"
 ms.assetid: 151c94a8-66d3-4c46-a5ff-a22df456940a
-caps.latest.revision: 23
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Converting Annotated XDR Schemas to Equivalent XSD Schemas (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   The XML Schema Definition (XSD) language is the successor to the XML-Data Reduced (XDR) schema definition language. With the introduction of XSD support in [!INCLUDE[msCoName](../../../includes/msconame-md.md)] SQLXML 4.0, it is assumed that new annotated schemas are created using XSD. SQLXML 4.0 includes an XDR to XSD converter tool that is designed to help you convert your existing annotated XDR schemas to equivalent XSD schemas.  
   
 > [!IMPORTANT]  

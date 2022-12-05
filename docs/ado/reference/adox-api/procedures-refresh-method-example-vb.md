@@ -1,26 +1,19 @@
 ---
-title: "Procedures Refresh Method Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Procedures Refresh Method Example (VB)"
+description: "Procedures Refresh Method Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Refresh method [ADOX], Visual Basic example"
-ms.assetid: 499679bd-287b-487d-bdfb-3803abffec1c
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Procedures Refresh Method Example (VB)
-The following code shows how to refresh the [Procedures](../../../ado/reference/adox-api/procedures-collection-adox.md) collection of a [Catalog](../../../ado/reference/adox-api/catalog-object-adox.md). This is required before [Procedure](../../../ado/reference/adox-api/procedure-object-adox.md) objects from the **Catalog** can be accessed.  
+The following code shows how to refresh the [Procedures](./procedures-collection-adox.md) collection of a [Catalog](./catalog-object-adox.md). This is required before [Procedure](./procedure-object-adox.md) objects from the **Catalog** can be accessed.  
   
 ```  
 ' BeginProceduresRefreshVB  
@@ -53,6 +46,6 @@ End Sub
 ```  
   
 ## See Also  
- [Catalog Object (ADOX)](../../../ado/reference/adox-api/catalog-object-adox.md)   
- [Procedures Collection (ADOX)](../../../ado/reference/adox-api/procedures-collection-adox.md)   
- [Refresh Method (ADO)](../../../ado/reference/ado-api/refresh-method-ado.md)
+ [Catalog Object (ADOX)](./catalog-object-adox.md)   
+ [Procedures Collection (ADOX)](./procedures-collection-adox.md)   
+ [Refresh Method (ADO)](../ado-api/refresh-method-ado.md)

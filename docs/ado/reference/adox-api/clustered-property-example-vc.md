@@ -1,26 +1,19 @@
 ---
-title: "Clustered Property Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Clustered Property Example (VC++)"
+description: "Clustered Property Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Clustered property [ADOX], VC++ example"
-ms.assetid: b993e357-3e2e-48a7-a627-76909160c97f
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Clustered Property Example (VC++)
-This example demonstrates the [Clustered](../../../ado/reference/adox-api/clustered-property-adox.md) property of an [Index](../../../ado/reference/adox-api/index-object-adox.md). Note that Microsoft Jet databases do not support clustered indexes, so this example will return **False** for the **Clustered** property of all indexes in the *Northwind* database.  
+This example demonstrates the [Clustered](./clustered-property-adox.md) property of an [Index](./index-object-adox.md). Note that Microsoft Jet databases do not support clustered indexes, so this example will return **False** for the **Clustered** property of all indexes in the *Northwind* database.  
   
 ```  
 // BeginClusteredCpp.cpp  
@@ -80,11 +73,11 @@ void ClusteredX() {
       printf("\n\tSource :  %s \n\tdescription : %s \n ", (LPCSTR)bstrSource, (LPCSTR)bstrDescription);  
    }  
    catch(...) {  
-      cout << "Error occured in ClusteredX...."<< endl;  
+      cout << "Error occurred in ClusteredX...."<< endl;  
    }  
 }  
 ```  
   
 ## See Also  
- [Clustered Property (ADOX)](../../../ado/reference/adox-api/clustered-property-adox.md)   
- [Index Object (ADOX)](../../../ado/reference/adox-api/index-object-adox.md)
+ [Clustered Property (ADOX)](./clustered-property-adox.md)   
+ [Index Object (ADOX)](./index-object-adox.md)

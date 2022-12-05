@@ -1,28 +1,23 @@
 ---
 title: "rsModelGenerationError - Reporting Services Error | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "In this error reference page, learn about event ID 'rsModelGenerationError': An error occurred while generating model."
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: troubleshooting
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "rsModelGenerationError"
 ms.assetid: 3a0ad63f-87f9-4ca1-b0c2-c85fa991634a
-caps.latest.revision: 17
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # rsModelGenerationError - Reporting Services Error
     
 ## Details  
   
-|||  
+|Category|Value|  
 |-|-|  
 |Product Name|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |Event ID|rsRenderingError|  

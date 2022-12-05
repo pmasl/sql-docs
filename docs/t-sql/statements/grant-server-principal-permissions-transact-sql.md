@@ -1,17 +1,13 @@
 ---
-title: "GRANT Server Principal Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+title: "GRANT Server Principal Permissions (Transact-SQL)"
+description: GRANT Server Principal Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
+ms.date: "08/10/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "impersonate [SQL Server], granting"
   - "granting permissions [SQL Server], logins"
   - "permissions [SQL Server], impersonate"
@@ -20,14 +16,11 @@ helpviewer_keywords:
   - "GRANT statement, logins"
   - "logins [SQL Server], granting access"
   - "granting permissions [SQL Server], impersonation"
-ms.assetid: 4cbed281-5e1e-4d8b-b410-4c18a6cd0205
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # GRANT Server Principal Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Grants permissions on a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login.  
   
@@ -35,8 +28,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 GRANT permission [ ,...n ] }   
     ON   
     { [ LOGIN :: SQL_Server_login ]  
@@ -53,7 +45,9 @@ GRANT permission [ ,...n ] }
     | server_role  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be granted on a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login. For a list of the permissions, see the Remarks section later in this topic.  
   
@@ -63,7 +57,7 @@ GRANT permission [ ,...n ] }
  SERVER ROLE **::** *server_role*  
  Specifies the user-defined server role on which the permission is being granted. The scope qualifier (**::**) is required.  
   
- TO <server_principal>  
+ TO \<server_principal> 
  Specifies the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login or server role to which the permission is being granted.  
   
  *SQL_Server_login*  
@@ -111,7 +105,7 @@ GRANT permission [ ,...n ] }
 ### A. Granting IMPERSONATE permission on a login  
  The following example grants `IMPERSONATE` permission on the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login `WanidaBenshoof` to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login created from the Windows user `AdvWorks\YoonM`.  
   
-```  
+```sql  
 USE master;  
 GRANT IMPERSONATE ON LOGIN::WanidaBenshoof to [AdvWorks\YoonM];  
 GO  
@@ -120,7 +114,7 @@ GO
 ### B. Granting VIEW DEFINITION permission with GRANT OPTION  
  The following example grants `VIEW DEFINITION` on the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login `EricKurjan` to the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login `RMeyyappan` with `GRANT OPTION`.  
   
-```  
+```sql  
 USE master;  
 GRANT VIEW DEFINITION ON LOGIN::EricKurjan TO RMeyyappan   
     WITH GRANT OPTION;  
@@ -130,7 +124,7 @@ GO
 ### C. Granting VIEW DEFINITION permission on a server role  
  The following example grants `VIEW DEFINITION` on the `Sales` server role to the `Auditors` server role.  
   
-```  
+```sql  
 USE master;  
 GRANT VIEW DEFINITION ON SERVER ROLE::Sales TO Auditors ;  
 GO   
@@ -146,3 +140,4 @@ GO
  [Security Stored Procedures &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/security-stored-procedures-transact-sql.md)  
   
   
+

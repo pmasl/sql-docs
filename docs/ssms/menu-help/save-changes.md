@@ -1,26 +1,23 @@
 ---
-title: "Save Changes | Microsoft Docs"
-ms.custom: ""
+description: "Save Changes"
+title: "Save Changes"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: ui-reference
 f1_keywords: 
   - "sql13.swb.file.close.f1"
   - "VS.SaveChangesDlg"
 helpviewer_keywords: 
   - "Save Changes dialog box"
 ms.assetid: abe17944-c538-4106-a18b-ade5e2d8e20f
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Save Changes
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 Warns you that changes to the items listed will not be saved unless you click **Yes**.  
   
 This dialog box can appear when you are closing solutions, maintenance plans, or other open files.  

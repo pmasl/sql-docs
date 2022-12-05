@@ -1,30 +1,26 @@
 ---
-title: "Open File Dialog Box | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Open File Dialog Box"
+title: Open File Dialog Box
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "vs.openfile"
-  - "vs.openproject"
 ms.assetid: 3e01b9f5-2b0a-4fb3-9da8-984d27d17b8a
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
 ---
 # Open File Dialog Box
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 Use the **Open File** dialog box to open an existing file from disk. You can also use this dialog box to open an already opened file using different language encoding options.  
   
 To access this dialog box, select **Open** from the **File** menu and then choose **File**. This dialog box also appears when you are opening files from other elements, such as the **External Tools** dialog box. From the **File** menu, select **Open**, and then choose **Project/Solution** to open the similar **Open Project** dialog box.  
   
 > [!NOTE]  
-> Before opening a project or component in [!INCLUDE[ssManStudio](../../includes/ssmanstudio_md.md)], determine the trustworthiness of its code. The act of opening the project or component in a [!INCLUDE[ssManStudio](../../includes/ssmanstudio_md.md)] may execute its code in a trusted process on your local machine.  
+> Before opening a project or component in [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)], determine the trustworthiness of its code. The act of opening the project or component in a [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] may execute its code in a trusted process on your local machine.  
   
 ## Option  
 **Look in**  
@@ -95,4 +91,3 @@ Deletes the selected file or folder from storage.
   
 **Map Network Drive**  
 Opens the **Map Network Drive** dialog box.  
-  

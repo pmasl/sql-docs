@@ -1,29 +1,22 @@
 ---
-title: "DENY System Object Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DENY System Object Permissions (Transact-SQL)"
+description: DENY System Object Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "DENY statement, system objects"
   - "encryption [SQL Server], system objects"
   - "system objects [SQL Server]"
   - "cryptography [SQL Server], system objects"
-ms.assetid: 4e43f954-0982-470b-a239-08a13c61563a
-caps.latest.revision: 21
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DENY System Object Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Denies permissions on system objects such as stored procedures, extended stored procedures, functions, and views.  
   
@@ -31,12 +24,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 DENY { SELECT | EXECUTE } ON [ sys.]system_object TO principal   
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  [ **sys.**]  
  The **sys** qualifier is required only when you are referring to catalog views and dynamic management views.  
   
@@ -62,7 +56,7 @@ DENY { SELECT | EXECUTE } ON [ sys.]system_object TO principal
   
  The following query returns information about permissions of system objects:  
   
-```  
+```sql
 SELECT * FROM master.sys.database_permissions AS dp   
     JOIN sys.system_objects AS so  
     ON dp.major_id = so.object_id  
@@ -76,7 +70,7 @@ GO
 ## Examples  
  The following example denies `EXECUTE` permission on `xp_cmdshell` to `public`.  
   
-```  
+```sql
 DENY EXECUTE ON sys.xp_cmdshell TO public;  
 GO  
 ```  

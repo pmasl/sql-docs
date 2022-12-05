@@ -1,28 +1,25 @@
 ---
+description: "MSSQLSERVER_33081"
 title: "MSSQLSERVER_33081 | Microsoft Docs"
 ms.custom: ""
 ms.date: "04/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: supportability
+ms.topic: "reference"
 helpviewer_keywords: 
   - "33081 (Database Engine error)"
 ms.assetid: 839705e7-fa37-4c0d-9f3f-95a9eab98bcf
-caps.latest.revision: 7
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # MSSQLSERVER_33081
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
 ## Details  
   
-|||  
-|-|-|  
+| Attribute | Value |  
+| :-------- | :---- |  
 |Product Name|SQL Server|  
 |Event ID|33081|  
 |Event Source|MSSQLSERVER|  
@@ -39,7 +36,7 @@ WHERE ring_buffer_type = 'RING_BUFFER_SECURITY_ERROR';
 ```  
   
 ## User Action  
-To investigate the problem, search for the Windows error code in MSDN (http://msdn.microsoft.com/). Resolve the error, or contact [!INCLUDE[msCoName](../../includes/msconame-md.md)] CSS for more information. If you need to contact CSS, collect the following information for our support staff.  
+To investigate the problem, search for the Windows error code in MSDN (https://msdn.microsoft.com/). Resolve the error, or contact [!INCLUDE[msCoName](../../includes/msconame-md.md)] CSS for more information. If you need to contact CSS, collect the following information for our support staff.  
   
 -   The error log showing the failed to load cryptographic provider error.  
   

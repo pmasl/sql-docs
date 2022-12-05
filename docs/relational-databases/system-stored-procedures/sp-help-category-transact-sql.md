@@ -1,14 +1,12 @@
 ---
+description: "sp_help_category (Transact-SQL)"
 title: "sp_help_category (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_help_category"
   - "sp_help_category_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_help_category"
 ms.assetid: 8cad1dcc-b43e-43bd-bea0-cb0055c84169
-caps.latest.revision: 18
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_help_category (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Provides information about the specified classes of jobs, alerts, or operators.  
    
@@ -40,7 +36,7 @@ sp_help_category [ [ @class = ] 'class' ]
 ```  
   
 ## Arguments  
- [ **@class=**] **'***class***'**  
+`[ @class = ] 'class'`
  The class about which information is requested. *class* is **varchar(8)**, with a default value of **JOB**. *class* can be one of these values.  
   
 |Value|Description|  
@@ -49,7 +45,7 @@ sp_help_category [ [ @class = ] 'class' ]
 |**ALERT**|Provides information about an alert category.|  
 |**OPERATOR**|Provides information about an operator category.|  
   
- [ **@type=** ] **'***type***'**  
+`[ @type = ] 'type'`
  The type of category for which information is requested. *type* is **varchar(12)**, with a default of NULL, and can be one of these values.  
   
 |Value|Description|  
@@ -58,17 +54,17 @@ sp_help_category [ [ @class = ] 'class' ]
 |**MULTI -SERVER**|Multiserver job category.|  
 |**NONE**|Category for a class other than **JOB**.|  
   
- [ **@name=** ] **'***name***'**  
+`[ @name = ] 'name'`
  The name of the category for which information is requested. *name* is **sysname**, with a default of NULL.  
   
- [ **@suffix=** ] *suffix*  
+`[ @suffix = ] suffix`
  Specifies whether the **category_type** column in the result set is an ID or a name. *suffix* is **bit**, with a default of **0**. **1** shows the **category_type** as a name, and **0** shows it as an ID.  
   
 ## Return Code Values  
  **0** (success) or **1** (failure)  
   
 ## Result Sets  
- When **@suffix** is **0**, **sp_help_category** returns the following result set:  
+ When **\@suffix** is **0**, **sp_help_category** returns the following result set:  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
@@ -76,7 +72,7 @@ sp_help_category [ [ @class = ] 'class' ]
 |**category_type**|**tinyint**|Type of category:<br /><br /> **1** = Local<br /><br /> **2** = Multiserver<br /><br /> **3** = None|  
 |**name**|**sysname**|Category name|  
   
- When **@suffix** is **1**, **sp_help_category** returns the following result set:  
+ When **\@suffix** is **1**, **sp_help_category** returns the following result set:  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
@@ -98,7 +94,7 @@ sp_help_category [ [ @class = ] 'class' ]
   
 -   **SQLAgentOperatorRole**  
   
- For details about the permissions of these roles, see [SQL Server Agent Fixed Database Roles](http://msdn.microsoft.com/library/719ce56b-d6b2-414a-88a8-f43b725ebc79).  
+ For details about the permissions of these roles, see [SQL Server Agent Fixed Database Roles](../../ssms/agent/sql-server-agent-fixed-database-roles.md).  
   
 ## Examples  
   

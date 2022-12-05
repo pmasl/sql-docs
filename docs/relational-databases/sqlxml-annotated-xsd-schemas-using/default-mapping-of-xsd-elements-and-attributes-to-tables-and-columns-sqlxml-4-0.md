@@ -1,15 +1,14 @@
 ---
-title: "Default Mapping-XSD Elements-Attributes to Tables-Columns (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Default XSD mapping to tables/columns (SQLXML)"
+description: Learn how elements and attributes in an XSD schema are mapped by default to tables and columns in SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "XSD schemas [SQLXML], mapping attributes and elements"
   - "mapping schema [SQLXML], default mapping"
   - "element mapping [SQLXML], default mapping"
@@ -26,12 +25,10 @@ helpviewer_keywords:
   - "table/view mapping [SQLXML], default mapping"
   - "element/attribute mapping [SQLXML]"
 ms.assetid: 9a18e92a-6cfb-4a14-993a-663a95aabb63
-caps.latest.revision: 32
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Default Mapping of XSD Elements and Attributes to Tables and Columns (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   By default, an element of complex type in an XSD annotated schema maps to the table (view) with the same name in the specified database, and an element or attribute of simple type maps to the column with the same name in the table.  
   
 ## Examples  

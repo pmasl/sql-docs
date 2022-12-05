@@ -1,14 +1,12 @@
 ---
+description: "sp_OAMethod (Transact-SQL)"
 title: "sp_OAMethod (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_OAMethod"
   - "sp_OAMethod_TSQL"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_OAMethod"
 ms.assetid: 1dfaebe2-c7cf-4041-a586-5d04faf2e25e
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_OAMethod (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Calls a method of an OLE object.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -49,7 +41,7 @@ sp_OAMethod objecttoken , methodname
  *methodname*  
  Is the method name of the OLE object to call.  
   
- *returnvalue*  **OUTPUT**  
+ _returnvalue_  **OUTPUT**  
  Is the return value of the method of the OLE object. If specified, it must be a local variable of the appropriate data type.  
   
  If the method returns a single value, either specify a local variable for *returnvalue*, which returns the method return value in the local variable, or do not specify *returnvalue*, which returns the method return value to the client as a single-column, single-row result set.  
@@ -66,18 +58,18 @@ sp_OAMethod objecttoken , methodname
   
 -   The method returns an array as an output parameter.  
   
- [ *@parametername***=** ] *parameter*[ **OUTPUT** ]  
+`[ _@parametername = ] parameter[ OUTPUT ]`
  Is a method parameter. If specified, *parameter* must be a value of the appropriate data type.  
   
  To obtain the return value of an output parameter, *parameter* must be a local variable of the appropriate data type, and **OUTPUT** must be specified. If a constant parameter is specified, or if **OUTPUT** is not specified, any return value from an output parameter is ignored.  
   
- If specified, *parametername* must be the name of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] named parameter. Note that **@***parametername*is not a [!INCLUDE[tsql](../../includes/tsql-md.md)] local variable. The at sign (**@**) is removed, and *parametername*is passed to the OLE object as the parameter name. All named parameters must be specified after all positional parameters are specified.  
+ If specified, *parametername* must be the name of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vbprvb](../../includes/vbprvb-md.md)] named parameter. Note that **@**_parametername_is not a [!INCLUDE[tsql](../../includes/tsql-md.md)] local variable. The at sign (**@**) is removed, and *parametername*is passed to the OLE object as the parameter name. All named parameters must be specified after all positional parameters are specified.  
   
  *n*  
  Is a placeholder indicating that multiple parameters can be specified.  
   
-> [!NOTE]  
->  *@parametername* can be a named parameter because it is part of the specified method and is passed through to the object. The other parameters for this stored procedure are specified by position, not name.  
+> [!NOTE]
+>  *\@parametername* can be a named parameter because it is part of the specified method and is passed through to the object. The other parameters for this stored procedure are specified by position, not name.  
   
 ## Return Code Values  
  0 (success) or a nonzero number (failure) that is the integer value of the HRESULT returned by the OLE Automation object.  
@@ -108,7 +100,7 @@ sp_OAMethod objecttoken , methodname
  You can also use **sp_OAMethod** to get a property value.  
   
 ## Permissions  
- Requires membership in the **sysadmin** fixed server role.  
+ Requires membership in the **sysadmin** fixed server role or execute permission directly on this Stored Procedure. `Ole Automation Procedures` configuration must be **enabled** to use any system procedure related to OLE Automation.  
   
 ## Examples  
   

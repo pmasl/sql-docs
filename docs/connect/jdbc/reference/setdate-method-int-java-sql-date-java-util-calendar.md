@@ -1,24 +1,15 @@
 ---
-title: "setDate Method to date and calendar - int | Microsoft Docs"
-ms.custom: ""
+title: "setDate Method to date and calendar - int"
+description: "setDate Method (int, java.sql.Date, java.util.Calendar)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.setDate (int, java.sql.Date, java.util.Calendar)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.setDate (int, java.sql.Date, java.util.Calendar)"
 apitype: "Assembly"
-ms.assetid: 2c46f694-6dc4-429f-a037-a3bad369a7c8
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setDate Method (int, java.sql.Date, java.util.Calendar)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

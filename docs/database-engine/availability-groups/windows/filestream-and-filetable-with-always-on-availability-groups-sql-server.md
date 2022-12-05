@@ -1,46 +1,33 @@
 ---
-title: "FILESTREAM and FileTable with Always On Availability Groups (SQL Server) | Microsoft Docs"
-ms.custom: ""
+title: "Use FILESTREAM and FileTable with availability groups"
+description: "Steps to use either FILESTREAM or FileTable with databases participating in an Always On Availability Group."
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: how-to
+ms.custom: seodec18
+helpviewer_keywords:
   - "FileTables [SQL Server], Availability Groups"
   - "FILESTREAM [SQL Server], Availability Groups"
   - "Availability Groups [SQL Server], interoperability"
-ms.assetid: fdceda9a-a9db-4d1d-8745-345992164a98
-caps.latest.revision: 15
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+monikerRange: ">=sql-server-2016"
 ---
-# FILESTREAM and FileTable with Always On Availability Groups (SQL Server)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# Use FILESTREAM and FileTable with Always On availability groups
 
-  This topic contains information about the using the FILESTREAM and FileTable features with [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] in [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)].  
+[!INCLUDE[sql windows only](../../../includes/applies-to-version/sql-windows-only.md)]
+
+  This topic contains information about the using the FILESTREAM and FileTable features with [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] in [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)].  
   
  All FILESTREAM functionality is supported. After a failover, FILESTREAM data is accessible on both readable secondary replicas and on the new primary.  
   
  FileTable functionality is partially supported. After a failover, FileTable data is accessible on the primary replica, but FileTable data is not accessible on readable secondary replicas.  
   
- **In this Topic:**  
-  
--   [Prerequisites](#Prerequisites)  
-  
--   [Using Virtual Network Names (VNNs) for FILESTREAM and FileTable Access](#vnn)  
-  
--   [Related Tasks](#RelatedTasks)  
-  
--   [Related Content](#RelatedContent)  
-  
 ##  <a name="Prerequisites"></a> Prerequisites  
   
 -   Before adding a database that uses FILESTREAM, with or without FileTable, to an availability group, ensure that FILESTREAM is enabled on every server instance that hosts an availability replica for the availability group. For more information, see [Enable and Configure FILESTREAM](../../../relational-databases/blob/enable-and-configure-filestream.md).  
+-   On a Windows Server 2012-based failover cluster, you should apply hotfix discussed in [Can't access VNN FILESTREAM share when you use the FILESTREAM and FileTable features on a Windows Server 2012-based failover cluster](https://support.microsoft.com/topic/can-t-access-vnn-filestream-share-when-you-use-the-filestream-and-filetable-features-on-a-windows-server-2012-based-failover-cluster-55e0d990-33ec-5097-5e95-4afa145a1bfa) to access file share using Virtual Network Name (VNN). This hotfix is also available at [Microsoft Update Catalog](https://catalog.update.microsoft.com/search.aspx?q=2835620)
   
 ##  <a name="vnn"></a> Using Virtual Network Names (VNNs) for FILESTREAM and FileTable Access  
  When you enable FILESTREAM on an instance of [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], an instance-level share is created to provide access to the FILESTREAM data. You access this share by using the computer name in the following format:  

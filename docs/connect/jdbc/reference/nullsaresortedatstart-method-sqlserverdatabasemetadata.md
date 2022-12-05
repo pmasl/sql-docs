@@ -1,24 +1,15 @@
 ---
-title: "nullsAreSortedAtStart Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "nullsAreSortedAtStart Method (SQLServerDatabaseMetaData)"
+description: "nullsAreSortedAtStart Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.nullsAreSortedAtStart Method (SQLServerDatabaseMetaData)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.nullsAreSortedAtStart Method (SQLServerDatabaseMetaData)"
 apitype: "Assembly"
-ms.assetid: 372515da-3b0e-46f6-8c0b-01b1b45c5a2f
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # nullsAreSortedAtStart Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

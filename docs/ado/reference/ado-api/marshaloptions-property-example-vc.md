@@ -1,26 +1,19 @@
 ---
-title: "MarshalOptions Property Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "MarshalOptions Property Example (VC++)"
+description: "MarshalOptions Property Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "MarshalOptions property [ADO], VC++ example"
-ms.assetid: a3b6fc09-ce21-450d-9063-bac505208d31
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # MarshalOptions Property Example (VC++)
-This example uses the [MarshalOptions](../../../ado/reference/ado-api/marshaloptions-property-ado.md) property to specify what rows are sent back to the server — All Rows or only Modified Rows.  
+This example uses the [MarshalOptions](./marshaloptions-property-ado.md) property to specify what rows are sent back to the server - All Rows or only Modified Rows.  
   
 ```  
 // BeginMarshalOptionsCpp.cpp  
@@ -243,4 +236,4 @@ void PrintComError(_com_error &e) {
 ```  
   
 ## See Also  
- [MarshalOptions Property (ADO)](../../../ado/reference/ado-api/marshaloptions-property-ado.md)
+ [MarshalOptions Property (ADO)](./marshaloptions-property-ado.md)

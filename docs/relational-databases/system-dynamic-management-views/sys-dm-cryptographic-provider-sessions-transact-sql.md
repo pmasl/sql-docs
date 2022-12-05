@@ -1,31 +1,25 @@
 ---
-title: "sys.dm_cryptographic_provider_sessions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_cryptographic_provider_sessions (Transact-SQL)"
+description: sys.dm_cryptographic_provider_sessions (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_cryptographic_provider_sessions"
   - "dm_cryptographic_provider_sessions_TSQL"
   - "sys.dm_cryptographic_provider_sessions_TSQL"
   - "dm_cryptographic_provider_sessions"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_cryptographic_provider_sessions dynamic management function"
+dev_langs:
+  - "TSQL"
 ms.assetid: 9a4de02b-1a07-4850-979a-0861fddb7f9d
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.dm_cryptographic_provider_sessions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns information about open sessions for a cryptographic provider.  
  
@@ -53,8 +47,8 @@ sys.dm_cryptographic_provider_sessions(session_identifier)
 |**identity**|**nvarchar(128)**|Identity used to authenticate with the cryptographic provider.|  
 |**spid**|**short**|Session ID SPID of the connection. For more information, see [@@SPID &#40;Transact-SQL&#41;](../../t-sql/functions/spid-transact-sql.md).|  
   
-## Remarks  
- The **sys.dm_cryptographic_provider_sessions** view is visible to the public for the current connection. To view all cryptographic connections, you must have the **CONTROL** server permission.  
+## Permissions  
+ Members of the public server role can use **sys.dm_cryptographic_provider_sessions** to return information about the current connection. To view all cryptographic connections, the **CONTROL** server permission is required.  
   
 ## See Also  
  [Security Catalog Views &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/security-catalog-views-transact-sql.md)   

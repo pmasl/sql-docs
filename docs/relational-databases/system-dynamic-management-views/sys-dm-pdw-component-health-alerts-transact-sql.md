@@ -1,22 +1,19 @@
 ---
-title: "sys.dm_pdw_component_health_alerts (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_pdw_component_health_alerts (Transact-SQL)"
+description: sys.dm_pdw_component_health_alerts (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: data-warehouse
+ms.topic: conceptual
+dev_langs:
+  - "TSQL"
 ms.assetid: 88f05392-1e97-4693-ba60-a4910af3c000
-caps.latest.revision: 7
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016"
 ---
 # sys.dm_pdw_component_health_alerts (Transact-SQL)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]
 
   Stores previously issued alerts on appliance components.  
   
@@ -32,6 +29,6 @@ manager: "jhubbard"
 |create_time|**datetime**|Time and date when the alert was generated.|NOT NULL|  
   
 ## See Also  
- [SQL Data Warehouse and Parallel Data Warehouse Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
+ [Azure Synapse Analytics and Parallel Data Warehouse Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
   
   

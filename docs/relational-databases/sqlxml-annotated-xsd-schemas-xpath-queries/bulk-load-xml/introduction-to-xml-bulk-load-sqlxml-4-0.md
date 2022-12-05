@@ -1,27 +1,24 @@
 ---
-title: "Introduction to XML Bulk Load (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Introduction to XML Bulk Load (SQLXML)"
+description: Learn about the XML Bulk Load utility, a stand-alone COM object in SQLXML 4.0 that allows you to load semistructured XML data into Microsoft SQL Server tables.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "nontransacted XML Bulk Load operations"
   - "XML Bulk Load [SQLXML], about XML Bulk Load"
   - "bulk load [SQLXML], about bulk load"
   - "transacted XML Bulk Load operations"
   - "streaming XML data"
 ms.assetid: 38bd3cbd-65ef-4c23-9ef3-e70ecf6bb88a
-caps.latest.revision: 13
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Introduction to XML Bulk Load (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   XML Bulk Load is a stand-alone COM object that allows you to load semistructured XML data into Microsoft [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] tables.  
   
  You can insert XML data into a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] database by using an INSERT statement and the OPENXML function; however, the Bulk Load utility provides better performance when you need to insert large amounts of XML data.  

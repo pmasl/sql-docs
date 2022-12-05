@@ -1,25 +1,22 @@
 ---
+description: "LOCALDB_ERROR_AUTO_INSTANCE_CREATE_FAILED"
 title: "LOCALDB_ERROR_AUTO_INSTANCE_CREATE_FAILED | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: performance
 ms.topic: "reference"
 ms.assetid: ca7d2c05-2bde-4284-bb17-aa7fd8d7b20a
-caps.latest.revision: 7
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # LOCALDB_ERROR_AUTO_INSTANCE_CREATE_FAILED
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 ## Details  
   
-|||  
+|Category|Value|  
 |-|-|  
 |Product Name|SQL Server|  
 |Event ID|280|  

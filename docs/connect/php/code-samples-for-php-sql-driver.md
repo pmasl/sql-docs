@@ -1,21 +1,14 @@
 ---
-title: "Code Samples for PHP SQL Driver | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3a5d218a-1490-4c61-a20c-4d71f6600c97
-caps.latest.revision: 2
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+title: "Code Samples for the Microsoft Drivers for PHP for SQL Server"
+description: "Find code samples for example applications which use the SQLSRV and PDO_SQLSRV Drivers for PHP for SQL Server."
+author: David-Engel
+ms.author: v-davidengel
+ms.date: "03/26/2018"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: conceptual
 ---
-# Code Samples for PHP SQL Driver
+# Code Samples for the Microsoft Drivers for PHP for SQL Server
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
 
 

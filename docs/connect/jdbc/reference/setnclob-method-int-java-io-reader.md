@@ -1,19 +1,12 @@
 ---
-title: "setNClob Method (int, java.io.Reader) | Microsoft Docs"
-ms.custom: ""
+title: "setNClob Method (int, java.io.Reader)"
+description: "setNClob Method (int, java.io.Reader)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 9fc9938c-b821-41c7-8df7-e21cb83a46d4
-caps.latest.revision: 20
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # setNClob Method (int, java.io.Reader)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

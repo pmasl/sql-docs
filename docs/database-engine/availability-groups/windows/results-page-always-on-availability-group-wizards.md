@@ -1,29 +1,22 @@
 ---
-title: "Results Page (Always On Availability Group Wizards) | Microsoft Docs"
-ms.custom: ""
+title: "Results Page (Always On Availability Group Wizards)"
+description: Describes the options of the Results page of the Always On Availability Group Wizard within the SQL Server Management Studio GUI.
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.failoverwizard.results.f1"
   - "sql13.swb.newagwizard.results.f1"
   - "sql13.swb.addreplicawizard.results.f1"
   - "sql13.swb.adddatabasewizard.results.f1"
-ms.assetid: d80b14eb-60db-4351-90ad-6c179d235aa3
-caps.latest.revision: 9
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Results Page (Always On Availability Group Wizards)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  This help topic describes the options of the **Results** page. This topic applies to the [!INCLUDE[ssAoNewAgWiz](../../../includes/ssaonewagwiz-md.md)], [!INCLUDE[ssAoAddRepWiz](../../../includes/ssaoaddrepwiz-md.md)], [!INCLUDE[ssAoAddDbWiz](../../../includes/ssaoadddbwiz-md.md)], and [!INCLUDE[ssAoFoAgWiz](../../../includes/ssaofoagwiz-md.md)] of [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]. Use this page to view the results of the wizard.  
+  This help topic describes the options of the **Results** page. This topic applies to the [!INCLUDE[ssAoNewAgWiz](../../../includes/ssaonewagwiz-md.md)], [!INCLUDE[ssAoAddRepWiz](../../../includes/ssaoaddrepwiz-md.md)], [!INCLUDE[ssAoAddDbWiz](../../../includes/ssaoadddbwiz-md.md)], and [!INCLUDE[ssAoFoAgWiz](../../../includes/ssaofoagwiz-md.md)] of [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]. Use this page to view the results of the wizard.  
   
 ##  <a name="PageOptions"></a> Results Page Options  
  The **Summary** grid contains the following columns:  

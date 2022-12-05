@@ -1,21 +1,14 @@
 ---
-title: "Error Object Properties, Methods, and Events | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Error Object Properties, Methods, and Events"
+description: "Error Object Properties, Methods, and Events"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "error object [ADO], members"
-ms.assetid: cd69e4b7-82bf-4ffc-bc53-c535ba20161f
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Error Object Properties, Methods, and Events
 ## Properties  

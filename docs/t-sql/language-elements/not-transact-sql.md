@@ -1,32 +1,28 @@
 ---
-title: "NOT (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
+title: "NOT (Transact-SQL)"
+description: "NOT (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/15/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "NOT_TSQL"
   - "NOT"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "negating Boolean input"
   - "NOT operator [Transact-SQL]"
   - "expressions [SQL Server], negating"
   - "reversing Boolean expression values"
-ms.assetid: dc07cc35-20f1-46e6-9995-2938390dc19a
-caps.latest.revision: 39
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # NOT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Negates a Boolean input.  
   
@@ -34,13 +30,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql
 [ NOT ] boolean_expression  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *boolean_expression*  
  Is any valid Boolean [expression](../../t-sql/language-elements/expressions-transact-sql.md).  
   
@@ -64,7 +60,7 @@ manager: "jhubbard"
 ## Examples  
  The following example finds all Silver colored bicycles that do not have a standard price over $400.  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT ProductID, Name, Color, StandardCost  
@@ -75,26 +71,21 @@ GO
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
- `ProductID   Name                     Color         StandardCost`  
-  
- `---------   -------------------      ------      ------------`  
-  
- `984         Mountain-500 Silver, 40  Silver        308.2179`  
-  
- `985         Mountain-500 Silver, 42  Silver        308.2179`  
-  
- `986         Mountain-500 Silver, 44  Silver        308.2179`  
-  
- `987         Mountain-500 Silver, 48  Silver        308.2179`  
-  
- `988         Mountain-500 Silver, 52  Silver        308.2179`  
-  
- `(6 row(s) affected)`  
+ ```
+ ProductID   Name                     Color         StandardCost
+ ---------   -------------------      ------      ------------
+ 984         Mountain-500 Silver, 40  Silver        308.2179
+ 985         Mountain-500 Silver, 42  Silver        308.2179
+ 986         Mountain-500 Silver, 44  Silver        308.2179
+ 987         Mountain-500 Silver, 48  Silver        308.2179
+ 988         Mountain-500 Silver, 52  Silver        308.2179
+ (6 row(s) affected)
+ ```  
   
 ## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  The following example restricts results to `SalesOrderNumber` to values starting with `SO6` and `ProductKeys` greater than or equal to 400.  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT ProductKey, CustomerKey, OrderDateKey, ShipDateKey  

@@ -1,1 +1,2 @@
-**THIS TOPIC APPLIES TO:**![yes](media/yes.png)SQL Server 2016![yes](media/yes.png)Power BI Report Server
+[!INCLUDE [applies-md](applies-md.md)] :::image type="icon" source="media/yes-icon.svg"::: SQL Server 2016 :::image type="icon" source="media/yes-icon.svg"::: Power BI Report Server
+

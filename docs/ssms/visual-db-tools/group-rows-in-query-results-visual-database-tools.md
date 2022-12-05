@@ -1,25 +1,23 @@
 ---
-title: "Group Rows in Query Results (Visual Database Tools) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Group Rows in Query Results (Visual Database Tools)"
+title: Group Rows in Query Results
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "summarizing table subsets"
   - "grouping rows"
   - "grouping query results"
 ms.assetid: b07082d5-4d55-4903-9af9-4c470554c6d3
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
 ---
+
 # Group Rows in Query Results (Visual Database Tools)
+
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 If you want to create subtotals or show other summary information for subsets of a table, you create groups using an aggregate query. Each group summarizes the data for all the rows in the table that have the same value.  
   
 For example, you might want to see the average price of a book in the `titles` table, but break the results down by publisher. To do so, you group the query by publisher (for example, `pub_id`). The resulting query output might look like this:  
@@ -68,7 +66,7 @@ The resulting output might look like this:
   
 5.  In the **Group By** grid cell for the column that is going to be aggregated, select the appropriate aggregate function.  
   
-    The Query and View Designer automatically assigns a column alias to the column you are summarizing. You can replace this automatically generated alias with a more meaningful one. For more details, see [Create Column Aliases (Visual Database Tools)](../../ssms/visual-db-tools/create-column-aliases-visual-database-tools.md).  
+    The Query and View Designer automatically assigns a column alias to the column you are summarizing. You can replace this automatically generated alias with a more meaningful one. For more details, see [Create Column Aliases](../../ssms/visual-db-tools/create-column-aliases-visual-database-tools.md).  
   
     ![Adding a column alias to the query result set](../../ssms/visual-db-tools/media/dv3w9e3.gif "Adding a column alias to the query result set")  
   
@@ -81,5 +79,5 @@ The resulting output might look like this:
     ```  
   
 ## See Also  
-[Sort and Group Query Results (Visual Database Tools)](../../ssms/visual-db-tools/sort-and-group-query-results-visual-database-tools.md)  
+[Sort and Group Query Results](../../ssms/visual-db-tools/sort-and-group-query-results-visual-database-tools.md)  
   

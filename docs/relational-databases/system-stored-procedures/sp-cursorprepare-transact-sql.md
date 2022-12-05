@@ -1,14 +1,9 @@
 ---
-title: "sp_cursorprepare (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+title: sp_cursorprepare (Transact-SQL)
+description: "sp_cursorprepare (Transact-SQL)"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_cursor_prepare_TSQL"
   - "sp_cursor_prepare"
@@ -16,26 +11,24 @@ dev_langs:
   - "TSQL"
 helpviewer_keywords: 
   - "sp_cursor_prepare"
-ms.assetid: 6207e110-f4bf-4139-b3ec-b799c9cb3ad7
-caps.latest.revision: 10
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "03/14/2017"
 ---
-# sp_cursorprepare (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  Compiles the cursor statement or batch into an execution plan, but does not create the cursor. The compiled statement can later be used by sp_cursorexecute. This procedure, coupled with sp_cursorexecute, has the same function as sp_cursoropen, but is split into two phases. sp_cursorprepare is invoked by specifying ID = 3 in a tabular data stream (TDS) packet.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
+# sp_cursorprepare (Transact-SQL)
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Compiles the cursor statement or batch into an execution plan, but does not create the cursor. The compiled statement can later be used by sp_cursorexecute. This procedure, coupled with sp_cursorexecute, has the same function as sp_cursoropen, but is split into two phases. sp_cursorprepare is invoked by specifying ID = 3 in a tabular data stream (TDS) packet.  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
+```tsql
   
 sp_cursorprepare prepared_handle OUTPUT, params , stmt , options  
     [ , scrollopt[ , ccopt]]  
@@ -118,9 +111,35 @@ sp_cursorprepare prepared_handle OUTPUT, params , stmt , options
 |1FF6|Could not return metadata.<br /><br /> Note: The reason for this is that the statement does not produce a result set; for example, it is an INSERT or DDL statement.|  
   
 ## Examples  
+  The following is an example of using sp_cursorprepare and sp_cursorexecute
+
+```sql
+declare @handle int , @p5 int, @p6 int
+exec sp_cursorprepare @handle OUTPUT, 
+	N'@dbid int', 
+	N'select * from sys.databases where database_id < @dbid',
+	1,
+	@p5 output,
+	@p6 output
+
+
+declare @p1 int  
+set @P1 = @handle 
+declare @p2 int   
+declare @p3 int  
+declare @p4 int  
+set @P6 = 4 
+exec sp_cursorexecute @p1, @p2 OUTPUT, @p3 output , @p4 output, @p5 OUTPUT, @p6
+
+exec sp_cursorfetch @P2
+
+exec sp_cursorunprepare @handle
+exec sp_cursorclose @p2
+```
+ 
  When *stmt* is parameterized and the *scrollopt* PARAMETERIZED_STMT value is ON, the format of the string is as follows:  
   
- { *\<local variable name>**\<data type>* } [ ,…*n* ]  
+ { *\<local variable name>**\<data type>* } [ ,...*n* ]  
   
 ## See Also  
  [sp_cursorexecute &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-cursorexecute-transact-sql.md)   

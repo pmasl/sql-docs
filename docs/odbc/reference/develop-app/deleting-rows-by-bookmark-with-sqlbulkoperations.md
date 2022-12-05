@@ -1,23 +1,19 @@
 ---
+description: "Deleting Rows by Bookmark with SQLBulkOperations"
 title: "Deleting Rows by Bookmark with SQLBulkOperations | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "data updates [ODBC], SQLBulkOperations"
   - "SQLBulkOperations function [ODBC], deleting rows"
   - "updating data [ODBC], SQLBulkOperations"
 ms.assetid: 46139ec9-7095-481a-bf45-20200a2fdc03
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Deleting Rows by Bookmark with SQLBulkOperations
 When deleting a row by bookmark, **SQLBulkOperations** makes the data source delete one or more selected rows of the table. The rows are identified by the bookmark in a bound bookmark column.  

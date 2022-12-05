@@ -1,30 +1,22 @@
 ---
-title: "Creating Constant Elements Using sql:is-constant (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+title: "Make constant elements with sql:is-constant (SQLXML)"
+description: "Learn how to use the sql:is-constant annotation in SQLXML 4.0 to create constant elements in an XSD schema that do not map to any database table or column."
+author: MikeRayMSFT
+ms.author: mikeray
+ms.date: 01/11/2019
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "element does not map [SQLXML]"
-  - "sql:is-constant"
-  - "XSD schemas [SQLXML], constant elements"
-  - "element mapping [SQLXML], constant elements"
-  - "is-constant annotation"
-  - "constant elements [SQLXML]"
-  - "annotated XSD schemas, constant elements"
 ms.assetid: 940eea1b-54f5-445f-b844-c894d9f3941b
-caps.latest.revision: 27
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Creating Constant Elements Using sql:is-constant (SQLXML 4.0)
-  To specify a constant element—that is, an element in the XSD schema that does not map to any database table or column—you can use the **sql:is-constant** annotation. This annotation takes a Boolean value (0 = false, 1 = true). The acceptable values are 0, 1, true, and false. The **sql:is-constant** annotation can be specified on an element that does not have any attributes. If it is specified on an element with the value true (or 1), that element is not mapped to the database but still appears in the XML document.  
+
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
+  To specify a constant element-that is, an element in the XSD schema that does not map to any database table or column-you can use the **sql:is-constant** annotation. This annotation takes a Boolean value (0 = false, 1 = true). The acceptable values are 0, 1, true, and false. The **sql:is-constant** annotation can be specified on an element that does not have any attributes. If it is specified on an element with the value true (or 1), that element is not mapped to the database but still appears in the XML document.  
   
  The **sql:is-constant** annotation can be used for:  
   
@@ -101,7 +93,7 @@ manager: "jhubbard"
     ```  
   
 3.  Create and use the SQLXML 4.0 Test Script (Sqlxml4test.vbs) to execute the template.  
-  
+
      For more information, see [Using ADO to Execute SQLXML Queries](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md).  
   
  This is the partial result set:  

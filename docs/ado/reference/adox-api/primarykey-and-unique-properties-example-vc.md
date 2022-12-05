@@ -1,27 +1,20 @@
 ---
-title: "PrimaryKey and Unique Properties Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "PrimaryKey and Unique Properties Example (VC++)"
+description: "PrimaryKey and Unique Properties Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Unique property [ADOX], VC++ example"
   - "PrimaryKey property [ADOX], VC++ example"
-ms.assetid: d51814a2-ff7d-48ed-b719-99776da2091a
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # PrimaryKey and Unique Properties Example (VC++)
-This example demonstrates the [PrimaryKey](../../../ado/reference/adox-api/primarykey-property-adox.md) and [Unique](../../../ado/reference/adox-api/unique-property-adox.md) properties of an [Index](../../../ado/reference/adox-api/index-object-adox.md). The code creates a new table with two columns. The **PrimaryKey** and **Unique** properties are used to make one column the primary key for which duplicate values are not allowed.  
+This example demonstrates the [PrimaryKey](./primarykey-property-adox.md) and [Unique](./unique-property-adox.md) properties of an [Index](./index-object-adox.md). The code creates a new table with two columns. The **PrimaryKey** and **Unique** properties are used to make one column the primary key for which duplicate values are not allowed.  
   
 ```  
 // BeginPrimaryKeyCpp.cpp  
@@ -115,7 +108,7 @@ int main() {
       printf("\n\tSource :  %s \n\tdescription : %s \n ", (LPCSTR)bstrSource, (LPCSTR)bstrDescription);  
    }  
    catch(...) {  
-      cout << "Error occured in PrimaryKeyX...." << endl;  
+      cout << "Error occurred in PrimaryKeyX...." << endl;  
    }  
   
    m_pCatalog = NULL;  

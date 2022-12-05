@@ -1,33 +1,28 @@
 ---
-title: "sys.xml_schema_attributes (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.xml_schema_attributes (Transact-SQL)"
+description: sys.xml_schema_attributes (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "xml_schema_attributes_TSQL"
   - "xml_schema_attributes"
   - "sys.xml_schema_attributes_TSQL"
   - "sys.xml_schema_attributes"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.xml_schema_attributes catalog view"
-ms.assetid: dd0c98aa-5e72-4df6-96d9-482786c8dbb1
-caps.latest.revision: 37
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # sys.xml_schema_attributes (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  Returns a row per XML schema component that is an attribute, **symbol_space** of **A**.  
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Returns a row per XML schema component that is an attribute, **symbol_space** of **A**.  
+
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
 |**\<inherited columns>**|--|Inherits from [sys.xml_schema_components](../../relational-databases/system-catalog-views/sys-xml-schema-components-transact-sql.md).|  

@@ -1,24 +1,15 @@
 ---
-title: "getUnicodeStream Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getUnicodeStream Method (SQLServerResultSet)"
+description: "getUnicodeStream Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getUnicodeStream"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getUnicodeStream"
 apitype: "Assembly"
-ms.assetid: 0dd61865-663b-47e2-b417-e9df418894cc
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getUnicodeStream Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

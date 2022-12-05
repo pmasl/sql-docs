@@ -1,16 +1,12 @@
 ---
+description: "Integration Services Developer Documentation"
 title: "Integration Services Developer Documentation | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
 dev_langs: 
   - "VB"
   - "CSharp"
@@ -20,12 +16,14 @@ helpviewer_keywords:
   - "SQL Server Integration Services, programming"
   - "packages [Integration Services], programming"
 ms.assetid: 60fe148b-a7c4-4289-ae3e-2e949fc1886c
-caps.latest.revision: 76
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Integration Services Developer Documentation
+
+[!INCLUDE[sqlserver-ssis](../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] includes a completely rewritten object model, which has been enhanced with many features that make extending and programming packages easier, more flexible, and more powerful. Developers can extend and program almost every aspect of [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] packages.  
   
  As an [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] developer, there are two fundamental approaches that you can take to [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] programming:  
@@ -79,12 +77,6 @@ manager: "jhubbard"
 ## Related Sections  
  [Troubleshooting Tools for Package Development](../integration-services/troubleshooting/troubleshooting-tools-for-package-development.md)  
  Describes the features and tools that [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] provides for troubleshooting packages during development.  
-  
-## External Resources  
-  
--   CodePlex samples, [Integration Services Product Samples](http://go.microsoft.com/fwlink/?LinkID=131204), on www.codeplex.com/MSFTISProdSamples  
-  
+ 
 ## See Also  
  [SQL Server Integration Services](../integration-services/sql-server-integration-services.md)  
-  
-  

@@ -1,27 +1,20 @@
 ---
-title: "RecordTypeEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "RecordTypeEnum"
+description: "RecordTypeEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "RecordTypeEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "RecordTypeEnum enumeration [ADO]"
-ms.assetid: f557e537-015d-4ba7-8a41-a6f00b366a91
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # RecordTypeEnum
-Specifies the type of [Record](../../../ado/reference/ado-api/record-object-ado.md) object.  
+Specifies the type of [Record](./record-object-ado.md) object.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -34,4 +27,4 @@ Specifies the type of [Record](../../../ado/reference/ado-api/record-object-ado.
  These constants do not have ADO/WFC equivalents.  
   
 ## Applies To  
- [RecordType Property (ADO)](../../../ado/reference/ado-api/recordtype-property-ado.md)
+ [RecordType Property (ADO)](./recordtype-property-ado.md)

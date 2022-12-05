@@ -1,22 +1,15 @@
 ---
-title: "Recordset (ADO - WFC Syntax) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Recordset (ADO - WFC Syntax)"
+description: "Recordset (ADO - WFC Syntax)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Recordset collection [ADO], ADO/WFX syntax"
-ms.assetid: bd1f571e-007f-432e-ada1-5c3e436c1a22
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Recordset (ADO - WFC Syntax)
 ## package com.ms.wfc.data  
@@ -133,7 +126,7 @@ public AdoProperties getProperties()
 ```  
   
 ### Events  
- For more information about ADO/WFC events, see [ADO Event Instantiation by Language](../../../ado/guide/data/ado-event-instantiation-by-language.md).  
+ For more information about ADO/WFC events, see [ADO Event Instantiation by Language](../../guide/data/ado-event-instantiation-by-language.md).  
   
 ```  
 public void addOnEndOfRecordset(RecordsetEventHandler handler)  
@@ -161,4 +154,4 @@ public void removeOnWillMove(RecordsetEventHandler handler)
 ```  
   
 ## See Also  
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [Recordset Object (ADO)](./recordset-object-ado.md)

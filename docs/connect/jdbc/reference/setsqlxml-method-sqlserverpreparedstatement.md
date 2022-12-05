@@ -1,19 +1,12 @@
 ---
-title: "setSQLXML Method (SQLServerPreparedStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setSQLXML Method (SQLServerPreparedStatement)"
+description: "setSQLXML Method (SQLServerPreparedStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 70bbdde0-75f7-4169-88c5-dbbe2c4bcd03
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # setSQLXML Method (SQLServerPreparedStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

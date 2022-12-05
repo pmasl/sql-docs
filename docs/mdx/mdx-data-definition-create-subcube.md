@@ -1,32 +1,17 @@
 ---
+description: "MDX Data Definition - CREATE SUBCUBE"
 title: "CREATE SUBCUBE Statement (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "CREATE_SUBCUBE"
-  - "CREATE SUBCUBE"
-  - "CREATE"
-  - "SUBCUBE"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "subcubes [MDX]"
-  - "CREATE SUBCUBE statement"
-ms.assetid: 15b6ac4c-b68a-4f9f-b33c-f5f7c4a74535
-caps.latest.revision: 32
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # MDX Data Definition - CREATE SUBCUBE
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Redefines the cube space of a specified cube or subcube to a specified subcube. This statement changes the apparent cube space for subsequent operations.  
   
@@ -62,7 +47,7 @@ CREATE SUBCUBE Cube_Name AS Select_Statement
   
  Session objects created in the context of a subcube are dropped when the subcube is dropped.  
   
- For more information about subcubes, see [Building Subcubes in MDX &#40;MDX&#41;](../analysis-services/multidimensional-models/mdx/building-subcubes-in-mdx-mdx.md).  
+ For more information about subcubes, see [Building Subcubes in MDX &#40;MDX&#41;](/analysis-services/multidimensional-models/mdx/building-subcubes-in-mdx-mdx).  
   
 ## Example  
  The following example creates a subcube that restricts the apparent cube space to members that exist with the country of Canada. It then uses the **MEMBERS** function to return all members of the Country level of the Geography user-defined hierarchy - returning only the country of Canada.  
@@ -99,9 +84,8 @@ SELECT [Geography].[Country].[Country].MEMBERS ON 0
   
  Yields the following results:  
   
-|||||  
+|Business Type + Category|All Products|Accessories|Clothing|  
 |-|-|-|-|  
-||All Products|Accessories|Clothing|  
 |All Resellers|$2,031,079.39|$506,172.45|$1,524,906.93|  
 |Value Added Reseller|$767,388.52|$175,002.81|$592,385.71|  
 |Warehouse|$1,263,690.86|$331,169.64|$932,521.23|  
@@ -128,9 +112,8 @@ SELECT [Geography].[Country].[Country].MEMBERS ON 0
   
  Yields the following different results:  
   
-|||||  
+|Business Type + Category|All Products|Accessories|Clothing|  
 |-|-|-|-|  
-||All Products|Accessories|Clothing|  
 |All Resellers|$80,450,596.98|$571,297.93|$1,777,840.84|  
 |Value Added Reseller|$34,967,517.33|$175,002.81|$592,385.71|  
 |Warehouse|$38,726,913.48|$331,169.64|$932,521.23|  
@@ -138,9 +121,8 @@ SELECT [Geography].[Country].[Country].MEMBERS ON 0
  The [All Products] and [All Resellers], column and row respectively, contains totals for all members not only those visible ones.  
   
 ## See Also  
- [Key Concepts in MDX &#40;Analysis Services&#41;](../analysis-services/multidimensional-models/mdx/key-concepts-in-mdx-analysis-services.md)   
+ [Key Concepts in MDX &#40;Analysis Services&#41;](/analysis-services/multidimensional-models/mdx/key-concepts-in-mdx-analysis-services)   
  [MDX Scripting Statements &#40;MDX&#41;](../mdx/mdx-scripting-statements-mdx.md)   
  [DROP SUBCUBE Statement &#40;MDX&#41;](../mdx/mdx-data-definition-drop-subcube.md)   
  [SELECT Statement &#40;MDX&#41;](../mdx/mdx-data-manipulation-select.md)  
-  
   

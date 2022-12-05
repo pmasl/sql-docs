@@ -1,22 +1,18 @@
 ---
-title: "@@DATEFIRST (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/29/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "@@DATEFIRST (Transact-SQL)"
+description: "@@DATEFIRST (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
+ms.date: "09/18/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DATE_FORMAT_TSQL"
   - "DATE FORMAT"
   - "@@DATEFIRST_TSQL"
   - "@@DATEFIRST"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "dates [SQL Server], functions"
   - "date and time [SQL Server], SET DATEFIRST"
   - "first day of week [SQL Server]"
@@ -30,36 +26,45 @@ helpviewer_keywords:
   - "@@DATEFIRST function [SQL Server]"
   - "functions [SQL Server], date and time"
   - "options [SQL Server], date"
-ms.assetid: a178868e-49d5-4bd5-a5e2-1283409c8ce6
-caps.latest.revision: 46
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
-# @@DATEFIRST (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+# &#x40;&#x40;DATEFIRST (Transact-SQL)
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-Returns the current value, for a session, of [SET DATEFIRST](../../t-sql/statements/set-datefirst-transact-sql.md).
+This function returns the current value of [SET DATEFIRST](../../t-sql/statements/set-datefirst-transact-sql.md), for a specific session.
   
-For an overview of all [!INCLUDE[tsql](../../includes/tsql-md.md)] date and time data types and functions, see [Date and Time Data Types and Functions &#40;Transact-SQL&#41;](../../t-sql/functions/date-and-time-data-types-and-functions-transact-sql.md).
+See [Date and Time Data Types and Functions &#40;Transact-SQL&#41;](../../t-sql/functions/date-and-time-data-types-and-functions-transact-sql.md) for an overview of all [!INCLUDE[tsql](../../includes/tsql-md.md)] date and time data types and functions.
   
 ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
 ## Syntax  
   
-```sql
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql
 @@DATEFIRST  
 ```  
-  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
 ## Return Type  
 **tinyint**
   
 ## Remarks  
-SET DATEFIRST specifies the first day of the week. The U.S. English default is 7, Sunday.
+SET DATEFIRST *n* specifies the first day (SUNDAY, MONDAY, TUESDAY, etc.) of the week. The value of *n* ranges from 1 to 7.
+
+```sql
+SET DATEFIRST 3;
+GO  
+SELECT @@DATEFIRST; -- 3 (Wednesday)
+GO
+```  
+
+For a U.S. English environment, @@DATEFIRST defaults to 7 (Sunday).
   
-This language setting affects the interpretation of character strings as they are converted to date values for storage in the database, and the display of date values that are stored in the database. This setting does not affect the storage format of date data. In the following example, the language is first set to `Italian`. The statement `SELECT @@DATEFIRST;` returns `1`. The language is then set to `us_english`. The statement `SELECT @@DATEFIRST;` returns `7`.
+This language setting impacts character string interpretation as SQL Server converts those strings to date values for database storage. This setting also impacts display of date values stored in the database. This setting does not impact the storage format of date data.
+
+This example first sets the language to `Italian`. The statement `SELECT @@DATEFIRST;` returns `1`. The next statement sets the language to  is then set to `us_english`. The final statement, `SELECT @@DATEFIRST;` returns `7`.
   
 ```sql
 SET LANGUAGE Italian;  
@@ -72,7 +77,7 @@ SELECT @@DATEFIRST;
 ```  
   
 ## Examples  
-The following example sets the first day of the week to `5` (Friday), and assumes the current day, `Today`, to be Saturday. The `SELECT` statement returns the `DATEFIRST` value and the number of the current day of the week.
+This example sets the first day of the week to `5` (Friday), and assumes that the current day, `Today`, falls on Saturday. The `SELECT` statement returns the `DATEFIRST` value and the number of the current day of the week.
   
 ```sql
 SET DATEFIRST 5;  
@@ -82,7 +87,7 @@ SELECT @@DATEFIRST AS 'First Day'
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 First Day         Today  
 ----------------  --------------  
 5                 2  

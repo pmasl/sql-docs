@@ -1,19 +1,12 @@
 ---
-title: "setNClob Method (int, java.sql.NClob) | Microsoft Docs"
-ms.custom: ""
+title: "setNClob Method (int, java.sql.NClob)"
+description: "setNClob Method (int, java.sql.NClob)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 48c8aa2a-4185-4837-b592-830e60f8ca0b
-caps.latest.revision: 20
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # setNClob Method (int, java.sql.NClob)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

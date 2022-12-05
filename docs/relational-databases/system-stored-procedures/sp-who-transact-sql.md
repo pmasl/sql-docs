@@ -1,14 +1,12 @@
 ---
+description: "sp_who (Transact-SQL)"
 title: "sp_who (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_who_TSQL"
   - "sp_who"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_who"
 ms.assetid: 132dfb08-fa79-422e-97d4-b2c4579c6ac5
-caps.latest.revision: 48
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # sp_who (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Provides information about current users, sessions, and processes in an instance of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]. The information can be filtered to return only those processes that are not idle, that belong to a specific user, or that belong to a specific session.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -41,7 +33,7 @@ sp_who [ [ @loginame = ] 'login' | session ID | 'ACTIVE' ]
 ```  
   
 ## Arguments  
- [ **@loginame =** ] **'***login***'** | *session ID* | **'ACTIVE'**  
+`[ @loginame = ] 'login' | session ID | 'ACTIVE'`
  Is used to filter the result set.  
   
  *login* is **sysname** that identifies processes belonging to a particular login.  
@@ -67,7 +59,7 @@ sp_who [ [ @loginame = ] 'login' | session ID | 'ACTIVE' ]
 |**hostname**|**nchar(128)**|Host or computer name for each process.|  
 |**blk**|**char(5)**|Session ID for the blocking process, if one exists. Otherwise, this column is zero.<br /><br /> When a transaction associated with a specified session ID is blocked by an orphaned distributed transaction, this column will return a '-2' for the blocking orphaned transaction.|  
 |**dbname**|**nchar(128)**|Database used by the process.|  
-|**cmd**|**nchar(16)**|[!INCLUDE[ssDE](../../includes/ssde-md.md)] command ([!INCLUDE[tsql](../../includes/tsql-md.md)] statement, internal [!INCLUDE[ssDE](../../includes/ssde-md.md)] process, and so on) executing for the process.|  
+|**cmd**|**nchar(16)**|[!INCLUDE[ssDE](../../includes/ssde-md.md)] command ([!INCLUDE[tsql](../../includes/tsql-md.md)] statement, internal [!INCLUDE[ssDE](../../includes/ssde-md.md)] process, and so on) executing for the process. In SQL Server 2019, the data type has changed to **nchar(26)**.|  
 |**request_id**|**int**|ID for requests running in a specific session.|  
   
  In case of parallel processing, subthreads are created for the specific session ID. The main thread is indicated as `spid = <xxx>` and `ecid =0`. The other subthreads have the same `spid = <xxx>`, but with **ecid** > 0.  

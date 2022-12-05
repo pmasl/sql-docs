@@ -1,23 +1,21 @@
 ---
+description: "DTCTransaction Event Class"
 title: "DTCTransaction Event Class | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: reference
 helpviewer_keywords: 
   - "DTCTransaction event class"
 ms.assetid: 9a2d358e-5b8f-4d0b-8b93-6705c009ad57
-caps.latest.revision: 37
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # DTCTransaction Event Class
+[!INCLUDE [SQL Server - ASDB](../../includes/applies-to-version/sql-asdb.md)]
   Use the **DTCTransaction** event class to monitor the state of [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] transactions coordinated through [!INCLUDE[msCoName](../../includes/msconame-md.md)] Distributed Transaction Coordinator (DTC). This includes transactions involving two or more databases in the same instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)], or distributed transactions involving two or more instances of the [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
 ## DTCTransaction Event Class Data Columns  

@@ -1,25 +1,25 @@
 ---
+description: "SSIS Toolbox"
 title: "SSIS Toolbox | Microsoft Docs"
 ms.custom: ""
 ms.date: "11/16/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.designer.toolboxfavorites.F1"
   - "sql13.dts.designer.toolbox.F1"
   - "sql13.dts.designer.toolboxcommon.F1"
 ms.assetid: 552ff592-eeef-46e8-b4a2-9b2384c869aa
-caps.latest.revision: 16
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # SSIS Toolbox
+
+[!INCLUDE[sqlserver-ssis](../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   All components installed on the local machine automatically appear in the **SSIS Toolbox**. When you install additional components, right-click inside the toolbox and then click **Refresh Toolbox** to add the components.  
  
  When you create a new SSIS project or open an existing project, the **SSIS Toolbox** displays automatically. You can also open the toolbox by clicking the toolbox button that is located in the top-right corner of the package design surface, or by clicking VIEW -> Other Windows -> SSIS Toolbox.
@@ -27,7 +27,7 @@ manager: "jhubbard"
  > [!NOTE]
 > If you can't see the toolbox, go to VIEW -> Other Windows -> SSIS Toolbox.
  
-Get more information about a component in the toolbox by clicking the component to view its description at the bottom of the toolbox. For some components you can also access samples that demonstrate how to configure and use the components. The samples are available on [MSDN](http://go.microsoft.com/fwlink/?LinkId=259189). To access the samples from the **SSIS Toolbox**, click the **Find Samples** link that appears below the description.  
+Get more information about a component in the toolbox by clicking the component to view its description at the bottom of the toolbox. For some components you can also access samples that demonstrate how to configure and use the components. The samples are available on [MSDN](/samples/browse/). To access the samples from the **SSIS Toolbox**, click the **Find Samples** link that appears below the description.  
   
 > [!NOTE]
 > You can't *remove* installed components from the toolbox.  
@@ -58,5 +58,4 @@ Get more information about a component in the toolbox by clicking the component 
   
 ## Refresh the SSIS Toolbox  
   
-1.  Right-click in the SSIS Toolbox, and then click **Refresh Toolbox**.  
-
+1.  Right-click in the SSIS Toolbox, and then click **Refresh Toolbox**.

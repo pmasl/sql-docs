@@ -1,22 +1,15 @@
 ---
-title: "sqlsrv_num_rows | Microsoft Docs"
-ms.custom: ""
+title: "sqlsrv_num_rows"
+description: "API reference for the sqlsrv_num_rows function in the Microsoft SQLSRV Driver for PHP for SQL Server."
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+helpviewer_keywords:
   - "API Reference, sqlsrv_num_rows"
   - "sqlsrv_num_rows"
-ms.assetid: c832210e-bb2a-47b5-a505-160b02d1d95e
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # sqlsrv_num_rows
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]

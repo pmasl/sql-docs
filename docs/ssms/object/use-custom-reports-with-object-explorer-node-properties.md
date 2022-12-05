@@ -1,23 +1,20 @@
 ---
-title: "Use Custom Reports with Object Explorer Node Properties | Microsoft Docs"
-ms.custom: ""
+description: "Use Custom Reports with Object Explorer Node Properties"
+title: "Use Custom Reports with Object Explorer Node Properties"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQL Server Management Studio [SQL Server], custom reports"
 ms.assetid: c7b84355-71ba-402d-85af-23826f18b7da
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Use Custom Reports with Object Explorer Node Properties
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 Custom reports can execute in the context of a selected Object Explorer node if the custom reports reference the report parameters of that node. This enables a custom report to use the current context, for example the current database, or a database or server object.  
   
 ## Object Explorer Node Report Parameters  
@@ -40,7 +37,7 @@ To run the example, use the following procedure.
   
 2.  Copy the report file to a folder that you have created on the database server for custom reports.  
   
-3.  In [!INCLUDE[ssManStudio](../../includes/ssmanstudio_md.md)], right-click a node in Object Explorer, point to **Reports**, click Custom Reports. In the **Open File** dialog box, locate the custom reports folder and select the report file, and then click **Open**.  
+3.  In [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)], right-click a node in Object Explorer, point to **Reports**, click Custom Reports. In the **Open File** dialog box, locate the custom reports folder and select the report file, and then click **Open**.  
   
     When a new custom report is first opened from an Object Explorer node, the custom report is added to the most recently used list under **Custom Reports** on the shortcut menu of that node. When a standard report is opened for the first time, it will also appear on the most recently used list under **Custom Reports**. If a custom report file is deleted, the next time that the item is selected, a prompt will appear to delete the item from the most recently used list.  
   
@@ -52,7 +49,7 @@ To run the example, use the following procedure.
 The report that is created by using the following code will use the parameters that are associated with an Object Explorer node.  
   
 ```  
-<pre><?xml version="1.0" encoding="utf-8"?>  
+<?xml version="1.0" encoding="utf-8"?>  
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">  
 <ReportParameters>  
 <ReportParameter Name="ObjectName">  
@@ -523,7 +520,7 @@ The report that is created by using the following code will use the parameters t
 <InteractiveHeight>11in</InteractiveHeight>  
 <Language>en-US</Language>  
 <TopMargin>1in</TopMargin>  
-</Report></pre>  
+</Report>  
 ```
 
 ## See Also  

@@ -1,29 +1,22 @@
 ---
-title: "Move Record Pointer of Recordset Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Move Record Pointer of Recordset Example (VC++)"
+description: "MoveFirst, MoveLast, MoveNext, and MovePrevious Methods Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "MoveLast method [ADO], VC++ example"
   - "MoveNext method [ADO], VC++ example"
   - "MovePrevious method [ADO], VC++ example"
   - "MoveFirst method [ADO], VC++ example"
-ms.assetid: 7f8aea7b-9183-4b29-8ac0-a393ed2e8bd5
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # MoveFirst, MoveLast, MoveNext, and MovePrevious Methods Example (VC++)
-This example uses the [MoveFirst](../../../ado/reference/ado-api/movefirst-movelast-movenext-and-moveprevious-methods-ado.md), [MoveLast](../../../ado/reference/ado-api/movefirst-movelast-movenext-and-moveprevious-methods-ado.md), [MoveNext](../../../ado/reference/ado-api/movefirst-movelast-movenext-and-moveprevious-methods-ado.md), and [MovePrevious](../../../ado/reference/ado-api/movefirst-movelast-movenext-and-moveprevious-methods-ado.md) methods to move the record pointer of a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) based on the supplied command. The MoveAny function is required for this example to run.  
+This example uses the [MoveFirst](./movefirst-movelast-movenext-and-moveprevious-methods-ado.md), [MoveLast](./movefirst-movelast-movenext-and-moveprevious-methods-ado.md), [MoveNext](./movefirst-movelast-movenext-and-moveprevious-methods-ado.md), and [MovePrevious](./movefirst-movelast-movenext-and-moveprevious-methods-ado.md) methods to move the record pointer of a [Recordset](./recordset-object-ado.md) based on the supplied command. The MoveAny function is required for this example to run.  
   
 ## Example  
   
@@ -206,5 +199,5 @@ void PrintComError(_com_error &e) {
 ```  
   
 ## See Also  
- [MoveFirst, MoveLast, MoveNext, and MovePrevious Methods (ADO)](../../../ado/reference/ado-api/movefirst-movelast-movenext-and-moveprevious-methods-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [MoveFirst, MoveLast, MoveNext, and MovePrevious Methods (ADO)](./movefirst-movelast-movenext-and-moveprevious-methods-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

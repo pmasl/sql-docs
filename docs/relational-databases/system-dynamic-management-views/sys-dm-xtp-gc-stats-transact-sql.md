@@ -1,37 +1,33 @@
 ---
-title: "sys.dm_xtp_gc_stats (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_xtp_gc_stats (Transact-SQL)"
+description: sys.dm_xtp_gc_stats (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_xtp_gc_stats"
   - "dm_xtp_gc_stats_TSQL"
   - "sys.dm_xtp_gc_stats_TSQL"
   - "sys.dm_xtp_gc_stats"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_xtp_gc_stats dynamic management view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 8287d611-50e3-43e1-ba8d-3e3793d3ba0e
-caps.latest.revision: 20
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
-# sys.dm_xtp_gc_stats (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2014-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-xxxx-xxxx-xxx-md.md)]
 
-  Provides information (the overall statistics) about the current behavior of the [!INCLUDE[hek_2](../../includes/hek-2-md.md)] garbage-collection process.  
+# sys.dm_xtp_gc_stats (Transact-SQL)
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+
+Provides information (the overall statistics) about the current behavior of the [!INCLUDE[inmemory](../../includes/inmemory-md.md)] garbage-collection process.  
   
  Rows are garbage collected as part of regular transaction processing, or by the main garbage collection thread, which is referred to as the idle worker. When a user transaction commits, it dequeues one work item from the garbage collection queue ([sys.dm_xtp_gc_queue_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-xtp-gc-queue-stats-transact-sql.md)). Any rows that could be garbage collected but were not accessed by main user transaction are garbage collected by the idle worker, as part of the dusty corner scan (a scan for areas of the index that are less accessed).  
   
- For more information, see [In-Memory OLTP &#40;In-Memory Optimization&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md).  
+ For more information, see [In-Memory OLTP &#40;In-Memory Optimization&#41;](../in-memory-oltp/overview-and-usage-scenarios.md).  
   
 |Column name|Type|Description|  
 |-----------------|----------|-----------------|  
@@ -70,5 +66,4 @@ sweep_rows_expiring  sweep_rows_expired   sweep_rows_expired_removed
   
 ## See Also  
  [Memory-Optimized Table Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/memory-optimized-table-dynamic-management-views-transact-sql.md)  
-  
   

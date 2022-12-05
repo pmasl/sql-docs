@@ -1,22 +1,18 @@
 ---
+description: "Modifying a Visual FoxPro Data Source"
 title: "Modifying a Visual FoxPro Data Source | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Visual FoxPro data source [ODBC], changing"
   - "editing data sources [ODBC], Visual FoxPro"
 ms.assetid: d9c30b5a-9ddf-4044-a7c5-0bdb983fdda4
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Modifying a Visual FoxPro Data Source
 ### To modify a Visual FoxPro data source  

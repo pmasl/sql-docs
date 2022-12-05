@@ -1,31 +1,24 @@
 ---
-title: "sys.dm_broker_connections (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/08/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.dm_broker_connections (Transact-SQL) "
+description: sys.dm_broker_connections returns a row for each Service Broker network connection.
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "06/03/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_broker_connections"
   - "dm_broker_connections"
   - "sys.dm_broker_connections_TSQL"
   - "dm_broker_connections_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_broker_connections dynamic management view"
-ms.assetid: d9e20433-67fe-4fcc-80e3-b94335b2daef
-caps.latest.revision: 45
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # sys.dm_broker_connections (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row for each [!INCLUDE[ssSB](../../includes/sssb-md.md)] network connection. The following table provides more information:  
   
@@ -62,18 +55,16 @@ manager: "jhubbard"
 ## Permissions  
  Requires VIEW SERVER STATE permission on the server.  
   
-## Physical Joins  
- ![Joins for sys.dm_broker_connections](../../relational-databases/system-dynamic-management-views/media/join-dm-broker-connections-1.gif "Joins for sys.dm_broker_connections")  
+## Physical joins  
+
+:::image type="content" source="../../relational-databases/system-dynamic-management-views/media/join-dm-broker-connections-1.svg" alt-text="Diagram of physical joins for sys.dm_broker_connections.":::
   
-## Relationship Cardinalities  
+## Relationship cardinalities  
   
 |From|To|Relationship|  
 |----------|--------|------------------|  
-|**dm_broker_connections.connection_id**|**dm_exec_connections.connection_id**|One-to-one|  
+|`dm_broker_connections.connection_id`|`dm_exec_connections.connection_id`|One-to-one|  
   
-## See Also  
+## Next steps
  [Dynamic Management Views and Functions &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
  [Service Broker Related Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/service-broker-related-dynamic-management-views-transact-sql.md)  
-  
-  
-

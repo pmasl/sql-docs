@@ -1,24 +1,15 @@
 ---
-title: "cancel Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "cancel Method (SQLServerStatement)"
+description: "cancel Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.cancel"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.cancel"
 apitype: "Assembly"
-ms.assetid: 276bd9c1-9329-4fc9-9622-ed673c83a12d
-caps.latest.revision: 19
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # cancel Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,13 +1,11 @@
 ---
-title: "ProcessId Class (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "ProcessId Class (SqlService Class)"
+title: "ProcessId Class (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "ProcessId Class (SqlService Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "ProcessId property"
 ms.assetid: 99b5a2e9-b44a-48a0-993e-04bd15c7fef4
-caps.latest.revision: 35
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # ProcessId Class (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the system process ID that uniquely identifies a service.  
   
 ## Syntax  
@@ -48,6 +45,6 @@ mysqlservice.ProcessId = 324
 ```  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

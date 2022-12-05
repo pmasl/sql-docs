@@ -1,35 +1,28 @@
 ---
-title: "SET STATISTICS PROFILE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "SET STATISTICS PROFILE (Transact-SQL)"
+description: SET STATISTICS PROFILE (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "PROFILE"
   - "SET_STATISTICS_PROFILE_TSQL"
   - "PROFILE_TSQL"
   - "SET STATISTICS PROFILE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "profiles [SQL Server], displaying"
   - "statements [SQL Server], profile information"
   - "SET STATISTICS PROFILE statement"
   - "STATISTICS PROFILE option"
   - "statistical information [SQL Server], profiles"
-ms.assetid: c635e262-35fa-421a-aa6f-a1c30f351647
-caps.latest.revision: 34
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # SET STATISTICS PROFILE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Displays the profile information for a statement. STATISTICS PROFILE works for ad hoc queries, views, and stored procedures.  
   
@@ -37,12 +30,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 SET STATISTICS PROFILE { ON | OFF }  
 ```  
   
-## Remarks  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Remarks
  When STATISTICS PROFILE is ON, each executed query returns its regular result set, followed by an additional result set that shows a profile of the query execution.  
   
  The additional result set contains the SHOWPLAN_ALL columns for the query and these additional columns.  

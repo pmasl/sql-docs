@@ -1,37 +1,30 @@
 ---
-title: "sys.selective_xml_index_paths (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.selective_xml_index_paths (Transact-SQL)"
+description: sys.selective_xml_index_paths (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "xml_schema_attributes_TSQL"
-  - "xml_schema_attributes"
-  - "sys.xml_schema_attributes_TSQL"
-  - "sys.xml_schema_attributes"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
+  - "xml_schema_index_TSQL"
+  - "xml_schema_index"
+helpviewer_keywords:
   - "sys.xml_schema_attributes catalog view"
-ms.assetid: 07a73d71-ec3e-4894-947a-5859ca62c606
-caps.latest.revision: 6
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # sys.selective_xml_index_paths (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
 
-  Available beginning in [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] Service Pack 1, each row in sys.selective_xml_index_paths represents one promoted path for particular selective xml index.  
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Available beginning in [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] Service Pack 1, each row in sys.selective_xml_index_paths represents one promoted path for particular selective xml index.  
   
- If you create a selective xml index on xmlcol of table T using following statement,  
+If you create a selective xml index on xmlcol of table T using following statement,  
   
-```  
+```sql  
 CREATE SELECTIVE XML INDEX sxi1 ON T(xmlcol)   
 FOR ( path1 = '/a/b/c' AS XQUERY 'xs:string',  
       path2 = '/a/b/d' AS XQUERY 'xs:double'  
@@ -40,7 +33,6 @@ FOR ( path1 = '/a/b/c' AS XQUERY 'xs:string',
   
  There will be two new rows in sys.selective_xml_index_paths corresponding to the index sxi1.  
 
-  
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
 |**object_id**|**int**|ID of table with XML column.|  

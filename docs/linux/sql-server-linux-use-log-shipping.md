@@ -1,46 +1,31 @@
 ---
-# required metadata
-
-title: Configure log shipping for SQL Server on Linux | Microsoft Docs
+title: Configure log shipping for SQL Server on Linux
 description: This tutorial shows a basic example of how to replicate a SQL Server instance on Linux to a secondary instance using log shipping.
-author: meet-bhagdev 
-ms.author: meetb 
-manager: jhubbard
-ms.date: 04/19/2017
-ms.topic: article
-ms.prod: sql-linux
-ms.technology: database-engine
-ms.assetid: 
-
-# optional metadata
-
-# keywords: ""
-# ROBOTS: ""
-# audience: ""
-# ms.devlang: ""
-# ms.reviewer: ""
-# ms.suite: ""
-# ms.tgt_pltfrm: ""
-# ms.custom: ""
-
+author: VanMSFT
+ms.author: vanto
+ms.date: 07/01/2020
+ms.topic: conceptual
+ms.service: sql
+ms.subservice: linux
+ms.custom:
+  - intro-get-started
 ---
-
-
 # Get started with Log Shipping on Linux
+
+[!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
 
 SQL Server Log shipping is a HA configuration where a database from a primary server is replicated onto one or more secondary servers. In a nutshell, a backup of the source database is restored onto the secondary server. Then the primary server creates transaction log backups periodically, and the secondary servers restore them, updating the secondary copy of the database. 
 
-  ![Logshipping](https://preview.ibb.co/hr5Ri5/logshipping.png)
+  ![Diagram showing the log shipping workflow.](https://preview.ibb.co/hr5Ri5/logshipping.png)
 
-
-As described in the picture above, a log shipping session involves the following steps:
+As described in the this picture, a log shipping session involves the following steps:
 
 - Backing up the transaction log file on the primary SQL Server instance
 - Copying the transaction log backup file across the network to one or more secondary SQL Server instances
 - Restoring the transaction log backup file on the secondary SQL Server instances
 
 ## Prerequisites
-- [Install SQL Server Agent on Linux](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-sql-agent)
+- [Install SQL Server Agent on Linux](./sql-server-linux-setup-sql-agent.md)
 
 ## Setup a network share for Log Shipping using CIFS 
 
@@ -95,11 +80,13 @@ As described in the picture above, a log shipping session involves the following
 
 -   Create a file to store your credentials. Use the password you recently set for your mssql Samba account 
 
+    ```console
         vim /var/opt/mssql/.tlogcreds
         #Paste the following in .tlogcreds
         username=mssql
         domain=<domain>
         password=<password>
+    ```
 
 -   Run the following commands to create an empty directory for mounting and set permission and ownership correctly
     ```bash   
@@ -112,8 +99,10 @@ As described in the picture above, a log shipping session involves the following
 
 -   Add the line to etc/fstab to persist the share 
 
+    ```console
         //<ip_address_of_primary_server>/tlogs /var/opt/mssql/tlogs cifs credentials=/var/opt/mssql/.tlogcreds,ro,uid=mssql,gid=mssql 0 0
-        
+    ```
+
 -   Mount the shares
     ```bash   
     sudo mount -a
@@ -123,16 +112,17 @@ As described in the picture above, a log shipping session involves the following
 
 - Run this script from your primary server
 
-    ```tsql
+    ```sql
     BACKUP DATABASE SampleDB
     TO DISK = '/var/opt/mssql/tlogs/SampleDB.bak'
     GO
     ```
-    ```tsql
+
+    ```sql
     DECLARE @LS_BackupJobId	AS uniqueidentifier 
     DECLARE @LS_PrimaryId	AS uniqueidentifier 
     DECLARE @SP_Add_RetCode	As int 
-    EXEC @SP_Add_RetCode = master.dbo.sp_add_log_shipping_primary_database 
+    EXECUTE @SP_Add_RetCode = master.dbo.sp_add_log_shipping_primary_database 
              @database = N'SampleDB' 
             ,@backup_directory = N'/var/opt/mssql/tlogs' 
             ,@backup_share = N'/var/opt/mssql/tlogs' 
@@ -152,7 +142,7 @@ As described in the picture above, a log shipping session involves the following
     DECLARE @LS_BackUpScheduleUID	As uniqueidentifier 
     DECLARE @LS_BackUpScheduleID	AS int 
 
-    EXEC msdb.dbo.sp_add_schedule 
+    EXECUTE msdb.dbo.sp_add_schedule 
             @schedule_name =N'LSBackupSchedule' 
             ,@enabled = 1 
             ,@freq_type = 4 
@@ -167,19 +157,19 @@ As described in the picture above, a log shipping session involves the following
             ,@schedule_uid = @LS_BackUpScheduleUID OUTPUT 
             ,@schedule_id = @LS_BackUpScheduleID OUTPUT 
 
-    EXEC msdb.dbo.sp_attach_schedule 
+    EXECUTE msdb.dbo.sp_attach_schedule 
             @job_id = @LS_BackupJobId 
             ,@schedule_id = @LS_BackUpScheduleID  
 
-    EXEC msdb.dbo.sp_update_job 
+    EXECUTE msdb.dbo.sp_update_job 
             @job_id = @LS_BackupJobId 
             ,@enabled = 1 
             
     END 
 
-    EXEC master.dbo.sp_add_log_shipping_alert_job 
+    EXECUTE master.dbo.sp_add_log_shipping_alert_job 
 
-    EXEC master.dbo.sp_add_log_shipping_primary_secondary 
+    EXECUTE master.dbo.sp_add_log_shipping_primary_secondary 
             @primary_database = N'SampleDB' 
             ,@secondary_server = N'<ip_address_of_secondary_server>' 
             ,@secondary_database = N'SampleDB' 
@@ -189,18 +179,18 @@ As described in the picture above, a log shipping session involves the following
 
 - Run this script from your secondary server
 
-    ```tsql
+    ```sql
     RESTORE DATABASE SampleDB FROM DISK = '/var/opt/mssql/tlogs/SampleDB.bak'
     WITH NORECOVERY;
     ```
     
-    ```tsql
+    ```sql
     DECLARE @LS_Secondary__CopyJobId	AS uniqueidentifier 
     DECLARE @LS_Secondary__RestoreJobId	AS uniqueidentifier 
     DECLARE @LS_Secondary__SecondaryId	AS uniqueidentifier 
     DECLARE @LS_Add_RetCode	As int 
 
-    EXEC @LS_Add_RetCode = master.dbo.sp_add_log_shipping_secondary_primary 
+    EXECUTE @LS_Add_RetCode = master.dbo.sp_add_log_shipping_secondary_primary 
             @primary_server = N'<ip_address_of_primary_server>' 
             ,@primary_database = N'SampleDB' 
             ,@backup_source_directory = N'/var/opt/mssql/tlogs/' 
@@ -219,7 +209,7 @@ As described in the picture above, a log shipping session involves the following
     DECLARE @LS_SecondaryCopyJobScheduleUID	As uniqueidentifier 
     DECLARE @LS_SecondaryCopyJobScheduleID	AS int 
 
-    EXEC msdb.dbo.sp_add_schedule 
+    EXECUTE msdb.dbo.sp_add_schedule 
             @schedule_name =N'DefaultCopyJobSchedule' 
             ,@enabled = 1 
             ,@freq_type = 4 
@@ -234,14 +224,14 @@ As described in the picture above, a log shipping session involves the following
             ,@schedule_uid = @LS_SecondaryCopyJobScheduleUID OUTPUT 
             ,@schedule_id = @LS_SecondaryCopyJobScheduleID OUTPUT 
 
-    EXEC msdb.dbo.sp_attach_schedule 
+    EXECUTE msdb.dbo.sp_attach_schedule 
             @job_id = @LS_Secondary__CopyJobId 
             ,@schedule_id = @LS_SecondaryCopyJobScheduleID  
 
     DECLARE @LS_SecondaryRestoreJobScheduleUID	As uniqueidentifier 
     DECLARE @LS_SecondaryRestoreJobScheduleID	AS int 
 
-    EXEC msdb.dbo.sp_add_schedule 
+    EXECUTE msdb.dbo.sp_add_schedule 
             @schedule_name =N'DefaultRestoreJobSchedule' 
             ,@enabled = 1 
             ,@freq_type = 4 
@@ -256,7 +246,7 @@ As described in the picture above, a log shipping session involves the following
             ,@schedule_uid = @LS_SecondaryRestoreJobScheduleUID OUTPUT 
             ,@schedule_id = @LS_SecondaryRestoreJobScheduleID OUTPUT 
 
-    EXEC msdb.dbo.sp_attach_schedule 
+    EXECUTE msdb.dbo.sp_attach_schedule 
             @job_id = @LS_Secondary__RestoreJobId 
             ,@schedule_id = @LS_SecondaryRestoreJobScheduleID  
             
@@ -265,7 +255,7 @@ As described in the picture above, a log shipping session involves the following
     IF (@@ERROR = 0 AND @LS_Add_RetCode = 0) 
     BEGIN 
 
-    EXEC @LS_Add_RetCode2 = master.dbo.sp_add_log_shipping_secondary_database 
+    EXECUTE @LS_Add_RetCode2 = master.dbo.sp_add_log_shipping_secondary_database 
             @secondary_database = N'SampleDB' 
             ,@primary_server = N'<ip_address_of_primary_server>' 
             ,@primary_database = N'SampleDB' 
@@ -282,11 +272,11 @@ As described in the picture above, a log shipping session involves the following
     IF (@@error = 0 AND @LS_Add_RetCode = 0) 
     BEGIN 
 
-    EXEC msdb.dbo.sp_update_job 
+    EXECUTE msdb.dbo.sp_update_job 
             @job_id = @LS_Secondary__CopyJobId 
             ,@enabled = 1 
 
-    EXEC msdb.dbo.sp_update_job 
+    EXECUTE msdb.dbo.sp_update_job 
             @job_id = @LS_Secondary__RestoreJobId 
             ,@enabled = 1 
 
@@ -297,25 +287,30 @@ As described in the picture above, a log shipping session involves the following
 
 - Verify that Log Shipping works by starting the following job on the primary server
 
-    ```tsql
+    ```sql
     USE msdb ;  
     GO  
 
-    EXEC dbo.sp_start_job N'LSBackup_SampleDB' ;  
+    EXECUTE dbo.sp_start_job N'LSBackup_SampleDB' ;  
     GO  
     ```
 
 - Verify that Log Shipping works by starting the following job on the secondary server
  
-    ```tsql
+    ```sql
     USE msdb ;  
     GO  
 
-    EXEC dbo.sp_start_job N'LSCopy_SampleDB' ;  
+    EXECUTE dbo.sp_start_job N'LSCopy_SampleDB' ;  
     GO  
-    EXEC dbo.sp_start_job N'LSRestore_SampleDB' ;  
+    EXECUTE dbo.sp_start_job N'LSRestore_SampleDB' ;  
     GO  
+    ```
+ - Verify that Log Shipping failover works by executing the following command
+ 
+    > [!WARNING]
+    > This command will bring the secondary database online and break the Log Shipping configuration. You will need to reconfigure Log    Shipping after running this command.
+ 
+    ```sql
     RESTORE DATABASE SampleDB WITH RECOVERY;
     ```
-
-

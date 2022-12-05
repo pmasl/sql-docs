@@ -1,19 +1,12 @@
 ---
-title: "setAuthenticationScheme (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "setAuthenticationScheme (SQLServerDataSource)"
+description: "setAuthenticationScheme (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b942f78e-7ce1-44ef-923d-a7c3d7c76b83
-caps.latest.revision: 4
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # setAuthenticationScheme (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,15 +1,14 @@
 ---
-title: "Mapping XSD Data Types to XPath Data Types (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Mapping XSD Data Types to XPath Data Types (SQLXML)"
+description: Learn how to map XSD data types to XPath data types when performing an XPath query in SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "mapping data types [SQLXML]"
   - "data types [SQLXML], converting"
   - "annotated XSD schemas, mapping data types"
@@ -19,12 +18,10 @@ helpviewer_keywords:
   - "XPath data types [SQLXML]"
   - "XSD schemas [SQLXML], mapping data types"
 ms.assetid: ced1a95e-18d4-4a5a-8da8-dbb6d58bbd45
-caps.latest.revision: 24
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Mapping XSD Data Types to XPath Data Types (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   When an XPath query is executed against an XSD schema and the XSD type is specified in the **xsd:type** attribute, XPath uses the data type specified when it processes the query.  
   
  The XPath data type of a node is derived from the XSD data type in the schema, as shown in the following table. (The EmployeeID node is used for the purpose of illustration.)  

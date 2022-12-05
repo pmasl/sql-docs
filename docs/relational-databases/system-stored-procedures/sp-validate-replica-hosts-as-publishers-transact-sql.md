@@ -1,29 +1,25 @@
 ---
-title: "sp_validate_replica_hosts_as_publishers (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sp_validate_replica_hosts_as_publishers (T-SQL)"
+description: Describes the sp_validate_replica_hosts_as_publishers stored procedure which allows all secondary replicas to be validated. 
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_validate_replica_hosts_as_publishers_TSQL"
   - "sp_validate_replica_hosts_as_publishers"
 helpviewer_keywords: 
   - "sp_validate_replica_hosts_as_publishers"
 ms.assetid: 45001fc9-2dbd-463c-af1d-aa8982d8c813
-caps.latest.revision: 11
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # sp_validate_replica_hosts_as_publishers (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   **sp_validate_replica_hosts_as_publishers** is an extension of **sp_validate_redirected_publisher** that allows all secondary replicas to be validated, rather than just the current primary replica. **sp_validate_replicat_hosts_as_publisher** validates an entire Always On replication topology. **sp_validate_replica_hosts_as_publishers** must be executed directly on the distributor by using a remote desktop session to avoid a double-hop security error (21892).  
   
@@ -40,13 +36,13 @@ sp_validate_replica_hosts_as_publishers
 ```  
   
 ## Arguments  
- [ **@original_publisher** = ] **'***original_publisher***'**  
+`[ @original_publisher = ] 'original_publisher'`
  The name of the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] that originally published the database. *original_publisher* is **sysname**, with no default.  
   
- [ **@publisher_db** = ] **'***publisher_db***'**  
+`[ @publisher_db = ] 'publisher_db'`
  The name of the database being published. *publisher_db* is **sysname**, with no default.  
   
- [ **@redirected_publisher** = ] **'***redirected_publisher***'**  
+`[ @redirected_publisher = ] 'redirected_publisher'`
  The target of redirection when **sp_redirect_publisher** was called for the original publisher/published database pair. *redirected_publisher* is **sysname**, with no default.  
   
 ## Return Code Values  
@@ -56,7 +52,7 @@ sp_validate_replica_hosts_as_publishers
  None.  
   
 ## Remarks  
- If no entry exists for the publisher and the publishing database, **sp_validate_redirected_publisher** returns null for the output parameter *@redirected_publisher*. Otherwise, the associated redirected publisher is returned, both on success and failure.  
+ If no entry exists for the publisher and the publishing database, **sp_validate_redirected_publisher** returns null for the output parameter *\@redirected_publisher*. Otherwise, the associated redirected publisher is returned, both on success and failure.  
   
  If the validation succeeds, **sp_validate_redirected_publisher** returns a success indication.  
   

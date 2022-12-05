@@ -1,22 +1,21 @@
 ---
-title: "Deploy a Model Deployment Package by Using MDSModelDeploy | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
+title: Deploy a Model Deployment Package (MDSModelDeploy)
+description: Learn how to use MDSModelDeploy to deploy a package in Master Data Services. A package can contain either model objects only or model objects and data.
+ms.custom:
+  - intro-deployment
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 ms.assetid: fb2a4df4-5e0d-4b34-818f-383dbde1b15c
-caps.latest.revision: 16
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Deploy a Model Deployment Package by Using MDSModelDeploy
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   In [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)], use the MDSModelDeploy tool to deploy a package that contains either:  
   
 -   Model objects only.  
@@ -37,7 +36,7 @@ manager: "jhubbard"
   
 -   You must be an administrator in the environment where you are deploying the model. For more information, see [Administrators &#40;Master Data Services&#41;](../master-data-services/administrators-master-data-services.md).  
   
--   If you are updating a model with data, the version you’re deploying to cannot be **Locked** or **Committed**.  
+-   If you are updating a model with data, the version you're deploying to cannot be **Locked** or **Committed**.  
   
 ### To deploy a model deployment package  
   
@@ -88,7 +87,7 @@ manager: "jhubbard"
   
      Where *PackageName* is the name of the package (.pkg) file, *ModelName* is the name of the new model, *VersionName* is the name of the version, and *ServiceName* is the name of the service that you returned in the previous step. Ensure that the model and version names match the exact case-sensitive names.  
   
-6.  When the package is successfully deployed, a message stating “MDSModelDeploy operation completed successfully” is displayed.  
+6.  When the package is successfully deployed, a message stating "MDSModelDeploy operation completed successfully" is displayed.  
   
  **Notes:**  
   

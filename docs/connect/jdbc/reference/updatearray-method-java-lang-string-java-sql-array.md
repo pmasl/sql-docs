@@ -1,24 +1,15 @@
 ---
-title: "updateArray Method (java.lang.String, java.sql.Array) | Microsoft Docs"
-ms.custom: ""
+title: "updateArray Method (java.lang.String, java.sql.Array)"
+description: "updateArray Method (java.lang.String, java.sql.Array)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateArray (java.lang.String, java.sql.Array)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateArray (java.lang.String, java.sql.Array)"
 apitype: "Assembly"
-ms.assetid: 6f2ced5a-1c7d-439a-aaa5-472b9f4fdeab
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateArray Method (java.lang.String, java.sql.Array)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

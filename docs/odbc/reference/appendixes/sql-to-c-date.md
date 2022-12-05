@@ -1,23 +1,19 @@
 ---
+description: "SQL to C: Date"
 title: "SQL to C: Date | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "converting data from SQL to C types [ODBC], date"
   - "date data type [ODBC]"
   - "data conversions from SQL to C types [ODBC], date"
 ms.assetid: 703c7960-9cf4-4d7a-9920-53b29c184f97
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQL to C: Date
 The identifier for the date ODBC SQL data type is:  
@@ -40,4 +36,4 @@ The identifier for the date ODBC SQL data type is:
   
  [c]   This is the size of the corresponding C data type.  
   
- When date SQL data is converted to character C data, the resulting string is in the "*yyyy*-*mm*-*dd*" format. This format is not affected by the Windows® country setting.
+ When date SQL data is converted to character C data, the resulting string is in the "*yyyy*-*mm*-*dd*" format. This format is not affected by the Windows® country/region setting.

@@ -1,24 +1,15 @@
 ---
-title: "getColumnLabel Method (SQLServerResultSetMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getColumnLabel Method (SQLServerResultSetMetaData)"
+description: "getColumnLabel Method (SQLServerResultSetMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSetMetaData.getColumnLabel"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSetMetaData.getColumnLabel"
 apitype: "Assembly"
-ms.assetid: cf67692c-24aa-49e6-8e88-a47d4e8c021c
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getColumnLabel Method (SQLServerResultSetMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

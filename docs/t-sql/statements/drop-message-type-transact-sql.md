@@ -1,33 +1,26 @@
 ---
-title: "DROP MESSAGE TYPE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP MESSAGE TYPE (Transact-SQL)"
+description: DROP MESSAGE TYPE (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DROP_MESSAGE_TYPE_TSQL"
   - "DROP MESSAGE TYPE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "message types [Service Broker], removing"
   - "deleting message types"
   - "dropping message types"
   - "DROP MESSAGE TYPE statement"
   - "removing message types"
-ms.assetid: 805e8ad5-8a93-49f0-88e5-e6fca8814dd5
-caps.latest.revision: 24
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DROP MESSAGE TYPE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Drops an existing message type.  
   
@@ -35,13 +28,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 DROP MESSAGE TYPE message_type_name  
 [ ; ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *message_type_name*  
  The name of the message type to delete. Server, database, and schema names cannot be specified.  
   
@@ -54,7 +48,7 @@ DROP MESSAGE TYPE message_type_name
 ## Examples  
  The following example deletes the `//Adventure-Works.com/Expenses/SubmitExpense` message type from the database.  
   
-```  
+```sql  
 DROP MESSAGE TYPE [//Adventure-Works.com/Expenses/SubmitExpense] ;  
 ```  
   

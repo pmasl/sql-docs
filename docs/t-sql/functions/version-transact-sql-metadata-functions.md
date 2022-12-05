@@ -1,24 +1,20 @@
 ---
-title: "VERSION (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+title: "VERSION (Transact-SQL)"
+description: "Version - Transact SQL Metadata functions"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.date: "06/10/2016"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+dev_langs:
   - "TSQL"
-ms.assetid: 95a79b33-98f2-4929-a1a5-93b522a9e152
-caps.latest.revision: 7
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">= aps-pdw-2016 || = azure-sqldw-latest"
 ---
 # Version - Transact SQL Metadata functions
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-asdw-pdw-md.md)]
+[!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
  Returns the version of [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] or [!INCLUDE[ssPDW_md](../../includes/sspdw-md.md)] running on the appliance.  
   
@@ -26,8 +22,8 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql
+-- Azure Synapse Analytics and Parallel Data Warehouse  
 VERSION ( )  
 ```  
   
@@ -39,7 +35,7 @@ A table name must be specified in a [FROM](../../t-sql/queries/from-transact-sql
 ## Examples  
 The following example returns the version number.  
   
-```  
+```sql
 SELECT VERSION();  
 ```  
   

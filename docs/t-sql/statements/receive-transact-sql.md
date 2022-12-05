@@ -1,33 +1,26 @@
 ---
-title: "RECEIVE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/26/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "RECEIVE (Transact-SQL)"
+description: "RECEIVE retrieves one or more messages from a queue. Depending on the retention setting for the queue, either removes the message from the queue or updates the status of the message in the queue."
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: 07/25/2022
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "RECEIVE_TSQL"
   - "RECEIVE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "queues [Service Broker], message retrieval"
   - "messages [Service Broker], retrieving"
   - "RECEIVE statement"
   - "receiving messages"
   - "retrieving messages"
-ms.assetid: 878c6c14-37ab-4b87-9854-7f8f42bac7dd
-caps.latest.revision: 50
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # RECEIVE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Retrieves one or more messages from a queue. Depending on the retention setting for the queue, either removes the message from the queue or updates the status of the message in the queue.  
   
@@ -35,8 +28,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 [ WAITFOR ( ]  
     RECEIVE [ TOP ( n ) ]   
         <column_specifier> [ ,...n ]  
@@ -50,24 +42,24 @@ manager: "jhubbard"
 <column_specifier> ::=  
 {    *   
   |  { column_name | [ ] expression } [ [ AS ] column_alias ]  
-  |  column_alias = expression   
 }     [ ,...n ]   
   
 <queue> ::=  
-{  
-    [ database_name . [ schema_name ] . | schema_name . ]  
-        queue_name  
-}  
-  
+{ database_name.schema_name.queue_name | schema_name.queue_name | queue_name }
 ```  
   
-## Arguments  
- WAITFOR  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+
+#### WAITFOR  
  Specifies that the RECEIVE statement waits for a message to arrive on the queue, if no messages are currently present.  
   
- TOP( *n* )  
+####  TOP( *n* )  
  Specifies the maximum number of messages to be returned. If this clause is not specified, all messages are returned that meet the statement criteria.  
   
+#### column_specifier
+
  \*  
  Specifies that the result set contains all columns in the queue.  
   
@@ -80,7 +72,7 @@ manager: "jhubbard"
  *column_alias*  
  An alternative name to replace the column name in the result set.  
   
- FROM  
+#### FROM  
  Specifies the queue that contains the messages to retrieve.  
   
  *database_name*  
@@ -92,10 +84,10 @@ manager: "jhubbard"
  *queue_name*  
  The name of the queue to receive messages from.  
   
- INTO *table_variable*  
+#### INTO *table_variable*  
  Specifies the table variable that RECEIVE places the messages into. The table variable must have the same number of columns as are in the messages. The data type of each column in the table variable must be implicitly convertible to the data type of the corresponding column in the messages. If INTO is not specified, the messages are returned as a result set.  
   
- WHERE  
+#### WHERE  
  Specifies the conversation or conversation group for the received messages. If omitted, returns messages from the next available conversation group.  
   
  conversation_handle = *conversation_handle*  
@@ -104,7 +96,7 @@ manager: "jhubbard"
  conversation_group_id = *conversation_group_id*  
  Specifies the conversation group for received messages. The *conversation group ID that is* provided must be a **uniqueidentifier**, or a type convertible to **uniqueidentifier**.  
   
- TIMEOUT *timeout*  
+#### TIMEOUT *timeout*  
  Specifies the amount of time, in milliseconds, for the statement to wait for a message. This clause can only be used with the WAITFOR clause. If this clause is not specified, or the time-out is -**1**, the wait time is unlimited. If the time-out expires, RECEIVE returns an empty result set.  
   
 ## Remarks  
@@ -114,21 +106,21 @@ manager: "jhubbard"
   
  The RECEIVE statement reads messages from a queue and returns a result set. The result set consists of zero or more rows, each of which contains one message. If the INTO clause is not used, and *column_specifier* does not assign the values to local variables, the statement returns a result set to the calling program.  
   
- The messages that are returned by the RECEIVE statement can be of different message types. Applications can use the **message_type_name** column to route each message to code that handles the associated message type. There are two classes of message types:  
+ The messages that are returned by the RECEIVE statement can be of different message types. Applications can use the `message_type_name` column to route each message to code that handles the associated message type. There are two classes of message types:  
   
 -   Application-defined message types that were created by using the CREATE MESSAGE TYPE statement. The set of application-defined message types that are allowed in a conversation are defined by the [!INCLUDE[ssSB](../../includes/sssb-md.md)] contract that is specified for the conversation.  
   
 -   [!INCLUDE[ssSB](../../includes/sssb-md.md)] system messages that return status or error information.  
   
- The RECEIVE statement removes received messages from the queue unless the queue specifies message retention. When the RETENTION setting for the queue is ON, the RECEIVE statement updates the **status** column to **0** and leaves the messages in the queue. When a transaction that contains a RECEIVE statement rolls back, all changes to the queue in the transaction are also rolled back, returning messages to the queue.  
+ The RECEIVE statement removes received messages from the queue unless the queue specifies message retention. When the RETENTION setting for the queue is ON, the RECEIVE statement updates the `status` column to `0` and leaves the messages in the queue. When a transaction that contains a RECEIVE statement rolls back, all changes to the queue in the transaction are also rolled back, returning messages to the queue.  
   
- All messages that are returned by a RECEIVE statement belong the same conversation group. The RECEIVE statement locks the conversation group for the messages that are returned until the transaction that contains the statement finishes. A RECEIVE statement returns messages that have a **status** of **1.** The result set returned by a RECEIVE statement is implicitly ordered:  
+ All messages that are returned by a RECEIVE statement belong the same conversation group. The RECEIVE statement locks the conversation group for the messages that are returned until the transaction that contains the statement finishes. A RECEIVE statement returns messages that have a `status` of `1`. The result set returned by a RECEIVE statement is implicitly ordered:  
   
 -   If messages from multiple conversations meet the WHERE clause conditions, the RECEIVE statement returns all messages from one conversation before it returns messages for any other conversation. The conversations are processed in descending priority level order.  
   
--   For a given conversation, a RECEIVE statement returns messages in ascending **message_sequence_number** order.  
+-   For a given conversation, a RECEIVE statement returns messages in ascending `message_sequence_number` order.  
   
- The WHERE clause of the RECEIVE statement can only contain one search condition that uses either **conversation_handle** or **conversation_group_id**. The search condition cannot contain one or more of the other columns in the queue. The **conversation_handle** or **conversation_group_id** cannot be an expression. The set of messages that is returned depends on the conditions that are specified in the WHERE clause:  
+ The WHERE clause of the RECEIVE statement can only contain one search condition that uses either `conversation_handle` or `conversation_group_id`. The search condition cannot contain one or more of the other columns in the queue. The `conversation_handle` or `conversation_group_id` cannot be an expression. The set of messages that is returned depends on the conditions that are specified in the WHERE clause:  
   
 -   If **conversation_handle** is specified, RECEIVE returns all messages from the specified conversation that are available in the queue.  
   
@@ -171,7 +163,7 @@ manager: "jhubbard"
 |**service_contract_id**|**int**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] object identifier of the contract that the conversation follows.|  
 |**message_type_name**|**nvarchar(256)**|Name of the message type that describes the format of the message. Messages can be either application message types or Broker system messages.|  
 |**message_type_id**|**int**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] object identifier of the message type that describes the message.|  
-|**validation**|**nchar(2)**|Validation used for the message.<br /><br /> **E**=Empty**N**=None**X**=XML|  
+|**validation**|**nchar(2)**|Validation used for the message.<br /><br /> **E**=Empty<BR>**N**=None<BR>**X**=XML|  
 |**message_body**|**varbinary(MAX)**|Content of the message.|  
   
 ## Permissions  
@@ -182,14 +174,14 @@ manager: "jhubbard"
 ### A. Receiving all columns for all messages in a conversation group  
  The following example receives all available messages for the next available conversation group from the `ExpenseQueue` queue. The statement returns the messages as a result set.  
   
-```  
+```sql  
 RECEIVE * FROM ExpenseQueue ;  
 ```  
   
 ### B. Receiving specified columns for all messages in a conversation group  
  The following example receives all available messages for the next available conversation group from the `ExpenseQueue` queue. The statement returns the messages as a result set that contains the columns `conversation_handle`, `message_type_name`, and `message_body`.  
   
-```  
+```sql  
 RECEIVE conversation_handle, message_type_name, message_body  
 FROM ExpenseQueue ;  
 ```  
@@ -197,14 +189,14 @@ FROM ExpenseQueue ;
 ### C. Receiving the first available message in the queue  
  The following example receives the first available message from the `ExpenseQueue` queue as a result set.  
   
-```  
+```sql  
 RECEIVE TOP (1) * FROM ExpenseQueue ;  
 ```  
   
 ### D. Receiving all messages for a specified conversation  
  The following example receives all available messages for the specified conversation from the `ExpenseQueue` queue as a result set.  
   
-```  
+```sql  
 DECLARE @conversation_handle UNIQUEIDENTIFIER ;  
   
 SET @conversation_handle = <retrieve conversation from database> ;  
@@ -217,7 +209,7 @@ WHERE conversation_handle = @conversation_handle ;
 ### E. Receiving messages for a specified conversation group  
  The following example receives all available messages for the specified conversation group from the `ExpenseQueue` queue as a result set.  
   
-```  
+```sql  
 DECLARE @conversation_group_id UNIQUEIDENTIFIER ;  
   
 SET @conversation_group_id =   
@@ -231,7 +223,7 @@ WHERE conversation_group_id = @conversation_group_id ;
 ### F. Receiving into a table variable  
  The following example receives all available messages for a specified conversation group from the `ExpenseQueue` queue into a table variable.  
   
-```  
+```sql  
 DECLARE @conversation_group_id UNIQUEIDENTIFIER ;  
   
 DECLARE @procTable TABLE(  
@@ -263,7 +255,7 @@ WHERE conversation_group_id = @conversation_group_id ;
 ### G. Receiving messages and waiting indefinitely  
  The following example receives all available messages for the next available conversation group in the `ExpenseQueue` queue. The statement waits until at least one message becomes available then returns a result set that contains all message columns.  
   
-```  
+```sql  
 WAITFOR (  
     RECEIVE *  
     FROM ExpenseQueue) ;  
@@ -272,7 +264,7 @@ WAITFOR (
 ### H. Receiving messages and waiting for a specified interval  
  The following example receives all available messages for the next available conversation group in the `ExpenseQueue` queue. The statement waits for 60 seconds or until at least one message becomes available, whichever occurs first. The statement returns a result set that contains all message columns if at least one message is available. Otherwise, the statement returns an empty result set.  
   
-```  
+```sql  
 WAITFOR (  
     RECEIVE *  
     FROM ExpenseQueue ),  
@@ -282,7 +274,7 @@ TIMEOUT 60000 ;
 ### I. Receiving messages, modifying the type of a column  
  The following example receives all available messages for the next available conversation group in the `ExpenseQueue` queue. When the message type states that the message contains an XML document, the statement converts the message body to XML.  
   
-```  
+```sql  
 WAITFOR (  
     RECEIVE message_type_name,  
         CASE  
@@ -296,7 +288,7 @@ TIMEOUT 60000 ;
 ### J. Receiving a message, extracting data from the message body, retrieving conversation state  
  The following example receives the next available message for the next available conversation group in the `ExpenseQueue` queue. When the message is of type `//Adventure-Works.com/Expenses/SubmitExpense`, the statement extracts the employee ID and a list of items from the message body. The statement also retrieves state for the conversation from the `ConversationState` table.  
   
-```  
+```sql  
 WAITFOR(  
     RECEIVE   
     TOP(1)  
@@ -315,13 +307,13 @@ WAITFOR(
       AS ConversationErrors,  
       CASE WHEN message_type_name = N'//Adventure-Works.com/Expenses/SubmitExpense'  
           THEN CAST(message_body AS XML).value(  
-                'declare namespace rpt = "http://Adventure-Works.com/schemas/expenseReport"  
+                'declare namespace rpt = "https://Adventure-Works.com/schemas/expenseReport"  
                    (/rpt:ExpenseReport/rpt:EmployeeID)[1]', 'nvarchar(20)')  
          ELSE NULL  
       END AS EmployeeID,  
       CASE WHEN message_type_name = N'//Adventure-Works.com/Expenses/SubmitExpense'  
           THEN CAST(message_body AS XML).query(  
-                'declare namespace rpt = "http://Adventure-Works.com/schemas/expenseReport"   
+                'declare namespace rpt = "https://Adventure-Works.com/schemas/expenseReport"   
                      /rpt:ExpenseReport/rpt:ItemDetail')  
           ELSE NULL  
       END AS ItemList  
@@ -329,7 +321,8 @@ WAITFOR(
 ), TIMEOUT 60000 ;  
 ```  
   
-## See Also  
+## Next steps
+
  [BEGIN DIALOG CONVERSATION &#40;Transact-SQL&#41;](../../t-sql/statements/begin-dialog-conversation-transact-sql.md)   
  [BEGIN CONVERSATION TIMER &#40;Transact-SQL&#41;](../../t-sql/statements/begin-conversation-timer-transact-sql.md)   
  [END CONVERSATION &#40;Transact-SQL&#41;](../../t-sql/statements/end-conversation-transact-sql.md)   
@@ -339,5 +332,3 @@ WAITFOR(
  [CREATE QUEUE &#40;Transact-SQL&#41;](../../t-sql/statements/create-queue-transact-sql.md)   
  [ALTER QUEUE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-queue-transact-sql.md)   
  [DROP QUEUE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-queue-transact-sql.md)  
-  
-  

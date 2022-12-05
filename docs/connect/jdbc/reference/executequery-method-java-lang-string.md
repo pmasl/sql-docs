@@ -1,24 +1,15 @@
 ---
-title: "executeQuery Method (java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "executeQuery Method (java.lang.String)"
+description: "executeQuery Method (java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.executeQuery (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.executeQuery (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: 610205c2-6bcd-426c-ad6f-9682551efdec
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # executeQuery Method (java.lang.String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

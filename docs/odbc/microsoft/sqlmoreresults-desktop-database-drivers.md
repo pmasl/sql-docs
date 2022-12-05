@@ -1,21 +1,17 @@
 ---
+description: "SQLMoreResults (Desktop Database Drivers)"
 title: "SQLMoreResults (Desktop Database Drivers) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLMoreResults function [ODBC], Desktop Database Drivers"
 ms.assetid: 676da17b-daea-487f-b2d8-e579db6547cc
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLMoreResults (Desktop Database Drivers)
 This function always returns SQL_NO_DATA_FOUND.

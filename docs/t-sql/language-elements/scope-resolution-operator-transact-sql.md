@@ -1,33 +1,27 @@
 ---
-title: "Scope Resolution Operator (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
+title: ":: (Scope Resolution) (Transact-SQL)"
+description: ":: (Scope Resolution) (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server (starting with 2008)"
-dev_langs: 
+ms.date: "03/06/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+dev_langs:
   - "TSQL"
-ms.assetid: 764d8f91-957b-4037-997b-a9b6b533c504
-caps.latest.revision: 10
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
-# Scope Resolution Operator (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
 
-  The scope resolution operator **::** provides access to static members of a compound data type. A compound data type is one that contains multiple simple data types and methods.  
+# :: (Scope Resolution) (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdbmi.md)]
+
+  The scope resolution operator **::** provides access to static members of a compound data type. A compound data type is one that contains multiple simple data types and methods. Compound data types include the built-in CLR types and custom SQLCLR User-Defined Types (UDTs).  
   
 ## Examples  
  The following example shows how to use the scope resolution operator to access the `GetRoot()` member of the `hierarchyid` type.  
   
-```  
+```sql  
 DECLARE @hid hierarchyid;  
 SELECT @hid = hierarchyid::GetRoot();  
 PRINT @hid.ToString();  
@@ -39,5 +33,4 @@ PRINT @hid.ToString();
   
 ## See Also  
  [Operators &#40;Transact-SQL&#41;](../../t-sql/language-elements/operators-transact-sql.md)  
-  
-  
+ 

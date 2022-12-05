@@ -1,14 +1,9 @@
 ---
-title: "Securing SQL Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/31/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Securing SQL Server
+description: Use these articles to create and implement an effective security plan in SQL Server. Learn about the platform, authentication, objects, and applications.
+ms.service: sql
+ms.subservice: security
+ms.topic: conceptual
 f1_keywords: 
   - "Security [SQL Server]"
 helpviewer_keywords: 
@@ -18,15 +13,20 @@ helpviewer_keywords:
   - "security [SQL Server], planning"
   - "applications [SQL Server], security"
 ms.assetid: 4d93489e-e9bb-45b3-8354-21f58209965d
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "06/21/2019"
 ---
+
 # Securing SQL Server
-  Securing [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] can be viewed as a series of steps, involving four areas: the platform, authentication, objects (including data), and applications that access the system. The following topics will guide you through creating and implementing an effective security plan.  
+
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Securing [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] can be viewed as a series of steps, involving four areas: the platform, authentication, objects (including data), and applications that access the system. The following topics will guide you through creating and implementing an effective security plan.  
   
- You can find more information about [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security at the [SQL Server](http://go.microsoft.com/fwlink/?LinkID=31629) Web site. This includes a best practice guide and a security checklist. This site also contains the latest service pack information and downloads.  
+ You can find more information about [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security at the [SQL Server](https://go.microsoft.com/fwlink/?LinkID=31629) Web site. This includes a best practice guide and a security checklist. This site also contains the latest service pack information and downloads.  
   
 ## Platform and Network Security  
  The platform for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] includes the physical hardware and networking systems connecting clients to the database servers, and the binary files that are used to process database requests.  
@@ -49,7 +49,7 @@ manager: "jhubbard"
 |---------------------------|---------|  
 |Configuring a firewall to work with [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|[Configure a Windows Firewall for Database Engine Access](../../database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access.md)|  
 |Configuring a firewall to work with [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)]|[Integration Services Service &#40;SSIS Service&#41;](../../integration-services/service/integration-services-service-ssis-service.md)|  
-|Configuring a firewall to work with [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]|[Configure the Windows Firewall to Allow Analysis Services Access](../../analysis-services/instances/configure-the-windows-firewall-to-allow-analysis-services-access.md)|  
+|Configuring a firewall to work with [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]|[Configure the Windows Firewall to Allow Analysis Services Access](/analysis-services/instances/configure-the-windows-firewall-to-allow-analysis-services-access)|  
 |Opening specific ports on a firewall to enable access to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|[Configure the Windows Firewall to Allow SQL Server Access](../../sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access.md)|  
 |Configuring support for Extended Protection for Authentication by using channel binding and service binding|[Connect to the Database Engine Using Extended Protection](../../database-engine/configure-windows/connect-to-the-database-engine-using-extended-protection.md)|  
   
@@ -74,17 +74,16 @@ manager: "jhubbard"
 |---------------------------|---------|  
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] program files|[File Locations for Default and Named Instances of SQL Server](../../sql-server/install/file-locations-for-default-and-named-instances-of-sql-server.md)|  
   
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] service packs and upgrades provide enhanced security. To determine the latest available service pack available for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see the [SQL Server](http://go.microsoft.com/fwlink/?LinkID=31629) Web site.  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] service packs and upgrades provide enhanced security. To determine the latest available service pack available for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see the [SQL Server](https://go.microsoft.com/fwlink/?LinkID=31629) Web site.  
   
  You can use the following script to determine the service pack installed on the system.  
   
-```  
+```sql
 SELECT CONVERT(char(20), SERVERPROPERTY('productlevel'));  
-GO  
 ```  
   
 ## Principals and Database Object Security  
- Principals are the individuals, groups, and processes granted access to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. “Securables” are the server, database, and objects the database contains. Each has a set of permissions that can be configured to help reduce the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] surface area. The following table contains information about principals and securables.  
+ Principals are the individuals, groups, and processes granted access to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. "Securables" are the server, database, and objects the database contains. Each has a set of permissions that can be configured to help reduce the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] surface area. The following table contains information about principals and securables.  
   
 |For information about|See|  
 |---------------------------|---------|  
@@ -107,12 +106,23 @@ GO
 |---------------------------|---------|  
 |Creating a certificate for use by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|[CREATE CERTIFICATE &#40;Transact-SQL&#41;](../../t-sql/statements/create-certificate-transact-sql.md)|  
 |Using a certificate with database mirroring|[Use Certificates for a Database Mirroring Endpoint &#40;Transact-SQL&#41;](../../database-engine/database-mirroring/use-certificates-for-a-database-mirroring-endpoint-transact-sql.md)|  
-  
-## Application Security  
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security best practices include writing secure client applications.  
-  
- For more information about how to help secure client applications at the networking layer, see [Client Network Configuration](../../database-engine/configure-windows/client-network-configuration.md).  
-  
+
+## Application Security
+
+### Client programs
+
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security best practices include writing secure client applications. For more information about how to help secure client applications at the networking layer, see [Client Network Configuration](../../database-engine/configure-windows/client-network-configuration.md).
+
+### Windows Defender Application Control (WDAC)
+
+<!--
+This next live paragraph, about Windows Defender Application Control (WDAC), was requested by Bella Brahm, 2019/06/20. (GeneMi)
+
+WDAC can also prevent the kind of highly sophisticated 'Nansh0u' attacks described in 'https://www.guardicore.com/2019/05/nansh0u-campaign-hackers-arsenal-grows-stronger/'. That webpage recommends this present article.
+-->
+
+Windows Defender Application Control (WDAC) prevents unauthorized code execution. WDAC is effective way to mitigate the threat of executable file-based malware. For more information, see to [Windows Defender Application Control](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) documentation.
+
 ## SQL Server Security Tools, Utilities, Views, and Functions  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] provides tools, utilities, views, and functions that can be used to configure and administer security.  
   
@@ -121,12 +131,12 @@ GO
   
 |For information about|See|  
 |---------------------------|---------|  
-|Connecting to, configuring, and controlling [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|[Use SQL Server Management Studio](http://msdn.microsoft.com/library/f289e978-14ca-46ef-9e61-e1fe5fd593be)|  
+|Connecting to, configuring, and controlling [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|[Use SQL Server Management Studio](../../ssms/sql-server-management-studio-ssms.md)|  
 |Connecting to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and running queries at the command prompt|[sqlcmd Utility](../../tools/sqlcmd-utility.md)|  
 |Network configuration and control for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|[SQL Server Configuration Manager](../../relational-databases/sql-server-configuration-manager.md)|  
 |Enabling and disabling features by using Policy-Based Management|[Administer Servers by Using Policy-Based Management](../../relational-databases/policy-based-management/administer-servers-by-using-policy-based-management.md)|  
 |Manipulating symmetric keys for a report server|[rskeymgmt Utility &#40;SSRS&#41;](../../reporting-services/tools/rskeymgmt-utility-ssrs.md)|  
-  
+
 ### SQL Server Security Catalog Views and Functions  
  The [!INCLUDE[ssDE](../../includes/ssde-md.md)] exposes security information in several views and functions that are optimized for performance and utility. The following table contains information about security views and functions.  
   
@@ -135,14 +145,13 @@ GO
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security catalog views, which return information about database-level and server-level permissions, principals, roles, and so on. In addition, there are catalog views that provide information about encryption keys, certificates, and credentials.|[Security Catalog Views &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/security-catalog-views-transact-sql.md)|  
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security functions, which return information about the current user, permissions and schemas.|[Security Functions &#40;Transact-SQL&#41;](../../t-sql/functions/security-functions-transact-sql.md)|  
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security dynamic management views.|[Security-Related Dynamic Management Views and Functions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/security-related-dynamic-management-views-and-functions-transact-sql.md)|  
-  
+
 ## Related Content  
  [Security Considerations for a SQL Server Installation](../../sql-server/install/security-considerations-for-a-sql-server-installation.md)  
  [Security Center for SQL Server Database Engine and Azure SQL Database](../../relational-databases/security/security-center-for-sql-server-database-engine-and-azure-sql-database.md)  
-[SQL Server 2012 Security Best Practices - Operational and Administrative Tasks](http://download.microsoft.com/download/8/F/A/8FABACD7-803E-40FC-ADF8-355E7D218F4C/SQL_Server_2012_Security_Best_Practice_Whitepaper_Apr2012.docx)   
-[SQL Server Security Blog](https://blogs.msdn.microsoft.com/sqlsecurity/)  
-[Security Best Practice and Label Security Whitepapers](https://blogs.msdn.microsoft.com/sqlsecurity/2012/03/06/security-best-practice-and-label-security-whitepapers/)  
-[Security Considerations for a SQL Server Installation](../../sql-server/install/security-considerations-for-a-sql-server-installation.md)  
+[SQL Server 2012 Security Best Practices - Operational and Administrative Tasks](https://download.microsoft.com/download/8/F/A/8FABACD7-803E-40FC-ADF8-355E7D218F4C/SQL_Server_2012_Security_Best_Practice_Whitepaper_Apr2012.docx)   
+[Playbook for addressing common security requirements with Azure SQL Database and Azure SQL Managed Instance](/azure/azure-sql/database/security-best-practice)   
+[SQL Server Security Blog](/archive/blogs/sqlsecurity/)  
+[Security Best Practice and Label Security Whitepapers](/archive/blogs/sqlsecurity/security-best-practice-and-label-security-whitepapers)  
 [Row-Level Security](../../relational-databases/security/row-level-security.md)   
 [Protecting Your SQL Server Intellectual Property](../../relational-databases/security/protecting-your-sql-server-intellectual-property.md)   
-  

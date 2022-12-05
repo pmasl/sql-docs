@@ -1,40 +1,23 @@
 ---
-title: "SELECT DISTINCT FROM &lt;model &gt; (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "DISTINCT"
-  - "SELECT"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "discrete columns [DMX]"
-  - "discretized columns [DMX]"
-  - "SELECT DISTINCT FROM <model> statement"
-  - "continuous columns"
-ms.assetid: 0ab44ef6-1c3b-4809-a687-4d5d13f343af
-caps.latest.revision: 44
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "SELECT DISTINCT FROM &lt;model &gt; (DMX)"
+description: "SELECT DISTINCT FROM &lt;model &gt; (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # SELECT DISTINCT FROM &lt;model &gt; (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Returns all possible states for the selected column in the model. The values that are returned vary depending on whether the specified column contains discrete values, discretized numeric values, or continuous numeric values.  
   
 ## Syntax  
   
 ```  
-  
 SELECT [FLATTENED] DISTINCT [TOP <n>] <expression list> FROM <model>   
 [WHERE <condition list>][ORDER BY <expression>]  
 ```  
@@ -73,7 +56,7 @@ SELECT [FLATTENED] DISTINCT [TOP <n>] <expression list> FROM <model>
 |Continuous|The midpoint for the values in the column.|  
   
 ## Discrete Column Example  
- The following code sample is based on the `[TM Decision Tree]` model that you create in the [Basic Data Mining Tutorial](http://msdn.microsoft.com/library/6602edb6-d160-43fb-83c8-9df5dddfeb9c). The query returns the unique values that exist in the discrete column, `Gender`.  
+ The following code sample is based on the `[TM Decision Tree]` model that you create in the [Basic Data Mining Tutorial](/previous-versions/sql/sql-server-2016/ms167167(v=sql.130)). The query returns the unique values that exist in the discrete column, `Gender`.  
   
 ```  
 SELECT DISTINCT [Gender]  
@@ -84,7 +67,6 @@ FROM [TM Decision Tree]
   
 |Gender|  
 |------------|  
-||  
 |F|  
 |M|  
   
@@ -104,16 +86,15 @@ FROM [TM Decision Tree]
   
 |Midpoint Age|Minimum Age|Maximum Age|  
 |------------------|-----------------|-----------------|  
-||||  
 |62|26|97|  
   
  The query also returns a single row of null values, to represent missing values.  
   
 ## Discretized Column Example  
- The following code sample returns the midpoint, maximum, and minimum values for each bucket that has been created by the algorithm for the column, [`Yearly Income]`. To reproduce the results for this example, you must create a new mining structure that is the same as `[Targeted Mailing]`. In the wizard, change the content type of the `Yearly Income` column from **Continuous** to **Discretized**.  
+ The following code sample returns the midpoint, maximum, and minimum values for each bucket that has been created by the algorithm for the column, `[Yearly Income]`. To reproduce the results for this example, you must create a new mining structure that is the same as `[Targeted Mailing]`. In the wizard, change the content type of the `Yearly Income` column from **Continuous** to **Discretized**.  
   
 > [!NOTE]  
->  You can also change the mining model created in the Basic Mining Tutorial to discretize the mining structure column, [`Yearly Income]`. For information about how to do this, see [Change the Discretization of a Column in a Mining Model](../analysis-services/data-mining/change-the-discretization-of-a-column-in-a-mining-model.md). However, when you change the discretization of the column, it will force the mining structure to be reprocessed, which will change the results of other models that you have built using that structure.  
+>  You can also change the mining model created in the Basic Mining Tutorial to discretize the mining structure column, `[Yearly Income]`. For information about how to do this, see [Change the Discretization of a Column in a Mining Model](/analysis-services/data-mining/change-the-discretization-of-a-column-in-a-mining-model). However, when you change the discretization of the column, it will force the mining structure to be reprocessed, which will change the results of other models that you have built using that structure.  
   
 ```  
 SELECT DISTINCT [Yearly Income] AS [Bucket Average],   
@@ -126,14 +107,13 @@ FROM [TM Decision Tree]
   
 |Bucket Average|Bucket Minimum|Bucket Maximum|  
 |--------------------|--------------------|--------------------|  
-||||  
 |24610.7|10000|39221.41|  
 |55115.73|39221.41|71010.05|  
 |84821.54|71010.05|98633.04|  
 |111633.9|98633.04|124634.7|  
 |147317.4|124634.7|170000|  
   
- You can see that the values of the [Yearly Income] column have been discretized into five buckets, plus an additional row of null values, to represent missing values.  
+ You can see that the values of the `[Yearly Income]` column have been discretized into five buckets, plus an additional row of null values, to represent missing values.  
   
  The number of decimal places in the results depends on the client that you use for querying. Here they have been rounded to two decimal places, both for simplicity and to reflect the values that are displayed in [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)].  
   
@@ -148,5 +128,4 @@ FROM [TM Decision Tree]
  [SELECT &#40;DMX&#41;](../dmx/select-dmx.md)   
  [Data Mining Extensions &#40;DMX&#41; Data Manipulation Statements](../dmx/dmx-statements-data-manipulation.md)   
  [Data Mining Extensions &#40;DMX&#41; Statement Reference](../dmx/data-mining-extensions-dmx-statements.md)  
-  
   

@@ -1,45 +1,38 @@
 ---
-title: "Microsoft OLE DB Provider for Oracle | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: "H1Hack27Feb2017"
-ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Microsoft OLE DB Provider for Oracle"
+description: "Microsoft OLE DB Provider for Oracle Overview"
+author: rothja
+ms.author: jroth
+ms.date: 11/08/2018
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
 helpviewer_keywords:
   - "providers [ADO], OLE DB provider for Oracle"
   - "OLE DB provider for Oracle [ADO]"
   - "Oracle provider [ADO]"
-ms.assetid: 44fae9dd-5585-4cd6-8bbd-3248a78931b4
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Microsoft OLE DB Provider for Oracle Overview
 > [!IMPORTANT]
->  This feature will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Instead, use Oracle’s OLE DB provider.
+>  This feature will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Instead, use Oracle's OLE DB provider.
 
  The Microsoft OLE DB Provider for Oracle allows ADO to access Oracle databases.
 
 ## Connection String Parameters
- To connect to this provider, set the *Provider* argument of the [ConnectionString](../../../ado/reference/ado-api/connectionstring-property-ado.md) property to:
+ To connect to this provider, set the *Provider* argument of the [ConnectionString](../../reference/ado-api/connectionstring-property-ado.md) property to:
 
-```
+```vb
 MSDAORA
 ```
 
- Reading the [Provider](../../../ado/reference/ado-api/provider-property-ado.md) property will return this string as well.
+ Reading the [Provider](../../reference/ado-api/provider-property-ado.md) property will return this string as well.
 
  If a join query with a keyset or dynamic cursor is executed in an Oracle database, an error occurs. Oracle only supports a static read-only cursor.
 
 ## Typical Connection String
  A typical connection string for this provider is:
 
-```
+```vb
 "Provider=MSDAORA;Data Source=serverName;User ID=MyUserID; Password=MyPassword;"
 ```
 
@@ -56,9 +49,9 @@ MSDAORA
 >  If you are connecting to a data source provider that supports Windows authentication, you should specify **Trusted_Connection=yes** or **Integrated Security = SSPI** instead of user ID and password information in the connection string.
 
 ## Provider-Specific Connection Parameters
- The provider supports several provider-specific connection parameters in addition to those defined by ADO. As with the ADO connection properties, these provider-specific properties can be set via the [Properties](../../../ado/reference/ado-api/properties-collection-ado.md) collection of a [Connection](../../../ado/reference/ado-api/connection-object-ado.md) or as part of the **ConnectionString**.
+ The provider supports several provider-specific connection parameters in addition to those defined by ADO. As with the ADO connection properties, these provider-specific properties can be set via the [Properties](../../reference/ado-api/properties-collection-ado.md) collection of a [Connection](../../reference/ado-api/connection-object-ado.md) or as part of the **ConnectionString**.
 
- These parameters are fully described in the [OLE DB Programmer's Reference](http://msdn.microsoft.com/en-us/3c5e2dd5-35e5-4a93-ac3a-3818bb43bbf8). The [ADO Dynamic Property Index](../../../ado/reference/ado-api/ado-dynamic-property-index.md) provides a cross-reference between these parameter names and the corresponding OLE DB properties.
+ These parameters are fully described in the [OLE DB Programmer's Reference](/previous-versions/windows/desktop/ms713643(v=vs.85)). The [ADO Dynamic Property Index](../../reference/ado-api/ado-dynamic-property-index.md) provides a cross-reference between these parameter names and the corresponding OLE DB properties.
 
 |Parameter|Description|
 |---------------|-----------------|
@@ -69,6 +62,6 @@ MSDAORA
 |**Extended Properties**|A string containing provider-specific, extended connection information. Use this property only for provider-specific connection information that cannot be described through the property mechanism.|
 
 ## See Also
- [ConnectionString Property (ADO)](../../../ado/reference/ado-api/connectionstring-property-ado.md)
- [Provider Property (ADO)](../../../ado/reference/ado-api/provider-property-ado.md)
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [ConnectionString Property (ADO)](../../reference/ado-api/connectionstring-property-ado.md)
+ [Provider Property (ADO)](../../reference/ado-api/provider-property-ado.md)
+ [Recordset Object (ADO)](../../reference/ado-api/recordset-object-ado.md)

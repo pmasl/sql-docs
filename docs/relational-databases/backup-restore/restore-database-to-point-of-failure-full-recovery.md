@@ -1,26 +1,22 @@
 ---
-title: "Restore Database to Point of Failure - Full Recovery | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+title: "Restore database: point of failure - full recovery"
+description: This article explains how to restore a SQL Server database to the point of failure for databases using the full or bulk-logged recovery models.
+ms.custom: seo-lt-2019
+ms.date: "12/17/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-backup-restore"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: backup-restore
+ms.topic: conceptual
 helpviewer_keywords: 
   - "point of failure [SQL Server]"
   - "restoring databases [SQL Server], point of failure"
   - "database restores [SQL Server], point of failure"
 ms.assetid: 04106e18-bbf7-4a5e-a2e1-3d65319814d5
-caps.latest.revision: 37
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # Restore Database to Point of Failure - Full Recovery
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   This topic explains how to restore to the point of failure. The topic is relevant only for databases that are using the full or bulk-logged recovery models.  
   
@@ -55,7 +51,7 @@ manager: "jhubbard"
     ```  
   
 5.  Recover the database by running the following RESTORE DATABASE statement:  
-  
+
     ```  
     RESTORE DATABASE <database_name>   
        WITH RECOVERY;  

@@ -1,36 +1,30 @@
 ---
-title: "SET LOCK_TIMEOUT (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "SET LOCK_TIMEOUT (Transact-SQL)"
+description: SET LOCK_TIMEOUT (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: "09/11/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "LOCK_TIMEOUT_TSQL"
   - "SET_LOCK_TIMEOUT_TSQL"
   - "SET LOCK_TIMEOUT"
   - "LOCK_TIMEOUT"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "timeout options [SQL Server], locks"
   - "releasing locks"
   - "LOCK_TIMEOUT option"
   - "SET LOCK_TIMEOUT statement"
   - "locking [SQL Server], time-outs"
   - "wait time for lock releases [SQL Server]"
-ms.assetid: dd0c389e-956d-435e-bf71-e16624a0a215
-caps.latest.revision: 26
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # SET LOCK_TIMEOUT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Specifies the number of milliseconds a statement waits for a lock to be released.  
   
@@ -38,13 +32,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql
 SET LOCK_TIMEOUT timeout_period  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *timeout_period*  
  Is the number of milliseconds that will pass before [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] returns a locking error. A value of -1 (default) indicates no time-out period (that is, wait forever).  
   
@@ -64,10 +58,10 @@ SET LOCK_TIMEOUT timeout_period
   
 ## Examples  
   
-### A: Set the lock timeout to 1800 seconds  
+### A: Set the lock timeout to 1800 milliseconds  
  The following example sets the lock time-out period to `1800` milliseconds.  
   
-```  
+```sql  
 SET LOCK_TIMEOUT 1800;  
 GO  
 ```  
@@ -77,13 +71,13 @@ GO
 ### B. Set the lock timeout to wait forever for a lock to be released.  
  The following example sets the lock timeout to wait forever and never expire. This is the default behavior that is already set at the beginning of each connection.  
   
-```  
+```sql  
 SET LOCK_TIMEOUT -1;  
 ```  
   
  The following example sets the lock time-out period to `1800` milliseconds. In this release, [!INCLUDE[ssDW](../../includes/ssdw-md.md)] will parse the statement successfully, but will ignore the value 1800 and continue to use the default behavior.  
   
-```  
+```sql  
 SET LOCK_TIMEOUT 1800;  
 ```  
   

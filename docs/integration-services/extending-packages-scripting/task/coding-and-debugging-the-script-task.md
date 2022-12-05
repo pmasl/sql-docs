@@ -1,16 +1,12 @@
 ---
+description: "Coding and Debugging the Script Task"
 title: "Coding and Debugging the Script Task | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
 dev_langs: 
   - "VB"
 helpviewer_keywords: 
@@ -23,12 +19,14 @@ helpviewer_keywords:
   - "VSTA"
   - "SSIS Script task, coding"
 ms.assetid: 687c262f-fcab-42e8-92ae-e956f3d92d69
-caps.latest.revision: 81
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Coding and Debugging the Script Task
+
+[!INCLUDE[sqlserver-ssis](../../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   After configuring the Script task in the **Script Task Editor**, you write your custom code in the Script task development environment.  
   
 ## Script Task Development Environment  
@@ -49,7 +47,7 @@ manager: "jhubbard"
 ### Project Items and Classes in the Script Task Project  
  By default, the Script task project displayed in the VSTA Project Explorer window contains a single item, **ScriptMain**. The **ScriptMain** item, in turn, contains a single class, also named **ScriptMain**. The code elements in the class vary depending on the programming language that you selected for the Script task:  
   
--   When the Script task is configured for the [!INCLUDE[vb_orcas_long](../../../includes/vb-orcas-long-md.md)] programming language, the **ScriptMain** class has a public subroutine, **Main**. The **ScriptMain.Main** subroutine is the method that the runtime calls when you run your Script task.  
+-   When the Script task is configured for the [!INCLUDE [vbprvb-md](../../../includes/vbprvb-md.md)] programming language, the **ScriptMain** class has a public subroutine, **Main**. The **ScriptMain.Main** subroutine is the method that the runtime calls when you run your Script task.  
   
      By default, the only code in the **Main** subroutine of a new script is the line `Dts.TaskResult = ScriptResults.Success`. This line informs the runtime that the task was successful in its operation. The **Dts.TaskResult** property is discussed in [Returning Results from the Script Task](../../../integration-services/extending-packages-scripting/task/returning-results-from-the-script-task.md).  
   
@@ -230,7 +228,7 @@ To open Help, press F1.
  To debug the code in your Script task, set at least one breakpoint in the code, and then close the VSTA IDE to run the package in [!INCLUDE[ssBIDevStudioFull](../../../includes/ssbidevstudiofull-md.md)]. When package execution enters the Script task, the VSTA IDE reopens and displays your code in read-only mode. After execution reaches your breakpoint, you can examine variable values and step through the remaining code.  
   
 > [!WARNING]  
->  You can debug the Script task when you run the package in 64-bit mode.  
+>  You cannot debug the Script task when you run the package in 64-bit mode.  
   
 > [!NOTE]  
 >  You must execute the package to debug into your Script task. If you execute only the individual task, breakpoints in the Script task code are ignored.  
@@ -243,10 +241,9 @@ To open Help, press F1.
   
 ## External Resources  
   
--   Blog entry, [VSTA setup and configuration troubles for SSIS 2008 and R2 installations](http://go.microsoft.com/fwlink/?LinkId=215661), on blogs.msdn.com.  
+-   Blog entry, [VSTA setup and configuration troubles for SSIS 2008 and R2 installations](/archive/blogs/jason_howell/vsta-setup-and-configuration-troubles-for-ssis-2008-and-r2-installations), on blogs.msdn.com.  
   
 ## See Also  
  [Referencing Other Assemblies in Scripting Solutions](../../../integration-services/extending-packages-scripting/referencing-other-assemblies-in-scripting-solutions.md)   
  [Configuring the Script Task in the Script Task Editor](../../../integration-services/extending-packages-scripting/task/configuring-the-script-task-in-the-script-task-editor.md)  
-  
   

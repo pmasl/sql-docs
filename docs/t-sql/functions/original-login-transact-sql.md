@@ -1,33 +1,28 @@
 ---
-title: "ORIGINAL_LOGIN (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+title: "ORIGINAL_LOGIN (Transact-SQL)"
+description: "ORIGINAL_LOGIN (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/14/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "ORIGINAL_LOGIN_TSQL"
   - "ORIGINAL_LOGIN"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "logins [SQL Server], context switches"
   - "context switching [SQL Server], login names"
   - "original login names [SQL Server]"
   - "ORIGINAL_LOGIN function"
   - "names [SQL Server], logins"
-ms.assetid: ddfb0991-cde3-4b97-a5b7-ee450133f160
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ORIGINAL_LOGIN (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns the name of the login that connected to the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. You can use this function to return the identity of the original login in sessions in which there are many explicit or implicit context switches.  
   
@@ -35,23 +30,26 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 ORIGINAL_LOGIN( )  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **sysname**  
   
 ## Remarks  
  This function can be useful in auditing the identity of the original connecting context. Whereas functions such as [SESSION_USER](../../t-sql/functions/session-user-transact-sql.md) and [CURRENT_USER](../../t-sql/functions/current-user-transact-sql.md) return the current executing context, ORIGINAL_LOGIN returns the identity of the login that first connected to the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] in that session.  
-  
- Returns NULL on [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].  
+ 
   
 ## Examples  
- The following example switches the execution context of the current session from the caller of the statements to `login1`. The functions `SUSER_SNAME` and `ORIGINAL_LOGIN` are used to return the current session user (the user to whom the context was switched), and the original login account.  
+ The following example switches the execution context of the current session from the caller of the statements to `login1`. The functions `SUSER_SNAME` and `ORIGINAL_LOGIN` are used to return the current session user (the user to whom the context was switched), and the original login account. 
+ 
+  >[!NOTE]
+  > Although the ORIGINAL_LOGIN function is supported on Azure SQL Database, the following script will fail because *Execute as LOGIN* is not supported on Azure SQL Database. 
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 --Create a temporary login and user.  

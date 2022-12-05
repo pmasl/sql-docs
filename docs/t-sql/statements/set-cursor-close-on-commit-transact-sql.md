@@ -1,35 +1,28 @@
 ---
-title: "SET CURSOR_CLOSE_ON_COMMIT (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "SET CURSOR_CLOSE_ON_COMMIT (Transact-SQL)"
+description: SET CURSOR_CLOSE_ON_COMMIT (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "07/26/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "CURSOR_CLOSE_ON_COMMIT"
   - "SET CURSOR_CLOSE_ON_COMMIT"
   - "CURSOR_CLOSE_ON_COMMIT_TSQL"
   - "SET_CURSOR_CLOSE_ON_COMMIT_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "CURSOR_CLOSE_ON_COMMIT option"
   - "transactions [SQL Server], cursors"
   - "closing cursors"
   - "cursors [SQL Server], closing"
   - "SET CURSOR_CLOSE_ON_COMMIT statement"
-ms.assetid: 7b976154-98ce-4a06-bbae-7e59c34211f7
-caps.latest.revision: 38
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # SET CURSOR_CLOSE_ON_COMMIT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Controls the behavior of the [!INCLUDE[tsql](../../includes/tsql-md.md)] COMMIT TRANSACTION statement. The default value for this setting is OFF. This means that the server will not close cursors when you commit a transaction.  
   
@@ -37,12 +30,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 SET CURSOR_CLOSE_ON_COMMIT { ON | OFF }  
 ```  
   
-## Remarks  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Remarks
  When SET CURSOR_CLOSE_ON_COMMIT is ON, this setting closes any open cursors on commit or rollback in compliance with ISO. When SET CURSOR_CLOSE_ON_COMMIT is OFF, the cursor is not closed when a transaction is committed.  
   
 > [!NOTE]  
@@ -60,7 +55,7 @@ SET CURSOR_CLOSE_ON_COMMIT { ON | OFF }
   
  To view the current setting for this setting, run the following query.  
   
-```  
+```sql
 DECLARE @CURSOR_CLOSE VARCHAR(3) = 'OFF';  
 IF ( (4 & @@OPTIONS) = 4 ) SET @CURSOR_CLOSE = 'ON';  
 SELECT @CURSOR_CLOSE AS CURSOR_CLOSE_ON_COMMIT;  
@@ -72,7 +67,7 @@ SELECT @CURSOR_CLOSE AS CURSOR_CLOSE_ON_COMMIT;
 ## Examples  
  The following example defines a cursor in a transaction and attempts to use it after the transaction is committed.  
   
-```  
+```sql
 -- SET CURSOR_CLOSE_ON_COMMIT  
 -------------------------------------------------------------------------------  
 SET NOCOUNT ON;  

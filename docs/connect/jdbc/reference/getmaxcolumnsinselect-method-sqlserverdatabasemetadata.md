@@ -1,24 +1,15 @@
 ---
-title: "getMaxColumnsInSelect Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getMaxColumnsInSelect Method (SQLServerDatabaseMetaData)"
+description: "getMaxColumnsInSelect Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getMaxColumnsInSelect"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getMaxColumnsInSelect"
 apitype: "Assembly"
-ms.assetid: 43c428df-ef91-4f55-81c3-49a4db3379cc
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getMaxColumnsInSelect Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

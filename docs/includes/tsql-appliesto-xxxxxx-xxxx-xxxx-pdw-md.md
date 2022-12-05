@@ -1,2 +1,2 @@
-<Token>**THIS TOPIC APPLIES TO:**![no](media/no.png)SQL Server ![no](media/no.png)Azure SQL Database![no](media/no.png)Azure SQL Data Warehouse ![yes](media/yes.png)Parallel Data Warehouse </Token>
+[!INCLUDE [applies-md](applies-md.md)] :::image type="content" source="media/no-icon.svg" alt-text="Not supported" border="false"::: SQL Server :::image type="content" source="media/no-icon.svg" alt-text="Not supported" border="false"::: Azure SQL Database :::image type="content" source="media/no-icon.svg" alt-text="Not supported" border="false"::: Azure Synapse Analytics :::image type="icon" source="media/yes-icon.svg"::: Analytics Platform System (PDW) 
 

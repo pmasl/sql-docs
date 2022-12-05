@@ -1,22 +1,19 @@
 ---
-title: "Optimize JSON processing with in-memory OLTP | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/18/2017"
-ms.prod: "sql-server-2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-json"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Optimize JSON processing with in-memory OLTP"
+title: "Optimize JSON processing with in-memory OLTP"
+ms.date: 06/03/2020
+ms.service: sql
+ms.subservice: 
+ms.topic: conceptual
 ms.assetid: d9c5adb1-3209-4186-bc10-8e41a26f5e57
-caps.latest.revision: 3
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "craigg"
+author: jovanpop-msft
+ms.author: jovanpop
+ms.reviewer: jroth
+ms.custom: seo-dt-2019
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Optimize JSON processing with in-memory OLTP
-[!INCLUDE[tsql-appliesto-ssvNxt-asdb-xxxx-xxx](../../includes/tsql-appliesto-ssvnxt-asdb-xxxx-xxx.md)]
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sqlserver2017-asdb.md)]
 
 SQL Server and Azure SQL Database let you work with text formatted as JSON. To increase the performance of queries that process JSON data, you can store JSON documents in memory-optimized tables using standard string columns (NVARCHAR type). Storing JSON data in memory-optimized tables increases query performance by leveraging lock-free, in-memory data access.
 
@@ -77,7 +74,7 @@ ALTER TABLE xtp.Product
 Computed columns let you expose values from JSON text and access those values without fetching the value from the JSON text again and without parsing the JSON structure again. Values exposted in this way are strongly typed and physically persisted in the computed columns. Accessing JSON values using persisted computed columns is faster than accessing values in the JSON document directly.
 
 The following example shows how to expose the following two values from the JSON `Data` column:
--   The country where a product is made.
+-   The country/region where a product is made.
 -   The product manufacturing cost.
 
 In this example, the computed columns `MadeIn` and `Cost` are updated every time the JSON document stored in the `Data` column changes.
@@ -123,6 +120,7 @@ CREATE TABLE xtp.Product(
     INDEX [idx_Product_MadeIn] NONCLUSTERED (MadeIn)
 
 ) WITH (MEMORY_OPTIMIZED=ON)
+GO
 
 ALTER TABLE Product
     ADD INDEX [idx_Product_Cost] NONCLUSTERED HASH(Cost)
@@ -144,8 +142,8 @@ AS BEGIN
 	FROM xtp.Product
 		JOIN OPENJSON(@ProductIds)
 			ON ProductID = value
-
 END;
+GO
 
 CREATE PROCEDURE xtp.UpdateProductData(@ProductId int, @Property nvarchar(100), @Value nvarchar(100))
 WITH SCHEMABINDING, NATIVE_COMPILATION
@@ -155,9 +153,17 @@ AS BEGIN
 	UPDATE xtp.Product
 	SET Data = JSON_MODIFY(Data, @Property, @Value)
 	WHERE ProductID = @ProductId;
-
 END
+GO
 ```
 
-## Learn more about the built-in JSON support in SQL Server  
-For lots of specific solutions, use cases, and recommendations, see the [blog posts about the built-in JSON support](http://blogs.msdn.com/b/sqlserverstorageengine/archive/tags/json/) in SQL Server and in Azure SQL Database by Microsoft Program Manager Jovan Popovic.
+## Learn more about JSON in SQL Server and Azure SQL Database  
+  
+### Microsoft videos
+
+> [!NOTE]
+> Some of the video links in this section may not work at this time. Microsoft is migrating content formerly on Channel 9 to a new platform. We will update the links as the videos are migrated to the new platform.
+
+For a visual introduction to the built-in JSON support in SQL Server and Azure SQL Database, see the following videos:
+
+-   [JSON as a bridge between NoSQL and relational worlds](https://channel9.msdn.com/events/DataDriven-SQLServer2016/JSON-as-bridge-betwen-NoSQL-relational-worlds)

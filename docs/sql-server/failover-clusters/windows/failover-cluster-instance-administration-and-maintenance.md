@@ -1,14 +1,12 @@
 ---
-title: "Failover Cluster Instance Administration and Maintenance | Microsoft Docs"
-ms.custom: ""
+title: "Failover Cluster Instance administration & maintenance"
+description: Learn about maintenance and administration of SQL Server failover cluster instances with the SQL Server Setup program or the Failover Cluster Manager snap-in.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: failover-cluster-instance
+ms.topic: how-to
 helpviewer_keywords: 
   - "user accounts [SQL Server], failover clustering"
   - "clusters [SQL Server], maintaining"
@@ -23,12 +21,11 @@ helpviewer_keywords:
   - "removing nodes"
   - "virtual servers [SQL Server], adding nodes"
 ms.assetid: 2d5c63e9-8061-45c3-94db-8dd3100b8a91
-caps.latest.revision: 35
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # Failover Cluster Instance Administration and Maintenance
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Maintenance tasks like adding or removing nodes from an existing Always On Failover Cluster Instance (FCI) are accomplished using the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Setup program. Other administration tasks like changing the IP address resource, recovering from certain FCI scenarios are accomplished using the Failover Cluster Manager snap-in, which is the management snap-in for the Windows Server Failover Clustering (WSFC) service.  
   
 ## Maintaining a Failover Cluster Instance  
@@ -48,7 +45,7 @@ manager: "jhubbard"
 > [!IMPORTANT]  
 >  Do not use the same account for the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] service account and the WSFC service account. If the password changes for the WSFC service account, your [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] installation will fail.  
   
- On [!INCLUDE[nextref_longhorn](../../../includes/nextref-longhorn-md.md)], service SIDs are used for [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] service accounts. For more information, see [Configure Windows Service Accounts and Permissions](../../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md).  
+ On [!INCLUDE[winserver2008](../../../includes/winserver2008-md.md)], service SIDs are used for [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] service accounts. For more information, see [Configure Windows Service Accounts and Permissions](../../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md).  
   
 ## Administering a Failover Cluster Instance  
   

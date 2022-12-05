@@ -1,30 +1,25 @@
 ---
-title: "Execute SQL Server Agent Job Task (Maintenance Plan) | Microsoft Docs"
-ms.custom: ""
+title: "Execute SQL Server Agent Job Task (Maintenance Plan)"
+description: Execute SQL Server Agent Job Task (Maintenance Plan)
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: supportability
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.maint.executejob.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Execute SQL Server Agent Job Task dialog box"
 ms.assetid: 4ed75956-ebb8-4d8c-9c16-fc0eb00bd3a0
-caps.latest.revision: 21
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Execute SQL Server Agent Job Task (Maintenance Plan)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use the **Execute SQL Server Agent Job Task** dialog to execute Microsoft SQL Server Agent jobs within a maintenance plan. This option will not be available if you have no SQL Server Agent jobs on the selected connection.  
   
  This task uses the **.sp_start_job** statement.  
   
-## UIElement List  
+## UI element list  
  **Connection**  
  Select the server connection to use when performing this task.  
   
@@ -67,7 +62,7 @@ manager: "jhubbard"
   
 ## See Also  
  [sp_add_job &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-add-job-transact-sql.md)   
- [Create a Job](http://msdn.microsoft.com/library/b35af2b6-6594-40d1-9861-4d5dd906048c)   
+ [Create a Job](../../ssms/agent/create-a-job.md)   
  [sp_start_job &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-start-job-transact-sql.md)  
   
   

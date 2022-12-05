@@ -1,24 +1,15 @@
 ---
-title: "getSearchStringEscape Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getSearchStringEscape Method (SQLServerDatabaseMetaData)"
+description: "getSearchStringEscape Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getSearchStringEscape"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getSearchStringEscape"
 apitype: "Assembly"
-ms.assetid: ea0f95d0-0238-4dc8-9f26-7ff9b65f30c3
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getSearchStringEscape Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

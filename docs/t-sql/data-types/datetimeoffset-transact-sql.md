@@ -1,48 +1,43 @@
 ---
-title: "datetimeoffset (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "datetimeoffset (Transact-SQL)"
+description: "datetimeoffset (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "07/23/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: "reference"
+f1_keywords:
   - "datetimeoffset_TSQL"
   - "datetimeoffset"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "time [SQL Server], data types"
   - "date and time [SQL Server], datetimeoffset"
   - "datetimeoffset data type [SQL Server]"
   - "dates [SQL Server], data types"
   - "data types [SQL Server], date and time"
   - "time zones [SQL Server]"
-ms.assetid: a0455b71-ca25-476e-a7a8-0770f1860bb7
-caps.latest.revision: 41
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # datetimeoffset (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
 
-Defines a date that is combined with a time of a day that has time zone awareness and is based on a 24-hour clock.
-  
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+Defines a date that is combined with a time of a day based on a 24-hour clock like [datetime2](../../t-sql/data-types/datetime2-transact-sql.md), and adds time zone awareness based on UTC (Universal Time Coordinate or Greenwich Mean Time). 
+
 ## datetimeoffset description
   
 |Property|Value|  
 |---|---|
 |Syntax|**datetimeoffset** [ (*fractional seconds precision*) ]|  
-|Usage|DECLARE @MyDatetimeoffset **datetimeoffset(7)**<br /><br /> CREATE TABLE Table1 ( Column1 **datetimeoffset(7)** )|  
+|Usage|DECLARE \@MyDatetimeoffset **datetimeoffset(7)**<br /><br /> CREATE TABLE Table1 ( Column1 **datetimeoffset(7)** )|  
 |Default string literal formats (used for down-level client)|YYYY-MM-DD hh:mm:ss[.nnnnnnn] [{+&#124;-}hh:mm]<br /><br /> For more information, see the "Backward Compatibility for Down-level Clients" section that follows.|  
 |Date range|0001-01-01 through 9999-12-31<br /><br /> January 1, 1 CE through December 31, 9999 CE|  
-|Time range|00:00:00 through 23:59:59.9999999 (fractional seconds are not supported in Informatica)|  
-|Time zone offset range|-14:00 through +14:00 (the time zone offset is ignored in Informatica)|  
-|Element ranges|YYYY is four digits, ranging from 0001 through 9999, that represent a year.<br /><br /> MM is two digits, ranging from 01 to 12, that represent a month in the specified year.<br /><br /> DD is two digits, ranging from 01 to 31 depending on the month, that represent a day of the specified month.<br /><br /> hh is two digits, ranging from 00 to 23, that represent the hour.<br /><br /> mm is two digits, ranging from 00 to 59, that represent the minute.<br /><br /> ss is two digits, ranging from 00 to 59, that represent the second.<br /><br /> n* is zero to seven digits, ranging from 0 to 9999999, that represent the fractional seconds. Fractional seconds are not supported in Informatica.<br /><br /> hh is two digits that range from -14 to +14. The time zone offset is ignored in Informatica.<br /><br /> mm is two digits that range from 00 to 59. The time zone offset is ignored in Informatica.|  
+|Time range|00:00:00 through 23:59:59.9999999|  
+|Time zone offset range|-14:00 through +14:00|  
+|Element ranges|YYYY is four digits, ranging from 0001 through 9999, that represent a year.<br /><br /> MM is two digits, ranging from 01 to 12, that represent a month in the specified year.<br /><br /> DD is two digits, ranging from 01 to 31 depending on the month, that represent a day of the specified month.<br /><br /> hh is two digits, ranging from 00 to 23, that represent the hour.<br /><br /> mm is two digits, ranging from 00 to 59, that represent the minute.<br /><br /> ss is two digits, ranging from 00 to 59, that represent the second.<br /><br /> n* is zero to seven digits, ranging from 0 to 9999999, that represent the fractional seconds.<br /><br /> hh is two digits that range from -14 to +14. <br /><br /> mm is two digits that range from 00 to 59.|  
 |Character length|26 positions minimum (YYYY-MM-DD hh:mm:ss {+&#124;-}hh:mm) to 34 maximum (YYYY-MM-DD hh:mm:ss.nnnnnnn {+&#124;-}hh:mm)|  
 |Precision, scale|See the table below.|  
 |Storage size|10 bytes, fixed is the default with the default of 100ns fractional second precision.|  
@@ -77,7 +72,7 @@ The following table lists the supported ISO 8601 string literal formats for **da
 A time zone offset specifies the zone offset from UTC for a **time** or **datetime** value. The time zone offset can be represented as [+|-] hh:mm:
 -   hh is two digits that range from 00 to 14 and represent the number of hours in the time zone offset.  
 -   mm is two digits, ranging from 00 to 59, that represent the number of additional minutes in the time zone offset.  
--   \+ (plus) or – (minus) is the mandatory sign for a time zone offset. This indicates whether the time zone offset is added or subtracted from the UTC time to obtain the local time. The valid range of time zone offset is from -14:00 to +14:00.  
+-   \+ (plus) or - (minus) is the mandatory sign for a time zone offset. This indicates whether the time zone offset is added or subtracted from the UTC time to obtain the local time. The valid range of time zone offset is from -14:00 to +14:00.  
   
 The time zone offset range follows the W3C XML standard for XSD schema definition and is slightly different from the SQL 2003 standard definition, 12:59 to +14:00.
   
@@ -107,6 +102,9 @@ Some down-level clients do not support the **time**, **date**, **datetime2** and
 ## Converting date and time data
 When you convert to date and time data types, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] rejects all values it cannot recognize as dates or times. For information about using the CAST and CONVERT functions with date and time data, see [CAST and CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)
   
+### Converting datetimeoffset data type to other date and time types
+This section describes what occurs when a **datetimeoffset** data type is converted to other date and time data types.
+  
 When converting to  **date**, the year, month, and day are copied. The following code shows the results of converting a `datetimeoffset(4)` value to a `date` value.  
   
 ```sql
@@ -124,7 +122,7 @@ SELECT @datetimeoffset AS '@datetimeoffset ', @date AS 'date';
   
 ```  
   
-If the conversion is to **time(n)**, the our, minute, second, and fractional seconds are copied. The time zone value is truncated. When the precision of the **datetimeoffset(n)** value is greater than the precision of the **time(n)** value, the value is rounded up. The following code shows the results of converting a `datetimeoffset(4)` value to a `time(3)` value.
+If the conversion is to **time(n)**, the hour, minute, second, and fractional seconds are copied. The time zone value is truncated. When the precision of the **datetimeoffset(n)** value is greater than the precision of the **time(n)** value, the value is rounded up. The following code shows the results of converting a `datetimeoffset(4)` value to a `time(3)` value.
   
 ```sql
 DECLARE @datetimeoffset datetimeoffset(4) = '12-10-25 12:32:10.1237 +01:0';  
@@ -189,9 +187,6 @@ SELECT @datetimeoffset AS '@datetimeoffset', @datetime2 AS '@datetime2';
   
 --(1 row(s) affected)  
 ```  
-  
-### Converting datetimeoffset data type to other date and time types
-The following table describes what occurs when a **datetimeoffset** data type is converted to other date and time data types.
   
 ### Converting string literals to datetimeoffset
 Conversions from string literals to date and time types are permitted if all parts of the strings are in valid formats. Otherwise, a runtime error is raised. Implicit conversions or explicit conversions that do not specify a style, from date and time types to string literals will be in the default format of the current session. The following table shows the rules for converting a string literal to the **datetimeoffset** data type.

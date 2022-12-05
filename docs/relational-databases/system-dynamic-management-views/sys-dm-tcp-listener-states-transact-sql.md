@@ -1,33 +1,27 @@
 ---
-title: "sys.dm_tcp_listener_states (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_tcp_listener_states (Transact-SQL)"
+description: sys.dm_tcp_listener_states (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_tcp_listener_states"
   - "dm_tcp_listener_states"
   - "sys.dm_tcp_listener_states_TSQL"
   - "dm_tcp_listener_states_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Availability Groups [SQL Server], monitoring"
   - "Availability Groups [SQL Server], listeners"
   - "sys.dm_tcp_listener_states dynamic management view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 9997ffed-a4c1-428f-8bac-3b9e4b16d7cf
-caps.latest.revision: 15
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # sys.dm_tcp_listener_states (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row containing dynamic-state information for each TCP listener.  
   
@@ -36,8 +30,8 @@ manager: "jhubbard"
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
-|**listener_id**|**int**|Listener’s internal ID. Is not nullable.<br /><br /> Primary key.|  
-|**ip_address**|**nvarchar48**|The listener IP address that is online and currently being listening to. Either IPv4 and IPv6 is allowed. If a listener possesses both types of addresses, they are listed separately. An IPv4 wildcard, is displayed as “0.0.0.0”. An IPv6 wildcard, is displayed as “::”.<br /><br /> Is not nullable.|  
+|**listener_id**|**int**|Listener's internal ID. Is not nullable.<br /><br /> Primary key.|  
+|**ip_address**|**nvarchar(48)**|The listener IP address that is online and currently being listening to. Either IPv4 and IPv6 is allowed. If a listener possesses both types of addresses, they are listed separately. An IPv4 wildcard, is displayed as "0.0.0.0". An IPv6 wildcard, is displayed as "::".<br /><br /> Is not nullable.|  
 |**is_ipv4**|**bit**|Type of IP address<br /><br /> 1 = IPv4<br /><br /> 0 = IPv6|  
 |**port**|**int**|The port number on which the listener is listening. Is not nullable.|  
 |**type**|**tinyint**|Listener type, one of:<br /><br /> 0 = [!INCLUDE[tsql](../../includes/tsql-md.md)]<br /><br /> 1 = Service Broker<br /><br /> 2 = Database mirroring<br /><br /> Is not nullable.|  
@@ -52,7 +46,7 @@ manager: "jhubbard"
  Requires VIEW SERVER STATE permission on the server.  
   
 ## See Also  
- [Querying the SQL Server System Catalog FAQ](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)   
+ [Querying the SQL Server System Catalog FAQ](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.yml)   
  [Always On Availability Groups Catalog Views &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/always-on-availability-groups-catalog-views-transact-sql.md)   
  [Always On Availability Groups Dynamic Management Views and Functions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/always-on-availability-groups-dynamic-management-views-functions.md)  
   

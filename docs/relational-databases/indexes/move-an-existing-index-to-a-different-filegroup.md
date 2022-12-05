@@ -1,48 +1,31 @@
 ---
-title: "Move an Existing Index to a Different Filegroup | Microsoft Docs"
-ms.custom: ""
-ms.date: "02/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-indexes"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "Move an Existing Index to a Different Filegroup"
+description: Move an Existing Index to a Different Filegroup
+author: MikeRayMSFT
+ms.author: mikeray
+ms.date: "05/11/2021"
+ms.service: sql
+ms.subservice: table-view-index
+ms.topic: conceptual
+helpviewer_keywords:
   - "moving tables"
   - "switching filegroups for index"
   - "moving indexes"
   - "indexes [SQL Server], moving"
   - "filegroups [SQL Server], switching"
 ms.assetid: 167ebe77-487d-4ca8-9452-4b2c7d5cb96e
-caps.latest.revision: 45
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
-# Move an Existing Index to a Different Filegroup
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# Move an existing index to a different filegroup
 
-  This topic describes how to move an existing index from its current filegroup to a different filegroup in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+  This topic describes how to move an existing index from its current filegroup to a different filegroup in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
+
+For design considerations including why you might want to place a nonclustered index on a different filegroup, see [Index Placement on Filegroups or Partitions Schemes](../sql-server-index-design-guide.md#Index_placement).
+
+##  <a name="BeforeYouBegin"></a> Before you begin  
   
- **In This Topic**  
-  
--   **Before you begin:**  
-  
-     [Limitations and Restrictions](#Restrictions)  
-  
-     [Security](#Security)  
-  
--   **To move an existing index to a different filegroup, using:**  
-  
-     [SQL Server Management Studio](#SSMSProcedure)  
-  
-     [Transact-SQL](#TsqlProcedure)  
-  
-##  <a name="BeforeYouBegin"></a> Before You Begin  
-  
-###  <a name="Restrictions"></a> Limitations and Restrictions  
+###  <a name="Restrictions"></a> Limitations and restrictions  
   
 -   If a table has a clustered index, moving the clustered index to a new filegroup moves the table to that filegroup.  
   
@@ -53,7 +36,7 @@ manager: "jhubbard"
 ####  <a name="Permissions"></a> Permissions  
  Requires ALTER permission on the table or view. User must be a member of the **sysadmin** fixed server role or the **db_ddladmin** and **db_owner** fixed database roles.  
   
-##  <a name="SSMSProcedure"></a> Using SQL Server Management Studio  
+##  <a name="SSMSProcedure"></a> Use SQL Server Management Studio  
   
 #### To move an existing index to a different filegroup using Table Designer  
   
@@ -73,8 +56,8 @@ manager: "jhubbard"
   
 8.  Click **Close**.  
   
-9. On the **File** menu, select **Save***table_name*.  
-  
+9. On the **File** menu, select **Save**_table_name_.  
+
 #### To move an existing index to a different filegroup in Object Explorer  
   
 1.  In Object Explorer, click the plus sign to expand the database that contains the table containing the index that you want to move.  
@@ -95,11 +78,11 @@ manager: "jhubbard"
   
      If you are moving a clustered index, you can use online processing. Online processing allows concurrent user access to the underlying data and to nonclustered indexes during the index operation. For more information, see [Perform Index Operations Online](../../relational-databases/indexes/perform-index-operations-online.md).  
   
-     On multiprocessor computers using [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], you can configure the number of processors used to execute the index statement by specifying a maximum degree of parallelism value. The Parallel indexed operations feature is not available in every edition of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see Features Supported by the Editions of SQL Server 2016. For more information about Parallel indexed operations, see [Configure Parallel Index Operations](../../relational-databases/indexes/configure-parallel-index-operations.md).  
+     On multiprocessor computers using [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], you can configure the number of processors used to execute the index statement by specifying a maximum degree of parallelism value. The Parallel indexed operations feature is not available in every edition of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see Features Supported by the Editions of SQL Server 2016. For more information about Parallel indexed operations, see [Configure Parallel Index Operations](../../relational-databases/indexes/configure-parallel-index-operations.md).  
   
 8.  Click **OK**.  
   
- The following information is available on the **Storage** page of the **Index Properties –** *index_name* dialog box:  
+ The following information is available on the **Storage** page of the **Index Properties -** _index_name_ dialog box:  
   
  **Filegroup**  
  Stores the index in the specified filegroup. The list only displays standard (row) filegroups. The default list selection is the PRIMARY filegroup of the database.  
@@ -180,7 +163,9 @@ manager: "jhubbard"
         ON TransactionsFG1;  
     GO  
     ```  
+
+## Next steps
+
+For more information, see [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md).  
   
- For more information, see [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md).  
-  
-  
+[SQL Server Index Architecture and Design Guide](../sql-server-index-design-guide.md)

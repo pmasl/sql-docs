@@ -1,28 +1,17 @@
 ---
+description: "DefaultMember (MDX)"
 title: "DefaultMember (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "DefaultMember"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "DefaultMember function"
-ms.assetid: c1b53b3a-6e73-4c41-a4fe-9f5c96da5463
-caps.latest.revision: 32
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # DefaultMember (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Returns the default member of a hierarchy.  
   
@@ -52,6 +41,5 @@ FROM [Adventure Works]
   
 ## See Also  
  [MDX Function Reference &#40;MDX&#41;](../mdx/mdx-function-reference-mdx.md)   
- [Define a Default Member](../analysis-services/multidimensional-models/attribute-properties-define-a-default-member.md)  
-  
+ [Define a Default Member](/analysis-services/multidimensional-models/attribute-properties-define-a-default-member)  
   

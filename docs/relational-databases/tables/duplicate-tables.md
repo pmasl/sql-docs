@@ -1,73 +1,53 @@
 ---
-title: "Duplicate Tables | Microsoft Docs"
+description: "Create a duplicate copy of a table, without the row data."
+title: "Duplicate tables without the row data."
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "10/21/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-tables"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: table-view-index
+ms.topic: conceptual
 helpviewer_keywords: 
   - "copying tables"
   - "tables [SQL Server], duplicating"
   - "duplicating tables"
+  - "duplicating table structures"
   - "table copying [SQL Server]"
-ms.assetid: c6b07423-d1e5-4e5e-8681-5088921f5df3
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Duplicate Tables
-[!INCLUDE[tsql-appliesto-ss2016-all_md](../../includes/tsql-appliesto-ss2016-all-md.md)]
+# Duplicate tables
+[!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]
 
-  You can duplicate an existing table in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)] by creating a new table and then copying column information from an existing table.  
+You can duplicate an existing table in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)] by creating a new table and then copying column information from an existing table.  
   
-> [!IMPORTANT]  
->  This operation duplicates only the structure of a table; it does not duplicate any table rows.  
-  
- **In This Topic**  
-  
--   **Before you begin:**  
-  
-     [Security](#Security)  
-  
--   **To duplicate a table, using:**  
-  
-     [SQL Server Management Studio](#SSMSProcedure)  
-  
-     [Transact-SQL](#TsqlProcedure)  
-  
-##  <a name="BeforeYouBegin"></a> Before You Begin  
-  
-###  <a name="Security"></a> Security  
-  
-####  <a name="Permissions"></a> Permissions  
+ These steps described duplicate only the structure of a table, not the row data.  
+
+##  <a name="Permissions"></a><a name="Security"></a> Permissions  
  Requires CREATE TABLE permission in the destination database.  
   
-##  <a name="SSMSProcedure"></a> Using SQL Server Management Studio  
+##  <a name="SSMSProcedure"></a> Use SQL Server Management Studio  
   
 #### To duplicate a table  
   
 1.  Make sure you are connected to the database in which you want to create the table and that the database is selected in Object Explorer.  
   
-2.  In Object Explorer, right-click **Tables** and click **New Table**.  
+2.  In Object Explorer, right-click **Tables** and select **New Table**.  
   
-3.  In Object Explorer right-click the table you want to copy and click **Design**.  
+3.  In Object Explorer right-click the table you want to copy and select **Design**.  
   
-4.  Select the columns in the existing table and, from the **Edit** menu, click **Copy**.  
+4.  Select the columns in the existing table and, from the **Edit** menu, select **Copy**.  
   
 5.  Switch back to the new table and select the first row.  
   
-6.  From the **Edit** menu, click **Paste**.  
+6.  From the **Edit** menu, select **Paste**.  
   
-7.  From the **File** menu, click **Save***table name*.  
+7.  From the **File** menu, select **Save** _table name_.  
   
-8.  In the **Choose Name** dialog box, type a name for the new table and click **OK**.  
-  
-##  <a name="TsqlProcedure"></a> Using Transact-SQL  
+8.  In the **Choose Name** dialog box, type a name for the new table. Select **OK**.  
+
+##  <a name="TsqlProcedure"></a> Use Transact-SQL  
   
 #### To duplicate a table in Query Editor  
   
@@ -79,6 +59,10 @@ manager: "jhubbard"
   
 4.  Remove any columns that are not needed in the new table.  
   
-5.  Click **Execute**.  
-  
-  
+5.  Select **Execute** to create the new table.
+
+## Next steps
+
+- [Copy Columns from One Table to Another (Database Engine)](copy-columns-from-one-table-to-another-database-engine.md)
+- [Script objects in SQL Server Management Studio](../../ssms/tutorials/scripting-ssms.md)
+

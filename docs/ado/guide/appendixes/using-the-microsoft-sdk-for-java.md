@@ -1,22 +1,15 @@
 ---
-title: "Using the Microsoft SDK for Java | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
-ms.date: "02/15/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "Using the Microsoft SDK for Java"
+description: "Using the Microsoft SDK for Java"
+author: rothja
+ms.author: jroth
+ms.date: 11/08/2018
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "Java (Microsoft SDK for)"
   - "Microsoft SDK for Java [ADO]"
-ms.assetid: 2d7cb5b5-8307-49dd-b07e-c07069bb1626
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Using the Microsoft SDK for Java
 
@@ -29,23 +22,23 @@ The Microsoft SDK for Java is the developer kit for the Microsoft Internet Explo
   
  This mechanism reads the ADO type library and generates classes that you can instantiate within your application. It generates those classes in the following location: \\<windows directory\>\Java\trustlib\msado15.  
   
- Creating an ADO application in Java using the Microsoft SDK for Java is fundamentally identical, from the perspective of source code, to using the Java Type Library Wizard. For sample code, see [ADO Java Class Wrappers](../../../ado/guide/appendixes/ado-java-class-wrappers.md). The only real difference is in how you generate the wrapper classes in the first place, as demonstrated in the following steps.  
+ Creating an ADO application in Java using the Microsoft SDK for Java is fundamentally identical, from the perspective of source code, to using the Java Type Library Wizard. For sample code, see [ADO Java Class Wrappers](./ado-java-class-wrappers.md). The only real difference is in how you generate the wrapper classes in the first place, as demonstrated in the following steps.  
   
 ### To create an ADO project with the Microsoft SDK for Java  
   
 1.  Run the following at a command prompt. You must set the path to include the Microsoft SDK for Java Bin directory, or run the command from that location. Typically, the Microsoft SDK for Java is installed in the same location as Visual Studio. This is a single command statement.  
   
-    ```  
+    ```java
     \<path to DevStudio>\<path to Java SDK>\bin\JactiveX.exe /javatlb "C:\program files\common files\system\ado\msado15.dll"  
     ```  
   
 2.  Run the following command to compile the generated classes. The /g:t switch turns on generation of debug symbols so that you can trace into the .Java symbols. Remove it for release builds.  
   
-    ```  
+    ```java
     jvc /g:t c:\<windows>\Java\trustlib\msado15\*.Java  
     ```  
   
 3.  To use these files, open your project in Visual J++. From the **Project** menu, choose **Add To Project**. Select **Files**, and add all of the .JAVA files generated in the trustlib\msado15 directory to your project.  
   
 ## See Also  
- [ADO Java Class Wrappers](../../../ado/guide/appendixes/ado-java-class-wrappers.md)   
+ [ADO Java Class Wrappers](./ado-java-class-wrappers.md)

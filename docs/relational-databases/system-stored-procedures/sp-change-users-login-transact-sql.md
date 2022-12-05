@@ -1,14 +1,12 @@
 ---
+description: "sp_change_users_login (Transact-SQL)"
 title: "sp_change_users_login (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "12/13/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_change_users_login"
   - "sp_change_users_login_TSQL"
@@ -17,15 +15,16 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_change_users_login"
 ms.assetid: 1554b39f-274b-4ef8-898e-9e246b474333
-caps.latest.revision: 43
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # sp_change_users_login (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  Maps an existing database user to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login. [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)] Use [ALTER USER](../../t-sql/statements/alter-user-transact-sql.md) instead.  
+  Maps an existing database user to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login. 
+  
+ > [!IMPORTANT]  
+ > [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)] Use [ALTER USER](../../t-sql/statements/alter-user-transact-sql.md) instead.  
   
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
@@ -60,7 +59,8 @@ sp_change_users_login [ @Action = ] 'action'
  [ @Password= ] '*password*'  
  Is the password assigned to a new [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login that is created by specifying **Auto_Fix**. If a matching login already exists, the user and login are mapped and *password* is ignored. If a matching login does not exist, sp_change_users_login creates a new [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login and assigns *password* as the password for the new login. *password* is **sysname**, and must not be NULL.  
   
-> **IMPORTANT!!** Always use a [strong Password!](../../relational-databases/security/strong-passwords.md)
+> [!IMPORTANT]  
+> Always use a [strong Password!](../../relational-databases/security/strong-passwords.md)
   
 ## Return Code Values  
  0 (success) or 1 (failure)  
@@ -73,7 +73,7 @@ sp_change_users_login [ @Action = ] 'action'
 |UserSID|**varbinary(85)**|User's security identifier.|  
   
 ## Remarks  
- Use sp_change_users_login to link a database user in the current database with a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login. If the login for a user has changed, use sp_change_users_login to link the user to the new login without losing user permissions. The new *login* cannot be sa, and the *user*cannot be dbo, guest, or an INFORMATION_SCHEMA user.  
+ Use sp_change_users_login to link a database user in the current database with a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login. If the login for a user has changed, use sp_change_users_login to link the user to the new login without losing user permissions. The new *login* cannot be sa, and the *user* cannot be dbo, guest, or an INFORMATION_SCHEMA user.  
   
  sp_change_users_login cannot be used to map database users to Windows-level principals, certificates, or asymmetric keys.  
   

@@ -1,32 +1,25 @@
 ---
-title: "XactAttributeEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "XactAttributeEnum"
+description: "XactAttributeEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "XactAttributeEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "XactAttributeEnum enumeration [ADO]"
-ms.assetid: e7dcecd3-7dc7-445c-b922-f700c3067fbc
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # XactAttributeEnum
-Specifies the transaction attributes of a [Connection](../../../ado/reference/ado-api/connection-object-ado.md) object.  
+Specifies the transaction attributes of a [Connection](./connection-object-ado.md) object.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
-|**adXactAbortRetaining**|262144|Performs retaining aborts by calling [RollbackTrans](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md) to automatically start a new transaction. Not all providers support this behavior.|  
-|**adXactCommitRetaining**|131072|Performs retaining commits by calling [CommitTrans](../../../ado/reference/ado-api/begintrans-committrans-and-rollbacktrans-methods-ado.md) to automatically start a new transaction. Not all providers support this behavior.|  
+|**adXactAbortRetaining**|262144|Performs retaining aborts by calling [RollbackTrans](./begintrans-committrans-and-rollbacktrans-methods-ado.md) to automatically start a new transaction. Not all providers support this behavior.|  
+|**adXactCommitRetaining**|131072|Performs retaining commits by calling [CommitTrans](./begintrans-committrans-and-rollbacktrans-methods-ado.md) to automatically start a new transaction. Not all providers support this behavior.|  
   
 ## ADO/WFC Equivalent  
  Package: **com.ms.wfc.data**  
@@ -37,4 +30,4 @@ Specifies the transaction attributes of a [Connection](../../../ado/reference/ad
 |AdoEnums.XactAttribute.COMMITRETAINING|  
   
 ## Applies To  
- [Attributes Property (ADO)](../../../ado/reference/ado-api/attributes-property-ado.md)
+ [Attributes Property (ADO)](./attributes-property-ado.md)

@@ -1,21 +1,18 @@
 ---
+description: "User Roles"
 title: "User Roles | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: be0ec384-e03b-4483-96ca-02b289804d6a
-caps.latest.revision: 7
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # User Roles
+
   This section describes the user roles for the Change Data Capture Service for Oracle by Attunity. The roles described are [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database roles, Windows roles, or Oracle database roles.  
   
 ## Windows User Roles  
@@ -57,7 +54,7 @@ manager: "jhubbard"
   
  When creating an Oracle CDC Service on Windows Vista or Windows Server 2008, the default service account is the NETWORK SERVICE account.  
   
- On Windows 7, Windows Server 2008 R2 and later, the default service account is NT Service\\<service-name>.  
+ On Windows 7, Windows Server 2008 R2 and later, the default service account is NT Service\\\\<service-name\>.  
   
  When [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] runs on another machine or is a clustered [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance and there the service needs to connect to the target [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] using Windows authentication, then the service account should be a domain account.  
   
@@ -126,7 +123,7 @@ manager: "jhubbard"
   
  The Oracle database administrator can get Oracle SQL scripts that need to run so they can be evaluated before running them. The Oracle database administrator can also directly run Oracle SQL scripts from the Oracle CDC Designer console.  
   
- If the Oracle database administrator chooses to use the Oracle CDC Designer console, administrator’s credentials are not kept except for the context (dialog) in which they were used.  
+ If the Oracle database administrator chooses to use the Oracle CDC Designer console, administrator's credentials are not kept except for the context (dialog) in which they were used.  
   
  The Oracle database administrator works in coordination with the Oracle CDC Service administrator on the configuration of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Oracle CDC Instances.  
   

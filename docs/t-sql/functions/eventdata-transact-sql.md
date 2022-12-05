@@ -1,55 +1,54 @@
 ---
-title: "EVENTDATA (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "EVENTDATA (Transact-SQL)"
+description: "EVENTDATA (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "EVENTDATA"
   - "fn_event_data"
   - "EVENTDATA_TSQL"
   - "fn_event_data_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "server instance event data [SQL Server]"
   - "event notifications [SQL Server], event status"
-  - "events [SQL Server], status infromation"
+  - "events [SQL Server], status information"
   - "EVENTDATA function"
   - "status information [SQL Server], events"
   - "DDL triggers, returning event data"
-ms.assetid: 03a80e63-6f37-4b49-bf13-dc35cfe46c44
-caps.latest.revision: 55
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # EVENTDATA (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  Returns information about server or database events. EVENTDATA is called when an event notification fires, and the results are returned to the specified service broker. EVENTDATA can also be used inside the body of a DDL or logon trigger.  
+This function returns information about server or database events. When an event notification fires, and the specified service broker receives the results, `EVENTDATA` is called. A DDL or logon trigger also support internal use of `EVENTDATA`.  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
-  
-EVENTDATA( )  
-```  
-  
+```syntaxsql
+EVENTDATA( )
+```
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
 ## Remarks  
- EVENTDATA returns data only when referenced directly inside of a DDL or logon trigger. EVENTDATA returns null if it is called by other routines, even if those routines are called by a DDL or logon trigger.  
+`EVENTDATA` returns data only when referenced directly inside of a DDL or logon trigger. `EVENTDATA` returns null if other routines call it, even if a DDL or logon trigger calls those routines.
   
- Data returned by EVENTDATA is not valid after a transaction that called EVENTDATA, either implicitly or explicitly, commits or is rolled back.  
+Data returned by `EVENTDATA` is invalid after a transaction that
+
++ called `EVENTDATA` explicitly
++ called `EVENTDATA` implicitly
++ commits
++ is rolled back  
   
 > [!CAUTION]  
->  EVENTDATA returns XML data. This data is sent to the client as Unicode that uses 2 bytes for each character. The following Unicode code points can be represented in the XML that is returned by EVENTDATA:  
+>  `EVENTDATA` returns XML data, sent to the client as Unicode that uses 2 bytes for each character. `EVENTDATA` returns XML that can represent these Unicode code points:  
 >   
 >  `0x0009`  
 >   
@@ -61,26 +60,26 @@ EVENTDATA( )
 >   
 >  `>= 0xE000 && <= 0xFFFD`  
 >   
->  Some characters that can appear in [!INCLUDE[tsql](../../includes/tsql-md.md)] identifiers and data are not expressible or permissible in XML. Characters or data that have code points not shown in the previous list are mapped to a question mark (?).  
+>  XML cannot express, and will not permit, some characters that can appear in [!INCLUDE[tsql](../../includes/tsql-md.md)] identifiers and data. Characters or data that have code points not shown in the previous list are mapped to a question mark (?).  
   
- To protect the security of logins, when CREATE LOGIN or ALTER LOGIN statements are executed, passwords are not displayed.  
+Passwords do not display when `CREATE LOGIN` or `ALTER LOGIN` statements execute. This protects login security.  
   
 ## Schemas Returned  
- EVENTDATA returns a value of type **xml**. By default, the schema definition for all events is installed in the following directory: [!INCLUDE[ssInstallPath](../../includes/ssinstallpath-md.md)]Tools\Binn\schemas\sqlserver\2006\11\events\events.xsd.  
+EVENTDATA returns a value of data type **xml**. By default, the schema definition for all events installs in this directory: [!INCLUDE[ssInstallPath](../../includes/ssinstallpath-md.md)]Tools\Binn\schemas\sqlserver\2006\11\events\events.xsd.  
   
- Alternatively, the event schema is published at the [Microsoft SQL Server XML Schemas](http://go.microsoft.com/fwlink/?LinkID=31850) Web page.  
+The [Microsoft SQL Server XML Schemas](https://go.microsoft.com/fwlink/?LinkID=31850) web page also has the event schema.  
   
- To extract the schema for any particular event, search the schema for the Complex Type `EVENT_INSTANCE_\<event_type>`. For example, to extract the schema for the DROP_TABLE event, search the schema for `EVENT_INSTANCE_DROP_TABLE`.  
+To extract the schema for any particular event, search the schema for the Complex Type `EVENT_INSTANCE_<event_type>`. For example, to extract the schema for the `DROP_TABLE` event, search the schema for `EVENT_INSTANCE_DROP_TABLE`.  
   
 ## Examples  
   
 ### A. Querying event data in a DDL trigger  
- The following example creates a DDL trigger to prevent new tables from being created in the database. The [!INCLUDE[tsql](../../includes/tsql-md.md)] statement that fires the trigger is captured by using XQuery against the XML data that is generated by EVENTDATA. For more information, see [XQuery Language Reference &#40;SQL Server&#41;](../../xquery/xquery-language-reference-sql-server.md).  
+This example creates a DDL trigger that prevents creation of new database tables. Use of XQuery against the XML data generated by `EVENTDATA` captures the [!INCLUDE[tsql](../../includes/tsql-md.md)] statement that fires the trigger. See [XQuery Language Reference &#40;SQL Server&#41;](../../xquery/xquery-language-reference-sql-server.md) for more information.  
   
 > [!NOTE]  
->  When you query the `\<TSQLCommand>` element by using **Results to Grid** in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)], line breaks in the command text do not appear. Use **Results to Text** instead.  
+>  When using **Results to Grid** in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] to query the `<TSQLCommand>` element, line breaks in the command text do not appear. Use **Results to Text** instead.  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 CREATE TRIGGER safety   
@@ -95,7 +94,7 @@ AS
 ;  
 GO  
 --Test the trigger.  
-CREATE TABLE NewTable (Column1 int);  
+CREATE TABLE NewTable (Column1 INT);  
 GO  
 --Drop the trigger.  
 DROP TRIGGER safety  
@@ -104,15 +103,15 @@ GO
 ```  
   
 > [!NOTE]  
->  When you want to return event data, we recommend that you use the XQuery **value()** method instead of the **query()** method. The **query()** method returns XML and ampersand-escaped carriage return and line feed (CR/LF) instances in the output, while the **value()** method renders CR/LF instances invisible in the output.  
+>  To return event data, use the XQuery **value()** method instead of the **query()** method. The **query()** method returns XML and ampersand-escaped carriage return and line feed (CR/LF) instances in the output, while the **value()** method renders CR/LF instances invisible in the output.  
   
 ### B. Creating a log table with event data in a DDL trigger  
- The following example creates a table to store information about all database level events, and populates the table with a DDL trigger. The event type and [!INCLUDE[tsql](../../includes/tsql-md.md)] statement are captured by using XQuery against the XML data generated by `EVENTDATA`.  
+This example creates a table for information storage about all database level events, and populates that table with a DDL trigger. Use of XQuery against the XML data generated by `EVENTDATA` captures the event type and the [!INCLUDE[tsql](../../includes/tsql-md.md)] statement.  
   
-```  
+```sql 
 USE AdventureWorks2012;  
 GO  
-CREATE TABLE ddl_log (PostTime datetime, DB_User nvarchar(100), Event nvarchar(100), TSQL nvarchar(2000));  
+CREATE TABLE ddl_log (PostTime DATETIME, DB_User NVARCHAR(100), Event NVARCHAR(100), TSQL NVARCHAR(2000));  
 GO  
 CREATE TRIGGER log   
 ON DATABASE   
@@ -124,12 +123,12 @@ INSERT ddl_log
    (PostTime, DB_User, Event, TSQL)   
    VALUES   
    (GETDATE(),   
-   CONVERT(nvarchar(100), CURRENT_USER),   
-   @data.value('(/EVENT_INSTANCE/EventType)[1]', 'nvarchar(100)'),   
-   @data.value('(/EVENT_INSTANCE/TSQLCommand)[1]', 'nvarchar(2000)') ) ;  
+   CONVERT(NVARCHAR(100), CURRENT_USER),   
+   @data.value('(/EVENT_INSTANCE/EventType)[1]', 'NVARCHAR(100)'),   
+   @data.value('(/EVENT_INSTANCE/TSQLCommand)[1]', 'NVARCHAR(2000)') ) ;  
 GO  
 --Test the trigger.  
-CREATE TABLE TestTable (a int);  
+CREATE TABLE TestTable (a INT);  
 DROP TABLE TestTable ;  
 GO  
 SELECT * FROM ddl_log ;  

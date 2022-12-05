@@ -1,28 +1,24 @@
 ---
-title: "Using the DQS Default Knowledge Base | Microsoft Docs"
-ms.custom: ""
+title: "Using the DQS Default Knowledge Base"
+description: "Using the DQS Default Knowledge Base"
+author: swinarko
+ms.author: sawinark
 ms.date: "07/31/2012"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b36af13b-9fcc-4168-bb92-214d600b1c93
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
 ---
 # Using the DQS Default Knowledge Base
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
   This topic describes the default knowledge base, **DQS Data**, which is installed with [!INCLUDE[ssDQSnoversion](../includes/ssdqsnoversion-md.md)] (DQS). This is a pre-built default knowledge base that contains the following domains:  
   
 -   **Country/Region**: Contains the conventional long (official name as designated by the country/region ) and short names (common name used in lists, on maps, etc. ), two-letter abbreviation, three-letter abbreviation and three-digit code for each location.  Leading value is set to the long country name.  
   
 -   **Country/Region (three-letter leading)**: Contains the conventional long (official name as designated by the country/region) and short names (common name used in lists, on maps, and so on), two-letter abbreviation, three-letter abbreviation and three-digit code for each location.  Leading values is set to County three-letter abbreviation.  
   
--   **Country/Region (two-letter leading)**: Contains the conventional long (official name as designated by the country/region ) and short names (common name used in lists, on maps, etc. ), two-letter abbreviation, three-letter abbreviation and three-digit code for each location.  Leading value is set to the Country two-letter abbreviation.  
+-   **Country/Region (two-letter leading)**: Contains the conventional long (official name as designated by the country/region ) and short names (common name used in lists, on maps, etc. ), two-letter abbreviation, three-letter abbreviation and three-digit code for each location.  Leading value is set to the country/region two-letter abbreviation.  
   
 -   **US - Counties**: Contains a list of US counties.  
   
@@ -32,7 +28,7 @@ manager: "jhubbard"
   
 -   **US - State**: Contains the conventional long (official) name and two-letter abbreviation for each state in US. Leading value is set to the conventional state name.  
   
--   **US – State (2-letter heading)**: Contains the conventional long (official) name and two-letter abbreviation for each state in US. Leading value is set to the two-letter abbreviation state name.  
+-   **US - State (2-letter heading)**: Contains the conventional long (official) name and two-letter abbreviation for each state in US. Leading value is set to the two-letter abbreviation state name.  
   
 ## Using the Default Knowledge Base  
  You can use the default DQS knowledge base, DQS Data, in the following ways:  
@@ -43,9 +39,8 @@ manager: "jhubbard"
   
 -   Create a new knowledge base using the default knowledge base. To create a knowledge base from an existing knowledge base, see [Create a Knowledge Base](../data-quality-services/create-a-knowledge-base.md).  
   
--   Use it in the [DQS Cleansing component in Integration Services](http://go.microsoft.com/fwlink/?LinkId=238830) and [Master Data Services Add-in for Excel](../master-data-services/microsoft-excel-add-in/data-quality-matching-in-the-mds-add-in-for-excel.md).  
+-   Use it in the [DQS Cleansing component in Integration Services](/previous-versions/sql/sql-server-2012/ee677619(v=sql.110)) and [Master Data Services Add-in for Excel](../master-data-services/microsoft-excel-add-in/data-quality-matching-in-the-mds-add-in-for-excel.md).  
   
 ## See Also  
  [DQS Knowledge Bases and Domains](../data-quality-services/dqs-knowledge-bases-and-domains.md)  
-  
   

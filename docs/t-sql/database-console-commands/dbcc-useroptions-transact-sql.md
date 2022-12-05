@@ -1,33 +1,26 @@
 ---
-title: "DBCC USEROPTIONS (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "7/17/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+title: "DBCC USEROPTIONS (Transact-SQL)"
+description: "DBCC USEROPTIONS (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "11/14/2017"
+ms.service: sql
+ms.subservice: t-sql
 ms.topic: "language-reference"
-f1_keywords: 
+f1_keywords:
   - "DBCC USEROPTIONS"
   - "DBCC_USEROPTIONS_TSQL"
   - "USEROPTIONS_TSQL"
   - "USEROPTIONS"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "DBCC USEROPTIONS statement"
   - "active SET options"
   - "SET statement, active SET options"
-ms.assetid: 565ab112-7af1-4c18-a579-07cdb332f539
-caps.latest.revision: 41
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DBCC USEROPTIONS (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns the SET options active (set) for the current connection.
   
@@ -35,37 +28,38 @@ Returns the SET options active (set) for the current connection.
   
 ## Syntax  
   
-```sql
+```syntaxsql
 DBCC USEROPTIONS  
 [ WITH NO_INFOMSGS ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
 NO_INFOMSGS  
 Suppresses all informational messages that have severity levels from 0 through 10.
   
 ## Result Sets  
 DBCC USEROPTIONS returns a column for the name of the SET option and a column for the value of the option (values and entries may vary):
 
-```sql
-
-| `Set Option                   Value`  
- `---------------------------- ---------------------------`  
- `textsize                     64512`  
- `language                     us_english`  
- `dateformat                   mdy`  
- `datefirst                    7`  
- `lock_timeout                 -1`  
- `quoted_identifier            SET`  
- `arithabort                   SET`  
- `ansi_null_dflt_on            SET`  
- `ansi_warnings                SET`  
- `ansi_padding                 SET`  
- `ansi_nulls                   SET`  
- `concat_null_yields_null      SET`  
- `isolation level              read committed`  
- `(13 row(s) affected)`  
- `DBCC execution completed. If DBCC printed error messages, contact your system administrator.`
+```
+Set Option                   Value`  
+---------------------------- ---------------------------`  
+textsize                     64512 
+language                     us_english 
+dateformat                   mdy  
+datefirst                    7 
+lock_timeout                 -1 
+quoted_identifier            SET 
+arithabort                   SET 
+ansi_null_dflt_on            SET 
+ansi_warnings                SET 
+ansi_padding                 SET 
+ansi_nulls                   SET 
+concat_null_yields_null      SET 
+isolation level              read committed  
+(13 row(s) affected) 
+DBCC execution completed. If DBCC printed error messages, contact your system administrator.
  ```  
   
 ## Remarks  

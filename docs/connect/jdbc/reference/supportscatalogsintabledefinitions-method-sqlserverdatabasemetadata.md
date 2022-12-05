@@ -1,24 +1,15 @@
 ---
-title: "supportsCatalogsInTableDefinitions Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsCatalogsInTableDefinitions Method"
+description: "supportsCatalogsInTableDefinitions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsCatalogsInTableDefinitions"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsCatalogsInTableDefinitions"
 apitype: "Assembly"
-ms.assetid: 1e1e50ac-f3d4-416a-8a69-d8b7b4f30bf3
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsCatalogsInTableDefinitions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

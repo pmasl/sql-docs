@@ -1,26 +1,22 @@
 ---
+description: "CollectionAggregate (geometry Data Type)"
 title: "CollectionAggregate (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
   - "CollectionAggregate method (geometry)"
 ms.assetid: b7c85d59-c841-4b7f-9d46-8b4b7f2a3afe
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # CollectionAggregate (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Creates a **GeometryCollection** instance from a set of **geometry** types.
   
@@ -31,7 +27,9 @@ Creates a **GeometryCollection** instance from a set of **geometry** types.
 CollectionAggregate ( geometry_operand )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *geometry_operand*  
  Is a **geometry** type table column that represents a set of **geometry** objects to be listed in the **GeometryCollection** instance.  
   
@@ -52,27 +50,19 @@ CollectionAggregate ( geometry_operand )
 ## Examples  
  The following example returns a `GeometryCollection` instance that contains a `CurvePolygon` and a `Polygon`.  
   
- `-- Setup table variable for CollectionAggregate example`  
-  
- `DECLARE @Geom TABLE`  
-  
- `(`  
-  
- `shape geometry,`  
-  
- `shapeType nvarchar(50)`  
-  
- `)`  
-  
- `INSERT INTO @Geom(shape,shapeType) VALUES('CURVEPOLYGON(CIRCULARSTRING(2 3, 4 1, 6 3, 4 5, 2 3))', 'Circle'),`  
-  
- `('POLYGON((1 1, 4 1, 4 5, 1 5, 1 1))', 'Rectangle');`  
-  
- `-- Perform CollectionAggregate on @Geom.shape column`  
-  
- `SELECT geometry::CollectionAggregate(shape).ToString()`  
-  
- `FROM @Geom;`  
+ ```sql
+ -- Setup table variable for CollectionAggregate example  
+ DECLARE @Geom TABLE  
+ (  
+ shape geometry,  
+ shapeType nvarchar(50)  
+ )  
+ INSERT INTO @Geom(shape,shapeType) VALUES('CURVEPOLYGON(CIRCULARSTRING(2 3, 4 1, 6 3, 4 5, 2 3))', 'Circle'),  
+ ('POLYGON((1 1, 4 1, 4 5, 1 5, 1 1))', 'Rectangle');  
+ -- Perform CollectionAggregate on @Geom.shape column  
+ SELECT geometry::CollectionAggregate(shape).ToString()  
+ FROM @Geom;
+ ```  
   
 ## See Also  
  [Extended Static Geometry Methods](../../t-sql/spatial-geometry/extended-static-geometry-methods.md)  

@@ -1,30 +1,24 @@
 ---
-title: "ALTER SERVER ROLE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/06/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "ALTER SERVER ROLE (Transact-SQL)"
+description: ALTER SERVER ROLE (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
+ms.date: "04/16/2020"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER_SERVER_ROLE_TSQL"
   - "ALTER SERVER ROLE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SERVER ROLE, ALTER"
   - "ALTER SERVER ROLE statement"
-ms.assetid: 7a4db7bb-c442-4e12-9a8a-114da5bc7710
-caps.latest.revision: 19
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # ALTER SERVER ROLE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-pdw-md](../../includes/appliesto-ss-xxxx-xxxx-pdw-md.md)]
 
 Changes the membership of a server role or changes name of a user-defined server role. Fixed server roles cannot be renamed.  
   
@@ -32,7 +26,7 @@ Changes the membership of a server role or changes name of a user-defined server
   
 ## Syntax  
   
-```  
+```syntaxsql
 -- Syntax for SQL Server  
   
 ALTER SERVER ROLE server_role_name   
@@ -43,7 +37,7 @@ ALTER SERVER ROLE server_role_name
 } [ ; ]  
 ```  
   
-```  
+```syntaxsql
 -- Syntax for Parallel Data Warehouse  
   
 ALTER SERVER ROLE  server_role_name  ADD MEMBER login;  
@@ -61,7 +55,7 @@ Adds the specified server principal to the server role. *server_principal* can b
 DROP MEMBER *server_principal*  
 Removes the specified server principal from the server role. *server_principal* can be a login or a user-defined server role. *server_principal* cannot be a fixed server role, a database role, or sa.  
   
-WITH NAME **=***new_server_role_name*  
+WITH NAME **=**_new_server_role_name_  
 Specifies the new name of the user-defined server role. This name cannot already exist in the server.  
   
 ## Remarks  
@@ -95,7 +89,7 @@ To add a member to a user-defined server role, you must be a member of the `sysa
 ### A. Changing the name of a server role  
 The following example creates a server role named `Product`, and then changes the name of server role to `Production`.  
   
-```  
+```sql
 CREATE SERVER ROLE Product ;  
 ALTER SERVER ROLE Product WITH NAME = Production ;  
 GO  
@@ -104,14 +98,14 @@ GO
 ### B. Adding a domain account to a server role  
 The following example adds a domain account named `adventure-works\roberto0` to the user-defined server role named `Production`.  
   
-```  
+```sql
 ALTER SERVER ROLE Production ADD MEMBER [adventure-works\roberto0] ;  
 ```  
   
 ### C. Adding a SQL Server login to a server role  
 The following example adds a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login named `Ted` to the `diskadmin` fixed server role.  
   
-```  
+```sql
 ALTER SERVER ROLE diskadmin ADD MEMBER Ted ;  
 GO  
 ```  
@@ -119,14 +113,14 @@ GO
 ### D. Removing a domain account from a server role  
 The following example removes a domain account named `adventure-works\roberto0` from the user-defined server role named `Production`.  
   
-```  
+```sql
 ALTER SERVER ROLE Production DROP MEMBER [adventure-works\roberto0] ;  
 ```  
   
 ### E. Removing a SQL Server login from a server role  
 The following example removes the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login `Ted` from the `diskadmin` fixed server role.  
   
-```  
+```sql
 ALTER SERVER ROLE Production DROP MEMBER Ted ;  
 GO  
 ```  
@@ -134,7 +128,7 @@ GO
 ### F. Granting a login the permission to add logins to a user-defined server role  
 The following example allows `Ted` to add other logins to the user-defined server role named `Production`.  
   
-```  
+```sql
 GRANT ALTER ON SERVER ROLE::Production TO Ted ;  
 GO  
 ```  
@@ -142,7 +136,7 @@ GO
 ### G. To view role membership  
 To view role membership, use the **Server Role (Members)** page in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or execute the following query:  
   
-```  
+```sql
 SELECT SRM.role_principal_id, SP.name AS Role_Name,   
 SRM.member_principal_id, SP2.name  AS Member_Name  
 FROM sys.server_role_members AS SRM  
@@ -158,14 +152,14 @@ ORDER BY  SP.name,  SP2.name
 ### H. Basic Syntax  
 The following example adds the login `Anna` to the `LargeRC` server role.  
   
-```  
+```sql
 ALTER SERVER ROLE LargeRC ADD MEMBER Anna;  
 ```  
   
 ### I. Remove a login from a resource class.  
-The following example drops Anna’s membership in the `LargeRC` server role.  
+The following example drops Anna's membership in the `LargeRC` server role.  
   
-```  
+```sql
 ALTER SERVER ROLE LargeRC DROP MEMBER Anna;  
 ```  
   

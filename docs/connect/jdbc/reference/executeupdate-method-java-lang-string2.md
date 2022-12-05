@@ -1,24 +1,15 @@
 ---
-title: "executeUpdate Method (java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "executeUpdate Method (java.lang.String)"
+description: "executeUpdate Method (java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "02/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.executeUpdate (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.executeUpdate (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: 91ecb1cd-001d-4ac9-9ae8-5db05c3c2959
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # executeUpdate Method (java.lang.String)
 

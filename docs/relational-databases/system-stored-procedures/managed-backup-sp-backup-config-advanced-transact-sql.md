@@ -1,14 +1,12 @@
 ---
+description: "managed_backup.sp_backup_config_advanced (Transact-SQL)"
 title: "managed_backup.sp_backup_config_advanced (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_backup_config_optional"
   - "sp_backup_config_optional_TSQL"
@@ -20,13 +18,11 @@ helpviewer_keywords:
   - "sp_backup_config_optional"
   - "managed_backup.sp_backup_config_optional"
 ms.assetid: 4fae8193-1f88-48fd-a94a-4786efe8d6af
-caps.latest.revision: 15
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # managed_backup.sp_backup_config_advanced (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
   Configures advanced settings for [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)].  
   
@@ -34,7 +30,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```vb  
+```sql  
 EXEC managed_backup.sp_backup_config_advanced   
     [@database_name = ] 'database_name'  
     ,[@encryption_algorithm = ] 'name of the encryption algorithm'  
@@ -48,7 +44,7 @@ EXEC managed_backup.sp_backup_config_advanced
  The database name for enabling managed backup on a specific database. If NULL or *, then this managed backup applies to all databases on the server.  
   
  @encryption_algorithm  
- The name of the encryption algorithm used during the backup to encrypt the backup file. The @encryption_algorithm is **SYSNAME**. It is a required parameter when configuring [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] for the first time for the database. Specify **NO_ENCRYPTION** if you do not wish to encrypt the backup file. When changing the [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] configuration settings, this parameter is optional – if the parameter is not specified then the existing configuration values are retained. The allowed values for this parameter are:  
+ The name of the encryption algorithm used during the backup to encrypt the backup file. The @encryption_algorithm is **SYSNAME**. It is a required parameter when configuring [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] for the first time for the database. Specify **NO_ENCRYPTION** if you do not wish to encrypt the backup file. When changing the [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] configuration settings, this parameter is optional - if the parameter is not specified then the existing configuration values are retained. The allowed values for this parameter are:  
   
 -   AES_128  
   
@@ -84,7 +80,7 @@ EXEC managed_backup.sp_backup_config_advanced
 ## Examples  
  The following example sets advanced configuration options for [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] for the instance of SQL Server.  
   
-```  
+```sql
 Use msdb;  
 Go  
    EXEC managed_backup.sp_backup_config_advanced  

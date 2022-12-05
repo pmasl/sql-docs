@@ -1,21 +1,21 @@
 ---
+description: "Map Columns to Composite Domains"
 title: "Map Columns to Composite Domains | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: d9422412-8a3d-45ae-af7f-072c902a09ba
-caps.latest.revision: 5
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Map Columns to Composite Domains
+
+[!INCLUDE[sqlserver-ssis](../../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   A composite domain consists of two or more single domains. You can map multiple columns to the domain, or you can map a single column with delimited values to the domain.  
   
  When you have multiple columns, you must map a column to each single domain in the composite domain to apply the composite domain rules to data cleansing. You select the single domains contained in the composite domain, in the Data Quality Client. For more information, see [Create a Composite Domain](../../../data-quality-services/create-a-composite-domain.md).  
@@ -34,7 +34,7 @@ manager: "jhubbard"
   
 5.  As needed, modify the names that appear in the **Source Alias**, **Output Alias**, and **Status Alias** fields.  
   
-6.  As needed, set properties on the **Advanced** tab. For more information about the properties, see [DQS Cleansing Transformation Editor Dialog Box](../../../integration-services/data-flow/transformations/dqs-cleansing-transformation-editor-dialog-box.md).  
+6.  As needed, set properties on the **Advanced** tab. For more information about the properties, see [DQS Cleansing Transformation Editor Dialog Box](./dqs-cleansing-transformation.md).  
   
 ### To map a column with delimited values to a composite domain  
   
@@ -48,9 +48,8 @@ manager: "jhubbard"
   
 5.  As needed, modify the names that appear in the **Source Alias**, **Output Alias**, and **Status Alias** fields.  
   
-6.  As needed, set properties on the **Advanced** tab. For more information about the properties, see [DQS Cleansing Transformation Editor Dialog Box](../../../integration-services/data-flow/transformations/dqs-cleansing-transformation-editor-dialog-box.md).  
+6.  As needed, set properties on the **Advanced** tab. For more information about the properties, see [DQS Cleansing Transformation Editor Dialog Box](./dqs-cleansing-transformation.md).  
   
 ## See Also  
  [DQS Cleansing Transformation](../../../integration-services/data-flow/transformations/dqs-cleansing-transformation.md)  
-  
   

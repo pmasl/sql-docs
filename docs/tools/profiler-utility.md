@@ -1,14 +1,12 @@
 ---
-title: "Profiler Utility | Microsoft Docs"
-ms.custom: ""
+title: "Profiler Utility"
+description: The profiler utility launches the SQL Server Profiler tool. Optional arguments allow you to control how the application starts.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: tools-other
+ms.topic: conceptual
 helpviewer_keywords: 
   - "command prompt utilities [SQL Server], profiler90 utility"
   - "profiler90 utility"
@@ -16,12 +14,11 @@ helpviewer_keywords:
   - "SQL Server Profiler, starting"
   - "starting SQL Server Profiler"
 ms.assetid: e91c30a9-0d29-4f84-bcb8-e8fb62afadda
-caps.latest.revision: 42
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Profiler Utility
+[!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
   The **profiler** utility launches the [!INCLUDE[ssSqlProfiler](../includes/sssqlprofiler-md.md)] tool. The optional arguments listed later in this topic allow you to control how the application starts.  
   
 > [!NOTE]  

@@ -1,13 +1,11 @@
 ---
-title: "Using IMultipleResults to Process Multiple Result Sets | Microsoft Docs"
+description: "Using IMultipleResults to Process Multiple Result Sets in SQL Server Native Client"
+title: "IMultipleResults, multiple result sets"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "multiple rowsets"
@@ -15,13 +13,12 @@ helpviewer_keywords:
   - "IMultipleResults interface"
   - "multiple-rowset results"
 ms.assetid: 754d3f30-7d94-4b67-8dac-baf2699ce9c6
-caps.latest.revision: 40
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Using IMultipleResults to Process Multiple Result Sets
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# Using IMultipleResults to Process Multiple Result Sets in SQL Server Native Client
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Consumers use the **IMultipleResults** interface to process results returned by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider command execution. When the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider submits a command for execution, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] executes the statements and returns any results.  
   
@@ -29,7 +26,7 @@ manager: "jhubbard"
   
  The following [!INCLUDE[tsql](../../includes/tsql-md.md)] statement generates multiple rowsets, some containing row data from the **OrderDetails** table and some containing results of the COMPUTE BY clause:  
   
-```  
+```sql
 SELECT OrderID, FullPrice = (UnitPrice * Quantity), Discount,  
     Discounted = UnitPrice * (1 - Discount) * Quantity  
 FROM OrderDetails  

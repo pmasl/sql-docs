@@ -1,22 +1,19 @@
 ---
-title: "Read a FILESTREAM Column to File Using IBCPSession (OLE DB) | Microsoft Docs"
+description: "Read a FILESTREAM Column to File Using IBCPSession in SQL Server Native Client (OLE DB)"
+title: "FILESTREAM to File, IBCPSession (OLE DB)"
 ms.custom: ""
 ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 ms.assetid: ab3ce02a-549d-4e01-87b9-d15281fba349
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Read a FILESTREAM Column to File Using IBCPSession (OLE DB)
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+# Read a FILESTREAM Column to File Using IBCPSession in SQL Server Native Client (OLE DB)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   This sample reads a filestream column to a file using the IBCPSession interface and writes a format file.  
   
@@ -41,7 +38,7 @@ manager: "jhubbard"
   
  When this sample is run, you must pass a server name (or server\instance_name) and a name for the format file it will create.  
   
-```  
+```cpp
 // ISSHelper.h: interface for the CISSHelper class.  
   
 #if !defined(AFX_ISSHELPER_H__7B88E5F3_263F_11D2_9D1F_00C04F96B8B2__INCLUDED_)  
@@ -93,7 +90,7 @@ private:
 #endif // !defined(AFX_ISSHELPER_H__7B88E5F3_263F_11D2_9D1F_00C04F96B8B2__INCLUDED_)  
 ```  
   
-```  
+```cpp
 // ISSHelper.cpp: implementation of the CISSHelper class.  
   
 #pragma once  
@@ -235,7 +232,7 @@ HRESULT CISSHelper::Write( const void *pv, ULONG cb, ULONG* pcbWritten ) {
 }  
 ```  
   
-```  
+```cpp
 //  IBCPSession.cpp  
 #pragma once  
 #define WIN32_LEAN_AND_MEAN// Exclude rarely-used stuff from Windows headers  

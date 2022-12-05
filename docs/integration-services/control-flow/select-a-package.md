@@ -1,25 +1,25 @@
 ---
+description: "Select a Package"
 title: "Select a Package | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.designer.selectapackage.f1"
 helpviewer_keywords: 
   - "Select a Package dialog box"
 ms.assetid: 92b47a2b-21b5-460a-885d-6cc4bb567249
-caps.latest.revision: 16
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Select a Package
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   Use the **Select a Package** dialog box to specify the package from which the Message Queue task can receive messages.  
   
 ## Static Options  
@@ -54,7 +54,7 @@ manager: "jhubbard"
   
 ### Location = DTSX file  
  **File name**  
- Provide the path of a package or click the browse button **(…)** and locate the package.  
+ Provide the path of a package or click the browse button **(...)** and locate the package.  
   
 ## See Also  
  [Message Queue Task](../../integration-services/control-flow/message-queue-task.md)  

@@ -1,23 +1,20 @@
 ---
 title: "Work with Directories and Paths in FileTables | Microsoft Docs"
+description: The FileTables feature uses a directory structure to store files. Learn how to work with its directories, paths, restrictions, and semantics.
 ms.custom: ""
 ms.date: "08/26/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-blob"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: filestream
+ms.topic: conceptual
 helpviewer_keywords: 
   - "FileTables [SQL Server], directories"
 ms.assetid: f1e45900-bea0-4f6f-924e-c11e1f98ab62
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
 ---
 # Work with Directories and Paths in FileTables
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Describes the directory structure in which the files are stored in FileTables.  
   
 ##  <a name="HowToDirectories"></a> How To: Work with Directories and Paths in FileTables  
@@ -32,7 +29,7 @@ manager: "jhubbard"
 ##  <a name="BestPracticeRelativePaths"></a> How to: Use Relative Paths for Portable Code  
  To keep code and applications independent of the current computer and database, avoid writing code that relies on absolute file paths. Instead, get the complete path for a file at run time by using the [FileTableRootPath &#40;Transact-SQL&#41;](../../relational-databases/system-functions/filetablerootpath-transact-sql.md) and [GetFileNamespacePath &#40;Transact-SQL&#41;](../../relational-databases/system-functions/getfilenamespacepath-transact-sql.md)) functions together, as shown in the following example. By default, the **GetFileNamespacePath** function returns the relative path of the file under the root path for the database.  
   
-```tsql  
+```sql  
 USE database_name;  
 DECLARE @root nvarchar(100);  
 DECLARE @fullpath nvarchar(1000);  
@@ -50,11 +47,13 @@ GO
   
 ###  <a name="nesting"></a> Nesting level  
   
-> **IMPORTANT!!** You cannot store more than 15 levels of subdirectories in the FileTable directory. When you store 15 levels of subdirectories, then the lowest level cannot contain files, since these files would represent an additional level.  
+> [!IMPORTANT]  
+> You cannot store more than 15 levels of subdirectories in the FileTable directory. When you store 15 levels of subdirectories, then the lowest level cannot contain files, since these files would represent an additional level.  
   
 ###  <a name="fqnlength"></a> Length of full path name  
   
-> **IMPORTANT!!** The NTFS file system supports path names that are much longer than the 260-character limit of the Windows shell and most Windows APIs. Therefore it is possible to create files in the file hierarchy of a FileTable by using Transact-SQL that you cannot view or open with Windows Explorer or many other Windows applications, because the full path name exceeds 260 characters. However you can continue to access these files by using Transact-SQL.  
+> [!IMPORTANT]  
+> The NTFS file system supports path names that are much longer than the 260-character limit of the Windows shell and most Windows APIs. Therefore it is possible to create files in the file hierarchy of a FileTable by using Transact-SQL that you cannot view or open with Windows Explorer or many other Windows applications, because the full path name exceeds 260 characters. However you can continue to access these files by using Transact-SQL.  
   
 ##  <a name="fullpath"></a> The full path to an item stored in a FileTable  
  The full path to a file or directory stored in a FileTable begins with the following elements:  
@@ -64,12 +63,12 @@ GO
 2.  The **DIRECTORY_NAME** specified at the database level.  
   
 3.  The **FILETABLE_DIRECTORY** specified at the FileTable level.  
-  
+
  The resulting hierarchy looks like this:  
   
  `\\<machine>\<instance-level FILESTREAM share>\<database-level directory>\<FileTable directory>\`  
   
- This directory hierarchy forms the root of the FileTable’s file namespace. Under this directory hierarchy, the FILESTREAM data for the FileTable is stored as files, and as subdirectories which can also contain files and subdirectories.  
+ This directory hierarchy forms the root of the FileTable's file namespace. Under this directory hierarchy, the FILESTREAM data for the FileTable is stored as files, and as subdirectories which can also contain files and subdirectories.  
   
  It is important to keep in mind that the directory hierarchy created under the instance-level FILESTREAM share is a virtual directory hierarchy. This hierarchy is stored in the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database and is not represented physically in the NTFS file system. All operations that access files and directories under the FILESTREAM share and in the FileTables that it contains are intercepted and handled by a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] component embedded in the file system.  
   
@@ -89,16 +88,15 @@ GO
 ##  <a name="is_directory"></a> The is_directory column in the FileTable schema  
  The following table describes the interaction between the **is_directory** column and the **file_stream** column that contains the FILESTREAM data in a FileTable.  
   
-||||  
-|-|-|-|  
-|*is_directory* **value**|*file_stream* **value**|**Behavior**|  
+|is_directory value|file_stream value|Behavior|  
+|-|-|-|    
 |FALSE|NULL|This is an invalid combination that will be caught by a system-defined constraint.|  
 |FALSE|\<value>|The item represents a file.|  
 |TRUE|NULL|The item represents a directory.|  
 |TRUE|\<value>|This is an invalid combination that will be caught by a system-defined constraint.|  
   
-##  <a name="alwayson"></a> Using Virtual Network Names (VNNs) with AlwaysOn Availability Groups  
- When the database that contains FILESTREAM or FileTable data belongs to an AlwaysOn availability group:  
+##  <a name="alwayson"></a> Using Virtual Network Names (VNNs) with Always On Availability Groups  
+ When the database that contains FILESTREAM or FileTable data belongs to an Always On availability group:  
   
 -   The FILESTREAM and FileTable functions accept or return virtual network names (VNNs) instead of computer names. For more information about these functions, see [Filestream and FileTable Functions &#40;Transact-SQL&#41;](../../relational-databases/system-functions/filestream-and-filetable-functions-transact-sql.md).  
   

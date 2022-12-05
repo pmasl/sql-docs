@@ -1,21 +1,18 @@
 ---
+description: "The Oracle CDC Service"
 title: "The Oracle CDC Service | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: 47759ddc-358d-405b-acb9-189ada76ea6d
-caps.latest.revision: 8
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # The Oracle CDC Service
+
   The Oracle CDC Service is a Windows service running the program xdbcdcsvc.exe. The Oracle CDC Service can be configured to run multiple Windows services on the same computer, each one with a different Windows service name. Creating multiple Oracle CDC Windows services on a single computer is often done to achieve a better separation between them, or when each needs to work with a different [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance.  
   
  An Oracle CDC Service is created using the Oracle CDC Service Configuration console or is defined through the command-line interface built into the xdbcdcsvc.exe program. In both cases, each Oracle CDC Service created is associated with a single [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance (which may be clustered or mirrored with **Always On** setup) and the connection information (connect string and access credentials) are part of the service configuration.  
@@ -30,7 +27,7 @@ manager: "jhubbard"
   
  When using the Oracle CDC Designer console, changes are automatically detected. When updating the Oracle CDC configuration directly using SQL, the following procedure should be called for the Oracle CDC Service to notice the configuration change:  
   
-```  
+```sql
 DECLARE @dbname nvarchar(128) = 'HRcdc'  
 EXECUTE [MSXDBCDC].[dbo].[xdbcdc_update_config_version] @dbname  
 GO  
@@ -59,7 +56,7 @@ GO
   
  The log mining password is stored encrypted by means of an asymmetric key with the fixed name `xdbcdc_asym_key` that is automatically created with the following command:  
   
-```  
+```sql
 USE [<cdc-database-name>]  
 CREATE ASYMMETRIC KEY xdbcdc_asym_key  
     WITH ALGORITHM = RSA_1024  
@@ -69,7 +66,7 @@ CREATE ASYMMETRIC KEY xdbcdc_asym_key
   
  If a different algorithm is used, this key can be dropped and a new one by the same name and encrypted by the same password can be created.  
   
- The asymmetric key password is the master password that is saved in the registry under the path **HKLM\Software\Microsoft\XDBCDCSVC\\<service-name>**. That key is accessible only to local administrators and to the Oracle CDC Windows service account. The key contains an encrypted binary value **AsymmetricKeyPassword** that stored the asymmetric key password. Access to this registry key is required to be able to access to the Oracle log mining credentials.  
+ The asymmetric key password is the master password that is saved in the registry under the path **HKLM\Software\Microsoft\XDBCDCSVC\\\\<service-name\>**. That key is accessible only to local administrators and to the Oracle CDC Windows service account. The key contains an encrypted binary value **AsymmetricKeyPassword** that stored the asymmetric key password. Access to this registry key is required to be able to access to the Oracle log mining credentials.  
   
  To use the ENCRYPTION BY PASSWORD clause, the password must meet the Windows password policy requirements for the computer running the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance. This is done by selecting the asymmetric key password according to that policy.  
   

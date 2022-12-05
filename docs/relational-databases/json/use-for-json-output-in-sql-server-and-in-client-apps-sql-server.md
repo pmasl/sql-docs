@@ -1,26 +1,22 @@
 ---
-title: "Use FOR JSON output in SQL Server and in client apps (SQL Server) | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "06/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-json"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Use FOR JSON output in SQL Server and in client apps (SQL Server)"
+title: "Use FOR JSON output in SQL Server and in client apps"
+ms.date: 06/03/2020
+ms.service: sql
+ms.subservice: 
+ms.topic: conceptual
 helpviewer_keywords: 
   - "FOR JSON, using in client apps"
   - "FOR JSON, using in SQL Server"
 ms.assetid: 302e5397-b499-4ea3-9a7f-c24ccad698eb
-caps.latest.revision: 12
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "craigg"
+author: jovanpop-msft
+ms.author: jovanpop
+ms.reviewer: jroth
+ms.custom: seo-dt-2019
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Use FOR JSON output in SQL Server and in client apps (SQL Server)
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sqlserver2016-asdb.md)]
 
 The following examples demonstrate some of the ways to use the **FOR JSON** clause and its JSON output in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] or in client apps.  
   
@@ -28,7 +24,10 @@ The following examples demonstrate some of the ways to use the **FOR JSON** clau
 The output of the FOR JSON clause is of type NVARCHAR(MAX), so you can assign it to any variable, as shown in the following example.  
   
 ```sql  
-DECLARE @x NVARCHAR(MAX) = (SELECT TOP 10 * FROM Sales.SalesOrderHeader FOR JSON AUTO)  
+DECLARE @x NVARCHAR(MAX) =
+  (SELECT TOP 10 *
+     FROM Sales.SalesOrderHeader
+     FOR JSON AUTO)  
 ```  
   
 ## Use FOR JSON output in SQL Server user-defined functions  
@@ -80,7 +79,7 @@ SET Details =
      (SELECT TOP 1 UnitPrice, OrderQty  
        FROM Sales.SalesOrderDetail D  
        WHERE D.SalesOrderId = SalesOrder.SalesOrderId  
-      FOR JSON AUTO 
+      FOR JSON AUTO) 
 ```  
   
 ## Use FOR JSON output in a C# client app  
@@ -88,26 +87,38 @@ SET Details =
   
 ```csharp  
 var queryWithForJson = "SELECT ... FOR JSON";
-var conn = new SqlConnection("<connection string>");
-var cmd = new SqlCommand(queryWithForJson, conn);
-conn.Open();
-var jsonResult = new StringBuilder();
-var reader = cmd.ExecuteReader();
-if (!reader.HasRows)
+using(var conn = new SqlConnection("<connection string>"))
 {
-    jsonResult.Append("[]");
-}
-else
-{
-    while (reader.Read())
+    using(var cmd = new SqlCommand(queryWithForJson, conn))
     {
-        jsonResult.Append(reader.GetValue(0).ToString());
+        conn.Open();
+        var jsonResult = new StringBuilder();
+        var reader = cmd.ExecuteReader();
+        if (!reader.HasRows)
+        {
+            jsonResult.Append("[]");
+        }
+        else
+        {
+            while (reader.Read())
+            {
+                jsonResult.Append(reader.GetValue(0).ToString());
+            }
+        }
     }
 }
 ```  
 
-## Learn more about the built-in JSON support in SQL Server  
-For lots of specific solutions, use cases, and recommendations, see the [blog posts about the built-in JSON support](http://blogs.msdn.com/b/sqlserverstorageengine/archive/tags/json/) in SQL Server and in Azure SQL Database by Microsoft Program Manager Jovan Popovic.
+## Learn more about JSON in SQL Server and Azure SQL Database  
+  
+### Microsoft videos
+
+> [!NOTE]
+> Some of the video links in this section may not work at this time. Microsoft is migrating content formerly on Channel 9 to a new platform. We will update the links as the videos are migrated to the new platform.
+
+For a visual introduction to the built-in JSON support in SQL Server and Azure SQL Database, see the following videos:
+
+-   [JSON as a bridge between NoSQL and relational worlds](https://channel9.msdn.com/events/DataDriven-SQLServer2016/JSON-as-bridge-betwen-NoSQL-relational-worlds)
  
 ## See Also  
  [Format Query Results as JSON with FOR JSON &#40;SQL Server&#41;](../../relational-databases/json/format-query-results-as-json-with-for-json-sql-server.md)  

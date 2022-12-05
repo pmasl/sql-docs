@@ -1,29 +1,22 @@
 ---
-title: "SubmitChanges Method Example (VBScript) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "SubmitChanges Method Example (VBScript)"
+description: "SubmitChanges Method Example (VBScript)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "SubmitChanges method [ADO], VBScript example"
-ms.assetid: 619bc7fd-ad0a-44ea-9678-ad40a662c258
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # SubmitChanges Method Example (VBScript)
 > [!IMPORTANT]
->  Beginning with Windows 8 and Windows Server 2012, RDS server components are no longer included in the Windows operating system (see Windows 8 and [Windows Server 2012 Compatibility Cookbook](https://www.microsoft.com/en-us/download/details.aspx?id=27416) for more detail). RDS client components will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Applications that use RDS should migrate to [WCF Data Service](http://go.microsoft.com/fwlink/?LinkId=199565).  
+>  Beginning with Windows 8 and Windows Server 2012, RDS server components are no longer included in the Windows operating system (see Windows 8 and [Windows Server 2012 Compatibility Cookbook](https://www.microsoft.com/download/details.aspx?id=27416) for more detail). RDS client components will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Applications that use RDS should migrate to [WCF Data Service](/dotnet/framework/wcf/).  
   
- The following code fragment shows how to use the [SubmitChanges](../../../ado/reference/rds-api/submitchanges-method-rds.md) method with an [RDS.DataControl](../../../ado/reference/rds-api/datacontrol-object-rds.md) object.  
+ The following code fragment shows how to use the [SubmitChanges](./submitchanges-method-rds.md) method with an [RDS.DataControl](./datacontrol-object-rds.md) object.  
   
  To test this example, cut and paste this code into a normal ASP document and name it **SubmitChangesCtrlVBS.asp**. ASP script will identify your server.  
   
@@ -52,7 +45,7 @@ manager: "jhubbard"
 <SCRIPT Language="VBScript">  
   
      'set RDS properties for control just created  
-    RDS.Server = "http://<%=Request.ServerVariables("SERVER_NAME")%>"  
+    RDS.Server = "https://<%=Request.ServerVariables("SERVER_NAME")%>"  
     RDS.Connect = "Provider='sqloledb';Integrated Security='SSPI';Initial Catalog='Northwind';"  
     RDS.SQL = "Select * from Employees"  
     RDS.Refresh  
@@ -116,7 +109,5 @@ End Sub
 ```  
   
 ## See Also  
- [DataControl Object (RDS)](../../../ado/reference/rds-api/datacontrol-object-rds.md)   
- [SubmitChanges Method (RDS)](../../../ado/reference/rds-api/submitchanges-method-rds.md)
-
-
+ [DataControl Object (RDS)](./datacontrol-object-rds.md)   
+ [SubmitChanges Method (RDS)](./submitchanges-method-rds.md)

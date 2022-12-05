@@ -1,38 +1,31 @@
 ---
-title: "Status Property (ADO Recordset) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Status Property (ADO Recordset)"
+description: "Status Property (ADO Recordset)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Recordset15::GetStatus"
   - "Recordset15::Status"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Status property [ADO Recordset]"
-ms.assetid: 41d70d89-880f-4850-9d17-19d9790cc8eb
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Status Property (ADO Recordset)
 Indicates the status of the current record with respect to batch updates or other bulk operations.  
   
 ## Return Value  
- Returns a sum of one or more [RecordStatusEnum](../../../ado/reference/ado-api/recordstatusenum.md) values.  
+ Returns a sum of one or more [RecordStatusEnum](./recordstatusenum.md) values.  
   
 ## Remarks  
- Use the **Status** property to see what changes are pending for records modified during batch updating. You can also use the **Status** property to view the status of records that fail during bulk operations, such as when you call the [Resync](../../../ado/reference/ado-api/resync-method.md), [UpdateBatch](../../../ado/reference/ado-api/updatebatch-method.md), or [CancelBatch](../../../ado/reference/ado-api/cancelbatch-method-ado.md) methods on a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) object, or set the [Filter](../../../ado/reference/ado-api/filter-property.md) property on a **Recordset** object to an array of bookmarks. With this property, you can determine how a given record failed and resolve it accordingly.  
+ Use the **Status** property to see what changes are pending for records modified during batch updating. You can also use the **Status** property to view the status of records that fail during bulk operations, such as when you call the [Resync](./resync-method.md), [UpdateBatch](./updatebatch-method.md), or [CancelBatch](./cancelbatch-method-ado.md) methods on a [Recordset](./recordset-object-ado.md) object, or set the [Filter](./filter-property.md) property on a **Recordset** object to an array of bookmarks. With this property, you can determine how a given record failed and resolve it accordingly.  
   
 ## Applies To  
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)  
+ [Recordset Object (ADO)](./recordset-object-ado.md)  
   
 ## See Also  
- [Status Property Example (Recordset) (VB)](../../../ado/reference/ado-api/status-property-example-recordset-vb.md)   
- [Status Property Example (VC++)](../../../ado/reference/ado-api/status-property-example-vc.md)   
+ [Status Property Example (Recordset) (VB)](./status-property-example-recordset-vb.md)   
+ [Status Property Example (VC++)](./status-property-example-vc.md)

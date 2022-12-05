@@ -1,28 +1,21 @@
 ---
-title: "Item Property Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Item Property Example (VB)"
+description: "Item Property Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Item property [ADO], Visual Basic example"
-ms.assetid: b4476603-691b-4081-8797-a3d0b331dce5
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Item Property Example (VB)
-This example demonstrates how the [Item](../../../ado/reference/ado-api/item-property-ado.md) property accesses members of a collection. The example opens the ***Authors*** table of the ***Pubs*** database with a parameterized command.  
+This example demonstrates how the [Item](./item-property-ado.md) property accesses members of a collection. The example opens the ***Authors*** table of the ***Pubs*** database with a parameterized command.  
   
- The parameter in the command issued against the database is accessed from the [Command](../../../ado/reference/ado-api/command-object-ado.md) object's [Parameters](../../../ado/reference/ado-api/parameters-collection-ado.md) collection by index and name. The fields of the returned [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) are then accessed from that object's [Fields](../../../ado/reference/ado-api/fields-collection-ado.md) collection by index and name.  
+ The parameter in the command issued against the database is accessed from the [Command](./command-object-ado.md) object's [Parameters](./parameters-collection-ado.md) collection by index and name. The fields of the returned [Recordset](./recordset-object-ado.md) are then accessed from that object's [Fields](./fields-collection-ado.md) collection by index and name.  
   
 ```  
 'BeginItemVB  
@@ -133,8 +126,8 @@ End Sub
 ```  
   
 ## See Also  
- [Command Object (ADO)](../../../ado/reference/ado-api/command-object-ado.md)   
- [Fields Collection (ADO)](../../../ado/reference/ado-api/fields-collection-ado.md)   
- [Item Property (ADO)](../../../ado/reference/ado-api/item-property-ado.md)   
- [Parameters Collection (ADO)](../../../ado/reference/ado-api/parameters-collection-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [Command Object (ADO)](./command-object-ado.md)   
+ [Fields Collection (ADO)](./fields-collection-ado.md)   
+ [Item Property (ADO)](./item-property-ado.md)   
+ [Parameters Collection (ADO)](./parameters-collection-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

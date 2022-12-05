@@ -1,23 +1,21 @@
 ---
-title: "InScope Function (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "InScope function in a paginated report | Microsoft Docs"
+description: The InScope function in a paginated report indicates whether the current instance of an item is in the specified scope in Report Builder.
+ms.date: 03/08/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: a8cd209a-e5d3-4dce-ab2d-f271f6c54955
-caps.latest.revision: 7
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Report Builder Functions - InScope Function
-  Indicates whether the current instance of an item is in the specified scope.  
+# Report Builder functions - InScope function in a paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+  Indicates whether the current instance of an item is in the specified scope in a paginated report.  
   
 > [!NOTE]  
 >  [!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]  
@@ -36,7 +34,7 @@ InScope(scope)
  Returns a **Boolean**.  
   
 ## Remarks  
- The **InScope** function tests the scope of the current instance of a report item for membership in the scope specified by the *scope*parameter.  
+ The **InScope** function tests the scope of the current instance of a report item for membership in the scope specified by the *scope* parameter.  
   
  *Scope* cannot be an expression.  
   

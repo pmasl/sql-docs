@@ -1,34 +1,35 @@
 ---
-title: "Plan Guide Unsuccessful Event Class | Microsoft Docs"
+description: "Plan Guide Unsuccessful Event Class"
+title: "Plan Guide Unsuccessful Event Class"
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "06/22/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: supportability
+ms.topic: reference
 helpviewer_keywords: 
   - "Plan Guide Unsuccessful event class"
-ms.assetid: ef9759f8-5613-4884-9257-86b609313f69
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Plan Guide Unsuccessful Event Class
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
   The Plan Guide Unsuccessful event class indicates that [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] could not produce an execution plan for a query or batch that contained a plan guide. Instead, the plan was compiled without using the plan guide. The event fires when the following conditions are true:  
   
 -   The batch/module in the plan guide definition matches the batch that is being executed.  
   
 -   The query in the plan guide definition matches the query that is being executed.  
   
--   The hints in the plan guide definition, including the USE PLAN hint, were not applied successfully to the query or batch. That is, the compiled query plan could not honor the specified hints and the plan was compiled without using the plan guide.  
+-   The hints in the plan guide definition, including the `USE PLAN` hint, were not applied successfully to the query or batch. That is, the compiled query plan could not honor the specified hints and the plan was compiled without using the plan guide.  
   
  An invalid plan guide might cause this event to fire. Validate the plan guide that is used by the query or batch by using the [sys.fn_validate_plan_guide](../../relational-databases/system-functions/sys-fn-validate-plan-guide-transact-sql.md) function, and correct the error that is reported by this function.  
   
  This event is included in the [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] Tuning template.  
+
+> [!NOTE]
+> This event class is not available in [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].
   
 ## Plan Guide Unsuccessful Event Class Data Columns  
   

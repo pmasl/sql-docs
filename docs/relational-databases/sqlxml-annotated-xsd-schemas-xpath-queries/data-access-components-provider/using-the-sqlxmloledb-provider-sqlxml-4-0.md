@@ -1,25 +1,22 @@
 ---
-title: "Using the SQLXMLOLEDB Provider (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Using the SQLXMLOLEDB Provider (SQLXML)"
+description: View information about using SQLXMLOLEDB Provider-specific properties in ADO applications.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "sample applications [SQLXML]"
   - "SQLXMLOLEDB Provider, samples"
   - "ClientSideXML property"
 ms.assetid: fbcefac5-29c9-478b-b0e0-d510b593f446
-caps.latest.revision: 26
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Using the SQLXMLOLEDB Provider (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   The topics in this section provide ADO sample applications that illustrate the use of SQLXMLOLEDB Provider-specific properties.  
   
 ## Application Requirements for SQLXMLOLEDB 4.0 Provider  
@@ -34,7 +31,7 @@ manager: "jhubbard"
     -   Microsoft ActiveX Data Objects 2.8 Library  
   
 2.  Deploy and install SQLXML 4.0 and the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client.  
-  
+
      For more information, see on [SQLXML 4.0 Programming Concepts](../../../relational-databases/sqlxml/sqlxml-4-0-programming-concepts.md) and [Installing SQL Server Native Client](../../../relational-databases/native-client/applications/installing-sql-server-native-client.md).  
   
 ## In This Section  

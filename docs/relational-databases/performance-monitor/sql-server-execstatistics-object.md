@@ -1,24 +1,21 @@
 ---
-title: "SQL Server, ExecStatistics Object | Microsoft Docs"
+title: "SQL Server, Exec Statistics object"
+description: Learn about the SQLServer:Exec Statistics object, which provides counters to monitor various executions.
 ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/13/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLServer:ExecStatistics"
+  - "SQLServer:Exec Statistics"
   - "ExecStatistics object"
-ms.assetid: 4f8557a8-345f-4622-a8a5-763a0388ad94
-caps.latest.revision: 14
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server, ExecStatistics Object
+# SQL Server, Exec Statistics object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   The **SQLServer:ExecStatistics** object in Microsoft SQL Server provides counters to monitor various executions.  
   
  This table describes the SQL Server **Exec Statistics** counters.  
@@ -39,7 +36,17 @@ manager: "jhubbard"
 |**Execs in progress**|Number of execs in progress of the selected type of execution.|  
 |**Exec started per second**|Number of exes started per second of the selected type of execution.|  
   
-## See Also  
+
+## Example
+
+You begin to explore the query performance counters in this object using this T-SQL query on the [sys.dm_os_performance_counters](../system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md) dynamic management view:
+
+```sql
+SELECT * FROM sys.dm_os_performance_counters
+WHERE object_name LIKE '%Exec Statistics%';
+```  
+
+## See also  
  [Monitor Resource Usage &#40;System Monitor&#41;](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)  
   
   

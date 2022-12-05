@@ -1,23 +1,23 @@
 ---
+description: "Save SSIS Package (SQL Server Import and Export Wizard)"
 title: "Save SSIS Package (SQL Server Import and Export Wizard) | Microsoft Docs"
 ms.custom: ""
 ms.date: "02/17/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.dts.impexpwizard.savedtspackage.f1"
 ms.assetid: 7bf8ac6a-5599-43ab-bf5c-e072c11b85a0
-caps.latest.revision: 64
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Save SSIS Package (SQL Server Import and Export Wizard)
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   If you specified on the **Save and Run Package** page that you want to save your settings as a SQL Server Integration Services (SSIS) package, the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Import and Export Wizard shows **Save SSIS Package**. On this page, you specify additional options for saving the package created by the wizard.  
 
 The options that you see on the **Save SSIS Package** page depend on the choice that you made previously on the **Save and Run Package** page to save the package to SQL Server or to the file system. To take another look at the **Save and Run Package** page, see [Save and Run Package](../../integration-services/import-export-data/save-and-run-package-sql-server-import-and-export-wizard.md).
@@ -37,13 +37,13 @@ The following screen shot shows the first part of the **Save SSIS Package** page
  Provide a description for the package. As a best practice, describe the purpose of the package, to make packages self-documenting and easier to maintain.  
   
  **Target**  
- The destination ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] or File system) that you previously specified for the package. If you want to save the package to a different destination, go back to the **Save and Run Package** page.
+ The destination ( [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] or File system) that you previously specified for the package. If you want to save the package to a different destination, go back to the **Save and Run Package** page.
 
 ## Screen shot - Save the package in SQL Server
 
  The following screen shot shows the **Save SSIS Package** page of the wizard if you selected the **SQL Server** option on the **Save and Run Package** page. 
   
-![Save SSIS Package page of the Import and Export Wizard](../../integration-services/import-export-data/media/save-package2.png "Save SSIS Package page of the Import and Export Wizard")  
+![Screenshot showing the Save SSIS Package page of the Import and Export Wizard if you selected the SQL Server option on the Save and Run Package page.](../../integration-services/import-export-data/media/save-package2.png "Save SSIS Package page of the Import and Export Wizard")  
 
 ## Options to specify (Target = SQL Server) 
 
@@ -69,7 +69,7 @@ If you specified SQL Server Authentication, enter the password.
  
 The following screen shot shows the **Save SSIS Package** page of the wizard if you selected the **File system** option on the **Save and Run Package** page. 
   
-![Save SSIS Package page of the Import and Export Wizard](../../integration-services/import-export-data/media/save-package1.png "Save SSIS Package page of the Import and Export Wizard")  
+![Screenshot showing the Save SSIS Package page of the Import and Export Wizard if you selected the File system option on the Save and Run Package page.](../../integration-services/import-export-data/media/save-package1.png "Save SSIS Package page of the Import and Export Wizard")  
 
 ## Options to specify (Target = File system)
 

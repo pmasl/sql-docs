@@ -1,19 +1,12 @@
 ---
-title: "getSubString Method (SQLServerNClob) | Microsoft Docs"
-ms.custom: ""
+title: "getSubString Method (SQLServerNClob)"
+description: "getSubString Method (SQLServerNClob)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1d91c930-1bac-4da9-b9a5-ac2cfd31541b
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getSubString Method (SQLServerNClob)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,34 +1,31 @@
 ---
-title: "Full-Text and Semantic Search Dynamic Management Views - Functions | Microsoft Docs"
-ms.custom: ""
+title: "Full-Text and Semantic Search Dynamic Management Views - Functions"
+description: Full-Text and Semantic Search Dynamic Management Views - Functions
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+helpviewer_keywords:
   - "dynamic management objects [SQL Server], full-text search"
   - "full-text search [SQL Server], dynamic management views"
+dev_langs:
+  - "TSQL"
 ms.assetid: 199dbd5a-29f6-4ef0-8e65-86e32c0aaa3a
-caps.latest.revision: 23
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
 ---
 # Full-Text and Semantic Search Dynamic Management Views - Functions
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  This section contains the following dynamic management views and functions that are related to full-text search and semantic search.  
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+ This section contains the following dynamic management views and functions that are related to full-text search and semantic search.  
   
 ## Full-Text Search Dynamic Management Views and Functions  
- [sys.dm_fts_active_catalogs &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-fts-active-catalogs-transact-sql.md)  
- Returns information on the full-text catalogs that have some population activity in progress on the server.  
-  
+
+[sys.dm_fts_active_catalogs &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-fts-active-catalogs-transact-sql.md)  
+Returns information on the full-text catalogs that have some population activity in progress on the server.  
+
+ 
  [sys.dm_fts_fdhosts](../../relational-databases/system-dynamic-management-views/sys-dm-fts-fdhosts-transact-sql.md)  
  Returns information on the current activity of the filter daemon host or hosts on the server instance.  
   
@@ -68,6 +65,5 @@ manager: "jhubbard"
   
 ## See Also  
  [Dynamic Management Views and Functions &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
- [System Views &#40;Transact-SQL&#41;](http://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)  
-  
+ [System Views &#40;Transact-SQL&#41;](../../t-sql/language-reference.md)  
   

@@ -1,14 +1,12 @@
 ---
-title: "Execute Business Logic During Merge Synchronization | Microsoft Docs"
-ms.custom: ""
+title: "Business logic for Merge synchronization"
+description: Learn about writing managed assembly code tor the business logic used for synchronization for Merge Replication. 
+ms.custom: seo-lt-2019
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "custom error resolution [SQL Server replication]"
   - "custom change handling [SQL Server replication]"
@@ -17,12 +15,11 @@ helpviewer_keywords:
   - "conflict resolution [SQL Server replication], merge replication"
   - "business logic handlers [SQL Server replication]"
 ms.assetid: 9d4da2ef-c17f-4a31-a1f6-5c3b7ca85f71
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # Execute Business Logic During Merge Synchronization
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   The business logic handler framework allows you to write a managed code assembly that is called during the merge synchronization process. The assembly includes business logic that can respond to a number of conditions during synchronization: data changes, conflicts, and errors. The business logic handler framework provides a simple programming model, and the data that the merge process provides to your assembly is in the form of an ADO.NET data set, so you can leverage knowledge of ADO.NET rather than learning a proprietary interface. For more information on programming business logic handlers, see:  
   
 -   The application programming interface (API) reference: <xref:Microsoft.SqlServer.Replication.BusinessLogicSupport>  
@@ -46,7 +43,7 @@ manager: "jhubbard"
   
 -   Reject the data  
   
-     This is useful for applications that do not want changes propagated to or from a given Subscriber. For example, an administrator could filter out inserts that do not belong in the Subscriber’s partition, or possibly reject deletes performed at a Subscriber. As another example, an application could reject an order entered at a Subscriber because the inventory is no longer available.  
+     This is useful for applications that do not want changes propagated to or from a given Subscriber. For example, an administrator could filter out inserts that do not belong in the Subscriber's partition, or possibly reject deletes performed at a Subscriber. As another example, an application could reject an order entered at a Subscriber because the inventory is no longer available.  
   
 -   Accept the data  
   

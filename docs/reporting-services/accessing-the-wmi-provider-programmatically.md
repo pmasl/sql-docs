@@ -1,22 +1,15 @@
 ---
 title: "Accessing the WMI Provider Programmatically | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
+description: Learn what an WMI provider is, how to find a report server instance, and how to access the WMI Provider programmatically. 
+ms.date: 11/02/2016
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+
+ms.topic: reference
 ms.assetid: 67bd266b-1484-4863-8152-060a993420a9
-caps.latest.revision: 7
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Accessing the WMI Provider Programmatically
 

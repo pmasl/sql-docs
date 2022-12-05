@@ -1,27 +1,20 @@
 ---
-title: "Open and Close Methods Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Open and Close Methods Example (VB)"
+description: "Open and Close Methods Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Close method [ADO], Visual Basic example"
   - "Open method [ADO], Visual Basic example"
-ms.assetid: 1311d561-0e86-40f5-8cbc-ad8f13e626d1
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Open and Close Methods Example (VB)
-This example uses the **Open** and [Close](../../../ado/reference/ado-api/close-method-ado.md) methods on both [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) and [Connection](../../../ado/reference/ado-api/connection-object-ado.md) objects that have been opened.  
+This example uses the **Open** and [Close](./close-method-ado.md) methods on both [Recordset](./recordset-object-ado.md) and [Connection](./connection-object-ado.md) objects that have been opened.  
   
 ```  
 'BeginOpenVB  
@@ -100,8 +93,8 @@ End Sub
 ```  
   
 ## See Also  
- [Close Method (ADO)](../../../ado/reference/ado-api/close-method-ado.md)   
- [Connection Object (ADO)](../../../ado/reference/ado-api/connection-object-ado.md)   
- [Open Method (ADO Connection)](../../../ado/reference/ado-api/open-method-ado-connection.md)   
- [Open Method (ADO Recordset)](../../../ado/reference/ado-api/open-method-ado-recordset.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [Close Method (ADO)](./close-method-ado.md)   
+ [Connection Object (ADO)](./connection-object-ado.md)   
+ [Open Method (ADO Connection)](./open-method-ado-connection.md)   
+ [Open Method (ADO Recordset)](./open-method-ado-recordset.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

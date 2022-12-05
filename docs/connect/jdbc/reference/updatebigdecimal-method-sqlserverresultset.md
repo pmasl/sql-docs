@@ -1,24 +1,15 @@
 ---
-title: "updateBigDecimal Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "updateBigDecimal Method (SQLServerResultSet)"
+description: "updateBigDecimal Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateBigDecimal"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateBigDecimal"
 apitype: "Assembly"
-ms.assetid: 35445fe4-3b8e-4ec5-a138-067524236dc6
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateBigDecimal Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

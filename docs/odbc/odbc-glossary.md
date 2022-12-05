@@ -1,22 +1,18 @@
 ---
+description: "ODBC Glossary"
 title: "ODBC Glossary | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "ODBC [ODBC], glossary"
   - "glossary [ODBC]"
 ms.assetid: e8227000-1944-42e5-a881-1f549e1ff9d1
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # ODBC Glossary
 ## A  
@@ -52,7 +48,7 @@ manager: "jhubbard"
   
 ## B  
  **behavioral change**  
- A change in certain functionality from ODBC 3*.x* behavior to ODBC 2.*x* behavior, or vice versa. Caused by changing the SQL_ATTR_ODBC_VERSION environment attribute.  
+ A change in certain functionality from ODBC *3.x* behavior to ODBC *2.x* behavior, or vice versa. Caused by changing the SQL_ATTR_ODBC_VERSION environment attribute.  
   
  **Binary large object (BLOB)**  
  Any binary data over a certain number of bytes, such as 255. Typically much longer. Such data is generally sent to and retrieved from the data source in parts. Also known as *long data*.  

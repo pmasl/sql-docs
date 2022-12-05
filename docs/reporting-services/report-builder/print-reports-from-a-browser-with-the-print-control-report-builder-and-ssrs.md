@@ -1,20 +1,15 @@
 ---
-title: "Print Reports from a Browser with the Print Control (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Print Reports from a Browser with the Print Control (Report Builder) | Microsoft Docs"
+description: To improve the print quality of reports viewed in a browser and to print multiple pages, use the client-side print features in SQL Server Reporting Services.
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: report-builder
+
+
+ms.topic: conceptual
 ms.assetid: 10054250-d915-4bcb-8a1d-26837db4e932
-caps.latest.revision: 13
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Print Reports from a Browser with the Print Control (Report Builder and SSRS)
   Although a browser is the most common client application used to view a report, browser print functionality is not ideal for printing reports. Print functionality in a browser is designed for printing Web pages. Typically, pages that you print from a browser include all of the visual elements that are on a Web page, plus header and footer information that identifies the page or Web site. Printing from a browser prints the contents of the current window. For a multipage report, the browser prints the first page at most, and possibly less if the report page extends beyond the dimensions of a printed page.  
@@ -36,7 +31,7 @@ manager: "erikre"
  To preview a report, in the **Print** dialog box, click the **Preview** button. Clicking preview opens the first page of the report in a separate preview window. Additional pages are made available as the report is rendered on the report server. A previewed report is rendered in EMF format. You can navigate to the previous or next page until the last page is reached, and the **Next** button is disabled.  
   
 ### Adjusting Print Margins  
- You can modify the print margins in the rendered EMF report prior to printing the report. To do this, in the **Print** dialog box, click the **Preview** button. At the top of the preview page, click the **Margins** button. The Margins dialog box is displayed. Configure the top, bottom, right, and left margins as desired. [!INCLUDE[clickOK](../../includes/clickok-md.md)] The dialog box closes and the settings are stored for rendering preview and printing.  
+ You can modify the print margins in the rendered EMF report prior to printing the report. To do this, in the **Print** dialog box, click the **Preview** button. At the top of the preview page, click the **Margins** button. The Margins dialog box is displayed. Configure the top, bottom, right, and left margins as desired. Select **OK**. The dialog box closes and the settings are stored for rendering preview and printing.  
   
 ## See Also  
  [Print Reports &#40;Report Builder and SSRS&#41;](../../reporting-services/report-builder/print-reports-report-builder-and-ssrs.md)   

@@ -1,24 +1,19 @@
 ---
-title: "sys.dm_pdw_os_performance_counters (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_pdw_os_performance_counters (Transact-SQL)"
+description: sys.dm_pdw_os_performance_counters (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+dev_langs:
   - "TSQL"
 ms.assetid: 0673a8f8-8bed-41eb-8959-a9e3e9e03a65
-caps.latest.revision: 8
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016"
 ---
 # sys.dm_pdw_os_performance_counters (Transact-SQL)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]
 
   Contains information about Windows performance counters for the nodes in [!INCLUDE[ssPDW](../../includes/sspdw-md.md)].  
   
@@ -32,6 +27,6 @@ manager: "jhubbard"
 |last_update_time|**Datetime2(3)**|Timestamp of last time the value was updated.||  
   
 ## See Also  
- [SQL Data Warehouse and Parallel Data Warehouse Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
+ [Azure Synapse Analytics and Parallel Data Warehouse Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
   
   

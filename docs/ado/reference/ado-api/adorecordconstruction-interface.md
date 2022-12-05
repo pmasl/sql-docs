@@ -1,24 +1,17 @@
 ---
-title: "ADORecordConstruction Interface | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ADORecordConstruction Interface"
+description: "ADORecordConstruction Interface"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "ADORecordConstruction"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ADORecordConstruction interface [ADO]"
-ms.assetid: 52a5429e-5829-455e-be3b-31f05cbecf2d
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ADORecordConstruction Interface
 The **ADORecordConstruction**interface is used to construct an ADO **Record** object from an OLE DB **Row** object in a C/C++ application.  
@@ -27,10 +20,10 @@ The **ADORecordConstruction**interface is used to construct an ADO **Record** ob
   
 ## Properties  
   
-|||  
+|Property|Description|  
 |-|-|  
-|[ParentRow](../../../ado/reference/ado-api/parentrow-property-ado.md)|Write-only.<br />Sets the container of an OLE DB **Row** object on this ADO **Record** object.|  
-|[Row](../../../ado/reference/ado-api/row-property-ado.md)|Read/Write.<br />Gets/sets an OLE DB **Row** object from/on this ADO **Record** object.|  
+|[ParentRow](./parentrow-property-ado.md)|Write-only.<br />Sets the container of an OLE DB **Row** object on this ADO **Record** object.|  
+|[Row](./row-property-ado.md)|Read/Write.<br />Gets/sets an OLE DB **Row** object from/on this ADO **Record** object.|  
   
 ## Methods  
  None.  

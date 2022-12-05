@@ -1,26 +1,21 @@
 ---
-title: "Dropping an Assembly | Microsoft Docs"
-ms.custom: ""
+title: "Dropping an Assembly"
+description: You can delete, or drop, an assembly in SQL Server when it's no longer needed. Use DROP ASSEMBLY to remove an assembly and its associated files.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "removing assemblies"
   - "DROP ASSEMBLY statement"
   - "assemblies [CLR integration], removing"
   - "dropping assemblies"
 ms.assetid: 03481034-dc91-4488-ab24-ba44243e2690
-caps.latest.revision: 16
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Dropping an Assembly
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Assemblies that have been registered in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] using the CREATE ASSEMBLY statement can be deleted, or dropped, when the functionality they provide is no longer needed. Dropping an assembly removes the assembly and all of its associated files, such as debug files, from the database. To drop an assembly, use the DROP ASSEMBLY statement with the following syntax:  
   
 ```  

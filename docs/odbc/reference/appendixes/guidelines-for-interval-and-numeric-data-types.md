@@ -1,19 +1,15 @@
 ---
+description: "Guidelines for Interval and Numeric Data Types"
 title: "Guidelines for Interval and Numeric Data Types | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 ms.assetid: 28a879a1-666e-4183-b731-d36b584d5d86
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Guidelines for Interval and Numeric Data Types
 The following sections address interval and numeric data types.  

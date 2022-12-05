@@ -1,25 +1,20 @@
 ---
-title: "Troubleshoot Reporting Services Subscriptions and Delivery | Microsoft Docs"
-ms.custom: ""
-ms.date: "05/31/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-  - "reporting-services-sharepoint"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Troubleshoot Reporting Services Subscriptions and Delivery"
+description: In this article, diagnose and fix problems found when you work with report subscriptions, schedules, and delivery in SQL Server Reporting Services.
+ms.date: 05/31/2016
+ms.service: reporting-services
+ms.subservice: troubleshooting
+
+
+ms.topic: conceptual
 ms.assetid: ae1775f7-9919-48ca-8bd7-cc16df274e2c
-caps.latest.revision: 16
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Troubleshoot Reporting Services Subscriptions and Delivery
   
     
-Use this topic to troubleshoot problems that you encounter when working with [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion.md)] report subscriptions, schedules, and delivery.  
+Use this topic to troubleshoot problems that you encounter when working with [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] report subscriptions, schedules, and delivery.  
 ## Log information
  
 The Subscription page in [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] includes a status of a subscription but if there is a problem with the subscription, the detailed information is in the [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] logs. 
@@ -70,7 +65,7 @@ Subscriptions can fail under these conditions.
 * The credential settings changed from stored to integrated or prompted values.  
 * The parameter name or data type was changed in the report definition, and the report was republished. If a subscription includes a parameter that is no longer valid, the subscription becomes inactive.  
   
-For more information, see the TechNet Wiki [Troubleshoot issues and errors with Reporting Services](http://social.technet.microsoft.com/wiki/contents/articles/1633.ssrs-troubleshoot-issues-and-errors-with-reporting-services.aspx).  
+For more information, see the TechNet Wiki [Troubleshoot issues and errors with Reporting Services](https://social.technet.microsoft.com/wiki/contents/articles/1633.ssrs-troubleshoot-issues-and-errors-with-reporting-services.aspx).  
   
   
     
@@ -78,5 +73,5 @@ For more information, see the TechNet Wiki [Troubleshoot issues and errors with 
   
   
 
-[!INCLUDE[feedback_stackoverflow_msdn_connect](../../includes/feedback-stackoverflow-msdn-connect.md)]
+[!INCLUDE[feedback_stackoverflow_msdn_connect](../../includes/feedback-stackoverflow-msdn-connect-md.md)]
 

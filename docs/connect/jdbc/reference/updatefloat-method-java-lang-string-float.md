@@ -1,24 +1,15 @@
 ---
-title: "updateFloat Method (java.lang.String, float) | Microsoft Docs"
-ms.custom: ""
+title: "updateFloat Method (java.lang.String, float)"
+description: "updateFloat Method (java.lang.String, float)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateFloat (java.lang.String, float)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateFloat (java.lang.String, float)"
 apitype: "Assembly"
-ms.assetid: 19a6164f-f560-4304-8466-e55f0667a3d4
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateFloat Method (java.lang.String, float)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

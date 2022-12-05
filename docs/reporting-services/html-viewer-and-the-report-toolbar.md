@@ -1,22 +1,18 @@
 ---
 title: "HTML Viewer and the Report Toolbar | Microsoft Docs"
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Learn about the HTML Viewer and the report toolbar and how you can view reports on demand as they are requested from the report server.
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "HTML Viewer [Reporting Services]"
   - "report toolbar [Reporting Services]"
 ms.assetid: cd86b319-babd-45af-a6a4-f659fdcc40c3
-caps.latest.revision: 34
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # HTML Viewer and the Report Toolbar
   [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] provides an HTML Viewer that is used to display reports on demand as they are requested from the report server. HTML Viewer provides a framework for viewing reports in HTML. It includes a report toolbar, a parameter section, a credentials section, and a document map. The report toolbar in HTML Viewer includes features you can use to work with your report, including export options so that you can view your report in formats other than HTML. The parameter section and document map appear only when you open reports that are configured to use parameters and a document map control.  
@@ -34,7 +30,7 @@ manager: "erikre"
   
  The following table describes commonly used features of the report toolbar. Each feature is identified by the control that you use to access it.  
   
-|Use this icon or control||To|  
+|Icon or control|Name|Description|  
 |------------------------------|-|--------|  
 |![Page navigation controls](../reporting-services/media/htmlviewer-pagenav.gif "Page navigation controls")|**Page navigation controls**|Open the first or last page of a report, scroll through a report page by page, and open a specific page in a report. To view a specific page, type the page number and press ENTER.|  
 |![Page display controls](../reporting-services/media/htmlviewer-pagesize.gif "Page display controls")|**Page display controls**|Enlarge or reduce the size of the report page. In addition to percentage-based changes, you can select **Page Width** to fit the horizontal length of a report page in the browser window, or **Whole Page** to fit the vertical length of a report in the browser window. A **Zoom** option is supported by [!INCLUDE[msCoName](../includes/msconame-md.md)] Internet Explorer 5.5 and later.|  

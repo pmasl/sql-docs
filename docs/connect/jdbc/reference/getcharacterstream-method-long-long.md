@@ -1,19 +1,12 @@
 ---
-title: "getCharacterStream Method (long, long) | Microsoft Docs"
-ms.custom: ""
+title: "getCharacterStream Method (long, long)"
+description: "getCharacterStream Method (long, long)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d70f502f-f60f-436a-83e6-797a0ed71bf3
-caps.latest.revision: 17
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getCharacterStream Method (long, long)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

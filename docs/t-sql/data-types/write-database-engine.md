@@ -1,39 +1,34 @@
 ---
-title: "Write (Database Engine) | Microsoft Docs"
-ms.custom: ""
+title: "Write (Database Engine)"
+description: "Write (Database Engine)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "07/23/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: "reference"
+f1_keywords:
   - "Write_TSQL"
   - "Write"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Write [Database Engine]"
-ms.assetid: 7c554334-d2d9-4eae-a4ae-097aa4020e1a
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # Write (Database Engine)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Write writes out a binary representation of **SqlHierarchyId** to the passed-in **BinaryWriter**. Write cannot be called by using [!INCLUDE[tsql](../../includes/tsql-md.md)]. Use CAST or CONVERT instead.
   
 ## Syntax  
   
-```sql
-void Write( BinaryWriter w )   
+```csharp
+void Write( BinaryWriter w )
 ```  
-  
-## Arguments  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
 *w*  
 A **BinaryWriter** object to which the binary representation of this **hierarchyid** node will be written out.
   
@@ -45,18 +40,16 @@ Write is used internally by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md
   
 ## Examples  
   
-```sql
+```csharp
 MemoryStream stream = new MemoryStream();  
 BinaryWriter bw = new BinaryWriter(stream);  
 hid.Write(bw);  
 byte[] encoding = stream.ToArray();  
-  
 ```  
   
 ## See also
 [Read &#40;Database Engine&#41;](../../t-sql/data-types/read-database-engine.md)  
 [ToString &#40;Database Engine&#41;](../../t-sql/data-types/tostring-database-engine.md)  
 [CAST and CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)  
-[hierarchyid Data Type Method Reference](http://msdn.microsoft.com/library/01a050f5-7580-4d5f-807c-7f11423cbb06)
-  
+[hierarchyid Data Type Method Reference](./hierarchyid-data-type-method-reference.md)
   

@@ -1,14 +1,12 @@
 ---
-title: "Create Charts, Alerts, Logs, and Reports | Microsoft Docs"
+title: "Create Charts, Alerts, Logs, and Reports in System Monitor"
+description: Learn how to create charts, alerts, logs, and reports to monitor an instance of SQL Server by using Windows System Monitor. 
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/13/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "System Monitor [SQL Server], charts and reports"
   - "charts [SQL Server]"
@@ -18,14 +16,13 @@ helpviewer_keywords:
   - "logs [SQL Server], System Monitor"
   - "System Monitor [SQL Server], logs"
   - "Windows System Monitor [SQL Server], logs"
-ms.assetid: c9162b37-e5dc-43d1-a3aa-1e9ebc69fecc
-caps.latest.revision: 21
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # Create Charts, Alerts, Logs, and Reports
-  System Monitor lets you create charts, alerts, logs, and reports to monitor an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sql-windows-only.md)]
+
+  If you are running Microsoft Windows server operating system, use the System Monitor graphical tool to measure the performance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. System Monitor lets you create charts, alerts, logs, and reports to monitor an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
 ## Charts  
  Charts can monitor the current performance of selected objects and counters; for example, the CPU usage or disk I/O. You can add to a chart various combinations of System Monitor objects and counters. You also can add [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows objects and counters to a chart.  
@@ -59,7 +56,7 @@ manager: "jhubbard"
   
  For more information about creating charts, alerts, logs, and reports, or about Windows objects and counters, see the Windows documentation.  
   
-## See Also  
+## See also  
  [Monitor Resource Usage &#40;System Monitor&#41;](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)  
   
   

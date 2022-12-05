@@ -1,17 +1,12 @@
 ---
 title: "Authorization Methods | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
+description: In Reporting Services, you can use these authorization methods to manage tasks, roles, and policies on the report server.
+ms.date: 03/06/2017
+ms.prod: reporting-services
+ms.technology: report-server-web-service
+
+
+ms.topic: reference
 helpviewer_keywords: 
   - "security [Reporting Services], reports"
   - "authorization [Reporting Services]"
@@ -19,10 +14,8 @@ helpviewer_keywords:
   - "tasks [Reporting Services]"
   - "roles [Reporting Services], methods"
 ms.assetid: 45e9cf2c-facf-4801-9482-c855403f42a8
-caps.latest.revision: 42
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Authorization Methods
   You can use these methods to manage tasks, roles, and policies on the report server.  
@@ -37,7 +30,7 @@ manager: "erikre"
 |<xref:ReportService2010.ReportingService2010.GetSystemPermissions%2A>|Returns the user's system permissions. This method applies to native mode only.|  
 |<xref:ReportService2010.ReportingService2010.GetSystemPolicies%2A>|Returns the system policies, including groups and roles with which they are associated. This method applies to native mode only.|  
 |<xref:ReportService2010.ReportingService2010.InheritParentSecurity%2A>|Deletes the policies that are associated with a particular item in the report server database and sets the security policies for the item to those of its parent.|  
-|<xref:ReportService2010.ReportingService2010.IsSSLRequired%2A>|Returns a Boolean value that indicates whether the Secure Socket Layer (SSL) protocol is required to use the <xref:ReportService2010> end point.|  
+|<xref:ReportService2010.ReportingService2010.IsSSLRequired%2A>|Returns a Boolean value that indicates whether the Transport Layer Security (TLS), previously known as Secure Sockets Layer (SSL), protocol is required to use the <xref:ReportService2010> end point.|  
 |<xref:ReportService2010.ReportingService2010.ListRoles%2A>|Returns the names and descriptions of roles that are managed by the report server.|  
 |<xref:ReportExecution2005.ReportExecutionService.ListSecureMethods%2A>|Returns a list of Simple Object Access Protocol (SOAP) methods in the <xref:ReportExecution2005> endpoint that require a secure connection when invoked. The **SecureConnectionLevel** setting of the report server is used to determine which methods are returned.|  
 |<xref:ReportService2010.ReportingService2010.ListTasks%2A>|Returns the tasks that are managed by the report server.|  

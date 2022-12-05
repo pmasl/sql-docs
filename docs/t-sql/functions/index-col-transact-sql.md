@@ -1,33 +1,26 @@
 ---
-title: "INDEX_COL (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "INDEX_COL (Transact-SQL)"
+description: "INDEX_COL (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "INDEX_COL_TSQL"
   - "INDEX_COL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "displaying column names"
   - "INDEX_COL function"
   - "viewing column names"
   - "column names [SQL Server]"
   - "names [SQL Server], columns"
-ms.assetid: 4db1fb3b-e46f-43fb-b269-a5b6e8b39ed0
-caps.latest.revision: 33
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # INDEX_COL (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns the indexed column name. Returns NULL for XML indexes.  
   
@@ -35,13 +28,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 INDEX_COL ( '[ database_name . [ schema_name ] .| schema_name ]  
     table_or_view_name', index_id , key_id )   
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *database_name*  
  Is the name of the database.  
   
@@ -70,7 +64,7 @@ INDEX_COL ( '[ database_name . [ schema_name ] .| schema_name ]
 ### A. Using INDEX_COL to return an index column name  
  The following example returns the column names of the two key columns in the index `PK_SalesOrderDetail_SalesOrderID_LineNumber`.  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 SELECT   

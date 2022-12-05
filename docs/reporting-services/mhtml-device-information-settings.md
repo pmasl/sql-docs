@@ -1,23 +1,18 @@
 ---
 title: "MHTML Device Information Settings | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Learn about the various device information settings for rendering reports in Web archive (MHTML) format. 
+ms.date: 03/16/2017
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "device information settings [Reporting Services], MHTML rendering"
   - "MHTML [Reporting Services]"
 ms.assetid: 60b85dd8-b4fb-4ad9-be6a-e7c89ac076fe
-caps.latest.revision: 39
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # MHTML Device Information Settings
   The following table lists the device information settings for rendering reports in Web archive (MHTML) format.  

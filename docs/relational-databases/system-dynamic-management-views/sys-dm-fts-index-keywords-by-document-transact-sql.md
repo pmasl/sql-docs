@@ -1,33 +1,28 @@
 ---
-title: "sys.dm_fts_index_keywords_by_document (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_fts_index_keywords_by_document (Transact-SQL)"
+description: sys.dm_fts_index_keywords_by_document (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_fts_index_keywords_by_document_TSQL"
   - "dm_fts_index_keywords_by_document_TSQL"
   - "sys.dm_fts_index_keywords_by_document"
   - "dm_fts_index_keywords_by_document"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "full-text search [SQL Server], troubleshooting"
   - "sys.dm_fts_index_keywords_by_document dynamic management function"
   - "full-text search [SQL Server], viewing keywords"
+dev_langs:
+  - "TSQL"
 ms.assetid: 793b978b-c8a1-428c-90c2-a3e49d81b5c9
-caps.latest.revision: 40
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.dm_fts_index_keywords_by_document (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE [sql-asdbmi-pdw](../../includes/applies-to-version/sql-asdbmi-pdw.md)]
 
   Returns information about the document-level content of a full-text index associated with the specified table.  
   

@@ -1,25 +1,22 @@
 ---
-title: "Delete a Solution | Microsoft Docs"
-ms.custom: ""
+description: "Delete a Solution"
+title: "Delete a Solution"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "removing solutions"
   - "solutions [SQL Server Management Studio], deleting"
   - "deleting solutions"
 ms.assetid: 750bb2ac-4f69-4c8d-9db5-3f33837b6dff
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Delete a Solution
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 Deleting a solution permanently erases files from physical storage as well as the file items in the solution.  
   
 > [!NOTE]  
@@ -31,7 +28,7 @@ Deleting a solution permanently erases files from physical storage as well as th
   
 2.  On the **File** menu, click **Close Solution**.  
   
-3.  In [!INCLUDE[msCoName](../../includes/msconame_md.md)] Windows Explorer, locate and select the files associated with the solution you want to delete.  
+3.  In [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows Explorer, locate and select the files associated with the solution you want to delete.  
   
 4.  On the **File** menu, click **Delete**.  
   

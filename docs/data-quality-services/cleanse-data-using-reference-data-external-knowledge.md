@@ -1,23 +1,23 @@
 ---
-title: "Cleanse Data Using Reference Data (External) Knowledge | Microsoft Docs"
-ms.custom: ""
+title: "Cleanse data using (external) knowledge reference data "
+description: Learn how to cleanse data using knowledge from the reference data providers with Data Quality Services (DQS) in SQL Server.
+author: swinarko
+ms.author: sawinark
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 158009e9-8069-4741-8085-c14a5518d3fc
-caps.latest.revision: 15
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
+ms.custom: seo-lt-2019
 ---
-# Cleanse Data Using Reference Data (External) Knowledge
+# Cleanse data using (external) knowledge reference data - Data Quality Services (DQS)
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
   This topic describes how to cleanse data using knowledge from the reference data providers. While all the steps of running a cleansing activity remains the same for cleansing your data using knowledge from the reference data providers as explained in the [Cleanse Data Using DQS &#40;Internal&#41; Knowledge](../data-quality-services/cleanse-data-using-dqs-internal-knowledge.md), this topic provides information specific to data cleansing using reference data service in [!INCLUDE[ssDQSnoversion](../includes/ssdqsnoversion-md.md)] (DQS).  
-  
+
+> [!IMPORTANT]
+> This article mentions third-party reference data services that were previously available from the Azure DataMarket. DataMarket and Data Services - including Melissa address data, for example - were discontinued after 12/31/2016. As a result, you can no longer run the examples in this article with the specified services from DataMarket. You can still use reference data services that are available directly online from third-party reference data providers.
+ 
  When you use the reference data service feature in DQS to cleanse your data, the DQS cleansing process sends the mapped domain values to the reference data service provider as a batch request. The reference data service responds with the following information:  
   
 -   Suggested correction  
@@ -40,7 +40,7 @@ manager: "jhubbard"
 ## Before You Begin  
   
 ###  <a name="Prerequisites"></a> Prerequisites  
- You must have mapped required domains in a DQS knowledge base to the appropriate reference data service. Additionally, the knowledge base must contain knowledge about the type of data that you want to cleanse. For example, if you want to cleanse your source data that contains US addresses, you must map your domains to a reference data service provider that provides high-quality” data for US addresses. For more information, see [Attach Domain or Composite Domain to Reference Data](../data-quality-services/attach-domain-or-composite-domain-to-reference-data.md).  
+ You must have mapped required domains in a DQS knowledge base to the appropriate reference data service. Additionally, the knowledge base must contain knowledge about the type of data that you want to cleanse. For example, if you want to cleanse your source data that contains US addresses, you must map your domains to a reference data service provider that provides high-quality" data for US addresses. For more information, see [Attach Domain or Composite Domain to Reference Data](../data-quality-services/attach-domain-or-composite-domain-to-reference-data.md).  
   
 ###  <a name="Security"></a> Security  
   
@@ -48,7 +48,7 @@ manager: "jhubbard"
  You must have the dqs_kb_editor or dqs_kb_operator role on the DQS_MAIN database to perform data cleansing.  
   
 ##  <a name="Cleanse"></a> Cleanse Your Data Using Reference Data Knowledge  
- We will continue with the same example of using the domains that we mapped in the previous topic, [Attach Domain or Composite Domain to Reference Data](../data-quality-services/attach-domain-or-composite-domain-to-reference-data.md), with the Melissa Data service in Windows Azure Marketplace. Now, we will use the same domains to cleanse some sample US addresses. The steps to cleanse data are the same as described in [Cleanse Data Using DQS &#40;Internal&#41; Knowledge](../data-quality-services/cleanse-data-using-dqs-internal-knowledge.md). However, we will draw you attention wherever necessary during the process.  
+ We will continue with the same example of using the domains that we mapped in the previous topic, [Attach Domain or Composite Domain to Reference Data](../data-quality-services/attach-domain-or-composite-domain-to-reference-data.md), with the Melissa Data service in Azure Marketplace. Now, we will use the same domains to cleanse some sample US addresses. The steps to cleanse data are the same as described in [Cleanse Data Using DQS &#40;Internal&#41; Knowledge](../data-quality-services/cleanse-data-using-dqs-internal-knowledge.md). However, we will draw you attention wherever necessary during the process.  
   
 1.  Create a data quality project, and select the **Cleansing** activity. See [Create a Data Quality Project](../data-quality-services/create-a-data-quality-project.md).  
   
@@ -62,7 +62,7 @@ manager: "jhubbard"
     > [!NOTE]  
     >  On the **Cleanse** page, DQS displays information about the domains that are attached to reference data service in the following two ways:  
     >   
-    >  -   A message is displayed below the **Start** button: “Domains \<Domain1>, \<Domain2>,… \<DomainN> are cleansed using reference data service provider.” In this example, the following message will be displayed: “Domain Address Verification is cleansed using reference data service provider.”  
+    >  -   A message is displayed below the **Start** button: "Domains \<Domain1>, \<Domain2>,... \<DomainN> are cleansed using reference data service provider." In this example, the following message will be displayed: "Domain Address Verification is cleansed using reference data service provider."  
     > -   An icon, ![Domain is attached to RDS](../data-quality-services/media/dqs-rdsindicator.JPG "Domain is attached to RDS"), is displayed in the **Profiler** area against the domains attached to reference data service provider. In this example, the icon will be displayed against the **Address Verification** composite domain.  
   
 4.  On the **Manage and view results** page, review your domain values. The reference data service can display more than one suggestion, if available, for a value depending upon the maximum number of suggestions specified in the **Suggested Candidates** box during the mapping of the domain to the reference data service. For example, two suggestions are displayed for the following US address:  

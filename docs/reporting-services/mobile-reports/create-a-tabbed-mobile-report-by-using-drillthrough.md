@@ -1,26 +1,24 @@
 ---
 title: "Create a tabbed mobile report by using drillthrough | Reporting Services mobile reports | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Learn how to create a Reporting Services mobile report that looks and acts like a tabbed report by using drillthrough and parameters.
+ms.date: 07/21/2022
+ms.service: reporting-services
+ms.subservice: mobile-reports
+
+ms.topic: conceptual
 ms.assetid: c4d5d80d-370a-4a6d-8b76-698bd5ba5ba6
-caps.latest.revision: 9
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Create a tabbed mobile report by using drillthrough
+
+[!INCLUDE [ssrs-mobile-report-deprecated](../../includes/ssrs-mobile-report-deprecated.md)]
+
 Learn how to create a [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] mobile report that looks and acts like a tabbed report by using drillthrough and parameters.
 
 For example, in this report, the gauges across the top act like tabs. When you click the Transportation gauge, the data in the rest of the chart is filtered to the transportation data.
 
-![06-Mobile-Report-Web-Viewer-Transportation](../../reporting-services/mobile-reports/media/tabbed-mobile-report-web-viewer-transportation-complete.png)
+![Screenshot showing a Financials - Transportation report with the Transportation gauge selected.](../../reporting-services/mobile-reports/media/tabbed-mobile-report-web-viewer-transportation-complete.png)
 
 Behind the scenes, this is really a set of five separate reports, each with a different parameter that filters the report to match the gauge selected at the top of the report. You create all five reports first, then for each of the five reports, you make the other four gauges into drillthroughs to the other four reports.
 
@@ -36,11 +34,11 @@ Here are the steps for this example.
     * Storage
     * Misc Expenses
 
-   ![01-Sales-Mobile-Report-Publisher](../../reporting-services/mobile-reports/media/01-sales-mobile-report-publisher.png)
+   ![Screenshot of a report called Sales with five gauges.](../../reporting-services/mobile-reports/media/01-sales-mobile-report-publisher.png)
     
-2. Set **Accent** to **On** for the Sales gauge, so it will contrast with the the rest of the report--in this case, white on black.
+2. Set **Accent** to **On** for the Sales gauge, so it will contrast with the rest of the report--in this case, white on black.
 
-    ![01a-Sales-Accent-Mobile-Report-Publisher](../../reporting-services/mobile-reports/media/01a-sales-accent-mobile-report-publisher.png)
+    ![Screenshot of the Sales gauge with a red arrow pointing to the Accent slider in the On position.](../../reporting-services/mobile-reports/media/01a-sales-accent-mobile-report-publisher.png)
     
 3. Save it to a [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] report server.
 
@@ -61,7 +59,7 @@ In this section, you set each gauge (other than the Sales gauge) as a drillthrou
 
 1. In the Sales report, select the Transportation gauge.
 
-    ![02-Sales-Create-DrillThrough-Mobile-Report-Publisher](../../reporting-services/mobile-reports/media/02-sales-create-drillthrough-mobile-report-publisher.png)
+    ![Screenshot of the Sales report with a red arrow from the Transportation gauge to the Drillthrough target option.](../../reporting-services/mobile-reports/media/02-sales-create-drillthrough-mobile-report-publisher.png)
 
 2. With the **Layout** tab selected, in the **Visual properties** pane select **Drillthrough target**.
 
@@ -69,11 +67,11 @@ In this section, you set each gauge (other than the Sales gauge) as a drillthrou
 
 4. Navigate to and select the report that will be the destination for the drillthrough--in this case, "Financials - Transportation."
 
-    ![03-Sales-Select-Dashboard-Mobile-Report-Publisher](../../reporting-services/mobile-reports/media/03-sales-select-dashboard-mobile-report-publisher.png)
+    ![Screenshot of the Open from server dialog box with the Financials - Transportation option called out.](../../reporting-services/mobile-reports/media/03-sales-select-dashboard-mobile-report-publisher.png)
 
 5. In **Configure target report**, select the parameter to filter the report, and select **Apply**.
 
-   ![04-Sales-Apply-Parameters-Mobile-Report-Publisher](../../reporting-services/mobile-reports/media/04-sales-apply-parameters-mobile-report-publisher.png)
+   ![Screenshot of the Configure target report section showing the Financials - Transportation Report parameters.](../../reporting-services/mobile-reports/media/04-sales-apply-parameters-mobile-report-publisher.png)
    
 6. Repeat these steps for each of the other gauges in the Sales report. 
 
@@ -81,7 +79,7 @@ In this section, you set each gauge (other than the Sales gauge) as a drillthrou
 
 1.  Open the Transportation report, set the Sales gauge as a drillthrough to the Sales report, and the other three gauges as drillthroughs to their respective reports.
 
-2. Still in the Transportation report, set **Accent** for the Transportation gauge to **On**, contrast with the the rest of the report.
+2. Still in the Transportation report, set **Accent** for the Transportation gauge to **On**, contrast with the rest of the report.
 
 3. Repeat these steps for the Fuel, Storage, and Misc Expenses reports. 
 
@@ -91,11 +89,11 @@ In this section, you set each gauge (other than the Sales gauge) as a drillthrou
 
 2. Notice that each of the gauges has a drillthrough icon in the upper-right corner.
 
-    ![Web-Viewer-drillthrough-icon-mobile-report-builder](../../reporting-services/mobile-reports/media/web-viewer-drillthrough-icon-mobile-report-builder.png)
+    ![Screenshot of the Fuel gauge.](../../reporting-services/mobile-reports/media/web-viewer-drillthrough-icon-mobile-report-builder.png)
 
 3. Select one of the gauges to go to the report filtered to that gauge's data.
 
-   ![06-Mobile-Report-Web-Viewer-Transportation](../../reporting-services/mobile-reports/media/06-mobile-report-web-viewer-transportation.png)
+   ![Screenshot showing a Financials - Transportation report with a red arrow pointing to the Transportation gauge which also has a red box around it.](../../reporting-services/mobile-reports/media/06-mobile-report-web-viewer-transportation.png)
 
 ### See also
 	

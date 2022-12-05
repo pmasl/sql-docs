@@ -1,28 +1,21 @@
 ---
-title: "GetString Method Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "GetString Method Example (VB)"
+description: "GetString Method Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "GetString method [ADO], Visual Basic example"
-ms.assetid: 14c96d71-46a8-4782-b474-80ce348e8bff
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # GetString Method Example (VB)
-This example demonstrates the [GetString](../../../ado/reference/ado-api/getstring-method-ado.md) method.  
+This example demonstrates the [GetString](./getstring-method-ado.md) method.  
   
- Assume you are debugging a data access problem and want a quick, simple way of printing the current contents of a small [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md).  
+ Assume you are debugging a data access problem and want a quick, simple way of printing the current contents of a small [Recordset](./recordset-object-ado.md).  
   
 ```  
 'BeginGetStringVB  
@@ -100,5 +93,5 @@ End Sub
 ```  
   
 ## See Also  
- [GetString Method (ADO)](../../../ado/reference/ado-api/getstring-method-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [GetString Method (ADO)](./getstring-method-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

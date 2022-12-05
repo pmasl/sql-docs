@@ -1,23 +1,18 @@
 ---
-title: "Principal Server Instance (Configure Database Mirroring Security Wizard) | Microsoft Docs"
-ms.custom: ""
+title: "Principal Server Instance (Configure Database Mirroring Security Wizard)"
+description: A description of the 'Principal Server Instance' page of the 'Configure Database Mirroring Security' Wizard in SQL Server Management Studio.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+f1_keywords:
   - "sql13.swb.configdbmsecurwiz.principalsrvr.f1"
-ms.assetid: 58af27d7-c5dd-4669-be6b-b472bc2c8ef4
-caps.latest.revision: 36
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Principal Server Instance (Configure Database Mirroring Security Wizard)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use this page to specify information about the server instance of the principal database. The principal database is the copy of the database that begins the mirroring session. After the session has begun, the principal database is the copy of the database that accepts user changes. (When a failover occurs, the principal and mirroring roles are swapped; therefore, the initial principal database might not remain the principal database.)  
   
  **To configure database mirroring by using SQL Server Management Studio**  

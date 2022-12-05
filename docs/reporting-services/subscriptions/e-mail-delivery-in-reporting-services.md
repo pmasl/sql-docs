@@ -1,29 +1,24 @@
 ---
 title: "E-Mail Delivery in Reporting Services | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: In this article, learn to use the e-mail delivery extension, which provides a way to e-mail a report to individual users or groups.
+ms.date: 03/14/2017
+ms.service: reporting-services
+ms.subservice: subscriptions
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "subscriptions [Reporting Services], e-mail"
   - "e-mail [Reporting Services]"
   - "mail [Reporting Services]"
 ms.assetid: fda2f130-97b9-4258-9dbb-e93a70f4d08a
-caps.latest.revision: 45
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # E-Mail Delivery in Reporting Services
   SQL Server [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] includes an e-mail delivery extension that provides a way to e-mail a report to individual users or groups. To distribute a report by e-mail, you 1) configure the report server for e-mail delivery and 2) define either a standard subscription or a data-driven subscription. A single subscription cannot deliver multiple reports in a single e-mail message. However you can create multiple subscriptions.  
   
- The report server connects with an e-mail server through a standard connection. It does not use communication that has been encrypted using Secure Sockets Layer (SSL). The e-mail server must be a remote or local Simple Mail Transport Protocol (SMTP) server on the same network as the report server.  
+ The report server connects with an e-mail server through a standard connection. It does not use communication that has been encrypted using Transport Layer Security (TLS), previously known as Secure Sockets Layer (SSL). The e-mail server must be a remote or local Simple Mail Transport Protocol (SMTP) server on the same network as the report server.  
   
  For detailed steps that walk you through creating a subscription, see the following:  
   
@@ -42,9 +37,9 @@ manager: "erikre"
   
 -   Send a notification in the Subject: line of an e-mail message. By default, the Subject: line in the subscription definition includes the following variables that are replaced by report-specific information when the subscription is processed:  
   
-     **@ReportName** specifies the name of the report.  
+     **\@ReportName** specifies the name of the report.  
   
-     **@ExecutionTime** specifies when the report was executed.  
+     **\@ExecutionTime** specifies when the report was executed.  
   
      You can combine these variables with static text or modify the text in the Subject: line for each subscription.  
   
@@ -82,7 +77,7 @@ manager: "erikre"
  For a Native mode report server, the e-mail delivery extension is configured through the Native mode [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] Configuration Manager and by editing the [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] configuration files. For a SharePoint mode report server, the e-mail delivery extension is configured in SharePoint management pages and PowerShell scripts.  
   
  
- For information on how to configure a native mode report server, see [email settings - Reporting Services Native mode (Configuration Manager)](https://msdn.microsoft.com/library/ms189342.aspx)
+ For information on how to configure a native mode report server, see [email settings - Reporting Services Native mode (Configuration Manager)](../install-windows/e-mail-settings-reporting-services-native-mode-configuration-manager.md)
  
  
  For information on how to configure a SharePoint mode report server, see the following:  

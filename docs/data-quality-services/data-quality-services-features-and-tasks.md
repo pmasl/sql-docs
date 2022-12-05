@@ -1,24 +1,20 @@
 ---
-title: "Data Quality Services Features and Tasks | Microsoft Docs"
-ms.custom: ""
+title: "Data Quality Services Features and Tasks"
+description: "Data Quality Services Features and Tasks"
+author: swinarko
+ms.author: sawinark
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 84928476-3a98-4bac-bb47-6346142752d0
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
 ---
 # Data Quality Services Features and Tasks
-  Find information that anyone—data steward, Data Quality Services administrator, or SQL Server administrator—requires to prepare and execute a data quality project.  
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
+  Find information that anyone-data steward, Data Quality Services administrator, or SQL Server administrator-requires to prepare and execute a data quality project.  
   
- ![Small File Folder Icon](../analysis-services/media/filefolder-small.png "Small File Folder Icon") **Designing and Implementing a Data Quality Solution**  
+ ![Small File Folder Icon](/analysis-services/analysis-services/media/filefolder-small.png "Small File Folder Icon") **Designing and Implementing a Data Quality Solution**  
  [Data Quality Client Application](../data-quality-services/data-quality-client-application.md)  
   
  [DQS Knowledge Bases and Domains](../data-quality-services/dqs-knowledge-bases-and-domains.md)  
@@ -33,9 +29,8 @@ manager: "jhubbard"
   
  [Data Profiling and Notifications in DQS](../data-quality-services/data-profiling-and-notifications-in-dqs.md)  
   
- ![Small File Folder Icon](../analysis-services/media/filefolder-small.png "Small File Folder Icon") **Administering Data Quality Services**  
+ ![Small File Folder Icon](/analysis-services/analysis-services/media/filefolder-small.png "Small File Folder Icon") **Administering Data Quality Services**  
  [DQS Administration](../data-quality-services/dqs-administration.md)  
   
  [DQS Security](../data-quality-services/dqs-security.md)  
-  
   

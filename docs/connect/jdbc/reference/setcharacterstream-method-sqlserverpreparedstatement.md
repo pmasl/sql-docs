@@ -1,19 +1,12 @@
 ---
-title: "setCharacterStream Method (SQLServerPreparedStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setCharacterStream Method (SQLServerPreparedStatement)"
+description: "setCharacterStream Method (SQLServerPreparedStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fe13326b-799d-4bf3-b4f1-32ab1841d0ed
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # setCharacterStream Method (SQLServerPreparedStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

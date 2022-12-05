@@ -1,35 +1,28 @@
 ---
-title: "CREATE EVENT NOTIFICATION (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "CREATE EVENT NOTIFICATION (Transact-SQL)"
+description: CREATE EVENT NOTIFICATION (Transact-SQL)
+author: markingmyname
+ms.author: maghan
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "CREATE_EVENT_NOTIFICATION_TSQL"
   - "NOTIFICATION_TSQL"
   - "EVENT"
   - "NOTIFICATION"
   - "CREATE EVENT NOTIFICATION"
   - "EVENT_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "CREATE EVENT NOTIFICATION statement"
   - "events [SQL Server], notifications"
   - "event notifications [SQL Server], creating"
-ms.assetid: dbbff0e8-9e25-4f12-a1ba-e12221d16ac2
-caps.latest.revision: 64
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # CREATE EVENT NOTIFICATION (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Creates an object that sends information about a database or server event to a service broker service. Event notifications are created only by using [!INCLUDE[tsql](../../includes/tsql-md.md)] statements.  
   
@@ -37,8 +30,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 CREATE EVENT NOTIFICATION event_notification_name   
 ON { SERVER | DATABASE | QUEUE queue_name }   
 [ WITH FAN_IN ]  
@@ -47,7 +39,9 @@ TO SERVICE 'broker_service' , { 'broker_instance_specifier' | 'current database'
 [ ; ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *event_notification_name*  
  Is the name of the event notification. An event notification name must comply with the rules for [identifiers](../../relational-databases/databases/database-identifiers.md) and must be unique within the scope in which they are created: SERVER, DATABASE, or *object_name*.  
   
@@ -92,14 +86,14 @@ TO SERVICE 'broker_service' , { 'broker_instance_specifier' | 'current database'
   
  The conversations remain open until the event notification is dropped. Certain errors could cause the conversations to close earlier. Ending some or all conversations explicitly might prevent the target service from receiving more messages.  
   
- { **'***broker_instance_specifier***'** | **'current database'** }  
+ { **'**_broker\_instance\_specifier_**'** | **'current database'** }  
  Specifies a service broker instance against which *broker_service* is resolved. The value for a specific service broker can be acquired by querying the **service_broker_guid** column of the **sys.databases** catalog view. Use **'current database'** to specify the service broker instance in the current database. **'current database'** is a case-insensitive string literal.  
   
 > [!NOTE]  
 >  This option is not available in a contained database.  
   
 ## Remarks  
- [!INCLUDE[ssSB](../../includes/sssb-md.md)] includes a message type and contract specifically for event notifications. Therefore, a Service Broker initiating service does not have to be created because one already exists that specifies the following contract name: `http://schemas.microsoft.com/SQL/Notifications/PostEventNotification`  
+ [!INCLUDE[ssSB](../../includes/sssb-md.md)] includes a message type and contract specifically for event notifications. Therefore, a Service Broker initiating service does not have to be created because one already exists that specifies the following contract name: `https://schemas.microsoft.com/SQL/Notifications/PostEventNotification`  
   
  The target service that receives event notifications must honor this preexisting contract.  
   
@@ -128,27 +122,30 @@ TO SERVICE 'broker_service' , { 'broker_instance_specifier' | 'current database'
 > [!NOTE]  
 >  In Examples A and B below, the GUID in the `TO SERVICE 'NotifyService'` clause ('8140a771-3c4b-4479-8ac0-81008ab17984') is specific to the computer on which the example was set up. For that instance, that was the GUID for the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database.  
 >   
->  To copy and run these examples, you need to replace this GUID with one from your computer and [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance. As explained in the Arguments section above, you can acquire the **'***broker_instance_specifier***'** by querying the service_broker_guid column of the sys.databases catalog view.  
+>  To copy and run these examples, you need to replace this GUID with one from your computer and [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance. As explained in the Arguments section above, you can acquire the **'**_broker\_instance\_specifier_**'** by querying the service_broker_guid column of the sys.databases catalog view.  
   
 ### A. Creating an event notification that is server scoped  
  The following example creates the required objects to set up a target service using [!INCLUDE[ssSB](../../includes/sssb-md.md)]. The target service references the message type and contract of the initiating service specifically for event notifications. Then an event notification is created on that target service that sends a notification whenever an `Object_Created` trace event happens on the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
-```tsql  
+```sql  
 --Create a queue to receive messages.  
 CREATE QUEUE NotifyQueue ;  
 GO  
+
 --Create a service on the queue that references  
 --the event notifications contract.  
 CREATE SERVICE NotifyService  
 ON QUEUE NotifyQueue  
-([http://schemas.microsoft.com/SQL/Notifications/PostEventNotification]);  
+([https://schemas.microsoft.com/SQL/Notifications/PostEventNotification]);  
 GO  
+
 --Create a route on the service to define the address   
 --to which Service Broker sends messages for the service.  
 CREATE ROUTE NotifyRoute  
 WITH SERVICE_NAME = 'NotifyService',  
 ADDRESS = 'LOCAL';  
-GO  
+GO 
+
 --Create the event notification.  
 CREATE EVENT NOTIFICATION log_ddl1   
 ON SERVER   
@@ -160,7 +157,7 @@ TO SERVICE 'NotifyService',
 ### B. Creating an event notification that is database scoped  
  The following example creates an event notification on the same target service as the previous example. The event notification fires after an `ALTER_TABLE` event occurs on the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] sample database.  
   
-```tsql  
+```sql  
 CREATE EVENT NOTIFICATION Notify_ALTER_T1  
 ON DATABASE  
 FOR ALTER_TABLE  
@@ -171,7 +168,7 @@ TO SERVICE 'NotifyService',
 ### C. Getting information about an event notification that is server scoped  
  The following example queries the `sys.server_event_notifications` catalog view for metadata about event notification `log_ddl1` that was created with server scope.  
   
-```  
+```sql  
 SELECT * FROM sys.server_event_notifications  
 WHERE name = 'log_ddl1';  
 ```  
@@ -179,7 +176,7 @@ WHERE name = 'log_ddl1';
 ### D. Getting information about an event notification that is database scoped  
  The following example queries the `sys.event_notifications` catalog view for metadata about event notification `Notify_ALTER_T1` that was created with database scope.  
   
-```tsql  
+```sql  
 SELECT * FROM sys.event_notifications  
 WHERE name = 'Notify_ALTER_T1';  
 ```  

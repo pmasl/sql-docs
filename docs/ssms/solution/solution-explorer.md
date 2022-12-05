@@ -1,14 +1,9 @@
 ---
-title: "Solution Explorer | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Solution Explorer"
+title: "Solution Explorer"
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQL Server Management Studio [SQL Server], solutions"
   - "projects [SQL Server Management Studio], about projects"
@@ -17,18 +12,22 @@ helpviewer_keywords:
   - "SQL Server Management Studio [SQL Server], items"
   - "items [SQL Server]"
 ms.assetid: 0df09843-0d4f-4925-bc6c-99265035a0c1
-caps.latest.revision: 3
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: "01/19/2017"
 ---
+
 # Solution Explorer
-The Solution Explorer pane in [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)] provides containers called projects for managing items such as database scripts, queries, data connections, and files. One or more projects that are related to each other can be combined in a container called a solution.  
+
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+The Solution Explorer pane in [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] provides containers called projects for managing items such as database scripts, queries, data connections, and files. One or more projects that are related to each other can be combined in a container called a solution.  
   
 A solution includes one or more projects, plus files and metadata that help define the solution as a whole. A project is a set of files, plus related metadata such as connection information. Solutions and projects contain items that represent the scripts, queries, connection information and files that you need to create your database solution.  
   
 > [!IMPORTANT]  
-> [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid_md.md)]  
+> [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]  
   
 ## Benefits of Using Solutions  
 Use these containers to:  
@@ -43,15 +42,14 @@ Use these containers to:
   
 -   Work on miscellaneous files that are independent from solutions or projects.  
   
-The items contained in projects depend on the project type and whether you are using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)].  
+The items contained in projects depend on the project type and whether you are using SQL Server Management Studio.  
   
 ## Related Tasks  
 Use the following topics to get started with SQL Server Solutions:  
   
-|||  
-|-|-|  
-|**Description**|**Topic**|  
+|Description|Topic|  
+|-|-|    
 |Describes how to collect one or more projects in a solution.|[Solutions &#40;SQL Server Management Studio&#41;](../../ssms/solution/solutions-sql-server-management-studio.md)|  
 |Describes how to create a project and add items like scripts and connections.|[Projects &#40;SQL Server Management Studio&#41;](../../ssms/solution/projects-sql-server-management-studio.md)|  
-|Provides information about the files used by [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)] to manage solutions and files.|[Files That Manage Solutions and Projects](../../ssms/solution/files-that-manage-solutions-and-projects.md)|  
+|Provides information about the files used by SQL Server Management Studio to manage solutions and files.|[Files That Manage Solutions and Projects](../../ssms/solution/files-that-manage-solutions-and-projects.md)|  
   

@@ -1,36 +1,30 @@
 ---
-title: "sys.availability_read_only_routing_lists (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.availability_read_only_routing_lists (Transact-SQL)"
+description: sys.availability_read_only_routing_lists (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "availability_read_only_routing_lists_TSQL"
   - "availability_read_only_routing_lists"
   - "sys.availability_read_only_routing_lists"
   - "sys.availability_read_only_routing_lists_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Availability Groups [SQL Server], monitoring"
   - "read-only routing"
   - "Availability Groups [SQL Server], readable secondary replicas"
   - "Availability Groups [SQL Server], read-only routing"
   - "readable secondary replicas"
   - "sys.availability_read_only_routing_lists dynamic management view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 0686bc5a-c206-41ef-b40a-79a8259d51d2
-caps.latest.revision: 9
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # sys.availability_read_only_routing_lists (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row for the read only routing list of each availability replica in an Always On availability group in the WSFC failover cluster.  
   

@@ -1,29 +1,25 @@
 ---
+description: "sp_revoke_publication_access (Transact-SQL)"
 title: "sp_revoke_publication_access (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_revoke_publication_access_TSQL"
   - "sp_revoke_publication_access"
 helpviewer_keywords: 
   - "sp_revoke_publication_access"
 ms.assetid: 84ed9e77-991f-4fa5-a21f-7c6bfec1b3e3
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # sp_revoke_publication_access (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Removes the login from a publications access list. This stored procedure is executed at the Publisher on the publication database.  
   
@@ -37,10 +33,10 @@ sp_revoke_publication_access [ @publication = ] 'publication' , [ @login = ] 'lo
 ```  
   
 ## Arguments  
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication to access. *publication* is **sysname**, with no default.  
   
- [ **@login=**] **'***login***'**  
+`[ @login = ] 'login'`
  Is the login ID. *login* is **sysname**, with no default.  
   
 ## Return Code Values  

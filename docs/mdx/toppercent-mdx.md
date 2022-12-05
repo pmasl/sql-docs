@@ -1,28 +1,17 @@
 ---
+description: "TopPercent (MDX)"
 title: "TopPercent (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "TOPPERCENT"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "TopPercent function"
-ms.assetid: a40cfbb8-5bf4-4ae2-8686-df9a07206d56
-caps.latest.revision: 34
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # TopPercent (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Sorts a set in descending order, and returns a set of tuples with the highest values whose cumulative total is equal to or greater than a specified percentage.  
   
@@ -57,7 +46,10 @@ TopPercent(Set_Expression, Percentage, Numeric_Expression)
 > [!IMPORTANT]  
 >  Like the [BottomPercent](../mdx/bottompercent-mdx.md) function, the **TopPercent** function always breaks the hierarchy.  
   
-## Example  
+## Examples  
+
+### A. Return TopPercent
+
  The following example returns the best cities that help make the top 10% of the resellers' sales, for the Bike category. The result is sorted in descending order, beginning with the city that has the highest value of sales.  
   
 ```  
@@ -73,7 +65,7 @@ WHERE([Product].[Product Categories].[Bikes])
   
  The above expression produces the following results:  
   
-||Reseller Sales Amount|  
+|City|Reseller Sales Amount|  
 |-|---------------------------|  
 |Toronto|$3,508,904.84|  
 |London|$1,521,530.09|  
@@ -94,7 +86,8 @@ WHERE([Product].[Product Categories].[Bikes])
   
 ```  
   
-## Example  
+### B. Understand the effect of negative values
+
  The following walkthrough will help understand the effect of negative values in the *Numeric_Expression*. First let's build some context where we can present the behavior.  
   
  The following query returns a table of Resellers 'Sales Amount', 'Total Product Cost' and 'Gross Profit', sorted in descending order of profit. Please note there are only negative values for profit; so, the smallest loss appears at the top.  
@@ -108,12 +101,12 @@ FROM [Adventure Works]
   
  The above query returns the following results; rows from the middle section were removed for readability.  
   
-||Reseller Sales Amount|Reseller Total Product Cost|Reseller Gross Profit|  
+|Touring Bikes|Reseller Sales Amount|Reseller Total Product Cost|Reseller Gross Profit|  
 |-|---------------------------|---------------------------------|---------------------------|  
 |Touring-2000 Blue, 50|$157,444.56|$163,112.57|($5,668.01)|  
 |Touring-2000 Blue, 46|$321,027.03|$333,021.50|($11,994.47)|  
 |Touring-3000 Blue, 62|$87,773.61|$100,133.52|($12,359.91)|  
-|…|…|…|…|  
+|...|...|...|...|  
 |Touring-1000 Yellow, 46|$1,016,312.83|$1,234,454.27|($218,141.44)|  
 |Touring-1000 Yellow, 60|$1,184,363.30|$1,443,407.51|($259,044.21)|  
   
@@ -128,7 +121,7 @@ FROM [Adventure Works]
   
  Please note that the query asks for one hundred percent (100%); that means all rows should be returned. However, because there are negative values in the *Numeric_Expression* , only one row is returned.  
   
-||Reseller Sales Amount|Reseller Total Product Cost|Reseller Gross Profit|  
+|Touring Bikes|Reseller Sales Amount|Reseller Total Product Cost|Reseller Gross Profit|  
 |-|---------------------------|---------------------------------|---------------------------|  
 |Touring-2000 Blue, 50|$157,444.56|$163,112.57|($5,668.01)|  
   

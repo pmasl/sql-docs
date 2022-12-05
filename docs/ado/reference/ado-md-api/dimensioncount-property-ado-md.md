@@ -1,35 +1,28 @@
 ---
-title: "DimensionCount Property (ADO MD) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "DimensionCount Property (ADO MD)"
+description: "DimensionCount Property (ADO MD)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Axis::DimensionCount"
   - "DimensionCount"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "DimensionCount property [ADO MD]"
-ms.assetid: 87929cbc-9c38-491a-8616-62d45c51e299
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # DimensionCount Property (ADO MD)
-Indicates the number of dimensions on an [axis](../../../ado/reference/ado-md-api/axis-object-ado-md.md).  
+Indicates the number of dimensions on an [axis](./axis-object-ado-md.md).  
   
 ## Return Values  
  Returns a **Long** integer, and is read-only.  
   
 ## Applies To  
- [Axis Object (ADO MD)](../../../ado/reference/ado-md-api/axis-object-ado-md.md)  
+ [Axis Object (ADO MD)](./axis-object-ado-md.md)  
   
 ## See Also  
- [Axis Example (VBScript)](../../../ado/reference/ado-md-api/axis-example-vbscript.md)   
- [Dimension Object (ADO MD)](../../../ado/reference/ado-md-api/dimension-object-ado-md.md)
+ [Axis Example (VBScript)](./axis-example-vbscript.md)   
+ [Dimension Object (ADO MD)](./dimension-object-ado-md.md)

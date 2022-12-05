@@ -1,25 +1,17 @@
 ---
-title: "sqlsrv_get_config | Microsoft Docs"
-ms.custom: ""
+title: "sqlsrv_get_config"
+description: "sqlsrv_get_config"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "sqlsrv_get_config"
-apitype: "NA"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+helpviewer_keywords:
   - "API Reference, sqlsrv_get_config"
   - "sqlsrv_get_config"
-ms.assetid: ce2befc2-af98-45bb-8d41-60f1674dccfc
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apiname: "sqlsrv_get_config"
+apitype: "NA"
 ---
 # sqlsrv_get_config
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -44,6 +36,8 @@ If **false** is returned by **sqlsrv_get_config**, you must call [sqlsrv_errors]
   
 ## See Also  
 [SQLSRV Driver API Reference](../../connect/php/sqlsrv-driver-api-reference.md)  
+
 [sqlsrv_configure](../../connect/php/sqlsrv-configure.md)  
+
 [sqlsrv_errors](../../connect/php/sqlsrv-errors.md)  
   

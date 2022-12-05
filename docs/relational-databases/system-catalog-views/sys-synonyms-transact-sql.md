@@ -1,31 +1,26 @@
 ---
-title: "sys.synonyms (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.synonyms (Transact-SQL)"
+description: sys.synonyms (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.synonyms_TSQL"
   - "synonyms_TSQL"
   - "sys.synonyms"
   - "synonyms"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.synonyms catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: d6e88ca6-6e3d-4f56-bd3e-d85e26be5499
-caps.latest.revision: 20
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.synonyms (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Contains a row for each synonym object that is **sys.objects.type** = SN.  
   

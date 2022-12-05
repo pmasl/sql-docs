@@ -1,24 +1,15 @@
 ---
-title: "supportsAlterTableWithAddColumn Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsAlterTableWithAddColumn Method"
+description: "supportsAlterTableWithAddColumn Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsAlterTableWithAddColumn"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsAlterTableWithAddColumn"
 apitype: "Assembly"
-ms.assetid: bbac1370-fbf6-4450-8599-4ed3b4db3fc6
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsAlterTableWithAddColumn Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

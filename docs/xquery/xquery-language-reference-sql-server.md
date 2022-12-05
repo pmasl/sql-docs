@@ -1,16 +1,12 @@
 ---
 title: "XQuery Language Reference (SQL Server) | Microsoft Docs"
+description: Learn about the XQuery language for SQL Server and view a complete language reference.
 ms.custom: ""
 ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: xml
 ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
 helpviewer_keywords: 
   - "XQuery"
   - "XQuery, about XQuery"
@@ -18,17 +14,15 @@ helpviewer_keywords:
   - "XML [SQL Server], XQuery"
   - "queries [XML in SQL Server], XQuery"
 ms.assetid: 8a69344f-2990-4357-8160-cb26aac95b91
-caps.latest.revision: 51
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "rothja"
+ms.author: "jroth"
 ---
 # XQuery Language Reference (SQL Server)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
 
   [!INCLUDE[tsql](../includes/tsql-md.md)] supports a subset of the XQuery language that is used for querying the **xml** data type. This XQuery implementation is aligned with the July 2004 Working Draft of XQuery. The language is under development by the World Wide Web Consortium (W3C), with the participation of all major database vendors and also Microsoft. Because the W3C specifications may undergo future revisions before becoming a W3C recommendation, this implementation may be different from the final recommendation. This topic outlines the semantics and syntax of the subset of XQuery that is supported in [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)].  
   
- For more information, see the [W3C XQuery 1.0 Language Specification](http://go.microsoft.com/fwlink/?LinkId=48846).  
+ For more information, see the [W3C XQuery 1.0 Language Specification](https://go.microsoft.com/fwlink/?LinkId=48846).  
   
  XQuery is a language that can query structured or semi-structured XML data. With the **xml** data type support provided in the [!INCLUDE[ssDE](../includes/ssde-md.md)], documents can be stored in a database and then queried by using XQuery.  
   
@@ -36,7 +30,7 @@ manager: "jhubbard"
   
  To query an XML instance stored in a variable or column of **xml** type, you use the [xml Data Type Methods](../t-sql/xml/xml-data-type-methods.md). For example, you can declare a variable of **xml** type and query it by using the **query()** method of the **xml** data type.  
   
-```  
+```sql
 DECLARE @x xml  
 SET @x = '<ROOT><a>111</a></ROOT>'  
 SELECT @x.query('/ROOT/a')  
@@ -44,8 +38,8 @@ SELECT @x.query('/ROOT/a')
   
  In the following example, the query is specified against the Instructions column of **xml** type in ProductModel table in the AdventureWorks database.  
   
-```  
-SELECT Instructions.query('declare namespace AWMI="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";           
+```sql
+SELECT Instructions.query('declare namespace AWMI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";           
     /AWMI:root/AWMI:Location[@LocationID=10]  
 ') as Result   
 FROM  Production.ProductModel  
@@ -62,10 +56,9 @@ WHERE ProductModelID=7
 |-----------|-----------------|  
 |[XML Data &#40;SQL Server&#41;](../relational-databases/xml/xml-data-sql-server.md)|Explains the support for the **xml**data type in the [!INCLUDE[ssDE](../includes/ssde-md.md)] and the methods you can use against this data type. The **xml** data type forms the input XQuery data model on which the XQuery expressions are executed.|  
 |[XML Schema Collections &#40;SQL Server&#41;](../relational-databases/xml/xml-schema-collections-sql-server.md)|Describes how the XML instances stored in a database can be typed. This means you can associate an XML schema collection with the **xml** type column. All the instances stored in the column are validated and typed against the schema in the collection and provide the type information for XQuery.|  
-|||  
   
 > [!NOTE]  
->  The organization of this section is based on the World Wide Web Consortium (W3C) XQuery working draft specification. Some of the diagrams provided in this section are taken from that specification. This section compares the Microsoft XQuery implementation to the W3C specification, describes how Microsoft XQuery is different from the W3C and indicates what W3C features are not supported. The W3C specification is available at [http://www.w3.org/TR/2004/WD-xquery-20040723](http://go.microsoft.com/fwlink/?LinkId=48846).  
+>  The organization of this section is based on the World Wide Web Consortium (W3C) XQuery working draft specification. Some of the diagrams provided in this section are taken from that specification. This section compares the Microsoft XQuery implementation to the W3C specification, describes how Microsoft XQuery is different from the W3C and indicates what W3C features are not supported. The W3C specification is available at [http://www.w3.org/TR/2004/WD-xquery-20040723](https://go.microsoft.com/fwlink/?LinkId=48846).  
   
 ## In This Section  
   

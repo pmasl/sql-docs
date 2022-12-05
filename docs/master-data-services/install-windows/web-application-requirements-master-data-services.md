@@ -1,24 +1,22 @@
 ---
-title: "Web Application Requirements (Master Data Services) | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
+title: Web Application Requirements
+description: Find out about the requirements to install and run the Master Data Services web application hosted by Internet Information Services.
+ms.custom: ""
 ms.date: "02/13/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "master-data-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: master-data-services
+ms.topic: conceptual
 keywords: 
   - "master data services"
 ms.assetid: 9455d3cf-c1b7-4d48-8aff-7dc636ed5dc3
-caps.latest.revision: 40
-author: "sabotta"
-ms.author: "carlasab"
-manager: "jhubbard"
+author: CordeliaGrey
+ms.author: jiwang6
 ---
 # Web Application Requirements (Master Data Services)
+
+[!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+
   [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)] is a web application hosted by Internet Information Services (IIS). [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)] works only in Internet Explorer (IE) 9 or later. IE 8  and earlier versions, Microsoft Edge and Chrome are not supported.  
 
 **For instructions on how to install and configure IIS**, see [Installing and Configuring IIS](../../master-data-services/master-data-services-installation-and-configuration.md#InstallIIS).
@@ -33,10 +31,11 @@ manager: "jhubbard"
 ### Operating System  
  Before you install [!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)], review the following requirements:    
     
--   [Hardware and Software Requirements for Installing SQL Server 2016](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md)    
+-   [Hardware and Software Requirements for Installing SQL Server 2016 and 2017](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md)    
+-   [Hardware and Software Requirements for Installing SQL Server 2019](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server-2019.md)    
   
 ### Microsoft Silverlight  
- To work in the [!INCLUDE[ssMDSmdm](../../includes/ssmdsmdm-md.md)] web application, Silverlight 5 must be installed on the client computer. If you do not have the required version of Silverlight, you will be prompted to install it when you navigate to an area of the web application that requires it. You can install Silverlight 5 from [here](http://go.microsoft.com/fwlink/?LinkId=243096).  
+ To work in the [!INCLUDE[ssMDSmdm](../../includes/ssmdsmdm-md.md)] web application, Silverlight 5 must be installed on the client computer. If you do not have the required version of Silverlight, you will be prompted to install it when you navigate to an area of the web application that requires it. You can install Silverlight 5 from [here](https://go.microsoft.com/fwlink/?LinkId=243096).  
   
 ### Role and Role Services  
  On Windows Server 2012 or Windows Server 2012 R2, you can use **Server Manager**, which is available in the Microsoft Management Console (MMC), to install the **Web Server (IIS)** role, and required role services.  
@@ -45,26 +44,55 @@ manager: "jhubbard"
 > [!IMPORTANT]  
 >**Dynamic Content Compression** is enabled by default. This significantly reduces the size of the xml response and saves the network I/O, though CPU usage is increased.  For more information, see **[CTP 2.0] Improved Performance** in [What's New in Master Data Services &#40;MDS&#41;](../../master-data-services/what-s-new-in-master-data-services-mds.md).  
   
-||  
-|-|  
-|Internet Information Services<br /><br /> Web Management Tools<br /><br /> IIS Management Console<br /><br /> World Wide Web Services<br /><br /> Application Development<br /><br /> .NET Extensibility 3.5<br /><br /> .NET Extensibility 4.5<br /><br /> ASP.NET 3.5<br /><br /> ASP.NET 4.5<br /><br /> ISAPI Extensions<br /><br /> ISAPI Filters<br /><br /> Common HTTP Features<br /><br /> Default Document<br /><br /> Directory Browsing<br /><br /> HTTP Errors<br /><br /> Static Content<br /><br /> [Note: Do not install WebDAV Publishing]<br /><br /> Health and Diagnostics<br /><br /> HTTP Logging<br /><br /> Request Monitor<br /><br /> Performance<br /><br /> Static Content Compression<br /><br /> Security<br /><br /> Request Filtering<br /><br /> Windows Authentication|  
+- Internet Information Services
+- Web Management Tools
+- IIS Management Console
+- World Wide Web Services
+- Application Development
+- .NET Extensibility 3.5
+- .NET Extensibility 4.5
+- ASP.NET 3.5
+- ASP.NET 4.5
+- ISAPI Extensions
+- ISAPI Filters
+- Common HTTP Features
+- Default Document
+- Directory Browsing
+- HTTP Errors
+- Static Content [Note: Do not install WebDAV Publishing.]
+- Health and Diagnostics
+- HTTP Logging
+- Request Monitor
+- Performance
+- Static Content Compression
+- Security
+- Request Filtering
+- Windows Authentication
   
 ### Features 
  On Windows Server 2012 and Windows Server 2012 R2, you can use **Server Manager** to install the following required features.  
   
-||  
-|-|  
-|.NET Framework 3.5 (includes .NET 2.0 and 3.0)<br /><br /> .NET Framework 4.5 Advanced Services<br /><br /> ASP.NET 4.5<br /><br /> WCF Services<br /><br /> HTTP Activation [Note: This is required.]<br /><br /> TCP Port Sharing<br /><br /> Windows Process Activation Service<br /><br /> Process Model<br /><br /> .NET Environment<br /><br /> Configuration APIs<br/><br/>Dynamic Content Compression|  
+- .NET Framework 3.5 (includes .NET 2.0 and 3.0)
+- .NET Framework 4.5 Advanced Services
+- ASP.NET 4.5
+- WCF Services
+- HTTP Activation [Note: This is required.]
+- TCP Port Sharing
+- Windows Process Activation Service
+- Process Model
+- .NET Environment
+- Configuration APIs
+- Dynamic Content Compression
   
  Following is an example PowerShell script to add prerequisite server roles and features. The prerequisite server roles and features varies depending on the environment.  
   
 ```powershell  
 Install-WindowsFeature Web-Mgmt-Console, AS-NET-Framework, Web-Asp-Net, Web-Asp-Net45, Web-Default-Doc, Web-Dir-Browsing, Web-Http-Errors, Web-Static-Content, Web-Http-Logging, Web-Request-Monitor, Web-Stat-Compression, Web-Filtering, Web-Windows-Auth, NET-Framework-Core, WAS-Process-Model, WAS-NET-Environment, WAS-Config-APIs  
   
-Install-WindowsFeature Web-App-Dev, NET-Framework-45-Features -IncludeAllSubFeature –Restart  
+Install-WindowsFeature Web-App-Dev, NET-Framework-45-Features -IncludeAllSubFeature -Restart  
 ```  
   
- For more information about PowerShell command, see [Install-WindowsFeature](https://technet.microsoft.com/library/jj205467).  
+ For more information about PowerShell command, see [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature).  
   
 ### Accounts and Permissions  
   
@@ -78,5 +106,3 @@ Install-WindowsFeature Web-App-Dev, NET-Framework-45-Features -IncludeAllSubFeat
       
  [Create a Master Data Manager Web Application &#40;Master Data Services&#41;](../../master-data-services/install-windows/create-a-master-data-manager-web-application-master-data-services.md)   
  [Web Configuration Page &#40;Master Data Services Configuration Manager&#41;](../../master-data-services/web-configuration-page-master-data-services-configuration-manager.md)  
-  
-  

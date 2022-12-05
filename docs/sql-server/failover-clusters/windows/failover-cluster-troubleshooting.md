@@ -1,26 +1,22 @@
 ---
 title: "Failover Cluster Troubleshooting | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
+description: Learn about troubleshooting failover clusters, including recovering from a failure, resolving common problems, and using extended stored procedures/COM objects.
+ms.custom: ""
 ms.date: "10/21/2015"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: failover-cluster-instance
+ms.topic: how-to
 helpviewer_keywords: 
   - "troublshooting, failover clustering"
   - "failover clustering, troubleshooting"
   - "cluster troubleshooting"
 ms.assetid: 84012320-5a7b-45b0-8feb-325bf0e21324
-caps.latest.revision: 12
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # Failover Cluster Troubleshooting
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   This topic provides information about the following issues:  
   
 -   Basic troubleshooting steps.  
@@ -32,8 +28,8 @@ manager: "jhubbard"
 -   Using extended stored procedures and COM objects.  
   
 ## Basic Troubleshooting Steps  
- The first diagnostic step is to run a fresh cluster validation check. For details on validation, see [Failover Cluster Step-by-Step Guide: Validating Hardware for a Failover Cluster](https://technet.microsoft.com/library/cc732035.aspx).  This can be completed without any interruption of service as it does not affect any online cluster resources. Validation can be run at any time once the Failover Clustering feature has been installed, including before the cluster has been deployed, during cluster creation and while the cluster is running. In fact, additional tests are executed once the cluster is in use, which check that best practices are being followed for highly-available workloads. Across these dozens of tests, only a few of them will impact running cluster workloads and these are all within the storage category, so skipping this entire category is an easy way to avoid disruptive tests.  
-Failover Clustering comes with a built-in safeguard to prevent accidental downtime when running the storage tests during validation. If the cluster has any online groups when validation is initiated, and the storage tests remain selected, it will prompt the user for confirmation whether they want to run all the tests (and cause downtime), or to skip testing the disks of any online groups to avoid downtime. If the entire storage category was excluded from being tested, then this prompt is not displayed. This will enable cluster validation with no downtime.  
+ The first diagnostic step is to run a fresh cluster validation check. For details on validation, see [Create a Failover Cluster: Validate the Configuration](/windows-server/failover-clustering/create-failover-cluster#validate-the-configuration).  This can be completed without any interruption of service as it does not affect any online cluster resources. Validation can be run at any time once the Failover Clustering feature has been installed, including before the cluster has been deployed, during cluster creation and while the cluster is running. In fact, additional tests are executed once the cluster is in use, which check that best practices are being followed for highly-available workloads. Across these dozens of tests, only a few of them will impact running cluster workloads and these are all within the storage category, so skipping this entire category is an easy way to avoid disruptive tests.  
+Failover Clustering comes with a built-in safeguard to prevent accidental downtime when running the storage tests during validation. If the cluster has any online groups when validation is initiated, and the storage tests remain selected, it will prompt the user for confirmation whether they want to run all the tests (and cause downtime), or to skip testing the disks of any online groups to avoid downtime. If the entire storage category was excluded from being tested, then this prompt is not displayed. This will enable cluster validation with no downtime.
   
 #### How to revalidate your cluster  
   
@@ -55,7 +51,7 @@ Failover Clustering comes with a built-in safeguard to prevent accidental downti
   
 -   [Recommended hotfixes and updates for Windows Server 2012 R2-based failover clusters](https://support.microsoft.com/kb/2920151)  
   
--   [Recommended hotfixes and updates for Windows Server 2012-based failover clusters](https://support.microsoft.com/kb/278426)  
+-   [Recommended hotfixes and updates for Windows Server 2012-based failover clusters](https://support.microsoft.com/kb/2784261)  
   
 -   [Recommended hotfixes and updates for Windows Server 2008 R2-based failover clusters](https://support.microsoft.com/kb/980054)  
   
@@ -76,7 +72,7 @@ Failover Clustering comes with a built-in safeguard to prevent accidental downti
   
      Recovering from operating system failure this way can take time. If the operating system failure can be recovered easily, avoid using this technique.  
   
-     For more information, see [Create a New SQL Server Failover Cluster &#40;Setup&#41;](../../../sql-server/failover-clusters/install/create-a-new-sql-server-failover-cluster-setup.md) and [How to: Recover from Failover Cluster Failure in Scenario 2](https://msdn.microsoft.com/library/ms181075\(v=sql.105\).aspx).  
+     For more information, see [Create a New SQL Server Failover Cluster &#40;Setup&#41;](../../../sql-server/failover-clusters/install/create-a-new-sql-server-failover-cluster-setup.md) and [How to: Recover from Failover Cluster Failure in Scenario 2](recover-from-failover-cluster-instance-failure.md).  
   
 ## Resolving Common Problems  
  The following list describes common usage issues and explains how to resolve them.  
@@ -187,5 +183,4 @@ Failover Clustering comes with a built-in safeguard to prevent accidental downti
  [View and Read SQL Server Setup Log Files](../../../database-engine/install-windows/view-and-read-sql-server-setup-log-files.md)   
  [How Extended Stored Procedures Work](../../../relational-databases/extended-stored-procedures-programming/how-extended-stored-procedures-work.md)   
  [Execution Characteristics of Extended Stored Procedures](../../../relational-databases/extended-stored-procedures-programming/execution-characteristics-of-extended-stored-procedures.md)  
-  
   

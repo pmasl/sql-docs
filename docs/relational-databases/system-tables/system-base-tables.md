@@ -1,28 +1,22 @@
 ---
-title: "System Base Tables | Microsoft Docs"
-ms.custom: ""
+title: "System Base Tables"
+description: System Base Tables
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+helpviewer_keywords:
   - "system base tables [SQL Server]"
   - "hobt [SQL Server]"
   - "base tables"
+dev_langs:
+  - "TSQL"
 ms.assetid: 31f2df90-651f-4699-8067-19f59b60904f
-caps.latest.revision: 24
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # System Base Tables
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   System base tables are the underlying tables that actually store the metadata for a specific database. The **master** database is special in this respect because it contains some additional tables that are not found in any of the other databases. These tables contain persisted metadata that has server-wide scope.  
   
@@ -85,4 +79,16 @@ manager: "jhubbard"
 |**sys.sysobjvalues**|Exists in every database. Contains a row for each general value property of an entity.|  
 |**sys.sysguidrefs**|Exists in every database. Contains a row for each GUID classified ID reference.|  
   
-  
+## Updating System Base Tables    
+You can view the data in the system tables through the system catalog views. To update the metadata in a system base table, use the appropriate TSQL interface (for example, DDL statements). You can't manually update system tables. SQL Server reports the following messages when you perform direct updates to system tables.
+
+### A system table is manually updated
+Msg 17659: Warning: System table ID \<id\> has been updated directly in database ID \<id\> and cache coherence may not have been maintained. SQL Server should be restarted.
+
+### Starting a database with a system table that was manually updated
+Msg 3859: Warning: The system catalog was updated directly in database ID 17, most recently at date_time.
+
+### Executing the DBCC_CHECKDB command after a system table is manually updated
+Msg 3859: Warning: The system catalog was updated directly in database ID 17, most recently at date_time.
+
+If you perform manual updates to a system table and encounter a problem, you might be asked to restore from a backup or copy out the data from the affected database to a new database. Learn more about [user action error messages](../errors-events/mssqlserver-8992-database-engine-error.md#user-action).

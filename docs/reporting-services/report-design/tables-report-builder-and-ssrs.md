@@ -1,30 +1,28 @@
 ---
-title: "Tables (Report Builder  and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Tables in paginated reports | Microsoft Docs"
+description: Display detail data or grouped data by using a single field or multiple fields, or by writing your own expression in a paginated report in Report Builder.
+ms.date: 03/07/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: 0a95c339-c5aa-49ad-b1c8-72824b7a9c82
-caps.latest.revision: 12
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Tables (Report Builder  and SSRS)
- In [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)], you can use a table to display detail data or grouped data, or a combination of both in a paginated report.   
+# Tables in paginated reports (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+ In Report Builder, you can use a table to display detail data or grouped data, or a combination of both in a paginated report.   
    
  You can group data by a single field, by multiple fields, or by writing your own expression. You can create nested groups or independent, adjacent groups. To display aggregated values for grouped data, add totals to groups. Format the rows and columns to highlight the data you want to emphasize. You can initially hide detail or grouped data, and include drilldown toggles to enable a user to interactively choose how much data to show.  
   
  To quickly get started with tables, see [Tutorial: Creating a Basic Table Report &#40;Report Builder&#41;](../../reporting-services/tutorial-creating-a-basic-table-report-report-builder.md) or [Create a Basic Table Report &#40;SSRS Tutorial&#41;](../../reporting-services/create-a-basic-table-report-ssrs-tutorial.md).  
   
 > [!NOTE]  
->  You can publish tables separately from a report as report parts. Read more about [Report Parts](../../reporting-services/report-design/report-parts-report-builder-and-ssrs.md).  
+>  You can publish tables separately from a report as report parts. Read more about [Report Parts](../../reporting-services/report-design/report-parts-report-builder-and-ssrs.md). However, report parts are deprecated for all releases of SQL Server Reporting Services after SQL Server Reporting Services 2019, and discontinued starting in SQL Server Reporting Services 2022 and Power BI Report Server.
   
   
 ##  <a name="AddingTable"></a> Adding a Table to Display Detail Data  
@@ -58,7 +56,7 @@ manager: "erikre"
   
  ![Total row added to table](../../reporting-services/report-design/media/rs-basictabledetailstotaldesign.gif "Total row added to table")  
   
- In Preview, the report displays the header row and the details row once for every row in the dataset query result set, and it displays the totals row. The follow figure shows the last few rows of the table including the total row.  
+ In Preview, the report displays the header row and the details row once for every row in the dataset query result set, and it displays the totals row. The following figure shows the last few rows of the table including the total row.  
   
  ![Preview with table and total row](../../reporting-services/report-design/media/rs-basictabledetailstotalpreview.gif "Preview with table and total row")  
   
@@ -71,7 +69,7 @@ manager: "erikre"
   
  ![Table grouped by Date and Order](../../reporting-services/report-design/media/rs-basictablegroupsdesign.gif "Table grouped by Date and Order")  
   
- In Preview, the report displays the order data grouped first by date, and then by order, as shown in the follow figure.  
+ In Preview, the report displays the order data grouped first by date, and then by order, as shown in the following figure.  
   
  ![Table grouped by date and then order](../../reporting-services/media/rs-basictablegroupspreview.png "Table grouped by date and then order")  
   

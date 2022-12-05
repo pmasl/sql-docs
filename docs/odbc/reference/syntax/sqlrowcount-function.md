@@ -1,28 +1,29 @@
 ---
+description: "SQLRowCount Function"
 title: "SQLRowCount Function | Microsoft Docs"
 ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.date: "07/18/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLRowCount"
 apilocation: 
   - "sqlsrv32.dll"
+  - "odbc32.dll"
+  - "Msodbcsql11.dll"
+  - "Sqlncli10.dll"
+  - "Sqlncli11.dll"
+  - "Sqlncli11e.dll"
 apitype: "dllExport"
 f1_keywords: 
   - "SQLRowCount"
 helpviewer_keywords: 
   - "SQLRowCount function [ODBC]"
 ms.assetid: 61e00a8a-9b3b-45b9-b397-7fe818822416
-caps.latest.revision: 22
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLRowCount Function
 **Conformance**  
@@ -33,7 +34,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 SQLRETURN SQLRowCount(  
       SQLHSTMT   StatementHandle,  
@@ -45,7 +46,7 @@ SQLRETURN SQLRowCount(
  [Input] Statement handle.  
   
  *RowCountPtr*  
- [Output] Points to a buffer in which to return a row count. For **UPDATE**, **INSERT**, and **DELETE** statements, for the SQL_ADD, SQL_UPDATE_BY_BOOKMARK, and SQL_DELETE_BY_BOOKMARK operations in **SQLBulkOperations**, and for the SQL_UPDATE or SQL_DELETE operations in **SQLSetPos**, the value returned in **RowCountPtr* is either the number of rows affected by the request or –1 if the number of affected rows is not available.  
+ [Output] Points to a buffer in which to return a row count. For **UPDATE**, **INSERT**, and **DELETE** statements, for the SQL_ADD, SQL_UPDATE_BY_BOOKMARK, and SQL_DELETE_BY_BOOKMARK operations in **SQLBulkOperations**, and for the SQL_UPDATE or SQL_DELETE operations in **SQLSetPos**, the value returned in **RowCountPtr* is either the number of rows affected by the request or -1 if the number of affected rows is not available.  
   
  When **SQLExecute**, **SQLExecDirect**, **SQLBulkOperations**, **SQLSetPos, or SQLMoreResults** is called, the SQL_DIAG_ROW_COUNT field of the diagnostic data structure is set to the row count, and the row count is cached in an implementation-dependent way. **SQLRowCount** returns the cached row count value. The cached row count value is valid until the statement handle is set back to the prepared or allocated state, the statement is reexecuted, or **SQLCloseCursor** is called. Note that if a function has been called since the SQL_DIAG_ROW_COUNT field was set, the value returned by **SQLRowCount** might be different from the value in the SQL_DIAG_ROW_COUNT field because the SQL_DIAG_ROW_COUNT field is reset to 0 by any function call.  
   

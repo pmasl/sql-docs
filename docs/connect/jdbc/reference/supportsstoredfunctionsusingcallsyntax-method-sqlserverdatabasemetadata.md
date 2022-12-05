@@ -1,19 +1,12 @@
 ---
-title: "supportsStoredFunctionsUsingCallSyntax Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsStoredFunctionsUsingCallSyntax Method"
+description: "supportsStoredFunctionsUsingCallSyntax Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 0e5c0579-84b5-4717-b128-0bcd512f6022
-caps.latest.revision: 17
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # supportsStoredFunctionsUsingCallSyntax Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

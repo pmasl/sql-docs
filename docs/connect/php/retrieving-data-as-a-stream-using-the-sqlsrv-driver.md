@@ -1,19 +1,12 @@
 ---
-title: "Retrieving Data as a Stream Using the SQLSRV Driver | Microsoft Docs"
-ms.custom: ""
+title: "Retrieving Data as a Stream Using the SQLSRV Driver"
+description: "Retrieving Data as a Stream Using the SQLSRV Driver"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 17dc9129-04cd-430c-b5b3-82824116425d
-caps.latest.revision: 18
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: conceptual
 ---
 # Retrieving Data as a Stream Using the SQLSRV Driver
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -28,7 +21,7 @@ The following steps summarize how to retrieve data as a stream:
   
 2.  Use [sqlsrv_fetch](../../connect/php/sqlsrv-fetch.md) to move to the next row in the result set.  
   
-3.  Use [sqlsrv_get_field](../../connect/php/sqlsrv-get-field.md) to retrieve a field from the row. Specify that the data is to be retrieved as a stream by using **SQLSRV_PHPTYPE_STREAM(<encoding>)** as the third parameter in the function call. This table lists the constants used to specify encodings and their descriptions:  
+3.  Use [sqlsrv_get_field](../../connect/php/sqlsrv-get-field.md) to retrieve a field from the row. Specify that the data is to be retrieved as a stream by using **SQLSRV_PHPTYPE_STREAM(\<encoding\>)** as the third parameter in the function call. This table lists the constants used to specify encodings and their descriptions:  
   
     |SQLSRV Constant|Description|  
     |-------------------|---------------|  
@@ -47,6 +40,7 @@ The following steps summarize how to retrieve data as a stream:
 |[How to: Retrieve Binary Data as a Stream Using the SQLSRV Driver](../../connect/php/how-to-retrieve-binary-data-as-a-stream-using-the-sqlsrv-driver.md)|Demonstrates how to retrieve binary data as a stream.|  
   
 ## See Also  
-[Retrieving Data](../../connect/php/retrieving-data.md)  
+[Retrieving Data](../../connect/php/retrieving-data.md)
+
 [Constants &#40;Microsoft Drivers for PHP for SQL Server&#41;](../../connect/php/constants-microsoft-drivers-for-php-for-sql-server.md)  
   

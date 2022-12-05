@@ -1,24 +1,15 @@
 ---
-title: "getDate Method (java.util.Calendar) parameter | Microsoft Docs"
-ms.custom: ""
+title: "getDate Method (java.util.Calendar) parameter"
+description: "getDate Method (java.lang.String, java.util.Calendar)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.getDate (java.util.Calendar)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.getDate (java.util.Calendar)"
 apitype: "Assembly"
-ms.assetid: 6d0deaf2-6f12-4a6e-b537-a51fa3478059
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getDate Method (java.lang.String, java.util.Calendar)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -51,7 +42,7 @@ public java.sql.Date getDate(java.lang.String sCol,
 ## Remarks  
  This getDate method is specified by the getDate method in the java.sql.CallableStatement interface.  
   
- This method returns a valid date part of a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] datetime or smalldatetime data type, with the time part set to the Java time baseline of 00:00 (midnight).  
+ This method returns a valid date part of a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] datetime or smalldatetime data type, with the time part set to the Java time baseline of 00:00 (midnight).  
   
 ## See Also  
  [getDate Method &#40;SQLServerCallableStatement&#41;](../../../connect/jdbc/reference/getdate-method-sqlservercallablestatement.md)   

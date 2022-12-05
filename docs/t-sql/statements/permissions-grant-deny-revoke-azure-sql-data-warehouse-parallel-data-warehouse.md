@@ -1,24 +1,20 @@
 ---
-title: "GRANT-DENY-REVOKE Perms-Azure SQL Data and Parallel Data Warehouses | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+title: "GRANT-DENY-REVOKE permissions"
+titleSuffix: "Azure Synapse Analytics"
+description: "Permissions: GRANT, DENY, REVOKE (Azure Synapse Analytics, Parallel Data Warehouse)"
+author: VanMSFT
+ms.author: vanto
+ms.date: "08/10/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: seo-lt-2019​
+dev_langs:
   - "TSQL"
-ms.assetid: 5a3b7424-408e-4cb0-8957-667ebf4596fc
-caps.latest.revision: 9
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azure-sqldw-latest"
 ---
-# Permissions: GRANT, DENY, REVOKE (Azure SQL Data Warehouse, Parallel Data Warehouse)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-asdw-pdw-md.md)]
+# Permissions: GRANT, DENY, REVOKE (Azure Synapse Analytics, Parallel Data Warehouse)
+[!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
   Use [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] or [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]**GRANT** and **DENY** statements to grant or deny a permission (such as **UPDATE**) on a securable (such as a database, table, view, etc.) to a security principal (a login, a database user, or a database role). Use **REVOKE** to remove the grant or deny of a permission.  
   
@@ -36,8 +32,8 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql
+-- Azure Synapse Analytics and Parallel Data Warehouse  
 GRANT   
     <permission> [ ,...n ]  
     [ ON [ <class_type> :: ] securable ]   
@@ -77,11 +73,11 @@ REVOKE
  \<permission>[ **,**...*n* ]  
  One or more permissions to grant, deny, or revoke.  
   
- ON [ <class_type> :: ] *securable*  
+ ON [ \<class_type> :: ] *securable* 
  The **ON** clause describes the securable parameter on which to grant, deny, or revoke permissions.  
   
- <class_type>  
- The class type of the securable. This can be **LOGIN**, **DATABASE**, **OBJECT**, **SCHEMA**, **ROLE**, or **USER**. Permissions can also be granted to the **SERVER***class_type*, but **SERVER** is not specified for those permissions. **DATABASE** is not specified when the permission includes the word **DATABASE** (for example **ALTER ANY DATABASE**). When no *class_type* is specified and the permission type is not restricted to the server or database class, the class is assumed to be **OBJECT**.  
+ \<class_type> 
+ The class type of the securable. This can be **LOGIN**, **DATABASE**, **OBJECT**, **SCHEMA**, **ROLE**, or **USER**. Permissions can also be granted to the **SERVER**_class\_type_, but **SERVER** is not specified for those permissions. **DATABASE** is not specified when the permission includes the word **DATABASE** (for example **ALTER ANY DATABASE**). When no *class_type* is specified and the permission type is not restricted to the server or database class, the class is assumed to be **OBJECT**.  
   
  *securable*  
  The name of the login, database, table, view, schema, procedure, role, or user on which to grant, deny, or revoke permissions. The object name can be specified with the three-part naming rules that are described in [Transact-SQL Syntax Conventions &#40;Transact-SQL&#41;](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md).  
@@ -125,7 +121,7 @@ REVOKE
  An implicit permission can also be inherited from a covering or parent permission. For example, **UPDATE** permission on a table can be inherited by having **UPDATE** permission on the schema that contains the table, or **CONTROL** permission on the table.  
   
 ### Ownership Chaining  
- When multiple database objects access each other sequentially, the sequence is known as a *chain*. Although such chains do not independently exist, when [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] traverses the links in a chain, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] evaluates permissions on the constituent objects differently than it would if it were accessing the objects separately. Ownership chaining has important implications for managing security. For more information about ownership chains, see [Ownership Chains](http://msdn.microsoft.com/en-us/library/ms188676\(v=sql11\).aspx) and [Tutorial: Ownership Chains and Context Switching](http://msdn.microsoft.com/en-us/library/bb153640\(v=sql11\).aspx).  
+ When multiple database objects access each other sequentially, the sequence is known as a *chain*. Although such chains do not independently exist, when [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] traverses the links in a chain, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] evaluates permissions on the constituent objects differently than it would if it were accessing the objects separately. Ownership chaining has important implications for managing security. For more information about ownership chains, see [Ownership Chains](https://msdn.microsoft.com/library/ms188676\(v=sql11\).aspx) and [Tutorial: Ownership Chains and Context Switching](../../relational-databases/tutorial-ownership-chains-and-context-switching.md).  
   
 ## Permission List  
   
@@ -233,16 +229,15 @@ REVOKE
   
 -   UPDATE  
   
--   REFRENCES  
+-   REFERENCES  
   
- For a definition of each type of permission, see [Permissions (Database Engine)](http://msdn.microsoft.com/library/ms191291.aspx).  
+ For a definition of each type of permission, see [Permissions (Database Engine)](../../relational-databases/security/permissions-database-engine.md).  
   
 ### Chart of Permissions  
  All permissions are graphically represented on this poster. This is the easiest way to see nested hierarchy of permissions. For example the **ALTER ON LOGIN** permission can be granted by itself, but it is also included if a login is granted the **CONTROL** permission on that login, or if a login is granted the **ALTER ANY LOGIN** permission.  
   
  ![APS security permissions poster](../../t-sql/statements/media/aps-security-perms-poster.png "APS security permissions poster")  
   
- To download a full size version of this poster, see [SQL Server PDW Permissions](http://go.microsoft.com/fwlink/?LinkId=244249)in the files section of the APS Yammer site (or request by e-mail from **apsdoc@microsoft.com**.  
   
 ## Default Permissions  
  The following list describes the default permissions:  
@@ -266,56 +261,55 @@ REVOKE
 ### A. Granting a server level permission to a login  
  The following two statements grant a server level permission to a login.  
   
-```  
+```sql  
 GRANT CONTROL SERVER TO [Ted];  
 ```  
   
-```  
+```sql  
 GRANT ALTER ANY DATABASE TO Mary;  
 ```  
   
 ### B. Granting a server level permission to a login  
  The following example grants a server level permission on a login to a server principal (another login).  
   
-```  
+```sql  
 GRANT  VIEW DEFINITION ON LOGIN::Ted TO Mary;  
 ```  
   
 ### C. Granting a database level permission to a user  
  The following example grants a database level permission on a user to a database principal (another user).  
   
-```  
+```sql  
 GRANT VIEW DEFINITION ON USER::[Ted] TO Mary;  
 ```  
   
 ### D. Granting, denying, and revoking a schema permission  
  The following **GRANT** statement grants Yuen the ability to select data from any table or view in the dbo schema.  
   
-```  
+```sql  
 GRANT SELECT ON SCHEMA::dbo TO [Yuen];  
 ```  
   
  The following **DENY** statement prevents Yuen from selecting data from any table or view in the dbo schema. Yuen cannot read the data even if he has permission in some other way, such as through a role membership.  
   
-```  
+```sql  
 DENY SELECT ON SCHEMA::dbo TO [Yuen];  
 ```  
   
  The following **REVOKE** statement removes the **DENY** permission. Now Yuen's explicit permissions are neutral. Yuen might be able to select data from any table through some other implicit permission such as a role membership.  
   
-```  
+```sql  
 REVOKE SELECT ON SCHEMA::dbo TO [Yuen];  
 ```  
   
 ### E. Demonstrating the optional OBJECT:: clause  
  Because OBJECT is the default class for a permission statement, the following two statements are the same. The **OBJECT::** clause is optional.  
   
-```  
+```sql  
 GRANT UPDATE ON OBJECT::dbo.StatusTable TO [Ted];  
 ```  
   
-```  
+```sql  
 GRANT UPDATE ON dbo.StatusTable TO [Ted];  
 ```  
-  
   

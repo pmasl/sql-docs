@@ -1,13 +1,11 @@
 ---
-title: "Initialization and Authorization Properties | Microsoft Docs"
+description: "Initialization and authorization properties (Native Client OLE DB provider)"
+title: "Initialization and authorization properties (Native Client OLE DB provider) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "authorization [OLE DB]"
@@ -16,20 +14,22 @@ helpviewer_keywords:
   - "SQL Server Native Client OLE DB provider, authorization properties"
   - "initialization properties [OLE DB]"
 ms.assetid: 913ab38c-e443-446c-b326-7447e95aa7f9
-caps.latest.revision: 59
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Initialization and Authorization Properties
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# Initialization and Authorization Properties (Native Client OLE DB Provider)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+> [!IMPORTANT]
+> [!INCLUDE[snac-removed-oledb-only](../../includes/snac-removed-oledb-only.md)]
 
   The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider interprets OLE DB initialization and authorization properties as follows:  
   
 |Property ID|Description|  
 |-----------------|-----------------|  
 |DBPROP_AUTH_CACHE_AUTHINFO|The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider does not cache authentication information.<br /><br /> The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider returns DB_S_ERRORSOCCURRED on an attempt to set the property value. The *dwStatus* member of the DBPROP Structure indicates DBPROPSTATUS_NOTSUPPORTED.|  
-|DBPROP_AUTH_ENCRYPT_PASSWORD|The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider uses standard [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security mechanisms to conceal passwords.<br /><br /> The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider returns DB_S_ERRORSOCCURRED on an attempt to set the property value. The *dwStatus* member of the DBPROP Structure indicates DBPROPSTATUS_NOTSUPPORTED.|  
+|DBPROP_AUTH_ENCRYPT_PASSWORD|The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider uses standard [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security mechanisms to conceal passwords.<br /><br /> The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider returns DB_S_ERRORSOCCURRED on an attempt to set the property value. The *dwStatus* member of the DBPROP Structure indicates DBPROPSTATUS_NOTSUPPORTED.|  
 |DBPROP_AUTH_INTEGRATED|If DBPROP_AUTH_INTEGRATED is set to a NULL pointer, a null string, or 'SSPI' VT_BSTR value, the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider uses Windows Authentication Mode to authorize user access to the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database specified by the DBPROP_INIT_DATASOURCE and DBPROP_INIT_CATALOG properties.<br /><br /> If it is set to VT_EMPTY (the default), [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security is used. The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login and password are specified in the DBPROP_AUTH_USERID and DBPROP_AUTH_PASSWORD properties.|  
 |DBPROP_AUTH_MASK_PASSWORD|The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider uses standard [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] security mechanisms to conceal passwords.<br /><br /> The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider returns DB_S_ERRORSOCCURRED on an attempt to set the property value. The *dwStatus* member of the DBPROP Structure indicates DBPROPSTATUS_NOTSUPPORTED.|  
 |DBPROP_AUTH_PASSWORD|Password assigned to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login. This property is used when [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication is selected for authorizing access to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database.|  
@@ -38,7 +38,7 @@ manager: "jhubbard"
 |DBPROP_AUTH_USERID|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login. This property is used when [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication is selected for authorizing access to a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database.|  
 |DBPROP_INIT_ASYNCH|The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider supports asynchronous initiation.<br /><br /> Setting the DBPROPVAL_ASYNCH_INITIALIZE bit in the DBPROP_INIT_ASYNCH property causes **IDBInitialize::Initialize** to become a non-blocking call. For more information, see [Performing Asynchronous Operations](../../relational-databases/native-client/features/performing-asynchronous-operations.md).|  
 |DBPROP_INIT_CATALOG|Name of an existing [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database to which to connect.|  
-|DBPROP_INIT_DATASOURCE|Network name of a server running an instance of [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. If there are multiple instances of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] running on the computer, in order to connect to a specific instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] the value DBPROP_INIT_DATASOURCE is specified as *\\\ServerName\InstanceName*. The escape sequence \\\ is used for backslash itself.|  
+|DBPROP_INIT_DATASOURCE|Network name of a server running an instance of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. If there are multiple instances of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] running on the computer, in order to connect to a specific instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] the value DBPROP_INIT_DATASOURCE is specified as *\\\ServerName\InstanceName*. The escape sequence \\\ is used for backslash itself.|  
 |DBPROP_INIT_GENERALTIMEOUT|Indicates the number of seconds before a request, other than data source initialization and command execution, times out. A value of 0 indicates an infinite time-out. Providers that work over network connections or in distributed or transacted scenarios can support this property to advise an enlisted component to time-out in the event of a long-running request. Time-outs for data source initialization and command execution remain governed by DBPROP_INIT_TIMEOUT and DBPROP_COMMANDTIMEOUT, respectively.<br /><br /> DBPROP_INIT_GENERALTIMEOUT is read-only, and if one tries to set it the *dwstatus* error of DBPROPSTATUS_NOTSETTABLE is returned.|  
 |DBPROP_INIT_HWND|The Windows handle from the calling application. A valid window handle is required for the initialization dialog box displayed when prompting for initialization properties is allowed.|  
 |DBPROP_INIT_IMPERSONATION_LEVEL|The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider does not support impersonation level adjustment.<br /><br /> The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider returns DB_S_ERRORSOCCURRED on an attempt to set the property value. The *dwStatus* member of the DBPROP Structure indicates DBPROPSTATUS_NOTSUPPORTED.|  

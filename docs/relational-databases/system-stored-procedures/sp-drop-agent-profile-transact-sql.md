@@ -1,29 +1,25 @@
 ---
+description: "sp_drop_agent_profile (Transact-SQL)"
 title: "sp_drop_agent_profile (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_drop_agent_profile"
   - "sp_drop_agent_profile_TSQL"
 helpviewer_keywords: 
   - "sp_drop_agent_profile"
 ms.assetid: b884f9ef-ae89-4cbc-a917-532c3ff6ed41
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_drop_agent_profile (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Drops a profile from the **MSagent_profiles** table. This stored procedure is executed at the Distributor on any database.  
   
@@ -37,7 +33,7 @@ sp_drop_agent_profile [ @profile_id = ] profile_id
 ```  
   
 ## Arguments  
- [ **@profile_id=**] *profile_id*  
+`[ @profile_id = ] profile_id`
  Is the ID of the profile to be dropped. *profile_id* is **int**, with no default.  
   
 ## Return Code Values  

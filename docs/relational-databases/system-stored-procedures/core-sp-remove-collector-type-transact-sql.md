@@ -1,14 +1,12 @@
 ---
+description: "core.sp_remove_collector_type (Transact-SQL)"
 title: "core.sp_remove_collector_type (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_remove_collector_type"
   - "sp_remove_collector_type_TSQL"
@@ -20,13 +18,11 @@ helpviewer_keywords:
   - "sp_remove_collector_type"
   - "data collector [SQL Server], stored procedures"
 ms.assetid: 88ceba25-e41a-405f-a416-bb68918a0024
-caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # core.sp_remove_collector_type (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Removes an entry from the core.supported_collector_types view in the management data warehouse database. The procedure must be executed in the context of the management data warehouse database.  
   

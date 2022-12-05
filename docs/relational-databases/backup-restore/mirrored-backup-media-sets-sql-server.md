@@ -1,14 +1,12 @@
 ---
 title: "Mirrored Backup Media Sets (SQL Server) | Microsoft Docs"
+description: SQL Server supports mirroring of media sets, which increases backup reliability by reducing the impact of backup-device malfunctions.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-backup-restore"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: backup-restore
+ms.topic: conceptual
 helpviewer_keywords: 
   - "recovery [SQL Server], mirrored backups"
   - "mirrored media sets [SQL Server]"
@@ -18,12 +16,11 @@ helpviewer_keywords:
   - "media sets [SQL Server], mirrored backup media sets"
   - "backup media [SQL Server], mirrored media"
 ms.assetid: 05a0b8d1-3585-4f77-972f-69d1c0d4aa9b
-caps.latest.revision: 38
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # Mirrored Backup Media Sets (SQL Server)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 > [!NOTE]  
 >  Mirrored backup media sets are supported only in the Enterprise edition of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  

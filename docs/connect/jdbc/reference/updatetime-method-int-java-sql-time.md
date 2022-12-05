@@ -1,24 +1,15 @@
 ---
-title: "updateTime Method (int, java.sql.Time) | Microsoft Docs"
-ms.custom: ""
+title: "updateTime Method (int, java.sql.Time)"
+description: "updateTime Method (int, java.sql.Time)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateTime (int, java.sql.Time)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateTime (int, java.sql.Time)"
 apitype: "Assembly"
-ms.assetid: fa7a3ca5-1111-4480-97ca-65b632aa1e5b
-caps.latest.revision: 19
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateTime Method (int, java.sql.Time)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

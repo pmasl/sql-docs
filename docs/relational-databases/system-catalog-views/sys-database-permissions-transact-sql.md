@@ -1,43 +1,38 @@
 ---
-title: "sys.database_permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.database_permissions (Transact-SQL)"
+description: sys.database_permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
+ms.date: "08/11/2017"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "database_permissions"
   - "sys.database_permissions_TSQL"
   - "database_permissions_TSQL"
   - "sys.database_permissions"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.database_permissions catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: c1e261f8-6cb0-4759-b5f1-5ec233602655
-caps.latest.revision: 50
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.database_permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  Returns a row for every permission or column-exception permission in the database. For columns, there is a row for every permission that is different from the corresponding object-level permission. If the column permission is the same as the corresponding object permission, there will be no row for it and the actual permission used will be that of the object.  
+  Returns a row for every permission or column-exception permission in the database. For columns, there is a row for every permission that is different from the corresponding object-level permission. If the column permission is the same as the corresponding object permission, there is no row for it and the permission applied is that of the object.  
   
 > [!IMPORTANT]  
 >  Column-level permissions override object-level permissions on the same entity.  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
-|**class**|**tinyint**|Identifies class on which permission exists.<br /><br /> 0 = Database<br />1 = Object or Column<br />3 = Schema<br />4 = Database Principal<br />5 = Assembly - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />6 = Type<br />10 = XML Schema Collection - <br />                      **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />15 = Message Type - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />16 = Service Contract - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />17 = Service - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />18 = Remote Service Binding - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />19 = Route - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />23 =Full-Text Catalog - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />24 = Symmetric Key - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />25 = Certificate - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br />26 = Asymmetric Key - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].|  
-|**class_desc**|**nvarchar(60)**|Description of class on which permission exists.<br /><br /> DATABASE<br /><br /> OBJECT_OR_COLUMN<br /><br /> SCHEMA<br /><br /> DATABASE_PRINCIPAL<br /><br /> ASSEMBLY<br /><br /> TYPE<br /><br /> XML_SCHEMA_COLLECTION<br /><br /> MESSAGE_TYPE<br /><br /> SERVICE_CONTRACT<br /><br /> SERVICE<br /><br /> REMOTE_SERVICE_BINDING<br /><br /> ROUTE<br /><br /> FULLTEXT_CATALOG<br /><br /> SYMMETRIC_KEYS<br /><br /> CERTIFICATE<br /><br /> ASYMMETRIC_KEY|  
-|**major_id**|**int**|ID of thing on which permission exists, interpreted according to class. For most, this is simply the kind of ID that applies to what the class represents. Interpretation for nonstandard is as follows:<br /><br /> 0 = Always 0<br /><br /> 1 = Object-ID<br /><br /> Negative IDs are assigned to system objects.|  
-|**minor_id**|**int**|Secondary-ID of thing on which permission exists, interpreted according to class. For most, this is zero. Otherwise, it is the following:<br /><br /> 1 = Column-ID if a column. Otherwise, it is 0 if an object.|  
+|**class**|**tinyint**|Identifies class on which permission exists. For more information, see [sys.securable_classes (Transact-SQL)](sys-securable-classes-transact-sql.md).<br /><br /> 0 = Database<br />1 = Object or Column<br />3 = Schema<br />4 = Database Principal<br />5 = Assembly - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />6 = Type<br />10 = XML Schema Collection - <br />                      **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />15 = Message Type - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />16 = Service Contract - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />17 = Service - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />18 = Remote Service Binding - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />19 = Route - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />23 =Full-Text Catalog - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />24 = Symmetric Key - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />25 = Certificate - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />26 = Asymmetric Key - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />29 = Fulltext Stoplist - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />31 = Search Property List - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />32 = Database Scoped Credential - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br />34 = External Language - **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.|  
+|**class_desc**|**nvarchar(60)**|Description of class on which permission exists.<br /><br /> DATABASE<br /><br /> OBJECT_OR_COLUMN<br /><br /> SCHEMA<br /><br /> DATABASE_PRINCIPAL<br /><br /> ASSEMBLY<br /><br /> TYPE<br /><br /> XML_SCHEMA_COLLECTION<br /><br /> MESSAGE_TYPE<br /><br /> SERVICE_CONTRACT<br /><br /> SERVICE<br /><br /> REMOTE_SERVICE_BINDING<br /><br /> ROUTE<br /><br /> FULLTEXT_CATALOG<br /><br /> SYMMETRIC_KEYS<br /><br /> CERTIFICATE<br /><br /> ASYMMETRIC_KEY<br /><br /> FULLTEXT STOPLIST<br /><br /> SEARCH PROPERTY LIST<br /><br /> DATABASE SCOPED CREDENTIAL<br /><br /> EXTERNAL LANGUAGE|  
+|**major_id**|**int**|ID of thing on which permission exists, interpreted according to class. Usually, the **major_id** is simply the kind of ID that applies to what the class represents. <br /><br /> 0 = The database itself <br /><br /> >0 = Object-IDs for user objects <br /><br /> \<0 = Object-IDs for system objects |  
+|**minor_id**|**int**|Secondary-ID of thing on which permission exists, interpreted according to class. Often, the **minor_id** is zero, because there is no subcategory available for the class of object. Otherwise, it is the Column-ID of a table.|  
 |**grantee_principal_id**|**int**|Database principal ID to which the permissions are granted.|  
 |**grantor_principal_id**|**int**|Database principal ID of the grantor of these permissions.|  
 |**type**|**char(4)**|Database permission type. For a list of permission types, see the next table.|  
@@ -99,12 +94,12 @@ The following types of permissions are possible.
 |CRSK|CREATE SYMMETRIC KEY|DATABASE|  
 |CRSM|CREATE SCHEMA|DATABASE|  
 |CRSN|CREATE SYNONYM|DATABASE|  
-|CRSO|**Applies to**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br /><br /> CREATE SEQUENCE|DATABASE|  
+|CRSO|**Applies to**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] and later.<br /><br /> CREATE SEQUENCE|DATABASE|  
 |CRSV|CREATE SERVICE|DATABASE|  
 |CRTB|CREATE TABLE|DATABASE|  
 |CRTY|CREATE TYPE|DATABASE|  
 |CRVW|CREATE VIEW|DATABASE|  
-|CRXS|**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].<br /><br /> CREATE XML SCHEMA COLLECTION|DATABASE|  
+|CRXS|**Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.<br /><br /> CREATE XML SCHEMA COLLECTION|DATABASE|  
 |DABO |ADMINISTER DATABASE BULK OPERATIONS | DATABASE |
 |DL|DELETE|DATABASE, OBJECT, SCHEMA|  
 |EAES |EXECUTE ANY EXTERNAL SCRIPT |DATABASE |

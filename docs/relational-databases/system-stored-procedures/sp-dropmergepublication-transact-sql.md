@@ -1,29 +1,25 @@
 ---
+description: "sp_dropmergepublication (Transact-SQL)"
 title: "sp_dropmergepublication (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_dropmergepublication"
   - "sp_dropmergepublication_TSQL"
 helpviewer_keywords: 
   - "sp_dropmergepublication"
 ms.assetid: 9e1cb96e-5889-4f97-88cd-f60cf313ce68
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_dropmergepublication (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Drops a merge publication and its associated Snapshot Agent. All subscriptions must be dropped before dropping a merge publication. The articles in the publication are dropped automatically. This stored procedure is executed at the Publisher on the publication database.  
   
@@ -40,16 +36,16 @@ sp_dropmergepublication [ @publication= ] 'publication'
 ```  
   
 ## Arguments  
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication to drop. *publication* is **sysname**, with no default. If **all**, all existing merge publications are removed as well as the Snapshot Agent job associated with them. If you specify a particular value for *publication*, only that publication and its associated Snapshot Agent job are dropped.  
   
- [ **@ignore_distributor =**] *ignore_distributor*  
+`[ @ignore_distributor = ] ignore_distributor`
  Used to drop a publication without doing cleanup tasks at the Distributor. *ignore_distributor* is **bit**, with a default of **0**. This parameter is also used when reinstalling the Distributor.  
   
- [ **@reserved=**] *reserved*  
+`[ @reserved = ] reserved`
  Is reserved for future use. *reserved* is **bit**, with a default of **0**.  
   
- [ **@ignore_merge_metadata=** ] *ignore_merge_metadata*  
+`[ @ignore_merge_metadata = ] ignore_merge_metadata`
  Internal use only.  
   
 ## Return Code Values  

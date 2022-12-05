@@ -1,27 +1,22 @@
 ---
-title: "Regular vs. Context Connections | Microsoft Docs"
-ms.custom: ""
+title: "Regular vs. Context Connections"
+description: In SQL Server, sometimes you must use regular connections for Transact-SQL statements, but context connections offer performance and resource usage advantages.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "context connections [CLR integration]"
   - "regular connections [CLR integration]"
 ms.assetid: a1dead02-be88-4b16-8cb2-db1284856764
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Context Connections vs. Regular Connections
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   If you are connecting to a remote server, always use regular connections rather than context connections. If you need to connect to the same server on which the stored procedure or function is running, use the context connection in most cases. This has benefits such as running in the same transaction space and not having to reauthenticate.  
   
- Additionally, using the context connection typically results in better performance and less resource usage. The context connection is an in-process–only connection, so it can contact the server "directly" by bypassing the network protocol and transport layers to send Transact-SQL statements and receive results. The authentication process is bypassed, as well. The following figure shows the primary components of the **SqlClient** managed provider, as well as how the different components interact with each other when using a regular connection, and when using the context connection.  
+ Additionally, using the context connection typically results in better performance and less resource usage. The context connection is an in-process-only connection, so it can contact the server "directly" by bypassing the network protocol and transport layers to send Transact-SQL statements and receive results. The authentication process is bypassed, as well. The following figure shows the primary components of the **SqlClient** managed provider, as well as how the different components interact with each other when using a regular connection, and when using the context connection.  
   
  ![Code paths of a context and a regular connnection.](../../../relational-databases/clr-integration/data-access/media/clrintdataaccess.gif "Code paths of a context and a regular connnection.")  
   

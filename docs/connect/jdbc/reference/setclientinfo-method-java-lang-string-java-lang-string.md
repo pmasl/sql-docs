@@ -1,19 +1,12 @@
 ---
-title: "setClientInfo Method (java.lang.String, java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "setClientInfo Method (java.lang.String, java.lang.String)"
+description: "setClientInfo Method (java.lang.String, java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8d050831-8305-48a8-bd22-207932111040
-caps.latest.revision: 19
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # setClientInfo Method (java.lang.String, java.lang.String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -35,7 +28,7 @@ public void setClientInfo (java.lang.String name,
   
  *value*  
   
- A String that contains the value to set the client infomation property to.  
+ A String that contains the value to set the client information property to.  
   
 ## Exceptions  
  [SQLServerException](../../../connect/jdbc/reference/sqlserverexception-class.md)  

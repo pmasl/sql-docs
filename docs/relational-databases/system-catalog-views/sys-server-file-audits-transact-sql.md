@@ -1,31 +1,25 @@
 ---
-title: "sys.server_file_audits (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/05/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.server_file_audits (Transact-SQL)"
+description: sys.server_file_audits (Transact-SQL)
+author: sravanisaluru
+ms.author: srsaluru
+ms.date: "03/23/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "server_file_audits_TSQL"
   - "sys.server_file_audits_TSQL"
   - "sys.server_file_audits"
   - "server_file_audits"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.server_file_audits catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 553288a0-be57-4d79-ae53-b7cbd065e127
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.server_file_audits (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains extended information about the file audit type in a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] audit on a server instance. For more information, see [SQL Server Audit &#40;Database Engine&#41;](../../relational-databases/security/auditing/sql-server-audit-database-engine.md).  
   
@@ -37,7 +31,7 @@ manager: "jhubbard"
 |create_date|**datetime**|UTC date when the file audit was created.|  
 |modify_date|**datatime**|UTC date when the file audit was last modified.|  
 |principal_id|**int**|ID of the owner of the audit as registered on the server.|  
-|type|**char(2)**|Audit type:<br /><br /> 0 = NT Security event log<br /><br /> 1 = NT Application event log<br /><br /> 2 = File on file system|  
+|type|**char(2)**|Audit type:<br /><br /> SL = NT Security event log<br /><br /> AL = NT Application event log<br /><br /> FL = File on file system|  
 |type_desc|**nvarchar(60)**|Audit type description.|  
 |on_failure|**tinyint**|On Failure condition:<br /><br /> 0 = Continue<br /><br /> 1 = Shut down server instance<br /><br /> 2 = Fail operation|  
 |on_failure_desc|**nvarchar(60)**|On Failure to write an action entry:<br /><br /> CONTINUE<br /><br /> SHUTDOWN SERVER INSTANCE<br /><br /> FAIL OPERATION|  

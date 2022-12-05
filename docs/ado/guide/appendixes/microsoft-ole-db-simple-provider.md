@@ -1,42 +1,35 @@
 ---
-title: "Microsoft OLE DB Simple Provider | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: "H1Hack27Feb2017"
-ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Microsoft OLE DB Simple Provider"
+description: "Microsoft OLE DB Simple Provider Overview"
+author: rothja
+ms.author: jroth
+ms.date: 11/08/2018
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
 helpviewer_keywords:
   - "simple provider [ADO]"
   - "providers [ADO], OLE DB simple provider"
   - "OLE DB simple provider [ADO]"
-ms.assetid: 1e7dc6f0-482c-4103-8187-f890865e40fc
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Microsoft OLE DB Simple Provider Overview
-The Microsoft OLE DB Simple Provider (OSP) allows ADO to access any data for which a provider has been written using the [OLE DB Simple Provider (OSP) Toolkit](http://msdn.microsoft.com/en-us/6e7b7931-9e4a-4151-ae51-672abd3f84a6). Simple providers are intended to access data sources that require only fundamental OLE DB support, such as in-memory arrays or XML documents.
+The Microsoft OLE DB Simple Provider (OSP) allows ADO to access any data for which a provider has been written using the [OLE DB Simple Provider (OSP) Toolkit](/previous-versions/windows/desktop/ms715822(v=vs.85)). Simple providers are intended to access data sources that require only fundamental OLE DB support, such as in-memory arrays or XML documents.
 
 ## Connection String Parameters
- To connect to the OLE DB Simple Provider DLL, set the *Provider* argument to the [ConnectionString](../../../ado/reference/ado-api/connectionstring-property-ado.md) property to:
+ To connect to the OLE DB Simple Provider DLL, set the *Provider* argument to the [ConnectionString](../../reference/ado-api/connectionstring-property-ado.md) property to:
 
-```
+```vb
 MSDAOSP
 ```
 
- This value can also be set or read using the [Provider](../../../ado/reference/ado-api/provider-property-ado.md) property.
+ This value can also be set or read using the [Provider](../../reference/ado-api/provider-property-ado.md) property.
 
  You can connect to simple providers that have been registered as full OLE DB providers by using the registered provider name, determined by the provider writer.
 
 ## Typical Connection String
  A typical connection string for this provider is:
 
-```
+```vb
 "Provider=MSDAOSP;Data Source=serverName"
 ```
 
@@ -52,26 +45,26 @@ MSDAOSP
 
  The **portfolio.xml** file used in the following example contains the following tree:
 
-```
+```console
 Portfolio
-   Stock
-      Shares
-      Symbol
-      Price
-      Info
-         Company Name
-         WebSite
+   Stock
+      Shares
+      Symbol
+      Price
+      Info
+         Company Name
+         WebSite
 ```
 
  The XML DSO uses built-in heuristics to convert the nodes in an XML tree to chapters in a hierarchical **Recordset**.
 
  Using these built-in heuristics, the XML tree is converted into a two-level hierarchical **Recordset** of the following form:
 
-```
+```console
 Parent Recordset
 Shares, Symbol, Price, $Text
-   Child Recordset
-      Company Name, WebSite, $Text
+   Child Recordset
+      Company Name, WebSite, $Text
 ```
 
  Note that the Portfolio and Info tags are not represented in the hierarchical **Recordset**. For an explanation of how the XML DSO converts XML trees to hierarchical **Recordsets**, see the following rules. The $Text column is discussed in the following section.
@@ -97,7 +90,7 @@ Shares, Symbol, Price, $Text
 
  The code that is needed to construct a **Recordset** is as follows:
 
-```
+```vb
 Dim adoConn as ADODB.Connection
 Dim adoRS as ADODB.Recordset
 
@@ -105,15 +98,15 @@ Set adoRS = New ADODB.Connection
 Set adoRS = New ADODB.Recordset
 
 adoConn.Open "Provider=MSDAOSP; Data Source=MSXML2.DSOControl.2.6;"
-adoRS.Open "http://WebServer/VRoot/portfolio.xml, adoConn
+adoRS.Open "https://WebServer/VRoot/portfolio.xml, adoConn
 ```
 
 > [!NOTE]
 >  The path of the data file can be specified by using four different naming conventions.
 
-```
+```vb
 'HTTP://
-adoRS.Open "http://WebServer/VRoot/portfolio.xml", adoConn
+adoRS.Open "https://WebServer/VRoot/portfolio.xml", adoConn
 'FILE://
 adoRS.Open "file:/// C:\\Directory\\portfolio.xml", adoConn
 'UNC Path
@@ -134,14 +127,14 @@ adoRS.Open "C:\Directory\portfolio.xml", adoConn
 
 -   The XMLDSO adds an additional column of Data ($Text) to each **Recordset** in the Hierarchy.
 
- For more information about the OLE DB Simple Provider, see [Building a Simple Provider](http://msdn.microsoft.com/en-us/b31a6cba-58ae-4ee8-9039-700973d354d6).
+ For more information about the OLE DB Simple Provider, see [Building a Simple Provider](/previous-versions/windows/desktop/ms721067(v=vs.85)).
 
 ## Code Example
  The following Visual Basic code demonstrates opening an arbitrary XML file, constructing a hierarchical **Recordset**, and recursively writing each record of each **Recordset** to the debug window.
 
  Here is a simple XML file that contains stock quotes. The following code uses this file to construct a two-level hierarchical **Recordset**.
 
-```
+```xml
 <portfolio>
    <stock>
       <shares>100</shares>
@@ -149,7 +142,7 @@ adoRS.Open "C:\Directory\portfolio.xml", adoConn
       <price>$70.00</price>
       <info>
          <companyname>Microsoft Corporation</companyname>
-         <website>http://www.microsoft.com</website>
+         <website>https://www.microsoft.com</website>
       </info>
    </stock>
    <stock>
@@ -158,7 +151,7 @@ adoRS.Open "C:\Directory\portfolio.xml", adoConn
       <price>$107.00</price>
       <info>
          <companyname>Apple Computer, Inc.</companyname>
-         <website>http://www.apple.com</website>
+         <website>https://www.apple.com</website>
       </info>
    </stock>
    <stock>
@@ -167,7 +160,7 @@ adoRS.Open "C:\Directory\portfolio.xml", adoConn
       <price>$50.00</price>
       <info>
          <companyname>Dell Corporation</companyname>
-         <website>http://www.dell.com</website>
+         <website>https://www.dell.com</website>
       </info>
     </stock>
     <stock>
@@ -176,7 +169,7 @@ adoRS.Open "C:\Directory\portfolio.xml", adoConn
        <price>$115.00</price>
        <info>
           <companyname>Intel Corporation</companyname>
-          <website>http://www.intel.com</website>
+          <website>https://www.intel.com</website>
        </info>
    </stock>
 </portfolio>
@@ -184,7 +177,7 @@ adoRS.Open "C:\Directory\portfolio.xml", adoConn
 
  Following are two Visual Basic sub procedures. The first creates the **Recordset** and passes it to the *WalkHier* sub procedure, which recursively walks down the hierarchy, writing each **Field** in each record in each **Recordset** to the debug window.
 
-```
+```vb
 Private Sub BrowseHierRecordset()
 ' Add ADO 2.7 or later to Project/References
 ' No need to add MSXML2, ADO just passes the ProgID through to the OSP.
@@ -198,7 +191,7 @@ Private Sub BrowseHierRecordset()
     Set adoChildRS = ADODB.Recordset
 
     adoConn.Open "Provider=MSDAOSP; Data Source=MSXML2.DSOControl.2.6;"
-    adoRS.Open "http://bwillett3/Kowalski/portfolio.xml", adoConn
+    adoRS.Open "https://bwillett3/Kowalski/portfolio.xml", adoConn
 
     Dim iLevel As Integer
     iLevel = 0

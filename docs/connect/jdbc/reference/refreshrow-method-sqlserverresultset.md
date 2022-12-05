@@ -1,24 +1,15 @@
 ---
-title: "refreshRow Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "refreshRow Method (SQLServerResultSet)"
+description: "refreshRow Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.refreshRow"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.refreshRow"
 apitype: "Assembly"
-ms.assetid: 048fe245-157f-4fd8-be75-ce54b83e02b3
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # refreshRow Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

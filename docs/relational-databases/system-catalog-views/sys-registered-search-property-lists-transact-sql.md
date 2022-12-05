@@ -1,33 +1,28 @@
 ---
-title: "sys.registered_search_property_lists (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.registered_search_property_lists (Transact-SQL)"
+description: sys.registered_search_property_lists (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "registered_search_property_lists_TSQL"
   - "sys.registered_search_property_lists"
   - "registered_search_property_lists"
   - "sys.registered_search_property_lists_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "full-text search [SQL Server], search property lists"
   - "sys.registered_search_property_lists catalog view"
   - "search property lists [SQL Server], viewing"
+dev_langs:
+  - "TSQL"
 ms.assetid: 630d4caa-9bea-4cd3-a5b1-01098b0855fc
-caps.latest.revision: 16
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
 ---
 # sys.registered_search_property_lists (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains a row for each search property list on the current database.  
   

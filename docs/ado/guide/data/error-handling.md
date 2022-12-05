@@ -1,25 +1,18 @@
 ---
-title: "Error Handling | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Error Handling"
+description: "Error Handling in ADO"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "reporting errors [ADO]"
   - "errors [ADO]"
   - "ADO, error handling"
-ms.assetid: 4909e413-f3b0-4183-8ad3-67b1434df742
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
-# Error Handling
+# Error Handling in ADO
 ADO uses several different methods to notify an application of errors that occur. This section discusses the types of errors that can occur when you are using ADO and how your application is notified. It concludes by making suggestions about how to handle those errors.  
   
 ## How Does ADO Report Errors?  
@@ -31,7 +24,7 @@ ADO uses several different methods to notify an application of errors that occur
   
 -   If the error is specific to your data provider, one or more **Error** objects are placed in the **Errors** collection of the **Connection** object that was used to access the data store when the error occurred.  
   
--   If the process that raised an event also produced an error, error information is placed in an **Error** object and passed as a parameter to the event. See [Handling ADO Events](../../../ado/guide/data/handling-ado-events.md) for more information about events.  
+-   If the process that raised an event also produced an error, error information is placed in an **Error** object and passed as a parameter to the event. See [Handling ADO Events](./handling-ado-events.md) for more information about events.  
   
 -   Problems that occur when processing batch updates or other bulk operations involving a **Recordset** can be indicated by the **Status** property of the **Recordset**. For example, schema constraint violations or insufficient permissions can be specified by **RecordStatusEnum** values.  
   
@@ -39,14 +32,14 @@ ADO uses several different methods to notify an application of errors that occur
   
  This section contains the following topics.  
   
--   [ADO Errors](../../../ado/guide/data/ado-errors.md)  
+-   [ADO Errors](./ado-errors.md)  
   
--   [Provider Errors](../../../ado/guide/data/provider-errors.md)  
+-   [Provider Errors](./provider-errors.md)  
   
--   [Field-Related Error Information](../../../ado/guide/data/field-related-error-information.md)  
+-   [Field-Related Error Information](./field-related-error-information.md)  
   
--   [Recordset-Related Error Information](../../../ado/guide/data/recordset-related-error-information.md)  
+-   [Recordset-Related Error Information](./recordset-related-error-information.md)  
   
--   [Handling Errors In Other Languages](../../../ado/guide/data/handling-errors-in-other-languages.md)  
+-   [Handling Errors In Other Languages](./handling-errors-in-other-languages.md)  
   
--   [Anticipating Errors](../../../ado/guide/data/anticipating-errors.md)
+-   [Anticipating Errors](./anticipating-errors.md)

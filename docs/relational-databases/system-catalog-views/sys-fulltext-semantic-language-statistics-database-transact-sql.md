@@ -1,40 +1,34 @@
 ---
-title: "sys.fulltext_semantic_language_statistics_database (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.fulltext_semantic_language_statistics_database (Transact-SQL)"
+description: sys.fulltext_semantic_language_statistics_database (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.fulltext_semantic_language_statistics_database_TSQL"
   - "fulltext_semantic_language_statistics_database_TSQL"
   - "fulltext_semantic_language_statistics_database"
   - "sys.fulltext_semantic_language_statistics_database"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.fulltext_semantic_language_statistics_database catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 32e95614-ed88-4068-8c37-1e21544717bc
-caps.latest.revision: 14
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
 ---
 # sys.fulltext_semantic_language_statistics_database (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row about the semantic language statistics database installed on the current instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
  You can query this view to find out about the semantic language statistics component required for semantic processing.  
    
   
-||||  
-|-|-|-|  
 |**Column name**|**Type**|**Description**|  
+|-|-|-|  
 |**database_id**|**int**|ID of the database, unique within an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
 |**register_date**|**datetime**|Date the database was registered for semantic processing.|  
 |**registered_by**|**int**|ID of the server principal that registered the database for semantic processing.|  

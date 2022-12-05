@@ -1,32 +1,25 @@
 ---
-title: "Server Property (RDS) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Server Property (RDS)"
+description: "Server Property (RDS)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "RDS::IBindMgr21::Server"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Server property [RDS]"
-ms.assetid: d2727ce7-da9f-4271-ae3c-9334ef477c14
-caps.latest.revision: 18
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # Server Property (RDS)
 Indicates the Internet Information Services (IIS) name and communication protocol.  
   
- You can set the **Server** property at design time in the OBJECT tags of the[RDS.DataControl](../../../ado/reference/rds-api/datacontrol-object-rds.md) object, or at run time in scripting code.  
+ You can set the **Server** property at design time in the OBJECT tags of the[RDS.DataControl](./datacontrol-object-rds.md) object, or at run time in scripting code.  
   
 > [!IMPORTANT]
->  Beginning with Windows 8 and Windows Server 2012, RDS server components are no longer included in the Windows operating system (see Windows 8 and [Windows Server 2012 Compatibility Cookbook](https://www.microsoft.com/en-us/download/details.aspx?id=27416) for more detail). RDS client components will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Applications that use RDS should migrate to [WCF Data Service](http://go.microsoft.com/fwlink/?LinkId=199565).  
+>  Beginning with Windows 8 and Windows Server 2012, RDS server components are no longer included in the Windows operating system (see Windows 8 and [Windows Server 2012 Compatibility Cookbook](https://www.microsoft.com/download/details.aspx?id=27416) for more detail). RDS client components will be removed in a future version of Windows. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Applications that use RDS should migrate to [WCF Data Service](/dotnet/framework/wcf/).  
   
 ## Syntax  
  **HTTP**  
@@ -46,7 +39,7 @@ Indicates the Internet Information Services (IIS) name and communication protoco
 ```  
   
 DataControl  
-.Server="http://  
+.Server="https://  
 awebsrvr:port  
 "  
   
@@ -115,15 +108,13 @@ DataControl.Server=""
  An object variable that represents an **RDS.DataControl** object.  
   
 ## Remarks  
- The server is the location where the **RDS.DataControl** request (that is, a query or update) is processed. By default, all requests are processed by the [RDSServer.DataFactory](../../../ado/reference/rds-api/datafactory-object-rdsserver.md) object, [MSDFMAP.Handler](../../../ado/guide/remote-data-service/datafactory-customization.md) component, and [MSDFMAP.INI](../../../ado/guide/remote-data-service/understanding-the-customization-file.md) file on the specified server. Remember that when changing servers to reconcile settings in the old and new **MSDFMAP.INI** files. Incompatibilities may cause requests that succeed on one server to fail on another. If the Server property is set to the empty string "", these objects will be used on the local computer.  
+ The server is the location where the **RDS.DataControl** request (that is, a query or update) is processed. By default, all requests are processed by the [RDSServer.DataFactory](./datafactory-object-rdsserver.md) object, [MSDFMAP.Handler](../../guide/remote-data-service/datafactory-customization.md) component, and [MSDFMAP.INI](../../guide/remote-data-service/understanding-the-customization-file.md) file on the specified server. Remember that when changing servers to reconcile settings in the old and new **MSDFMAP.INI** files. Incompatibilities may cause requests that succeed on one server to fail on another. If the Server property is set to the empty string "", these objects will be used on the local computer.  
   
 ## Applies To  
- [DataControl Object (RDS)](../../../ado/reference/rds-api/datacontrol-object-rds.md)  
+ [DataControl Object (RDS)](./datacontrol-object-rds.md)  
   
 ## See Also  
- [Server Property Example (VBScript)](../../../ado/reference/rds-api/server-property-example-vbscript.md)   
- [Connect Property (RDS)](../../../ado/reference/rds-api/connect-property-rds.md)   
- [SQL Property](../../../ado/reference/rds-api/sql-property.md)   
- [SubmitChanges Method (RDS)](../../../ado/reference/rds-api/submitchanges-method-rds.md)
-
-
+ [Server Property Example (VBScript)](./server-property-example-vbscript.md)   
+ [Connect Property (RDS)](./connect-property-rds.md)   
+ [SQL Property](./sql-property.md)   
+ [SubmitChanges Method (RDS)](./submitchanges-method-rds.md)

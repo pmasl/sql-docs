@@ -1,22 +1,15 @@
 ---
-title: "Formal Shape Grammar | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Formal Shape Grammar"
+description: "Formal Shape Grammar"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "shape commands [ADO], shape grammar"
   - "data shaping [ADO], shape grammar"
-ms.assetid: ea691475-0f03-4abe-a785-b77e77712d1d
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Formal Shape Grammar
 This is the formal grammar for creating any shape command:  
@@ -66,10 +59,10 @@ This is the formal grammar for creating any shape command:
 |\<expression>|A Visual Basic for Applications expression whose operands are other non-CALC columns in the same row.|  
   
 ## See Also  
- [Accessing Rows in a Hierarchical Recordset](../../../ado/guide/data/accessing-rows-in-a-hierarchical-recordset.md)   
- [Data Shaping Overview](../../../ado/guide/data/data-shaping-overview.md)   
- [Required Providers for Data Shaping](../../../ado/guide/data/required-providers-for-data-shaping.md)   
- [Shape APPEND Clause](../../../ado/guide/data/shape-append-clause.md)   
- [Shape Commands in General](../../../ado/guide/data/shape-commands-in-general.md)   
- [Shape COMPUTE Clause](../../../ado/guide/data/shape-compute-clause.md)   
- [Visual Basic for Applications functions](../../../ado/guide/data/visual-basic-for-applications-functions.md)
+ [Accessing Rows in a Hierarchical Recordset](./accessing-rows-in-a-hierarchical-recordset.md)   
+ [Data Shaping Overview](./data-shaping-overview.md)   
+ [Required Providers for Data Shaping](./required-providers-for-data-shaping.md)   
+ [Shape APPEND Clause](./shape-append-clause.md)   
+ [Shape Commands in General](./shape-commands-in-general.md)   
+ [Shape COMPUTE Clause](./shape-compute-clause.md)   
+ [Visual Basic for Applications functions](./visual-basic-for-applications-functions.md)

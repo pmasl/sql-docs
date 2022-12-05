@@ -1,33 +1,26 @@
 ---
-title: "ALTER FULLTEXT STOPLIST (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "ALTER FULLTEXT STOPLIST (Transact-SQL)"
+description: ALTER FULLTEXT STOPLIST (Transact-SQL)
+author: markingmyname
+ms.author: maghan
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER FULLTEXT STOPLIST"
   - "ALTER_FULLTEXT_STOPLIST_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "stoplists [full-text search]"
   - "full-text search [SQL Server], stoplists"
   - "ALTER FULLTEXT STOPLIST statement"
   - "full-text search [SQL Server], stopwords"
   - "stopwords [full-text search]"
-ms.assetid: f6ad87d5-6a34-435a-8456-8244947c5c83
-caps.latest.revision: 37
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ALTER FULLTEXT STOPLIST (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]	
 
   Inserts or deletes a stop word in the default full-text stoplist of the current database.  
   
@@ -35,8 +28,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 ALTER FULLTEXT STOPLIST stoplist_name  
 {   
         ADD [N] 'stopword' LANGUAGE language_term    
@@ -49,7 +41,9 @@ ALTER FULLTEXT STOPLIST stoplist_name
 ;  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *stoplist_name*  
  Is the name of the stoplist being altered. *stoplist_name* can be a maximum of 128 characters.  
   
@@ -93,7 +87,7 @@ ALTER FULLTEXT STOPLIST stoplist_name
 ## Examples  
  The following example alters a stoplist named `CombinedFunctionWordList`, adding the word 'en', first for Spanish and then for French.  
   
-```  
+```sql  
 ALTER FULLTEXT STOPLIST CombinedFunctionWordList ADD 'en' LANGUAGE 'Spanish';  
 ALTER FULLTEXT STOPLIST CombinedFunctionWordList ADD 'en' LANGUAGE 'French';  
 ```  

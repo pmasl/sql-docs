@@ -1,25 +1,18 @@
 ---
 title: "Report Server System Properties | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
+description: System properties are global for the report server database. You can read or modify many of these properties using the Web service methods.
+ms.date: 03/06/2017
+ms.prod: reporting-services
+ms.technology: report-server-web-service
+
+
+ms.topic: reference
 helpviewer_keywords: 
   - "report servers [Reporting Services], properties"
   - "system-specific properties [Reporting Services]"
 ms.assetid: cd874117-00e5-4ae6-8629-eb9ba9f40478
-caps.latest.revision: 55
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Reporting Services Properties - Report Server System Properties
   The following system property names are reserved. You cannot create user-defined properties of the same name. You can read or modify many of these properties using the Web service methods.  
@@ -36,7 +29,7 @@ manager: "erikre"
 |EnableMyReports|Indicates whether the My Reports feature is enabled. A value of **true** indicates that the feature is enabled.|  
 |MyReportsRole|The name of the role used when creating security policies on user's My Reports folders. The default value is **My Reports Role**.|  
 |EnableExecutionLogging|Indicates whether report execution logging is enabled. The default value is **true**.|  
-|ExecutionLogDaysKept|The number of days to keep report execution information in the execution log. Valid values for this property include **0** through **2**,**147**,**483**,**647**. If the value is **0** entries are not deleted from the Execution Log table. The default value is **60**.|  
+|ExecutionLogDaysKept|The number of days to keep report execution information in the execution log. Valid values for this property include **-1** through **2**,**147**,**483**,**647**. If the value is **-1** entries are not deleted from the Execution Log table. The default value is **60**.|  
 |SnapshotCompression|Defines how snapshots are compressed. The default value is **SQL**. The valid values are as follows:<br /><br /> **SQL** = Snapshots are compressed when stored in the report server database. This is the current behavior.<br /><br /> **None** = Snapshots are not compressed.<br /><br /> **All** = Snapshots are compressed for all storage options, which include the report server database or the file system.|  
 |EnableClientPrinting|Determines whether the RSClientPrint ActiveX control is available for download from the report server. The valid values are **true** and **false**. The default value is **true**. For more information about additional settings that are required for this control, see [Enable and Disable Client-Side Printing for Reporting Services](../../../reporting-services/report-server/enable-and-disable-client-side-printing-for-reporting-services.md).|  
 |EnableIntegratedSecurity|Determines whether integrated security is supported for report data source connections. The default is **True**. The valid values are as follows:<br /><br /> **True** = Integrated security is enabled.<br /><br /> **False** = Integrated security is not enabled. Report data sources that are configured to use integrated security will not run.|  

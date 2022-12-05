@@ -1,21 +1,17 @@
 ---
+description: "SQLTransact (Visual FoxPro ODBC Driver)"
 title: "SQLTransact (Visual FoxPro ODBC Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLTransact function [ODBC], Visual FoxPro ODBC Driver"
 ms.assetid: 92cf86c0-f7a8-44d7-b59f-a1342677440b
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLTransact (Visual FoxPro ODBC Driver)
 > [!NOTE]  

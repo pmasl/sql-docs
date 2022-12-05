@@ -1,19 +1,18 @@
 ---
+description: "Global Settings (Editor) (OracleToSQL)"
 title: "Global Settings (Editor) (OracleToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: a63e4112-4b5d-4b7a-a5c2-06a24e86ab1b
-caps.latest.revision: 3
-author: "sabotta"
-ms.author: "carlasab"
-manager: "v-thobro"
+author: cpichuka 
+ms.author: cpichuka 
+f1_keywords: 
+  - "ssma.oracle.globalsettingeditor.f1"
+
 ---
 # Global Settings (Editor) (OracleToSQL)
 Use the Editor page of the **Global Settings** dialog box to specify settings for code editor windows.  

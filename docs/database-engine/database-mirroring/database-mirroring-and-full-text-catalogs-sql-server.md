@@ -1,25 +1,20 @@
 ---
-title: "Database Mirroring and Full-Text Catalogs (SQL Server) | Microsoft Docs"
-ms.custom: ""
+title: "Database mirroring and full-text catalogs"
+description: Learn how to configure a database mirror on a database that has a full-text catalog and about indexes before and after failover.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "database mirroring [SQL Server], interoperability"
   - "full-text catalogs [SQL Server], database mirroring"
   - "catalogs [SQL Server], database mirroring"
-ms.assetid: e34072ae-fe8a-462d-bb03-02fa0987f793
-caps.latest.revision: 50
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
-# Database Mirroring and Full-Text Catalogs (SQL Server)
+# Database mirroring and full-text catalogs (SQL Server)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   To mirror a database that has a full-text catalog, use backup as usual to create a full database backup of the principal database, and then restore the backup to copy the database to the mirror server. For more information, see [Prepare a Mirror Database for Mirroring &#40;SQL Server&#41;](../../database-engine/database-mirroring/prepare-a-mirror-database-for-mirroring-sql-server.md).  
   
 ## Full-Text Catalog and Indexes Before Failover  

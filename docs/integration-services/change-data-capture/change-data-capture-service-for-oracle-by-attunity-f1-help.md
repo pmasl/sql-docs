@@ -1,21 +1,18 @@
 ---
+description: "Change Data Capture Service for Oracle by Attunity F1 Help"
 title: "Change Data Capture Service for Oracle by Attunity F1 Help | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/20/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "reference"
 ms.assetid: 0617fca6-1bc1-4ad2-9986-fab94ea0a6f0
-caps.latest.revision: 6
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Change Data Capture Service for Oracle by Attunity F1 Help
+
   You use the CDC Service Configuration Console to define a local Oracle CDC Service, update it, and delete it.  
   
  The topics in this section help provide information about the information you need to provide when using the CDC Service Configuration Console.  

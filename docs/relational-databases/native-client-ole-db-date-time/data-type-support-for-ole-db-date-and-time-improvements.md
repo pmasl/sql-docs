@@ -1,27 +1,25 @@
 ---
-title: "Data Type Support for OLE DB Date and Time Improvements | Microsoft Docs"
+description: "Data type support for date and time improvements (Native Client OLE DB provider)"
+title: "Data type support for date and time improvements (Native Client OLE DB provider) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: 
+
 ms.topic: "reference"
 helpviewer_keywords: 
   - "date/time [OLE DB], data type support"
   - "OLE DB, date/time improvements"
 ms.assetid: d40e3fd6-9057-4371-8236-95cef300603e
-caps.latest.revision: 24
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Data Type Support for OLE DB Date and Time Improvements
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# SQL Server Native Client Data Type Support for OLE DB Date and Time Improvements
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  This topic provides information about OLE DB ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client) types that support [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] date/time data types.  
+  This topic provides information about OLE DB ( [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client) types that support [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] date/time data types.  
   
 ## Data Type Mapping in Rowsets and Parameters  
  OLE DB provides two new data types to support the new server types: DBTYPE_DBTIME2 and DBTYPE_DBTIMESTAMPOFFSET. The following table shows the complete server type mapping:  
@@ -67,11 +65,11 @@ manager: "jhubbard"
   
 -   Minute range is 0 through 59.  
   
--   Seconds range from 0 through 59. This allows up to two leap seconds to maintain synchronization with sideral time.  
+-   Seconds range from 0 through 59. This allows up to two leap seconds to maintain synchronization with sidereal time.  
   
  Implementations for the following existing OLE DB structs have been modified to support the new [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] date and time data types. The definitions, however, have not changed.  
   
--   DBTYPE_DATE (This is an automation DATE type. It is internally represented as a **double**.. The whole part is the number of days since December 30, 1899 and the fractional part is the fraction of a day. This type has an accuracy of 1 second, so has an effective scale of 0.)  
+-   DBTYPE_DATE (This is an automation DATE type. It is internally represented as a **double**. The whole part is the number of days since December 30, 1899 and the fractional part is the fraction of a day. This type has an accuracy of 1 second, so has an effective scale of 0.)  
   
 -   DBTYPE_DBDATE  
   
@@ -177,7 +175,7 @@ enum SQLVARENUM {
 |DBTYPE_DBTIME2|**time**(p)|The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider inspects the DBCOLUMDESC *bScale* member to determine the fractional seconds precision.|  
 |DBTYPE_DBTIMESTAMPOFFSET|**datetimeoffset**(p)|The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider inspects the DBCOLUMDESC *bScale* member to determine the fractional seconds precision.|  
   
- When an application specifies DBTYPE_DBTIMESTAMP in *wType*, it can override the mapping to **datetime2** by supplying a type name in *pwszTypeName*. If **datetime** is specified, *bScale* must be 3. If **smalldatetime** is specified, *bScale* must be 0. If *bScale* is not consistent with *wType* and *pwszTypeName*,DB_E_BADSCALE is returned.  
+ When an application specifies DBTYPE_DBTIMESTAMP in *wType*, it can override the mapping to **datetime2** by supplying a type name in *pwszTypeName*. If **datetime** is specified, *bScale* must be 3. If **smalldatetime** is specified, *bScale* must be 0. If *bScale* is not consistent with *wType* and *pwszTypeName*, DB_E_BADSCALE is returned.  
   
 ## See Also  
  [Date and Time Improvements &#40;OLE DB&#41;](../../relational-databases/native-client-ole-db-date-time/date-and-time-improvements-ole-db.md)  

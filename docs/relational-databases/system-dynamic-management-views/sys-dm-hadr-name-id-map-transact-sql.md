@@ -1,32 +1,26 @@
 ---
-title: "sys.dm_hadr_name_id_map (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_hadr_name_id_map (Transact-SQL)"
+description: sys.dm_hadr_name_id_map (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_hadr_name_id_map"
   - "sys.dm_hadr_name_id_map_TSQL"
   - "dm_hadr_name_id_map"
   - "dm_hadr_name_id_map_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Availability Groups [SQL Server], monitoring"
   - "sys.dm_hadr_name_id_map dynamic management view"
+dev_langs:
+  - "TSQL"
 ms.assetid: e07bb8a9-37de-4a39-a257-950d7c3ae8fb
-caps.latest.revision: 8
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # sys.dm_hadr_name_id_map (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Shows the mapping of Always On availability groups that the current instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] has joined to three unique IDs: an availability group ID, a WSFC resource ID, and a WSFC Group ID. The purpose of this mapping is to handle the scenario in which the WSFC resource/group is renamed.  
    

@@ -1,24 +1,20 @@
 ---
-title: "Run the Data Quality Client Application | Microsoft Docs"
-ms.custom: ""
+title: "Run the Data Quality Client Application"
+description: "Run the Data Quality Client Application"
+author: swinarko
+ms.author: sawinark
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "data-quality-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: data-quality-services
+ms.topic: conceptual
+f1_keywords:
   - "sql13.dqs.browseforservers.f1"
   - "sql13.dqs.connecttoserver.f1"
-ms.assetid: 0b2aa202-7ab2-4c9d-b0f1-802588053a1e
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Run the Data Quality Client Application
+
+[!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sqlserver.md)]
+
   Run [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)], and log on to a [!INCLUDE[ssDQSServer](../includes/ssdqsserver-md.md)].  
   
 ##  <a name="BeforeYouBegin"></a> Before You Begin  
@@ -34,7 +30,7 @@ manager: "jhubbard"
 ##  <a name="Run"></a> Run Data Quality Client  
  To run [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] on the computer where you have installed it:  
   
-1.  Click **Start**, point to **All Programs**, click **[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]**, click **Data Quality Services**, and then click **Data Quality Client**.  
+1.  In the **Start** menu, select the **[!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]** **Data Quality Client**.  
   
 2.  In the **Connect to Server** dialog box:  
   

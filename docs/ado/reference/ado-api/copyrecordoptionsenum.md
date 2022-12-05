@@ -1,27 +1,20 @@
 ---
-title: "CopyRecordOptionsEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "CopyRecordOptionsEnum"
+description: "CopyRecordOptionsEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "CopyRecordOptionsEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "CopyRecordOptionsEnum enumeration [ADO]"
-ms.assetid: 2fa4eec5-d50b-4fd3-8ae7-40af441ba12b
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # CopyRecordOptionsEnum
-Specifies the behavior of the [CopyRecord](../../../ado/reference/ado-api/copyrecord-method-ado.md) method.  
+Specifies the behavior of the [CopyRecord](./copyrecord-method-ado.md) method.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -34,4 +27,4 @@ Specifies the behavior of the [CopyRecord](../../../ado/reference/ado-api/copyre
  These constants do not have ADO/WFC equivalents.  
   
 ## Applies To  
- [CopyRecord Method (ADO)](../../../ado/reference/ado-api/copyrecord-method-ado.md)
+ [CopyRecord Method (ADO)](./copyrecord-method-ado.md)

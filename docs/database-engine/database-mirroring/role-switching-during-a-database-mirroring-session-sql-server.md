@@ -1,15 +1,14 @@
 ---
-title: "Role Switching During a Database Mirroring Session (SQL Server) | Microsoft Docs"
-ms.custom: ""
+title: "Switch database mirror roles"
+description: Learn about switching database mirroring roles, where a mirror server becomes the principal in response to failures or for admin purposes in SQL Server.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "role switching [SQL Server]"
   - "mirroring partners [SQL Server]"
   - "failover [SQL Server]"
@@ -18,13 +17,9 @@ helpviewer_keywords:
   - "partners in database mirroring sessions [SQL Server]"
   - "failover [SQL Server], database mirroring"
   - "database mirroring [SQL Server], failover"
-ms.assetid: a782d60d-0373-4386-bd77-9ec192553700
-caps.latest.revision: 50
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Role Switching During a Database Mirroring Session (SQL Server)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Within the context of a database mirroring session, the principal and mirror roles are typically interchangeable in a process known as *role switching*. In role switching, the mirror server acts as the *failover partner* for the principal server, taking over the principal role, recovering its copy of the database and bringing it online as the new principal database. The former principal server, when available, assumes the mirror role, and its database becomes the new mirror database. Potentially, the roles can switch back and forth either in response to multiple failures or for administrative purposes.  
   
 > [!NOTE]  
@@ -63,7 +58,7 @@ manager: "jhubbard"
   
  The following table summarizes which forms of failover are supported under each of the operating modes.  
   
-||High performance|High-safety mode without a witness|High-safety mode with a witness|  
+|Form of failover|High performance|High-safety mode without a witness|High-safety mode with a witness|  
 |-|----------------------|-----------------------------------------|--------------------------------------|  
 |Automatic failover|No|No|Yes|  
 |Manual failover|No|Yes|Yes|  

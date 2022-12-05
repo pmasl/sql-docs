@@ -1,25 +1,20 @@
 ---
-title: "Accessing the Current Transaction | Microsoft Docs"
-ms.custom: ""
+title: "Accessing the Current Transaction"
+description: In SQL Server CLR integration, the Current property of the System.Transactions.Transaction class allows you to access the current transaction.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "current transaction access"
   - "Current property"
   - "Transaction class"
 ms.assetid: 1a4e2ce5-f627-4c81-8960-6a9968cefda2
-caps.latest.revision: 17
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Accessing the Current Transaction
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   If a transaction is active at the point at which common language runtime (CLR) code running on [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] is entered, the transaction is exposed through the **System.Transactions.Transaction** class. The **Transaction.Current** property is used to access the current transaction. In most cases it is not necessary to access the transaction explicitly. For database connections, ADO.NET checks **Transaction.Current** automatically when the **Connection.Open** method is called, and transparently enlists the connection in that transaction (unless the **Enlist** keyword is set to false in the connection string).  
   
  You might want to use the **Transaction** object directly in the following scenarios:  
@@ -45,7 +40,7 @@ manager: "jhubbard"
   
 -   The managed procedure or function can cancel the current transaction by calling the **Transaction.Rollback** method if a certain condition is met.  
   
- When it is called within a managed procedure or function, the **Transaction.Rollback** method throws an exception with an ambiguous error message and can be wrapped in a try/catch block. The error message thresembles similar to the following:  
+ When it is called within a managed procedure or function, the **Transaction.Rollback** method throws an exception with an ambiguous error message and can be wrapped in a try/catch block. The error message is similar to the following:  
   
 ```  
 Msg 3994, Level 16, State 1, Procedure uspRollbackFromProc, Line 0  

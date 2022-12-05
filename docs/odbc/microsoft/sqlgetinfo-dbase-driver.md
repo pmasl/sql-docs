@@ -1,22 +1,18 @@
 ---
+description: "SQLGetInfo (dBASE Driver)"
 title: "SQLGetInfo (dBASE Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLGetInfo function [ODBC], dBASE Driver"
   - "DBase driver [ODBC], SQLGetInfo"
 ms.assetid: 42ffdc9c-281b-4df5-ac6d-7b34f15ecd4c
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLGetInfo (dBASE Driver)
 > [!NOTE]  
@@ -24,11 +20,11 @@ manager: "jhubbard"
   
  **SQLGetInfo** supports the SQL_FILE_USAGE information type. The returned value is a 16-bit integer that indicates how the driver directly treats files in a data source:  
   
--   SQL_FILE_NOT_SUPPORTED — The driver is not a single-tier driver.  
+-   SQL_FILE_NOT_SUPPORTED - The driver is not a single-tier driver.  
   
--   SQL_FILE_TABLE — A single-tier driver treats files in a data source as tables.  
+-   SQL_FILE_TABLE - A single-tier driver treats files in a data source as tables.  
   
--   SQL_FILE_QUALIFIER — A single-tier driver treats files in a data source as a qualifier.  
+-   SQL_FILE_QUALIFIER - A single-tier driver treats files in a data source as a qualifier.  
   
  The ODBC driver returns SQL_FILE_TABLE because each file is a table.  
   

@@ -1,23 +1,19 @@
 ---
+description: "Connect Options"
 title: "Connect Options | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "connection options [ODBC]"
   - "ODBC driver for Oracle [ODBC], connection options"
   - "custom connection options [ODBC]"
 ms.assetid: abfdc133-cb33-435f-a467-fbe15444f687
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Connect Options
 > [!IMPORTANT]  

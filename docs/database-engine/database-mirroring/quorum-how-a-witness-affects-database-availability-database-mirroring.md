@@ -1,15 +1,14 @@
 ---
-title: "Quorum: How a Witness Affects Database Availability (Database Mirroring) | Microsoft Docs"
-ms.custom: ""
+title: "How a witness affects database availability"
+description: Learn how database mirroring affects quorum and database availability. Quorum makes sure that a database is owned by only one partner at a time.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "quorum [SQL Server], database mirroring"
   - "running exposed in database mirroring [SQL Server]"
   - "witness-to-partner quorum [SQL Server]"
@@ -20,13 +19,9 @@ helpviewer_keywords:
   - "mirror database [SQL Server]"
   - "full quorum [SQL Server]"
   - "high-availability mode [SQL Server]"
-ms.assetid: a62d9dd7-3667-4751-a294-a61fc9caae7c
-caps.latest.revision: 36
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
-# Quorum: How a Witness Affects Database Availability (Database Mirroring)
+# Quorum: How a witness affects database availability (database mirroring)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Whenever a witness is set for a database mirroring session, *quorum* is required. Quorum is a relationship that exists when two or more server instances in a database mirroring session are connected to each other. Typically, quorum involves three interconnected server instances. When a witness is set, quorum is required to make the database available. Designed for high-safety mode with automatic failover, quorum makes sure that a database is owned by only one partner at a time.  
   
  If a particular server instance becomes disconnected from a mirroring session, that instance loses quorum. If no server instances are connected, the session loses quorum and the database becomes unavailable. Three types of quorum are possible:  
@@ -71,7 +66,7 @@ manager: "jhubbard"
   
     -   All the server instances lose quorum, but subsequently the mirror and witness reconnect. The database will not be served in this case.  
   
-     Rarely, the network connection between failover partners is lost while both partners remain connected to the witness. In this event, two, separate witness-to–partner quorums exist, with the witness as a liaison. The witness informs the mirror server that the principal server is still connected. Therefore, automatic failover does not occur. Instead, the mirror server retains the mirror role and waits to reconnect to the principal. If the redo queue contains log records at this point, the mirror server continues to roll forward the mirror database. On reconnecting, the mirror server will resynchronize the mirror database.  
+     Rarely, the network connection between failover partners is lost while both partners remain connected to the witness. In this event, two, separate witness-to-partner quorums exist, with the witness as a liaison. The witness informs the mirror server that the principal server is still connected. Therefore, automatic failover does not occur. Instead, the mirror server retains the mirror role and waits to reconnect to the principal. If the redo queue contains log records at this point, the mirror server continues to roll forward the mirror database. On reconnecting, the mirror server will resynchronize the mirror database.  
   
 -   A *partner-to-partner quorum* that consists of the two partners.  
   

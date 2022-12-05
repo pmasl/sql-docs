@@ -1,19 +1,12 @@
 ---
-title: "isWrapperFor Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "isWrapperFor Method (SQLServerStatement)"
+description: "isWrapperFor Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 53f3291f-d43a-476b-a656-d86168dacf6c
-caps.latest.revision: 20
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # isWrapperFor Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

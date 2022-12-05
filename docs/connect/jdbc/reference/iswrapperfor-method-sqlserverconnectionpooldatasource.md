@@ -1,19 +1,12 @@
 ---
-title: "isWrapperFor Method (SQLServerConnectionPoolDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "isWrapperFor Method (SQLServerConnectionPoolDataSource)"
+description: "isWrapperFor Method (SQLServerConnectionPoolDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 09ed10eb-6e46-437b-a7c0-3c55574aad38
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # isWrapperFor Method (SQLServerConnectionPoolDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

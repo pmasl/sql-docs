@@ -1,18 +1,13 @@
 ---
-title: "Retrieving UDT Data | Microsoft Docs"
-ms.custom: ""
+title: "Retrieving UDT Data"
+description: This article describes how to access UDTs in a SQL Server database.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SqlDataReader object"
   - "ADO.NET [CLR integration]"
   - "binding UDTs [CLR integration]"
@@ -21,13 +16,13 @@ helpviewer_keywords:
   - "query parameters [CLR integration]"
   - "user-defined types [CLR integration], ADO.NET"
   - "bytes [CLR integration]"
+dev_langs:
+  - "VB"
+  - "CSharp"
 ms.assetid: 6a98ac8c-0e69-4c03-83a4-2062cb782049
-caps.latest.revision: 17
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Accessing User-Defined Types - Retrieving UDT Data
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   In order to create a user-defined type (UDT) on the client, the assembly that was registered as a UDT in a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] database must be available to the client application. The UDT assembly can be placed in the same directory with the application, or in the Global Assembly Cache (GAC). You can also set a reference to the assembly in your project.  
   
 ## Requirements for Using UDTs in ADO.NET  
@@ -399,7 +394,11 @@ Module Module1
       cmd.CommandText = "INSERT INTO dbo.Points (Pnt) VALUES (@Point)"  
       cmd.CommandType = CommandType.Text  
   
-      Dim param As New SqlParameter("@Point", SqlDbType.Udt)      param.UdtTypeName = "TestPoint.dbo.Point"      param.Direction = ParameterDirection.Input      param.Value = New Point(5, 6)      cmd.Parameters.Add(param)  
+      Dim param As New SqlParameter("@Point", SqlDbType.Udt)      
+      param.UdtTypeName = "TestPoint.dbo.Point"      
+      param.Direction = ParameterDirection.Input      
+      param.Value = New Point(5, 6)      
+      cmd.Parameters.Add(param)  
   
       cnn.Open()  
       cmd.ExecuteNonQuery()  

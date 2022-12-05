@@ -1,45 +1,35 @@
 ---
-title: "sys.dm_db_xtp_nonclustered_index_stats (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "08/29/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.dm_db_xtp_nonclustered_index_stats (Transact-SQL)"
+description: sys.dm_db_xtp_nonclustered_index_stats includes statistics about operations on nonclustered indexes in memory-optimized tables.
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "03/02/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dm_db_xtp_nonclustered_index_stats_TSQL"
   - "dm_db_xtp_nonclustered_index_stats"
   - "sys.dm_db_xtp_nonclustered_index_stats_TSQL"
   - "sys.dm_db_xtp_nonclustered_index_stats"
-dev_langs: 
+helpviewer_keywords:
+  - "sys.dm_db_xtp_nonclustered_index_stats dynamic management view"
+dev_langs:
   - "TSQL"
-helpviewer_keywords: 
-  - "sys.dm_db_xtp_nonclustered_index_stats"
-ms.assetid: d55ba31c-296c-419b-9c4b-c126e0a3d156
-caps.latest.revision: 10
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+monikerRange: ">=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.dm_db_xtp_nonclustered_index_stats (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+[!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  sys.dm_db_xtp_nonclustered_index_stats includes statistics about operations on nonclustered indexes in memory-optimized tables. sys.dm_db_xtp_nonclustered_index_stats contains one row for each nonclustered index on a memory-optimized table in the current database.  
+  The `sys.dm_db_xtp_nonclustered_index_stats` system dynamic management view includes statistics about operations on nonclustered indexes in [memory-optimized tables](../in-memory-oltp/introduction-to-memory-optimized-tables.md). The result set contains one row for each nonclustered index on a memory-optimized table in the current database.  
   
- The statistics reflected in sys.dm_db_xtp_nonclustered_index_stats are collected when the in-memory index structure is created. In-memory index structures are recreated on database restart.  
+ The statistics reflected in `sys.dm_db_xtp_nonclustered_index_stats` are collected when the in-memory index structure is created. In-memory index structures are recreated on database restart.  
   
- Use sys.dm_db_xtp_nonclustered_index_stats to understand and monitor index activity during DML operations and when a database is brought online. When a database with a memory-optimized table is restarted, the index is built by inserting one row at a time into memory. The count of page splits, merges, and consolidation can help you understand the work done to build the index when a database is brought online. You can also look at these counts before and after a series of DML operations.  
+ Use `sys.dm_db_xtp_nonclustered_index_stats` to understand and monitor index activity during DML operations and when a database is brought online. When a database with a memory-optimized table is restarted, the index is built by inserting one row at a time into memory. The count of page splits, merges, and consolidation can help you understand the work done to build the index when a database is brought online. You can also look at these counts before and after a series of DML operations.  
   
- Large numbers of retries are indicative of concurrency issues; call [!INCLUDE[msCoName](../../includes/msconame-md.md)] Support.  
+ Large numbers of retries are indicative of concurrency issues. 
   
- For more information about memory-optimized, nonclustered indexes, see [SQL Server In-Memory OLTP Internals Overview](http://t.co/T6zToWc6y6), page 17.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
+ For more information about memory-optimized indexes, see [SQL Server [!INCLUDE[inmemory](../../includes/inmemory-md.md)] Internals for SQL Server 2016](../in-memory-oltp/sql-server-in-memory-oltp-internals-for-sql-server-2016.md), page 20.  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
@@ -66,7 +56,12 @@ manager: "jhubbard"
 ## Permissions  
  Requires VIEW DATABASE STATE permission on the current database.  
   
-## See Also  
- [Memory-Optimized Table Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/memory-optimized-table-dynamic-management-views-transact-sql.md)  
-  
-  
+## See also
+
+- [Introduction to Memory-Optimized Tables](../in-memory-oltp/introduction-to-memory-optimized-tables.md)
+- [Memory-Optimized Table Dynamic Management Views](../../relational-databases/system-dynamic-management-views/memory-optimized-table-dynamic-management-views-transact-sql.md)
+
+## Next steps 
+
+- [[!INCLUDE[inmemory](../../includes/inmemory-md.md)] Overview and Usage Scenarios](../in-memory-oltp/overview-and-usage-scenarios.md)
+- [Optimize performance by using in-memory technologies in Azure SQL Database and Azure SQL Managed Instance](/azure/azure-sql/in-memory-oltp-overview)

@@ -1,29 +1,25 @@
 ---
+description: "sp_resetsnapshotdeliveryprogress (Transact-SQL)"
 title: "sp_resetsnapshotdeliveryprogress (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_resetsnapshotdeliveryprogress"
   - "sp_resetsnapshotdeliveryprogress_TSQL"
 helpviewer_keywords: 
   - "sp_resetsnapshotdeliveryprogress"
 ms.assetid: 5df7d86b-d343-4d9b-88b1-74429ed092e6
-caps.latest.revision: 24
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_resetsnapshotdeliveryprogress (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Resets the snapshot delivery process for a pull subscription so that snapshot delivery can be restarted. Executed at the Subscriber on the subscription database.  
   
@@ -38,10 +34,10 @@ sp_resetsnapshotdeliveryprogress [ [ @verbose_level = ] verbose_level ]
 ```  
   
 ## Arguments  
- [ **@verbose_level**= ] *verbose_level*  
+`[ @verbose_level = ] verbose_level`
  Specifies the amount of information returned. *verbose_level*is **int**, with a default of **1**. A value of **1** means that an error is returned if the necessary locks cannot be obtained on the **MSsnapshotdeliveryprogress** table, and **0** means that no error is returned.  
   
- [ **@drop_table**= ] **'***drop_table***'**  
+`[ @drop_table = ] 'drop_table'`
  Is whether to drop or truncate the table containing information on the progress of the snapshot.*drop_table* is **nvarchar(5)**, with a default of **FALSE**. false means that the table is truncated, and true means the table is dropped.  
   
 ## Return Code Values  

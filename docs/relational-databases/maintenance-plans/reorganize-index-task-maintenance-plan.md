@@ -1,26 +1,21 @@
 ---
-title: "Reorganize Index Task (Maintenance Plan) | Microsoft Docs"
-ms.custom: ""
+title: "Reorganize Index Task (Maintenance Plan)"
+description: Reorganize Index Task (Maintenance Plan)
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "07/21/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: supportability
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.maint.defrag.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Reorganize Index Task dialog box"
 ms.assetid: e9cbebbd-f36f-4176-9832-382a46ac946c
-caps.latest.revision: 33
-author: "MightyPen"
-ms.author: "genemi"
-manager: "craigg"
 ---
 # Reorganize Index Task (Maintenance Plan)
-  Use the **ReorganizeIndex Task** dialog to move index pages into a more efficient search order. This task uses the `ALTER INDEX REORGANIZE` statement with [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] databases.  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  Use the **ReorganizeIndex Task** dialog to move index pages into a more efficient search order. This task uses the `ALTER INDEX REORGANIZE` statement with [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] databases.  
   
 ## Options  
  **Connection**  

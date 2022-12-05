@@ -1,27 +1,25 @@
 ---
 title: "Create a User-Defined Data Type Alias | Microsoft Docs"
+description: "Learn how to create a user-defined data type alias in SQL Server 2019 by using SQL Server Management Studio or Transact-SQL."
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: configuration
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.userdefineddatatype.general.f1"
   - "sql13.swb.new.datatype.properties.general.f1"
 helpviewer_keywords: 
   - "alias data types [SQL Server], creating"
 ms.assetid: b1dd8413-0cd0-411b-a79b-1bb043ccc62d
-caps.latest.revision: 27
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Create a User-Defined Data Type Alias
-  This topic describes how to create a new user-defined data type alias in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+  This topic describes how to create a new user-defined data type alias in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)].  
   
  **In This Topic**  
   
@@ -61,7 +59,7 @@ manager: "jhubbard"
      Select the base data type from the list box. The list box displays all data types except for the **geography**, **geometry**, **hierarchyid**, **sysname**, **timestamp** , and **xml** data types. The data type of an existing user-defined data type is not editable.  
   
      **Default**  
-     Optionally select a rule or a default to bind to the user-defined data type alias.  
+     Optionally select a default to bind to the user-defined data type alias.  
   
      **Length/Precision**  
      Displays the length or precision of the data type as applicable. **Length** applies to character-based user-defined data types; **Precision** applies only to numeric-based user-defined data types. The label changes depending on the data type selected earlier. This box is not editable if the length or precision of the selected data type is fixed.  
@@ -83,12 +81,12 @@ manager: "jhubbard"
      **Storage**  
      Displays the maximum storage size for the user-defined data type alias. Maximum storage sizes vary, based on precision.  
   
-    |||  
+    |Precision|Maximum storage size|  
     |-|-|  
-    |1 – 9|5|  
-    |10 – 19|9|  
-    |20 – 28|13|  
-    |29 – 38|17|  
+    |1 - 9|5|  
+    |10 - 19|9|  
+    |20 - 28|13|  
+    |29 - 38|17|  
   
      For **nchar** and **nvarchar** data types, the storage value is always two times the value in **Length**.  
   
@@ -105,7 +103,7 @@ manager: "jhubbard"
 6.  Check **Allow NULLs** if the new data type alias can permit NULL values.  
   
 7.  In the **Binding** area, complete the **Default** or **Rule** boxes if you want to bind a default or rule to the new data type alias. Defaults and rules cannot be created in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]. Use [!INCLUDE[tsql](../../includes/tsql-md.md)]. Example code for creating defaults and rules are available in Template Explorer.  
-  
+
 ##  <a name="TsqlProcedure"></a> Using Transact-SQL  
   
 #### To create a user-defined data type alias  
@@ -116,7 +114,7 @@ manager: "jhubbard"
   
 3.  Copy and paste the following example into the query window and click **Execute**. This example creates a data type alias based on the system-supplied `varchar` data type. The `ssn` data type alias is used for columns holding 11-digit social security numbers (999-99-9999). The column cannot be NULL.  
   
-```tsql  
+```sql  
 CREATE TYPE ssn  
 FROM varchar(11) NOT NULL ;  
 ```  

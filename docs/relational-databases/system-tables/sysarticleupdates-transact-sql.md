@@ -1,33 +1,26 @@
 ---
-title: "sysarticleupdates (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sysarticleupdates (Transact-SQL)"
+description: sysarticleupdates (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "sysarticleupdates_TSQL"
   - "sysarticleupdates"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysarticleupdates system table"
-ms.assetid: 11a53bcd-a215-4d0b-9db8-233981d3ef5d
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# sysarticleupdates (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  Contains one row for each article that supports immediate-updating subscriptions. This table is stored in the replicated database.  
+# sysarticleupdates (Transact-SQL)
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+Contains one row for each article that supports immediate-updating subscriptions. This table is stored in the replicated database.  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  

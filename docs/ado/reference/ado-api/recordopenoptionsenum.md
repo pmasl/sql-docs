@@ -1,27 +1,20 @@
 ---
-title: "RecordOpenOptionsEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "RecordOpenOptionsEnum"
+description: "RecordOpenOptionsEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "RecordOpenOptionsEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "RecordOpenOptionsEnum enumeration [ADO]"
-ms.assetid: 9028aba4-90fc-4dfc-88e4-fa8a7b6fedee
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # RecordOpenOptionsEnum
-Specifies options for opening a [Record](../../../ado/reference/ado-api/record-object-ado.md). These values may be combined by using OR.  
+Specifies options for opening a [Record](./record-object-ado.md). These values may be combined by using OR.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -36,4 +29,4 @@ Specifies options for opening a [Record](../../../ado/reference/ado-api/record-o
  These constants do not have ADO/WFC equivalents.  
   
 ## Applies To  
- [Open Method (ADO Record)](../../../ado/reference/ado-api/open-method-ado-record.md)
+ [Open Method (ADO Record)](./open-method-ado-record.md)

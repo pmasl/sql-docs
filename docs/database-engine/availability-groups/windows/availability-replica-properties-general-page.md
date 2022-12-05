@@ -1,23 +1,18 @@
 ---
-title: "Availability Replica Properties (General Page) | Microsoft Docs"
-ms.custom: ""
+title: "General page (Availability Replica Properties)"
+description: "A description of the various properties found on the 'General' page of the 'Availability Replica Properties' page in SQL Server Management Studio."
+author: MashaMSFT
+ms.author: mathoma
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: availability-groups
+ms.topic: end-user-help
+ms.custom: seo-lt-2019
+f1_keywords:
   - "sql13.swb.availabilityreplicaproperties.general.f1"
-ms.assetid: 8318fefb-e045-4fab-8507-e1951fc7cec6
-caps.latest.revision: 14
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
-# Availability Replica Properties (General Page)
+# Availability replica properties (General Page) for Always On availability groups
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Use this dialog box to viewthe properties of an availability replica.  
   
 ## Task List  
@@ -27,7 +22,7 @@ manager: "jhubbard"
   
 -   [Use the Always On Dashboard &#40;SQL Server Management Studio&#41;](../../../database-engine/availability-groups/windows/use-the-always-on-dashboard-sql-server-management-studio.md)  
   
-## UIElement List  
+## UI element list  
  **Availability group name**  
  Name of the availability group. This is a user-specified name that must be unique within the Windows Server Failover Cluster (WSFC).  
   

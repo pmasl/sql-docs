@@ -1,17 +1,13 @@
 ---
-title: "REVOKE Service Broker Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "REVOKE Service Broker Permissions (Transact-SQL)"
+description: REVOKE Service Broker Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "routes [Service Broker], permissions"
   - "Service Broker, permissions"
   - "remote service bindings [Service Broker], permissions"
@@ -20,14 +16,11 @@ helpviewer_keywords:
   - "contracts [Service Broker], permissions"
   - "services [Service Broker], permissions"
   - "REVOKE statement, Service Broker"
-ms.assetid: 70f1d938-97e2-48a4-9bc0-8be9f2f2c36d
-caps.latest.revision: 25
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # REVOKE Service Broker Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Revokes permissions on a [!INCLUDE[ssSB](../../includes/sssb-md.md)] contract, message type, remote service binding, route, or service.  
   
@@ -35,7 +28,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 REVOKE [ GRANT OPTION FOR ] permission [ ,...n ] ON  
     {   
@@ -50,7 +43,9 @@ REVOKE [ GRANT OPTION FOR ] permission [ ,...n ] ON
     [ AS revoking_principal ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  GRANT OPTION FOR  
  Indicates that the right to grant the specified right to other principals will be revoked. The permission itself will not be revokes.  
   
@@ -60,19 +55,19 @@ REVOKE [ GRANT OPTION FOR ] permission [ ,...n ] ON
  *permission*  
  Specifies a permission that can be revoked on a [!INCLUDE[ssSB](../../includes/sssb-md.md)] securable. For a list of these permissions, see the Remarks section later in this topic.  
   
- CONTRACT **::***contract_name*  
+ CONTRACT **::**_contract_name_  
  Specifies the contract on which the permission is being revoked. The scope qualifier **::** is required.  
   
- MESSAGE TYPE **::***message_type_name*  
+ MESSAGE TYPE **::**_message_type_name_  
  Specifies the message type on which the permission is being revoked. The scope qualifier **::** is required.  
   
- REMOTE SERVICE BINDING **::***remote_binding_name*  
+ REMOTE SERVICE BINDING **::**_remote_binding_name_  
  Specifies the remote service binding on which the permission is being revoked. The scope qualifier **::** is required.  
   
- ROUTE **::***route_name*  
+ ROUTE **::**_route_name_  
  Specifies the route on which the permission is being revoked. The scope qualifier **::** is required.  
   
- SERVICE **::***message_type_name*  
+ SERVICE **::**_message_type_name_  
  Specifies the service on which the permission is being revoked. The scope qualifier **::** is required.  
   
  *database_principal*  

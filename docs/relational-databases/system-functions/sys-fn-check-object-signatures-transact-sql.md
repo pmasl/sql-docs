@@ -1,14 +1,12 @@
 ---
+description: "sys.fn_check_object_signatures (Transact-SQL)"
 title: "sys.fn_check_object_signatures (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sys.fn_check_object_signatures_TSQL"
   - "fn_check_object_signatures_TSQL"
@@ -19,13 +17,12 @@ dev_langs:
 helpviewer_keywords: 
   - "sys.fn_check_object_signatures function"
 ms.assetid: 47509566-d3d7-46a9-89c1-91b4895d56b9
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
+monikerRange: ">=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.fn_check_object_signatures (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-pdw_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-pdw-md.md)]
+[!INCLUDE [sql-asdbmi-pdw](../../includes/applies-to-version/sql-asdbmi-pdw.md)]
 
   Returns a list of all signable objects and indicates whether an object is signed by a specified certificate or asymmetric key. If the object is signed by the specified certificate or asymmetric key signed, it also returns whether the object's signature is valid.  
   
@@ -42,17 +39,17 @@ fn_ check_object_signatures (
 ```  
   
 ## Arguments  
- { '@*class*' }  
+ { '\@*class*' }  
  Identifies the type of thumbprint being provided:  
   
 -   'certificate'  
   
 -   'asymmetric key'  
   
- @*class* is **sysname**.  
+ \@*class* is **sysname**.  
   
- { @*thumbprint* }  
- SHA-1 hash of the certificate with which the key is encrypted, or the GUID of the asymmetric key with which the key is encrypted. @*thumbprint* is **varbinary(20)**.  
+ { \@*thumbprint* }  
+ SHA-1 hash of the certificate with which the key is encrypted, or the GUID of the asymmetric key with which the key is encrypted. \@*thumbprint* is **varbinary(20)**.  
   
 ## Tables Returned  
  The following table lists the columns that **fn_check_object_signatures** returns.  

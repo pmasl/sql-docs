@@ -1,24 +1,15 @@
 ---
-title: "updateBoolean Method (java.lang.String, boolean) | Microsoft Docs"
-ms.custom: ""
+title: "updateBoolean Method (java.lang.String, boolean)"
+description: "updateBoolean Method (java.lang.String, boolean)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateBoolean (java.lang.String, boolean)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateBoolean (java.lang.String, boolean)"
 apitype: "Assembly"
-ms.assetid: 5fed9ebb-d9a3-4d1a-9212-1057a603c4e5
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateBoolean Method (java.lang.String, boolean)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

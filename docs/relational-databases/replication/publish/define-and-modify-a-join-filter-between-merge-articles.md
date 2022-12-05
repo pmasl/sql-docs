@@ -1,27 +1,24 @@
 ---
-title: "Define and Modify a Join Filter Between Merge Articles | Microsoft Docs"
-ms.custom: ""
+title: "Define & modify join filter between Merge articles"
+description: Learn how to define and modify the join filter used between Merge articles using SQL Server Management Studio (SSMS) or Transact-SQL (T-SQL).
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "filters [SQL Server replication], join"
   - "merge replication join filters [SQL Server replication]"
   - "modifying filters, join"
   - "join filters"
 ms.assetid: f7f23415-43ff-40f5-b3e0-0be1d148ee5b
-caps.latest.revision: 46
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
 ---
 # Define and Modify a Join Filter Between Merge Articles
-  This topic describes how to define and modify a join filter between merge articles in [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../../includes/tsql-md.md)]. Merge replication supports join filters, which are typically used in conjunction with parameterized filters to extend table partitioning to other related table articles.  
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
+  This topic describes how to define and modify a join filter between merge articles in [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../../includes/tsql-md.md)]. Merge replication supports join filters, which are typically used in conjunction with parameterized filters to extend table partitioning to other related table articles.  
   
  **In This Topic**  
   
@@ -83,17 +80,17 @@ manager: "jhubbard"
   
     -   By default, merge replication processes changes on a row-by-row basis during synchronization. To have related changes in rows of both the filtered table and the joined table processed as a unit, select **Logical record** ([!INCLUDE[msCoName](../../../includes/msconame-md.md)] [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] and later versions only). This option is available only if the article and publication requirements for using logical records are met. For more information see the section "Considerations for Using Logical Records" in [Group Changes to Related Rows with Logical Records](../../../relational-databases/replication/merge/group-changes-to-related-rows-with-logical-records.md).  
   
-5.  [!INCLUDE[clickOK](../../../includes/clickok-md.md)]  
-  
+5.  Select **OK**.
+
 6.  If you are in the **Publication Properties - \<Publication>** dialog box, click **OK** to save and close the dialog box.  
-  
+
 #### To modify a join filter  
   
 1.  On the **Filter Table Rows** page of the New Publication Wizard or the **Filter Rows** page of the **Publication Properties - \<Publication>**, select a filter in the **Filtered Tables** pane, and then click **Edit**.  
   
 2.  In the **Edit Join** dialog box, modify the filter.  
   
-3.  [!INCLUDE[clickOK](../../../includes/clickok-md.md)]  
+3.  Select **OK**.
   
 #### To delete a join filter  
   
@@ -112,7 +109,7 @@ manager: "jhubbard"
   
 2.  At the Publisher on the publication database, execute [sp_addmergearticle &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-addmergearticle-transact-sql.md) to define one or more related articles, which are also known as child articles, for the publication. For more information, see [Define an Article](../../../relational-databases/replication/publish/define-an-article.md).  
   
-3.  At the Publisher on the publication database, execute [sp_addmergefilter &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-addmergefilter-transact-sql.md). Specify **@publication**, a unique name for this filter for **@filtername**, the name of the child article created in step 2 for **@article**, the name of the parent article being joined to for **@join_articlename**, and one of the following values for **@join_unique_key**:  
+3.  At the Publisher on the publication database, execute [sp_addmergefilter &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-addmergefilter-transact-sql.md). Specify `@publication`, a unique name for this filter for `@filtername`, the name of the child article created in step 2 for `@article`, the name of the parent article being joined to for `@join_articlename`, and one of the following values for `@join_unique_key`:  
   
     -   **0** - indicates a many-to-one or many-to-many join between the parent and child articles.  
   
@@ -121,7 +118,7 @@ manager: "jhubbard"
      This defines a join filter between the two articles.  
   
     > [!CAUTION]  
-    >  Only set **@join_unique_key** to **1** if you have a constraint on the joining column in the underlying table for the parent article that guarantees uniqueness. If **@join_unique_key** is set to **1** incorrectly, non-convergence of data may occur.  
+    >  Only set `@join_unique_key` to **1** if you have a constraint on the joining column in the underlying table for the parent article that guarantees uniqueness. If `@join_unique_key` is set to **1** incorrectly, non-convergence of data may occur.  
   
 ###  <a name="TsqlExample"></a> Examples (Transact-SQL)  
  This example defines an article for a merge publication, where the `SalesOrderDetail` table article is filtered against the `SalesOrderHeader` table that is itself filtered using a static row filter. For more information, see [Define and Modify a Static Row Filter](../../../relational-databases/replication/publish/define-and-modify-a-static-row-filter.md).  

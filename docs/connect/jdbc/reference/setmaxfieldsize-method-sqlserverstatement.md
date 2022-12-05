@@ -1,24 +1,15 @@
 ---
-title: "setMaxFieldSize Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setMaxFieldSize Method (SQLServerStatement)"
+description: "setMaxFieldSize Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.setMaxFieldSize"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.setMaxFieldSize"
 apitype: "Assembly"
-ms.assetid: 38f7fc1d-acad-4d10-9fc8-3c0669d93b07
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setMaxFieldSize Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

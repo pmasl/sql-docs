@@ -1,24 +1,15 @@
 ---
-title: "getParameterClassName Method (SQLServerParameterMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getParameterClassName Method (SQLServerParameterMetaData)"
+description: "getParameterClassName Method (SQLServerParameterMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerParameterMetaData.getParameterClassName"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerParameterMetaData.getParameterClassName"
 apitype: "Assembly"
-ms.assetid: 545634d8-f06b-429a-9293-0087d758f359
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getParameterClassName Method (SQLServerParameterMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

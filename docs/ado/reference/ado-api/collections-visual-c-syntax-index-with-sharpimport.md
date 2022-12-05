@@ -1,27 +1,20 @@
 ---
-title: "Collections (Visual C++ Syntax Index with #import) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Collections (Visual C++ Syntax Index with #import)"
+description: "Collections (Visual C++ Syntax Index with #import)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "syntax indexes [ADO], ADO for Visual C++ syntax with #import"
   - "collections [ADO], ADO for Visual C++ syntax with #import"
   - "ADO for Visual C++ syntax with #import [ADO]"
   - "#import [ADO]"
-ms.assetid: 36fbca8e-1884-44b5-806b-d15e30f42fe6
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
+apitype: "COM"
 ---
 # Collections (Visual C++ Syntax Index with #import)
 It is useful to know that collections inherit certain common methods and properties.  
@@ -95,7 +88,7 @@ PropertyPtr GetItem( const _variant_t & Index ); __declspec(property(get=GetItem
 ```  
   
 ## See Also  
- [Errors Collection (ADO)](../../../ado/reference/ado-api/errors-collection-ado.md)   
- [Fields Collection (ADO)](../../../ado/reference/ado-api/fields-collection-ado.md)   
- [Parameters Collection (ADO)](../../../ado/reference/ado-api/parameters-collection-ado.md)   
- [Properties Collection (ADO)](../../../ado/reference/ado-api/properties-collection-ado.md)
+ [Errors Collection (ADO)](./errors-collection-ado.md)   
+ [Fields Collection (ADO)](./fields-collection-ado.md)   
+ [Parameters Collection (ADO)](./parameters-collection-ado.md)   
+ [Properties Collection (ADO)](./properties-collection-ado.md)

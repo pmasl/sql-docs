@@ -1,21 +1,14 @@
 ---
-title: "Data Section | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Data Section"
+description: "Data Section"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "data section [ADO]"
-ms.assetid: 43dc42a8-7057-48e6-93d6-880d5c5c51a4
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Data Section
 The data section defines the data of the rowset along with any pending updates, insertions, or deletions. The data section can contain zero or more rows. It can only contain data from one rowset where the row is defined by the schema. Also, as noted before, columns without any data can be omitted. If an attribute or subelement is used in the data section and that construct has not been defined in the schema section, it is silently ignored.  
@@ -44,10 +37,10 @@ The data section defines the data of the rowset along with any pending updates, 
   
 ```  
 <s:ElementType name="row" content="eltOnly" updatable="true">  
-  <s:attribute type="ShipperID"/>  
-  <s:attribute type="CompanyName"/>  
-  <s:attribute type="Phone"/>  
-  <s:extends type="rs:rowbase"/>  
+  <s:attribute type="ShipperID"/>  
+  <s:attribute type="CompanyName"/>  
+  <s:attribute type="Phone"/>  
+  <s:extends type="rs:rowbase"/>  
 </s:ElementType>  
 ```  
   
@@ -57,25 +50,25 @@ The data section defines the data of the rowset along with any pending updates, 
   
 ```  
 <rs:data>  
-  <z:row ShipperID="2" CompanyName="United Package"   
-    Phone="(503) 555-3199"/>  
+  <z:row ShipperID="2" CompanyName="United Package"   
+    Phone="(503) 555-3199"/>  
 <rs:update>  
-  <rs:original>  
-    <z:row ShipperID="3" CompanyName="Federal Shipping"   
-      Phone="(503) 555-9931"/>  
-  </rs:original>  
-  <z:row Phone="(503) 552-7134"/>  
+  <rs:original>  
+    <z:row ShipperID="3" CompanyName="Federal Shipping"   
+      Phone="(503) 555-9931"/>  
+  </rs:original>  
+  <z:row Phone="(503) 552-7134"/>  
 </rs:update>  
 <rs:insert>  
-  <z:row ShipperID="12" CompanyName="Lightning Shipping"   
-    Phone="(505) 111-2222"/>  
-  <z:row ShipperID="13" CompanyName="Thunder Overnight"   
-    Phone="(505) 111-2222"/>  
-  <z:row ShipperID="14" CompanyName="Blue Angel Air Delivery"   
-    Phone="(505) 111-2222"/>  
+  <z:row ShipperID="12" CompanyName="Lightning Shipping"   
+    Phone="(505) 111-2222"/>  
+  <z:row ShipperID="13" CompanyName="Thunder Overnight"   
+    Phone="(505) 111-2222"/>  
+  <z:row ShipperID="14" CompanyName="Blue Angel Air Delivery"   
+    Phone="(505) 111-2222"/>  
 </rs:insert>  
 <rs:delete>  
-  <z:row ShipperID="1" CompanyName="Speedy Express" Phone="(503) 555-9831"/>  
+  <z:row ShipperID="1" CompanyName="Speedy Express" Phone="(503) 555-9831"/>  
 </rs:delete>  
 </rs:data>  
 ```  
@@ -83,4 +76,4 @@ The data section defines the data of the rowset along with any pending updates, 
  An update always contains the entire original row data followed by the changed row data. The changed row may contain all the columns or only those columns that have actually changed. In the previous example, the row for Shipper 2 is not changed, and only the Phone column has changed values for Shipper 3 and is therefore the only column included in the changed row. The inserted rows for Shippers 12, 13, and 14 are batched together under one rs:insert tag. Note that deleted rows can also be batched together, although this is not shown in the previous example.  
   
 ## See Also  
- [Persisting Records in XML Format](../../../ado/guide/data/persisting-records-in-xml-format.md)
+ [Persisting Records in XML Format](./persisting-records-in-xml-format.md)

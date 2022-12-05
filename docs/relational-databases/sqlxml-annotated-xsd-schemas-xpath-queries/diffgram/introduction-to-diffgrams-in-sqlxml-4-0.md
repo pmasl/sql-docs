@@ -1,24 +1,20 @@
 ---
-title: "Introduction to DiffGrams in SQLXML 4.0 | Microsoft Docs"
-ms.custom: ""
+title: "Introduction to DiffGrams in SQLXML 4.0"
+description: Learn about the format, annotations, and processing logic of DiffGrams in SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "annotations [SQLXML]"
   - "DiffGrams [SQLXML], about DiffGrams"
 ms.assetid: 1902d67f-baf3-46e6-a36c-b24b5ba6f8ea
-caps.latest.revision: 10
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Introduction to DiffGrams in SQLXML 4.0
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   This topic provides a brief introduction to DiffGrams.  
   
 ## DiffGram Format  

@@ -1,24 +1,15 @@
 ---
-title: "execute Method (java.lang.String) (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "execute Method (java.lang.String) (SQLServerStatement)"
+description: "execute Method (java.lang.String) (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.execute (java.lang.String)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.execute (java.lang.String)"
 apitype: "Assembly"
-ms.assetid: 64ac78b8-d5b3-4134-9b72-d2b0c52168a2
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # execute Method (java.lang.String) (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

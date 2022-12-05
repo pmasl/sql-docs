@@ -1,19 +1,12 @@
 ---
-title: "ADO Fundamentals | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ADO Fundamentals"
+description: "ADO Fundamentals"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d6a66928-e68f-4c38-b87a-838c5de50a28
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
 ---
 # ADO Fundamentals
 ADO gives developers a powerful, logical object model for programmatically accessing, editing, and updating data from a wide variety of data sources through OLE DB system interfaces. The most common usage of ADO is to query a table or tables in a relational database, retrieve and display the results in an application, and perhaps let users make and save changes to the data. Other tasks include the following:  
@@ -54,10 +47,10 @@ ADO gives developers a powerful, logical object model for programmatically acces
   
  However, before we discuss these details, we will present an overview of the ADO object model and a simple ADO application, which is written in Microsoft® Visual Basic® and performs each of the four primary ADO operations:  
   
--   [ADO Objects and Collections](../../../ado/guide/data/ado-objects-and-collections.md)  
+-   [ADO Objects and Collections](./ado-objects-and-collections.md)  
   
--   [HelloData: A Simple ADO Application](../../../ado/guide/data/hellodata-a-simple-ado-application.md)  
+-   [HelloData: A Simple ADO Application](./hellodata-a-simple-ado-application.md)  
   
--   [OLE DB Providers](../../../ado/guide/data/ole-db-providers-ado.md)  
+-   [OLE DB Providers](./ole-db-providers-ado.md)  
   
--   [Errors](../../../ado/guide/data/errors-ado.md)
+-   [Errors](./errors-ado.md)

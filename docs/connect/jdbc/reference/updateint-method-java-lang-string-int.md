@@ -1,24 +1,15 @@
 ---
-title: "updateInt Method (java.lang.String, int) | Microsoft Docs"
-ms.custom: ""
+title: "updateInt Method (java.lang.String, int)"
+description: "updateInt Method (java.lang.String, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateInt (java.lang.String, int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateInt (java.lang.String, int)"
 apitype: "Assembly"
-ms.assetid: b0aef8f7-057e-4b57-892c-d120f2daed77
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateInt Method (java.lang.String, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

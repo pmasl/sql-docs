@@ -1,28 +1,17 @@
 ---
+description: "IsAncestor (MDX)"
 title: "IsAncestor (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "ISANCESTOR"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "IsAncestor function"
-ms.assetid: 49d2fcdf-8d9a-4c79-bd00-4910ea149141
-caps.latest.revision: 32
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # IsAncestor (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Returns whether a specified member is an ancestor of another specified member.  
   

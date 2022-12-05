@@ -1,15 +1,12 @@
 ---
-title: "Manage Partition Wizard F1 Help | Microsoft Docs"
-ms.custom: ""
+title: "Manage Partition Wizard"
+description: Manage Partition Wizard
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-partition"
-ms.tgt_pltfrm: ""
+ms.service: sql
 ms.topic: "reference"
-f1_keywords: 
+f1_keywords:
   - "sql13.swb.managepartition.createjob.f1"
   - "sql13.swb.managepartition.progress.f1"
   - "sql13.swb.managepartition.getstart.f1"
@@ -20,15 +17,12 @@ f1_keywords:
   - "sql13.swb.managepartition.partitionaction.f1"
   - "sql13.swb.managepartition.summary.f1"
   - "sql13.swb.managepartition.selectoutput.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "wizards [SQL Server Management Studio] See Manage Partition Wizard"
 ms.assetid: e2478d26-dea4-428d-98c5-aad2d2a30da8
-caps.latest.revision: 12
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
-# Manage Partition Wizard F1 Help
+# Manage Partition Wizard 
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use the **Manage Partition Wizard** to manage and modify existing partitioned tables through partition switching or the implementation of a sliding window scenario. This wizard can ease the management of your partitions and simplify the regular migration of data in and out of your tables.  
   
 ### To start the Manage Partition Wizard  
@@ -73,7 +67,7 @@ manager: "jhubbard"
 ### Sliding Window Scenario  
  To manage your partitions in a sliding-window scenario, select **Manage partitioned data in a sliding window scenario**.  
   
-## UIElement List  
+### UI element list  
  **Create a staging table for partition switching**  
  Creates a staging table for the data you are switching in or switching out of the existing partitioned table.  
   
@@ -86,12 +80,12 @@ manager: "jhubbard"
  **Manage partitioned data in a sliding window scenario**  
  Appends an empty partition to the existing table that can be used for switching in data. The wizard currently supports switching into the last partition and switching out the first partition.  
   
- ![Arrow icon used with Back to Top link](../../analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
+ ![Arrow icon used with Back to Top link](/analysis-services/analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
   
 ##  <a name="SwitchIn"></a> Select Partition Switching-In Options Page  
  Use the **Select Partition Switching-In options** page to select the staging table you are switching into the partitioned table.  
   
-## UIElement List  
+### UI element list  
  **Show All Partitions**  
  Select to show all partitions, including the partitions currently in the partitioned table.  
   
@@ -101,12 +95,12 @@ manager: "jhubbard"
  **Switch in table**  
  Select the staging table that contains the partition that you want to add to your partitioned table. You must create this staging table before you switch-in partitions with the **Manage PartitionsWizard**.  
   
- ![Arrow icon used with Back to Top link](../../analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
+ ![Arrow icon used with Back to Top link](/analysis-services/analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
   
 ##  <a name="SwitchOut"></a> Select Partition Switching-Out Options Page  
  Use the **Select Partition Switching-Out options** page to select the partition and the staging table to hold the partitioned data that you are switching out of the partitioned table.  
   
-## UIElement List  
+### UI element list  
  **Partition grid**  
  Displays the partition name, **Left boundary**, **Right boundary**, **Filegroup**, and **Row count** of the partitions you selected.  
   
@@ -119,7 +113,7 @@ manager: "jhubbard"
  **Existing**  
  Select an existing staging table you want to use for the partition you want to switch out of the current source table. If the existing table contains data, this data will be overwritten with the data you are switching out.  
   
- ![Arrow icon used with Back to Top link](../../analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
+ ![Arrow icon used with Back to Top link](/analysis-services/analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
   
 ##  <a name="StagingTableOptions"></a> Select the Staging Table Options Page  
  Use the **Select the Staging Table Options** page to create the staging table you want to use for switching your partitioned data.  
@@ -128,7 +122,7 @@ manager: "jhubbard"
   
  You can also create the same indexes in the staging table that exist in the source partition. The staging table automatically contains a constraint based on the elements of the source partition. This constraint is typically generated from the boundary value of the source partition.  
   
-## UIElement List  
+### UI element list  
  **Staging table name**  
  Create a name for the staging table or accept the default name displayed in the edit box.  
   
@@ -141,7 +135,7 @@ manager: "jhubbard"
  **Filegroup**  
  Select a filegroup for the new table.  
   
- ![Arrow icon used with Back to Top link](../../analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
+ ![Arrow icon used with Back to Top link](/analysis-services/analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
   
 ##  <a name="OutputOption"></a> Select Output Option Page  
  Use the **Select Output Option** page to specify how you want to complete the modifications to your partitions.  
@@ -168,7 +162,7 @@ manager: "jhubbard"
  **Change schedule**  
  Opens the **New Job Schedule** dialog box, where you can select, change, or view the properties of the scheduled job.  
   
- ![Arrow icon used with Back to Top link](../../analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
+ ![Arrow icon used with Back to Top link](/analysis-services/analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
   
 ##  <a name="NewJob"></a> New Job Schedule Page  
  Use the **New Job Schedule** page to view and change the properties of the schedule.  
@@ -251,16 +245,16 @@ manager: "jhubbard"
  **Time**  
  Select the time for the job to run.  
   
- ![Arrow icon used with Back to Top link](../../analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
+ ![Arrow icon used with Back to Top link](/analysis-services/analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
   
 ##  <a name="Summary"></a> Summary Page  
  Use the **Summary** page to review the options that you have selected on the previous pages.  
   
-## UIElement List  
+### UI element list  
  **Review your selections**  
  Displays the selections you have made for each page of the wizard. Click a node to expand and view your previously selected options.  
   
- ![Arrow icon used with Back to Top link](../../analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
+ ![Arrow icon used with Back to Top link](/analysis-services/analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
   
 ##  <a name="Progress"></a> Progress Page  
  Use the **Progress** page to monitor status information about the actions of the **Manage Partition Wizard**. Depending on the options that you selected in the wizard, the **Progress** page might contain one or more actions. The top box displays the overall status of the wizard and the number of status, error, and warning messages that the wizard has received.  
@@ -298,9 +292,8 @@ manager: "jhubbard"
  **Close**  
  Close the wizard.  
   
- ![Arrow icon used with Back to Top link](../../analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
+ ![Arrow icon used with Back to Top link](/analysis-services/analysis-services/instances/media/uparrow16x16.gif "Arrow icon used with Back to Top link") [In This Section](#Top)  
   
 ## See Also  
  [Partitioned Tables and Indexes](../../relational-databases/partitions/partitioned-tables-and-indexes.md)  
-  
   

@@ -1,24 +1,15 @@
 ---
-title: "getBigDecimal Method (int, int) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getBigDecimal Method (int, int) (SQLServerResultSet)"
+description: "getBigDecimal Method (int, int) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getBigDecimal (int, int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getBigDecimal (int, int)"
 apitype: "Assembly"
-ms.assetid: c99d0772-b26c-492c-a643-2813b5429993
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getBigDecimal Method (int, int) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,26 +1,21 @@
 ---
-title: "DiffGram Examples (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "DiffGram Examples (SQLXML)"
+description: View examples of diffgrams in SQLXML 4.0 that perform insert, update, and delete operations to a database.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "DiffGrams [SQLXML], examples"
   - "examples [SQLXML], DiffGram"
-  - "diffgr:parentID"
-  - "parentID annotation"
 ms.assetid: fc148583-dfd3-4efb-a413-f47b150b0975
-caps.latest.revision: 24
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # DiffGram Examples (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   The examples in this topic consist of DiffGrams that perform insert, update, and delete operations to the database. Before using the examples, note the following:  
   
 -   The examples use two tables (Cust and Ord) that must be created if you want to test the DiffGram examples:  

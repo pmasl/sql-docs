@@ -1,27 +1,22 @@
 ---
-title: "SQL Server Extended Events Sessions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-  - "xevents"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "SQL Server Extended Events Sessions"
+description: A SQL Server Extended Events session is created in the SQL Server process that hosts the Extended Events engine. Learn about session states and session content.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: "05/26/2020"
+ms.service: sql
+ms.subservice: xevents
+ms.topic: conceptual
+helpviewer_keywords:
   - "xe"
   - "sessions"
   - "extend events [SQL Server]"
 ms.assetid: c3c92544-351a-4bce-a06a-1f2a47e494e9
-caps.latest.revision: 20
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # SQL Server Extended Events Sessions
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   A [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Extended Events session is created in the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] process hosting the Extended Events engine. The following aspects of an Extended Events session provide a context for understanding the Extended Events infrastructure and the general processing that takes place:  
   
@@ -31,9 +26,9 @@ manager: "jhubbard"
   
 ## Session States  
  The following illustration shows the various states of an Extended Events session.  
-  
- ![Extended event session state](../../relational-databases/extended-events/media/xesessionstate.gif "Extended event session state")  
-  
+
+![Extended Event session state](../../relational-databases/extended-events/media/xesessionstate.png "Extended Event session state")
+
  Referring to the preceding figure, note that session state changes as the different DDL commands are issued for an event session. The following table describes these changes in state.  
   
 |Illustration label|DDL statement|Description|  
@@ -55,7 +50,7 @@ manager: "jhubbard"
   
  Referring to the preceding illustration, note that:  
   
--   The mapping between package objects and sessions is many to many, which means that that an object can appear in several sessions, and a session can contain several objects.  
+-   The mapping between package objects and sessions is many to many, which means that an object can appear in several sessions, and a session can contain several objects.  
   
 -   The same event (Event 1) or target (Target 1) can be enabled in more than one session.  
   
@@ -71,7 +66,7 @@ manager: "jhubbard"
   
  **Causality tracking**  
   
- Causality tracking provides the ability to track work across multiple tasks. When causality tracking is enabled, each event fired has a unique activity ID across the system. The activity ID is a combination of a GUID value that remains constant across all events for a task, and a sequence number that is incremented each time an event is fired. When one task causes work to be done on another, the activity ID of the parent is sent to the child task. The child task outputs the parent’s activity ID the first time it fires an event.  
+ Causality tracking provides the ability to track work across multiple tasks. When causality tracking is enabled, each event fired has a unique activity ID across the system. The activity ID is a combination of a GUID value that remains constant across all events for a task, and a sequence number that is incremented each time an event is fired. When one task causes work to be done on another, the activity ID of the parent is sent to the child task. The child task outputs the parent's activity ID the first time it fires an event.  
   
  The Extended Events architecture provides a flexible system that allows a variety of objects to be used together to solve specific problems.  
   

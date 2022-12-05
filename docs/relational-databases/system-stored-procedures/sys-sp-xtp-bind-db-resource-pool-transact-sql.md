@@ -1,14 +1,12 @@
 ---
+description: "sys.sp_xtp_bind_db_resource_pool (Transact-SQL)"
 title: "sys.sp_xtp_bind_db_resource_pool (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_xtp_bind_db_resource_pool_TSQL"
   - "sp_xtp_bind_db_resource_pool"
@@ -20,17 +18,15 @@ helpviewer_keywords:
   - "sp_xtp_bind_db_resource_pool"
   - "sys.sp_xtp_bind_db_resource_pool"
 ms.assetid: c2a78073-626b-4159-996e-1808f6bfb6d2
-caps.latest.revision: 9
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sys.sp_xtp_bind_db_resource_pool (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2014-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
 
-  Binds the specified [!INCLUDE[hek_2](../../includes/hek-2-md.md)] database to the specified resource pool. Both the database and the resource pool must exist prior to executing `sys.sp_xtp_bind_db_resource_pool`.  
+  Binds the specified [!INCLUDE[inmemory](../../includes/inmemory-md.md)] database to the specified resource pool. Both the database and the resource pool must exist prior to executing `sys.sp_xtp_bind_db_resource_pool`.  
   
- This system procedure creates a binding between the Resource Governor pool identified by resource_pool_name, and the database identified by database_name. It is not required that the database has any memory-optimized objects at the time of binding. In the absence of memory-optimized objects, there is no memory taken from the resource pool. This binding will be used by Resource Governor to manage memory allocated by [!INCLUDE[hek_2](../../includes/hek-2-md.md)] allocators as described below.  
+ This system procedure creates a binding between the Resource Governor pool identified by resource_pool_name, and the database identified by database_name. It is not required that the database has any memory-optimized objects at the time of binding. In the absence of memory-optimized objects, there is no memory taken from the resource pool. This binding will be used by Resource Governor to manage memory allocated by [!INCLUDE[inmemory](../../includes/inmemory-md.md)] allocators as described below.  
   
  If there is already a binding in place for a given database, the procedure returns an error.  In no event may a database have more than one active binding.  
   
@@ -39,13 +35,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```tsql  
+```sql  
 sys.sp_xtp_bind_db_resource_pool 'database_name', 'resource_pool_name'  
 ```  
   
 ## Arguments  
  database_name  
- The name of an existing [!INCLUDE[hek_2](../../includes/hek-2-md.md)] enabled database.  
+ The name of an existing [!INCLUDE[inmemory](../../includes/inmemory-md.md)] enabled database.  
   
  resource_pool_name  
  The name of an existing resource pool.  
@@ -63,7 +59,7 @@ Database 'Hekaton_DB213' does not exist. Make sure that the name is entered corr
 ```  
   
 **Database is a system database**  
- [!INCLUDE[hek_2](../../includes/hek-2-md.md)] tables cannot be created in system databases.  Thus it is invalid to create a binding of [!INCLUDE[hek_2](../../includes/hek-2-md.md)] memory for such a database.  The following error is returned:  
+ [!INCLUDE[inmemory](../../includes/inmemory-md.md)] tables cannot be created in system databases.  Thus it is invalid to create a binding of [!INCLUDE[inmemory](../../includes/inmemory-md.md)] memory for such a database.  The following error is returned:  
 *Database_name %s refers to a system database.  Resource pools may only be bound to a user database.*  
   
 ```  
@@ -81,7 +77,7 @@ Resource pool 'Pool_Hekaton' does not exist or resource governor has not been re
 ```  
   
 **Pool_name refers to a reserved system pool**  
- The pool names “INTERNAL” and “DEFAULT” are reserved for system pools.  It is not valid to explicitly bind a database to either of these.  If a system pool name is entered, the following error is returned:  
+ The pool names "INTERNAL" and "DEFAULT" are reserved for system pools.  It is not valid to explicitly bind a database to either of these.  If a system pool name is entered, the following error is returned:  
 *Resource Pool %s is a system resource pool.  System resource pools may not be explicitly bound to a database using this procedure.*  
   
 ```  
@@ -107,7 +103,7 @@ Database 'Hekaton_DB' is currently bound to a resource pool. A database must be 
 ## Examples  
 A.  The following code example binds the database Hekaton_DB to the resource pool Pool_Hekaton.  
   
-```tsql  
+```sql  
 sys.sp_xtp_bind_db_resource_pool N'Hekaton_DB', N'Pool_Hekaton'  
 ```  
  
@@ -115,7 +111,7 @@ sys.sp_xtp_bind_db_resource_pool N'Hekaton_DB', N'Pool_Hekaton'
  
  B. Expanded example of above example which includes some basic checks.  Execute the following [!INCLUDE[tsql](../../includes/tsql-md.md)] in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]\:
  
-```tsql
+```sql
 DECLARE @resourcePool sysname = N'Pool_Hekaton';
 DECLARE @database sysname = N'Hekaton_DB';
 

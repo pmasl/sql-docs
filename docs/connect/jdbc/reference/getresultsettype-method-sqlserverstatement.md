@@ -1,24 +1,15 @@
 ---
-title: "getResultSetType Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getResultSetType Method (SQLServerStatement)"
+description: "getResultSetType Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.getResultSetType"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.getResultSetType"
 apitype: "Assembly"
-ms.assetid: 260da35f-ddf6-4111-8519-69956ea3072e
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getResultSetType Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

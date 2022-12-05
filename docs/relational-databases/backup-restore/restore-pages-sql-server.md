@@ -1,14 +1,12 @@
 ---
 title: "Restore Pages (SQL Server) | Microsoft Docs"
+description: Learn how to restore pages in SQL Server by using SQL Server Management Studio or Transact-SQL. Restore damaged pages without restoring the whole database. 
 ms.custom: ""
 ms.date: "03/15/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-backup-restore"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: backup-restore
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.restorepage.general.f1"
 helpviewer_keywords: 
@@ -19,13 +17,11 @@ helpviewer_keywords:
   - "pages [SQL Server], damaged"
   - "restoring [SQL Server], pages"
 ms.assetid: 07e40950-384e-4d84-9ac5-84da6dd27a91
-caps.latest.revision: 67
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # Restore Pages (SQL Server)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   This topic describes how to restore pages in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)]. The goal of a page restore is to restore one or more damaged pages without restoring the whole database. Typically, pages that are candidates for restore have been marked as "suspect" because of an error that is encountered when accessing the page. Suspect pages are identified in the [suspect_pages](../../relational-databases/system-tables/suspect-pages-transact-sql.md) table in the **msdb** database.  
   
@@ -105,7 +101,7 @@ manager: "jhubbard"
  RESTORE permissions are given to roles in which membership information is always readily available to the server. Because fixed database role membership can be checked only when the database is accessible and undamaged, which is not always the case when RESTORE is executed, members of the **db_owner** fixed database role do not have RESTORE permissions.  
   
 ##  <a name="SSMSProcedure"></a> Using SQL Server Management Studio  
- Starting in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] supports page restores.  
+ Starting in [!INCLUDE [sssql16-md](../../includes/sssql16-md.md)], [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] supports page restores.  
   
 #### To restore pages  
   
@@ -162,18 +158,20 @@ manager: "jhubbard"
      **Pages**  
   
 7.  To restore the pages listed in the pages grid, click **OK**.  
-  
+
 ##  <a name="TsqlProcedure"></a> Using Transact-SQL  
  To specify a page in a RESTORE DATABASE statement, you need the file ID of the file containing the page and the page ID of the page. The required syntax is as follows:  
+
+```syntaxsql  
+ RESTORE DATABASE <database_name>  
   
- `RESTORE DATABASE <database_name>`  
+ PAGE = '<file: page> [ ,... n ] ' [ ,... n ]
   
- `PAGE = '<file: page> [ ,... n ] ' [ ,... n ]`  
+ FROM <backup_device> [ ,... n ]
   
- `FROM <backup_device> [ ,... n ]`  
-  
- `WITH NORECOVERY`  
-  
+ WITH NORECOVERY
+```
+
  For more information about the parameters of the PAGE option, see [RESTORE Arguments &#40;Transact-SQL&#41;](../../t-sql/statements/restore-statements-arguments-transact-sql.md). For more information about the RESTORE DATABASE syntax, see [RESTORE &#40;Transact-SQL&#41;](../../t-sql/statements/restore-statements-transact-sql.md).  
   
 #### To restore pages  
@@ -184,7 +182,7 @@ manager: "jhubbard"
     |-----------------------|-----------|  
     |**msdb..suspect_pages**|[Manage the suspect_pages Table &#40;SQL Server&#41;](../../relational-databases/backup-restore/manage-the-suspect-pages-table-sql-server.md)|  
     |Error log|[View the SQL Server Error Log &#40;SQL Server Management Studio&#41;](../../relational-databases/performance/view-the-sql-server-error-log-sql-server-management-studio.md)|  
-    |Event traces|[Monitor and Respond to Events](http://msdn.microsoft.com/library/f7fbe155-5b68-4777-bc71-a47637471f32)|  
+    |Event traces|[Monitor and Respond to Events](../../ssms/agent/monitor-and-respond-to-events.md)|  
     |DBCC|[DBCC &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-transact-sql.md)|  
     |WMI provider|[WMI Provider for Server Events Concepts](../../relational-databases/wmi-provider-server-events/wmi-provider-for-server-events-concepts.md)|  
   
@@ -204,17 +202,17 @@ manager: "jhubbard"
 ###  <a name="TsqlExample"></a> Example (Transact-SQL)  
  The following example restores four damaged pages of file `B` with `NORECOVERY`. Next, two log backups are applied with `NORECOVERY`, followed with the tail-log backup, which is restored with `RECOVERY`. This example performs an online restore. In the example, the file ID of file `B` is `1`, and the page IDs of the damaged pages are `57`, `202`, `916`, and `1016`.  
   
-```tsql  
-RESTORE DATABASE <database> PAGE='1:57, 1:202, 1:916, 1:1016'  
-   FROM <file_backup_of_file_B>   
+```sql  
+RESTORE DATABASE [<database>] PAGE='1:57, 1:202, 1:916, 1:1016'  
+   FROM DISK = '<file_backup_of_file_B>'
    WITH NORECOVERY;  
-RESTORE LOG <database> FROM <log_backup>   
+RESTORE LOG [<database>] FROM [<log_backup>]
    WITH NORECOVERY;  
-RESTORE LOG <database> FROM <log_backup>   
+RESTORE LOG [<database>] FROM [<log_backup>]
    WITH NORECOVERY;   
-BACKUP LOG <database> TO <new_log_backup>;   
-RESTORE LOG <database> FROM <new_log_backup> WITH RECOVERY;  
-GO  
+BACKUP LOG [<database>] TO [<new_log_backup>];
+RESTORE LOG [<database>] FROM [<new_log_backup>] WITH RECOVERY;  
+GO
 ```  
   
 ## See Also  

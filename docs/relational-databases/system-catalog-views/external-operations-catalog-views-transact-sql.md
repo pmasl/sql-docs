@@ -1,24 +1,18 @@
 ---
-title: "External Operations Catalog Views (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "External Operations Catalog Views (Transact-SQL)"
+description: External Operations Catalog Views (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+dev_langs:
   - "TSQL"
 ms.assetid: 9abc595c-346d-42dc-a227-a73cd0a356eb
-caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # External Operations Catalog Views (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Here are the catalog views of external data objects, such as data sources, file formats, and tables. Use these views to query the state of items such as Hadoop tables used in PolyBase operations.  
   

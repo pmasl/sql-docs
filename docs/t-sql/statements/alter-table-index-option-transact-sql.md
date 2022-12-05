@@ -1,26 +1,21 @@
 ---
-title: "index_option (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "05/05/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+title: "ALTER TABLE index_option (Transact-SQL)"
+description: ALTER TABLE index_option (Transact-SQL)
+author: markingmyname
+ms.author: maghan
+ms.reviewer: randolphwest
+ms.date: 05/24/2022
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: event-tier1-build-2022
+helpviewer_keywords:
   - "index_option"
-ms.assetid: 8a14f12d-2fbf-4036-b8b2-8db3354e0eb7
-caps.latest.revision: 68
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ALTER TABLE index_option (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Specifies a set of options that can be applied to an index that is part of a constraint definition that is created by using [ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md).  
   
@@ -28,21 +23,26 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 {   
     PAD_INDEX = { ON | OFF }  
   | FILLFACTOR = fillfactor  
   | IGNORE_DUP_KEY = { ON | OFF }  
   | STATISTICS_NORECOMPUTE = { ON | OFF }  
   | ALLOW_ROW_LOCKS = { ON | OFF }  
-  | ALLOW_PAGE_LOCKS = { ON | OFF }  
+  | ALLOW_PAGE_LOCKS = { ON | OFF } 
+  | OPTIMIZE_FOR_SEQUENTIAL_KEY = { ON | OFF } 
   | SORT_IN_TEMPDB = { ON | OFF }   
-  | ONLINE = { ON | OFF }  
   | MAXDOP = max_degree_of_parallelism  
   | DATA_COMPRESSION = { NONE |ROW | PAGE | COLUMNSTORE | COLUMNSTORE_ARCHIVE }  
-      [ ON PARTITIONS ( { <partition_number_expression> | <range> }   
+      [ ON PARTITIONS ({ <partition_number_expression> | <range> }   
       [ , ...n ] ) ]  
-  | ONLINE = { ON [ ( <low_priority_lock_wait> ) ] | OFF }  
+  | XML_COMPRESSION = { ON | OFF }  
+      [ ON PARTITIONS ({ <partition_number_expression> | <range> }   
+      [ , ...n ] ) ]  
+  | ONLINE = { ON | OFF }  
+  | RESUMABLE = { ON | OFF }
+  | MAX_DURATION = <time> [MINUTES]
 }  
   
 <range> ::=   
@@ -60,12 +60,14 @@ manager: "jhubbard"
 {  
     WAIT_AT_LOW_PRIORITY ( MAX_DURATION = <time> [ MINUTES ] ,   
                            ABORT_AFTER_WAIT = { NONE | SELF | BLOCKERS } )   
-}  
+}
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  PAD_INDEX **=** { ON | **OFF** }  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies index padding. The default is OFF.  
   
@@ -75,8 +77,8 @@ manager: "jhubbard"
  OFF or *fillfactor* is not specified  
  The intermediate-level pages are filled to near capacity, leaving enough space for at least one row of the maximum size the index can have, given the set of keys on the intermediate pages.  
   
- FILLFACTOR **=***fillfactor*  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ FILLFACTOR **=**_fillfactor_  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies a percentage that indicates how full the [!INCLUDE[ssDE](../../includes/ssde-md.md)] should make the leaf level of each index page during index creation or alteration. The value specified must be an integer value from 1 to 100. The default is 0.  
   
@@ -84,15 +86,15 @@ manager: "jhubbard"
 >  Fill factor values 0 and 100 are identical in all respects.  
   
  IGNORE_DUP_KEY **=** { ON | **OFF** }  
- Specifies the error response when an insert operation attempts to insert duplicate key values into a unique index. The IGNORE_DUP_KEY option applies only to insert operations after the index is created or rebuilt. The option has no effect when executing [CREATE INDEX](../../t-sql/statements/create-index-transact-sql.md), [ALTER INDEX](../../t-sql/statements/alter-index-transact-sql.md), or [UPDATE](../../t-sql/queries/update-transact-sql.md). The default is OFF.  
+ Specifies the response type when an insert operation attempts to insert duplicate key values into a unique index. The IGNORE_DUP_KEY option applies only to insert operations after the index is created or rebuilt. The option has no effect when executing [CREATE INDEX](../../t-sql/statements/create-index-transact-sql.md), [ALTER INDEX](../../t-sql/statements/alter-index-transact-sql.md), or [UPDATE](../../t-sql/queries/update-transact-sql.md). The default is OFF.  
   
  ON  
- A warning message will occur when duplicate key values are inserted into a unique index. Only the rows violating the uniqueness constraint will fail.  
+ A warning message occurs when duplicate key values are inserted into a unique index. Only the rows violating the uniqueness constraint fail.  
   
  OFF  
- An error message will occur when duplicate key values are inserted into a unique index. The entire INSERT operation will be rolled back.  
+ An error message occurs when duplicate key values are inserted into a unique index. The entire INSERT operation is rolled back.  
   
- IGNORE_DUP_KEY cannot be set to ON  for indexes created on a view, non-unique indexes, XML indexes, spatial indexes, and filtered indexes.  
+ IGNORE_DUP_KEY can't be set to ON  for indexes created on a view, non-unique indexes, XML indexes, spatial indexes, and filtered indexes.  
   
  To view IGNORE_DUP_KEY, use [sys.indexes](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md).  
   
@@ -102,13 +104,13 @@ manager: "jhubbard"
  Specifies whether statistics are recomputed. The default is OFF.  
   
  ON  
- Out-of-date statistics are not automatically recomputed.  
+ Out-of-date statistics aren't automatically recomputed.  
   
  OFF  
  Automatic statistics updating are enabled.  
   
  ALLOW_ROW_LOCKS **=** { **ON** | OFF }  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies whether row locks are allowed. The default is ON.  
   
@@ -116,10 +118,10 @@ manager: "jhubbard"
  Row locks are allowed when accessing the index. The [!INCLUDE[ssDE](../../includes/ssde-md.md)] determines when row locks are used.  
   
  OFF  
- Row locks are not used.  
+ Row locks aren't used.  
   
  ALLOW_PAGE_LOCKS **=** { **ON** | OFF }  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies whether page locks are allowed. The default is ON.  
   
@@ -127,10 +129,16 @@ manager: "jhubbard"
  Page locks are allowed when accessing the index. The [!INCLUDE[ssDE](../../includes/ssde-md.md)] determines when page locks are used.  
   
  OFF  
- Page locks are not used.  
-  
+ Page locks aren't used.  
+
+ OPTIMIZE_FOR_SEQUENTIAL_KEY = { ON | **OFF** }
+
+**Applies to**: [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] and later.
+
+Specifies whether or not to optimize for last-page insert contention. The default is OFF. See the [Sequential Keys](./create-index-transact-sql.md#sequential-keys) section of the CREATE INDEX page for more information.
+ 
  SORT_IN_TEMPDB **=** { ON | **OFF** }  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies whether to store sort results in **tempdb**. The default is OFF.  
   
@@ -141,7 +149,7 @@ manager: "jhubbard"
  The intermediate sort results are stored in the same database as the index.  
   
  ONLINE **=** { ON | **OFF** }  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  Specifies whether underlying tables and associated indexes are available for queries and data modification during the index operation. The default is OFF. REBUILD can be performed as an ONLINE operation.  
   
@@ -149,7 +157,7 @@ manager: "jhubbard"
 >  Unique nonclustered indexes cannot be created online. This includes indexes that are created due to a UNIQUE or PRIMARY KEY constraint.  
   
  ON  
- Long-term table locks are not held for the duration of the index operation. During the main phase of the index operation, only an Intent Share (IS) lock is held on the source table. This enables queries or updates to the underlying table and indexes to proceed. At the start of the operation, a Shared (S) lock is held on the source object for a very short period of time. At the end of the operation, for a short period of time, an S (Shared) lock is acquired on the source if a nonclustered index is being created; or an SCH-M (Schema Modification) lock is acquired when a clustered index is created or dropped online and when a clustered or nonclustered index is being rebuilt. Although the online index locks are short metadata locks, especially the Sch-M lock must wait for all blocking transactions to be completed on this table. During the wait time the Sch-M lock blocks all other transactions that wait behind this lock when accessing the same table. ONLINE cannot be set to ON when an index is being created on a local temporary table.  
+ Long-term table locks aren't held for the duration of the index operation. During the main phase of the index operation, only an Intent Share (IS) lock is held on the source table. This enables queries or updates to the underlying table and indexes to proceed. At the start of the operation, a Shared (S) lock is held on the source object for a very short period of time. At the end of the operation, for a short period of time, an S (Shared) lock is acquired on the source if a nonclustered index is being created; or an SCH-M (Schema Modification) lock is acquired when a clustered index is created or dropped online and when a clustered or nonclustered index is being rebuilt. Although the online index locks are short metadata locks, especially the Sch-M lock must wait for all blocking transactions to be completed on this table. During the wait time, the Sch-M lock blocks all other transactions that wait behind this lock when accessing the same table. ONLINE cannot be set to ON when an index is being created on a local temporary table.  
   
 > [!NOTE]  
 >  Online index rebuild can set the *low_priority_lock_wait* options described later in this section. *low_priority_lock_wait* manages S and Sch-M lock priority during online index rebuild.  
@@ -159,108 +167,123 @@ manager: "jhubbard"
   
  For more information, see [How Online Index Operations Work](../../relational-databases/indexes/how-online-index-operations-work.md).  
   
-> [!NOTE]  
->  Online index operations are not available in every edition of [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2016](~/sql-server/editions-and-supported-features-for-sql-server-2016.md).  
+> [!NOTE]
+>  Online index operations are not available in every edition of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2016](~/sql-server/editions-and-supported-features-for-sql-server-2016.md).  
+
+ RESUMABLE = { ON | OFF}  
+ **Applies to**: [!INCLUDE [sssql22-md](../../includes/sssql22-md.md)] and later.
+
+ Specifies whether an `ALTER TABLE ADD CONSTRAINT` operation is resumable. Add table constraint operation is resumable when `ON`. Add table constraint operation is not resumable when `OFF`. Default is `OFF`. When the `RESUMABLE` option is set to `ON`, the option `ONLINE = ON` is required.
+
+ **MAX_DURATION** when used with `RESUMABLE = ON` (requires `ONLINE = ON`) indicates time (an integer value specified in minutes) that a resumable online add constraint operation is executed before being paused. If not specified, the operation continues until completion. **MAXDOP** is supported with `RESUMABLE = ON` as well.
+
+ For more information on enabling and using resumable `ALTER TABLE ADD CONSTRAINT` operations, see [Resumable add table constraints](../../relational-databases/security/resumable-add-table-constraints.md).
+
+ MAXDOP **=**_max_degree_of_parallelism_  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
- MAXDOP **=***max_degree_of_parallelism*  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
-  
- Overrides the **max degree of parallelism** configuration option for the duration of the index operation. For more information, see [Configure the max degree of parallelism Server Configuration Option](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md). Use MAXDOP to limit the number of processors used in a parallel plan execution. The maximum is 64 processors.  
+ Overrides the **max degree of parallelism** configuration option during the index operation. For more information, see [Configure the max degree of parallelism Server Configuration Option](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md). Use MAXDOP to limit the number of processors used in a parallel plan execution. The maximum is 64 processors.  
   
  *max_degree_of_parallelism* can be:  
   
- 1  
- Suppresses parallel plan generation.  
-  
- \>1  
- Restricts the maximum number of processors used in a parallel index operation to the specified number.  
-  
- 0 (default)  
- Uses the actual number of processors or fewer based on the current system workload.  
+ - 1 - Suppresses parallel plan generation.  
+ - \>1 - Restricts the maximum number of processors used in a parallel index operation to the specified number.  
+ - 0 (default) - Uses the actual number of processors or fewer based on the current system workload.  
   
  For more information, see [Configure Parallel Index Operations](../../relational-databases/indexes/configure-parallel-index-operations.md).  
   
-> [!NOTE]  
->  Parallel index operations are not available in every edition of [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2016](~/sql-server/editions-and-supported-features-for-sql-server-2016.md).  
+> [!NOTE]
+>  Parallel index operations are not available in every edition of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For a list of features that are supported by the editions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [Features Supported by the Editions of SQL Server 2016](~/sql-server/editions-and-supported-features-for-sql-server-2016.md).  
   
  DATA_COMPRESSION  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
- Specifies the data compression option for the specified table, partition number or range of partitions. The options are as follows:  
+ Specifies the data compression option for the specified table, partition number, or range of partitions. The options are as follows:  
   
  NONE  
- Table or specified partitions are not compressed. Applies only to rowstore tables; does not apply to columnstore tables.  
+ Table or specified partitions aren't compressed. Applies only to rowstore tables; doesn't apply to columnstore tables.  
   
  ROW  
- Table or specified partitions are compressed by using row compression. Applies only to rowstore tables; does not apply to columnstore tables.  
+ Table or specified partitions are compressed by using row compression. Applies only to rowstore tables; doesn't apply to columnstore tables.  
   
  PAGE  
- Table or specified partitions are compressed by using page compression. Applies only to rowstore tables; does not apply to columnstore tables.  
+ Table or specified partitions are compressed by using page compression. Applies only to rowstore tables; doesn't apply to columnstore tables.  
   
  COLUMNSTORE  
- **Applies to**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] and later.  
   
- Applies only to columnstore tables. COLUMNSTORE specifies to decompress a partition that was compressed with the COLUMNSTORE_ARCHIVE option. When the data is restored, it will continue to be compressed with the columnstore compression that is used for all columnstore tables.  
+ Applies only to columnstore tables. COLUMNSTORE specifies to decompress a partition that was compressed with the COLUMNSTORE_ARCHIVE option. When the data is restored, the COLUMNSTORE index continues to be compressed with the columnstore compression that is used for all columnstore tables.  
   
  COLUMNSTORE_ARCHIVE  
- **Applies to**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] and later.  
   
- Applies only to columnstore tables, which are tables stored with a clustered columnstore index. COLUMNSTORE_ARCHIVE will further compress the specified partition to a smaller size. This can be used for archival, or for other situations that require less storage and can afford more time for storage and retrieval  
+ Applies only to columnstore tables, which are tables stored with a clustered columnstore index. COLUMNSTORE_ARCHIVE further compresses the specified partition to a smaller size. This can be used for archival, or for other situations that require less storage and can afford more time for storage and retrieval  
   
  For more information about compression, see [Data Compression](../../relational-databases/data-compression/data-compression.md).  
   
- ON PARTITIONS **(** { <partition_number_expression> | \<range> } [ **,**...*n* ] **)**  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+XML_COMPRESSION   
+**Applies to**: [!INCLUDE[sssql22-md](../../includes/sssql22-md.md)] and later, and [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] Preview.
+
+Specifies the XML compression option for any **xml** data type columns in the table. The options are as follows:
+
+ON   
+Columns using the **xml** data type are compressed.
+
+OFF   
+Columns using the **xml** data type aren't compressed.
   
- Specifies the partitions to which the DATA_COMPRESSION setting applies. If the table is not partitioned, the ON PARTITIONS argument will generate an error. If the ON PARTITIONS clause is not provided, the DATA_COMPRESSION option will apply to all partitions of a partitioned table.  
+ON PARTITIONS **(** { \<partition_number_expression> | \<range> } [ **,**...*n* ] **)**  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
+  
+ Specifies the partitions to which the DATA_COMPRESSION or XML_COMPRESSION settings apply. If the table isn't partitioned, the ON PARTITIONS argument generates an error. If the ON PARTITIONS clause isn't provided, the DATA_COMPRESSION or XML_COMPRESSION option applies to all partitions of a partitioned table.  
+
+> [!NOTE]  
+> XML_COMPRESSION is only available starting with [!INCLUDE[sssql22-md](../../includes/sssql22-md.md)], and [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] Preview.
   
 \<partition_number_expression> can be specified in the following ways:  
   
 -   Provide the number a partition, for example: ON PARTITIONS (2).  
-  
 -   Provide the partition numbers for several individual partitions separated by commas, for example: ON PARTITIONS (1, 5).  
-  
 -   Provide both ranges and individual partitions, for example: ON PARTITIONS (2, 4, 6 TO 8).  
   
- \<range> can be specified as partition numbers separated by the word TO, for example: ON PARTITIONS (6 TO 8).  
+\<range> can be specified as partition numbers separated by the word TO, for example: ON PARTITIONS (6 TO 8).  
   
  To set different types of data compression for different partitions, specify the DATA_COMPRESSION option more than once, for example:  
   
-```  
+```sql  
 --For rowstore tables  
 REBUILD WITH   
 (  
-DATA_COMPRESSION = NONE ON PARTITIONS (1),   
-DATA_COMPRESSION = ROW ON PARTITIONS (2, 4, 6 TO 8),   
-DATA_COMPRESSION = PAGE ON PARTITIONS (3, 5)  
+  DATA_COMPRESSION = NONE ON PARTITIONS (1),   
+  DATA_COMPRESSION = ROW ON PARTITIONS (2, 4, 6 TO 8),   
+  DATA_COMPRESSION = PAGE ON PARTITIONS (3, 5)  
 )  
   
 --For columnstore tables  
 REBUILD WITH   
 (  
-DATA_COMPRESSION = COLUMNSTORE ON PARTITIONS (1, 3, 5),   
-DATA_COMPRESSION = COLUMNSTORE_ARCHIVE ON PARTITIONS (2, 4, 6 TO 8)  
+  DATA_COMPRESSION = COLUMNSTORE ON PARTITIONS (1, 3, 5),   
+  DATA_COMPRESSION = COLUMNSTORE_ARCHIVE ON PARTITIONS (2, 4, 6 TO 8)  
 )  
 ```  
-  
+
 **\<single_partition_rebuild__option>**  
- In most cases, rebuilding an index rebuilds all partitions of a partitioned index. The following options, when applied to a single partition, do not rebuild all partitions.  
+ In most cases, rebuilding an index also rebuilds all partitions of a partitioned index. The following options, when applied to a single partition, don't rebuild all partitions.  
   
 -   SORT_IN_TEMPDB  
-  
 -   MAXDOP  
-  
 -   DATA_COMPRESSION  
+-   XML_COMPRESSION  
   
 **low_priority_lock_wait**  
- **Applies to**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] and later.  
   
- A **SWITCH** or online index rebuild completes as soon as there are no blocking operations for this table. *WAIT_AT_LOW_PRIORITY* indicates that if the **SWITCH** or online index rebuild operation cannot be completed immediately it will wait. The operation will hold low priority locks, allowing other operations that hold locks conflicting with the DDL statement to proceed. Omitting the **WAIT AT LOW PRIORITY** option is equivalent to `WAIT_AT_LOW_PRIORITY ( MAX_DURATION = 0 minutes, ABORT_AFTER_WAIT = NONE)`.  
+ A **SWITCH** or online index rebuild completes as soon as there are no blocking operations for this table. *WAIT_AT_LOW_PRIORITY* indicates that if the **SWITCH** or online index rebuild operation can't be completed immediately, it waits. The operation holds low priority locks, allowing other operations that hold locks conflicting with the DDL statement to proceed. Omitting the **WAIT AT LOW PRIORITY** option is equivalent to `WAIT_AT_LOW_PRIORITY ( MAX_DURATION = 0 minutes, ABORT_AFTER_WAIT = NONE)`.  
   
 MAX_DURATION = *time* [**MINUTES** ]  
- The wait time (an integer value specified in minutes) that the **SWITCH** or online index rebuild lock that must be acquired will wait when executing the DDL command. The SWITCH or online index rebuild operation attempts to complete immediately. If the operation is blocked for the **MAX_DURATION** time, one of the **ABORT_AFTER_WAIT** actions will be executed. **MAX_DURATION** time is always in minutes, and the word **MINUTES** can be omitted.  
+ The wait time (an integer value specified in minutes) that the **SWITCH** or online index rebuild lock that must be acquired, waits when executing the DDL command. The SWITCH or online index rebuild operation attempts to complete immediately. If the operation is blocked for the **MAX_DURATION** time, one of the **ABORT_AFTER_WAIT** actions is executed. **MAX_DURATION** time is always in minutes, and the word **MINUTES** can be omitted.  
   
-ABOUT_AFTER_WAIT = [**NONE** | **SELF** | **BLOCKERS** } ]  
+ABORT_AFTER_WAIT = [**NONE** | **SELF** | **BLOCKERS** } ]  
  NONE  
  Continues the **SWITCH** or online index rebuild operation without changing the lock priority (using regular priority).  
   
@@ -279,5 +302,3 @@ BLOCKERS
  [column_constraint &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-column-constraint-transact-sql.md)   
  [computed_column_definition &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-computed-column-definition-transact-sql.md)   
  [table_constraint &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-table-constraint-transact-sql.md)  
-  
- 

@@ -1,13 +1,11 @@
 ---
-title: "Name Property (SecurityCertificate Class) | Microsoft Docs"
-ms.custom: ""
+description: "Name Property (SecurityCertificate Class)"
+title: "Name Property (SecurityCertificate)"
+ms.custom: seo-lt-2019
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "Name Property (SecurityCertificate Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "Name property"
 ms.assetid: 797f338f-4d2d-4171-acad-6cc997a7a6c8
-caps.latest.revision: 32
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Name Property (SecurityCertificate Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the name of the security certificate.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.Name [= value]
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

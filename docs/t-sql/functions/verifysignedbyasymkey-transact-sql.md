@@ -1,34 +1,29 @@
 ---
-title: "VERIFYSIGNEDBYASYMKEY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
+title: "VERIFYSIGNEDBYASYMKEY (Transact-SQL)"
+description: "VERIFYSIGNEDBYASYMKEY (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/06/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "VERIFYSIGNEDBYASYMKEY_TSQL"
   - "VERIFYSIGNEDBYASYMKEY"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "verifying digitally signed data for changes"
   - "VERIFYSIGNEDBYASYMKEY"
   - "testing digitally signed data for changes"
   - "checking digitally signed data for changes"
   - "signatures [SQL Server]"
   - "digital signatures [SQL Server]"
-ms.assetid: 9f7c6e0b-5ba4-4dbb-994d-5bd59f4908de
-caps.latest.revision: 34
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # VERIFYSIGNEDBYASYMKEY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Tests whether digitally signed data has been changed since it was signed.  
   
@@ -36,12 +31,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 VerifySignedByAsymKey( Asym_Key_ID , clear_text , signature )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *Asym_Key_ID*  
  Is the ID of an asymmetric key certificate in the database.  
   
@@ -67,7 +63,7 @@ VerifySignedByAsymKey( Asym_Key_ID , clear_text , signature )
 ### A. Testing for data with a valid signature  
  The following example returns 1 if the selected data has not been changed since it was signed with asymmetric key `WillisKey74`. The example returns 0 if the data has been tampered with.  
   
-```  
+```sql
 SELECT Data,  
      VerifySignedByAsymKey( AsymKey_Id( 'WillisKey74' ), SignedData,  
      DataSignature ) as IsSignatureValid  
@@ -80,7 +76,7 @@ RETURN;
 ### B. Returning a result set that contains data with a valid signature  
  The following example returns rows in `SignedData04` that contain data that has not been changed since it was signed with asymmetric key `WillisKey74`. The example calls the function `AsymKey_ID` to obtain the ID of the asymmetric key from the database.  
   
-```  
+```sql
 SELECT Data   
 FROM [AdventureWorks2012].[SignedData04]   
 WHERE VerifySignedByAsymKey( AsymKey_Id( 'WillisKey74' ), Data,  

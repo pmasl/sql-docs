@@ -1,23 +1,19 @@
 ---
+description: "SQL Conformance Levels (ODBC Driver for Oracle)"
 title: "SQL Conformance Levels (ODBC Driver for Oracle) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "conformance levels [ODBC], SQL"
   - "SQL conformance levels [ODBC]"
   - "ODBC driver for Oracle [ODBC], conformance levels"
 ms.assetid: 077a6c6a-2c57-42c9-a4fd-4cf0e65cf7e2
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQL Conformance Levels (ODBC Driver for Oracle)
 > [!IMPORTANT]  
@@ -30,42 +26,94 @@ manager: "jhubbard"
 -   Left and right outer joins  
   
 -   Numeric functions:  
-  
-    |||||  
-    |-|-|-|-|  
-    |Abs|Log|round|tan|  
-    |Ceiling|Log10|second|truncate|  
-    |Cos|Mod|sign||  
-    |Exp|Pi|sin||  
-    |Floor|Power|sqrt||  
-  
+
+    :::row:::
+        :::column:::
+            Abs  
+            Ceiling  
+            Cos  
+            Exp  
+            Floor  
+        :::column-end:::
+        :::column:::
+            Log  
+            Log10  
+            Mod  
+            Pi  
+            Power  
+        :::column-end:::
+        :::column:::
+            round  
+            second  
+            sign  
+            sin  
+            sqrt  
+        :::column-end:::
+        :::column:::
+            tan  
+            truncate  
+        :::column-end:::
+    :::row-end:::
+    
 -   Date functions:  
-  
-    |||||  
-    |-|-|-|-|  
-    |Curdate|Dayofweek|monthname|second|  
-    |Curtime|Dayofyear|minute|week|  
-    |Dayname|Hour|now|year|  
-    |Dayofmonth|Month|quarter||  
-  
+
+    :::row:::
+        :::column:::
+            Curdate  
+            Curtime  
+            Dayname  
+            Dayofmonth  
+        :::column-end:::
+        :::column:::
+            Dayofweek  
+            Dayofyear  
+            Hour  
+            Month  
+        :::column-end:::
+        :::column:::
+            monthname  
+            minute  
+            now  
+            quarter  
+        :::column-end:::
+        :::column:::
+            second  
+            week  
+            year  
+        :::column-end:::
+    :::row-end:::
+
 -   String functions:  
-  
-    |||||  
-    |-|-|-|-|  
-    |Ascii|Left|right|ucase|  
-    |Char|Length|rtrim||  
-    |Concat|Ltrim|soundex||  
-    |Lcase|Replace|substring||  
-  
+
+    :::row:::
+        :::column:::
+            Ascii  
+            Char  
+            Concat  
+            Lcase  
+        :::column-end:::
+        :::column:::
+            Left  
+            Length  
+            Ltrim  
+            Replace  
+        :::column-end:::
+        :::column:::
+            right  
+            rtrim  
+            soundex  
+            substring  
+        :::column-end:::
+        :::column:::
+            ucase  
+        :::column-end:::
+    :::row-end:::
+
 -   Type-conversion function:  
-  
-    ||  
-    |-|  
-    |Convert|  
-  
+
+    Convert  
+
 -   System functions:  
   
-    ||  
-    |-|  
-    |Ifnull|  
-    |User|
+    Ifnull  
+    User

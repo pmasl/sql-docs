@@ -1,14 +1,12 @@
 ---
+description: "sys.fn_listextendedproperty (Transact-SQL)"
 title: "sys.fn_listextendedproperty (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "fn_listextendedproperty"
   - "fn_listextendedproperty_TSQL"
@@ -25,13 +23,12 @@ helpviewer_keywords:
   - "extended properties [SQL Server], columns"
   - "table extended properties [SQL Server]"
 ms.assetid: 59bbb91f-a277-4a35-803e-dcb91e847a49
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.fn_listextendedproperty (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns extended property values of database objects.  
  
@@ -58,7 +55,23 @@ fn_listextendedproperty (
  Is the name of the property. *property_name* is **sysname**. Valid inputs are default, NULL, or a property name.  
   
  { default | '*level0_object_type*' | NULL}  
- Is the user or user-defined type. *level0_object_type* is **varchar(128)**, with a default of NULL. Valid inputs are ASSEMBLY, CONTRACT, EVENT NOTIFICATION, FILEGROUP, MESSAGE TYPE, PARTITION FUNCTION, PARTITION SCHEME, REMOTE SERVICE BINDING, ROUTE, SCHEMA, SERVICE, TRIGGER, TYPE, USER, and NULL.  
+ Is the user or user-defined type. *level0_object_type* is **varchar(128)**, with a default of NULL.  
+ Valid inputs are: 
+ - ASSEMBLY
+ - CONTRACT
+ - EVENT NOTIFICATION
+ - FILEGROUP
+ - MESSAGE TYPE
+ - PARTITION FUNCTION
+ - PARTITION SCHEME
+ - REMOTE SERVICE BINDING
+ - ROUTE
+ - SCHEMA
+ - SERVICE
+ - TRIGGER
+ - TYPE
+ - USER
+ - NULL  
   
 > [!IMPORTANT]  
 >  USER and TYPE as level-0 types will be removed in a future version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Avoid using these features in new development work, and plan to modify applications that currently use these features. Use SCHEMA as the level 0 type instead of USER. For TYPE, use SCHEMA as the level 0 type and TYPE as the level 1 type.  
@@ -67,7 +80,21 @@ fn_listextendedproperty (
  Is the name of the level 0 object type specified. *level0_object_name* is **sysname** with a default of NULL. Valid inputs are default, NULL, or an object name.  
   
  { default | '*level1_object_type*' | NULL }  
- Is the type of level 1 object. *level1_object_type* is **varchar(128)** with a default of NULL. Valid inputs are AGGREGATE, DEFAULT, FUNCTION, LOGICAL FILE NAME, PROCEDURE, QUEUE, RULE, SYNONYM, TABLE, TYPE, VIEW, XML SCHEMA COLLECTION, and NULL.  
+ Is the type of level 1 object. *level1_object_type* is **varchar(128)** with a default of NULL.  
+ Valid inputs are:
+ - AGGREGATE
+ - DEFAULT
+ - FUNCTION
+ - LOGICAL FILE NAME
+ - PROCEDURE
+ - QUEUE
+ - RULE
+ - SYNONYM
+ - TABLE
+ - TYPE
+ - VIEW
+ - XML SCHEMA COLLECTION
+ - NULL
   
 > [!NOTE]  
 >  Default maps to NULL and 'default' maps to the object type DEFAULT.  
@@ -76,7 +103,19 @@ fn_listextendedproperty (
  Is the name of the level 1 object type specified. *level1_object_name* is **sysname** with a default of NULL. Valid inputs are default, NULL, or an object name.  
   
  { default | '*level2_object_type*' |NULL }  
- Is the type of level 2 object. *level2_object_type* is **varchar(128)** with a default of NULL. Valid inputs are DEFAULT, default (maps to NULL), and NULL. Valid inputs for *level2_object_type* are COLUMN, CONSTRAINT, EVENT NOTIFICATION, INDEX, PARAMETER, TRIGGER, and NULL.  
+ Is the type of level 2 object. *level2_object_type* is **varchar(128)** with a default of NULL.  
+ Valid inputs are: 
+ - DEFAULT
+ - default (maps to NULL)
+ - NULL. 
+ Valid inputs for *level2_object_type* are: 
+ - COLUMN
+ - CONSTRAINT
+ - EVENT NOTIFICATION
+ - INDEX
+ - PARAMETER
+ - TRIGGER
+ - NULL
   
  { default | '*level2_object_name*' |NULL }  
  Is the name of the level 2 object type specified. *level2_object_name* is **sysname** with a default of NULL. Valid inputs are default, NULL, or an object name.  

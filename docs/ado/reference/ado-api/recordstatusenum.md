@@ -1,27 +1,20 @@
 ---
-title: "RecordStatusEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "RecordStatusEnum"
+description: "RecordStatusEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "RecordStatusEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "RecordStatusEnum enumeration [ADO]"
-ms.assetid: 506fdd70-4452-4e83-95d5-c94311988dfa
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # RecordStatusEnum
-Specifies the [status](../../../ado/reference/ado-api/status-property-ado-recordset.md) of a record with regard to batch updates and other bulk operations.  
+Specifies the [status](./status-property-ado-recordset.md) of a record with regard to batch updates and other bulk operations.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -71,4 +64,4 @@ Specifies the [status](../../../ado/reference/ado-api/status-property-ado-record
 |AdoEnums.RecordStatus.UNMODIFIED|  
   
 ## Applies To  
- [Status Property (ADO Recordset)](../../../ado/reference/ado-api/status-property-ado-recordset.md)
+ [Status Property (ADO Recordset)](./status-property-ado-recordset.md)

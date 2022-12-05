@@ -1,14 +1,12 @@
 ---
-title: "Create a Server Audit and Server Audit Specification | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Create Server Audit & Server Audit Specification"
+description: Learn how to create a SQL Server audit and server audit specific using SQL Server Management Studio (SSMS) or Transact-SQL (T-SQL).
+ms.custom: seo-lt-2019
+ms.date: "03/23/2022"
+ms.service: sql
+ms.reviewer: vanto
+ms.subservice: security
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.SWB.SQLAUDIT.FILTER.F1"
   - "sql13.swb.sqlaudit.general.f1"
@@ -17,13 +15,12 @@ helpviewer_keywords:
   - "server audit [SQL Server]"
   - "audits [SQL Server], specification"
 ms.assetid: 6624b1ab-7ec8-44ce-8292-397edf644394
-caps.latest.revision: 21
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: sravanisaluru
+ms.author: srsaluru
 ---
 # Create a Server Audit and Server Audit Specification
-  This topic describes how to create a server audit and server audit specification in [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../../includes/tsql-md.md)]. *Auditing* an instance of [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] or a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] database involves tracking and logging events that occur on the system. The *SQL Server Audit* object collects a single instance of server- or database-level actions and groups of actions to monitor. The audit is at the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] instance level. You can have multiple audits per [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] instance. The *Server Audit Specification* object belongs to an audit. You can create one server audit specification per audit, because both are created at the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] instance scope. For more information, see [SQL Server Audit &#40;Database Engine&#41;](../../../relational-databases/security/auditing/sql-server-audit-database-engine.md).  
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
+  This topic describes how to create a server audit and server audit specification in [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../../includes/tsql-md.md)]. *Auditing* an instance of [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] or a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] database involves tracking and logging events that occur on the system. The *SQL Server Audit* object collects a single instance of server- or database-level actions and groups of actions to monitor. The audit is at the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] instance level. You can have multiple audits per [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] instance. The *Server Audit Specification* object belongs to an audit. You can create one server audit specification per audit, because both are created at the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] instance scope. For more information, see [SQL Server Audit &#40;Database Engine&#41;](../../../relational-databases/security/auditing/sql-server-audit-database-engine.md).  
   
  **In This Topic**  
   
@@ -63,7 +60,7 @@ manager: "jhubbard"
   
 1.  In Object Explorer, expand the **Security** folder.  
   
-2.  Right-click the **Audits** folder and select **New Audit…**.  
+2.  Right-click the **Audits** folder and select **New Audit...**.  
   
      The following options are available on the **General** page of the **Create Audit** dialog box.  
   
@@ -92,8 +89,8 @@ manager: "jhubbard"
      **File path**  
      Specifies the location of the folder where audit data is written when the **Audit destination** is a file.  
   
-     **Ellipsis (…)**  
-     Opens the **Locate Folder –***server_name* dialog box to specify a file path or create a folder where the audit file is written.  
+     **Ellipsis (...)**  
+     Opens the **Locate Folder -**_server\_name_ dialog box to specify a file path or create a folder where the audit file is written.  
   
      **Audit File Maximum Limit:**  
      **Maximum rollover files**  
@@ -109,7 +106,7 @@ manager: "jhubbard"
      Specifies the number of audit files to be created, up to 2,147,483,647. This option is only available if **Unlimited** is unchecked.  
   
      **Maximum file size**  
-     Specifies the maximum size for an audit file in either megabytes (MB), gigabytes (GB), or terabytes (TB). You can specify between 1024 MB and 2,147,483,647 TB. Selecting the **Unlimited** check box does not place a limit on the size of the file. Specifying a value lower than 1024 MB will fail, returning an error. The **Unlimited** check box is selected by default.  
+     Specifies the maximum size for an audit file in either megabytes (MB), gigabytes (GB), or terabytes (TB). You can specify a number up to 2,147,483,647 TB. Selecting the **Unlimited** check box does not place a limit on the size of the file. The **Unlimited** check box is selected by default.  
   
      **Reserve disk space** check box  
      Specifies that space is pre-allocated on the disk equal to the specified maximum file size. This setting can only be used if the **Unlimited** check box under **Maximum file size** is not selected. This check box is not selected by default.  
@@ -122,7 +119,7 @@ manager: "jhubbard"
   
 1.  In Object Explorer, click the plus sign to expand the **Security** folder.  
   
-2.  Right-click the **Server Audit Specifications** folder and select **New Server Audit Specification…**.  
+2.  Right-click the **Server Audit Specifications** folder and select **New Server Audit Specification...**.  
   
      The following options are available on the **Create Server Audit Specification** dialog box.  
   
@@ -141,13 +138,13 @@ manager: "jhubbard"
      **Object Name**  
      The name of the object to audit. This is only available for audit actions; it does not apply to audit groups.  
   
-     **Ellipsis (…)**  
+     **Ellipsis (...)**  
      Opens the **Select Objects** dialog to browse for and select an available object, based on the specified **Audit Action Type**.  
   
      **Principal Name**  
      The account to filter the audit by for the object being audited.  
   
-     **Ellipsis (…)**  
+     **Ellipsis (...)**  
      Opens the **Select Objects** dialog to browse for and select an available object, based on the specified **Object Name**.  
   
 3.  When you are finished, click **OK**.  
@@ -160,14 +157,19 @@ manager: "jhubbard"
   
 2.  On the Standard bar, click **New Query**.  
   
-3.  Copy and paste the following example into the query window and click **Execute**.  
+3.  Copy and paste the following example into the query window and click **Execute**. 
   
     ```  
-    -- Creates a server audit called "HIPPA_Audit" with a binary file as the target and no options.  
+    -- Creates a server audit called "HIPAA_Audit" with a binary file as the target and no options.  
     CREATE SERVER AUDIT HIPAA_Audit  
-        TO FILE ( FILEPATH ='\\SQLPROD_1\Audit\' );  
+        TO FILE ( FILEPATH ='E:\SQLAudit\' );  
     ```  
-  
+> [!NOTE]
+> Even though you may use a UNC path as the Auditing file Target, use caution. If there is network latency to that fileshare, you may experience performance degradation in SQL Server as threads would be waiting for an auditing write to complete before proceeding. You may observe various error messages in the SQL Server error log such as 17894:
+>
+>   2020-02-07 12:21:35.100 Server Dispatcher (0x7954) from dispatcher pool 'XE Engine main dispatcher pool' Worker 0x00000058E7300000  appears to be non-yielding on Node 0.
+
+
 #### To create a server audit specification  
   
 1.  In **Object Explorer**, connect to an instance of [!INCLUDE[ssDE](../../../includes/ssde-md.md)].  
@@ -177,11 +179,11 @@ manager: "jhubbard"
 3.  Copy and paste the following example into the query window and click **Execute**.  
   
     ```  
-    /*Creates a server audit specification called "HIPPA_Audit_Specification" that audits failed logins for the SQL Server audit "HIPPA_Audit" created above.  
+    /*Creates a server audit specification called "HIPAA_Audit_Specification" that audits failed logins for the SQL Server audit "HIPAA_Audit" created above.  
     */  
   
-    CREATE SERVER AUDIT SPECIFICATION HIPPA_Audit_Specification  
-    FOR SERVER AUDIT HIPPA_Audit  
+    CREATE SERVER AUDIT SPECIFICATION HIPAA_Audit_Specification  
+    FOR SERVER AUDIT HIPAA_Audit  
         ADD (FAILED_LOGIN_GROUP);  
     GO  
     -- Enables the audit.   

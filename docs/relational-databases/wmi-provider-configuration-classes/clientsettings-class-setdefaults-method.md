@@ -1,13 +1,11 @@
 ---
-title: "SetDefaults Method (ClientSettings Class) | Microsoft Docs"
-ms.custom: ""
+description: "ClientSettings Class - SetDefaults Method"
+title: "SetDefaults Method (ClientSettings)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "SetDefaults Method (ClientSettings Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "SetDefaults method"
 ms.assetid: 056508f3-a5c8-467c-a196-dc1ef1f5178f
-caps.latest.revision: 28
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # ClientSettings Class - SetDefaults Method
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Sets all the default values for the instance of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] client with the option to overwrite existing data.  
   
 ## Syntax  

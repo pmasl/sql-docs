@@ -1,13 +1,11 @@
 ---
-title: "Access WMI Provider for Configuration Management using WQL | Microsoft Docs"
-ms.custom: ""
+title: "Use WQL to access the WMI Provider"
+description: Use this example to see how to run Windows Management Instrumentation Query Language statements for the WMI Provider for Computer Management in SQL Server.
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 helpviewer_keywords: 
   - "query language [WMI]"
@@ -15,12 +13,11 @@ helpviewer_keywords:
   - "WQL [WMI]"
   - "WMI Provider for Configuration Management, WQL"
 ms.assetid: 26499530-d93b-452b-bbe4-217ef1d11e68
-caps.latest.revision: 16
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # Access WMI Provider for Configuration Management using WQL
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This section describes how to execute [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows Management Instrumentation Query Language (WQL) statements against the WMI Provider for Computer Management.  
   
  The example uses a WQL editor, WBEMtest.exe, to run WQL queries against the WMI Provider to enumerate [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] services, network protocols, and aliases.  

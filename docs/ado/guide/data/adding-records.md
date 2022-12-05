@@ -1,24 +1,17 @@
 ---
-title: "Adding Records | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: "H1Hack27Feb2017"
+title: "Adding Records"
+description: "Adding Records to a Recordset"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
 helpviewer_keywords:
   - "AddNew method [ADO]"
   - "ADO, editing data"
   - "editing data [ADO], AddNew method"
   - "editing data [ADO], adding data"
-ms.assetid: dd34669e-6f06-403b-9241-1c85c82aecc2
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Adding Records to a Recordset
 Use the **AddNew** method to create and initialize a new record in an existing **Recordset**. You can use the **Supports** method with a **CursorOptionEnum** value of **adAddNew** to verify whether you can add records to the current **Recordset** object.
@@ -29,10 +22,10 @@ Use the **AddNew** method to create and initialize a new record in an existing *
 
  This section contains the following topics.
 
--   [Adding Records Using AddNew](../../../ado/guide/data/adding-records-using-addnew.md)
+-   [Adding Records Using AddNew](./adding-records-using-addnew.md)
 
--   [Adding Multiple Fields](../../../ado/guide/data/adding-multiple-fields.md)
+-   [Adding Multiple Fields](./adding-multiple-fields.md)
 
--   [Determining Edit Mode](../../../ado/guide/data/determining-edit-mode.md)
+-   [Determining Edit Mode](./determining-edit-mode.md)
 
--   [Using AddNew in Immediate and Batch Modes](../../../ado/guide/data/using-addnew-in-immediate-and-batch-modes.md)
+-   [Using AddNew in Immediate and Batch Modes](./using-addnew-in-immediate-and-batch-modes.md)

@@ -1,25 +1,17 @@
 ---
-title: "sqlsrv_server_info | Microsoft Docs"
-ms.custom: ""
+title: "sqlsrv_server_info"
+description: "sqlsrv_server_info"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "sqlsrv_server_info"
-apitype: "NA"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+helpviewer_keywords:
   - "API Reference, sqlsrv_server_info"
   - "sqlsrv_server_info"
-ms.assetid: ef6fe2b7-d267-4379-b948-5626c4684367
-caps.latest.revision: 21
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apiname: "sqlsrv_server_info"
+apitype: "NA"
 ---
 # sqlsrv_server_info
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -80,5 +72,6 @@ sqlsrv_close( $conn);
   
 ## See Also  
 [SQLSRV Driver API Reference](../../connect/php/sqlsrv-driver-api-reference.md)  
+
 [About Code Examples in the Documentation](../../connect/php/about-code-examples-in-the-documentation.md)  
   

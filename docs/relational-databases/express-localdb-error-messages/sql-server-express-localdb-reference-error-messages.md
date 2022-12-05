@@ -1,21 +1,19 @@
 ---
-title: "SQL Server Express LocalDB Error Message Reference | Microsoft Docs"
-ms.custom: ""
+title: "LocalDB Error Message Reference"
+description: This section provides reference information about the following SQL Server Express LocalDB error messages.
+titleSuffix: SQL Server Express
+ms.custom: seo-dt-2019
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: performance
 ms.topic: "reference"
 ms.assetid: ee413207-d6f5-4938-82a1-0e245037e246
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # SQL Server Express LocalDB Reference - Error Messages
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This section provides reference information about the following SQL Server Express LocalDB error messages:  
   
  [LOCALDB_ERROR_ADMIN_RIGHTS_REQUIRED](../../relational-databases/express-localdb-error-messages/localdb-error-admin-rights-required.md)  

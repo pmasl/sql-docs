@@ -1,28 +1,21 @@
 ---
-title: "StayInSync Property Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "StayInSync Property Example (VC++)"
+description: "StayInSync Property Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "StayInSync property [ADO], VC++ example"
-ms.assetid: 3a5db5f0-094b-46e1-939b-d9fa9417a406
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # StayInSync Property Example (VC++)
-This example demonstrates how the [StayInSync](../../../ado/reference/ado-api/stayinsync-property.md) property facilitates accessing rows in a hierarchical [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md).  
+This example demonstrates how the [StayInSync](./stayinsync-property.md) property facilitates accessing rows in a hierarchical [Recordset](./recordset-object-ado.md).  
   
- The outer loop displays each author's first and last name, state, and identification. The appended **Recordset** for each row is retrieved from the [Fields](../../../ado/reference/ado-api/fields-collection-ado.md) collection and automatically assigned to **rstTitleAuthor** by the **StayInSync** property whenever the parent **Recordset** moves to a new row. The inner loop displays four fields from each row in the appended recordset.  
+ The outer loop displays each author's first and last name, state, and identification. The appended **Recordset** for each row is retrieved from the [Fields](./fields-collection-ado.md) collection and automatically assigned to **rstTitleAuthor** by the **StayInSync** property whenever the parent **Recordset** moves to a new row. The inner loop displays four fields from each row in the appended recordset.  
   
 ```  
 // BeginStayInSyncCpp.cpp  
@@ -142,6 +135,6 @@ void PrintComError(_com_error &e) {
 ```  
   
 ## See Also  
- [Fields Collection (ADO)](../../../ado/reference/ado-api/fields-collection-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)   
- [StayInSync Property](../../../ado/reference/ado-api/stayinsync-property.md)
+ [Fields Collection (ADO)](./fields-collection-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)   
+ [StayInSync Property](./stayinsync-property.md)

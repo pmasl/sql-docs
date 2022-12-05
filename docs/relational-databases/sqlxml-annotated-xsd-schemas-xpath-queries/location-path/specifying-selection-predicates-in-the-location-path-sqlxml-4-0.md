@@ -1,15 +1,14 @@
 ---
-title: "Specifying Selection Predicates in the Location Path (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Set selection predicates in location path (SQLXML)"
+description: Learn how specifying selection predicates in the location path expression of an XPath (SQLXML 4.0) query filters the node set that is being queried.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "XPath queries [SQLXML], predicates"
   - "predicates [SQLXML]"
   - "position-based filtering [SQLXML]"
@@ -17,12 +16,10 @@ helpviewer_keywords:
   - "filtering [SQLXML]"
   - "location path for XPath query"
 ms.assetid: dbef4cf4-a89b-4d7e-b72b-4062f7b29a80
-caps.latest.revision: 28
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Specifying Selection Predicates in the Location Path (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   A predicate filters a node-set with respect to an axis (similar to a WHERE clause in a SELECT statement). The predicate is specified between brackets. For each node in the node-set to be filtered, the predicate expression is evaluated with that node as the context node, with the number of nodes in the node-set as context size. If the predicate expression evaluates to TRUE for that node, the node is included in the resulting node-set.  
   
  XPath also allows position-based filtering. A predicate expression evaluating to a number selects that ordinal node. For example, the location path `Customer[3]` returns the third customer. Such numeric predicates are not supported. Only predicate expressions that return a Boolean result are supported.  

@@ -1,28 +1,23 @@
 ---
+description: "Replication Programming Concepts"
 title: "Replication Programming Concepts | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: replication
 ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
 helpviewer_keywords: 
   - "replication [SQL Server], planning"
   - "programming [SQL Server replication], planning"
   - "programming [SQL Server replication]"
 ms.assetid: 2cd846e7-5bf3-4144-8772-703c4f439a2a
-caps.latest.revision: 43
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # Replication Programming Concepts
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
 
   Before developing an application that uses replication functionalities, you should follow the following general planning steps:  
   
@@ -83,7 +78,7 @@ manager: "jhubbard"
   
  The following topics provide information on security:  
   
--   [Security and Protection &#40;Replication&#41;](../../../relational-databases/replication/security/security-and-protection-replication.md)  
+-   [View and modify replication security settings](../../../relational-databases/replication/security/view-and-modify-replication-security-settings.md)  
   
 -   [Security Center for SQL Server Database Engine and Azure SQL Database](../../../relational-databases/security/security-center-for-sql-server-database-engine-and-azure-sql-database.md)  
   
@@ -122,7 +117,7 @@ manager: "jhubbard"
   
 2.  In addition to the typical data access required for a sales application, this application should enable a salesperson to synchronize the pull subscription on demand by clicking a button. Since a sales representative will install and run the application, it also needs to be able to configure a subscription and apply the initial snapshot at the client. Optionally, the application will use the infrastructure provided by Windows for sensing wireless connectivity to automatically synchronize the subscription when a connection is detected.  
   
-3.  Follow all of the security guidelines for replication, including using Windows Authentication and a virtual private network (VPN) when connecting to the publisher. If implementing Web synchronization, use a secure sockets layer (SSL) connection. For more information, see [Configure Web Synchronization](../../../relational-databases/replication/configure-web-synchronization.md).  
+3.  Follow all of the security guidelines for replication, including using Windows Authentication and a virtual private network (VPN) when connecting to the publisher. If implementing Web synchronization, use a Transport Layer Security (TLS), previously known as Secure Sockets Layer (SSL), connection. For more information, see [Configure Web Synchronization](../../../relational-databases/replication/configure-web-synchronization.md).  
   
 4.  In order to take advantage of the features of the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], the application is developed using a managed code language.  
   

@@ -1,25 +1,20 @@
 ---
 title: "Feature Reference (Reporting Services) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Learn about SQL Server Reporting Services tools and applications that you can use to create, manage, and view reports.
+ms.date: 05/24/2018
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Report Builder 2.0, F1 help"
   - "Reporting Services, getting assistance"
   - "tools [Reporting Services]"
   - "F1 Help [Reporting Services]"
 ms.assetid: 01daf21c-19c6-448d-ac30-accb54ad83da
-caps.latest.revision: 28
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Feature Reference (Reporting Services)
   [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] includes several tools and applications that you can use to create, manage, and view reports. This section provides specific topics describing the dialog boxes, Web pages, and wizards of these tools and applications.  
@@ -29,12 +24,6 @@ manager: "erikre"
 ## In This Section  
  [Report Designer F1 Help](../reporting-services/tools/report-designer-f1-help.md)  
  Provides help for Report Designer and its related dialog boxes, Report Wizard, and Image Wizard.  
-  
- [Report Manager F1 Help](http://msdn.microsoft.com/library/e0137273-85b8-45f0-83e5-38a50481768f)  
- Provides help for Report Manager, a Web application used to manage a single report server instance  
-  
- [Reporting Services Configuration Manager Help Topics](http://msdn.microsoft.com/library/7b6fb18e-ec39-4661-88e3-977ed64e2c82)  
- Provides help for the [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] Configuration tool used for deploying and managing report server instances.  
   
  [Report Server in Management Studio F1 Help](../reporting-services/tools/report-server-in-management-studio-f1-help.md)  
  Provides help for dialog boxes used to manage reports and report servers in [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)].  
@@ -46,7 +35,6 @@ manager: "erikre"
  [Reporting Services Concepts &#40;SSRS&#41;](../reporting-services/reporting-services-concepts-ssrs.md)   
  [Reporting Services Reports &#40;SSRS&#41;](../reporting-services/reports/reporting-services-reports-ssrs.md)   
  [Report Datasets &#40;SSRS&#41;](../reporting-services/report-data/report-datasets-ssrs.md)   
- [Getting Started with Report Builder](http://www.microsoft.com/download/en/details.aspx?id=29072)   
- [Designing and Implementing Reports Using Report Builder 1.0](http://go.microsoft.com/fwlink/?LinkId=142601)  
-  
+ [Getting Started with Report Builder](https://www.databasejournal.com/features/mssql/sql-server-report-builder-3.0.html)   
+ [Designing and Implementing Reports Using Report Builder 1.0](/previous-versions/sql/sql-server-2008/ms159750(v=sql.100))  
   

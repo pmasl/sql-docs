@@ -1,31 +1,25 @@
 ---
-title: "dbo.sysjobsteps (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "dbo.sysjobsteps (Transact-SQL)"
+description: dbo.sysjobsteps (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dbo.sysjobsteps"
   - "dbo.sysjobsteps_TSQL"
   - "sysjobsteps"
   - "sysjobsteps_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysjobsteps system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 978b8205-535b-461c-91f3-af9b08eca467
-caps.latest.revision: 28
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # dbo.sysjobsteps (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains the information for each step in a job to be executed by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent. This table is stored in the **msdb** database.  
   
@@ -39,9 +33,9 @@ manager: "jhubbard"
 |**flags**|**int**|Reserved.|  
 |**additional_parameters**|**ntext**|Reserved.|  
 |**cmdexec_success_code**|**int**|Error-level value returned by **CmdExec** subsystem steps to indicate success.|  
-|**on_success_action**|**tinyint**|Action to be performed when a step is executed successfully.|  
+|**on_success_action**|**tinyint**|Action to be performed when a step is executed successfully.<br /><br /> **1** = (default) Quit with success<br /><br /> **2** = Quit with failure<br /><br /> **3** = Go to next step<br /><br /> **4** = Go to step _on_success_step_id_|
 |**on_success_step_id**|**int**|ID of the next step to execute when a step is executed successfully.|  
-|**on_fail_action**|**tinyint**|Action to be performed when a step is not executed successfully.|  
+|**on_fail_action**|**tinyint**|Action to be performed when a step is not executed successfully.<br /><br /> **1** = Quit with success<br /><br /> **2** = (default) Quit with failure<br /><br /> **3** = Go to next step<br /><br /> **4** = Go to step _on_fail_step_id_|
 |**on_fail_step_id**|**int**|ID of the next step to execute when a step is not executed successfully.|  
 |**server**|**sysname**|Reserved.|  
 |**database_name**|**sysname**|Name of the database in which **command** is executed if **subsystem** is TSQL.|  
@@ -49,7 +43,7 @@ manager: "jhubbard"
 |**retry_attempts**|**int**|Number of retry attempts made if the step fails.|  
 |**retry_interval**|**int**|Amount of time to wait between retry attempts.|  
 |**os_run_priority**|**int**|Reserved.|  
-|**output_file_name**|**nvarchar(200)**|Name of the file in which the step's output is saved when **subsystem** is TSQL, PowerShell, or **CmdExec***.*|  
+|**output_file_name**|**nvarchar(200)**|Name of the file in which the step's output is saved when **subsystem** is TSQL, PowerShell, or **CmdExec**_._|  
 |**last_run_outcome**|**int**|Outcome of the previous execution of the job step.<br /><br /> **0** = Failed<br /><br /> **1** = Succeeded<br /><br /> **2** = Retry<br /><br /> **3** = Canceled<br /><br /> **5** = Unknown|  
 |**last_run_duration**|**int**|Duration (hhmmss) of the step the last time it ran.|  
 |**last_run_retries**|**int**|Number of retry attempts in the last execution of the job step.|  

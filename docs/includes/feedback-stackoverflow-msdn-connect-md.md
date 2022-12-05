@@ -1,1 +1,13 @@
-<Token>![Need help?](media/needhelp_person_icon.png)  **Need help?** [MSDN Forum](https://social.msdn.microsoft.com/Forums/sqlserver/en-US/home?forum=SQLServer2016), [Stackoverflow](http://stackoverflow.com/questions/tagged/sql-server-2016), [Connect](https://connect.microsoft.com/SQLServer/Feedback)</Token>
+---
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: randolphwest
+ms.date: 10/27/2022
+ms.service: sql
+ms.topic: include
+---
+## :::image type="icon" source="media/needhelp-person-icon.svg" border="false"::: Need help?
+
+- [Microsoft Q&A](/answers/products/sql-server)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/sql-server)
+- [SQL Server product feedback](https://feedback.azure.com/forums/908035-sql-server)

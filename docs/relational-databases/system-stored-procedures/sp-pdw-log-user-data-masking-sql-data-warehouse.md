@@ -1,24 +1,20 @@
 ---
-title: "sp_pdw_log_user_data_masking (SQL Data Warehouse) | Microsoft Docs"
+description: "sp_pdw_log_user_data_masking (Azure Synapse Analytics)"
+title: "sp_pdw_log_user_data_masking (Azure Synapse Analytics) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.topic: "reference"
 dev_langs: 
   - "TSQL"
 ms.assetid: 43c63b42-03cb-4fb5-8362-ec3b7e22a590
-caps.latest.revision: 8
-author: "barbkess"
-ms.author: "barbkess"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: ">= aps-pdw-2016 || = azure-sqldw-latest"
 ---
-# sp_pdw_log_user_data_masking (SQL Data Warehouse)
-[!INCLUDE[tsql-appliesto-xxxxxx-xxxx-asdw-pdw_md](../../includes/tsql-appliesto-xxxxxx-xxxx-asdw-pdw-md.md)]
+# sp_pdw_log_user_data_masking (Azure Synapse Analytics)
+[!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
   Use **sp_pdw_log_user_data_masking** to enable user data masking in [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] activity logs. User data masking affects the statements on all databases on the appliance.  
   
@@ -31,14 +27,17 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql  
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 sp_pdw_log_user_data_masking [ [ @masking_mode = ] value ] ;  
-```  
-  
+```
+
+> [!NOTE]
+> [!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
+
 #### Parameters  
- [ **@masking_mode=** ] *masking_mode*  
+`[ @masking_mode = ] masking_mode`
  Determines whether transparent data encryption log user data masking is enabled. *masking_mode* is **int**, and can be one of the following values:  
   
 -   0 = Disabled, user data appears in the [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] activity logs.  
@@ -68,12 +67,12 @@ sp_pdw_log_user_data_masking [ [ @masking_mode = ] value ] ;
 ## Example  
  The following example enables TDE log user data masking on the appliance.  
   
-```  
+```sql  
 EXEC sp_pdw_log_user_data_masking 1;  
 ```  
   
 ## See Also  
- [sp_pdw_database_encryption &#40;SQL Data Warehouse&#41;](../../relational-databases/system-stored-procedures/sp-pdw-database-encryption-sql-data-warehouse.md)   
- [sp_pdw_database_encryption_regenerate_system_keys &#40;SQL Data Warehouse&#41;](../../relational-databases/system-stored-procedures/sp-pdw-database-encryption-regenerate-system-keys-sql-data-warehouse.md)  
+ [sp_pdw_database_encryption &#40;Azure Synapse Analytics&#41;](../../relational-databases/system-stored-procedures/sp-pdw-database-encryption-sql-data-warehouse.md)   
+ [sp_pdw_database_encryption_regenerate_system_keys &#40;Azure Synapse Analytics&#41;](../../relational-databases/system-stored-procedures/sp-pdw-database-encryption-regenerate-system-keys-sql-data-warehouse.md)  
   
   

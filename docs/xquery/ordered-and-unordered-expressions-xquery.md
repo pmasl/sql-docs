@@ -1,16 +1,12 @@
 ---
 title: "Ordered and Unordered Expressions (XQuery) | Microsoft Docs"
+description: Learn about ordered and unordered expressions in XQuery.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: xml
 ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
 dev_langs: 
   - "XML"
 helpviewer_keywords: 
@@ -19,13 +15,11 @@ helpviewer_keywords:
   - "expressions [XQuery], ordered"
   - "expressions [XQuery], unordered"
 ms.assetid: 6e7b3631-38d5-4375-b565-21d2e3f36ae0
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "rothja"
+ms.author: "jroth"
 ---
 # Ordered and Unordered Expressions (XQuery)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
 
   By default, the ordering mode for all operations in [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] is **ordered**. Therefore, the node sequences returned by the path expressions and the FLWOR expressions, without the **order by** clause, are in document order.  
   

@@ -1,20 +1,15 @@
 ---
-title: "Add, Edit, Refresh Fields in the Report Data Pane (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Add, Edit, Refresh Fields in the Report Data Pane (Report Builder) | Microsoft Docs"
+description: Learn details about datasets as well as how to add, edit, and refresh fields in the report data pane in Report Builder.
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: report-data
+
+
+ms.topic: conceptual
 ms.assetid: 2e36f0fe-8100-4513-b169-14d611646f81
-caps.latest.revision: 7
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Add, Edit, Refresh Fields in the Report Data Pane (Report Builder and SSRS)
   Dataset fields are the built-in collection of field names that represent the data that is returned when a dataset query runs on an external data source.  
@@ -44,7 +39,7 @@ manager: "erikre"
   
 4.  In the **Field Source** text box, type the name of an existing field on the data source.  
   
-5.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+5.  Select **OK**.
   
 ### To add a calculated field  
   
@@ -62,7 +57,7 @@ manager: "erikre"
     > [!NOTE]  
     >  The expression for a calculated field cannot contain aggregates or references to report items.  
   
-5.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+5.  Select **OK**.
   
 ### To edit a query field or a dataset field  
   
@@ -72,7 +67,7 @@ manager: "erikre"
   
 3.  Change the name of the field or the value of the field.  
   
-4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+4.  Select **OK**.
   
 ### To delete a query field or a calculated field  
   
@@ -92,7 +87,6 @@ manager: "erikre"
  [Dataset Fields Collection &#40;Report Builder and SSRS&#41;](../../reporting-services/report-data/dataset-fields-collection-report-builder-and-ssrs.md)   
  [Report Datasets &#40;SSRS&#41;](../../reporting-services/report-data/report-datasets-ssrs.md)   
  [Report Embedded Datasets and Shared Datasets &#40;Report Builder and SSRS&#41;](../../reporting-services/report-data/report-embedded-datasets-and-shared-datasets-report-builder-and-ssrs.md)   
- [Reporting Services Query Designers](http://msdn.microsoft.com/library/07efd3f1-804f-45f7-b62a-3e727a3d9835)   
- [Query Designers &#40;Report Builder&#41;](http://msdn.microsoft.com/library/553f0d4e-8b1d-4148-9321-8b41a1e8e1b9)  
-  
+ [Reporting Services Query Designers](/previous-versions/sql/)   
+ [Query Design Tools &#40;SSRS&#41;](query-design-tools-ssrs.md)  
   

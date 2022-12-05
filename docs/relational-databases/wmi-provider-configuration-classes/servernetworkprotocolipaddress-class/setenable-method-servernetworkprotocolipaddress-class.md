@@ -1,13 +1,11 @@
 ---
-title: "SetEnable Method (ServerNetworkProtocolIPAddress Class) | Microsoft Docs"
-ms.custom: ""
+description: "SetEnable Method (ServerNetworkProtocolIPAddress Class)"
+title: "SetEnable Method (ServerNetworkProtocolIPAddress)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "SetEnable Method (ServerNetworkProtocolIPAddress Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "SetEnable method"
 ms.assetid: baa86deb-95dd-416f-b2c7-cec1dfb91ab4
-caps.latest.revision: 30
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SetEnable Method (ServerNetworkProtocolIPAddress Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Enables the IP address.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.SetEnable()
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

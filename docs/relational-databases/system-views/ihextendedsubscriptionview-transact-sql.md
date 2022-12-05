@@ -1,16 +1,12 @@
 ---
+description: "IHextendedSubscriptionView (Transact-SQL)"
 title: "IHextendedSubscriptionView (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
 f1_keywords: 
   - "IHextendedSubscriptionView_TSQL"
   - "IHextendedSubscriptionView"
@@ -19,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "IHextendedSubscriptionView view"
 ms.assetid: 124756a4-463a-4a81-bf5b-de7e8ffc7a62
-caps.latest.revision: 11
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # IHextendedSubscriptionView (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **IHextendedSubscriptionView** view exposes information on subscription to a non-SQL Server publication. This view is stored in the **distribution** database.  
   

@@ -1,24 +1,21 @@
 ---
-title: "XSD Annotations (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "XSD Annotations (SQLXML)"
+description: View a list of XSD annotations (SQLXML 4.0) introduced in SQL Server 2005 (9.x), with a comparison to the XDR annotations introduced in SQL Server 2000 (8.x).
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "annotated XSD schemas, annotations listed"
   - "XSD schemas [SQLXML], annotations"
 ms.assetid: c62a6785-8d66-40a2-9c5d-80c73d600a3b
-caps.latest.revision: 15
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # XSD Annotations (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   The following table lists the XSD annotations that were introduced in [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)], and compares them with the XDR annotations that were introduced in [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)].  
   
 |XSD annotation|Description|Topic link|XDR annotation|  

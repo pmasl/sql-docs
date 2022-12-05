@@ -1,31 +1,25 @@
 ---
-title: "sys.server_audit_specifications (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "04/05/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.server_audit_specifications (Transact-SQL)"
+description: sys.server_audit_specifications (Transact-SQL)
+author: sravanisaluru
+ms.author: srsaluru
+ms.date: "03/23/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "server_audit_specifications_TSQL"
   - "sys.server_audit_specifications_TSQL"
   - "server_audit_specifications"
   - "sys.server_audit_specifications"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.server_audit_specifications catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: fa496c6c-2a54-4fda-a238-db490c6b3afd
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.server_audit_specifications (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains information about the server audit specifications in a SQL Server audit on a server instance. For more information on SQL Server Audit, see [SQL Server Audit &#40;Database Engine&#41;](../../relational-databases/security/auditing/sql-server-audit-database-engine.md).  
   
@@ -35,7 +29,7 @@ manager: "jhubbard"
 |**server_specification_id**|**Int**|ID of the **server_specification**.|  
 |**create_date**|**Datetime**|Date the audit server specification was created.|  
 |**modified_date**|**Datetime**|Date the audit server specification was last modified.|  
-|**is_state_enabled**|**tinyint**|Audit specification state:<br /><br /> 0 – DISABLED<br /><br /> 1 –ENABLED|  
+|**is_state_enabled**|**tinyint**|Audit specification state:<br /><br /> 0 - DISABLED<br /><br /> 1 -ENABLED|  
 |**audit_GUID**|**uniqueidentifier**|GUID for the audit that contains this specification. Used during enumeration of member server audit specifications during server startup.|  
   
 ## Permissions  

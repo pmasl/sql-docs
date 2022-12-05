@@ -1,31 +1,25 @@
 ---
-title: "sys.column_xml_schema_collection_usages (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.column_xml_schema_collection_usages (Transact-SQL)"
+description: sys.column_xml_schema_collection_usages (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "column_xml_schema_collection_usages_TSQL"
   - "sys.column_xml_schema_collection_usages"
   - "column_xml_schema_collection_usages"
   - "sys.column_xml_schema_collection_usages_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.column_xml_schema_collection_usages catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 4fd1ec7f-b9dc-4ddb-ab3a-0d59ab05ad20
-caps.latest.revision: 12
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.column_xml_schema_collection_usages (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row for each column that is validated by an XML schema.  
   

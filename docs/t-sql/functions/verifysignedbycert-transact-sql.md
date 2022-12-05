@@ -1,20 +1,18 @@
 ---
-title: "VERIFYSIGNEDBYCERT (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
+title: "VERIFYSIGNEDBYCERT (Transact-SQL)"
+description: "VERIFYSIGNEDBYCERT (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/06/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "VERIFYSIGNEDBYCERT"
   - "VERIFYSIGNEDBYCERT_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "digitally signed data for changes [SQL Server]"
   - "verifying digitally signed data for changes"
   - "testing digitally signed data for changes"
@@ -22,14 +20,11 @@ helpviewer_keywords:
   - "VERIFYSIGNEDBYCERT"
   - "signatures [SQL Server]"
   - "digital signatures [SQL Server]"
-ms.assetid: 4e041f33-60c4-4190-91c7-220d51dd6c8f
-caps.latest.revision: 41
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # VERIFYSIGNEDBYCERT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Tests whether digitally signed data has been changed since it was signed.  
   
@@ -37,12 +32,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 VerifySignedByCert( Cert_ID , signed_data , signature )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *Cert_ID*  
  Is the ID of a certificate in the database. *Cert_ID* is **int**.  
   
@@ -68,7 +64,7 @@ VerifySignedByCert( Cert_ID , signed_data , signature )
 ### A. Verifying that signed data has not been tampered with  
  The following example tests whether the information in `Signed_Data` has been changed since it was signed with the certificate called `Shipping04`. The signature is stored in `DataSignature`. The certificate, `Shipping04`, is passed to `Cert_ID`, which returns the ID of the certificate in the database. If `VerifySignedByCert` returns 1, the signature is correct. If `VerifySignedByCert` returns 0, the data in `Signed_Data` is not the data that was used to generate `DataSignature`. In this case, either `Signed_Data` has been changed since it was signed or `Signed_Data` was signed with a different certificate.  
   
-```  
+```sql
 SELECT Data, VerifySignedByCert( Cert_Id( 'Shipping04' ),  
     Signed_Data, DataSignature ) AS IsSignatureValid  
 FROM [AdventureWorks2012].[SignedData04]   
@@ -79,7 +75,7 @@ GO
 ### B. Returning only records that have a valid signature  
  This query returns only records that have not been changed since they were signed using certificate `Shipping04`.  
   
-```  
+```sql
 SELECT Data FROM [AdventureWorks2012].[SignedData04]   
 WHERE VerifySignedByCert( Cert_Id( 'Shipping04' ), Data,   
     DataSignature ) = 1   

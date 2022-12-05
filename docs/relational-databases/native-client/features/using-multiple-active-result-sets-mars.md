@@ -1,13 +1,11 @@
 ---
 title: "Using Multiple Active Result Sets (MARS) | Microsoft Docs"
+description: SQL Server supports multiple active result sets. Applications can have more than one pending request and active default result set per connection.
 ms.custom: ""
-ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
+ms.date: "08/08/2017"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "SQL Server Native Client OLE DB provider, MARS"
@@ -18,13 +16,16 @@ helpviewer_keywords:
   - "MARS [SQL Server]"
   - "SQL Server Native Client ODBC driver, MARS"
 ms.assetid: ecfd9c6b-7d29-41d8-af2e-89d7fb9a1d83
-caps.latest.revision: 56
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Using Multiple Active Result Sets (MARS)
-[!INCLUDE[SNAC_Deprecated](../../../includes/snac-deprecated.md)]
+# Using Multiple Active Result Sets (MARS) in SQL Server Native Client
+
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+> [!IMPORTANT] 
+> [!INCLUDE[snac-removed-oledb-and-odbc](../../../includes/snac-removed-oledb-and-odbc.md)]
 
   [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] introduced support for multiple active result sets (MARS) in applications accessing the [!INCLUDE[ssDE](../../../includes/ssde-md.md)]. In earlier versions of [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], database applications could not maintain multiple active statements on a connection. When using [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] default result sets, the application had to process or cancel all result sets from one batch before it could execute any other batch on that connection. [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] introduced a new connection attribute that allows applications to have more than one pending request per connection, and in particular, to have more than one active default result set per connection.  
   
@@ -45,13 +46,13 @@ manager: "jhubbard"
 -   Wherever possible, use API calls to change connection properties and manage transactions in preference to [!INCLUDE[tsql](../../../includes/tsql-md.md)] statements.  
   
 -   In MARS, session-scoped impersonation is prohibited while concurrent batches are running.  
-  
-> [!NOTE]  
->  By default, MARS functionality is not enabled. To use MARS when connecting to [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client, you must specifically enable it within a connection string. For more information, see the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client OLE DB provider and [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client ODBC driver sections, later in this topic.  
-  
+
+> [!NOTE]
+> By default, MARS functionality is not enabled by the driver. To use MARS when connecting to [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] with [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client, you must specifically enable MARS within a connection string. However, some applications may enable MARS by default, if the application detects that the driver supports MARS. For these applications, you can disable MARS in the connection string as needed. For more information, see the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client OLE DB provider and [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client ODBC driver sections, later in this topic.
+
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client does not limit the number of active statements on a connection.  
   
- Typical applications which do not need to have more than a single multistatement batch or stored procedure executing at the same time will benefit from MARS without having to understand how MARS is implemented. However, applications with more complex requirements do need to take account of this.  
+ Typical applications which do not need to have more than a single multi-statement batch or stored procedure executing at the same time will benefit from MARS without having to understand how MARS is implemented. However, applications with more complex requirements do need to take account of this.  
   
  MARS enables the interleaved execution of multiple requests within a single connection. That is, it allows a batch to run, and within its execution, it allows other requests to execute. Note, however, that MARS is defined in terms of interleaving, not in terms of parallel execution.  
   
@@ -103,7 +104,7 @@ Data Source=MSSQL; Initial Catalog=AdventureWorks; Integrated Security=SSPI; Mul
   
  Changes made by statements and atomic blocks that are interleaved are isolated from each other. For example, if one statement or atomic block makes some changes, and then yields execution to another statement, the new statement will not see changes made by the first statement. In addition, when first statement resumes execution, it will not see any changes made by any other statements. Statements will only see changes that are finished and committed before the statement starts.  
   
- A new user transaction can be started within the current user transaction using the BEGIN TRANSACTION statement – this is supported only in interop mode so the BEGIN TRANSACTION can only be called from a T-SQL statement, and not from within a natively compiled stored procedure.You can create a save point in a transaction using SAVE TRANSACTION or an API call to transaction.Save(save_point_name) to rollback to the savepoint. This feature is also enabled only from T-SQL statements, and not from within natively compiled stored procedures.  
+ A new user transaction can be started within the current user transaction using the BEGIN TRANSACTION statement - this is supported only in interop mode so the BEGIN TRANSACTION can only be called from a T-SQL statement, and not from within a natively compiled stored procedure.You can create a save point in a transaction using SAVE TRANSACTION or an API call to transaction.Save(save_point_name) to rollback to the savepoint. This feature is also enabled only from T-SQL statements, and not from within natively compiled stored procedures.  
   
  **MARS and columnstore indexes**  
   
@@ -119,7 +120,7 @@ Data Source=MSSQL; Initial Catalog=AdventureWorks; Integrated Security=SSPI; Mul
 ### SQL Server Native Client OLE DB Provider Example  
  In this example, a data source object is created using the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native OLE DB provider, and MARS is enabled using the DBPROPSET_SQLSERVERDBINIT property set before the session object is created.  
   
-```  
+```cpp
 #include <sqlncli.h>  
   
 IDBInitialize *pIDBInitialize = NULL;  
@@ -208,7 +209,7 @@ hr = pIOpenRowset->OpenRowset (NULL,
 ### SQL Server Native Client ODBC Driver Example  
  In this example, the **SQLSetConnectAttr** function is used to enable MARS before calling the **SQLDriverConnect** function to connect the database. Once the connection is made, two **SQLExecDirect** functions are called to create two separate result sets on the same connection.  
   
-```  
+```cpp
 #include <sqlncli.h>  
   
 SQLSetConnectAttr(hdbc, SQL_COPT_SS_MARS_ENABLED, SQL_MARS_ENABLED_YES, SQL_IS_UINTEGER);  
@@ -222,8 +223,8 @@ SQLAllocHandle(SQL_HANDLE_STMT, hdbc, &hstmt2);
   
 // The 2nd execute would have failed with connection busy error if  
 // MARS were not enabled.  
-SQLExecDirect(hstmt1, L”SELECT * FROM Authors”, SQL_NTS);  
-SQLExecDirect(hstmt2, L”SELECT * FROM Titles”, SQL_NTS);  
+SQLExecDirect(hstmt1, L"SELECT * FROM Authors", SQL_NTS);  
+SQLExecDirect(hstmt2, L"SELECT * FROM Titles", SQL_NTS);  
   
 // Result set processing can interleave.  
 SQLFetch(hstmt1);  

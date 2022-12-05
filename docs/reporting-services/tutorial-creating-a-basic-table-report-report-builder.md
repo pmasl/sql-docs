@@ -1,21 +1,14 @@
 ---
 title: "Tutorial: Creating a Basic Table Report (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/23/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-applies_to: 
-  - "SQL Server 2016"
+description: Learn how to use a wizard to create a basic table report based on sample sales data in the Report Builder.
+ms.date: 06/23/2016
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+ms.topic: conceptual
 ms.assetid: d9e30521-f8ae-4c45-89c3-d40727f622f7
-caps.latest.revision: 16
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Tutorial: Creating a Basic Table Report (Report Builder)
 This tutorial teaches you to create a basic table report based on sample sales data. The following illustration shows the report you will create.  
@@ -72,7 +65,7 @@ In this tutorial, you will use an embedded data source. To learn more about usin
   
     The message "Connection created successfully" appears.  
   
-7.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+7.  Select **OK**.
   
     You are back on the **Choose a connection to a data source** page, with your new data source selected.  
   
@@ -176,7 +169,7 @@ After you create groups, you can add and format rows on which to display aggrega
   
     2.  The second row will repeat once for each line item in the sales order and display the product name, order quantity, and line total.  
   
-    3.  The third row will repeat once for each sales order to display subtotals per order.  
+    3.  The third row will repeat once for each sales order category to display subtotals per category.  
   
     4.  The fourth row will repeat once for each order date to display the subtotals per day.  
   
@@ -236,7 +229,7 @@ The SalesDate values display in the default date format.
   
 5.  In the **Type** pane, select **January 31, 2000**.  
   
-6.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+6.  Select **OK**.
   
     The cell displays the example date **[January 31, 2000]**.  
   
@@ -282,10 +275,10 @@ The text can be further enhanced by applying different font styles, sizes, and c
   
 7.  Select **Bold**.  
   
-8.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+8.  Select **OK**.
   
 ## <a name="Save"></a>6. Save the Report  
-Save the report to a report server or your computer. If you do not save the report to the report server, a number of [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] features such as report parts and subreports are not available.  
+Save the report to a report server or your computer. If you do not save the report to the report server, a number of [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] features such as subreports are not available.  
   
 ### To save the report on a report server  
   
@@ -357,6 +350,6 @@ This concludes the walkthrough for how to create a basic table report. For more 
   
 ## See Also  
 [Report Builder Tutorials](../reporting-services/report-builder-tutorials.md)  
-[Report Builder in SQL Server 2016](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
+[Report Builder in SQL Server](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
   
 

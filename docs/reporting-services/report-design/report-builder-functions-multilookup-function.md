@@ -1,23 +1,21 @@
 ---
-title: "Multilookup Function (Report Builder and SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Multilookup function in a paginated report | Microsoft Docs"
+description: The Multilookup Function returns the set of first-match values for the specified set of names from a dataset that contains name/value pairs in a paginated report in Report Builder.
+ms.date: 03/07/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: 1fec079e-33b3-4e4d-92b3-6b4d06a49a77
-caps.latest.revision: 7
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Report Builder Functions - Multilookup Function
-  Returns the set of first-match values for the specified set of names from a dataset that contains name/value pairs.  
+# Report Builder functions - Multilookup function in a paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+  Returns the set of first-match values for the specified set of names from a dataset that contains name/value pairs in a paginated report.  
   
 > [!NOTE]  
 >  [!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]  
@@ -84,8 +82,10 @@ Multilookup(source_expression, destination_expression, result_expression, datase
   
  For more information, see [Aggregate Functions Reference &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/report-builder-functions-aggregate-functions-reference.md) and [Expression Scope for Totals, Aggregates, and Built-in Collections &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/expression-scope-for-totals-aggregates-and-built-in-collections.md).  
   
-## Example  
- Assume a dataset called "Category" contains the field CategoryList, which is a field that contains a comma-separated list of category identifers, for example, "2, 4, 2, 1".  
+## Examples
+
+### A. Use MultiLookup function
+ Assume a dataset called "Category" contains the field CategoryList, which is a field that contains a comma-separated list of category identifiers, for example, "2, 4, 2, 1".  
   
  The dataset CategoryNames contains the category identifier and category name, as shown in the following table.  
   
@@ -106,7 +106,7 @@ Multilookup(source_expression, destination_expression, result_expression, datase
    ", ")  
 ```  
   
-## Example  
+### B. Use MultiLookup with multivalue parameter  
  Assume a dataset ProductColors contains a color identifier field ColorID and a color value field Color, as shown in the following table.  
   
 |ColorID|Color|  

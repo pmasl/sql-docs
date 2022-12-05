@@ -1,21 +1,17 @@
 ---
+description: "SQLDescribeCol (Visual FoxPro ODBC Driver)"
 title: "SQLDescribeCol (Visual FoxPro ODBC Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLDescribeCol function [ODBC], Visual FoxPro ODBC Driver"
 ms.assetid: a8d06507-8376-42b5-b09f-338a77cea131
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLDescribeCol (Visual FoxPro ODBC Driver)
 > [!NOTE]  

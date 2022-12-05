@@ -1,21 +1,17 @@
 ---
+description: "SQLPutData (Visual FoxPro ODBC Driver)"
 title: "SQLPutData (Visual FoxPro ODBC Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLPutData function [ODBC], Visual FoxPro ODBC Driver"
 ms.assetid: 8c79e9ba-afa0-4e20-9c53-371cc42b4a97
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLPutData (Visual FoxPro ODBC Driver)
 > [!NOTE]  

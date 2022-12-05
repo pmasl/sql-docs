@@ -1,25 +1,22 @@
 ---
-title: "JSON Functions (Transact-SQL) | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "07/17/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-json"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-helpviewer_keywords: 
+title: "JSON Functions (Transact-SQL)"
+description: "JSON Functions (Transact-SQL)"
+author: "jovanpop-msft"
+ms.author: "jovanpop"
+ms.date: 06/03/2020
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: event-tier1-build-2022
+helpviewer_keywords:
   - "JSON functions"
-ms.assetid: ec97d451-06af-44a3-8304-305d410cfc8e
-caps.latest.revision: 8
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "craigg"
+dev_langs:
+  - "TSQL"
+monikerRange: "= azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017"
 ---
 # JSON Functions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
 
 Use the functions described on the pages in this section to validate or change JSON text or to extract simple or complex values.  
   
@@ -29,12 +26,13 @@ Use the functions described on the pages in this section to validate or change J
 |[JSON_VALUE](../../t-sql/functions/json-value-transact-sql.md)|Extracts a scalar value from a JSON string.|  
 |[JSON_QUERY](../../t-sql/functions/json-query-transact-sql.md)|Extracts an object or an array from a JSON string.|  
 |[JSON_MODIFY](../../t-sql/functions/json-modify-transact-sql.md)|Updates the value of a property in a JSON string and returns the updated JSON string.|
+|[JSON_PATH_EXISTS](../../t-sql/functions/json-path-exists-transact-sql.md)|Tests whether a specified SQL/JSON path exists in the input JSON string.|
+
 
  For more info about the built-in support for JSON in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [JSON Data &#40;SQL Server&#41;](../../relational-databases/json/json-data-sql-server.md).  
-    
-## See Also  
- [Validate, Query, and Change JSON Data with Built-in Functions &#40;SQL Server&#41;](../../relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server.md)   
- [JSON Path Expressions &#40;SQL Server&#41;](../../relational-databases/json/json-path-expressions-sql-server.md)   
- [JSON Data &#40;SQL Server&#41;](../../relational-databases/json/json-data-sql-server.md)  
-  
-  
+
+## See Also
+
+ - [Validate, Query, and Change JSON Data with Built-in Functions &#40;SQL Server&#41;](../../relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server.md)
+ - [JSON Path Expressions &#40;SQL Server&#41;](../../relational-databases/json/json-path-expressions-sql-server.md)
+ - [JSON Data &#40;SQL Server&#41;](../../relational-databases/json/json-data-sql-server.md)  

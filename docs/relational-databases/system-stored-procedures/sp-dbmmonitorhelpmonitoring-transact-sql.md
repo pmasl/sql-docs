@@ -1,14 +1,12 @@
 ---
+description: "sp_dbmmonitorhelpmonitoring (Transact-SQL)"
 title: "sp_dbmmonitorhelpmonitoring (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_dbmmonitorhelpmonitoring"
   - "sp_dbmmonitorhelpmonitoring_TSQL"
@@ -18,13 +16,11 @@ helpviewer_keywords:
   - "sp_dbmmonitorhelpmonitoring"
   - "database mirroring [SQL Server], monitoring"
 ms.assetid: a085cf87-269f-454a-a146-21f80a113b72
-caps.latest.revision: 23
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_dbmmonitorhelpmonitoring (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns the current update period.  
   

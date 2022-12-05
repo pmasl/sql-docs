@@ -1,46 +1,45 @@
 ---
-title: "CLOSE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "CLOSE (Transact-SQL)"
+description: "CLOSE (Transact-SQL)"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "CLOSE_TSQL"
   - "CLOSE"
-dev_langs: 
+dev_langs:
   - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "closing cursors"
   - "cursors [SQL Server], closing"
   - "CLOSE statement"
-ms.assetid: 21546874-97e3-4b93-970f-87c27f6b78c7
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "03/06/2017"
 ---
-# CLOSE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
 
-  Closes an open cursor by releasing the current result set and freeing any cursor locks held on the rows on which the cursor is positioned. CLOSE leaves the data structures available for reopening, but fetches and positioned updates are not allowed until the cursor is reopened. CLOSE must be issued on an open cursor; CLOSE is not allowed on cursors that have only been declared or are already closed.  
+# CLOSE (Transact-SQL)
+
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+
+Closes an open cursor by releasing the current result set and freeing any cursor locks held on the rows on which the cursor is positioned. `CLOSE` leaves the data structures available for reopening, but fetches and positioned updates are not allowed until the cursor is reopened. CLOSE must be issued on an open cursor; `CLOSE` is not allowed on cursors that have only been declared or are already closed.  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 CLOSE { { [ GLOBAL ] cursor_name } | cursor_variable_name }  
 ```  
   
-## Arguments  
- GLOBAL  
- Specifies that *cursor_name* refers to a global cursor.  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+
+GLOBAL  
+Specifies that *cursor_name* refers to a global cursor.  
   
  *cursor_name*  
  Is the name of an open cursor. If both a global and a local cursor exist with *cursor_name* as their name, *cursor_name* refers to the global cursor when GLOBAL is specified; otherwise, *cursor_name* refers to the local cursor.  
@@ -48,10 +47,11 @@ CLOSE { { [ GLOBAL ] cursor_name } | cursor_variable_name }
  *cursor_variable_name*  
  Is the name of a cursor variable associated with an open cursor.  
   
-## Examples  
- The following example shows the correct placement of the `CLOSE` statement in a cursor-based process.  
+## Examples
+
+The following example shows the correct placement of the `CLOSE` statement in a cursor-based process.  
   
-```  
+```sql  
 DECLARE Employee_Cursor CURSOR FOR  
 SELECT EmployeeID, Title FROM AdventureWorks2012.HumanResources.Employee;  
 OPEN Employee_Cursor;  
@@ -65,11 +65,10 @@ DEALLOCATE Employee_Cursor;
 GO  
 ```  
   
-## See Also  
- [Cursors](../../relational-databases/cursors.md)   
- [Cursors &#40;Transact-SQL&#41;](../../t-sql/language-elements/cursors-transact-sql.md)   
- [DEALLOCATE &#40;Transact-SQL&#41;](../../t-sql/language-elements/deallocate-transact-sql.md)   
- [FETCH &#40;Transact-SQL&#41;](../../t-sql/language-elements/fetch-transact-sql.md)   
- [OPEN &#40;Transact-SQL&#41;](../../t-sql/language-elements/open-transact-sql.md)  
-  
-  
+## See Also
+
+- [Cursors](../../relational-databases/cursors.md)
+- [Cursors &#40;Transact-SQL&#41;](../../t-sql/language-elements/cursors-transact-sql.md)
+- [DEALLOCATE &#40;Transact-SQL&#41;](../../t-sql/language-elements/deallocate-transact-sql.md)
+- [FETCH &#40;Transact-SQL&#41;](../../t-sql/language-elements/fetch-transact-sql.md)
+- [OPEN &#40;Transact-SQL&#41;](../../t-sql/language-elements/open-transact-sql.md)

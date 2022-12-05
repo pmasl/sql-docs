@@ -1,26 +1,24 @@
 ---
-title: "Keyboard Shortcuts (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Keyboard shortcuts for accessibility in paginated reports in Report Builder"
+description: When you create and edit paginated reports in Report Builder and Power BI Report Builder, you can use keyboard shortcuts for accessibility and navigation.
+ms.date: 05/07/2021
+ms.service: reporting-services
+ms.subservice: report-builder
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "keyboard shortcuts"
   - "shortcuts"
 ms.assetid: 2d04f2c9-4e29-4b7a-843f-ce9a7c168aeb
-caps.latest.revision: 20
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Keyboard Shortcuts (Report Builder)
-  When you create and edit paginated [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] paginated reports in Report Builder, you have access to all the shortcut keys for navigation that are provided by the Windows environment. You can select from several standard keyboard mapping schemes.  
+# Keyboard shortcuts for accessibility in paginated reports in Report Builder
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)]
+
+When you create and edit paginated reports in [Microsoft Report Builder](../../reporting-services/report-builder/report-builder-in-sql-server-2016.md) for Reporting Services and in [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi), you can use keyboard shortcuts for accessibility and navigation. You can select from several standard keyboard mapping schemes.  
   
  You can navigate through the Report Builder window, or select and change options in dialog boxes, without using the mouse.  
   
@@ -29,7 +27,7 @@ manager: "erikre"
 > [!NOTE]  
 >  Keyboard shortcuts can contain the SHIFT, ALT, and/or CTRL keys in combination with letters, or use function keys. For example, F1 opens the Report Builder Help file.  
   
-## Keyboard Shortcuts in Report Builder  
+## Keyboard shortcuts in Report Builder  
   
 |Description|Key Combination|  
 |-----------------|---------------------|  
@@ -90,9 +88,8 @@ manager: "erikre"
 |Zoom out on map view area when a map viewport is selected.|CTRL +Minus sign (-)|  
 |Accelerator mode for pan and zoom in map view area when a map viewport is selected.|CTRL +Left click|  
   
-## See Also  
- [Report Builder in SQL Server 2016](../../reporting-services/report-builder/report-builder-in-sql-server-2016.md)   
- [Report Design View &#40;Report Builder&#41;](../../reporting-services/report-builder/report-design-view-report-builder.md)   
- [Glossary &#40;Report Builder&#41;](../../reporting-services/report-builder/glossary-report-builder.md)  
-  
-  
+## See also  
+
+- [Report Builder in SQL Server](../../reporting-services/report-builder/report-builder-in-sql-server-2016.md)
+- [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi)
+- [Report Design View &#40;Report Builder&#41;](../../reporting-services/report-builder/report-design-view-report-builder.md)

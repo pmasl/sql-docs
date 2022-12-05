@@ -1,30 +1,23 @@
 ---
-title: "MSdistpublishers (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSdistpublishers (Transact-SQL)"
+description: MSdistpublishers (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSdistpublishers"
   - "MSdistpublishers_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSdistpublishers system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 31844099-4b33-4dc9-84b4-bac70aa82598
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSdistpublishers (Transact-SQL)
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   The **MSdistpublishers** table contains one row for each remote Publisher supported by the local Distributor. This table is stored in the **msdb** database.  
   
 |Column name|Data type|Description|  
@@ -39,6 +32,8 @@ manager: "jhubbard"
 |**trusted**|**bit**|Indicates whether the remote Publisher uses the same password as the local Distributor:<br /><br /> **0** = A password is needed at the remote Publisher to connect to the Distributor.<br /><br /> **1** = No password is needed.|  
 |**third_party**|**bit**|Whether the Publisher is an installation of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]:<br /><br /> **0** = [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] installation.**1** = Heterogeneous data source.|  
 |**publisher_type**|**sysname**|Publisher type:<br /><br /> **MSSQLSERVER** = [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Publisher.<br /><br /> **ORACLE** = standard Oracle Publisher.<br /><br /> **ORACLE GATEWAY** = Oracle Gateway Publisher.|  
+|**storage_connection_string**|**nvarchar(779)**|Value of Azure SQL Database storage connection string.|  
+
   
 ## See Also  
  [Replication Tables &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   

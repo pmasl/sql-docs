@@ -1,38 +1,31 @@
 ---
-title: "State Property (ADO MD) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "State Property (ADO MD)"
+description: "State Property (ADO MD)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "State"
   - "Cellset::State"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "State property [ADO MD]"
-ms.assetid: 06d480ca-9eb6-4570-a45d-a73539bddd32
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # State Property (ADO MD)
 Indicates the current state of the cellset.  
   
 ## Return Values  
- Returns a **Long** integer indicating the current condition of the [Cellset](../../../ado/reference/ado-md-api/cellset-object-ado-md.md) object and is read-only. The following values are valid: **adStateClosed** (0) and **adStateOpen** (1).  
+ Returns a **Long** integer indicating the current condition of the [Cellset](./cellset-object-ado-md.md) object and is read-only. The following values are valid: **adStateClosed** (0) and **adStateOpen** (1).  
   
 ## Remarks  
- To use the [ObjectStateEnum](../../../ado/reference/ado-api/objectstateenum.md) constant names, you must have the ADO type library referenced in your project. See [Using ADO with ADO MD](../../../ado/guide/multidimensional/using-ado-with-ado-md.md) for more information.  
+ To use the [ObjectStateEnum](../ado-api/objectstateenum.md) constant names, you must have the ADO type library referenced in your project. See [Using ADO with ADO MD](../../guide/multidimensional/using-ado-with-ado-md.md) for more information.  
   
 ## Applies To  
- [Cellset Object (ADO MD)](../../../ado/reference/ado-md-api/cellset-object-ado-md.md)  
+ [Cellset Object (ADO MD)](./cellset-object-ado-md.md)  
   
 ## See Also  
- [Close Method (ADO MD)](../../../ado/reference/ado-md-api/close-method-ado-md.md)   
- [Open Method (ADO MD)](../../../ado/reference/ado-md-api/open-method-ado-md.md)
+ [Close Method (ADO MD)](./close-method-ado-md.md)   
+ [Open Method (ADO MD)](./open-method-ado-md.md)

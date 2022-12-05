@@ -1,19 +1,13 @@
 ---
-title: "Updating UDT Columns with DataAdapters | Microsoft Docs"
-ms.custom: ""
+title: "Updating UDT Columns with DataAdapters"
+description: UDTs in a SQL Server database are supported by using System.Data.DataSet and System.Data.SqlClient.SqlDataAdapter to retrieve and modify data.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-dev_langs: 
-  - "TSQL"
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ADO.NET [CLR integration]"
   - "updating data [CLR integration]"
   - "populating DataSet"
@@ -22,13 +16,14 @@ helpviewer_keywords:
   - "updating UDT columns"
   - "user-defined types [CLR integration], ADO.NET"
   - "data adapters [CLR integration]"
+dev_langs:
+  - "TSQL"
+  - "VB"
+  - "CSharp"
 ms.assetid: 4489c938-ba03-4fdb-b533-cc3f5975ae50
-caps.latest.revision: 12
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Accessing User-Defined Types - Updating UDT Columns with DataAdapters
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   User-defined types (UDTs) are supported by using a **System.Data.DataSet** and a **System.Data.SqlClient.SqlDataAdapter** to retrieve and modify data.  
   
 ## Populating a Dataset  

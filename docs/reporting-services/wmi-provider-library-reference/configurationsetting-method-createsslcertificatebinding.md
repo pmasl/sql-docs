@@ -1,25 +1,20 @@
 ---
+description: "CreateSSLCertificateBinding Method (WMI MSReportServer_ConfigurationSetting)"
 title: "CreateSSLCertificateBinding Method (WMI MSReportServer_ConfigurationSetting) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: wmi-provider-library-reference
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "CreateSSLCertificateBinding"
 ms.assetid: 407d50e4-0a55-43cb-8ddf-2d82714071b1
-caps.latest.revision: 14
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # ConfigurationSetting Method - CreateSSLCertificateBinding
-  Creates an SSL Certificate binding.  
+  Creates a TLS/SSL Certificate binding.  
   
 ## Syntax  
   
@@ -47,7 +42,7 @@ public void CreateSSLCertificateBinding(string application,
  The IP address for the application.  
   
  *Port*  
- The SSL port associated with the binding.  
+ The TLS port associated with the binding.  
   
  *Lcid*  
  The locale to use for the error messages returned.  
@@ -64,7 +59,7 @@ public void CreateSSLCertificateBinding(string application,
 ## Remarks  
  This method adds a binding to rsreportserver.config for the application. If a binding does not already exist in HTTP.SYS, it is created there.  
   
- Before creating the binding, the method call examines the Url Reservations for the specified application to determine if the SSL Certificate Binding is valid.  
+ Before creating the binding, the method call examines the Url Reservations for the specified application to determine if the TLS/SSL Certificate Binding is valid.  
   
  The following conditions are validated and can result in errors:  
   
@@ -72,7 +67,7 @@ public void CreateSSLCertificateBinding(string application,
   
 2.  The IPAddress specified does not correspond to an IPAddress of this computer.  
   
-3.  The IPAddress specified is a DHCP IPAddress (changes periodically) – use the Wildcard IP address instead (0.0.0.0).  
+3.  The IPAddress specified is a DHCP IPAddress (changes periodically) - use the Wildcard IP address instead (0.0.0.0).  
   
 4.  IPAddress specified does not match the IP address of a URL reservations AND neither a wildcard or host name URL reservation exist.  
   

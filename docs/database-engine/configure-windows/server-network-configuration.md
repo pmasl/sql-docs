@@ -1,15 +1,13 @@
 ---
-title: "Server Network Configuration | Microsoft Docs"
-ms.custom: ""
+title: "Server Network Configuration"
+description: Become familiar with SQL Server network configuration tasks. View information on enabling protocols, configuring encryption, registering SPNs, and other actions.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "07/27/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: configuration
+ms.topic: conceptual
+helpviewer_keywords:
   - "Named Pipes [SQL Server], configuring"
   - "connections [SQL Server], server network configuration"
   - "Database Engine [SQL Server], network configurations"
@@ -17,13 +15,9 @@ helpviewer_keywords:
   - "protocols [SQL Server], choosing"
   - "ports [SQL Server], changing"
   - "server configuration [SQL Server]"
-ms.assetid: 890c09a1-6dad-4931-aceb-901c02ae34c5
-caps.latest.revision: 50
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # Server Network Configuration
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Server network configuration tasks include enabling protocols, modifying the port or pipe used by a protocol, configuring encryption, configuring the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Browser service, exposing or hiding the [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] on the network, and registering the Server Principal Name. Most of the time, you do not have to change the server network configuration. Only reconfigure the server network protocols if special network requirements.  
   
  Network configuration for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] is done using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Configuration Manager. For earlier versions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], use the Server Network Utility that ships with those products.  
@@ -46,7 +40,7 @@ manager: "jhubbard"
  Support for Extended Protection for Authentication by using channel binding and service binding is available for operating systems that support Extended Protection. For more information, see [Connect to the Database Engine Using Extended Protection](../../database-engine/configure-windows/connect-to-the-database-engine-using-extended-protection.md).  
   
 ## Authenticating by Using Kerberos  
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] supports Kerberos authentication. For more information, see [Register a Service Principal Name for Kerberos Connections](../../database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections.md) and [Microsoft Kerberos Configuration Manager for SQL Server](http://www.microsoft.com/download/details.aspx?id=39046).  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] supports Kerberos authentication. For more information, see [Register a Service Principal Name for Kerberos Connections](../../database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections.md) and [Microsoft Kerberos Configuration Manager for SQL Server](https://www.microsoft.com/download/details.aspx?id=39046).  
   
 ### Registering a Server Principal Name (SPN)  
  The Kerberos authentication service uses an SPN to authenticate a service. For more information, see [Register a Service Principal Name for Kerberos Connections](../../database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections.md).  

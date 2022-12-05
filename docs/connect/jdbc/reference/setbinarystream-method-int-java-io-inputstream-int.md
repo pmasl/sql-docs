@@ -1,24 +1,15 @@
 ---
-title: "setBinaryStream Method (int, java.io.InputStream, int) | Microsoft Docs"
-ms.custom: ""
+title: "setBinaryStream Method (int, java.io.InputStream, int)"
+description: "setBinaryStream Method (int, java.io.InputStream, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.setBinaryStream"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.setBinaryStream"
 apitype: "Assembly"
-ms.assetid: fd6be063-08eb-40cf-9201-5a9f62387726
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setBinaryStream Method (int, java.io.InputStream, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

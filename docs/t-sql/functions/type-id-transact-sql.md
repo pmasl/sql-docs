@@ -1,32 +1,28 @@
 ---
-title: "TYPE_ID (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+title: "TYPE_ID (Transact-SQL)"
+description: "TYPE_ID (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/14/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "TYPE_ID"
   - "TYPE_ID_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "IDs [SQL Server], types"
   - "TYPE_ID function"
   - "type IDs [SQL Server]"
   - "data types [SQL Server], IDs"
-ms.assetid: 647d17ef-b878-4922-b446-56642322ebad
-caps.latest.revision: 42
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # TYPE_ID (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns the ID for a specified data type name.  
   
@@ -34,13 +30,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql
 TYPE_ID ( [ schema_name ] type_name )   
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *type_name*  
  Is the name of the data type. *type_name* is of type **nvarchar**. *type_name* can be a system or user-defined data type.  
   
@@ -60,7 +56,7 @@ TYPE_ID ( [ schema_name ] type_name )
 ### A. Looking up the TYPE ID values for single- and two-part type names  
  The following example returns type ID for single- and two-part type names.  
   
-```  
+```sql
 USE tempdb;  
 GO  
 CREATE TYPE NewType FROM int;  
@@ -77,7 +73,7 @@ GO
 ### B. Looking up the TYPE ID of a system data type  
  The following example returns the `TYPE ID` for the `datetime` system data type.  
   
-```  
+```sql
 SELECT TYPE_NAME(TYPE_ID('datetime')) AS [TYPE_NAME]  
     ,TYPE_ID('datetime') AS [TYPE_ID];  
 GO  
@@ -88,7 +84,7 @@ GO
 ### C: Looking up the TYPE ID of a system data type  
  The following example returns the `TYPE ID` for the `datetime` system data type.  
   
-```  
+```sql
 SELECT TYPE_NAME(TYPE_ID('datetime')) AS typeName,   
     TYPE_ID('datetime') AS typeID FROM table1;  
 ```  

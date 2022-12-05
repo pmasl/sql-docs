@@ -1,20 +1,16 @@
 ---
 title: "Reporting Services Data Alerts | Microsoft Docs"
-ms.custom: ""
-ms.date: "07/02/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Learn how SQL Server Reporting Services data alerts help inform you about report data that is interesting or important to you.
+ms.date: 07/02/2017
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+
+ms.topic: conceptual
 ms.assetid: 8c234077-b670-45c0-803f-51c5a5e0866e
-caps.latest.revision: 33
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
+monikerRange: ">=sql-server-2016 <=sql-server-2016"
 ---
 # Reporting Services Data Alerts
 
@@ -33,11 +29,11 @@ Data alert messages are sent by email. Depending on the importance of the inform
 
 The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] data alerts:
 
--   **Define and save data alert definitions**—you run a report, create rules that identify interesting data values, define a recurrence pattern for sending the data alert message, and specify the recipients of the alert message.  
+-   **Define and save data alert definitions**-you run a report, create rules that identify interesting data values, define a recurrence pattern for sending the data alert message, and specify the recipients of the alert message.  
   
--   **Run data alert definitions**—Alerting service processes alert definitions at a scheduled time, retrieves report data, creates data alert instances based on rules in the alert definition.  
+-   **Run data alert definitions**-Alerting service processes alert definitions at a scheduled time, retrieves report data, creates data alert instances based on rules in the alert definition.  
   
--   **Deliver data alert messages to recipients**—Alerting service creates an alert instance and sends an alert message to recipients by email.  
+-   **Deliver data alert messages to recipients**-Alerting service creates an alert instance and sends an alert message to recipients by email.  
   
  In addition, as a data alert owner you can view information about your data alerts and delete and edit your data alert definitions. An alert has only one owner, the person who created it.  
   
@@ -52,13 +48,16 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
  ![Workflow in Reporting Services alerting](../reporting-services/media/rs-alertingworkflow.gif "Workflow in Reporting Services alerting")  
   
 ### Reports Supported by Data Alerts  
- You can create data alerts on all types of professional reports that are written in the report definition language (RDL) and created in Report Designer or Report Builder. Reports that include data regions such as tables and charts, reports with subreports, and complex reports with multiple parallel column groups and nested data regions. The only requirements are the report includes at least one data region of any type and the report data source is configured to use stored credentials or no credentials. If the report has no data regions, you cannot create an alert on it.  
+ You can create data alerts on all types of professional reports that are written in the report definition language (RDL) and created in Report Designer or Report Builder. Reports that include data regions such as tables and charts, reports with subreports, and complex reports with multiple parallel column groups and nested data regions. The only requirements are the report includes at least one data region of any type and the report data source is configured to use stored credentials or no credentials. If the report has no data regions, you can't create an alert on it.  
   
- You cannot create data alerts on reports created with [!INCLUDE[ssCrescent](../includes/sscrescent-md.md)].  
+ You can't create data alerts on reports created with Power View.  
+
+ > [!NOTE]
+ > Power View support is no longer available after SQL Server 2017.
   
- When you install [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] in native mode or SharePoint mode or use the standalone version of Report Builder, you can save reports to a report server, your computer, or a SharePoint library. To create data alerts on reports, the reports must be saved or uploaded to a SharePoint library. This means that you cannot create alerts on reports saved to a report server in native mode or your computer. Also, you cannot create alerts embedded in custom applications.  
+ When you install [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] in native mode or SharePoint mode or use the standalone version of Report Builder, you can save reports to a report server, your computer, or a SharePoint library. To create data alerts on reports, the reports must be saved or uploaded to a SharePoint library. This means that you can't create alerts on reports saved to a report server in native mode or your computer. Also, you can't create alerts embedded in custom applications.  
   
- [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] supports a variety of credential types in reports. You can create data alerts on reports with data source configured to use stored credentials, or no credentials. You cannot create alerts on reports configured to use integrated security credentials or prompt for credentials. The report is run as part of processing the alert definition and the processing fails without credentials. For more information, see the following:  
+ [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] supports a variety of credential types in reports. You can create data alerts on reports with data source configured to use stored credentials, or no credentials. You can't create alerts on reports configured to use integrated security credentials or prompt for credentials. The report is run as part of processing the alert definition and the processing fails without credentials. For more information, see the following:  
   
 -   [Specify Credential and Connection Information for Report Data Sources](../reporting-services/report-data/specify-credential-and-connection-information-for-report-data-sources.md)  
   
@@ -67,7 +66,7 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
 -   [Authentication with the Report Server](../reporting-services/security/authentication-with-the-report-server.md)  
   
 ### Run Reports  
- The first step in creating a data alert definition is to locate the report you want in the SharePoint library, and then run the report. If a report contains no data when you run it, you cannot create an alert on the report at that time.  
+ The first step in creating a data alert definition is to locate the report you want in the SharePoint library, and then run the report. If a report contains no data when you run it, you can't create an alert on the report at that time.  
   
  If the report is parameterized, you specify the parameter values to use when you run the report. The parameter values will be saved in the data alert definitions that you create on a report. The values are used when the report is rerun as a step in processing the data alert definition. If you want to change the parameter values you need to rerun the report with those parameter values and create an alert definition on that version of the report.  
   
@@ -89,7 +88,7 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
  When the schedule of the SQL Server Agent job starts the processing of the alert definition, the report is run to refresh the report data feeds. The alerting service reads the data feeds and applies the rules that the data alert definitions specify to the data values. If one or more data values satisfy the rules, a data alert instance is created and a data alert message with the alert results is sent to all recipients by email. The results are rows of report data that satisfied all rules at the time the alert instance was created. To prevent multiple alert messages with the same results, you can specify that messages are sent only when the results change. In this case, an alert instance is created and saved to the alerting database, but no alert message is generated. If an error occurs, the alert instance is also saved to the alerting database and an alert message with the details about the error is sent to recipients. The Diagnostics and Logging section later in this topic has more information about logging and troubleshooting.  
   
 ### Send Data Alert Messages  
- Data alert message are sent by email.  
+ Data alert messages are sent by email.  
   
  The **From** line contains a value provided by the [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] email delivery configuration. The **To** line lists the recipients that you specified when you created the alert in Data Alert Designer.  
   
@@ -109,18 +108,18 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
   
 -   The contextual values from report items that are outside of the report data regions.  
   
- If a data alert instance or data alert message cannot be created an error message is sent to all recipients. Instead of the alert results, the message includes an error description.  
+ If a data alert instance or data alert message can't be created an error message is sent to all recipients. Instead of the alert results, the message includes an error description.  
   
  For more information, see [Data Alert Messages](../reporting-services/data-alert-messages.md).  
   
 ##  <a name="InstallAlerting"></a> Install Data Alerts  
  The data alerts feature is available only when [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] is installed in SharePoint mode. When you install [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] in SharePoint mode, setup automatically creates the alerting database that stores data alert definitions and alerting metadata, and two SharePoint pages for managing alerts and adds Data Alert Designer to the SharePoint site. There are no special steps to perform or options to set for alerting during installation.  
   
- If you want to learn more about installing [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] in SharePoint mode, including the [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] shared service that is new in [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] and [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] service application that you must create and configure before you can use [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] features, see [Install Reporting Services SharePoint Mode for SharePoint 2010](http://msdn.microsoft.com/en-us/47efa72e-1735-4387-8485-f8994fb08c8c) in MSDN library.  
+ If you want to learn more about installing [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] in SharePoint mode, including the [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] shared service that is new in [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] and [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] service application that you must create and configure before you can use [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] features, see [Install Reporting Services SharePoint Mode for SharePoint 2010](./install-windows/install-the-first-report-server-in-sharepoint-mode.md) in MSDN library.  
   
- As the diagram earlier in the topic shows, data alerts use SQL Server Agent jobs. To create the jobs, SQL Server Agent must be running. You might have configured SQL Server Agent to start automatically when you installed [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]. If not, you can start SQL Server Agent manually. For more information, see [Configure SQL Server Agent](http://msdn.microsoft.com/library/2e361a62-9e92-4fcd-80d7-d6960f127900) and [Start, Stop, Pause, Resume, Restart the Database Engine, SQL Server Agent, or SQL Server Browser Service](../database-engine/configure-windows/start-stop-pause-resume-restart-sql-server-services.md).  
+ As the diagram earlier in the topic shows, data alerts use SQL Server Agent jobs. To create the jobs, SQL Server Agent must be running. You might have configured SQL Server Agent to start automatically when you installed [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]. If not, you can start SQL Server Agent manually. For more information, see [Configure SQL Server Agent](../ssms/agent/configure-sql-server-agent.md) and [Start, Stop, Pause, Resume, Restart the Database Engine, SQL Server Agent, or SQL Server Browser Service](../database-engine/configure-windows/start-stop-pause-resume-restart-sql-server-services.md).  
   
- You can use the **Provision Subscriptions and Alerts** page in SharePoint Central Administration to find out whether SQL Server Agent is running and create and download customized [!INCLUDE[tsql](../includes/tsql-md.md)] scripts that you then run to grant permissions to SQL Server Agent. If can also generate the [!INCLUDE[tsql](../includes/tsql-md.md)] scripts by using PowerShell. For more information, see [Provision Subscriptions and Alerts for SSRS Service Applications](../reporting-services/install-windows/provision-subscriptions-and-alerts-for-ssrs-service-applications.md).  
+ You can use the **Provision Subscriptions and Alerts** page in SharePoint Central Administration to find out whether SQL Server Agent is running and create and download customized [!INCLUDE[tsql](../includes/tsql-md.md)] scripts that you then run to grant permissions to SQL Server Agent. It can also generate the [!INCLUDE[tsql](../includes/tsql-md.md)] scripts by using PowerShell. For more information, see [Provision Subscriptions and Alerts for SSRS Service Applications](../reporting-services/install-windows/provision-subscriptions-and-alerts-for-ssrs-service-applications.md).  
   
 ##  <a name="ConfigAlert"></a> Configure Data Alerts  
  Starting in [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] the settings for [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] features, including data alerts, are distributed between the report server configuration file (rsreportserver.config) and a SharePoint configuration database whenever you install [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] in SharePoint mode. When you create the service application as a step in installing and configuring [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)], the SharePoint configuration database is automatically created. For more information, see [RsReportServer.config Configuration File](../reporting-services/report-server/rsreportserver-config-configuration-file.md) and [Reporting Services Configuration Files](../reporting-services/report-server/reporting-services-configuration-files.md).  
@@ -157,9 +156,8 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
   
  The following table summarizes the event handlers and when retry will fire:  
   
-|Error Category|<|\<|Event type||>|>|>|  
+|Error Category / Event Type|FireAlert|FireSchedule|CreateSchedule|UpdateSchedule|DeleteSchedule|GenerateAlert|DeliverAlert|  
 |--------------------|--------|--------|----------------|-|--------|--------|--------|  
-||**FireAlert**|**FireSchedule**|**CreateSchedule**|**UpdateSchedule**|**DeleteSchedule**|**GenerateAlert**|**DeliverAlert**|  
 |Out of memory|X|X|X|X|X|X|X|  
 |Thread abort|X|X|X|X|X|X|X|  
 |SQL Agent is not running|X||X|X|X|||  
@@ -190,7 +188,7 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
   
  `<IsAlertingService>True</IsAlertingService>`  
   
- `…`  
+ `...`  
   
  `</Service>`  
   
@@ -211,7 +209,7 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
 |Alerting administrator|Manage Alerts|View a list of all data alerts saved on the SharePoint site and delete alerts.|  
   
 ##  <a name="DiagnosticsLogging"></a> Diagnostics and Logging  
- Data alerts provides a number of ways to help information workers and administrators keep track of alerts and understand why alerts failed and help administrators make use of logs to learn which alert messages were sent to whom, number of alert instances sent, and so forth.  
+ Data alerts provide a number of ways to help information workers and administrators keep track of alerts and understand why alerts failed and help administrators make use of logs to learn which alert messages were sent to whom, number of alert instances sent, and so forth.  
   
 ### Data Alert Manager  
  Data Alert Manager lists alert definitions and error information that help information workers and alerting administrators understand why the failure occurred. Some common reasons for failure include:  
@@ -246,7 +244,7 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
   
 -   ReadSentAlerts  
   
- You can use SQL Agent to run the stored procedure on a schedule. For more information, see [SQL Server Agent](http://msdn.microsoft.com/library/8d1dc600-aabb-416f-b3af-fbc9fccfd0ec).  
+ You can use SQL Agent to run the stored procedure on a schedule. For more information, see [SQL Server Agent](../ssms/agent/sql-server-agent.md).  
   
 #### Report Server Execution Log  
  Reports are run to generate the data feeds that data alert definitions are built upon. The report server execution log in the report server database captures information each time the report is run. You can query the ExecutionLog2 view in the database for detailed information. For more information, see [Report Server ExecutionLog and the ExecutionLog3 View](../reporting-services/report-server/report-server-executionlog-and-the-executionlog3-view.md).  
@@ -270,12 +268,12 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
   
  [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] provides performance counters for other [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] features. For more information, see [Performance Counters for the ReportServer:Service  and ReportServerSharePoint:Service Performance Objects](../reporting-services/report-server/performance-counters-reportserver-service-performance-objects.md), [Performance Counters for the MSRS 2011 Web Service and MSRS 2011 Windows Service Performance Objects &#40;Native Mode&#41;](../reporting-services/report-server/performance-counters-msrs-2011-web-service-performance-objects.md), and [Performance Counters for the MSRS 2011 Web Service SharePoint Mode and MSRS 2011 Windows Service SharePoint Mode Performance Objects &#40;SharePoint Mode&#41;](../reporting-services/report-server/performance-counters-msrs-2011-sharepoint-mode-performance-objects.md).  
   
-##  <a name="SupportForSSL"></a> Support for SSL  
- [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] can use the HTTP SSL (Secure Sockets Layer) service to establish encrypted connections to a report server or SharePoint site.  
+##  <a name="SupportForSSL"></a> Support for TLS  
+ [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] can use the HTTP SSL service to establish encrypted connections to a report server or SharePoint site. Transport Layer Security (TLS) was previously known as Secure Sockets Layer (SSL).
   
- The alerting runtime service and data alerts user interface support SSL and works similarly whether you use SSL or HTTP; however, there are some subtle differences. When the data alert definition is created using and SSL connection, the URL that links back to the SharePoint library from the data alert message also uses SSL. You can identify the SSL connection because it uses HTTPS instead of HTTP in its URL. Likewise, if the data alert definition was created using an HTTP connection, the link back to the SharePoint site uses HTTP. Whether the alert definition was created using SSL or HTTP, the experience for users and alerting administrators are identical when using Data Alert Designer or Data Alert Manager. If the protocol (HTTP or SSL) should change between the time that the alert definition was created and then updated and resaved, the original protocol is kept and used in link URLs.  
+ The alerting runtime service and data alerts user interface support TLS and works similarly whether you use TLS or HTTP. However, there are some subtle differences. When the data alert definition is created using and TLS connection, the URL that links back to the SharePoint library from the data alert message also uses TLS. You can identify the TLS connection because it uses HTTPS instead of HTTP in its URL. Likewise, if the data alert definition was created using an HTTP connection, the link back to the SharePoint site uses HTTP. Whether the alert definition was created using TLS or HTTP, the experience for users and alerting administrators are identical when using Data Alert Designer or Data Alert Manager. If the protocol (HTTP or TLS) should change between the time that the alert definition was created and then updated and resaved, the original protocol is kept and used in link URLs.  
   
- If you create a data alert on a SharePoint site that is configured to use SSL and then remove the SSL requirement the alert continues to work on the site. If the site is deleted, the default zone site is used instead.  
+ If you create a data alert on a SharePoint site that is configured to use TLS and then remove the TLS requirement the alert continues to work on the site. If the site is deleted, the default zone site is used instead.  
   
 ##  <a name="UserInterface"></a> Data Alert User Interface  
  Data alerts provide SharePoint pages for managing alerts and a designer for creating and editing data alert definitions.  
@@ -291,15 +289,15 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
 -   **Provision Subscriptions and Data Alerts** in which you find out whether Reporting Services can use SQL Server Agent for data alerts and download scripts that allow access to SQL Server Agent. For more information, see [Provision Subscriptions and Alerts for SSRS Service Applications](../reporting-services/install-windows/provision-subscriptions-and-alerts-for-ssrs-service-applications.md).  
   
 ##  <a name="Globalization"></a> Globalization of Data Alerts  
- Certain script such as Arabic and Hebrew are written right to left. Data alerts support right-to-left scripts as well as left-to-right scripts. Data alerts detect culture and alter the appearance and behavior of the user interface and the layout of data alert messages accordingly. The culture is derived from the regional setting of the operating system on the user’s computer. The culture is saved each time you update and then resave the data alert definition.  
+ Certain script such as Arabic and Hebrew are written right to left. Data alerts support right-to-left scripts as well as left-to-right scripts. Data alerts detect culture and alter the appearance and behavior of the user interface and the layout of data alert messages accordingly. The culture is derived from the regional setting of the operating system on the user's computer. The culture is saved each time you update and then resave the data alert definition.  
   
- Whether data satisfies the rules in the alert definition can be affected by the culture in the alert definition. String comparisons are most commonly affected by culture specific rules.  
+ The culture in the alert definition can affect whether data satisfies the rules in the alert definition. String comparisons are most commonly affected by culture specific rules.  
   
- Determining whether report data satisfies the rules in the alert definition can be affected by the culture in the alert definition. This most commonly occurs in of strings. For example, in an alert definition with the German culture, a rule that compares the English letter “o” and the German letter “ö” would not be satisfied. In the same alert definition using the English culture the rule would be satisfied.  
+ Determining whether report data satisfies the rules in the alert definition can be affected by the culture in the alert definition. This most commonly occurs in of strings. For example, in an alert definition with the German culture, a rule that compares the English letter "o" and the German letter "ö" would not be satisfied. In the same alert definition using the English culture the rule would be satisfied.  
   
  Data formatting is also based the culture of the alert definition. For example, if the culture uses a period as the decimal symbol, then the value displays as 45.67; whereas a culture that uses a comma as the decimal symbol, displays 45,67.  
   
- Depending on which data alert user interface you use, the support for right-to-left varies. Data Alert Designer supports right-to-left script in text boxes, but the layout of the designer is not right to left. Its layout is left to right like other tools. If an alert definition, created with right-to-left text orientation, and then edited in a left-to-right environment, the right-to-left text orientation is preserved when you save the alert definition. Data Alert Manager behaves the same as a SharePoint page. Its layout is right-to left, just like other SharePoint pages. Data alert messages that are based on right-to-left data alert definitions, display message text right to left and the message layout is left to right.  
+ Depending on which data alert user interface you use, the support for right-to-left varies. Data Alert Designer supports right-to-left script in text boxes, but the layout of the designer is not right to left. Its layout is left to right like other tools. In an alert definition created with right-to-left text orientation and then edited in a left-to-right environment, the right-to-left text orientation is preserved when you save the alert definition. Data Alert Manager behaves the same as a SharePoint page. Its layout is right-to left, just like other SharePoint pages. Data alert messages that are based on right-to-left data alert definitions, display message text right to left and the message layout is left to right.  
   
 ##  <a name="HowTo"></a> Related Tasks  
   
@@ -321,4 +319,4 @@ The following summarizes the key areas of [!INCLUDE[ssRSnoversion](../includes/s
 [Data Alert Manager for Alerting Administrators](../reporting-services/data-alert-manager-for-alerting-administrators.md)   
 [Data Alert Manager for SharePoint Users](../reporting-services/data-alert-manager-for-sharepoint-users.md)  
 
-More questions? [Try asking the Reporting Services forum](http://go.microsoft.com/fwlink/?LinkId=620231)
+More questions? [Try asking the Reporting Services forum](https://go.microsoft.com/fwlink/?LinkId=620231)

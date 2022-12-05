@@ -1,31 +1,23 @@
 ---
-title: "MSarticles (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSarticles (Transact-SQL)"
+description: MSarticles (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSarticles"
   - "MSarticles_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSarticles system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 1acd79a5-b3e2-4161-9592-7acc2a41ba38
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSarticles (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSarticles** table contains one row for each article being replicated by a Publisher. This table is stored in the distribution database.  
   

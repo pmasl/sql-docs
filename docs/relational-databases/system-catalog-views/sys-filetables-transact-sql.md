@@ -1,33 +1,27 @@
 ---
-title: "sys.filetables (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.filetables (Transact-SQL)"
+description: sys.filetables (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "filetables"
   - "filetables_TSQL"
   - "sys.filetables"
   - "sys.filetables_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.filetables catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: a740be59-cd52-4707-9ad2-5203669a63ac
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # sys.filetables (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  Returns a row for each FileTable in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. For more information about FileTables, see [FileTables &#40;SQL Server&#41;](../../relational-databases/blob/filetables-sql-server.md).    
+  Returns a row for each FileTable in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. For more information about FileTables, see [FileTables &#40;SQL Server&#41;](../../relational-databases/blob/filetables-sql-server.md).    
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  

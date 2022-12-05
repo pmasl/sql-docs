@@ -1,19 +1,12 @@
 ---
-title: "SQLServerSavepoint Class | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerSavepoint Class"
+description: "SQLServerSavepoint Class"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1ae7db7b-959f-4142-8d9f-aa427869c6ac
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerSavepoint Class
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

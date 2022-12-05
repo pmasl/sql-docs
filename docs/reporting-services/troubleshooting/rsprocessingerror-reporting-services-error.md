@@ -1,28 +1,23 @@
 ---
 title: "rsProcessingError - Reporting Services Error | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/15/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "In this error reference page, learn about event ID 'rsProcessingError': Errors have occurred in SQL Server Reporting Services report processing."
+ms.date: 03/15/2017
+ms.service: reporting-services
+ms.subservice: troubleshooting
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "rsProcessingError"
 ms.assetid: 414ee58a-8251-4367-9a8e-10c068d17280
-caps.latest.revision: 29
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # rsProcessingError - Reporting Services Error
     
 ## Details  
   
-|||  
+|Category|Value|  
 |-|-|  
 |Product Name|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |Event ID|rsProcessingError|  
@@ -110,7 +105,7 @@ manager: "erikre"
   
  You can also pass the name of a specific scope to an aggregate function. Scope can refer to the name of a dataset, a data region, or the name of a scope higher on the data hierarchy. This applies to the following messages:  
   
--   The *\<report item type>* '*\<report item name>*' has an invalid scope “*\<scope name>*”. The scope must be the current scope, or contained within the current scope.  
+-   The *\<report item type>* '*\<report item name>*' has an invalid scope "*\<scope name>*". The scope must be the current scope, or contained within the current scope.  
   
 -   The *\<property name>* expression for the *\<report item type>* '*\<report item name>*' has a scope parameter that is not valid for an aggregate function. The scope parameter must be set to a string constant that is equal to either the name of a containing group, the name of a containing data region, or the name of a dataset.  
   

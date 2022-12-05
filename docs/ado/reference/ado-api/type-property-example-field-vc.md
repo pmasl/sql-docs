@@ -1,26 +1,19 @@
 ---
-title: "Type Property Example (Field) (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Type Property Example (Field) (VC++)"
+description: "Type Property Example (Field) (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Type property [field] [ADO], VC++ example"
-ms.assetid: 440dbdb1-16fc-4cfe-9451-59a153852537
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Type Property Example (Field) (VC++)
-This example demonstrates the [Type](../../../ado/reference/ado-api/type-property-ado.md) property by displaying the name of the constant that corresponds to the value of the **Type** property of all the [Field](../../../ado/reference/ado-api/field-object.md) objects in the ***Employees*** table. The FieldType function is required for this procedure to run.  
+This example demonstrates the [Type](./type-property-ado.md) property by displaying the name of the constant that corresponds to the value of the **Type** property of all the [Field](./field-object.md) objects in the ***Employees*** table. The FieldType function is required for this procedure to run.  
   
 ## Example  
   
@@ -169,5 +162,5 @@ void PrintComError(_com_error &e) {
  **Name: hire_date**  
  **Type: adDBTimeStamp**   
 ## See Also  
- [Field Object](../../../ado/reference/ado-api/field-object.md)   
- [Type Property (ADO)](../../../ado/reference/ado-api/type-property-ado.md)
+ [Field Object](./field-object.md)   
+ [Type Property (ADO)](./type-property-ado.md)

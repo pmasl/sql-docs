@@ -1,32 +1,17 @@
 ---
+description: "MDX Data Definition - CREATE MEMBER"
 title: "CREATE MEMBER Statement (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "CREATE_MEMBER"
-  - "CREATE MEMBER"
-  - "Member"
-  - "CREATE"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "CREATE MEMBER statement"
-  - "calculated members [MDX]"
-ms.assetid: 49379217-be2c-4139-a206-1168078b9b76
-caps.latest.revision: 55
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 07/22/2020
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # MDX Data Definition - CREATE MEMBER
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Creates a calculated member.  
   
@@ -57,9 +42,9 @@ CREATE [ SESSION ] [HIDDDEN] [ CALCULATED ] MEMBER CURRENTCUBE | Cube_Name.Membe
  A valid scalar expression that defines the calculated member property's value.  
   
 ## Remarks  
- The CREATE MEMBER statement defines calculated members that are available throughout the session, and therefore, can be used in multiple queries during the session. For more information, see [Creating Session-Scoped Calculated Members &#40;MDX&#41;](../analysis-services/multidimensional-models/mdx/mdx-calculated-members-session-scoped-calculated-members.md).  
+ The CREATE MEMBER statement defines calculated members that are available throughout the session, and therefore, can be used in multiple queries during the session. For more information, see [Creating Session-Scoped Calculated Members &#40;MDX&#41;](/analysis-services/multidimensional-models/mdx/mdx-calculated-members-session-scoped-calculated-members).  
   
- You can also define a calculated member for use by a single query. To define a calculated member that is limited to a single query, you use the WITH clause in the SELECT statement. For more information, see [Creating Query-Scoped Calculated Members &#40;MDX&#41;](../analysis-services/multidimensional-models/mdx/mdx-calculated-members-query-scoped-calculated-members.md).  
+ You can also define a calculated member for use by a single query. To define a calculated member that is limited to a single query, you use the WITH clause in the SELECT statement. For more information, see [Creating Query-Scoped Calculated Members &#40;MDX&#41;](/analysis-services/multidimensional-models/mdx/mdx-calculated-members-query-scoped-calculated-members).  
   
  *Property_Name* can refer to either standard or optional calculated member properties. Standard member properties are listed later in this topic. Calculated members created with CREATE MEMBER without a **SESSION** value have session scope. Additionally, strings inside calculated member definitions are delimited with double quotation marks. This is different from the method defined by OLE DB, which specifies that strings should be delimited by single quotation marks.  
   
@@ -71,7 +56,7 @@ CREATE [ SESSION ] [HIDDDEN] [ CALCULATED ] MEMBER CURRENTCUBE | Cube_Name.Membe
  A calculated member can occur within one of the scopes listed in the following table.  
   
  Query scope  
- The visibility and lifetime of the calculated member is limited to the query. The calculated member is defined in an individual query. Query scope overrides session scope. For more information, see [Creating Query-Scoped Calculated Members &#40;MDX&#41;](../analysis-services/multidimensional-models/mdx/mdx-calculated-members-query-scoped-calculated-members.md).  
+ The visibility and lifetime of the calculated member is limited to the query. The calculated member is defined in an individual query. Query scope overrides session scope. For more information, see [Creating Query-Scoped Calculated Members &#40;MDX&#41;](/analysis-services/multidimensional-models/mdx/mdx-calculated-members-query-scoped-calculated-members).  
   
  Session scope  
  The visibility and lifetime of the calculated member is limited to the session in which it is created. (The lifetime is less than the session duration if a DROP MEMBER statement is issued on the calculated member.) The CREATE MEMBER statement creates a calculated member with session scope.  
@@ -115,16 +100,16 @@ WHERE ProfitRatio
 ```  
   
 ## Standard Properties  
- Each calculated member has a set of default properties. When a client application is connected to [!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)], the default properties are either supported, or available to be supported, as the administrator chooses.  
+ Each calculated member has a set of default properties. When a client application is connected to [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)], the default properties are either supported, or available to be supported, as the administrator chooses.  
   
  Additional member properties may be available, depending upon the cube definition. The following properties represent information relevant to the dimension level in the cube.  
   
 |Property identifier|Meaning|  
 |-------------------------|-------------|  
 |SOLVE_ORDER|The order in which the calculated member will be solved in cases where a calculated member references one other calculated member (that is, where calculated members intersect each other).|  
-|FORMAT_STRING|A [!INCLUDE[msCoName](../includes/msconame-md.md)] Office style format string that the client application can use when displaying cell values.|  
+|FORMAT_STRING|A Office style format string that the client application can use when displaying cell values.|  
 |VISIBLE|A value that indicates whether the calculated member is visible in a schema rowset. Visible calculated members can be added to a set with the [AddCalculatedMembers](../mdx/addcalculatedmembers-mdx.md) function. A nonzero value indicates that the calculated member is visible. The default value for this property is *Visible*.<br /><br /> Calculated members that are not visible (where this value is set to zero) are generally used as intermediate steps in more complex calculated members. These calculated members can also be referred to by other types of members, such as measures.|  
-|NON_EMPTY_BEHAVIOR|The measure or set that is used to determine the behavior of calculated members when resolving empty cells.<br /><br /> **\*\* Warning \*\*** This property is deprecated. Avoid setting it. See [Deprecated Analysis Services Features in SQL Server 2016](../analysis-services/deprecated-analysis-services-features-in-sql-server-2016.md) for details.|  
+|NON_EMPTY_BEHAVIOR|The measure or set that is used to determine the behavior of calculated members when resolving empty cells.<br /><br /> **\*\* Warning \*\*** This property is deprecated. Avoid setting it. See [Deprecated Analysis Services Features in SQL Server 2014](/previous-versions/sql/2014/analysis-services/deprecated-analysis-services-features-in-sql-server-2014?view=sql-server-2014&preserve-view=true) for details.|  
 |CAPTION|A string that the client application uses as the caption for the member.|  
 |DISPLAY_FOLDER|A string that identifies the path of the display folder that the client application uses to show the member. The folder level separator is defined by the client application. For the tools and clients supplied by [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)], the backslash (\\) is the level separator. To provide multiple display folders for a defined member, use a semicolon (;) to separate the folders.|  
 |ASSOCIATED_MEASURE_GROUP|The name of the measure group to which this member is associated.|  
@@ -133,5 +118,4 @@ WHERE ProfitRatio
  [DROP MEMBER Statement &#40;MDX&#41;](../mdx/mdx-data-definition-drop-member.md)   
  [UPDATE MEMBER Statement &#40;MDX&#41;](../mdx/mdx-data-definition-update-member.md)   
  [MDX Data Definition Statements &#40;MDX&#41;](../mdx/mdx-data-definition-statements-mdx.md)  
-  
   

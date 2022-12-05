@@ -1,28 +1,17 @@
 ---
+description: "Crossjoin (MDX)"
 title: "Crossjoin (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "CROSSJOIN"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "Crossjoin function"
-ms.assetid: 503b8376-d244-4855-8f44-a749764162e4
-caps.latest.revision: 33
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # Crossjoin (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Returns the cross product of one or more sets.  
   
@@ -52,7 +41,7 @@ Set_Expression1 * Set_Expression2 [* ...n]
  (x2, y*n*),..., (x*n*, y1), (x*n*, y2),..., (xn, y*n*)}  
   
 > [!IMPORTANT]  
->  If the sets in the cross join are composed of tuples from different attribute hierarchies in the same dimension, this function will return only those tuples that actually exist. For more information, see [Key Concepts in MDX &#40;Analysis Services&#41;](../analysis-services/multidimensional-models/mdx/key-concepts-in-mdx-analysis-services.md).  
+>  If the sets in the cross join are composed of tuples from different attribute hierarchies in the same dimension, this function will return only those tuples that actually exist. For more information, see [Key Concepts in MDX &#40;Analysis Services&#41;](/analysis-services/multidimensional-models/mdx/key-concepts-in-mdx-analysis-services).  
   
 ## Examples  
  The following query shows simple examples of the use of the Crossjoin function on the Columns and Rows axis of a query:  
@@ -135,5 +124,4 @@ WHERE (Measures.[Internet Sales Amount],
   
 ## See Also  
  [MDX Function Reference &#40;MDX&#41;](../mdx/mdx-function-reference-mdx.md)  
-  
   

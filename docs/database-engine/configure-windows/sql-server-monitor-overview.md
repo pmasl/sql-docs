@@ -1,31 +1,25 @@
 ---
-title: "SQL Server Monitor Overview | Microsoft Docs"
-ms.custom: ""
+title: "SQL Server Monitor Overview"
+description: Learn about SQL Server Monitor. See how to use its Replication Monitor and Database Mirroring Monitor modules. View permissions that are required for its use.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: configuration
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.sqlservermonitor.main.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SQL Server Monitor [SQL Server]"
-ms.assetid: 048ae16d-31c3-489a-9f1e-1400a3bacd39
-caps.latest.revision: 22
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # SQL Server Monitor Overview
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   SQL Server Monitor does not perform monitoring functions, but it hosts modules that do. The SQL Server Monitor modules include Replication Monitor and Database Mirroring Monitor.  
   
  To use one of these modules, select that module on the **Go** menu. The currently selected module owns the content of the navigation and detail panes, user interaction in the detail panes, and the queries for content and status.  
   
 > [!NOTE]  
->  For more information about these monitors, see [Monitoring Replication](../../relational-databases/replication/monitor/monitoring-replication-overview.md) and [Monitoring Database Mirroring &#40;SQL Server&#41;](../../database-engine/database-mirroring/monitoring-database-mirroring-sql-server.md).  
+>  For more information about these monitors, see [Monitoring Replication](../../relational-databases/replication/monitor/monitoring-replication.md) and [Monitoring Database Mirroring &#40;SQL Server&#41;](../../database-engine/database-mirroring/monitoring-database-mirroring-sql-server.md).  
   
 ## Permissions  
   

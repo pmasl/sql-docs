@@ -1,13 +1,11 @@
 ---
-title: "GetCurrentCertificate Method (SecurityCertificate Class) | Microsoft Docs"
-ms.custom: ""
+description: "GetCurrentCertificate Method (SecurityCertificate Class)"
+title: "GetCurrentCertificate Method (SecurityCertificate)"
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "GetCurrentCertificate Method (SecurityCertificate Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "GetCurrentCertificate method"
 ms.assetid: 987a2671-1801-45c4-93e6-29f883c58720
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # GetCurrentCertificate Method (SecurityCertificate Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the current security certificate.  
   
 ## Syntax  
@@ -49,6 +46,6 @@ object.GetCurrentCertificate(SHA , SQLInstance)
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

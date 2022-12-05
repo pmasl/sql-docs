@@ -1,19 +1,12 @@
 ---
-title: "getSQLXML Method (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getSQLXML Method (SQLServerCallableStatement)"
+description: "getSQLXML Method (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8bcf9eda-b36c-480c-8bf2-91c392d5a0ee
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getSQLXML Method (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

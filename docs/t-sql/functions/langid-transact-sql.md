@@ -1,33 +1,26 @@
 ---
-title: "@@LANGID (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/13/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "@@LANGID (Transact-SQL)"
+description: "@@LANGID (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
+ms.date: "09/18/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "@@LANGID"
   - "@@LANGID_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "languages [SQL Server], current in use"
   - "@@LANGID function"
   - "current language in use"
   - "ID for language in use"
   - "local language IDs [SQL Server]"
-ms.assetid: 7a0fc089-2a48-4a81-9d78-2aaedb540d37
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@LANGID (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+# &#x40;&#x40;LANGID (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns the local language identifier (ID) of the language that is currently being used.  
   
@@ -35,12 +28,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql  
 @@LANGID  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **smallint**  
   
 ## Remarks  
@@ -49,7 +43,7 @@ manager: "jhubbard"
 ## Examples  
  The following example sets the language for the current session to `Italian`, and then uses `@@LANGID` to return the ID for Italian.  
   
-```  
+```sql  
 SET LANGUAGE 'Italian'  
 SELECT @@LANGID AS 'Language ID'  
 ```  

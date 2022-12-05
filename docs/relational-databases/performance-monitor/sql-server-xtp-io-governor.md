@@ -1,24 +1,23 @@
 ---
-title: "SQL Server XTP IO Governor | Microsoft Docs"
+title: "SQL Server XTP IO Governor object"
+description: Learn about the SQL Server XTP IO Governor performance object, which contains counters related to the In-Memory OLTP IO Rate Governor.
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/13/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 91e176fe-c838-44e9-b4fc-2814a0551ca3
-caps.latest.revision: 2
-author: "dagiro"
-ms.author: "v-dagir"
-manager: "jhubbard"
+ms.subservice: performance
+ms.topic: conceptual
+helpviewer_keywords: 
+  - "SQL Server 2016 XTP IO Governor"
+  - "SQL Server 2017 XTP IO Governor"
+  - "SQL Server XTP IO Governor"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server XTP IO Governor
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# SQL Server XTP IO Governor object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-The SQL Server XTP IO Governor performance object contains counters related to the In-Memory OLTP IO Rate Governor.
+The **SQL Server XTP IO Governor** performance object contains counters related to the In-Memory OLTP IO Rate Governor.
 
 This table describes the **SQL Server XTP IO Governor** counters.
 
@@ -31,6 +30,15 @@ This table describes the **SQL Server XTP IO Governor** counters.
 |**Stale Rate Object Waits/sec**|Number of waits due to stale rate objects (per second).|
 |**Total Rate Objects Published**|Total number of Rate objects published.|
  
+## Example
 
-## See Also  
-[SQL Server XTP &#40;In-Memory OLTP&#41; Performance Counters](../../relational-databases/performance-monitor/sql-server-xtp-in-memory-oltp-performance-counters.md)
+You begin to explore the query performance counters in this object using this T-SQL query on the [sys.dm_os_performance_counters](../system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md) dynamic management view:
+
+```sql
+SELECT * FROM sys.dm_os_performance_counters
+WHERE object_name LIKE '%XTP IO Governor%';
+```  
+
+## See also  
+- [In-Memory OLTP and Memory-Optimization](../in-memory-oltp/overview-and-usage-scenarios.md)
+- [SQL Server XTP &#40;In-Memory OLTP&#41; Performance Counters](../../relational-databases/performance-monitor/sql-server-xtp-in-memory-oltp-performance-counters.md)

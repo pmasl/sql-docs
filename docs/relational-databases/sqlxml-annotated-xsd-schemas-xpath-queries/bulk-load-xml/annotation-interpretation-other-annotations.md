@@ -1,32 +1,20 @@
 ---
-title: "Other Annotations (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Other Annotations (SQLXML)"
+description: View a list of SQLXML annotations with a description of how each one is interpreted by XML Bulk Load.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "url-encode annotation"
-  - "sql:key-fields"
-  - "use-cdata annotation"
-  - "sql:is-mapping-schema"
-  - "sql:url-encode"
-  - "sql:id-prefix"
-  - "sql:use-cdata"
-  - "key-fields annotation"
-  - "id-prefix annotation [SQLXML]"
-  - "is-mapping-schema annotation"
 ms.assetid: f7b4d37b-d6d3-4ac3-b2fd-a0b534a924e4
-caps.latest.revision: 20
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Annotation Interpretation - Other Annotations
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   In addition to the annotations discussed in the previous topics in this section, XML Bulk Load interprets these other annotations, as follows:  
   
  **sql:id-prefix**  

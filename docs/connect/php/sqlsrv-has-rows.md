@@ -1,22 +1,15 @@
 ---
-title: "sqlsrv_has_rows | Microsoft Docs"
-ms.custom: ""
+title: "sqlsrv_has_rows"
+description: "sqlsrv_has_rows"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+helpviewer_keywords:
   - "API Reference, sqlsrv_has_rows"
   - "sqlsrv_has_rows"
-ms.assetid: 4da7f640-cf12-409f-9e00-95b30a8d5e17
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # sqlsrv_has_rows
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]

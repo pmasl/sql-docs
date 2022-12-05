@@ -1,31 +1,23 @@
 ---
-title: "MSsub_identity_range (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSsub_identity_range (Transact-SQL)"
+description: MSsub_identity_range (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSsub_identity_range_TSQL"
   - "MSsub_identity_range"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSsub_identity_range system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 26e20d28-14ed-44fc-af3b-4de386de4bb8
-caps.latest.revision: 26
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSsub_identity_range (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSsub_identity_range** table provides identity range management support for subscriptions. This table is stored in the subscription databases.  
   

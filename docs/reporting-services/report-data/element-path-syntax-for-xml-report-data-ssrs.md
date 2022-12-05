@@ -1,23 +1,18 @@
 ---
-title: "Element Path Syntax for XML Report Data (SSRS) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Element Path Syntax for XML Report Data | Microsoft Docs"
+description: Learn about the element path syntax and conventions used to define the path for XML report data in Report Designer.
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: report-data
+
+
+ms.topic: conceptual
 helpviewer_keywords: 
   - "ElementPath syntax"
   - "XML [Reporting Services], data retrieval"
 ms.assetid: 07bd7a4e-fd7a-4a72-9344-3258f7c286d1
-caps.latest.revision: 43
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Element Path Syntax for XML Report Data (SSRS)
   In Report Designer, you specify the data to use for a report from an XML data source by defining a case-sensitive element path. An element path indicates how to traverse the XML hierarchical nodes and their attributes in the XML data source. To use the default element path, leave the dataset query or the XML **ElementPath** of the XML **Query** empty. When data is retrieved from the XML data source, element nodes that have text values and element node attributes become columns in the result set. The values of the nodes and attributes become the row data when you run the query. The columns appear as the dataset field collection in the Report Data pane. This topic describes the element path syntax.  
@@ -79,7 +74,7 @@ XMLLocalName :: =
 |**Encoding**|Indicates that the **Value** for this element is encoded XML and needs to be decoded and included as a subelement of this element.|  
 |**FieldList**|Defines the set of elements and attributes to use to retrieve data.<br /><br /> If not specified, all attributes and subelements are used as fields. If the empty field list is specified (**{}**), no fields from this node are used.<br /><br /> A **FieldList** may not contain both a **Value** and an **Element** or **ElementNode**.|  
 |**Field**|Specifies the data that is retrieved as a dataset field.|  
-|**Attribute**|A name-value pair within the **ElementNode**. For example, in the element node \<Customer ID="1">, **ID** is an attribute and **@ID(Integer)** returns "1" as an integer type in the corresponding data field **ID**.|  
+|**Attribute**|A name-value pair within the **ElementNode**. For example, in the element node \<Customer ID="1">, **ID** is an attribute and **\@ID(Integer)** returns "1" as an integer type in the corresponding data field **ID**.|  
 |**Value**|The value of the element. **Value** can only be used on the last **ElementNode** in the element path. For example, because \<Return> is a leaf node, if you include it at the end of an element path, the value of **Return {@}** is **Chair**.|  
 |**Element**|The value of the named subelement. For example, Customers {}/Customer {}/LastName retrieves values for only the LastName element.|  
 |**Type**|The optional data type to use for the field created from this element.|  
@@ -95,10 +90,10 @@ XMLLocalName :: =
   
 |Order|Qty|ID|FirstName|LastName|Customer.ID|xmlns|  
 |-----------|---------|--------|---------------|--------------|-----------------|-----------|  
-|Chair|6|1|Bobby|Moore|11|http://www.adventure-works.com|  
-|Table|1|2|Bobby|Moore|11|http://www.adventure-works.com|  
-|Sofa|2|8|Crystal|Hu|20|http://www.adventure-works.com|  
-|EndTables|2|15|Wyatt|Diaz|33|http://www.adventure-works.com|  
+|Chair|6|1|Bobby|Moore|11|https\://www.adventure-works.com|  
+|Table|1|2|Bobby|Moore|11|https\://www.adventure-works.com|  
+|Sofa|2|8|Crystal|Hu|20|https\://www.adventure-works.com|  
+|EndTables|2|15|Wyatt|Diaz|33|https\://www.adventure-works.com|  
   
  **Example #2**: `Customers {}/Customer`  
   
@@ -135,11 +130,11 @@ XMLLocalName :: =
 |15|Wyatt|Diaz|33|  
   
 #### XML document: Customers.xml  
- To try out the element path examples in the previous section, you can copy this XML and save it to a URL that is accessible by Report Designer, and then use the XML document as an XML data source: for example, `http://localhost/Customers.xml`.  
+ To try out the element path examples in the previous section, you can copy this XML and save it to a URL that is accessible by Report Designer, and then use the XML document as an XML data source: for example, `https://localhost/Customers.xml`.  
   
 ```  
 <?xml version="1.0"?>  
-<Customers xmlns="http://www.adventure-works.com">  
+<Customers xmlns="https://www.adventure-works.com">  
    <Customer ID="11">  
       <FirstName>Bobby</FirstName>  
       <LastName>Moore</LastName>  
@@ -200,7 +195,7 @@ XMLLocalName :: =
   
      The result set displays 4 lines of data with the following columns: `xmlns`, `Customer.ID`, `FirstName`, `LastName`, `ID`, `Qty`, `Order`.  
   
-9. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+9.  Select **OK**.
   
 ## See Also  
  [XML Connection Type &#40;SSRS&#41;](../../reporting-services/report-data/xml-connection-type-ssrs.md)   

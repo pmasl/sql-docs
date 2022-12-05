@@ -1,24 +1,15 @@
 ---
-title: "jdbcCompliant Method (SQLServerDriver) | Microsoft Docs"
-ms.custom: ""
+title: "jdbcCompliant Method (SQLServerDriver)"
+description: "jdbcCompliant Method (SQLServerDriver)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDriver.jdbcCompliant"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDriver.jdbcCompliant"
 apitype: "Assembly"
-ms.assetid: b299b20d-d1cd-45b3-91dc-dcf579498570
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # jdbcCompliant Method (SQLServerDriver)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

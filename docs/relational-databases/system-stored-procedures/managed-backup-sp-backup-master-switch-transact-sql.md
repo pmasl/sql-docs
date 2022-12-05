@@ -1,32 +1,28 @@
 ---
-title: "managed_backup.sp_ backup_master_switch (Transact-SQL) | Microsoft Docs"
+description: "managed_backup.sp_backup_master_switch (Transact-SQL)"
+title: "managed_backup.sp_backup_master_switch (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_ backup_master_switch"
-  - "smart_admin.sp_ backup_master_switch"
+  - "smart_admin.sp_backup_master_switch"
   - "sp_ backup_master_switch_TSQL"
-  - "smart_admin.sp_ backup_master_switch_TSQL"
+  - "smart_admin.sp_backup_master_switch_TSQL"
 dev_langs: 
   - "TSQL"
 helpviewer_keywords: 
   - "sp_ backup_master_switch"
-  - "smart_admin.sp_ backup_master_switch"
+  - "smart_admin.sp_backup_master_switch"
 ms.assetid: 1ed2b2b2-c897-41cc-bed5-1c6bc47b9dd2
-caps.latest.revision: 12
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
-# managed_backup.sp_ backup_master_switch (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+# managed_backup.sp_backup_master_switch (Transact-SQL)
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
   Pauses or resumes the [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)].  
   
@@ -38,9 +34,9 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```tsql  
+```sql  
 EXEC managed_backup.sp_backup_master_switch   
-                     [@state = ] { 0 | 1}  
+                     [@new_state = ] { 0 | 1}  
 ```  
   
 ##  <a name="Arguments"></a> Arguments  
@@ -62,7 +58,7 @@ EXEC managed_backup.sp_backup_master_switch
 ```  
 Use msdb;  
 GO  
-EXEC managed_backup.sp_master_switch @state=0;  
+EXEC managed_backup.sp_backup_master_switch @new_state=0;  
 Go  
   
 ```  
@@ -72,7 +68,7 @@ Go
 ```  
 Use msdb;  
 GO  
-EXEC managed_backup.sp_master_switch @state=1;  
+EXEC managed_backup.sp_backup_master_switch @new_state=1;  
 Go  
   
 ```  

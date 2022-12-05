@@ -1,15 +1,14 @@
 ---
-title: "Architecture of Client-side and Server-side XML Formatting (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "Architecture of client and server-side XML (SQLXML)"
+description: Learn about the architecture of client-side and server-side XML formatting in SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "providers [SQLXML], XML formatting architecture"
   - "SQLOLEDB provider"
   - "client-side XML formatting"
@@ -19,12 +18,10 @@ helpviewer_keywords:
   - "SQL Server Native Client, XML"
   - "SQLXMLOLEDB Provider, XML formatting architecture"
 ms.assetid: 52440d9e-89fd-4c15-a008-a1ea99f41387
-caps.latest.revision: 31
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Architecture of Client-side and Server-side XML Formatting (SQLXML 4.0)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   The following illustration shows the architecture of XML formatting on the server side.  
   
  ![Architecture of XML formatting on the server side.](../../../relational-databases/sqlxml/formatting/media/serversidexml.gif "Architecture of XML formatting on the server side.")  
@@ -42,4 +39,5 @@ manager: "jhubbard"
   
  In SQLXML 4.0, either the [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client (SQLNCLI11) or the SQLOLEDB provider can be used as the data provider. You can potentially access any data source. As long as the query returns a single rowset, the XML transformation can be applied on the client.  
   
-  
+> [!IMPORTANT] 
+> [!INCLUDE[snac-removed-oledb-and-odbc](../../../includes/snac-removed-oledb-and-odbc.md)]

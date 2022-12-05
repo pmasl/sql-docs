@@ -1,28 +1,22 @@
 ---
-title: "sql:limit-field and sql:limit-value (SQLXML 4.0) | Microsoft Docs"
-ms.custom: ""
+title: "sql:limit-field and sql:limit-value (SQLXML)"
+description: "Learn how to use the SQLXML annotations sql:limit-field and sql:limit-value to filter data when using XML Bulk Load."
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "limiting values [SQLXML]"
   - "limit-value annotation"
   - "limit-field annotation"
-  - "sql:limit-field"
-  - "sql:limit-value"
-  - "filtering [SQLXML]"
 ms.assetid: 402c21cf-9566-463f-a928-f94270c11db3
-caps.latest.revision: 21
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Annotation Interpretation - sql:limit-field and sql:limit-value
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   XML Bulk Load processes the **sql:limit-field** and **sql:limit-value** annotations per their definition. For more information, see [Filtering Values Using sql:limit-field and sql:limit-value &#40;SQLXML 4.0&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-using/filtering-values-using-sql-limit-field-and-sql-limit-value-sqlxml-4-0.md).  
   
  For example, suppose a database contains the following tables:  

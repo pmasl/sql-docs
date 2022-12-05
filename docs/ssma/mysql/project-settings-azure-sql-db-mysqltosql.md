@@ -1,25 +1,20 @@
 ---
-title: "Project Settings (Azure SQL DB) (MySQLToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+description: "Project Settings (Azure SQL Database) (MySQLToSQL)"
+title: "Project Settings (Azure SQL Database) (MySQLToSQL) | Microsoft Docs"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 8c06420a-533b-4de0-948d-a0c6b368c544
-caps.latest.revision: 10
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
+f1_keywords: 
+    - "ssma.mysql.projectsettingsqlazure.f1"
 ---
-# Project Settings (Azure SQL DB) (MySQLToSQL)
-The SQL Azure project settings let you configure the SQL Azure database suffix to be added in the connection dialog and also allow implementing heartbeat mechanism in SQL Azure connection.  
+# Project Settings (Azure SQL Database) (MySQLToSQL)
+The SQL Azure project settings let you configure the Azure SQL Database suffix to be added in the connection dialog and also allow implementing heartbeat mechanism in SQL Azure connection.  
   
 The SQL Azure pane is available in the **Project Settings** and **Default Project Settings** dialog boxes.  
   
@@ -32,7 +27,7 @@ The SQL Azure pane is available in the **Project Settings** and **Default Projec
 ## Connectivity  
 **Heartbeat Interval**  
   
-Specifies a time interval to be used for heartbeat mechanism to keep the SQL Azure connection alive in ‘minutes : seconds’ format.  
+Specifies a time interval to be used for heartbeat mechanism to keep the SQL Azure connection alive in 'minutes : seconds' format.  
   
 **Default Value**:'4:45'  
   

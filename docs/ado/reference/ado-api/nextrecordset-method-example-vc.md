@@ -1,26 +1,19 @@
 ---
-title: "NextRecordset Method Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "NextRecordset Method Example (VC++)"
+description: "NextRecordset Method Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "NextRecordset method [ADO], VC++ example"
-ms.assetid: 8bb72817-0cf5-4ce9-9fb8-043c89da941c
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # NextRecordset Method Example (VC++)
-This example uses the [NextRecordset](../../../ado/reference/ado-api/nextrecordset-method-ado.md) method to view the data in a recordset that uses a compound command statement made up of three separate **SELECT** statements.  
+This example uses the [NextRecordset](./nextrecordset-method-ado.md) method to view the data in a recordset that uses a compound command statement made up of three separate **SELECT** statements.  
   
 ```  
 // BeginNextRecordsetCpp.cpp  
@@ -137,4 +130,4 @@ void PrintComError(_com_error &e) {
 ```  
   
 ## See Also  
- [NextRecordset Method (ADO)](../../../ado/reference/ado-api/nextrecordset-method-ado.md)
+ [NextRecordset Method (ADO)](./nextrecordset-method-ado.md)

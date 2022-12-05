@@ -1,26 +1,19 @@
 ---
-title: "Move Method Example (VC++) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Move Method Example (VC++)"
+description: "Move Method Example (VC++)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Move method [ADO], VC++ example"
-ms.assetid: 0e08af60-f668-4092-8b6a-9e8b6db90448
-caps.latest.revision: 15
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "C++"
 ---
 # Move Method Example (VC++)
-This example uses the [Move](../../../ado/reference/ado-api/move-method-ado.md) method to position the record pointer based on user input.  
+This example uses the [Move](./move-method-ado.md) method to position the record pointer based on user input.  
   
 ## Example  
   
@@ -256,4 +249,4 @@ Enter number of records to Move
 ```  
   
 ## See Also  
- [Move Method (ADO)](../../../ado/reference/ado-api/move-method-ado.md)
+ [Move Method (ADO)](./move-method-ado.md)

@@ -1,26 +1,23 @@
 ---
+description: "Manage a CDC Instance"
 title: "Manage a CDC Instance | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 f1_keywords: 
   - "manIns"
 ms.assetid: cfed22c8-c666-40ca-9e73-24d93e85ba92
-caps.latest.revision: 11
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Manage a CDC Instance
+
   You can use the CDC Designer Console to view information about the instances that you create and to manage the operation of the instances.  
   
- Click on the name of an instance in the left pane to view the information about the instance.  
+ Select the name of an instance in the left pane to view the information about the instance.  
   
 > [!NOTE]  
 >  If you select a service in the left pane, the list of available instances is also displayed in the center of the CDC Designer Console. If you select one of the instances in this section, you can carry out the tasks in the right pane; however, you will not be able to view the information in the property tabs.  
@@ -65,12 +62,12 @@ manager: "jhubbard"
   
 -   **Status**: An icon that indicates the current status for the CDC instance. The following describes the statuses.  
   
-    |||  
+    |Icon|Statuses and descriptions|  
     |-|-|  
-    |![Error](../../integration-services/change-data-capture/media/error.gif "Error")|**Error**. The Oracle CDC Instance is not running because a non-retryable error occurred. The following sub-statuses are available:<br /><br /> **Misconfigured**: A configuration error occurred that requires manual intervention.<br /><br /> **Password Required**: No password was set for the Oracle CDC Instance or the password is not valid.<br /><br /> **Unexpected**. All other non-recoverable errors.|  
-    |![Okay](../../integration-services/change-data-capture/media/okay.gif "Okay")|**Running**: The CDC Instance is running and is processing change records. The following sub-statuses are available:<br /><br /> **Idle**: All change records have been processed and stored in the target change tables. There are no more active transactions.<br /><br /> **Processing**: There are change records being process that are not yet written to the change tables.|  
-    |![Stop](../../integration-services/change-data-capture/media/stop.gif "Stop")|**Stopped**: The CDC instance is not running. The stopped status indicates that the CDC instance was stopped in a normal manner.|  
-    |![Paused](../../integration-services/change-data-capture/media/paused.gif "Paused")|**Paused**: The CDC instance is running but processing is suspended because of a retryable error. The following sub-statuses are available:<br /><br /> **Disconnected**: The connection to the source Oracle database cannot be established. Processing resumes when the connection is restored.<br /><br /> **Storage**: The storage is full. Processing resumes when additional storage becomes available.<br /><br /> **Logger**: The logger is connected to Oracle but cannot read the Oracle transaction logs due to a temporary problem, for example, a required transaction log is not available.|  
+    |:::image type="icon" source="../../integration-services/change-data-capture/media/error.gif":::|**Error**. The Oracle CDC Instance is not running because a non-retryable error occurred. The following sub-statuses are available:<br /><br /> **Misconfigured**: A configuration error occurred that requires manual intervention.<br /><br /> **Password Required**: No password was set for the Oracle CDC Instance or the password is not valid.<br /><br /> **Unexpected**. All other non-recoverable errors.|  
+    |:::image type="icon" source="../../integration-services/change-data-capture/media/okay.gif":::|**Running**: The CDC Instance is running and is processing change records. The following sub-statuses are available:<br /><br /> **Idle**: All change records have been processed and stored in the target change tables. There are no more active transactions.<br /><br /> **Processing**: There are change records being process that are not yet written to the change tables.|  
+    |:::image type="icon" source="../../integration-services/change-data-capture/media/stop.gif":::|**Stopped**: The CDC instance is not running. The stopped status indicates that the CDC instance was stopped in a normal manner.|  
+    |:::image type="icon" source="../../integration-services/change-data-capture/media/paused.gif":::|**Paused**: The CDC instance is running but processing is suspended because of a retryable error. The following sub-statuses are available:<br /><br /> **Disconnected**: The connection to the source Oracle database cannot be established. Processing resumes when the connection is restored.<br /><br /> **Storage**: The storage is full. Processing resumes when additional storage becomes available.<br /><br /> **Logger**: The logger is connected to Oracle but cannot read the Oracle transaction logs due to a temporary problem, for example, a required transaction log is not available.|  
   
 -   **Detailed Status**: The current substatus.  
   

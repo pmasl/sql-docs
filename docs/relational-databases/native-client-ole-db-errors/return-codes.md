@@ -1,13 +1,11 @@
 ---
-title: "Return Codes | Microsoft Docs"
+title: Return codes (Native Client OLE DB provider)
+description: Learn about return codes supported for SQL Server Native Client OLE DB, including the commonly encountered DB_S_ERRORSOCCURRED HRESULT value.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "OLE DB error handling, return codes"
@@ -22,17 +20,16 @@ helpviewer_keywords:
   - "FAILED macro"
   - "errors [OLE DB], return codes"
 ms.assetid: 7f7457e9-fce4-400c-82e5-ee02e9e811c6
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Return Codes
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# Return Codes (Native Client OLE DB provider)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   At the most basic level, a member function either succeeds or fails. At a somewhat more precise level, a function can succeed, but its success may not be what the application developer intended.  
   
- For more information about OLE DB return codes, see [Return Codes (OLE DB)](http://go.microsoft.com/fwlink/?LinkId=101631).  
+ For more information about OLE DB return codes, see [Return Codes (OLE DB)](/previous-versions/windows/desktop/ms725451(v=vs.85)).  
   
  When a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider member function returns S_OK, the function succeeded.  
   
@@ -46,5 +43,4 @@ manager: "jhubbard"
   
 ## See Also  
  [Errors](../../relational-databases/native-client-ole-db-errors/errors.md)  
-  
   

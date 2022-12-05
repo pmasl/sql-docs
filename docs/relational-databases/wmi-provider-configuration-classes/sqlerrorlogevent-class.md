@@ -1,24 +1,21 @@
 ---
-title: "SqlErrorLogEvent Class | Microsoft Docs"
+description: "SqlErrorLogEvent Class"
+title: "SqlErrorLogEvent Class"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 helpviewer_keywords: 
   - "SqlErrorLogEvent class"
   - "SqlErrorLogFile class"
 ms.assetid: bde6c467-38d0-4766-a7af-d6c9d6302b07
-caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SqlErrorLogEvent Class
+[!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
   Provides properties for viewing events in a specified [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] log file.  
   
 ## Syntax  
@@ -38,8 +35,8 @@ class SQLErrorLogEvent
 ## Properties  
  The SQLErrorLogEvent class defines the following properties.  
   
-|||  
-|-|-|  
+| Property | Description |
+| -------- | ----------- |
 |FileName|Data type: **string**<br /><br /> Access type: Read-only<br /><br /> <br /><br /> The name of the error log file.|  
 |InstanceName|Data type: **string**<br /><br /> Access type: Read-only<br /><br /> Qualifiers: Key<br /><br /> The name of the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] where the log file resides.|  
 |LogDate|Data type: **datetime**<br /><br /> Access type: Read-only<br /><br /> Qualifiers: Key<br /><br /> <br /><br /> The date and time that the event was recorded in the log file.|  
@@ -48,8 +45,8 @@ class SQLErrorLogEvent
   
 ## Remarks  
   
-|||  
-|-|-|  
+| Type | Name |
+| ---- | ---- |
 |MOF|Sqlmgmproviderxpsp2up.mof|  
 |DLL|Sqlmgmprovider.dll|  
 |Namespace|\root\Microsoft\SqlServer\ComputerManagement10|  
@@ -91,10 +88,9 @@ Next
   
      **\<Drive>:\Program Files\Microsoft SQL Server\MSSQL13** **.\<InstanceName>\MSSQL\Log**  
   
- If you are connecting through a firewall, ensure that an exception is set in the firewall for WMI on remote target computers. For more information, see [Connecting to WMI Remotely Starting with Windows Vista](http://go.microsoft.com/fwlink/?LinkId=178848).  
+ If you are connecting through a firewall, ensure that an exception is set in the firewall for WMI on remote target computers. For more information, see [Connecting to WMI Remotely Starting with Windows Vista](/windows/win32/wmisdk/connecting-to-wmi-remotely-starting-with-vista).  
   
 ## See Also  
  [SqlErrorLogFile Class](../../relational-databases/wmi-provider-configuration-classes/sqlerrorlogfile-class.md)   
  [View Offline Log Files](../../relational-databases/logs/view-offline-log-files.md)  
-  
   

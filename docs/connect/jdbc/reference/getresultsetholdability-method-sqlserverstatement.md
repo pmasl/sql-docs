@@ -1,24 +1,15 @@
 ---
-title: "getResultSetHoldability Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "getResultSetHoldability Method (SQLServerStatement)"
+description: "getResultSetHoldability Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.getResultSetHoldability"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.getResultSetHoldability"
 apitype: "Assembly"
-ms.assetid: 053549ee-2018-47ab-9538-789dac2b150a
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getResultSetHoldability Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

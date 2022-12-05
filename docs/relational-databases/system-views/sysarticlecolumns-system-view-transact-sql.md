@@ -1,16 +1,12 @@
 ---
+description: "sysarticlecolumns (System View) (Transact-SQL)"
 title: "sysarticlecolumns (System View) (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
 f1_keywords: 
   - "sysarticlecolumns"
   - "sysarticlecolumns_TSQL"
@@ -18,16 +14,15 @@ dev_langs:
   - "TSQL"
 helpviewer_keywords: 
   - "sysarticlecolumns view"
-ms.assetid: a8dd8d13-c827-45c4-87ba-802725301382
-caps.latest.revision: 10
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# sysarticlecolumns (System View) (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  The **sysarticlecolumns** view exposes additional information about columns in published articles. This view is stored in the distribution database.  
+# sysarticlecolumns (System View) (Transact-SQL)
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+The **sysarticlecolumns** view exposes additional information about columns in published articles. This view is stored in the distribution database.  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  

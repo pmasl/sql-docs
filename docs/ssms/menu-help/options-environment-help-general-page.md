@@ -1,31 +1,29 @@
 ---
-title: "Options (Environment - Help - General Page) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Options (Environment - Help - General Page)"
+description: "Options (Environment - Help - General Page)"
+ms.service: sql
+ms.subservice: ssms
+ms.topic: ui-reference
 f1_keywords: 
   - "VS.ToolsOptionsPages.Environment.Help.General"
-ms.assetid: deaf23d6-6cbe-4984-ab09-71d2a7ba06c8
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: "01/19/2017"
 ---
 # Options (Environment - Help - General Page)
-Use the **Options** dialog box to choose documentation sets and decide whether to display topics internally in [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] [!INCLUDE[ssManStudio](../../includes/ssmanstudio_md.md)] or externally in a separate window. To access this dialog box, click **Options** on the **Tools** menu, expand **Help** in the **Environment** node, and then click **General**.  
+
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+Use the **Options** dialog box to choose documentation sets and decide whether to display topics internally in [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] or externally in a separate window. To access this dialog box, click **Options** on the **Tools** menu, expand **Help** in the **Environment** node, and then click **General**.  
   
 > [!NOTE]  
 > Changes made to the options on this page do not take effect until the environment is restarted.  
   
 ## Settings  
 **Show Help using**  
-Specifies how Help is displayed. Select **External Help Viewer** from the drop-down list to display topics in an external floating window. Select **Integrated Help Viewer** to display Help topics in a Web browser window docked inside [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] [!INCLUDE[ssManStudio](../../includes/ssmanstudio_md.md)].  
+Specifies how Help is displayed. Select **External Help Viewer** from the drop-down list to display topics in an external floating window. Select **Integrated Help Viewer** to display Help topics in a Web browser window docked inside [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)].  
   
 **Search results per page**  
 Specifies the number of topics that are displayed on a single **Search Results** page.  

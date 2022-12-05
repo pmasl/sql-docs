@@ -1,16 +1,12 @@
 ---
+description: "MSdistribution_status (Transact-SQL)"
 title: "MSdistribution_status (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
 f1_keywords: 
   - "MSdistribution_status_TSQL"
   - "MSdistribution_status"
@@ -19,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "MSdistribution_status view"
 ms.assetid: 90d447de-3a4a-4f3e-aeab-e8fff6348361
-caps.latest.revision: 12
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # MSdistribution_status (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSdistribution_status** view exposes additional information on the status commands in the distribution database. This view is stored in the distribution database.  
   

@@ -1,15 +1,14 @@
 ---
-title: "Specifying Depth in Recursive Relationships by Using sql:max-depth | Microsoft Docs"
-ms.custom: ""
+title: "Set recursive depth relationships with sql:max-depth"
+description: "Learn how to specify depth when querying tables that have a recursive relationship by using the sql:max-depth annotation in an XQuery."
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "max-depth annotation"
   - "XPath queries [SQLXML], recursive relationships"
   - "depth in recursive relationships [SQLXML]"
@@ -18,15 +17,11 @@ helpviewer_keywords:
   - "self joins"
   - "recursive relationships [SQLXML]"
   - "recursion [SQLXML]"
-  - "sql:max-depth"
-  - "recursive joins [SQLXML]"
 ms.assetid: 0ffdd57d-dc30-44d9-a8a0-f21cadedb327
-caps.latest.revision: 26
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Specifying Depth in Recursive Relationships by Using sql:max-depth
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   In relational databases, when a table is involved in a relationship with itself, it is called a recursive relationship. For example, in a supervisor-supervisee relationship, a table storing employee records is involved in a relationship with itself. In this case, the employees table plays a role of supervisor on one side of the relationship, and the same table plays a role of supervisee on the other side.  
   
  Mapping schemas can include recursive relationships where an element and its ancestor are of the same type.  
@@ -143,7 +138,7 @@ Emp (EmployeeID, FirstName, LastName, ReportsTo)
     ```  
   
 5.  Create and use the SQLXML 4.0 Test Script (Sqlxml4test.vbs) to execute the template. For more information, see [Using ADO to Execute SQLXML 4.0 Queries](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md).  
-  
+
  This is the result:  
   
 ```  

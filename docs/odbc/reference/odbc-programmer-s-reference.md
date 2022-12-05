@@ -1,23 +1,19 @@
 ---
-title: "ODBC Programmer&#39;s Reference | Microsoft Docs"
+description: "ODBC Programmer's Reference"
+title: "ODBC Programmer's Reference | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "ODBC [ODBC], reference"
 ms.assetid: b33c3c43-ae66-44a3-be17-9cd82624dd96
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
-# ODBC Programmer&#39;s Reference
+# ODBC Programmer's Reference
 The *ODBC Programmer's Reference* contains the following sections.  
   
 -   [What's New in ODBC 3.8](../../odbc/reference/what-s-new-in-odbc-3-8.md) lists the new ODBC features that were added in the Windows 8 SDK.  
@@ -63,9 +59,9 @@ The *ODBC Programmer's Reference* contains the following sections.
 ## Recommended Reading  
  For more information about SQL, the following standards are available:  
   
--   Database Language — SQL with Integrity Enhancement, ANSI, 1989 ANSI X3.135-1989.  
+-   Database Language - SQL with Integrity Enhancement, ANSI, 1989 ANSI X3.135-1989.  
   
--   Database Language — SQL: ANSI X3H2 and ISO/IEC JTC1/SC21/WG3 9075:1992 (SQL-92).  
+-   Database Language - SQL: ANSI X3H2 and ISO/IEC JTC1/SC21/WG3 9075:1992 (SQL-92).  
   
 -   Open Group, Data Management: Structured Query Language (SQL), Version 2 (The Open Group, 1996).  
   

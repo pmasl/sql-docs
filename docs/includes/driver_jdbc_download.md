@@ -1,1 +1,1 @@
-![Download](../ssdt/media/download.png)[Download JDBC Driver](https://go.microsoft.com/fwlink/?linkid=852460)
+:::image type="icon" source="media/download.svg" border="false"::: [Download JDBC driver](../connect/jdbc/download-microsoft-jdbc-driver-for-sql-server.md)

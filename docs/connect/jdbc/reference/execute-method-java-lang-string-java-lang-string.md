@@ -1,24 +1,15 @@
 ---
-title: "execute Method (java.lang.String, java.lang.String) | Microsoft Docs"
-ms.custom: ""
+title: "execute Method (java.lang.String, java.lang.String)"
+description: "execute Method (java.lang.String, java.lang.String)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.execute (java.lang.String.java.lang.String[])"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.execute (java.lang.String.java.lang.String[])"
 apitype: "Assembly"
-ms.assetid: 9451c7c2-4c0d-4d1e-9b42-a26ff28e3f6a
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # execute Method (java.lang.String, java.lang.String)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

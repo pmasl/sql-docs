@@ -1,37 +1,30 @@
 ---
-title: "Keys Collection Properties, Methods, and Events | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Keys Collection Properties, Methods, and Events"
+description: "Keys Collection Properties, Methods, and Events"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Keys collection [ADOX], members"
-ms.assetid: eeb3746d-1c75-4bb0-97b5-2c2d073c8c0e
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Keys Collection Properties, Methods, and Events
 ## Properties  
- [Count Property](../../../ado/reference/ado-api/count-property-ado.md)  
+ [Count Property](../ado-api/count-property-ado.md)  
   
- [Item Property](../../../ado/reference/ado-api/item-property-ado.md)  
+ [Item Property](../ado-api/item-property-ado.md)  
   
 ## Methods  
- [Append Method (Keys)](../../../ado/reference/adox-api/append-method-adox-keys.md)  
+ [Append Method (Keys)](./append-method-adox-keys.md)  
   
- [Delete Method (Collections)](../../../ado/reference/adox-api/delete-method-adox-collections.md)  
+ [Delete Method (Collections)](./delete-method-adox-collections.md)  
   
- [Refresh Method](../../../ado/reference/ado-api/refresh-method-ado.md)  
+ [Refresh Method](../ado-api/refresh-method-ado.md)  
   
 ## Events  
  None.  
   
 ## See Also  
- [Keys Collection (ADOX)](../../../ado/reference/adox-api/keys-collection-adox.md)
+ [Keys Collection (ADOX)](./keys-collection-adox.md)

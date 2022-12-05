@@ -1,25 +1,21 @@
 ---
-title: "Monitoring and Troubleshooting Managed Database Objects | Microsoft Docs"
-ms.custom: ""
+title: "Monitor and Troubleshoot Managed Database Objects"
+description: Information about the tools that can be used to monitor and troubleshoot managed database objects and assemblies (CLR).
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/17/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "common language runtime [SQL Server], performance"
   - "monitoring [CLR integration]"
   - "performance [CLR integration]"
 ms.assetid: a7b589ac-104d-4b68-b4aa-9f5fc192b13d
-caps.latest.revision: 18
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Monitoring and Troubleshooting Managed Database Objects
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This topic provides information about the tools that can be used to monitor and troubleshoot managed database objects and assemblies running in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
 ## Profiler Trace Events  
@@ -27,7 +23,7 @@ manager: "jhubbard"
   
 |Event|Description|  
 |-----------|-----------------|  
-|[Assembly Load Event Class](http://msdn.microsoft.com/library/cfb0b69d-4ce0-4067-a3df-d82775e57886)|Used to monitor assembly load requests (success and failures).|  
+|[Assembly Load Event Class](../event-classes/sql-server-event-class-reference.md)|Used to monitor assembly load requests (success and failures).|  
 |[SQL:BatchStarting Event Class](../../relational-databases/event-classes/sql-batchstarting-event-class.md), [SQL:BatchCompleted Event Class](../../relational-databases/event-classes/sql-batchcompleted-event-class.md)|Provides information about [!INCLUDE[tsql](../../includes/tsql-md.md)] batches that have started or completed.|  
 |[SP:Starting Event Class](../../relational-databases/event-classes/sp-starting-event-class.md), [SP:Completed Event Class](../../relational-databases/event-classes/sp-completed-event-class.md)|Used to monitor the execution of [!INCLUDE[tsql](../../includes/tsql-md.md)] stored procedures.|  
 |[SQL:StmtStarting Event Class](../../relational-databases/event-classes/sql-stmtstarting-event-class.md), [SQL:StmtCompleted Event Class](../../relational-databases/event-classes/sql-stmtcompleted-event-class.md)|Used to monitor the execution of CLR and [!INCLUDE[tsql](../../includes/tsql-md.md)] routines.|  
@@ -83,5 +79,4 @@ manager: "jhubbard"
   
 ## See Also  
  [Common Language Runtime &#40;CLR&#41; Integration Programming Concepts](../../relational-databases/clr-integration/common-language-runtime-clr-integration-programming-concepts.md)  
-  
   

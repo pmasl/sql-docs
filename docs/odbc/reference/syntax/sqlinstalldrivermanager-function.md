@@ -1,14 +1,12 @@
 ---
+description: "SQLInstallDriverManager Function"
 title: "SQLInstallDriverManager Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLInstallDriverManager"
 apilocation: 
@@ -19,10 +17,8 @@ f1_keywords:
 helpviewer_keywords: 
   - "SQLInstallDriverManager function [ODBC]"
 ms.assetid: aebc439b-fffd-4d98-907a-0163f79aee8d
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLInstallDriverManager Function
 **Conformance**  
@@ -33,12 +29,12 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 BOOL SQLInstallDriverManager(  
-     LPSTR    lpszPath,  
-     WORD     cbPathMax,  
-     WORD *   pcbPathOut);  
+     LPSTR    lpszPath,  
+     WORD     cbPathMax,  
+     WORD *   pcbPathOut);  
 ```  
   
 ## Arguments  

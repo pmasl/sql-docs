@@ -1,24 +1,15 @@
 ---
-title: "othersDeletesAreVisible Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "othersDeletesAreVisible Method (SQLServerDatabaseMetaData)"
+description: "othersDeletesAreVisible Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.othersDeletesAreVisible"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.othersDeletesAreVisible"
 apitype: "Assembly"
-ms.assetid: c4692a8c-e6b7-4edc-9dad-7af816988de5
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # othersDeletesAreVisible Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

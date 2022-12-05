@@ -1,26 +1,19 @@
 ---
-title: "Clone Method Example (VBScript) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Clone Method Example (VBScript)"
+description: "Clone Method Example (VBScript)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "Clone method [ADO], VBScript example"
-ms.assetid: 36b96e3d-8cb0-4b79-bd93-ea5e0eb5679f
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Clone Method Example (VBScript)
-This example uses the [Clone](../../../ado/reference/ado-api/clone-method-ado.md) method to create copies of a [Recordset](../../../ado/reference/ado-api/recordset-object-ado.md) and then lets the user position the record pointer of each copy independently.  
+This example uses the [Clone](./clone-method-ado.md) method to create copies of a [Recordset](./recordset-object-ado.md) and then lets the user position the record pointer of each copy independently.  
   
  Use the following example in an Active Server Page (ASP). This example uses the **Northwind** database distributed with Microsoft Access. Cut and paste the following code to Notepad or another text editor and save it as CloneVBS.asp. You can view the result in any client browser.  
   
@@ -116,5 +109,5 @@ This example uses the [Clone](../../../ado/reference/ado-api/clone-method-ado.md
 ```  
   
 ## See Also  
- [Clone Method (ADO)](../../../ado/reference/ado-api/clone-method-ado.md)   
- [Recordset Object (ADO)](../../../ado/reference/ado-api/recordset-object-ado.md)
+ [Clone Method (ADO)](./clone-method-ado.md)   
+ [Recordset Object (ADO)](./recordset-object-ado.md)

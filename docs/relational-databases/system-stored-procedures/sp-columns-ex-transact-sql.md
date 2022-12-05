@@ -1,14 +1,12 @@
 ---
+description: "sp_columns_ex (Transact-SQL)"
 title: "sp_columns_ex (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_columns_ex"
   - "sp_columns_ex_TSQL"
@@ -17,19 +15,13 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_columns_ex"
 ms.assetid: c12ef6df-58c6-4391-bbbf-683ea874bd81
-caps.latest.revision: 38
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_columns_ex (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns the column information, one row per column, for the specified linked server tables. **sp_columns_ex** returns column information for only the specific column if *column* is specified.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -46,22 +38,22 @@ sp_columns_ex [ @table_server = ] 'table_server'
 ```  
   
 ## Arguments  
- [ **@table_server =** ] **'***table_server***'**  
+`[ @table_server = ] 'table_server'`
  Is the name of the linked server for which to return column information. *table_server* is **sysname**, with no default.  
   
- [ **@table_name =** ] **'***table_name***'**  
+`[ @table_name = ] 'table_name'`
  Is the name of the table for which to return column information. *table_name* is **sysname**, with a default of NULL.  
   
- [ **@table_schema =** ] **'***table_schema***'**  
+`[ @table_schema = ] 'table_schema'`
  Is the schema name of the table for which to return column information. *table_schema* is **sysname**, with a default of NULL.  
   
- [ **@table_catalog =** ] **'***table_catalog***'**  
+`[ @table_catalog = ] 'table_catalog'`
  Is the catalog name of the table for which to return column information. *table_catalog* is **sysname**, with a default of NULL.  
   
- [ **@column_name =** ] **'***column***'**  
+`[ @column_name = ] 'column'`
  Is the name of the database column for which to provide information. *column* is **sysname**, with a default of NULL.  
   
- [ **@ODBCVer =** ] **'***ODBCVer***'**  
+`[ @ODBCVer = ] 'ODBCVer'`
  Is the version of ODBC that is being used. *ODBCVer* is **int**, with a default of 2. This indicates ODBC Version 2. Valid values are 2 or 3. For information about the behavior differences between versions 2 and 3, see the ODBC SQLColumns specification.  
   
 ## Return Code Values  
@@ -71,7 +63,7 @@ sp_columns_ex [ @table_server = ] 'table_server'
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
-|**TABLE_CAT**|**sysname**|Table or view qualifier name. Various DBMS products support three-part naming for tables (*qualifier***.***owner***.***name*). In [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] this column represents the database name. In some products, it represents the server name of the table's database environment. This field can be NULL.|  
+|**TABLE_CAT**|**sysname**|Table or view qualifier name. Various DBMS products support three-part naming for tables (_qualifier_**.**_owner_**.**_name_). In [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] this column represents the database name. In some products, it represents the server name of the table's database environment. This field can be NULL.|  
 |**TABLE_SCHEM**|**sysname**|Table or view owner name. In [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], this column represents the name of the database user that created the table. This field always returns a value.|  
 |**TABLE_NAME**|**sysname**|Table or view name. This field always returns a value.|  
 |**COLUMN_NAME**|**sysname**|Column name, for each column of the **TABLE_NAME** returned. This field always returns a value.|  
@@ -94,15 +86,14 @@ sp_columns_ex [ @table_server = ] 'table_server'
  For more information, see the Microsoft ODBC documentation.  
   
 ## Remarks  
- **sp_columns_ex** is executed by querying the COLUMNS rowset of the **IDBSchemaRowset** interface of the OLE DB provider corresponding to *table_server*. The *table_name*, *table_schema*, *table_catalog*, and *column* parameters are passed to this interface to restrict the rows returned.  
+- **sp_columns_ex** is executed by querying the COLUMNS rowset of the **IDBSchemaRowset** interface of the OLE DB provider corresponding to *table_server*. The *table_name*, *table_schema*, *table_catalog*, and *column* parameters are passed to this interface to restrict the rows returned.  
   
- **sp_columns_ex** returns an empty result set if the OLE DB provider of the specified linked server does not support the COLUMNS rowset of the **IDBSchemaRowset** interface.  
+- **sp_columns_ex** returns an empty result set if the OLE DB provider of the specified linked server does not support the COLUMNS rowset of the **IDBSchemaRowset** interface.  
+  
+- **sp_columns_ex** follows the requirements for delimited identifiers. For more information, see [Database Identifiers](../../relational-databases/databases/database-identifiers.md).  
   
 ## Permissions  
  Requires SELECT permission on the schema.  
-  
-## Remarks  
- **sp_columns_ex** follows the requirements for delimited identifiers. For more information, see [Database Identifiers](../../relational-databases/databases/database-identifiers.md).  
   
 ## Examples  
  The following example returns the data type of the `JobTitle` column of the `HumanResources.Employee` table in the [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] database on the linked server `Seattle1`.  

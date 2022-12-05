@@ -1,25 +1,25 @@
 ---
+description: "Setting Properties - SMO"
 title: "Setting Properties - SMO | Microsoft Docs"
 ms.custom: ""
-ms.date: "08/01/2016"
-ms.prod: "sql-server-2016"
+ms.date: "08/06/2017"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: 
+
 ms.topic: "reference"
 helpviewer_keywords: 
   - "SMO [SQL Server], properties"
   - "SQL Server Management Objects, properties"
   - "properties [SMO]"
 ms.assetid: 342569ba-d2f7-44d2-8f3f-ae9c701c7f0f
-caps.latest.revision: 50
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
+monikerRange: "=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Setting Properties - SMO
+[!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
+
   Properties are values that store descriptive information about the object. For example, [!INCLUDE[msCoName](../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] configuration options are represented by the <xref:Microsoft.SqlServer.Management.Smo.Server.Configuration%2A> object's properties. Properties can be accessed either directly or indirectly by using the property collection. Accessing properties directly uses the following syntax:  
   
  `objInstance.PropertyName`  
@@ -53,7 +53,7 @@ manager: "jhubbard"
  The <xref:Microsoft.SqlServer.Management.Smo.Server.SetDefaultInitFields%2A> method sets the property loading behavior for the rest of application or until it is reset. You can save the original behavior by using the <xref:Microsoft.SqlServer.Management.Smo.Server.GetDefaultInitFields%2A> method and restore it as required.  
   
 ## Examples  
-To use any code example that is provided, you will have to choose the programming environment, the programming template, and the programming language in which to create your application. For more information, see [Create a Visual Basic SMO Project in Visual Studio .NET](../../../relational-databases/server-management-objects-smo/how-to-create-a-visual-basic-smo-project-in-visual-studio-net.md) or [Create a Visual C&#35; SMO Project in Visual Studio .NET](../../../relational-databases/server-management-objects-smo/how-to-create-a-visual-csharp-smo-project-in-visual-studio-net.md).  
+To use any code example that is provided, you will have to choose the programming environment, the programming template, and the programming language in which to create your application. For more information, see [Create a Visual C&#35; SMO Project in Visual Studio .NET](../../../relational-databases/server-management-objects-smo/how-to-create-a-visual-csharp-smo-project-in-visual-studio-net.md).  
 
   
 ## Getting and Setting a Property in Visual Basic  
@@ -125,7 +125,7 @@ Server srv;
 srv = new Server();   
 //Create a new table in the AdventureWorks2012 database.   
 Database db;   
-db = srv.Databases("AdventureWorks2012");   
+db = srv.Databases["AdventureWorks2012"];   
 Table tb;   
 //Specify the parent database, table schema, and the table name in the constructor.   
 tb = new Table(db, "Test_Table", "HumanResources");   
@@ -182,7 +182,7 @@ Server srv;
 srv = new Server();   
 //Set properties on the uspGetEmployeedManagers stored procedure on the AdventureWorks2012 database.   
 Database db;   
-db = srv.Databases("AdventureWorks2012");   
+db = srv.Databases["AdventureWorks2012"];   
 StoredProcedure sp;   
 sp = db.StoredProcedures("uspGetEmployeeManagers");   
 sp.AnsiNullsStatus = false;   
@@ -239,7 +239,7 @@ Server srv;
 srv = new Server();   
 //Reference the AdventureWorks2012 database.   
 Database db;   
-db = srv.Databases("AdventureWorks2012");   
+db = srv.Databases["AdventureWorks2012"];   
 //Assign the Table object type to a System.Type object variable.   
 Table tb;   
 Type typ;   

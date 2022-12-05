@@ -1,24 +1,15 @@
 ---
-title: "beforeFirst Method (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "beforeFirst Method (SQLServerResultSet)"
+description: "beforeFirst Method (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.beforeFirst"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.beforeFirst"
 apitype: "Assembly"
-ms.assetid: 04eebd6a-016f-4462-82f5-ab34b945eec4
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # beforeFirst Method (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,20 +1,16 @@
 ---
-title: "ALTER SERVICE MASTER KEY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "ALTER SERVICE MASTER KEY (Transact-SQL)"
+description: ALTER SERVICE MASTER KEY (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER_SERVICE_MASTER_KEY_TSQL"
   - "ALTER SERVICE MASTER KEY"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "REGENERATE phrase"
   - "FORCE option"
   - "ALTER SERVICE MASTER KEY statement"
@@ -23,14 +19,11 @@ helpviewer_keywords:
   - "decryption [SQL Server], Service Master Key"
   - "encryption [SQL Server], Service Master Key"
   - "service master key [SQL Server], modifying"
-ms.assetid: a1e9be0e-4115-47d8-9d3a-3316d876a35e
-caps.latest.revision: 41
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ALTER SERVICE MASTER KEY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Changes the service master key of an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
@@ -38,8 +31,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 ALTER SERVICE MASTER KEY   
     [ { <regenerate_option> | <recover_option> } ] [;]  
   
@@ -52,7 +44,10 @@ ALTER SERVICE MASTER KEY
     { WITH NEW_ACCOUNT = 'account_name' , NEW_PASSWORD = 'password' }  
 ```  
   
-## Arguments  
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  FORCE  
  Indicates that the service master key should be regenerated, even at the risk of data loss. For more information, see [Changing the SQL Server Service Account](#_changing) later in this topic.  
   
@@ -98,7 +93,7 @@ ALTER SERVICE MASTER KEY
 > [!CAUTION]  
 >  The service master key is the root of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] encryption hierarchy. The service master key directly or indirectly protects all other keys and secrets in the tree. If a dependent key cannot be decrypted during a forced regeneration, the data the key secures will be lost.  
   
- If you move SQL to another machine, then you have to use the same service account to decrypt the SMK – SQL Server will fix the Machine account encryption automatically.  
+ If you move SQL to another machine, then you have to use the same service account to decrypt the SMK - SQL Server will fix the Machine account encryption automatically.  
   
 ## Permissions  
  Requires CONTROL SERVER permission on the server.  
@@ -106,7 +101,7 @@ ALTER SERVICE MASTER KEY
 ## Examples  
  The following example regenerates the service master key.  
   
-```  
+```sql  
 ALTER SERVICE MASTER KEY REGENERATE;  
 GO  
 ```  

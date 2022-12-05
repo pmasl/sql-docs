@@ -1,19 +1,20 @@
 ---
+description: "Advanced Object Selection  (OracleToSQL)"
 title: "Advanced Object Selection  (OracleToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: c978fba4-c953-4ed0-a21d-1b38e7225552
-caps.latest.revision: 4
-author: "sabotta"
-ms.author: "carlasab"
-manager: "v-pelars"
+author: cpichuka 
+ms.author: cpichuka 
+f1_keywords: 
+  - "ssma.oracle.multichecktreeview.f1"
+  - "ssma.oracle"
+
+
 ---
 # Advanced Object Selection  (OracleToSQL)
 The **Advanced Object Section** dialog box lets you filter database objects by using strings and substrings in the object name, and then select or deselect those objects. SSMA performs conversion and migration operations on selected objects.  
@@ -24,7 +25,8 @@ When you first open the dialog box, click **Show Subcategories Items** to displa
   
 Before you use this dialog box, you might want to force SSMA to load all metadata by either converting schemas or saving the project.  
   
-## Options  
+## Options
+
 **Check All Items**  
 Adds a check mark next to all items. These items will be immediately selected in the metadata explorer.  
   
@@ -48,3 +50,6 @@ If items match the filter criteria, the categories or items will appear as you t
 **Clear Filter**  
 Clears the **Filter** box.  
   
+## See Also
+ 
+[Global Settings](global-settings-dialogs-oracletosql.md)

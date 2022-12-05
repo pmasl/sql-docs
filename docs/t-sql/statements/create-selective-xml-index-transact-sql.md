@@ -1,24 +1,17 @@
 ---
-title: "CREATE SELECTIVE XML INDEX (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
+title: "CREATE SELECTIVE XML INDEX (Transact-SQL)"
+description: CREATE SELECTIVE XML INDEX (Transact-SQL)
+author: markingmyname
+ms.author: maghan
+ms.date: "08/10/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+dev_langs:
   - "TSQL"
-ms.assetid: 1d769f62-f646-4057-b93a-bf5f90e935ed
-caps.latest.revision: 10
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
 ---
 # CREATE SELECTIVE XML INDEX (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
 
   Creates a new selective XML index on the specified table and XML column. Selective XML indexes improve the performance of XML indexing and querying by indexing only the subset of nodes that you typically query. You can also create secondary selective XML indexes. For information, see [Create, Alter, and Drop Secondary Selective XML Indexes](../../relational-databases/xml/create-alter-and-drop-secondary-selective-xml-indexes.md).  
   
@@ -26,7 +19,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 CREATE SELECTIVE XML INDEX index_name  
     ON <table_object> (xml_column_name)  
     [WITH XMLNAMESPACES (<xmlnamespace_list>)]  
@@ -34,7 +27,7 @@ CREATE SELECTIVE XML INDEX index_name
     [WITH (<index_options>)]  
   
 <table_object> ::=  
- { [database_name. [schema_name ] . | schema_name. ] table_name }  
+ { database_name.schema_name.table_name | schema_name.table_name | table_name }  
   
 <promoted_node_path_list> ::=   
 <named_promoted_node_path_item> [, <promoted_node_path_list>]  
@@ -96,7 +89,7 @@ identifier
  *index_name*  
  Is the name of the new index to create. Index names must be unique within a table, but do not have to be unique within a database. Index names must follow the rules of [identifiers](../../relational-databases/databases/database-identifiers.md).  
   
- *<table_object>*  
+ *\<table_object>* 
  Is the table that contains the XML column to index. Use one of the following formats:  
   
 -   `database_name.schema_name.table_name`  
@@ -110,13 +103,13 @@ identifier
  *xml_column_name*  
  Is the name of the XML column that contains the paths to index.  
   
- [WITH XMLNAMESPACES **(**<xmlnamespace_list>**)**]  
+ [WITH XMLNAMESPACES **(**\<xmlnamespace_list>**)**] 
  Is the list of namespaces used by the paths to index. For information about the syntax of the WITH XMLNAMESPACES clause, see [WITH XMLNAMESPACES &#40;Transact-SQL&#41;](../../t-sql/xml/with-xmlnamespaces.md).  
   
- FOR **(**<promoted_node_path_list>**)**  
+ FOR **(**\<promoted_node_path_list>**)** 
  Is the list of paths to index with optional optimization hints. For information about the paths and the optimization hints that you can specify in the CREATE or ALTER statement, see [Specify Paths and Optimization Hints for Selective XML Indexes](../../relational-databases/xml/specify-paths-and-optimization-hints-for-selective-xml-indexes.md).  
   
- WITH *<index_options>*  
+ WITH *\<index_options>* 
  For information about the index options, see [CREATE XML INDEX &#40;Selective XML Indexes&#41;](../../t-sql/statements/create-xml-index-selective-xml-indexes.md).  
   
 ## Best Practices  
@@ -137,7 +130,7 @@ identifier
 ## Examples  
  The following example shows the syntax for creating a selective XML index. It also shows several variations of the syntax for describing the paths to be indexed, with optional optimization hints.  
   
-```  
+```sql  
 CREATE TABLE Tbl ( id INT PRIMARY KEY, xmlcol XML );  
 GO  
 CREATE SELECTIVE XML INDEX sxi_index  
@@ -152,9 +145,9 @@ FOR(
   
  The following example includes a WITH XMLNAMESPACES clause.  
   
-```  
+```sql  
 CREATE SELECTIVE XML INDEX on T1(C1)  
-WITH XMLNAMESPACES ('http://www.tempuri.org/' as myns)  
+WITH XMLNAMESPACES ('https://www.tempuri.org/' as myns)  
 FOR ( path1 = '/myns:book/myns:author/text()' );  
 ```  
   
@@ -164,3 +157,4 @@ FOR ( path1 = '/myns:book/myns:author/text()' );
  [Specify Paths and Optimization Hints for Selective XML Indexes](../../relational-databases/xml/specify-paths-and-optimization-hints-for-selective-xml-indexes.md)  
   
   
+

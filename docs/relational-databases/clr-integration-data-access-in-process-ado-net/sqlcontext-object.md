@@ -1,25 +1,20 @@
 ---
-title: "SqlContext Object | Microsoft Docs"
-ms.custom: ""
+title: "SqlContext Object"
+description: When you invoke managed code in SQL Server in a user connection, access to the context of the caller is abstracted in a SqlContext object.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Windows identity [CLR integration]"
   - "SqlContext object"
   - "context [CLR integration]"
 ms.assetid: 67437853-8a55-44d9-9337-90689ebba730
-caps.latest.revision: 54
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # SqlContext Object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   You invoke managed code in the server when you call a procedure or function, when you call a method on a common language runtime (CLR) user-defined type, or when your action fires a trigger defined in any of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] .NET Framework languages. Because execution of this code is requested as part of a user connection, access to the context of the caller from the code running in the server is required. In addition, certain data access operations may only be valid if run under the context of the caller. For example, access to inserted and deleted pseudo-tables used in trigger operations is only valid under the context of the caller.  
   
  The context of the caller is abstracted in a **SqlContext** object. For more information about the **SqlTriggerContext** methods and properties, see the **Microsoft.SqlServer.Server.SqlTriggerContext** class reference documentation in the [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] SDK.  
@@ -128,7 +123,6 @@ End Sub
 ## See Also  
  [SqlPipe Object](../../relational-databases/clr-integration-data-access-in-process-ado-net/sqlpipe-object.md)   
  [SqlTriggerContext Object](../../relational-databases/clr-integration-data-access-in-process-ado-net/sqltriggercontext-object.md)   
- [CLR Triggers](http://msdn.microsoft.com/library/302a4e4a-3172-42b6-9cc0-4a971ab49c1c)   
+ [CLR Triggers](/dotnet/framework/data/adonet/sql/clr-triggers)   
  [SQL Server In-Process Specific Extensions to ADO.NET](../../relational-databases/clr-integration-data-access-in-process-ado-net/sql-server-in-process-specific-extensions-to-ado-net.md)  
-  
   

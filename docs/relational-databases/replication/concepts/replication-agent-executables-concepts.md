@@ -1,16 +1,12 @@
 ---
+description: "Replication Agent Executables Concepts"
 title: "Replication Agent Executables Concepts | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: replication
 ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
 helpviewer_keywords: 
   - "programming interfaces [SQL Server replication]"
   - "programming [SQL Server replication], agents"
@@ -18,13 +14,12 @@ helpviewer_keywords:
   - "agents [SQL Server replication], executables"
   - "command prompt [SQL Server replication]"
 ms.assetid: cba476df-d4ea-44c9-bb86-81488971e328
-caps.latest.revision: 38
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # Replication Agent Executables Concepts
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
 
   Replication agents can be controlled programmatically in the following ways:  
   
@@ -49,13 +44,13 @@ manager: "jhubbard"
  When invoking replication agents, you can use performance profiles to automatically pass a defined set of parameters to the agent executable. For more information, see [Replication Agent Profiles](../../../relational-databases/replication/agents/replication-agent-profiles.md).  
   
 ## Examples  
- The following examples show how to invoke replication agents from the command prompt. Replication agents can also be invoked using Replication Management Objects (RMO). For more information, see [Synchronize Subscriptions &#40;Replication&#41;](../../../relational-databases/replication/synchronize-subscriptions-replication.md).  
+ The following examples show how to invoke replication agents from the command prompt. Replication agents can also be invoked using Replication Management Objects (RMO). For more information, see [Synchronize Subscriptions &#40;Replication&#41;](../../../relational-databases/replication/synchronize-data.md).  
   
 > [!NOTE]  
 >  Line breaks in these examples were added to improve readability. In a batch file, commands must be made in a single line.  
   
 ### Running the Snapshot Agent  
- This example batch file invokes the Snapshot Agent from the command prompt to generate a snapshot for the **AdvWorksSalesOrdersMerge** publication. (The scripts below use the path to [!INCLUDE[ssSQL15_md](../../../includes/sssql15-md.md)] files (version 130). You should adjust the scripts to point to the files for your version of [!INCLUDE[ssNoVersion_md](../../../includes/ssnoversion-md.md)].)  
+ This example batch file invokes the Snapshot Agent from the command prompt to generate a snapshot for the **AdvWorksSalesOrdersMerge** publication. (The scripts below use the path to [!INCLUDE[ssSQL15_md](../../../includes/sssql16-md.md)] files (version 130). You should adjust the scripts to point to the files for your version of [!INCLUDE[ssNoVersion_md](../../../includes/ssnoversion-md.md)].)  
   
 ```  
 REM -- Declare variables  

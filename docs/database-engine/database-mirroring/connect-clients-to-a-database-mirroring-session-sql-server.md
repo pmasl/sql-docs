@@ -1,27 +1,22 @@
 ---
-title: "Connect Clients to a Database Mirroring Session (SQL Server) | Microsoft Docs"
-ms.custom: ""
+title: "Connect clients to a database mirror"
+description: Configure clients to connect to a database mirror using Native Client or the .NET Framework Provider for SQL Server.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "partners [SQL Server], connecting clients to"
   - "database mirroring [SQL Server], connecting clients to"
   - "client connections [SQL Server], database mirroring"
   - "connections [SQL Server], database mirroring"
-ms.assetid: 0d5d2742-2614-43de-9ab9-864addb6299b
-caps.latest.revision: 95
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Connect Clients to a Database Mirroring Session (SQL Server)
-  To connect to a database mirroring session, a client can use either [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client or .NET Framework Data Provider for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. When configured for a [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] database, these data access providers both fully support database mirroring. For information about programming considerations for using a mirrored database, see [Using Database Mirroring](../../relational-databases/native-client/features/using-database-mirroring.md). In addition, the current principal server instance must be available and the login of the client must have been created on the server instance. For more information, see [Troubleshoot Orphaned Users &#40;SQL Server&#41;](../../sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server.md). Client connections to a database mirroring session do not involve the witness server instance, if one exists.  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  To connect to a database mirroring session, a client can use either [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client or .NET Framework Data Provider for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. When configured for a [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] database, these data access providers both fully support database mirroring. For information about programming considerations for using a mirrored database, see [Using Database Mirroring](../../relational-databases/native-client/features/using-database-mirroring.md). In addition, the current principal server instance must be available and the login of the client must have been created on the server instance. For more information, see [Troubleshoot Orphaned Users &#40;SQL Server&#41;](../../sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server.md). Client connections to a database mirroring session do not involve the witness server instance, if one exists.  
   
   
 ##  <a name="InitialConnection"></a> Making the Initial Connection to a Database Mirroring Session  
@@ -84,7 +79,7 @@ Network=dbnmpntw;
 #### Server Attribute  
  The connection string must contain a **Server** attribute that supplies the initial partner name, which should identify the current principal server instance.  
   
- The simplest way to identify the server instance is by specifying its name , *<server_name>*[**\\***<SQL_Server_instance_name>*]. For example:  
+ The simplest way to identify the server instance is by specifying its name , *<server_name>*[**\\**_<SQL_Server_instance_name>_]. For example:  
   
  `Server=Partner_A;`  
   
@@ -128,7 +123,7 @@ Server=123.34.45.56,4724;
 |ODBC Driver|**Failover_Partner**|  
 |ActiveX Data Objects (ADO)|**Failover Partner**|  
   
- The simplest way to identify the server instance is by its system name, *<server_name>*[**\\***<SQL_Server_instance_name>*].  
+ The simplest way to identify the server instance is by its system name, *<server_name>*[**\\**_<SQL_Server_instance_name>_].  
   
  Alternatively, the IP address and port number can be supplied in the **Failover Partner** attribute. If the initial connection attempt fails during the first connection to the database, the attempt to connect to the failover partner will be freed from relying on DNS and SQL Server Browser. Once a connection is established, the failover partner name will be overwritten with the failover partner name, so if a failover occurs, the redirected connections will require DNS and SQL Server Browser.  
   
@@ -165,7 +160,7 @@ Server=123.34.45.56,4724;
   
  The retry time is calculated using the following formula:  
   
- *RetryTime* **=** *PreviousRetryTime* **+(** 0.08 **\****LoginTimeout***)**  
+ _RetryTime_ **=** _PreviousRetryTime_ **+(** 0.08 **&#42;**_LoginTimeout_**)**  
   
  Where *PreviousRetryTime* is initially 0.  
   
@@ -173,10 +168,10 @@ Server=123.34.45.56,4724;
   
 |Round|*RetryTime* calculation|Retry time per attempt|  
 |-----------|-----------------------------|----------------------------|  
-|1|0 **+(**0.08 **\*** 15**)**|1.2 seconds|  
-|2|1.2 **+(**0.08 **\*** 15**)**|2.4 seconds|  
-|3|2.4 **+(**0.08 **\*** 15**)**|3.6 seconds|  
-|4|3.6 **+(**0.08 **\*** 15**)**|4.8 seconds|  
+|1|0 **+(**0.08 **&#42;** 15**)**|1.2 seconds|  
+|2|1.2 **+(**0.08 **&#42;** 15**)**|2.4 seconds|  
+|3|2.4 **+(**0.08 **&#42;** 15**)**|3.6 seconds|  
+|4|3.6 **+(**0.08 **&#42;** 15**)**|4.8 seconds|  
   
  The following figure illustrates these retry times for successive connection attempts, each of which times out.  
   
@@ -191,7 +186,7 @@ Server=123.34.45.56,4724;
   
   
 ### Retry Delays During Failover  
- If a client attempts to connect to a partner that is failing over, the partner immediately responds that it is inactive. In this case, each round of connection attempts are much briefer than the allotted retry time. This means that many rounds of connection attempts could happen before the login period times out. To avoid overloading the partners with a rapid series of connection attempts during a failover, the data access provider adds a brief retry delay after each retry cycle. The length of a given retry delay is determined by the retry-delay algorithm. After the first round, the delay is 100 milliseconds. After each of the next three rounds, the retry delay doubles—to 200, 400, and 800. For all later rounds, the retry delay is 1 second until the connection attempt succeeds or times out.  
+ If a client attempts to connect to a partner that is failing over, the partner immediately responds that it is inactive. In this case, each round of connection attempts are much briefer than the allotted retry time. This means that many rounds of connection attempts could happen before the login period times out. To avoid overloading the partners with a rapid series of connection attempts during a failover, the data access provider adds a brief retry delay after each retry cycle. The length of a given retry delay is determined by the retry-delay algorithm. After the first round, the delay is 100 milliseconds. After each of the next three rounds, the retry delay doubles-to 200, 400, and 800. For all later rounds, the retry delay is 1 second until the connection attempt succeeds or times out.  
   
 > [!NOTE]  
 >  If the server instance is stopped, then the connection request fails immediately.  

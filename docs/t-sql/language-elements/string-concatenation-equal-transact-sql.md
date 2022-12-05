@@ -1,41 +1,40 @@
 ---
-title: "+= (String Concatenation) (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/07/2016"
-ms.prod: "sql-non-specified"
+title: "+= String concatenation"
+description: Concatenate two strings and set the string to the result of the operation.
+author: rwestMSFT
+ms.author: randolphwest
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.date: "12/07/2016"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "concatenate strings"
   - "string concatenation"
   - "+= (concatenate operator)"
-ms.assetid: 4aaeaab7-9b2b-48e0-8487-04ed672ebcb1
-caps.latest.revision: 15
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
-# String Concatenation - equal (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
 
-  Concatenates two strings and sets the string to the result of the operation. For example, if a variable @x equals 'Adventure', then @x += 'Works' takes the original value of @x, adds 'Works' to the string, and sets @x to that new value 'AdventureWorks'.  
+# += (String Concatenation Assignment) (Transact-SQL)
+
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+Concatenates two strings and sets the string to the result of the operation. For example, if a variable @x equals 'Adventure', then @x += 'Works' takes the original value of @x, adds 'Works' to the string, and sets @x to that new value 'AdventureWorks'.  
   
- ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
-  
+![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
+ 
 ## Syntax  
   
-```  
-  
+```syntaxsql
 expression += expression  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *expression*  
  Is any valid [expression](../../t-sql/language-elements/expressions-transact-sql.md) of any of the character data types.  
   
@@ -47,7 +46,7 @@ expression += expression
   
  The += operator cannot be used without a variable. For example, the following code will cause an error:  
   
-```  
+```sql  
 SELECT 'Adventure' += 'Works'  
 ```  
   
@@ -55,8 +54,8 @@ SELECT 'Adventure' += 'Works'
 ### A. Concatenation using += operator
  The following example concatenates using the `+=` operator.  
   
-```  
-DECLARE @v1 varchar(40);  
+```sql  
+DECLARE @v1 VARCHAR(40);  
 SET @v1 = 'This is the original.';  
 SET @v1 += ' More text.';  
 PRINT @v1;  
@@ -69,10 +68,10 @@ PRINT @v1;
 ### B. Order of evaluation while concatenating using += operator
 The following example concatenates multiple strings to form one long string and then tries to compute the length of the final string. This example demonstrates the evaluation order and truncation rules, while using the concatenation operator. 
 
-```
-DECLARE @x varchar(4000) = replicate('x', 4000)
-DECLARE @z varchar(8000) = replicate('z',8000)
-DECLARE @y varchar(max);
+```sql
+DECLARE @x VARCHAR(4000) = REPLICATE('x', 4000)
+DECLARE @z VARCHAR(8000) = REPLICATE('z',8000)
+DECLARE @y VARCHAR(max);
  
 SET @y = '';
 SET @y += @x + @z;
@@ -93,43 +92,36 @@ GO
 ```
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
- `Y      `  
+ ```
+ Y       
+ ------- 
+ 8000 
   
- `-------`  
-  
- `8000`  
-  
-  `(1 row(s) affected)` 
+ (1 row(s) affected) 
   
     
-  `Y      `  
+ Y       
+ ------- 
+ 12000 
   
- `-------`  
-  
- `12000`  
-  
-  `(1 row(s) affected)` 
+ (1 row(s) affected) 
 
-`Y      `  
+ Y       
+ ------- 
+ 8000 
   
- `-------`  
+ (1 row(s) affected) 
   
- `8000`  
+ Y       
+ ------- 
+ 8000 
   
-  `(1 row(s) affected)` 
-  
-    
-  `Y      `  
-  
- `-------`  
-  
- `8000`  
-  
-  `(1 row(s) affected)`   
+ (1 row(s) affected)
+  ```   
    
 ## See Also  
  [Operators &#40;Transact-SQL&#41;](../../t-sql/language-elements/operators-transact-sql.md)   
- [+= &#40;Add EQUALS&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/add-equals-transact-sql.md)   
+ [+= &#40;Add Assignment&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/add-equals-transact-sql.md)   
  [+ &#40;String Concatenation&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/string-concatenation-transact-sql.md)  
   
   

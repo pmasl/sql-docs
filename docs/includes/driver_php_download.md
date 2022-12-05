@@ -1,1 +1,1 @@
-![Download](../ssdt/media/download.png)[Download PHP Driver](https://www.microsoft.com/download/details.aspx?id=20098)
+:::image type="icon" source="media/download.svg" border="false"::: [Download PHP driver](../connect/php/download-drivers-php-sql-server.md)

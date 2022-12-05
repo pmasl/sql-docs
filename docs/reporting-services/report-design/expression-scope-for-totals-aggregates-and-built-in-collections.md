@@ -1,23 +1,21 @@
 ---
-title: "Expression Scope for Totals, Aggregates, and Built-in Collections | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/07/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Expression scope for totals, aggregates, and built-in collections in a paginated report | Microsoft Docs"
+description: Discover the variety of meanings for scope in expressions for totals, aggregates, and built-in collections in paginated reports in Report Builder.
+ms.date: 03/07/2017
+ms.service: reporting-services
+ms.subservice: report-design
+
+
+ms.topic: conceptual
 ms.assetid: a8d24287-8557-4b03-bea7-ca087f449b62
-caps.latest.revision: 11
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Expression Scope for Totals, Aggregates, and Built-in Collections
-  When you write expressions, you will find that  the term *scope* is used in multiple contexts. Scope can specify the data to use for evaluating an expression, the set of text boxes on a rendered page, the set of report items that can be shown or hidden based on a toggle. You will see the term *scope* in topics that relate to expression evaluation, aggregate function syntax, conditional visibility, and also in error messages related to these areas. Use the following descriptions to help differentiate which meaning of *scope* applies:  
+# Expression scope for totals, aggregates, and built-in collections in a paginated report (Report Builder)
+
+[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-ssrs-rb](../../includes/ssrs-appliesto-ssrs-rb.md)] [!INCLUDE [ssrs-appliesto-pbi-rb](../../includes/ssrs-appliesto-pbi-rb.md)] [!INCLUDE [ssrb-applies-to-ssdt-yes](../../includes/ssrb-applies-to-ssdt-yes.md)]
+
+  When you write expressions, you will find that the term *scope* is used in multiple contexts in paginated reports. Scope can specify the data to use for evaluating an expression, the set of text boxes on a rendered page, the set of report items that can be shown or hidden based on a toggle. You will see the term *scope* in topics that relate to expression evaluation, aggregate function syntax, conditional visibility, and also in error messages related to these areas. Use the following descriptions to help differentiate which meaning of *scope* applies:  
   
 -   **Data scope** Data scope is a hierarchy of scopes that the report processor uses as it combines report data and report layout, and builds out data regions such as tables and charts on which to display the data. Understanding data scope helps you to get the results that you want when you do the following:  
   
@@ -69,7 +67,7 @@ manager: "erikre"
      The following expression generates the interval years between SellStartDate and LastReceiptDate. These fields are in two different datasets, DataSet1 and DataSet2. The [First Function &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/report-builder-functions-first-function.md), which is an aggregate function, returns the first value of SellStartDate in DataSet1 and the first value of LastReceiptDate in DataSet2.  
   
     ```  
-    =DATEDIFF(“yyyy”, First(Fields!SellStartDate.Value, "DataSet1"), First(Fields!LastReceiptDate.Value, "DataSet2"))  
+    =DATEDIFF("yyyy", First(Fields!SellStartDate.Value, "DataSet1"), First(Fields!LastReceiptDate.Value, "DataSet2"))  
     ```  
   
 -   **Domain scope** Also called synchronization scope. A type of data scope that applies to expression evaluation for nested data regions. Domain scope is used to specify aggregates across all instances of a group so that nested instances can be aligned and easily compared. For example, you can align the range and height for sparklines embedded in a table so that the values line up.  
@@ -149,7 +147,7 @@ manager: "erikre"
   
   
 ##  <a name="Sort"></a> Specifying a Sort Expression to Synchronize Sort Order  
- When you add an interactive sort button to a table column, you can synchronize sorting for multiple items that have a common containing scope. For example, you can add a sort button to a column header in a matrix, and specify the containing scope as the name of the dataset that is bound to the matrix. When a user clicks the sort button, not only are the matrix rows sorted, but also the chart series groups of charts that are bound to the same datset are sorted. In this way, all data regions that depend on that dataset can be synchronized to show the same sort order.  
+ When you add an interactive sort button to a table column, you can synchronize sorting for multiple items that have a common containing scope. For example, you can add a sort button to a column header in a matrix, and specify the containing scope as the name of the dataset that is bound to the matrix. When a user clicks the sort button, not only are the matrix rows sorted, but also the chart series groups of charts that are bound to the same dataset are sorted. In this way, all data regions that depend on that dataset can be synchronized to show the same sort order.  
   
  For more information, see [Filter, Group, and Sort Data &#40;Report Builder and SSRS&#41;](../../reporting-services/report-design/filter-group-and-sort-data-report-builder-and-ssrs.md).  
   

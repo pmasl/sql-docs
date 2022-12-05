@@ -1,24 +1,15 @@
 ---
-title: "getTimestamp Method (int, java.util.Calendar) | Microsoft Docs"
-ms.custom: ""
+title: "getTimestamp Method (int, java.util.Calendar)"
+description: "getTimestamp Method (int, java.util.Calendar)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.getTimestamp (int, java.util.Calendar)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.getTimestamp (int, java.util.Calendar)"
 apitype: "Assembly"
-ms.assetid: 161c559a-8651-44ba-a914-15eb6a612417
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getTimestamp Method (int, java.util.Calendar)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -51,7 +42,7 @@ public java.sql.Timestamp getTimestamp(int index,
 ## Remarks  
  This getTimestamp method is specified by the getTimestamp method in the java.sql.CallableStatement interface.  
   
- This method returns values only from [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] **datetime** and **smalldatetime** columns.  
+ This method returns values only from [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **datetime** and **smalldatetime** columns.  
   
 ## See Also  
  [getTimestamp Method &#40;SQLServerCallableStatement&#41;](../../../connect/jdbc/reference/gettimestamp-method-sqlservercallablestatement.md)   

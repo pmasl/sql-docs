@@ -1,23 +1,19 @@
 ---
-title: "Guidelines and Limitations of SQLXML 4.0 | Microsoft Docs"
-ms.custom: ""
+title: "Guidelines and Limitations of SQLXML 4.0"
+description: Learn about the guidelines and limitations of working with SQLXML 4.0.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SQLXML, about SQLXML"
 ms.assetid: fe433d30-90a1-421e-85c6-af13294dc18d
-caps.latest.revision: 27
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Guidelines and Limitations of SQLXML 4.0
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   Remember the following when working with SQLXML 4.0:  
   
 -   XML returned as a query result is not validated against the mapping schema that generated the XML.  

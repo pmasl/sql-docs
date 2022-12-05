@@ -1,14 +1,12 @@
 ---
+description: "BufferWithTolerance (geometry Data Type)"
 title: "BufferWithTolerance (geometry Data Type) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/03/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "BufferWithTolerance_TSQL"
   - "BufferWithTolerance"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "BufferWithTolerance (geometry Data Type)"
 ms.assetid: 7049d37a-3e72-4e93-87a1-c96a6f0e2b99
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
 ---
 # BufferWithTolerance (geometry Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Returns a geometric object that represents the union of all point values whose distance from a **geometry** instance is less than or equal to a specified value, allowing for a specified tolerance.
   
@@ -34,7 +30,9 @@ Returns a geometric object that represents the union of all point values whose d
 .BufferWithTolerance ( distance, tolerance, relative )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *distance*  
  Is a **float** expression specifying the distance from the **geometry** instance around which to calculate the buffer.  
   
@@ -78,12 +76,12 @@ Returns a geometric object that represents the union of all point values whose d
   
  A negative buffer removes all points within the given distance of the boundary of the **geometry** instance.  
   
- The error between the theorectical and computed buffer is max(tolerance, extents \* 1.E-7) where tolerance is the value of the *tolerance* parameter. For more information on extents, see [geometry Data Type Method Reference](http://msdn.microsoft.com/library/d88e632b-6b2f-4466-a15f-9fbef1a347a7).  
+ The error between the theoretical and computed buffer is max(tolerance, extents \* 1.E-7) where tolerance is the value of the *tolerance* parameter. For more information on extents, see [geometry Data Type Method Reference](./spatial-types-geometry-transact-sql.md).  
   
 ## Examples  
  The following example creates a `Point` instance and uses `BufferWithTolerance()` to obtain a rough buffer around it.  
   
-```  
+```sql
 DECLARE @g geometry;  
 SET @g = geometry::STGeomFromText('POINT(3 3)', 0);  
 SELECT @g.BufferWithTolerance(1, .5, 0).ToString();  
@@ -93,5 +91,3 @@ SELECT @g.BufferWithTolerance(1, .5, 0).ToString();
  [STBuffer &#40;geometry Data Type&#41;](../../t-sql/spatial-geometry/stbuffer-geometry-data-type.md)   
  [Extended Methods on Geometry Instances](../../t-sql/spatial-geometry/extended-methods-on-geometry-instances.md)  
   
-  
-

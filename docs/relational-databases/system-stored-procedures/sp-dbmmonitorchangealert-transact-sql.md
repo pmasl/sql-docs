@@ -1,14 +1,12 @@
 ---
+description: "sp_dbmmonitorchangealert (Transact-SQL)"
 title: "sp_dbmmonitorchangealert (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_dbmmonitorchangealert_TSQL"
   - "sp_dbmmonitorchangealert"
@@ -18,13 +16,11 @@ helpviewer_keywords:
   - "sp_dbmmonitorchangealert"
   - "database mirroring [SQL Server], monitoring"
 ms.assetid: 1b29f82b-9cf8-4539-8d5c-9a1024db8a50
-caps.latest.revision: 42
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_dbmmonitorchangealert (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Adds or changes warning threshold for a specified mirroring performance metric.  
 

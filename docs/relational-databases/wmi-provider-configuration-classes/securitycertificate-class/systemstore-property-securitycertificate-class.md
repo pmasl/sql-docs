@@ -1,13 +1,11 @@
 ---
-title: "SystemStore Property (SecurityCertificate Class) | Microsoft Docs"
-ms.custom: ""
+description: "SystemStore Property (SecurityCertificate Class)"
+title: "SystemStore Property (SecurityCertificate)"
+ms.custom: seo-lt-2019
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "SystemStore Property (SecurityCertificate Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "SystemStore property"
 ms.assetid: 5d2a6ee2-d975-4fd6-adb5-ed43d0cc7fdd
-caps.latest.revision: 32
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SystemStore Property (SecurityCertificate Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the system store for the security certificate.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.SystemStore [= value]
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

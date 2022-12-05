@@ -1,15 +1,13 @@
 ---
-title: "Configure the Database Engine to Listen on Multiple TCP Ports | Microsoft Docs"
-ms.custom: ""
+title: "Configure the Database Engine to Listen on Multiple TCP Ports"
+description: Get acquainted with tabular data stream (TDS) endpoints. See how to use them to configure the SQL Server Database Engine to listen on multiple TCP ports.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: configuration
+ms.topic: conceptual
+helpviewer_keywords:
   - "ports [SQL Server], multiple"
   - "TDS"
   - "listen on multiple ports"
@@ -17,14 +15,10 @@ helpviewer_keywords:
   - "adding ports"
   - "tabular data stream"
   - "multiple ports"
-ms.assetid: 8e955033-06ef-403f-b813-3d8241b62f1f
-caps.latest.revision: 26
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # Configure the Database Engine to Listen on Multiple TCP Ports
-  This topic describes how to configure the [!INCLUDE[ssDE](../../includes/ssde-md.md)] to listen on multiple TCP ports in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using SQL Server Configuration Manager. When TCP/IP is enabled for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], the [!INCLUDE[ssDE](../../includes/ssde-md.md)] will listen for incoming connections on a connection point consisting of an IP address and TCP port number.The following procedures create a tabular data stream (TDS) endpoint, so that [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] will listen on an additional TCP port.  
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  This topic describes how to configure the [!INCLUDE[ssDE](../../includes/ssde-md.md)] to listen on multiple TCP ports in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using SQL Server Configuration Manager. When TCP/IP is enabled for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], the [!INCLUDE[ssDE](../../includes/ssde-md.md)] will listen for incoming connections on a connection point consisting of an IP address and TCP port number.The following procedures create a tabular data stream (TDS) endpoint, so that [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] will listen on an additional TCP port.  
   
  Possible reasons to create a second TDS endpoint include:  
   
@@ -72,9 +66,9 @@ manager: "jhubbard"
   
 #### To configure the SQL Server Database Engine to listen on an additional TCP port  
   
-1.  In SQL Server Configuration Manager, expand **SQL Server Network Configuration**, and then click **Protocols for***<instance_name>*.  
+1.  In SQL Server Configuration Manager, expand **SQL Server Network Configuration**, and then click **Protocols for**_<instance_name>_.  
   
-2.  Expand **Protocols for***<instance_name>*, and then click **TCP/IP**.  
+2.  Expand **Protocols for**_<instance_name>_, and then click **TCP/IP**.  
   
 3.  In the right pane, right-click each disabled IP address that you want to enable, and then click **Enable**.  
   
@@ -87,7 +81,7 @@ manager: "jhubbard"
   
 6.  In the left pane, click **SQL Server Services**.  
   
-7.  In the right pane, right-click **SQL Server***<instance_name>*, and then click **Restart**.  
+7.  In the right pane, right-click **SQL Server**_<instance_name>_, and then click **Restart**.  
   
      When the [!INCLUDE[ssDE](../../includes/ssde-md.md)] restarts, the Error log will list the ports on which [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] is listening.  
   

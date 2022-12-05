@@ -1,24 +1,15 @@
 ---
-title: "nullsAreSortedAtEnd Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "nullsAreSortedAtEnd Method (SQLServerDatabaseMetaData)"
+description: "nullsAreSortedAtEnd Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.nullsAreSortedAtEnd"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.nullsAreSortedAtEnd"
 apitype: "Assembly"
-ms.assetid: 713cf636-40f2-474a-8a5d-5aba4a310a9c
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # nullsAreSortedAtEnd Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

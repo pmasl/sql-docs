@@ -1,31 +1,23 @@
 ---
-title: "IHsubscriptions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "IHsubscriptions (Transact-SQL)"
+description: IHsubscriptions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "IHsubscriptions_TSQL"
   - "IHsubscriptions"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "IHsubscriptions system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 9ec21119-35f1-4e39-abaa-b2c790c485b1
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # IHsubscriptions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **IHsubscriptions** system table contains one row for each subscription to a publication from a non-SQL Server Publisher using the current Distributor. This table is stored in the distribution database.  
   

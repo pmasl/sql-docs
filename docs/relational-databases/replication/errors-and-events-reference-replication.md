@@ -1,14 +1,12 @@
 ---
+description: "Errors and Events Reference (Replication)"
 title: "Errors and Events Reference (Replication) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "errors [SQL Server replication], troubleshooting"
   - "troubleshooting [SQL Server replication], errors"
@@ -16,12 +14,12 @@ helpviewer_keywords:
   - "errors [SQL Server replication]"
   - "errors and events reference [SQL Server replication]"
 ms.assetid: e67d1bab-47b6-441d-ab9c-251a2ca499e1
-caps.latest.revision: 25
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # Errors and Events Reference (Replication)
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
   This section of the documentation contains cause and resolution information for a number of errors related to replication.  
   
 |Error|Message|  

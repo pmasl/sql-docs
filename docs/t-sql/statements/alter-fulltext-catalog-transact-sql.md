@@ -1,34 +1,27 @@
 ---
-title: "ALTER FULLTEXT CATALOG (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "ALTER FULLTEXT CATALOG (Transact-SQL)"
+description: ALTER FULLTEXT CATALOG (Transact-SQL)
+author: markingmyname
+ms.author: maghan
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "ALTER_FULLEXT_CATALOG_TSQL"
   - "ALTER FULLEXT CATALOG"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "modifying full-text catalogs"
   - "full-text catalogs [SQL Server], rebuilding"
   - "accent sensitivity"
   - "ALTER FULLTEXT CATALOG statement"
   - "full-text catalogs [SQL Server], modifying"
   - "full-text catalogs [SQL Server], reorganizing"
-ms.assetid: 31a47aaf-6c7f-48a4-a86a-d57aec66c9cb
-caps.latest.revision: 40
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # ALTER FULLTEXT CATALOG (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Changes the properties of a full-text catalog.  
   
@@ -36,8 +29,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql 
 ALTER FULLTEXT CATALOG catalog_name   
 { REBUILD [ WITH ACCENT_SENSITIVITY = { ON | OFF } ]  
 | REORGANIZE  
@@ -45,7 +37,9 @@ ALTER FULLTEXT CATALOG catalog_name
 }  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *catalog_name*  
  Specifies the name of the catalog to be modified. If a catalog with the specified name does not exist, [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] returns an error and does not perform the ALTER operation.  
   
@@ -78,7 +72,7 @@ ALTER FULLTEXT CATALOG catalog_name
 ## Examples  
  The following example changes the `accentsensitivity` property of the default full-text catalog `ftCatalog`, which is accent sensitive.  
   
-```  
+```sql  
 --Change to accent insensitive  
 USE AdventureWorks2012;  
 GO  

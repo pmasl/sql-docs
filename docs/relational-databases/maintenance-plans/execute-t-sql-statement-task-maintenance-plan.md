@@ -1,25 +1,20 @@
 ---
-title: "Execute T-SQL Statement Task (Maintenance Plan) | Microsoft Docs"
-ms.custom: ""
+title: "Execute T-SQL Statement Task (Maintenance Plan)"
+description: Execute T-SQL Statement Task (Maintenance Plan)
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
+ms.service: sql
+ms.subservice: supportability
+ms.topic: conceptual
+f1_keywords:
   - "sql13.swb.maint.tsql.f1"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Execute T-SQL Statement Task dialog box"
 ms.assetid: fef3e259-0c47-4f6e-ade0-aee95e3d6c1a
-caps.latest.revision: 18
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Execute T-SQL Statement Task (Maintenance Plan)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Use the **Execute T-SQL Statement Task** dialog to customize your maintenance plan by adding [!INCLUDE[tsql](../../includes/tsql-md.md)] statements of your choice to this maintenance plan.  
   
 ## Options  

@@ -1,13 +1,11 @@
 ---
-title: "AdvancedProperties Property (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "AdvancedProperties Property (SqlService Class)"
+title: "AdvancedProperties Property (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "AdvancedProperties Property (SqlService Class)"
@@ -16,12 +14,11 @@ apilocation:
 helpviewer_keywords: 
   - "AdvancedProperties property"
 ms.assetid: 63bcb7e2-1f78-4961-b4b9-1b635a89079b
-caps.latest.revision: 33
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # AdvancedProperties Property (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets an array of object references that contain the advanced properties for the **SqlService** object.  
   
 ## Syntax  
@@ -41,6 +38,6 @@ object.AdvancedProperties [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

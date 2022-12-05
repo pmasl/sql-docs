@@ -1,32 +1,26 @@
 ---
-title: "Mapping System Tables to System Views (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "Mapping System Tables to System Views (Transact-SQL)"
+description: Mapping System Tables to System Views (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/17/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+helpviewer_keywords:
   - "catalog views [SQL Server], mapping system tables to"
   - "mapping system tables to system views [SQL Server]"
   - "system tables [SQL Server], mapping to catalog views"
+dev_langs:
+  - "TSQL"
 ms.assetid: a616fce9-b4c1-49da-87a7-9d6f74911d8f
-caps.latest.revision: 43
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # Mapping System Tables to System Views (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   This topic shows the mapping between the system tables and functions and system views and functions.  
   
- The following table maps the system tables to their corresponding system views or functions in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ The following table maps the system tables to their corresponding system views or functions in [!INCLUDE [ssnoversion-md](../../includes/ssnoversion-md.md)].  
   
 |System table|System views or functions|Type of view or function|  
 |------------------|-------------------------------|------------------------------|  
@@ -49,7 +43,7 @@ manager: "jhubbard"
 |sysremotelogins|[sys.remote_logins](../../relational-databases/system-catalog-views/sys-remote-logins-transact-sql.md)|Catalog view|  
 |sysservers|[sys.servers](../../relational-databases/system-catalog-views/sys-servers-transact-sql.md)|Catalog view|  
   
- The following table maps the system tables or functions that are in every database in [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] to their corresponding system views or functions in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ The following table maps the system tables or functions that are in every database in [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] to their corresponding system views or functions in [!INCLUDE [ssversion2005-md](../../includes/ssversion2005-md.md)] and later.  
   
 |System table or function|System view or function|Type of view or function|  
 |------------------------------|-----------------------------|------------------------------|  

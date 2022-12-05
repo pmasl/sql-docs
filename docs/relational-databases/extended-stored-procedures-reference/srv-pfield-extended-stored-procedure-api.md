@@ -1,33 +1,26 @@
 ---
-title: "srv_pfield (Extended Stored Procedure API) | Microsoft Docs"
-ms.custom: ""
+title: "srv_pfield (Extended Stored Procedure API)"
+description: Learn how srv_pfield in the Extended Stored Procedure API returns information about a database connection.
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: stored-procedures
 ms.topic: "reference"
-apiname: 
+helpviewer_keywords:
   - "srv_pfield"
-apilocation: 
-  - "opends60.dll"
-apitype: "DLLExport"
-dev_langs: 
+dev_langs:
   - "C++"
-helpviewer_keywords: 
-  - "srv_pfield"
+apilocation: opends60.dll
+apiname: srv_pfield
+apitype: "DLLExport"
 ms.assetid: a61e4c1f-e65b-48ea-a7d1-3e1544af389d
-caps.latest.revision: 32
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # srv_pfield (Extended Stored Procedure API)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
     
 > [!IMPORTANT]  
->  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] Use CLR integration instead.  
+>  [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)] Use CLR integration instead.  
   
  Returns information about a database connection.  
   
@@ -74,7 +67,6 @@ len
 |SRV_STATUS|The current status of *srvproc*: running or closed|  
 |SRV_TYPE|The connection type of *srvproc*. If server is returned, *srvproc* is from an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. If client is returned, *srvproc* is from a DB-Library or ODBC client.|  
 |SRV_USER|The user name of the connection.|  
-|||  
   
  *len*  
  Is a pointer to an **int** variable that contains the length of the returned *field* value. If *len* is NULL, the length of the string is not returned.  
@@ -83,6 +75,6 @@ len
  A pointer to a null-terminated string containing the current value for the specified field in the SRV_PROC structure. If the field is empty, a valid pointer to an empty string is returned and *len* contains 0. If the field is unknown, NULL is returned and *len* contains the value -1.  
   
 > [!IMPORTANT]  
->  You should thoroughly review the source code of extended stored procedures, and you should test the compiled DLLs before you install them on a production server. For information about security review and testing, see the [Security Developer Center](http://go.microsoft.com/fwlink/?LinkID=54761&amp;clcid=0x409http://msdn.microsoft.com/security/).  
+>  You should thoroughly review the source code of extended stored procedures, and you should test the compiled DLLs before you install them on a production server. For information about security review and testing, see the [Security Developer Center](https://go.microsoft.com/fwlink/?LinkID=54761&amp;clcid=0x409https://msdn.microsoft.com/security/).  
   
   

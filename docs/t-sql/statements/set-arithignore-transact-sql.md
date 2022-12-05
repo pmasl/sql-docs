@@ -1,34 +1,28 @@
 ---
-title: "SET ARITHIGNORE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "SET ARITHIGNORE (Transact-SQL)"
+description: SET ARITHIGNORE (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: "12/04/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "SET ARITHIGNORE"
   - "SET_ARITHIGNORE_TSQL"
   - "ARITHIGNORE"
   - "ARITHIGNORE_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SET ARITHIGNORE statement"
   - "overflow errors [SQL Server]"
   - "ARITHIGNORE option"
   - "divide-by-zero errors"
-ms.assetid: 71b2c2a5-c83a-4dfe-8469-237987a6e503
-caps.latest.revision: 40
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # SET ARITHIGNORE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Controls whether error messages are returned from overflow or divide-by-zero errors during a query.  
   
@@ -36,21 +30,24 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server and Azure SQL Database  
-    
-SET ARITHIGNORE { ON | OFF }  
-[ ; ]  
-```  
-  
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
-  
-SET ARITHIGNORE OFF   
-[ ; ]  
-```  
-  
-## Remarks  
+```syntaxsql
+-- Syntax for SQL Server and Azure SQL Database
+
+SET ARITHIGNORE { ON | OFF }
+```
+
+```syntaxsql
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
+
+SET ARITHIGNORE OFF
+```
+
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+> [!NOTE]
+> [!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
+
+## Remarks
  The SET ARITHIGNORE setting only controls whether an error message is returned. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] returns a NULL in a calculation involving an overflow or divide-by-zero error, regardless of this setting. The SET ARITHABORT setting can be used to determine whether the query is terminated. This setting does not affect errors occurring during INSERT, UPDATE, and DELETE statements.  
   
  If either SET ARITHABORT or SET ARITHIGNORE is OFF and SET ANSI_WARNINGS is ON, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] still returns an error message when encountering divide-by-zero or overflow errors.  
@@ -59,11 +56,10 @@ SET ARITHIGNORE OFF
   
  To view the current setting for this setting, run the following query.  
   
-```  
+```sql  
 DECLARE @ARITHIGNORE VARCHAR(3) = 'OFF';  
 IF ( (128 & @@OPTIONS) = 128 ) SET @ARITHIGNORE = 'ON';  
 SELECT @ARITHIGNORE AS ARITHIGNORE;  
-  
 ```  
   
 ## Permissions  
@@ -72,7 +68,7 @@ SELECT @ARITHIGNORE AS ARITHIGNORE;
 ## Examples  
  The following example demonstrates using both `SET ARITHIGNORE` settings with both types of query errors.  
   
-```  
+```sql  
 SET ARITHABORT OFF;  
 SET ANSI_WARNINGS OFF  
 GO  
@@ -101,12 +97,11 @@ GO
 ## Examples: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] and [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  The following example demonstrates the divide by zero and the overflow errors. This example does not return an error message for these errors because ARITHIGNORE is OFF.  
   
-```  
+```sql  
 -- SET ARITHIGNORE OFF and testing.  
 SET ARITHIGNORE OFF;  
 SELECT 1 / 0 AS DivideByZero;  
 SELECT CAST(256 AS TINYINT) AS Overflow;  
-  
 ```  
   
 ## See Also  

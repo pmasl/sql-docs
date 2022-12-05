@@ -1,27 +1,26 @@
 ---
-title: "Use the Toolbox | Microsoft Docs"
-ms.custom: ""
+title: "Use the Toolbox"
+description: "Use the Toolbox"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "adding controls"
   - "Toolbox [SQL Server Management Studio]"
   - "dragging and dropping text"
   - "designer controls [SQL Server Management Studio]"
-ms.assetid: 16733e39-4dc5-416f-ab10-c1d823f79d2d
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
+
 # Use the Toolbox
-You can select and drag items, text, and controls from the Toolbox onto forms, pages, and designers, and drag items from these sources back into the Toolbox for reuse later. For example, in [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull_md.md)] you can drag a task onto a Maintenance Plan.  
+
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+You can select and drag items, text, and controls from the Toolbox onto forms, pages, and designers, and drag items from these sources back into the Toolbox for reuse later. For example, in SQL Server Management Studio you can drag a task onto a Maintenance Plan.  
   
 Items in the Toolbox are grouped into sections called tabs. Here is a reference list of common Toolbox tasks and how to do them:  
   
@@ -40,6 +39,6 @@ Items in the Toolbox are grouped into sections called tabs. Here is a reference 
 |Change the position of an item on an expanded Toolbox tab|Drag the item to the new location, and release the mouse.|  
 |Rename a Toolbox item|Right-click the Toolbox item, and click **Rename Item** on the shortcut menu.|  
   
-## See Also  
-[General User Interface Elements](../ssms/general-user-interface-elements.md)  
-  
+## See Also
+
+[General User Interface Elements](../ssms/general-user-interface-elements.md)

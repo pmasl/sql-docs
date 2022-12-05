@@ -1,33 +1,32 @@
 ---
+description: "catalog.grant_permission (SSISDB Database)"
 title: "catalog.grant_permission (SSISDB Database) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
+ms.subservice: integration-services
 ms.topic: "language-reference"
 helpviewer_keywords: 
   - "grant_permission stored procedure [Integration Services]"
   - "catalog.grant_permission stored procedure [Integration Services]"
 ms.assetid: e72cfd52-de66-45e9-98b9-b8580ac7b956
-caps.latest.revision: 25
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # catalog.grant_permission (SSISDB Database)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Grants a permission on a securable object in the [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] catalog.  
   
 ## Syntax  
   
-```  
-  
-grant_permission [ @object_type = ] object_type  
+```sql
+catalog.grant_permission [ @object_type = ] object_type  
     , [ @object_id = ] object_id  
     , [ @principal_id = ] principal_id  
     , [ @permission_type = ] permission_type  
@@ -35,7 +34,7 @@ grant_permission [ @object_type = ] object_type
   
 ## Arguments  
  [ @object_type = ] *object_type*  
- The type of securable object. Securable objects types include folder (`1`), project (`2`), environment (`3`), and operation (`4`).The *object_type* is **smallint***.*  
+ The type of securable object. Securable objects types include folder (`1`), project (`2`), environment (`3`), and operation (`4`).The *object_type* is **smallint**_._  
   
  [ @object_id = ] *object_id*  
  The unique identifier (ID) of the securable object. The *object_id* is **bigint**.  
@@ -70,6 +69,8 @@ grant_permission [ @object_type = ] object_type
 -   Membership to the **ssis_admin** database role  
   
 -   Membership to the **sysadmin** server role  
+
+This procedure cannot be called by logins that were authenticated by SQL Server. It cannot be called by the sa login.
   
 ## Remarks  
  This stored procedure allows you to grant the permission types described in the following table:  

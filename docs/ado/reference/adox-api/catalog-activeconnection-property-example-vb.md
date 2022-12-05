@@ -1,26 +1,19 @@
 ---
-title: "Catalog ActiveConnection Property Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Catalog ActiveConnection Property Example (VB)"
+description: "Catalog ActiveConnection Property Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "ActiveConnection property [ADOX], Visual Basic example"
-ms.assetid: bb3274b1-764d-43a7-a49f-ef55680ecd26
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # Catalog ActiveConnection Property Example (VB)
-Setting the [ActiveConnection](../../../ado/reference/adox-api/activeconnection-property-adox.md) property to a valid, open connection "opens" the catalog. From an open catalog, you can access the schema objects contained within that catalog.  
+Setting the [ActiveConnection](./activeconnection-property-adox.md) property to a valid, open connection "opens" the catalog. From an open catalog, you can access the schema objects contained within that catalog.  
   
 ```  
 ' BeginOpenConnectionVB  
@@ -64,8 +57,8 @@ Attribute VB_Name = "Catalog"
 ```  
   
 ## See Also  
- [ActiveConnection Property (ADOX)](../../../ado/reference/adox-api/activeconnection-property-adox.md)   
- [Catalog Object (ADOX)](../../../ado/reference/adox-api/catalog-object-adox.md)   
- [Table Object (ADOX)](../../../ado/reference/adox-api/table-object-adox.md)   
- [Tables Collection (ADOX)](../../../ado/reference/adox-api/tables-collection-adox.md)   
- [Type Property (Table) (ADOX)](../../../ado/reference/adox-api/type-property-table-adox.md)
+ [ActiveConnection Property (ADOX)](./activeconnection-property-adox.md)   
+ [Catalog Object (ADOX)](./catalog-object-adox.md)   
+ [Table Object (ADOX)](./table-object-adox.md)   
+ [Tables Collection (ADOX)](./tables-collection-adox.md)   
+ [Type Property (Table) (ADOX)](./type-property-table-adox.md)

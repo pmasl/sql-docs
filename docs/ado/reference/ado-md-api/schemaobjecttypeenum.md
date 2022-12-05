@@ -1,31 +1,24 @@
 ---
-title: "SchemaObjectTypeEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "SchemaObjectTypeEnum"
+description: "SchemaObjectTypeEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "SchemaObjectTypeEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SchemaObjectTypeEnum enumeration [ADO MD]"
-ms.assetid: bf53939f-5543-40ac-a707-aa35e9bde1dd
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # SchemaObjectTypeEnum
-Specifies the type of object to be retrieved by the [GetSchemaObject](../../../ado/reference/ado-md-api/getschemaobject-method-ado-md.md) method.  
+Specifies the type of object to be retrieved by the [GetSchemaObject](./getschemaobject-method-ado-md.md) method.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
-|**adObjectTypeDimension**|1|A [Dimension](../../../ado/reference/ado-md-api/dimension-object-ado-md.md) object.|  
-|**adObjectTypeHierarchy**|2|A [Hierarchy](../../../ado/reference/ado-md-api/hierarchy-object-ado-md.md) object.|  
-|**adObjectTypeLevel**|3|A [Level](../../../ado/reference/ado-md-api/level-object-ado-md.md) object.|  
-|**adObjectTypeMember**|4|A [Member](../../../ado/reference/ado-md-api/member-object-ado-md.md) object.|
+|**adObjectTypeDimension**|1|A [Dimension](./dimension-object-ado-md.md) object.|  
+|**adObjectTypeHierarchy**|2|A [Hierarchy](./hierarchy-object-ado-md.md) object.|  
+|**adObjectTypeLevel**|3|A [Level](./level-object-ado-md.md) object.|  
+|**adObjectTypeMember**|4|A [Member](./member-object-ado-md.md) object.|

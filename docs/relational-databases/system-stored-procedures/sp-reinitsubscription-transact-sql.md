@@ -1,29 +1,25 @@
 ---
+description: "sp_reinitsubscription (Transact-SQL)"
 title: "sp_reinitsubscription (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_reinitsubscription"
   - "sp_reinitsubscription_TSQL"
 helpviewer_keywords: 
   - "sp_reinitsubscription"
 ms.assetid: d56ae218-6128-4ff9-b06c-749914505c7b
-caps.latest.revision: 32
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_reinitsubscription (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Marks the subscription for reinitialization. This stored procedure is executed at the Publisher for push subscriptions.  
   
@@ -44,31 +40,31 @@ sp_reinitsubscription [ [ @publication = ] 'publication' ]
 ```  
   
 ## Arguments  
- [ **@publication=**] **'***publication***'**  
+`[ @publication = ] 'publication'`
  Is the name of the publication. *publication* is **sysname**, with a default of all.  
   
- [ **@article=**]  **'***article***'**  
+`[ @article = ] 'article'`
  Is the name of the article. *article* is **sysname**, with a default of all. For an immediate-updating publication, *article* must be **all**; otherwise, the stored procedure skips the publication and reports an error.  
   
- [ **@subscriber=**]  **'***subscriber***'**  
+`[ @subscriber = ] 'subscriber'`
  Is the name of the Subscriber. *subscriber* is **sysname**, with no default.  
   
- [ **@destination_db=**]  **'***destination_db***'**  
+`[ @destination_db = ] 'destination_db'`
  Is the name of the destination database. *destination_db* is **sysname**, with a default of all.  
   
- [ **@for_schema_change=**]  **'***for_schema_change***'**  
+`[ @for_schema_change = ] 'for_schema_change'`
  Indicates whether reinitialization occurs as a result of a schema change at the publication database. *for_schema_change* is **bit**, with a default of 0. If **0**, active subscriptions for publications that allow immediate updating are reactivated as long as the whole publication, and not just some of its articles, are reinitialized. This means that the reinitialization is being initiated as a result of schema changes. If **1**, active subscriptions are not reactivated until the Snapshot Agent runs.  
   
- [ **@publisher=** ] **'***publisher***'**  
- Specifies a non-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] publisher. *publisher* is **sysname**, with a default of NULL.  
+`[ @publisher = ] 'publisher'`
+ Specifies a non- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] publisher. *publisher* is **sysname**, with a default of NULL.  
   
 > [!NOTE]  
 >  *publisher* should not be used for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Publishers.  
   
- [ **@ignore_distributor_failure=** ] *ignore_distributor_failure*  
+`[ @ignore_distributor_failure = ] ignore_distributor_failure`
  Allows reinitialization even if the Distributor does not exist or is offline. *ignore_distributor_failure* is **bit**, with a default of 0. If **0**, reinitialization fails if the Distributor does not exist or is offline.  
   
- [ **@invalidate_snapshot=** ] *invalidate_snapshot*  
+`[ @invalidate_snapshot = ] invalidate_snapshot`
  Invalidates the existing publication snapshot. *invalidate_snapshot* is **bit**, with a default of 0. If **1**, a new snapshot is generated for the publication.  
   
 ## Return Code Values  

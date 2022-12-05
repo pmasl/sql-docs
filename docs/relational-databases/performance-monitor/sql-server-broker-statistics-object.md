@@ -1,27 +1,24 @@
 ---
-title: "SQL Server, Broker Statistics Object | Microsoft Docs"
+title: "SQL Server, Broker Statistics object"
+description: Learn about the SQLServer:Broker Statistics performance object, which contains performance counters that report Service Broker information for Database Engine.
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/14/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLServer:Broker Statistics"
   - "Broker Statistics object"
-ms.assetid: e9e36f01-93f6-4e6e-90c6-c7f3fd121737
-caps.latest.revision: 32
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server, Broker Statistics Object
-  The SQLServer:Broker Statistics performance object contains performance counters that report general [!INCLUDE[ssSB](../../includes/sssb-md.md)] information for an instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)]. The following table lists the counters that this object contains:  
+# SQL Server, Broker Statistics object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
+  The **SQLServer:Broker Statistics** performance object contains performance counters that report general [!INCLUDE[ssSB](../../includes/sssb-md.md)] information for an instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)]. The following table lists the counters that this object contains:  
   
-|SQL Server Broker Statistics counters|Description|  
+|**SQL Server Broker Statistics** counters|Description|  
 |-------------------------------------------|-----------------|  
 |**Activation Errors Total**|The number of times a [!INCLUDE[ssSB](../../includes/sssb-md.md)] activation stored procedure exited with an error.|  
 |**Broker Transaction Rollbacks**|The number of rolled-back transactions that contained DML statements related to [!INCLUDE[ssSB](../../includes/sssb-md.md)], such as SEND and RECEIVE.|  
@@ -56,12 +53,22 @@ manager: "jhubbard"
 |**Forwarded Msg Discarded/sec**|The number of messages per second that this computer received for forwarding, but did not successfully forward.|  
 |**Forwarded Pending Msg Bytes**|The total size of the messages currently held for forwarding.|  
 |**Forwarded Pending Msg Count**|The total number of messages currently held for forwarding.|  
-|**SQL RECEIVE Total**|The total number of [!INCLUDE[tsql](../../includes/tsql-md.md)] RECEIVE statements processed.|  
-|**SQL RECEIVEs/sec**|The number of [!INCLUDE[tsql](../../includes/tsql-md.md)] RECEIVE statements processed per second.|  
+|**SQL RECEIVE Total**|The total number of [!INCLUDE[tsql](../../includes/tsql-md.md)] RECEIVE statements processed by the Broker.|  
+|**SQL RECEIVEs/sec**|The number of [!INCLUDE[tsql](../../includes/tsql-md.md)] RECEIVE statements processed by the Broker per second.|  
 |**SQL SEND Total**|The total number of [!INCLUDE[tsql](../../includes/tsql-md.md)] SEND statements executed.|  
 |**SQL SENDs/sec**|The number of [!INCLUDE[tsql](../../includes/tsql-md.md)] SEND statements executed per second.|  
+
+ 
+## Example
+
+You begin to explore the query performance counters in this object using this T-SQL query on the [sys.dm_os_performance_counters](../system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md) dynamic management view:
+
+```sql
+SELECT * FROM sys.dm_os_performance_counters
+WHERE object_name LIKE '%Broker Statistics%';
+```  
   
-## See Also  
+## See also  
  [SQL Server Service Broker](../../database-engine/configure-windows/sql-server-service-broker.md)   
  [Monitor Resource Usage &#40;System Monitor&#41;](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)  
   

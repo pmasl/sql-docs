@@ -1,19 +1,12 @@
 ---
-title: "SQLServerConnection Methods | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerConnection Methods"
+description: "SQLServerConnection Methods"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: c3db6be0-9e2b-4408-ab22-b6ecfc42961e
-caps.latest.revision: 23
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerConnection Methods
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

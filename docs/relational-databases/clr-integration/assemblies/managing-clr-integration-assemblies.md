@@ -1,27 +1,22 @@
 ---
-title: "Managing CLR Integration Assemblies | Microsoft Docs"
-ms.custom: ""
+title: "Managing CLR Integration Assemblies"
+description: You can host managed DLL assemblies in SQL Server.  You can register, alter, and drop assemblies, and also manage associated files and permissions.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "database objects [CLR integration], assemblies"
   - "common language runtime [SQL Server], assemblies"
   - "assemblies [CLR integration], managing"
+dev_langs:
+  - "TSQL"
 ms.assetid: bdbbf325-14f6-460e-a35a-d3861d3c961e
-caps.latest.revision: 56
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Managing CLR Integration Assemblies
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Managed code is compiled and then deployed in units called an assembly. An assembly is packaged as a DLL or executable (.exe) file. While an executable file can run on its own, a DLL must be hosted in an existing application. Managed DLL assemblies can be loaded into and hosted by [!INCLUDE[msCoName](../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] requires you to register the assembly in a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] database using the CREATE ASSEMBLY statement, before it can be loaded in the process and used. Assemblies can also be updated from a more recent version using the ALTER ASSEMBLY statement, or removed from [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] using the DROP ASSEMBLY statement.  
   
  Assembly information is stored in the **sys.assembly_files** table in the database where the assembly has been installed. The **sys.assembly_files** table contains the following columns.  

@@ -1,14 +1,12 @@
 ---
-title: "Solutions (SQL Server Management Studio) | Microsoft Docs"
-ms.custom: ""
+description: "Solutions (SQL Server Management Studio)"
+title: "Solutions (SQL Server Management Studio)"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "solutions [SQL Server Management Studio]"
   - "SQL Server Management Studio [SQL Server], solutions"
@@ -16,16 +14,15 @@ helpviewer_keywords:
   - "SQL Server Management Studio [SQL Server], projects"
   - "scripts [SQL Server], SQL Server Management Studio"
 ms.assetid: d06a8a05-7201-4055-8cf3-21bcb4e82c25
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Solutions (SQL Server Management Studio)
-A [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull_md.md)] solution is a collection of one or more related projects. Projects are containers that developers use to organize related files, such as sets of commonly used administration scripts.  
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+A [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] solution is a collection of one or more related projects. Projects are containers that developers use to organize related files, such as sets of commonly used administration scripts.  
   
 ## Solution Overview  
-You can use [!INCLUDE[ssManStudio](../../includes/ssmanstudio_md.md)] as a script development platform for [!INCLUDE[ssDE](../../includes/ssde_md.md)] and [!INCLUDE[ssASnoversion](../../includes/ssasnoversion_md.md)]. Use the [!INCLUDE[ssManStudio](../../includes/ssmanstudio_md.md)] code editors to develop scripts and queries for relational and multidimensional databases, and collect related scripts and queries together in projects.  
+You can use [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] as a script development platform for [!INCLUDE[ssDE](../../includes/ssde_md.md)] and [!INCLUDE[ssASnoversion](../../includes/ssasnoversion_md.md)]. Use the [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] code editors to develop scripts and queries for relational and multidimensional databases, and collect related scripts and queries together in projects.  
   
 Projects can contain:  
   
@@ -33,9 +30,9 @@ Projects can contain:
   
 -   Connection information and files used by the queries and scripts.  
   
-One or more related projects can be combined in a solution. Solutions and projects can be managed by using the Solution Explorer pane in [!INCLUDE[ssManStudio](../../includes/ssmanstudio_md.md)].  
+One or more related projects can be combined in a solution. Solutions and projects can be managed by using the Solution Explorer pane in [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)].  
   
-Solutions and projects can be integrated into a [!INCLUDE[msCoName](../../includes/msconame_md.md)] Visual SourceSafe (VSS) database or other third-party source control providers, for development change tracking and life-cycle management.  
+Solutions and projects can be integrated into a [!INCLUDE[msCoName](../../includes/msconame-md.md)] Visual SourceSafe (VSS) database or other third-party source control providers, for development change tracking and life-cycle management.  
   
 ## Solution Tasks  
   
@@ -53,5 +50,4 @@ Solutions and projects can be integrated into a [!INCLUDE[msCoName](../../includ
 ## See Also  
 [Solution Explorer](../../ssms/solution/solution-explorer.md)  
 [Projects &#40;SQL Server Management Studio&#41;](../../ssms/solution/projects-sql-server-management-studio.md)  
-[Solution Explorer Source Control](https://msdn.microsoft.com/en-us/library/ms173879.aspx)  
-  
+[Solution Explorer Source Control](./solution-explorer.md)  

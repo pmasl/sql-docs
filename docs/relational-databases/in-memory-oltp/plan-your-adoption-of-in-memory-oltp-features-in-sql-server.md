@@ -1,22 +1,18 @@
 ---
-title: "Plan your adoption of In-Memory OLTP Features in SQL Server | Microsoft Docs"
-ms.custom: ""
-ms.date: "05/08/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine-imoltp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Plan adoption of in-memory OLTP "
+description: Learn how the adoption of In-Memory OLTP features in SQL Server affects other aspects of your business system.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.date: "01/28/2019"
+ms.service: sql
+ms.subservice: in-memory-oltp
+ms.topic: conceptual
+ms.custom: seo-dt-2019
 ms.assetid: 041b428f-781d-4628-9f34-4d697894e61e
-caps.latest.revision: 4
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Plan your adoption of In-Memory OLTP Features in SQL Server
-[!INCLUDE[tsql-appliesto-ss2014-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 
 This article describes the ways in which the adoption of In-Memory features affects other aspects of your business system.
@@ -28,7 +24,7 @@ This article describes the ways in which the adoption of In-Memory features affe
 
 The following subsections discuss factors you must consider when you plan to adopt and implement In-Memory features. A lot of explanatory information is available at:
 
-- [Use In-Memory OLTP to improve your application performance in Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-in-memory-oltp-migration/)
+- [Use In-Memory OLTP to improve your application performance in Azure SQL Database](/azure/azure-sql/in-memory-oltp-configure)
 
 
 
@@ -38,7 +34,7 @@ One prerequisite for using the In-Memory features can involve the edition or ser
 
 - [Requirements for Using Memory-Optimized Tables](../../relational-databases/in-memory-oltp/requirements-for-using-memory-optimized-tables.md)
 	- [Editions and Components of SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md)
-	- [SQL Database pricing tier recommendations](https://azure.microsoft.com/documentation/articles/sql-database-service-tier-advisor/)
+	- [SQL Database pricing tier recommendations](/azure/azure-sql/database/service-tiers-vcore)
 
 
 ### A.2 Forecast the amount of active memory
@@ -55,8 +51,8 @@ A memory-optimized table which contains 200 GB of data requires more than 200 GB
 
 For a database hosted in the Azure SQL Database cloud service, your chosen service tier affects the amount of active memory your database is allowed to consume. You should plan to monitor the memory usage of your database by using an alert. For details, see:
 
-- Review the In-Memory OLTP Storage limits for your [Pricing Tier](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers#single-database-service-tiers-and-performance-levels)
-- [Monitor In-Memory OLTP Storage](https://azure.microsoft.com/documentation/articles/sql-database-in-memory-oltp-monitoring/)
+- Review the In-Memory OLTP Storage limits for your [Pricing Tier](/azure/sql-database/sql-database-purchase-models)
+- [Monitor In-Memory OLTP Storage](/azure/azure-sql/in-memory-oltp-monitor-space)
 
 #### Memory-optimized table variables
 
@@ -93,7 +89,7 @@ One way to convert your disk-based table to a memory-optimized table is to code 
 The Memory Optimization Advisor tool can generate a script to help implement the conversion of a disk-based table to a memory-optimized table. The tool is installed as part of SQL Server Data Tools (SSDT).
 
 - [Memory Optimization Advisor](../../relational-databases/in-memory-oltp/memory-optimization-advisor.md)
-- [Download SQL Server Data Tools (SSDT)](https://msdn.microsoft.com/library/mt204009.aspx)
+- [Download SQL Server Data Tools (SSDT)](../../ssdt/download-sql-server-data-tools-ssdt.md)
 
 
 #### .dacpac file
@@ -110,7 +106,7 @@ You work with .dacpac files in the context of a Visual Studio project of type *D
 
 For guidance on whether In-Memory OLTP features can improve the performance of your particular application, see:
 
-- [In-Memory OLTP (In-Memory Optimization)](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)
+- [In-Memory OLTP (In-Memory Optimization)](./overview-and-usage-scenarios.md)
 
 
 
@@ -199,7 +195,9 @@ This section describes situations where the excellent performance of memory-opti
 
 All indexes on a memory-optimized table are created and managed by the table-related statements CREATE TABLE and ALTER TABLE. You cannot target a memory-optimized table with a CREATE INDEX statement.
 
-The traditional b-tree nonclustered index is often the sensible and simple choice when you first implement a memory-optimized table. Later, after you see how your application performs, you can consider swapping another index type.
+The traditional B-tree nonclustered index is often the sensible and simple choice when you first implement a memory-optimized table. Later, after you see how your application performs, you can consider swapping another index type.
+
+[!INCLUDE [sql-b-tree](../../includes/sql-b-tree.md)]
 
 Two special types of indexes need discussion in the context of a memory-optimized table: Hash indexes, and Columnstore indexes.
 
@@ -212,7 +210,7 @@ For an overview of indexes on memory-optimized tables, see:
 
 Hash indexes can be the fastest format for accessing one specific row by its exact primary key value by using the '**=**' operator.
 
-- Inexact operators such as '**!=**', '**>**', or '**BETWEEN**' would harm performace if used with a hash index.
+- Inexact operators such as '**!=**', '**>**', or '**BETWEEN**' would harm performance if used with a hash index.
 
 - A hash index might not be the best choice if the rate of key value duplication becomes too high.
 
@@ -251,126 +249,15 @@ A bit more about LOB and off-row columns is available at:
 ## E. Limitations of native procs
 
 
-Particular elements of Transact-SQL are not supported in natively compiled stored procedures.
+Particular elements of Transact-SQL are not supported in natively compiled T-SQL modules, including stored procedures. For details about which features are supported, see:
 
-For considerations when migrating a Transact-SQL script to a native proc, see:
+- [Supported Features for Natively Compiled T-SQL Modules](../../relational-databases/in-memory-oltp/supported-features-for-natively-compiled-t-sql-modules.md)
 
-- [Migration Issues for Natively Compiled Stored Procedures](../../relational-databases/in-memory-oltp/migration-issues-for-natively-compiled-stored-procedures.md)
+For considerations when migrating a Transact-SQL modules that uses unsupported features to natively compiled, see:
 
+- [Migration Issues for Natively Compiled Stored Procedures](./a-guide-to-query-processing-for-memory-optimized-tables.md)
 
-### E.1 No CASE in a native proc
-
-The CASE expression in Transact-SQL cannot be used inside a native proc. You can fashion a work-around:
-
-- [Implementing a CASE Expression in a Natively Compiled Stored Procedure](../../relational-databases/in-memory-oltp/implementing-a-case-expression-in-a-natively-compiled-stored-procedure.md)
-
-
-### E.2 No MERGE in a native proc
-
-
-The Transact-SQL [MERGE statement](../../t-sql/statements/merge-transact-sql.md) has similarities to what is often called *upsert* functionality. A native proc cannot use the MERGE statement. However, you can achieve the same functionality as MERGE by using a combination of SELECT plus UPDATE plus INSERT statements. A code example is at:
-
-- [Implementing MERGE Functionality in a Natively Compiled Stored Procedure](../../relational-databases/in-memory-oltp/implementing-merge-functionality-in-a-natively-compiled-stored-procedure.md)
-
-
-
-### E.3 No joins in UPDATE or DELETE statements, in a native proc
-
-Transact-SQL statements in a native proc can access memory-optimized tables only. In UPDATE and DELETE statements, you cannot join any tables. Attempts in a native proc fail with a message such as Msg 12319 which explains that you:
-
-- Cannot use the FROM clause in an UPDATE statement.
-- Cannot specify a table source in a DELETE statement.
-
-No type of subquery provides a work-around. However, you can use a memory-optimized table variable to achieve a join outcome over multiple statements. Two code samples follow:
-
-- DELETE...JOIN... we want to run in a native proc, but cannot.
-- A work-around set of Transact-SQL statements that achieves the delete join.
-
-
-*Scenario:* The table TabProjectEmployee has a unique key of two columns: ProjectId and EmployeeId. Each row indicates the assignment of an employee to an active project. When an Employee leaves the company, the employee must be deleted from the TabProjectEmployee table.
-
-
-#### Invalid T-SQL, DELETE...JOIN
-
-
-A native proc cannot have a DELETE...JOIN such as the following.
-
-
-```tsql
-DELETE pe
-	FROM
-		     TabProjectEmployee   AS pe
-		JOIN TabEmployee          AS e
-
-			ON pe.EmployeeId = e.EmployeeId
-	WHERE
-			e.EmployeeStatus = 'Left-the-Company'
-;
-```
-
-
-#### Valid work-around, manual delete...join
-
-Next is the work-around code sample, in two parts:
-
-1. The CREATE TYPE is executed one time, days before the type is first used by any actual table variable.
-
-2. The business process uses the created type. It begins by declaring a table variable of the created table type.
-
-
-```tsql
-
-CREATE TYPE dbo.type_TableVar_EmployeeId
-	AS TABLE  
-	(
-		EmployeeId   bigint   NOT NULL
-	);
-```
-
-
-Next, use the create table type.
-
-
-```tsql
-DECLARE @MyTableVarMo  dbo.type_TableVar_EmployeeId  
-
-INSERT INTO @MyTableVarMo (EmployeeId)
-	SELECT
-			e.EmployeeId
-		FROM
-				 TabProjectEmployee  AS pe
-			JOIN TabEmployee         AS e  ON e.EmployeeId = pe.EmployeeId
-		WHERE
-			e.EmployeeStatus = 'Left-the-Company'
-;
-
-DECLARE @EmployeeId   bigint;
-
-WHILE (1=1)
-BEGIN
-	SET @EmployeeId = NULL;
-
-	SELECT TOP 1 @EmployeeId = v.EmployeeId
-		FROM @MyTableVarMo  AS v;
-
-	IF (NULL = @Employeed) BREAK;
-	
-	DELETE TabProjectEmployee
-		WHERE EmployeeId = @EmployeeId;
-
-	DELETE @MyTableVarMo
-		WHERE EmployeeId = @EmployeeId;
-END;
-```
-
-
-### E.4 Query plan limitations for native procs
-
-
-Some types of query plans are not available for native procs. Many details are discussed in:
-
-- [A Guide to Query Processing for Memory-Optimized Tables](../../relational-databases/in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables.md)
-
+Besides limitations on certain elements of Transact-SQL, there are also limitation on query operators supported in natively compiled T-SQL modules. Because of these limitations, natively compiled stored procedures are not suitable for analytical queries that process large data sets.
 
 #### No parallel processing in a native proc
 
@@ -404,12 +291,10 @@ In SQL Server 2016:
 You can make your Transact-SQL scripts more robust against a possible transaction error by adding *retry logic* to your scripts. Retry logic is more likely to help when UPDATE and DELETE calls are frequent, or if the memory-optimized table is referenced by a foreign key in another table. For details, see:
 
 - [Transactions with Memory-Optimized Tables](../../relational-databases/in-memory-oltp/transactions-with-memory-optimized-tables.md)
-- [Transaction dependency limits with memory optimized tables – Error 41839](https://blogs.msdn.microsoft.com/sqlcat/2016/07/11/transaction-dependency-limits-with-memory-optimized-tables-error-41839/)
+- [Transaction dependency limits with memory optimized tables - Error 41839](/archive/blogs/sqlcat/transaction-dependency-limits-with-memory-optimized-tables-error-41839)
 
 
 
 ## Related links
 
-- [In-Memory OLTP (In-Memory Optimization)](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)
-
-
+- [In-Memory OLTP (In-Memory Optimization)](./overview-and-usage-scenarios.md)

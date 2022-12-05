@@ -1,24 +1,21 @@
 ---
-title: "Failover Policy for Failover Cluster Instances | Microsoft Docs"
-ms.custom: ""
+title: "Failover policy for failover cluster instances"
+description: A description of the different failover policies available for a SQL Server failover cluster instance. 
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: failover-cluster-instance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "flexible failover policy"
 ms.assetid: 39ceaac5-42fa-4b5d-bfb6-54403d7f0dc9
-caps.latest.revision: 45
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # Failover Policy for Failover Cluster Instances
-  In a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] failover cluster instance (FCI), only one node can own the Windows Server Failover Cluster (WSFC) cluster resource group at a given time. The client requests are served through this node in the FCI. In the case of a failure and an unsuccessful restart, the group ownership is moved to another WSFC node in the FCI. This process is called failover. [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] increases the reliability of failure detection and provides a flexible failover policy.  
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
+  In a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] failover cluster instance (FCI), only one node can own the Windows Server Failover Cluster (WSFC) cluster resource group at a given time. The client requests are served through this node in the FCI. In the case of a failure and an unsuccessful restart, the group ownership is moved to another WSFC node in the FCI. This process is called failover. [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] increases the reliability of failure detection and provides a flexible failover policy.  
   
  A [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] FCI depends on the underlying WSFC service for failover detection. Therefore, two mechanisms determine the failover behavior for FCI: the former is native WSFC functionality, and the latter is functionality added by [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] setup.  
   
@@ -95,18 +92,17 @@ manager: "jhubbard"
 |0|No automatic failover or restart|Indicates that no failover or restart will be triggered automatically on any failure conditions. This level is for system maintenance purposes only.|  
 |1|Failover or restart on server down|Indicates that a server restart or failover will be triggered if the following condition is raised:<br /><br /> SQL Server service is down.|  
 |2|Failover or restart on server unresponsive|Indicates that a server restart or failover will be triggered if any of the following conditions are raised:<br /><br /> SQL Server service is down.<br /><br /> SQL Server instance is not responsive (Resource DLL cannot receive data from sp_server_diagnostics within the HealthCheckTimeout settings).|  
-|3*|Failover or restart on critical server errors|Indicates that a server restart or failover will be triggered if any of the following conditions are raised:<br /><br /> SQL Server service is down.<br /><br /> SQL Server instance is not responsive (Resource DLL cannot receive data from sp_server_diagnostics within the HealthCheckTimeout settings).<br /><br /> System stored procedure sp_server_diagnostics returns ‘system error’.|  
-|4|Failover or restart on moderate server errors|Indicates that a server restart or failover will be triggered if any of the following conditions are raised:<br /><br /> SQL Server service is down.<br /><br /> SQL Server instance is not responsive (Resource DLL cannot receive data from sp_server_diagnostics within the HealthCheckTimeout settings).<br /><br /> System stored procedure sp_server_diagnostics returns ‘system error’.<br /><br /> System  stored procedure sp_server_diagnostics returns ‘resource error’.|  
-|5|Failover or restart on any qualified failure conditions|Indicates that a server restart or failover will be triggered if any of the following conditions are raised:<br /><br /> SQL Server service is down.<br /><br /> SQL Server instance is not responsive (Resource DLL cannot receive data from sp_server_diagnostics within the HealthCheckTimeout settings).<br /><br /> System stored procedure sp_server_diagnostics returns ‘system error’.<br /><br /> System  stored procedure sp_server_diagnostics returns ‘resource error’.<br /><br /> System stored procedure sp_server_diagnostics returns ‘query_processing error’.|  
+|3*|Failover or restart on critical server errors|Indicates that a server restart or failover will be triggered if any of the following conditions are raised:<br /><br /> SQL Server service is down.<br /><br /> SQL Server instance is not responsive (Resource DLL cannot receive data from sp_server_diagnostics within the HealthCheckTimeout settings).<br /><br /> System stored procedure sp_server_diagnostics returns 'system error'.|  
+|4|Failover or restart on moderate server errors|Indicates that a server restart or failover will be triggered if any of the following conditions are raised:<br /><br /> SQL Server service is down.<br /><br /> SQL Server instance is not responsive (Resource DLL cannot receive data from sp_server_diagnostics within the HealthCheckTimeout settings).<br /><br /> System stored procedure sp_server_diagnostics returns 'system error'.<br /><br /> System  stored procedure sp_server_diagnostics returns 'resource error'.|  
+|5|Failover or restart on any qualified failure conditions|Indicates that a server restart or failover will be triggered if any of the following conditions are raised:<br /><br /> SQL Server service is down.<br /><br /> SQL Server instance is not responsive (Resource DLL cannot receive data from sp_server_diagnostics within the HealthCheckTimeout settings).<br /><br /> System stored procedure sp_server_diagnostics returns 'system error'.<br /><br /> System  stored procedure sp_server_diagnostics returns 'resource error'.<br /><br /> System stored procedure sp_server_diagnostics returns 'query_processing error'.|  
   
  *Default Value  
   
 ####  <a name="respond"></a> Responding to Failures  
- After one or more failure conditions are detected, how the WSFC service responds to the failures depends on the WSFC quorum state and the restart and failover settings of the FCI resource group. If the FCI has lost its WSFC quorum, then the entire FCI is brought offline and the FCI has lost its high availability. If the FCI still retains its WSFC quorum, then the WSFC service may respond by first attempting to restart the failed node and then failover if the restart attempts are unsuccessful. The restart and failover settings are configured in the Failover Cluster Manager snap-in. For more information these settings, see [\<Resource> Properties: Policies Tab](http://technet.microsoft.com/library/cc725685.aspx).  
+ After one or more failure conditions are detected, how the WSFC service responds to the failures depends on the WSFC quorum state and the restart and failover settings of the FCI resource group. If the FCI has lost its WSFC quorum, then the entire FCI is brought offline and the FCI has lost its high availability. If the FCI still retains its WSFC quorum, then the WSFC service may respond by first attempting to restart the failed node and then failover if the restart attempts are unsuccessful. The restart and failover settings are configured in the Failover Cluster Manager snap-in. For more information these settings, see [\<Resource> Properties: Policies Tab](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725685(v=ws.11)).  
   
  For more information on maintaining quorum health, see [WSFC Quorum Modes and Voting Configuration &#40;SQL Server&#41;](../../../sql-server/failover-clusters/windows/wsfc-quorum-modes-and-voting-configuration-sql-server.md).  
   
 ## See Also  
  [ALTER SERVER CONFIGURATION &#40;Transact-SQL&#41;](../../../t-sql/statements/alter-server-configuration-transact-sql.md)  
-  
   

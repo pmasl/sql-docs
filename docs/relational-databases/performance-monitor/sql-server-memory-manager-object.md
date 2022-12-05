@@ -1,24 +1,20 @@
 ---
-title: "SQL Server, Memory Manager Object | Microsoft Docs"
+title: "SQL Server, Memory Manager object"
+description: Learn about the Memory Manager object, which provides counters to monitor overall server memory usage in SQL Server. 
 ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/13/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLServer:Memory Manager"
   - "Memory Manager object"
-ms.assetid: dbf49000-eeb0-4e9c-a361-5092363920dc
-caps.latest.revision: 29
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server, Memory Manager Object
+# SQL Server, Memory Manager object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   The **Memory Manager** object in Microsoft [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] provides counters to monitor overall server memory usage. Monitoring overall server memory usage to gauge user activity and resource usage can help you to identify performance bottlenecks. Monitoring the memory used by an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] can help determine:  
   
 -   If bottlenecks exist from inadequate physical memory for storing frequently accessed data in cache. If memory is inadequate, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] must retrieve the data from disk.  
@@ -32,7 +28,7 @@ manager: "jhubbard"
 |----------------------------------------|-----------------|  
 |**Connection Memory (KB)**|Specifies the total amount of dynamic memory the server is using for maintaining connections.|  
 |**Database Cache Memory (KB)**|Specifies the amount of memory the server is currently using for the database pages cache.|  
-|**External benefit of memory**|The external value of memory, in ms per page per ms, multiplied by 10 billion and truncated to an integer.| 
+|**External benefit of memory**| An internal estimation of the performance benefit from adding memory to a specific cache. It is used by the engine to balance memory usage between cache and is useful to support when troubleshooting cases with unexpected cache growth. The value is presented as an integer based on an internal calculation. | 
 |**Free Memory (KB)**|Specifies the amount of committed memory currently not used by the server.|  
 |**Granted Workspace Memory (KB)**|Specifies the total amount of memory currently granted to executing processes, such as hash, sort, bulk copy, and index creation operations.|  
 |**Lock Blocks**|Specifies the current number of lock blocks in use on the server (refreshed periodically). A lock block represents an individual locked resource, such as a table, page, or row.|  
@@ -50,9 +46,19 @@ manager: "jhubbard"
 |**Stolen Server Memory (KB)**|Specifies the amount of memory the server is using for purposes other than database pages.|  
 |**Target Server Memory (KB)**|Indicates the ideal amount of memory the server can consume.|  
 |**Total Server Memory (KB)**|Specifies the amount of memory the server has committed using the memory manager.|  
+ 
   
-## See Also  
+## Example
+
+You begin to explore the query performance counters in this object using this T-SQL query on the [sys.dm_os_performance_counters](../system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md) dynamic management view:
+
+```sql
+SELECT * FROM sys.dm_os_performance_counters
+WHERE object_name LIKE '%Memory Manager%';
+```  
+
+## See also  
  [Monitor Resource Usage &#40;System Monitor&#41;](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)   
  [SQL Server, Buffer Manager Object](../../relational-databases/performance-monitor/sql-server-buffer-manager-object.md)   
-[sys.dm_os_performance_counters (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md)  
+ [sys.dm_os_performance_counters (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md)  
   

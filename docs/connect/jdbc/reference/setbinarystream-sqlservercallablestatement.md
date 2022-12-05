@@ -1,19 +1,12 @@
 ---
-title: "setBinaryStream (SQLServerCallableStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setBinaryStream (SQLServerCallableStatement)"
+description: "setBinaryStream (SQLServerCallableStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 24866ea9-804a-442f-94e2-475c11dd8b9f
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # setBinaryStream (SQLServerCallableStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,22 +1,15 @@
 ---
-title: "Creating and Executing a Simple Command | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "Creating and Executing a Simple Command"
+description: "Creating and Executing a Simple Command"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "Command object [ADO], creating and executing"
   - "commands [ADO], creating and executing"
-ms.assetid: 0b81af6f-b9ae-4f7c-b59b-b5bdd775036f
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Creating and Executing a Simple Command
 A simple command is one that is not parameterized and requires no persistence. There are three ways to create and execute a simple command.  

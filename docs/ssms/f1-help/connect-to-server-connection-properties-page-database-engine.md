@@ -1,36 +1,34 @@
 ---
-title: "Connect to Server (Connection Properties Page) Database Engine | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Connect to Server (Connection Properties Page) Database Engine
+description: "Connect to Server (Connection Properties Page) Database Engine"
+ms.service: sql
+ms.subservice: ssms
+ms.topic: ui-reference
 f1_keywords: 
   - "sql13.swb.connecttoce.connectionproperties.f1"
   - "sql13.swb.connecttosqlserver.connectionproperties.f1"
-ms.assetid: edc1143c-6a47-4b02-92ab-441bdea8ea8a
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: 08/14/2017
 ---
+
 # Connect to Server (Connection Properties Page) Database Engine
-Use this tab to view or specify options when connecting to an instance of [!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion_md.md)] or registering [!INCLUDE[ssDE](../../includes/ssde_md.md)] in **Registered Servers**. **Connect** and **Options** only appear in this dialog box when connecting to an instance of the [!INCLUDE[ssDE](../../includes/ssde_md.md)]. **Test** and **Save** only appear in this dialog box when registering [!INCLUDE[ssDE](../../includes/ssde_md.md)].  
+
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
+Use this tab to view or specify options when connecting to an instance of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] or registering [!INCLUDE[ssDE](../../includes/ssde_md.md)] in **Registered Servers**. **Connect** and **Options** only appear in this dialog box when connecting to an instance of the [!INCLUDE[ssDE](../../includes/ssde_md.md)]. **Test** and **Save** only appear in this dialog box when registering [!INCLUDE[ssDE](../../includes/ssde_md.md)].  
   
-## Options  
 **Connect to database**  
-Select a database to connect to from the list. If you select **<default>**, you will be connected to the default database for the server. If you select **<Browse server>**, you can browse the server for the database to which to connect.  
+Select a database to connect to from the list. If you select **\<default\>**, you connect to the default database for the server. If you select **\<Browse server\>**, you can browse the server for the database to which to connect.  
   
-When connecting to an instance of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Database Engine through [!INCLUDE[ssSDSfull](../../includes/sssdsfull_md.md)], you must use [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] Authentication and specify a database in the **Connect to Server** dialog box, on the **Connection Properties** tab. Ensure that you select the **Encrypt connection** checkbox.  
+When connecting to an instance of the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Database Engine through [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)], you must use [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication and specify a database in the **Connect to Server** dialog box, on the **Connection Properties** tab. Ensure that you select the **Encrypt connection** checkbox.  
   
-By default, [!INCLUDE[ssNoVersion](../../includes/ssnoversion_md.md)] connects to **master**. If you specify a user database, you will only see that database and its objects in Object Explorer. If you connect to **master**, you will be able to see all databases. For more information, see the [Windows Azure SQL Database Overview](http://go.microsoft.com/fwlink/?LinkId=163948).  
+By default, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] connects to **master**. When connecting to [!INCLUDE[ssSDS](../../includes/sssds-md.md)], if you specify a user database, you only see that database and its objects in Object Explorer. If you connect to **master**, you can see all databases. For more information, see the [Microsoft Azure SQL Database Overview](/azure/sql-database/sql-database-technical-overview).  
   
 **Network protocol**  
-Select a protocol from the list. The available client protocols are those that you configured using the Client Network Configuration in Computer Management.  
+Select a protocol from the list. The available client protocols are configured using the Client Network Configuration in Computer Management.  
   
 **Network packet size**  
 Enter the size of the network packets to be sent. The default is 4096 bytes.  
@@ -53,6 +51,9 @@ Select to specify the background color for the status bar in a [!INCLUDE[ssDE](.
   
 -   On the **File** menu, when you click **New** and then **Database Engine Query**, the color you that you specify in the **Connect to Server** dialog box applies to that Query Editor window.  
   
+**AD domain name or tenant ID**  
+When connecting with **Active Directory - Universal with MFA** authentication, specify the authenticating domain. This option is only available when using SSMS version 17.2 or later. 
+
 **Reset All**  
 Replace all manually entered connection property values with their defaults.  
   
@@ -69,5 +70,4 @@ When registering [!INCLUDE[ssDE](../../includes/ssde_md.md)] in **Registered Ser
 Saves the settings in **Registered Servers**.  
   
 ## See Also  
-[Connection Properties Dialog Box](../../ssms/f1-help/connection-properties-dialog-box.md)  
-  
+[Connection Properties Dialog Box]()  

@@ -1,19 +1,12 @@
 ---
-title: "Does JDBC Driver Close Open Result Sets | Microsoft Docs"
-ms.custom: ""
+title: "Does JDBC Driver Close Open Result Sets"
+description: "autoCommitFailureClosesAllResultSets Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 1739ecb5-e5cb-4807-b5a8-97c0299929d0
-caps.latest.revision: 14
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # autoCommitFailureClosesAllResultSets Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,15 +1,14 @@
 ---
-title: "Executing Templates That Contain XPath Queries (SQLXMLOLEDB Provider) | Microsoft Docs"
-ms.custom: ""
+title: "Execute templates containing XPath Queries (SQLXMLOLEDB)"
+description: View an example of an ADO application that uses the SQLXMLOLEDB Provider to execute a template containing XPath queries.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "SQLXMLOLEDB Provider, executing template files"
   - "Base Path property"
   - "templates [SQLXML], XPath queries"
@@ -18,12 +17,10 @@ helpviewer_keywords:
   - "Mapping Schema property"
   - "XML templates [SQLXML]"
 ms.assetid: 7368c188-607e-459e-8254-8f23352dfa01
-caps.latest.revision: 29
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Executing Templates That Contain XPath Queries (SQLXMLOLEDB Provider)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   This example shows how to use the following SQLXMLOLEDB Provider-specific properties:  
   
 -   ClientSideXML  

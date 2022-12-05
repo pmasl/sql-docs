@@ -1,22 +1,19 @@
 ---
-title: "Use Table-Valued Parameters (OLE DB) | Microsoft Docs"
+description: "Use Table-Valued Parameters in SQL Server Native Client (OLE DB)"
+title: Use table-valued parameters (Native Client OLE DB provider)
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 ms.assetid: 18cb684f-c307-4fda-a2ab-8b638416c3f0
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Use Table-Valued Parameters (OLE DB)
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# Use Table-Valued Parameters in SQL Server Native Client (OLE DB)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   This sample works with [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] or later. This sample does the following:  
   
@@ -33,15 +30,15 @@ manager: "jhubbard"
  For more information about table-valued parameters, see [Table-Valued Parameters &#40;SQL Server Native Client&#41;](../../relational-databases/native-client/features/table-valued-parameters-sql-server-native-client.md).  
   
 ## Example  
- The first ([!INCLUDE[tsql](../../includes/tsql-md.md)]) code listing creates the database used by the sample.  
+ The first ( [!INCLUDE[tsql](../../includes/tsql-md.md)]) code listing creates the database used by the sample.  
   
  Put the second code listing into a file called stdafx.h.  
   
  Put the third code listing into a file called OLEDBUtils.hpp.  
   
- Compile with ole32.lib oleaut32.lib and execute the fourth (C++) code listing. This application connects to your computer's default [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance. On some Windows operating systems, you will need to change (localhost) or (local) to the name of your [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance. To connect to a named instance, change the connection string from L"(local)" to L"(local)\\\name" , where name is the named instance. By default, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Express installs to a named instance. Make sure your INCLUDE environment variable includes the directory that contains sqlncli.h.  
+ Compile with ole32.lib oleaut32.lib and execute the fourth (C++) code listing. This application connects to your computer's default [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance. On some Windows operating systems, you will need to change (localhost) or (local) to the name of your [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance. To connect to a named instance, change the connection string from L"(local)" to L"(local)\\\name", where name is the named instance. By default, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Express installs to a named instance. Make sure your INCLUDE environment variable includes the directory that contains sqlncli.h.  
   
- The fifth ([!INCLUDE[tsql](../../includes/tsql-md.md)]) code listing creates the database used by the sample.  
+ The fifth ( [!INCLUDE[tsql](../../includes/tsql-md.md)]) code listing creates the database used by the sample.  
   
 ```  
 create database testdb  

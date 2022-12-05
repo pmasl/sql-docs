@@ -1,21 +1,14 @@
 ---
-title: "How to: Perform Transactions | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "How to: perform transactions"
+description: "This topic explains and demonstrates how to perform transactions when using the Microsoft Drivers for PHP for SQL Server"
+author: David-Engel
+ms.author: v-davidengel
+ms.date: "08/10/2020"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: conceptual
+helpviewer_keywords:
   - "transaction support"
-ms.assetid: f4643b85-f929-4919-8951-23394bc5bfa7
-caps.latest.revision: 32
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # How to: Perform Transactions
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -51,7 +44,7 @@ The steps to execute a transaction can be summarized as follows:
   
     By default, the [!INCLUDE[ssDriverPHP](../../includes/ssdriverphp_md.md)] is in auto-commit mode. This means that all queries are automatically committed upon success unless they have been designated as part of an explicit transaction by using **sqlsrv_begin_transaction**.  
   
-    If an explicit transaction is not committed with **sqlsrv_commit**, it will be rolled back upon closing of the connection or termination of the script.  
+    If an explicit transaction is not committed with **sqlsrv_commit**, it is rolled back upon closing of the connection or termination of the script.  
   
     Do not use embedded Transact-SQL to perform transactions. For example, do not execute a statement with "BEGIN TRANSACTION" as the Transact-SQL query to begin a transaction. The expected transactional behavior cannot be guaranteed when you use embedded Transact-SQL to perform transactions.  
   
@@ -68,7 +61,7 @@ The first query in the example retrieves product IDs and quantities for a specif
   
 The ensuing queries (deletion of the sales order and updating of the product inventory quantities) are part of the transaction.  
   
-The example assumes that SQL Server and the [AdventureWorks](http://go.microsoft.com/fwlink/?LinkID=67739) database are installed on the local computer. All output is written to the console when the example is run from the command line.  
+The example assumes that SQL Server and the [AdventureWorks](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) database are installed on the local computer. All output is written to the console when the example is run from the command line.  
   
 ### Code  
   
@@ -148,10 +141,11 @@ function perform_trans_ops($conn, $orderId)
 ```  
   
 ### Comments  
-For the purpose of focusing on transaction behavior, some recommended error handling is not included in the previous example. For a production application, we recommend that any call to a **sqlsrv** function be checked for errors and handled accordingly.  
+For the purpose of focusing on transaction behavior, some recommended error handling is not included in the previous example. For a production application, we recommend checking any call to a **sqlsrv** function for errors and handling them accordingly.
   
 ## See Also  
-[Updating Data &#40;Microsoft Drivers for PHP for SQL Server&#41;](../../connect/php/updating-data-microsoft-drivers-for-php-for-sql-server.md)  
-[Transactions (Database Engine)](http://go.microsoft.com/fwlink/?LinkId=105862)  
+[Updating Data &#40;Microsoft Drivers for PHP for SQL Server&#41;](../../connect/php/updating-data-microsoft-drivers-for-php-for-sql-server.md)
+
+[Transactions (Database Engine)](/previous-versions/sql/sql-server-2008-r2/ms190612(v=sql.105))
+
 [About Code Examples in the Documentation](../../connect/php/about-code-examples-in-the-documentation.md)  
-  

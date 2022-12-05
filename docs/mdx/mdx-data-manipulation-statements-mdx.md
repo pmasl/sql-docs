@@ -1,28 +1,17 @@
 ---
+description: "MDX Data Manipulation Statements (MDX)"
 title: "MDX Data Manipulation Statements (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "MDX [Analysis Services], data manipulation"
-  - "data manipulation [MDX]"
-  - "Multidimensional Expressions [Analysis Services], data manipulation"
-ms.assetid: 320fbb16-f502-4ff8-a768-20851764a66d
-caps.latest.revision: 29
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # MDX Data Manipulation Statements (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   In Multidimensional Expressions (MDX), data manipulation statements retrieve and manipulate data from multidimensional objects. The following table lists the data manipulation statements in MDX.  
   

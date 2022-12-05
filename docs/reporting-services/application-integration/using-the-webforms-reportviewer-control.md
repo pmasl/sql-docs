@@ -1,26 +1,19 @@
 ---
-title: "Using the WebForms ReportViewer Control | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/12/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
+title: "Use WebForms ReportViewer Control"
+description: To view reports deployed to a report server or on a local file system, you can use the WebForms ReportViewer control to render them in a Web application.
+ms.date: 06/12/2017
+ms.service: reporting-services
+ms.subservice: application-integration
+ms.custom: seo-lt-2019
+
+ms.topic: reference
 helpviewer_keywords: 
   - "ReportViewer controls"
 ms.assetid: 4c200f36-4012-4108-8095-370b426ccf8d
-caps.latest.revision: 25
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
-# Using the WebForms ReportViewer Control
+# Use the WebForms ReportViewer Control
   To view reports deployed to a report server or reports that exist on the local file system, you can use the WebForms ReportViewer control to render them in a Web application.  
   
 ## To use the ReportViewer Control in a Web application  
@@ -29,7 +22,7 @@ manager: "erikre"
   
      \- Or -  
   
-     Open an exiting ASP.NET Web Site and add a new Web Form.  
+     Open an existing ASP.NET Web Site and add a new Web Form.  
   
 2.  Locate the **ScriptManager** control in the **AJAX Extensions** group in the **Toolbox** window, and drag it to the design surface of the Web form.  
   
@@ -85,7 +78,7 @@ protected void Page_Init(object sender, EventArgs e)
   
         // Set the report server URL and report path  
         serverReport.ReportServerUrl =  
-            new Uri("http://<Server Name>/reportserver");  
+            new Uri("https://<Server Name>/reportserver");  
         serverReport.ReportPath =  
             "/AdventureWorks Sample Reports/Sales Order Detail";  
   
@@ -121,7 +114,7 @@ Partial Class _Default
   
             'Set the report server URL and report path  
             serverReport.ReportServerUrl = _  
-                New Uri("http://<Server Name>/reportserver")  
+                New Uri("https://<Server Name>/reportserver")  
             serverReport.ReportPath = _  
                 "/AdventureWorks Sample Reports/Sales Order Detail"  
   

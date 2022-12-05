@@ -1,31 +1,25 @@
 ---
-title: "sys.assembly_files (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.assembly_files (Transact-SQL)"
+description: sys.assembly_files (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.assembly_files"
   - "assembly_files_TSQL"
   - "assembly_files"
   - "sys.assembly_files_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.assembly_files catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 1a384a2c-5556-4d12-a2ba-4da781363143
-caps.latest.revision: 30
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # sys.assembly_files (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains a row for each file that makes up an assembly.  
     

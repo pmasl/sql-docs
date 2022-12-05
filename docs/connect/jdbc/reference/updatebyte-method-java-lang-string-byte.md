@@ -1,24 +1,15 @@
 ---
-title: "updateByte Method (java.lang.String, byte) | Microsoft Docs"
-ms.custom: ""
+title: "updateByte Method (java.lang.String, byte)"
+description: "updateByte Method (java.lang.String, byte)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateByte (java.lang.String, byte)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateByte (java.lang.String, byte)"
 apitype: "Assembly"
-ms.assetid: 5416aed2-a5b6-4e3b-9750-90db8cda8cec
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateByte Method (java.lang.String, byte)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

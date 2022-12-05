@@ -1,23 +1,20 @@
 ---
-title: "Semantic Search DDL, Functions, Stored Procedures, and Views | Microsoft Docs"
-ms.custom: ""
+description: "Semantic Search DDL, Functions, Stored Procedures, and Views"
+title: "Semantic Search DDL, functions, stored procedures, & views"
 ms.date: "03/20/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-search"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: search
+ms.topic: conceptual
 helpviewer_keywords: 
   - "semantic search [SQL Server], database objects"
 ms.assetid: 182f395f-3168-48a4-b723-ef4403544f9f
-caps.latest.revision: 14
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
+ms.custom: "seo-lt-2019"
 ---
 # Semantic Search DDL, Functions, Stored Procedures, and Views
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Lists the Transact-SQL statements and the database objects that support statistical semantic search in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
  For the list of statements and database objects that support full-text search, see [Full-Text Search DDL, Functions, Stored Procedures, and Views](../../relational-databases/search/full-text-search-ddl-functions-stored-procedures-and-views.md).  

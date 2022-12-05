@@ -1,28 +1,21 @@
 ---
-title: "GRANT Assembly Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "GRANT Assembly Permissions (Transact-SQL)"
+description: GRANT Assembly Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/12/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "granting permissions [SQL Server], assemblies"
   - "assemblies [CLR integration], permissions"
   - "GRANT statement, assemblies"
-ms.assetid: dce1e027-f859-4967-bdda-16a95ae460d0
-caps.latest.revision: 29
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # GRANT Assembly Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Grants permissions on an assembly.  
   
@@ -30,18 +23,20 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 GRANT { permission [ ,...n ] } ON ASSEMBLY :: assembly_name  
     TO database_principal [ ,...n ]  
     [ WITH GRANT OPTION ]  
     [ AS granting_principal ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be granted on an assembly. Listed below.  
   
- ON ASSEMBLY **::***assembly_name*  
+ ON ASSEMBLY **::**_assembly_name_  
  Specifies the assembly on which the permission is being granted. The scope qualifier "::" is required.  
   
  *database_principal*  

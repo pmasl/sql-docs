@@ -1,24 +1,15 @@
 ---
-title: "nullsAreSortedLow Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "nullsAreSortedLow Method (SQLServerDatabaseMetaData)"
+description: "nullsAreSortedLow Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.nullsAreSortedLow"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.nullsAreSortedLow"
 apitype: "Assembly"
-ms.assetid: 30c06a9d-3513-42d0-8b2a-5a20ac31eb0e
-caps.latest.revision: 6
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # nullsAreSortedLow Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,14 +1,9 @@
 ---
-title: "Filter (geography Data Type) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+title: Filter (geography Data Type)
+description: "Filter (geography Data Type)"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "Filter"
   - "Filter_TSQL"
@@ -17,14 +12,15 @@ dev_langs:
   - "TSQL"
 helpviewer_keywords: 
   - "Filter method"
-ms.assetid: 82a8f54a-3a47-4e20-b13a-b148029c5448
-caps.latest.revision: 10
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: MladjoA
+ms.author: mlandzic 
+ms.reviewer: ""
+ms.custom: ""
+ms.date: "03/14/2017"
 ---
+
 # Filter (geography Data Type)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   A method that offers a fast, index-only intersection method to determine if a **geography** instance intersects another **geography** instance, assuming an index is available.  
   
@@ -39,7 +35,9 @@ manager: "jhubbard"
 .Filter ( other_geography )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *other_geography*  
  Is another **geography** instance to compare against the instance on which Filter() is invoked.  
   
@@ -54,7 +52,7 @@ manager: "jhubbard"
 ## Examples  
  The following example uses `Filter()` to determine if two `geography` instances intersect each other.  
   
-```  
+```sql
 CREATE TABLE sample (id int primary key, g geography);  
 INSERT INTO sample VALUES  
    (0, geography::Point(45, -120, 4326)),  

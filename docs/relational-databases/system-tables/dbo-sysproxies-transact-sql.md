@@ -1,31 +1,25 @@
 ---
-title: "dbo.sysproxies (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "dbo.sysproxies (Transact-SQL)"
+description: dbo.sysproxies (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "dbo.sysproxies_TSQL"
   - "sysproxies_TSQL"
   - "dbo.sysproxies"
   - "sysproxies"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sysproxies system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: a73da875-be22-45fc-b5e2-ea7ebd48e2d6
-caps.latest.revision: 17
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # dbo.sysproxies (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Defines attributes of a [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Agent proxy account. This table is stored in the **msdb** database.  
   
@@ -36,7 +30,7 @@ manager: "jhubbard"
 |**credential_id**|**int**|ID of the credential that the proxy account uses.|  
 |**enabled**|**tinyint**|Status of the proxy account:<br /><br /> **0** = Disabled. **1** = Enabled.|  
 |**description**|**nvarchar(512)**|Description that the user entered when the proxy account was created.|  
-|**user_sid**|**varbinary(85)**|Microsoft Windows *security_identifier* of the user or group associated with the proxy credential.|  
+|**user_sid**|**varbinary(85)**|Microsoft Windows *security_identifier* of the user or group associated with the proxy credential at the time the proxy is added. To ensure that you have the latest information (for example, after an `ALTER CREDENTIAL` command), run `sp_update_proxy` to refresh.|
 |**credential_date_created**|**datetime**|Date and time that the credential was created.|  
   
 ## Remarks  

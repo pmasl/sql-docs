@@ -1,24 +1,15 @@
 ---
-title: "executeUpdate Method (java.lang.String, int[]) | Microsoft Docs"
-ms.custom: ""
+title: "executeUpdate Method (java.lang.String, int[])"
+description: "executeUpdate Method (java.lang.String, int[])"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.executeUpdate (java.lang.String, int[])"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.executeUpdate (java.lang.String, int[])"
 apitype: "Assembly"
-ms.assetid: 7b3d5b60-4285-4047-b13e-106754ca0d98
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # executeUpdate Method (java.lang.String, int[])
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

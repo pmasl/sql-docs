@@ -1,27 +1,24 @@
 ---
-title: "Executing SQL Queries (SQLXML Managed Classes) | Microsoft Docs"
-ms.custom: ""
+title: "Executing SQL Queries (SQLXML)"
+description: Learn how to execute SQL queries using SQLXML Managed Classes.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "queries [SQLXML], SQLXML Managed Classes"
   - "SQLXML Managed Classes, executing SQL queries"
   - "Managed Classes [SQLXML], executing SQL queries"
   - "ExecuteToStream method"
   - "SQL queries [SQLXML]"
 ms.assetid: a561ae83-a8b6-4b9b-a819-9b86839546b4
-caps.latest.revision: 22
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Executing SQL Queries (SQLXML Managed Classes)
+[!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   This example demonstrates:  
   
 -   Creating parameters (SqlXmlParameter objects).  
@@ -94,7 +91,7 @@ public static int Main(String[] args)
      This creates an executable (DocSample.exe).  
   
 3.  At the command prompt, execute DocSample.exe.  
-  
+
  To test this example, you must have the [!INCLUDE[msCoName](../../../includes/msconame-md.md)] .NET Framework installed on your computer.  
   
  Instead of specifying SQL queries as the command text, you can specify a template (as shown in the following code fragment) that executes an updategram (which is also a template) to insert a customer record. You can specify templates and updategrams in files and execute files. For more information, see [Executing Template Files by Using the CommandText Property](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/net-framework-classes/executing-template-files-by-using-the-commandtext-property.md).  

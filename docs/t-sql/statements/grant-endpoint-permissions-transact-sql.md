@@ -1,29 +1,22 @@
 ---
-title: "GRANT Endpoint Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "GRANT Endpoint Permissions (Transact-SQL)"
+description: GRANT Endpoint Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/17/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "endpoints [SQL Server], permissions"
   - "granting permissions [SQL Server], endpoints"
   - "GRANT statement, endpoints"
   - "permissions [SQL Server], endpoints"
-ms.assetid: 9eda885c-fc3a-4c9d-8de6-ce07fb35a934
-caps.latest.revision: 16
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # GRANT Endpoint Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Grants permissions on an endpoint.  
 
@@ -32,7 +25,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 GRANT permission  [ ,...n ] ON ENDPOINT :: endpoint_name  
         TO < server_principal >  [ ,...n ]  
     [ WITH GRANT OPTION ]  
@@ -45,11 +38,13 @@ GRANT permission  [ ,...n ] ON ENDPOINT :: endpoint_name
     | SQL_Server_login_from_AsymKey  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be granted on an endpoint. For a list of the permissions, see the Remarks section later in this topic.  
   
- ON ENDPOINT **::***endpoint_name*  
+ ON ENDPOINT **::**_endpoint_name_  
  Specifies the endpoint on which the permission is being granted. The scope qualifier (**::**) is required.  
   
  TO \<server_principal>  
@@ -96,7 +91,7 @@ GRANT permission  [ ,...n ] ON ENDPOINT :: endpoint_name
 ### A. Granting VIEW DEFINITION permission on an endpoint  
  The following example grants `VIEW DEFINITION` permission on endpoint `Mirror7` to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] login `ZArifin`.  
   
-```  
+```sql  
 USE master;  
 GRANT VIEW DEFINITION ON ENDPOINT::Mirror7 TO ZArifin;  
 GO  
@@ -105,7 +100,7 @@ GO
 ### B. Granting TAKE OWNERSHIP permission with the GRANT OPTION  
  The following example grants `TAKE OWNERSHIP` permission on endpoint `Shipping83` to [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] user `PKomosinski` with the `GRANT OPTION`.  
   
-```  
+```sql  
 USE master;  
 GRANT TAKE OWNERSHIP ON ENDPOINT::Shipping83 TO PKomosinski   
     WITH GRANT OPTION;  

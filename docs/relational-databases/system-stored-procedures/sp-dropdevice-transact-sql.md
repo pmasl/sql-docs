@@ -1,14 +1,12 @@
 ---
+description: "sp_dropdevice (Transact-SQL)"
 title: "sp_dropdevice (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_dropdevice_TSQL"
   - "sp_dropdevice"
@@ -18,15 +16,13 @@ helpviewer_keywords:
   - "backup devices [SQL Server], deleting"
   - "sp_dropdevice"
 ms.assetid: c8b07189-7c35-414b-acc1-45bd6e7e17c3
-caps.latest.revision: 37
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_dropdevice (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  Drops a database device or backup device from an instance of the [!INCLUDE[ssDEversion2005](../../includes/ssdeversion2005-md.md)], deleting the entry from **master.dbo.sysdevices**.  
+  Drops a database device or backup device from an instance of the [!INCLUDE[ssdenoversion-md](../../includes/ssdenoversion-md.md)], deleting the entry from **master.dbo.sysdevices**.  
    
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -39,10 +35,10 @@ sp_dropdevice [ @logicalname = ] 'device'
 ```  
   
 ## Arguments  
- [ **@logicalname=** ] **'***device***'**  
+`[ @logicalname = ] 'device'`
  Is the logical name of the database device or backup device as listed in **master.dbo.sysdevices.name**. *device* is **sysname**, with no default.  
   
- [ **@delfile=** ] **'***delfile***'**  
+`[ @delfile = ] 'delfile'`
  Specifies whether the physical backup device file should be deleted. *delfile* is **varchar(7)**. If specified as **DELFILE**, the physical backup device disk file is deleted.  
   
 ## Return Code Values  

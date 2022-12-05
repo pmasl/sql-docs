@@ -1,32 +1,25 @@
 ---
-title: "FULLTEXTSERVICEPROPERTY (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "FULLTEXTSERVICEPROPERTY (Transact-SQL)"
+description: "FULLTEXTSERVICEPROPERTY (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "FULLTEXTSERVICEPROPERTY_TSQL"
   - "FULLTEXTSERVICEPROPERTY"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "full-text search [SQL Server], properties"
   - "FULLTEXTSERVICEPROPERTY function"
   - "services [SQL Server], full-text search properties"
   - "test"
-ms.assetid: b7dcacb0-af83-4807-9d1e-49148b56b59c
-caps.latest.revision: 43
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # FULLTEXTSERVICEPROPERTY (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns information related to the properties of the Full-Text Engine. These properties can be set and retrieved by using **sp_fulltext_service**.  
   
@@ -34,17 +27,18 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 FULLTEXTSERVICEPROPERTY ('property')  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *property*  
  Is an expression containing the name of the full-text service-level property. The table lists the properties and provides descriptions of the information returned.  
   
-> [!NOTE]  
->  The following properties will be removed in a future release of [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]: **ConnectTimeout**, **DataTimeout**, and **ResourceUsage**. Avoid using these properties in new development work, and plan to modify applications that currently use any of them.  
+> [!NOTE]
+>  The following properties will be removed in a future release of [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]: **ConnectTimeout**, **DataTimeout**, and **ResourceUsage**. Avoid using these properties in new development work, and plan to modify applications that currently use any of them.  
   
 |Property|Value|  
 |--------------|-----------|  
@@ -61,7 +55,7 @@ FULLTEXTSERVICEPROPERTY ('property')
 ## Examples  
  The following example checks whether only signed binaries are loaded, and the return value indicates that this verification is not occurring.  
   
-```  
+```sql  
 SELECT fulltextserviceproperty('VerifySignature');  
 ```  
   
@@ -74,7 +68,7 @@ SELECT fulltextserviceproperty('VerifySignature');
   
  Note that to set signature verification back to its default value, 1, you can use the following `sp_fulltext_service` statement:  
   
-```  
+```sql  
 EXEC sp_fulltext_service @action='verify_signature', @value=1;  
 GO  
 ```  

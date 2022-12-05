@@ -1,26 +1,22 @@
 ---
-title: "Deploying CLR Database Objects | Microsoft Docs"
-ms.custom: ""
+title: "Deploying CLR Database Objects"
+description: Using Microsoft Visual Studio, you can develop CLR database objects for SQL Server, deploy them to a test server, and distribute them to production servers.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: intro-deployment
+helpviewer_keywords:
   - "deployment script [CLR integration]"
   - "common language runtime [SQL Server], deploying"
   - "deploying assemblies [CLR integration]"
   - "deploying [CLR integration]"
 ms.assetid: 00752573-3367-41a7-af98-7b7a29e8e2f2
-caps.latest.revision: 35
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Deploying CLR Database Objects
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Deployment is the process by which you distribute a finished application or module to be installed and run on another computer. Using [!INCLUDE[msCoName](../../includes/msconame-md.md)] Visual Studio, you can develop common language runtime (CLR) database objects and deploy them to a test server. Alternatively, the managed database objects can also be compiled with the [!INCLUDE[msCoName](../../includes/msconame-md.md)] .NET Framework redistribution files, instead of Visual Studio. Once compiled, the assemblies containing the CLR database objects can then be deployed to a test server using Visual Studio or [!INCLUDE[tsql](../../includes/tsql-md.md)] statements. Note that Visual Studio .NET 2003 cannot be used for CLR integration programming or deployment. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] includes the .NET Framework pre-installed, and Visual Studio .NET 2003 cannot use the .NET Framework 2.0 assemblies.  
   
  Once the CLR methods have been tested and verified on the test server, they can be distributed to production servers using a deployment script. The deployment script can be generated manually, or by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] (see the procedure later in this topic).  
@@ -42,7 +38,7 @@ manager: "jhubbard"
 2.  Resolve all build errors and warnings before deploying the assembly to the test server.  
   
 3.  Select **Deploy** from the **Build** menu. The assembly will then be registered in the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] instance and database specified when the [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] project was first created in Visual Studio.  
-  
+
 #### To deploy the assembly using Transact-SQL  
   
 1.  Compile the assembly from the source file using the command line compilers included with the .NET Framework.  
@@ -73,7 +69,7 @@ manager: "jhubbard"
   
  `EXTERNAL NAME HelloWorld.Procedures.HelloWorld`  
   
- For more information about creating the different types of managed database objects in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [CLR User-Defined Functions](../../relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions.md), [CLR User-Defined Aggregates](../../relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-aggregates.md), [CLR User-Defined Types](../../relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types.md), [CLR Stored Procedures](http://msdn.microsoft.com/library/bbdd51b2-a9b4-4916-ba6f-7957ac6c3f33), and [CLR Triggers](http://msdn.microsoft.com/library/302a4e4a-3172-42b6-9cc0-4a971ab49c1c).  
+ For more information about creating the different types of managed database objects in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], see [CLR User-Defined Functions](../../relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions.md), [CLR User-Defined Aggregates](../../relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-aggregates.md), [CLR User-Defined Types](../../relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types.md), [CLR Stored Procedures](/dotnet/framework/data/adonet/sql/clr-stored-procedures), and [CLR Triggers](/dotnet/framework/data/adonet/sql/clr-triggers).  
   
 ## Deploying the Assembly to Production Servers  
  Once the CLR database objects have been tested and verified on the test server, they can be distributed to production servers. For more information about debugging managed database objects, see [Debugging CLR Database Objects](../../relational-databases/clr-integration/debugging-clr-database-objects.md).  
@@ -105,5 +101,4 @@ manager: "jhubbard"
   
 ## See Also  
  [Common Language Runtime &#40;CLR&#41; Integration Programming Concepts](../../relational-databases/clr-integration/common-language-runtime-clr-integration-programming-concepts.md)  
-  
   

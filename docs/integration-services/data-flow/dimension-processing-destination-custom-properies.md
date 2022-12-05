@@ -1,21 +1,21 @@
 ---
+description: "Dimension Processing Destination Custom Properies"
 title: "Dimension Processing Destination Custom Properies | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "integration-services"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: integration-services
+ms.topic: conceptual
 ms.assetid: 9700f663-53f2-49b6-b1ef-92c7b752d6a1
-caps.latest.revision: 6
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: chugugrace
+ms.author: chugu
 ---
 # Dimension Processing Destination Custom Properies
+
+[!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
+
+
   The Dimension Processing destination has both custom properties and the properties common to all data flow components.  
   
  The following table describes the custom properties of the Dimension Processing destination. All properties are read/write.  
@@ -39,6 +39,5 @@ manager: "jhubbard"
  For more information, see [Dimension Processing Destination](../../integration-services/data-flow/dimension-processing-destination.md).  
   
 ## See Also  
- [Common Properties](http://msdn.microsoft.com/library/51973502-5cc6-4125-9fce-e60fa1b7b796)  
-  
+ [Common Properties](./set-the-properties-of-a-data-flow-component.md)  
   

@@ -1,24 +1,15 @@
 ---
-title: "updateLong Method (java.lang.String, long) | Microsoft Docs"
-ms.custom: ""
+title: "updateLong Method (java.lang.String, long)"
+description: "updateLong Method (java.lang.String, long)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateLong (java.lang.String, long)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateLong (java.lang.String, long)"
 apitype: "Assembly"
-ms.assetid: f6003706-35de-42b1-8f23-899a388adb5b
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateLong Method (java.lang.String, long)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

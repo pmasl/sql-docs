@@ -1,24 +1,15 @@
 ---
-title: "updateFloat Method (int, float) | Microsoft Docs"
-ms.custom: ""
+title: "updateFloat Method (int, float)"
+description: "updateFloat Method (int, float)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateFloat (int, float)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateFloat (int, float)"
 apitype: "Assembly"
-ms.assetid: c9ddcd7d-1dd4-491a-99ff-6cce7f67a73b
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateFloat Method (int, float)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

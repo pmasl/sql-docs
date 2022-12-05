@@ -1,31 +1,27 @@
 ---
-title: "REPLICATE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/13/2017"
-ms.prod: "sql-non-specified"
+title: "REPLICATE (Transact-SQL)"
+description: "REPLICATE (Transact-SQL)"
+author: MikeRayMSFT
+ms.author: mikeray
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.date: "03/13/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+ms.custom: ""
+f1_keywords:
   - "REPLICATE_TSQL"
   - "REPLICATE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "expressions [SQL Server], repeating"
   - "REPLICATE function"
   - "repeating character expressions"
-ms.assetid: 0cd467fb-3f22-471a-892c-0039d9f7fa1a
-caps.latest.revision: 42
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # REPLICATE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Repeats a string value a specified number of times.  
   
@@ -33,18 +29,21 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
-REPLICATE ( string_expression ,integer_expression )   
+```syntaxsql
+REPLICATE ( string_expression , integer_expression )   
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *string_expression*  
- Is an expression of a character string or binary data type. *string_expression* can be either character or binary data.  
+ Is an expression of a character string or binary data type.  
   
 > [!NOTE]  
->  If *string_expression* is not of type **varchar(max)** or **nvarchar(max)**, REPLICATE truncates the return value at 8,000 bytes. To return values greater than 8,000 bytes, *string_expression* must be explicitly cast to the appropriate large-value data type.  
+> If *string_expression* is of type **binary**, REPLICATE will perform an implicit conversion to **varchar**, and therefore will not preserve the binary input.  
+
+> [!NOTE]  
+> If *string_expression* input is of type **varchar(max)** or **nvarchar(max)**, REPLICATE truncates the return value at 8,000 bytes. To return values greater than 8,000 bytes, *string_expression* must be explicitly cast to the appropriate large-value data type.  
   
  *integer_expression*  
  Is an expression of any integer type, including **bigint**. If *integer_expression* is negative, NULL is returned.  
@@ -57,7 +56,7 @@ REPLICATE ( string_expression ,integer_expression )
 ### A. Using REPLICATE  
  The following example replicates a `0` character four times in front of a production line code in the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database.  
   
-```  
+```sql
 SELECT [Name]  
 , REPLICATE('0', 4) + [ProductLine] AS 'Line Code'  
 FROM [Production].[Product]  
@@ -83,7 +82,7 @@ HL Touring Frame - Yellow, 50                      0000T
 ### B. Using REPLICATE and DATALENGTH  
  The following example left pads numbers to a specified length as they are converted from a numeric data type to character or Unicode.  
   
-```  
+```sql
 IF EXISTS(SELECT name FROM sys.tables  
       WHERE name = 't1')  
    DROP TABLE t1;  
@@ -121,7 +120,7 @@ Varchar Column        Char Column
 ### C: Using REPLICATE  
  The following example replicates a `0` character four times in front of an `ItemCode` value.  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT EnglishProductName AS Name,  
@@ -133,23 +132,19 @@ ORDER BY Name;
   
  Here are the first rows in the result set.  
   
- `Name                     ItemCode       FullItemCode`  
-  
- `------------------------ -------------- ---------------`  
-  
- `Adjustable Race          AR-5381        0000AR-5381`  
-  
- `All-Purpose Bike Stand   ST-1401        0000ST-1401`  
-  
- `AWC Logo Cap             CA-1098        0000CA-1098`  
-  
- `AWC Logo Cap             CA-1098        0000CA-1098`  
-  
- `AWC Logo Cap             CA-1098        0000CA-1098`  
-  
- `BB Ball Bearing          BE-2349        0000BE-2349`  
+ ```
+Name                     ItemCode       FullItemCode
+------------------------ -------------- ---------------
+Adjustable Race          AR-5381        0000AR-5381
+All-Purpose Bike Stand   ST-1401        0000ST-1401
+AWC Logo Cap             CA-1098        0000CA-1098
+AWC Logo Cap             CA-1098        0000CA-1098
+AWC Logo Cap             CA-1098        0000CA-1098
+BB Ball Bearing          BE-2349        0000BE-2349
+ ```  
   
 ## See Also  
+ [SPACE &#40;Transact-SQL&#41;](../../t-sql/functions/space-transact-sql.md)  
  [Data Types &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)   
  [String Functions &#40;Transact-SQL&#41;](../../t-sql/functions/string-functions-transact-sql.md)  
   

@@ -1,31 +1,25 @@
 ---
-title: "LOG (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "LOG (Transact-SQL)"
+description: "LOG (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "07/29/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "LOG"
   - "LOG_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "float expressions"
   - "logarithm of expression"
   - "LOG function"
-ms.assetid: f7c39511-cd84-4362-93ba-0d93655217ee
-caps.latest.revision: 42
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # LOG (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns the natural logarithm of the specified **float** expression in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
@@ -33,26 +27,28 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server  
+```syntaxsql
+-- Syntax for SQL Server, Azure SQL Database  
   
 LOG ( float_expression [, base ] )  
 ```  
   
-```  
--- Syntax for Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
+```syntaxsql
+-- Syntax for Azure Synapse SQL 
   
 LOG ( float_expression )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *float_expression*  
  Is an [expression](../../t-sql/language-elements/expressions-transact-sql.md) of type **float** or of a type that can be implicitly converted to **float**.  
   
  *base*  
  Optional integer argument that sets the base for the logarithm.  
   
-**Applies to**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]
+**Applies to**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] and later
   
 ## Return Types  
  **float**  
@@ -69,9 +65,9 @@ LOG ( float_expression )
 ### A. Calculating the logarithm for a number.  
  The following example calculates the `LOG` for the specified **float** expression.  
   
-```  
-DECLARE @var float = 10;  
-SELECT 'The LOG of the variable is: ' + CONVERT(varchar, LOG(@var));  
+```sql  
+DECLARE @var FLOAT = 10;  
+SELECT 'The LOG of the variable is: ' + CONVERT(VARCHAR, LOG(@var));  
 GO  
 ```  
   
@@ -87,7 +83,7 @@ The LOG of the variable is: 2.30259
 ### B. Calculating the logarithm of the exponent of a number.  
  The following example calculates the `LOG` for the exponent of a number.  
   
-```  
+```sql  
 SELECT LOG (EXP (10));  
   
 ```  
@@ -105,28 +101,17 @@ SELECT LOG (EXP (10));
 ### C. Calculating the logarithm for a number  
  The following example calculates the `LOG` for the specified **float** expression.  
   
-```  
+```sql  
 SELECT LOG(10);  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
- `----------------`  
+ ```
+ ----------------`  
   
- `2.30`  
-  
-### D. Calculating the logarithm of the exponent of a number  
- The following example calculates the `LOG` for the exponent of a number.  
-  
-```  
-SELECT LOG(EXP (10));  
-```  
-  
- [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
-  
- `---------`  
-  
- `10.00`  
+ 2.30
+ ```  
   
 ## See Also  
  [Mathematical Functions &#40;Transact-SQL&#41;](../../t-sql/functions/mathematical-functions-transact-sql.md)   

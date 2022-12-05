@@ -1,13 +1,11 @@
 ---
-title: "Dropping a SQL Server Table | Microsoft Docs"
+description: "Drop SQL Server table (Native Client OLE DB provider)"
+title: "Drop SQL Server table (Native Client OLE DB provider) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.subservice: native-client
 ms.topic: "reference"
 helpviewer_keywords: 
   - "tables [OLE DB]"
@@ -16,13 +14,12 @@ helpviewer_keywords:
   - "removing tables"
   - "dropping tables"
 ms.assetid: b6d6c4de-43c6-473e-92aa-34ffddd58cbe
-caps.latest.revision: 31
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: ">=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Dropping a SQL Server Table
-[!INCLUDE[SNAC_Deprecated](../../includes/snac-deprecated.md)]
+# Dropping a SQL Server Native Client Table
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   The [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB provider exposes the **ITableDefinition::DropTable** function to remove a [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] table from a database.  
   

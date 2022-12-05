@@ -1,14 +1,12 @@
 ---
 title: "Choose an Authentication Mode | Microsoft Docs"
+description: Choose between Windows Authentication mode and mixed mode authentication for the SQL Server Database Engine at setup time.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: security
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.ins.instwizard.authenticationmode.f1"
   - "sql13.swb.passwordexpired.f1"
@@ -25,12 +23,11 @@ helpviewer_keywords:
   - "SQL authentication mode"
   - "Password Expired dialog box"
 ms.assetid: ff7a6a48-3d38-4209-aa0f-7d6c0a8c64ef
-caps.latest.revision: 45
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # Choose an Authentication Mode
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   During setup, you must select an authentication mode for the [!INCLUDE[ssDE](../../includes/ssde-md.md)]. There are two possible modes: Windows Authentication mode and mixed mode. Windows Authentication mode enables Windows Authentication and disables [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication. Mixed mode enables both Windows Authentication and [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication. Windows Authentication is always available and cannot be disabled.  
   
 ## Configuring the Authentication Mode  
@@ -47,7 +44,7 @@ manager: "jhubbard"
 >  [!INCLUDE[ssNoteWinAuthentication](../../includes/ssnotewinauthentication-md.md)]  
   
 ## Connecting Through SQL Server Authentication  
- When using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication, logins are created in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] that are not based on Windows user accounts. Both the user name and the password are created by using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and stored in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Users connecting using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication must provide their credentials (login and password) every time that they connect. When using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication, you must set strong passwords for all [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] accounts. For strong password guidelines, see [Strong Passwords](../../relational-databases/security/strong-passwords.md).  
+ When using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication, logins are created in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] that aren't based on Windows user accounts. Both the user name and the password are created by using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] and stored in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Users connecting using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication must provide their credentials (login and password) every time that they connect. When using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication, you must set strong passwords for all [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] accounts. For strong password guidelines, see [Strong Passwords](../../relational-databases/security/strong-passwords.md).  
   
  Three optional password policies are available for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins.  
   
@@ -61,25 +58,25 @@ manager: "jhubbard"
   
 -   Enforce password policy  
   
-     The Windows password policies of the computer are enforced for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins. This includes password length and complexity. This functionality depends on the `NetValidatePasswordPolicy` API, which is only available in [!INCLUDE[winxpsvr](../../includes/winxpsvr-md.md)] and later versions.  
+     The Windows password policies of the computer are enforced for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins. This includes password length and complexity. This functionality depends on the `NetValidatePasswordPolicy` API, which is only available in [!INCLUDE[winserver2003](../../includes/winserver2003-md.md)] and later versions.  
   
 #### To determine the password policies of the local computer  
   
-1.  On the **Start** menu, click **Run**.  
+1.  On the **Start** menu, select **Run**.  
   
-2.  In the **Run** dialog box, type **secpol.msc**, and then click **OK**.  
+2.  In the **Run** dialog box, type **secpol.msc**, and then select **OK**.  
   
-3.  In the **Local Security Settings** application, expand **Security Settings**, expand **Account Policies**, and then click **Password Policy**.  
-  
+3.  In the **Local Security Settings** application, expand **Security Settings**, expand **Account Policies**, and then select **Password Policy**.  
+
      The password policies are described in the results pane.  
   
 ### Disadvantages of SQL Server Authentication  
   
--   If a user is a Windows domain user who has a login and password for Windows, he must still provide another ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]) login and password to connect. Keeping track of multiple names and passwords is difficult for many users. Having to provide [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] credentials every time that one connects to the database can be annoying.  
+-   If a user is a Windows domain user who has a login and password for Windows, they must still provide another ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]) login and password to connect. Keeping track of multiple names and passwords is difficult for many users. Having to provide [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] credentials every time that one connects to the database can be annoying.  
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication cannot use Kerberos security protocol.  
   
--   Windows offers additional password policies that are not available for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins.  
+-   Windows offers additional password policies that aren't available for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins.  
   
 -   The encrypted [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication login password, must be passed over the network at the time of the connection. Some applications that connect automatically will store the password at the client. These are additional attack points.  
   
@@ -87,7 +84,7 @@ manager: "jhubbard"
   
 -   Allows [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] to support older applications and applications provided by third parties that require [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication.  
   
--   Allows [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] to support environments with mixed operating systems, where all users are not authenticated by a Windows domain.  
+-   Allows [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] to support environments with mixed operating systems, where all users aren't authenticated by a Windows domain.  
   
 -   Allows users to connect from unknown or untrusted domains. For instance, an application where established customers connect with assigned [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] logins to receive the status of their orders.  
   

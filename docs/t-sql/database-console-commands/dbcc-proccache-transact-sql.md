@@ -1,33 +1,28 @@
 ---
-title: "DBCC PROCCACHE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "7/17/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+title: "DBCC PROCCACHE (Transact-SQL)"
+description: "DBCC PROCCACHE (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "11/14/2017"
+ms.service: sql
+ms.subservice: t-sql
 ms.topic: "language-reference"
-f1_keywords: 
+f1_keywords:
   - "DBCC PROCCACHE"
   - "DBCC_PROCCACHE_TSQL"
   - "PROCCACHE_TSQL"
   - "PROCCACHE"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "procedure cache [SQL Server]"
   - "displaying procedure cache information"
   - "DBCC PROCCACHE statement"
-ms.assetid: 7a4f9f8a-13ff-4bf2-ba29-c17012a23659
-caps.latest.revision: 31
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
+
 # DBCC PROCCACHE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
+[!INCLUDE [SQL Server SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
 Displays information in a table format about the procedure cache.
   
@@ -39,7 +34,9 @@ Displays information in a table format about the procedure cache.
 DBCC PROCCACHE [ WITH NO_INFOMSGS ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  WITH  
  Allows for options to be specified.  
   

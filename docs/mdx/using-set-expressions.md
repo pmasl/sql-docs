@@ -1,28 +1,17 @@
 ---
+description: "Using Set Expressions"
 title: "Using Set Expressions | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "expressions [MDX], set"
-  - "tuples"
-  - "set expressions [MDX]"
-ms.assetid: 88d65872-0cbe-4c95-b36f-e1aa4ac8ed07
-caps.latest.revision: 28
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # Using Set Expressions
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   A set consists of an ordered list of zero or more tuples. A set that does not contain any tuples is known as an empty set.  
   
@@ -63,9 +52,8 @@ manager: "erikre"
   
  consists of three tuples, each of which contains two explicit references to members on the Product Categories hierarchy of the Product dimension and the Calendar hierarchy of the Date dimension.  
   
- For examples of functions that return sets, see [Working with Members, Tuples, and Sets &#40;MDX&#41;](../analysis-services/multidimensional-models/mdx/working-with-members-tuples-and-sets-mdx.md).  
+ For examples of functions that return sets, see [Working with Members, Tuples, and Sets &#40;MDX&#41;](/analysis-services/multidimensional-models/mdx/working-with-members-tuples-and-sets-mdx).  
   
 ## See Also  
  [Expressions &#40;MDX&#41;](../mdx/expressions-mdx.md)  
-  
   

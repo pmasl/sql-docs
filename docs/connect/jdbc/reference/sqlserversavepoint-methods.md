@@ -1,19 +1,12 @@
 ---
-title: "SQLServerSavepoint Methods | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerSavepoint Methods"
+description: "SQLServerSavepoint Methods"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: a245c0c3-d4a2-4fc6-8adc-0c91091716eb
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerSavepoint Methods
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

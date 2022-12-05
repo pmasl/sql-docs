@@ -1,30 +1,24 @@
 ---
-title: "EXP (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "EXP (Transact-SQL)"
+description: "EXP (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "EXP_TSQL"
   - "EXP"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "exponential functions"
   - "EXP function"
-ms.assetid: 5a9b8c52-6fb6-4e33-8b02-a878785b2f51
-caps.latest.revision: 35
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # EXP (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns the exponential value of the specified **float** expression.  
   
@@ -32,13 +26,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql
 EXP ( float_expression )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *float_expression*  
  Is an [expression](../../t-sql/language-elements/expressions-transact-sql.md) of type **float** or of a type that can be implicitly converted to **float**.  
   
@@ -46,7 +40,7 @@ EXP ( float_expression )
  **float**  
   
 ## Remarks  
- The constant **e** (2.718281…), is the base of natural logarithms.  
+ The constant **e** (2.718281...), is the base of natural logarithms.  
   
  The exponent of a number is the constant **e** raised to the power of the number. For example EXP(1.0) = e^1.0 = 2.71828182845905 and EXP(10) = e^10 = 22026.4657948067.  
   
@@ -57,10 +51,10 @@ EXP ( float_expression )
 ### A. Finding the exponent of a number  
  The following example declares a variable and returns the exponential value of the specified variable (`10`) with a text description.  
   
-```  
-DECLARE @var float  
+```sql  
+DECLARE @var FLOAT  
 SET @var = 10  
-SELECT 'The EXP of the variable is: ' + CONVERT(varchar,EXP(@var))  
+SELECT 'The EXP of the variable is: ' + CONVERT(VARCHAR, EXP(@var))  
 GO  
 ```  
   
@@ -75,8 +69,8 @@ The EXP of the variable is: 22026.5
 ### B. Finding exponentials and natural logarithms  
  The following example returns the exponential value of the natural logarithm of `20` and the natural logarithm of the exponential of `20`. Because these functions are inverse functions of one another, the return value in both cases is `20`.  
   
-```  
-SELECT EXP( LOG(20)), LOG( EXP(20))  
+```sql  
+SELECT EXP(LOG(20)), LOG(EXP(20))  
 GO  
 ```  
   
@@ -94,7 +88,7 @@ GO
 ### C. Finding the exponent of a number  
  The following example returns the exponential value of the specified value (`10`).  
   
-```  
+```sql  
 SELECT EXP(10);  
 ```  
   
@@ -108,7 +102,7 @@ SELECT EXP(10);
 ### D. Finding exponential values and natural logarithms  
  The following example returns the exponential value of the natural logarithm of `20` and the natural logarithm of the exponential of `20`. Because these functions are inverse functions of one another, the return value in both cases is `20`.  
   
-```  
+```sql  
 SELECT EXP( LOG(20)), LOG( EXP(20));  
 ```  
   

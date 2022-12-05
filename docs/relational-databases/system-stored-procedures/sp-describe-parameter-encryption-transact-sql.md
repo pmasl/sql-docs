@@ -1,14 +1,14 @@
 ---
+description: "sp_describe_parameter_encryption (Transact-SQL)"
 title: "sp_describe_parameter_encryption (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "07/27/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.service: sql
+ms.reviewer: "vanto"
+ms.subservice: system-objects
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_describe_parameter_encryption"
   - "sp_describe_parameter_encryption_TSQL"
@@ -17,13 +17,13 @@ f1_keywords:
 helpviewer_keywords: 
   - "sp_describe_parameter_encryption"
 ms.assetid: 706ed441-2881-4934-8d5e-fb357ee067ce
-caps.latest.revision: 10
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: jaszymas
+ms.author: jaszymas
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sp_describe_parameter_encryption (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+
+[!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 
   Analyzes the specified [!INCLUDE[tsql](../../includes/tsql-md.md)] statement and its parameters, to determine which parameters correspond to database columns that are protected by using the Always Encrypted feature. Returns encryption metadata for the parameters that correspond to encrypted columns.  
   
@@ -37,13 +37,13 @@ sp_describe_parameter_encryption
 ```  
   
 ## Arguments  
- [ @tsql = ] 'Transact-SQL_batch'  
+ [ \@tsql = ] 'Transact-SQL_batch'  
  One or more [!INCLUDE[tsql](../../includes/tsql-md.md)] statements. Transact-SQL_batch may be nvarchar(n) or nvarchar(max).  
   
- [ @params = ] N'parameters'  
- *@params* provides a declaration string for parameters for the Transact-SQL batch, which is similar to sp_executesql. Parameters may be nvarchar(n) or nvarchar(max).  
+ [ \@params = ] N'parameters'  
+ *\@params* provides a declaration string for parameters for the Transact-SQL batch, which is similar to sp_executesql. Parameters may be nvarchar(n) or nvarchar(max).  
   
- Is one string that contains the definitions of all parameters that have been embedded in the [!INCLUDE[tsql](../../includes/tsql-md.md)]_batch. The string must be either a Unicode constant or a Unicode variable. Each parameter definition consists of a parameter name and a data type. *n* is a placeholder that indicates additional parameter definitions. Every parameter specified in the statement must be defined in *@params*. If the [!INCLUDE[tsql](../../includes/tsql-md.md)] statement or batch in the statement does not contain parameters, *@params* is not required. NULL is the default value for this parameter.  
+ Is one string that contains the definitions of all parameters that have been embedded in the [!INCLUDE[tsql](../../includes/tsql-md.md)]_batch. The string must be either a Unicode constant or a Unicode variable. Each parameter definition consists of a parameter name and a data type. *n* is a placeholder that indicates additional parameter definitions. Every parameter specified in the statement must be defined in *\@params*. If the [!INCLUDE[tsql](../../includes/tsql-md.md)] statement or batch in the statement does not contain parameters, *\@params* is not required. NULL is the default value for this parameter.  
   
 ## Return Value  
  0 indicates success. Anything else indicate failure.  
@@ -74,9 +74,9 @@ sp_describe_parameter_encryption
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
 |**parameter_ordinal**|**int**|Id of the row in the result set.|  
-|**parameter_name**|**sysname**|Name of one of the parameters specified in the *@params* argument.|  
+|**parameter_name**|**sysname**|Name of one of the parameters specified in the *\@params* argument.|  
 |**column_encryption_algorithm**|**tinyint**|Code indicating the encryption algorithm configured for the column, the parameter corresponds to. The currently supported values are: 2 for **AEAD_AES_256_CBC_HMAC_SHA_256**.|  
-|**column_encryption_type**|**tinyint**|Code indicating the encryption type configured for the column, the parameter corresponds to. The supported values are:<br /><br /> 0 – plaintext (the column is not encrypted)<br /><br /> 1 – randomized encryption<br /><br /> 2 – deterministic encryption.|  
+|**column_encryption_type**|**tinyint**|Code indicating the encryption type configured for the column, the parameter corresponds to. The supported values are:<br /><br /> 0 - plaintext (the column is not encrypted)<br /><br /> 1 - deterministic encryption<br /><br /> 2 - randomized encryption.|  
 |**column_encryption_key_ordinal**|**int**|Code of the row in the first result set. The referenced row describes the column encryption key configured for the column, the parameter corresponds to.|  
 |**column_encryption_normalization_rule_version**|**tinyint**|Version number of the type normalization algorithm.|  
   
@@ -88,7 +88,7 @@ sp_describe_parameter_encryption
   
 ## Examples  
   
-```  
+```sql  
 CREATE COLUMN MASTER KEY [CMK1]  
 WITH  
 (  
@@ -128,7 +128,7 @@ GO
   
 CREATE TABLE t1 (  
 c1 INT ENCRYPTED WITH (  
-    COLUMN_ENCRYPTION_KEY = [CEK_Auto1],   
+    COLUMN_ENCRYPTION_KEY = [CEK1],   
     ENCRYPTION_TYPE = Randomized,   
     ALGORITHM = 'AEAD_AES_256_CBC_HMAC_SHA_256') NULL,  
 );  
@@ -152,7 +152,7 @@ EXEC sp_describe_parameter_encryption N'INSERT INTO t1 VALUES(@c1)',  N'@c1 INT'
   
 |parameter_ordinal|parameter_name|column_encryption_algorithm|column_encryption_type|  
 |------------------------|---------------------|-----------------------------------|------------------------------|  
-|1|@c1|1|1|  
+|1|\@c1|1|1|  
   
  (Results continue.)  
   
@@ -161,7 +161,7 @@ EXEC sp_describe_parameter_encryption N'INSERT INTO t1 VALUES(@c1)',  N'@c1 INT'
 |1|1|  
   
 ## See Also  
- [Always Encrypted &#40;Database Engine&#41;](../../relational-databases/security/encryption/always-encrypted-database-engine.md)   
- [Always Encrypted &#40;client development&#41;](../../relational-databases/security/encryption/always-encrypted-client-development.md)  
+ [Always Encrypted](../../relational-databases/security/encryption/always-encrypted-database-engine.md)   
+ [Develop application using Always Encrypted](../../relational-databases/security/encryption/always-encrypted-client-development.md)  
   
   

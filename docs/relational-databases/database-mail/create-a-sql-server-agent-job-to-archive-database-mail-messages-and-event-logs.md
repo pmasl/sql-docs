@@ -1,26 +1,23 @@
 ---
-title: "Create a SQL Server Agent Job to Archive Database Mail Messages and Event Logs | Microsoft Docs"
-ms.custom: ""
+description: "Create a SQL Server Agent Job to Archive Database Mail Messages and Event Logs"
+title: "Create SQL Server Agent job to archive Database Mail messages & events"
 ms.date: "08/09/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: 
+ms.topic: conceptual
 helpviewer_keywords: 
   - "archiving mail messages and attachments [SQL Server]"
   - "removing mail messages and attachements"
   - "Database Mail [SQL Server], archiving"
   - "saving mail messages and attachments"
 ms.assetid: 8f8f0fba-f750-4533-9b76-a9cdbcdc3b14
-caps.latest.revision: 19
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.custom: seo-dt-2019
 ---
 # Create a SQL Server Agent Job to Archive Database Mail Messages and Event Logs
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
   Copies of Database Mail messages and their attachments are retained in **msdb** tables along with the Database Mail event log. Periodically you might want to reduce the size of the tables and archive messages and events that are no longer needed. The following procedures create a SQL Server Agent job to automate the process.  
   
 -   **Before you begin:**  , [Prerequisites](#Prerequisites), [Recommendations](#Recommendations), [Permissions](#Permissions)  
@@ -44,11 +41,11 @@ manager: "jhubbard"
   
 -   The first procedure creates a job named Archive Database Mail with the following steps.  
   
-    1.  Copy all messages from the Database Mail tables to a new table named after the previous month in the format **DBMailArchive_***<year_month>*.  
+    1.  Copy all messages from the Database Mail tables to a new table named after the previous month in the format **DBMailArchive_**_<year_month>_.  
   
-    2.  Copy the attachments related to the messages copied in the first step, from the Database Mail tables to a new table named after the previous month in the format **DBMailArchive_Attachments_***<year_month>*.  
+    2.  Copy the attachments related to the messages copied in the first step, from the Database Mail tables to a new table named after the previous month in the format **DBMailArchive_Attachments_**_<year_month>_.  
   
-    3.  Copy the events from the Database Mail event log that are related to the messages copied in the first step, from the Database Mail tables to a new table named after the previous month in the format **DBMailArchive_Log_***<year_month>*.  
+    3.  Copy the events from the Database Mail event log that are related to the messages copied in the first step, from the Database Mail tables to a new table named after the previous month in the format **DBMailArchive_Log_**_<year_month>_.  
   
     4.  Delete the records of the transferred mail items from the Database Mail tables.  
   
@@ -68,7 +65,7 @@ manager: "jhubbard"
 4.  In the **Category** box, click the **Database Maintenance**.  
   
 5.  In the **Description** box, type **Archive Database Mail messages**, and then click **Steps**.  
-  
+
  [Overview](#Process_Overview)  
   
 ## To create a step to archive the Database Mail messages  
@@ -83,7 +80,7 @@ manager: "jhubbard"
   
 5.  In the **Command** box, type the following statement to create a table named after the previous month, containing rows older than the start of the current month:  
   
-    ```tsql  
+    ```sql  
     DECLARE @LastMonth nvarchar(12);  
     DECLARE @CopyDate nvarchar(20) ;  
     DECLARE @CreateTable nvarchar(250) ;  
@@ -109,7 +106,7 @@ manager: "jhubbard"
   
 5.  In the **Command** box, type the following statement to create an attachments table named after the previous month, containing the attachments that correspond to the messages transferred in the previous step:  
   
-    ```tsql  
+    ```sql  
     DECLARE @LastMonth nvarchar(12);  
     DECLARE @CopyDate nvarchar(20) ;  
     DECLARE @CreateTable nvarchar(250) ;  
@@ -136,7 +133,7 @@ manager: "jhubbard"
   
 5.  In the **Command** box, type the following statement to create a log table named after the previous month, containing the log entries that correspond to the messages transferred in the earlier step:  
   
-    ```tsql  
+    ```sql  
     DECLARE @LastMonth nvarchar(12);  
     DECLARE @CopyDate nvarchar(20) ;  
     DECLARE @CreateTable nvarchar(250) ;  
@@ -163,7 +160,7 @@ manager: "jhubbard"
   
 5.  In the **Command** box, type the following statement to remove rows older than the current month from the Database Mail tables:  
   
-    ```tsql  
+    ```sql  
     DECLARE @CopyDate nvarchar(20) ;  
     SET @CopyDate = (SELECT CAST(CONVERT(char(8), CURRENT_TIMESTAMP- DATEPART(dd,GETDATE()-1), 112) AS datetime)) ;  
     EXECUTE msdb.dbo.sysmail_delete_mailitems_sp @sent_before = @CopyDate ;  
@@ -183,7 +180,7 @@ manager: "jhubbard"
   
 4.  In the **Command** box, type the following statement to remove rows older than the current month from the Database Mail event log:  
   
-    ```tsql  
+    ```sql  
     DECLARE @CopyDate nvarchar(20) ;  
     SET @CopyDate = (SELECT CAST(CONVERT(char(8), CURRENT_TIMESTAMP- DATEPART(dd,GETDATE()-1), 112) AS datetime)) ;  
     EXECUTE msdb.dbo.sysmail_delete_log_sp @logged_before = @CopyDate ;  

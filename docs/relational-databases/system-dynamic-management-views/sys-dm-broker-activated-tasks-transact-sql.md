@@ -1,31 +1,24 @@
 ---
-title: "sys.dm_broker_activated_tasks (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "sys.dm_broker_activated_tasks (Transact-SQL)"
+description: sys.dm_broker_activated_tasks returns a row for each stored procedure activated by Service Broker.
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "06/03/2022"
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_broker_activated_tasks"
   - "sys.dm_broker_activated_tasks_TSQL"
   - "dm_broker_activated_tasks"
   - "dm_broker_activated_tasks_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.dm_broker_activated_tasks dynamic management view"
-ms.assetid: 17e6f87f-8f56-489d-9aed-216afc8ef310
-caps.latest.revision: 22
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # sys.dm_broker_activated_tasks (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row for each stored procedure activated by Service Broker.  
  
@@ -41,18 +34,16 @@ manager: "jhubbard"
 ## Permissions  
  Requires VIEW SERVER STATE permission on the server.  
   
-## Physical Joins  
- ![Joins for sys.dm_broker_activated_tasks](../../relational-databases/system-dynamic-management-views/media/join-dm-broker-activated-tasks-1.gif "Joins for sys.dm_broker_activated_tasks")  
+## Physical joins  
+ 
+:::image type="content" source="../../relational-databases/system-dynamic-management-views/media/join-dm-broker-activated-tasks-1.svg" alt-text="Diagram of physical joins for sys.dm_broker_activated_tasks.":::
   
-## Relationship Cardinalities  
+## Relationship cardinalities  
   
 |From|To|Relationship|  
 |----------|--------|------------------|  
-|dm_broker_activated_tasks.spid|dm_exec_sessions.session_id|One-to-one|  
+|`dm_broker_activated_tasks`.`spid`|`dm_exec_sessions`.`session_id`|One-to-one|  
   
-## See Also  
+## Next steps
  [Dynamic Management Views and Functions &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
  [Service Broker Related Dynamic Management Views &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/service-broker-related-dynamic-management-views-transact-sql.md)  
-  
-  
-

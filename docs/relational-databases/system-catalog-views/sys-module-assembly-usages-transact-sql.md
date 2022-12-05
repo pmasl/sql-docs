@@ -1,31 +1,25 @@
 ---
-title: "sys.module_assembly_usages (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.module_assembly_usages (Transact-SQL)"
+description: sys.module_assembly_usages (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "module_assembly_usages_TSQL"
   - "module_assembly_usages"
   - "sys.module_assembly_usages_TSQL"
   - "sys.module_assembly_usages"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.module_assembly_usages catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: b0f9ffab-6ac7-49d5-8369-477fa6b1c02b
-caps.latest.revision: 13
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # sys.module_assembly_usages (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns a row for each module-to-assembly reference.  
   

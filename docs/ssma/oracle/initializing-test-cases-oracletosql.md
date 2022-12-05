@@ -1,19 +1,15 @@
 ---
+description: "Initializing Test Cases (OracleToSQL)"
 title: "Initializing Test Cases (OracleToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 45897363-cfc2-44bb-817b-7561e60b7410
-caps.latest.revision: 6
-author: "sabotta"
-ms.author: "carlasab"
-manager: "v-thobro"
+author: cpichuka 
+ms.author: cpichuka 
 ---
 # Initializing Test Cases (OracleToSQL)
 At this step you specify the initial information for the new test case.  

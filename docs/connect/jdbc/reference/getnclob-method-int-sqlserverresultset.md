@@ -1,19 +1,12 @@
 ---
-title: "getNClob Method (int) (SQLServerResultSet) | Microsoft Docs"
-ms.custom: ""
+title: "getNClob Method (int) (SQLServerResultSet)"
+description: "getNClob Method (int) (SQLServerResultSet)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 103082e3-de98-4dff-8dc7-eaa5c64b1597
-caps.latest.revision: 16
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getNClob Method (int) (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

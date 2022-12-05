@@ -1,14 +1,9 @@
 ---
-title: "Properties Window F1 Help (Management Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Properties Window F1 Help (Management Studio)"
+title: "Properties Window F1 Help (Management Studio)"
+ms.service: sql
+ms.subservice: ssms
+ms.topic: ui-reference
 f1_keywords: 
   - ".SPID"
   - ".ExecutionTime"
@@ -23,17 +18,23 @@ helpviewer_keywords:
   - "Properties window [SQL Server Management Studio]"
   - "SQL Server Management Studio Help [SQL Server], properties window"
 ms.assetid: f682ff0d-0161-4b42-a689-26eeb077d9e9
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan 
+ms.reviewer: ""
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
 ---
+
 # Properties Window F1 Help (Management Studio)
+
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+
 Use the **Properties** window to view properties of selected elements. You can also use the **Properties** window to view file, project, and solution properties. The **Properties** window is available by clicking **Properties Window** on the **View** menu.  
   
 The **Properties** window displays different types of editing fields, depending on the needs of a particular property. Properties shown in gray are read-only.  
   
-## Options  
+## Options
+
 **Object name**  
 Lists the currently selected object or objects. Only objects from the active editor or designer are visible.  
   
@@ -49,6 +50,6 @@ Displays the properties for an object.
 **Description pane**  
 The description pane appears at the bottom of the **Properties** window and shows the property type and a short description of the property. You can turn the description of the property off and on using the **Description** command on the shortcut menu.  
   
-## See Also  
-[Properties Window in SQL Server Management Studio](http://msdn.microsoft.com/en-us/903d4aca-f57c-43d9-a893-702eceaa7004)  
-  
+## See Also
+
+- [Properties Window in SQL Server Management Studio](../scripting/use-the-properties-window-in-management-studio.md)

@@ -1,26 +1,19 @@
 ---
-title: "DeleteRule Property Example (VB) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "DeleteRule Property Example (VB)"
+description: "DeleteRule Property Example (VB)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+helpviewer_keywords:
   - "DeleteRule property [ADOX], Visual Basic example"
-ms.assetid: 9ba00118-a80d-4a6d-a7d6-4f5492fb7ded
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+dev_langs:
+  - "VB"
 ---
 # DeleteRule Property Example (VB)
-This example demonstrates the [DeleteRule](../../../ado/reference/adox-api/deleterule-property-adox.md) property of a [Key](../../../ado/reference/adox-api/key-object-adox.md) object. The code appends a new [Table](../../../ado/reference/adox-api/table-object-adox.md) and then defines a new primary key, setting **DeleteRule** to **adRICascade**.  
+This example demonstrates the [DeleteRule](./deleterule-property-adox.md) property of a [Key](./key-object-adox.md) object. The code appends a new [Table](./table-object-adox.md) and then defines a new primary key, setting **DeleteRule** to **adRICascade**.  
   
 ```  
 ' BeginDeleteRuleVB  
@@ -83,5 +76,5 @@ End Sub
 ```  
   
 ## See Also  
- [DeleteRule Property (ADOX)](../../../ado/reference/adox-api/deleterule-property-adox.md)   
- [Key Object (ADOX)](../../../ado/reference/adox-api/key-object-adox.md)
+ [DeleteRule Property (ADOX)](./deleterule-property-adox.md)   
+ [Key Object (ADOX)](./key-object-adox.md)

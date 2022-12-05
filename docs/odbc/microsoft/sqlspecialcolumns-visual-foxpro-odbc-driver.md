@@ -1,21 +1,17 @@
 ---
+description: "SQLSpecialColumns (Visual FoxPro ODBC Driver)"
 title: "SQLSpecialColumns (Visual FoxPro ODBC Driver) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQLSpecialColumns function [ODBC], Visual FoxPro ODBC Driver"
 ms.assetid: b72a978d-6a60-475a-b7d9-c424d77bbe30
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLSpecialColumns (Visual FoxPro ODBC Driver)
 > [!NOTE]  

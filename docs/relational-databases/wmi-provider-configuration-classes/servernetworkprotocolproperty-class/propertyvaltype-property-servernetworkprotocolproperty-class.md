@@ -1,28 +1,25 @@
 ---
-title: "PropertyValType Property (ServerNetworkProtocolProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "PropertyValType Property (ServerNetworkProtocolProperty Class)"
+title: "PropertyValType Property (ServerNetworkProtocolProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
-  - "PropertyValType Property (ServerNetworkProtocolProperty Class)"
+  - "PropertyValType Property (ServerNetworkProtocolProperty"
 apilocation: 
   - "sqlmgmproviderxpsp2up.mof"
 apitype: "MOFDef"
 helpviewer_keywords: 
   - "PropertyValType property"
 ms.assetid: fbd42e8e-0642-4a19-b3c8-6ce88345145f
-caps.latest.revision: 30
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # PropertyValType Property (ServerNetworkProtocolProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the data type of the value stored in the referenced property.  
   
 ## Syntax  
@@ -42,6 +39,6 @@ object.PropertyValType [= value]
 ## Remarks  
   
 ## See Also  
- [Configuring Server Network Protocols and Net-Libraries](http://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
+ [Configuring Server Network Protocols and Net-Libraries](https://msdn.microsoft.com/library/ms177485\(v=sql.100\).aspx)  
   
   

@@ -1,29 +1,25 @@
 ---
+description: "sp_changedistpublisher (Transact-SQL)"
 title: "sp_changedistpublisher (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_changedistpublisher_TSQL"
   - "sp_changedistpublisher"
 helpviewer_keywords: 
   - "sp_changedistpublisher"
 ms.assetid: 7ef5c89d-faaa-4f8e-aef7-00649ebc8bc9
-caps.latest.revision: 36
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_changedistpublisher (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Changes the properties of the distribution Publisher. This stored procedure is executed at the Distributor on any database.  
   
@@ -39,15 +35,18 @@ sp_changedistpublisher [ @publisher = ] 'publisher'
 ```  
   
 ## Arguments  
- [ **@publisher=** ] **'***publisher***'**  
+`[ @publisher = ] 'publisher'`
  Is the Publisher name. *publisher* is **sysname**, with no default.  
   
- [ **@property=** ] **'***property***'**  
+`[ @property = ] 'property'`
  Is a property to change for the given Publisher. *property* is **sysname** and can be one of these values.  
   
- [ **@value=** ] **'***value***'**  
+`[ @value = ] 'value'`
  Is the value for the given property. *value* is **nvarchar(255)**, with a default of NULL.  
   
+
+ > [!INCLUDE[Azure SQL Database link](../../includes/azure-sql-db-repl-for-more-information.md)]
+ 
  This table describes the properties of Publishers and the values for those properties.  
   
 |Property|Values|Description|  
@@ -58,15 +57,18 @@ sp_changedistpublisher [ @publisher = ] 'publisher'
 |**login**||Login name.|  
 |**password**||Strong password for the supplied login.|  
 |**security_mode**|**1**|Use Windows Authentication when connecting to the Publisher. *This cannot be changed for a non-*[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] *publisher.*|  
-||**0**|Use [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication when connecting to the Publisher. *This cannot be changed for a non-*[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] *publisher.*|  
+||**0**|Use [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication when connecting to the Publisher. *This can't be changed for a non-*[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] *publisher.*|  
 |**working_directory**||Working directory used to store data and schema files for the publication.|  
-|NULL (default)||All available *property* options are printed.|  
+|NULL (default)||All available *property* options are printed.| 
+|**storage_connection_string**| Access key | The access key for the working directory when the database is Azure SQL Managed Instance. 
   
 ## Return Code Values  
  **0** (success) or **1** (failure)  
   
 ## Remarks  
  **sp_changedistpublisher** is used in all types of replication.  
+
+ If you're changing the **working_directory** property and the **storage_connection_string** property has to be updated, execute the stored procedure separately by updating the **working_directory** property followed by updating the **storage_connection_string** property or visa-versa.
   
 ## Permissions  
  Only members of the **sysadmin** fixed server role can execute **sp_changedistpublisher**.  

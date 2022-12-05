@@ -1,24 +1,15 @@
 ---
-title: "getStringFunctions Method (SQLServerDatabaseMetaData) | Microsoft Docs"
-ms.custom: ""
+title: "getStringFunctions Method (SQLServerDatabaseMetaData)"
+description: "getStringFunctions Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.getStringFunctions"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.getStringFunctions"
 apitype: "Assembly"
-ms.assetid: 4fb489ee-185e-405a-a4f7-3eb73c29bcd6
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getStringFunctions Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,37 +1,31 @@
 ---
-title: "sys.database_mirroring_witnesses (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.database_mirroring_witnesses (Transact-SQL)"
+description: Database Mirroring Witness Catalog Views - sys.database_mirroring_witnesses
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.database_mirroring_witnesses"
   - "sys.database_mirroring_witnesses_TSQL"
   - "database_mirroring_witnesses"
   - "database_mirroring_witnesses_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "database mirroring [SQL Server], catalog views"
   - "sys.database_mirroring_witnesses catalog view"
   - "witness [SQL Server], sys.database_mirroring_witnesses catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: 0dd5b794-733b-4a3c-b5a4-62f9f1f0f22d
-caps.latest.revision: 46
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # Database Mirroring Witness Catalog Views - sys.database_mirroring_witnesses
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains a row for every witness role that a server plays in a database mirroring partnership. 
   
-  In a database mirroring session, automatic failover requires a witness server. Ideally, the witness resides on a separate computer from both the principal and mirror servers. The witness does not serve the database. Instead, it monitors the status of the principal and mirror servers. If the principal server fails, the witness may initiate automatic failover to the witness server. 
+  In a database mirroring session, automatic failover requires a witness server. Ideally, the witness resides on a separate computer from both the principal and mirror servers. The witness does not serve the database. Instead, it monitors the status of the principal and mirror servers. If the principal server fails, the witness may initiate automatic failover to the mirror server. 
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
@@ -56,6 +50,6 @@ manager: "jhubbard"
  [Database Mirroring Witness](../../database-engine/database-mirroring/database-mirroring-witness.md)   
  [sys.database_mirroring &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-mirroring-transact-sql.md)   
  [sys.database_mirroring_endpoints &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-mirroring-endpoints-transact-sql.md)   
- [Querying the SQL Server System Catalog FAQ](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)  
+ [Querying the SQL Server System Catalog FAQ](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.yml)  
   
   

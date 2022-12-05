@@ -1,24 +1,15 @@
 ---
-title: "clearParameters Method (SQLServerPreparedStatement) | Microsoft Docs"
-ms.custom: ""
+title: "clearParameters Method (SQLServerPreparedStatement)"
+description: "clearParameters Method (SQLServerPreparedStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerPreparedStatement.clearParameters"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerPreparedStatement.clearParameters"
 apitype: "Assembly"
-ms.assetid: cb1d0f36-d2de-4685-b97a-626608e50e5c
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # clearParameters Method (SQLServerPreparedStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

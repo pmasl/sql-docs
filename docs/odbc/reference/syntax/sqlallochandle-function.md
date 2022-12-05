@@ -1,28 +1,25 @@
 ---
+description: "SQLAllocHandle Function"
 title: "SQLAllocHandle Function | Microsoft Docs"
 ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.date: "07/18/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 apiname: 
   - "SQLAllocHandle"
 apilocation: 
   - "sqlsrv32.dll"
+  - "odbc32.dll"
 apitype: "dllExport"
 f1_keywords: 
   - "SQLAllocHandle"
 helpviewer_keywords: 
   - "SQLAllocHandle function [ODBC]"
 ms.assetid: 6e7fe420-8cf4-4e72-8dad-212affaff317
-caps.latest.revision: 43
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQLAllocHandle Function
 **Conformance**  
@@ -36,7 +33,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```cpp  
   
 SQLRETURN SQLAllocHandle(  
       SQLSMALLINT   HandleType,  
@@ -76,7 +73,7 @@ SQLRETURN SQLAllocHandle(
   
  If the Driver Manager cannot allocate memory for *\*OutputHandlePtr* when **SQLAllocHandle** with a *HandleType* of SQL_HANDLE_ENV is called, or the application provides a null pointer for *OutputHandlePtr*, **SQLAllocHandle** returns SQL_ERROR. The Driver Manager sets **OutputHandlePtr* to SQL_NULL_HENV (unless the application provided a null pointer, which returns SQL_ERROR). There is no handle with which to associate additional diagnostic information.  
   
- The Driver Manager does not call the driver-level environment handle allocation function until the application calls **SQLConnect**, **SQLBrowseConnect**, or **SQLDriverConnect**. If an error occurs in the driver-level **SQLAllocHandle** function, then the Driver Manager–level **SQLConnect**, **SQLBrowseConnect**, or **SQLDriverConnect** function returns SQL_ERROR. The diagnostic data structure contains SQLSTATE IM004 (Driver's **SQLAllocHandle** failed). The error is returned on a connection handle.  
+ The Driver Manager does not call the driver-level environment handle allocation function until the application calls **SQLConnect**, **SQLBrowseConnect**, or **SQLDriverConnect**. If an error occurs in the driver-level **SQLAllocHandle** function, then the Driver Manager-level **SQLConnect**, **SQLBrowseConnect**, or **SQLDriverConnect** function returns SQL_ERROR. The diagnostic data structure contains SQLSTATE IM004 (Driver's **SQLAllocHandle** failed). The error is returned on a connection handle.  
   
  For more information about the flow of function calls between the Driver Manager and a driver, see [SQLConnect Function](../../../odbc/reference/syntax/sqlconnect-function.md).  
   

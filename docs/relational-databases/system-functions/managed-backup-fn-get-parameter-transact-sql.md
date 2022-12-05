@@ -1,14 +1,12 @@
 ---
+description: "managed_backup.fn_get_parameter (Transact-SQL)"
 title: "managed_backup.fn_get_parameter (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "10/03/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "smart_admin.fn_get_parameter_TSQL"
   - "smart_admin.fn_get_parameter"
@@ -20,13 +18,11 @@ helpviewer_keywords:
   - "fn_get_parameter"
   - "smart_admin.fn_get_parameter"
 ms.assetid: ed94e54d-4516-4806-a8ce-f013d3a04122
-caps.latest.revision: 17
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
 ---
 # managed_backup.fn_get_parameter (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
   Returns a table of 0, 1, or more rows of parameter and value pairs.  
   
@@ -38,7 +34,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```tsql  
+```sql  
 managed_backup.fn_get_parameter ('parameter_name' | '' | NULL )  
 ```  
   

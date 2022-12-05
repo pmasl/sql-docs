@@ -1,35 +1,28 @@
 ---
-title: "DISABLE TRIGGER (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DISABLE TRIGGER (Transact-SQL)"
+description: DISABLE TRIGGER (Transact-SQL)
+author: markingmyname
+ms.author: maghan
 ms.date: "05/10/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DISABLE_TSQL"
   - "DISABLE"
   - "DISABLE TRIGGER"
   - "DISABLE_TRIGGER_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "DML triggers, disabling"
   - "DDL triggers, disabling"
   - "DISABLE TRIGGER statement"
   - "triggers [SQL Server], disabling"
   - "disabling triggers"
-ms.assetid: e6529f06-e442-437e-a7bf-41790bc092c5
-caps.latest.revision: 45
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DISABLE TRIGGER (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Disables a trigger.  
   
@@ -37,12 +30,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 DISABLE TRIGGER { [ schema_name . ] trigger_name [ ,...n ] | ALL }  
 ON { object_name | DATABASE | ALL SERVER } [ ; ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *schema_name*  
  Is the name of the schema to which the trigger belongs. *schema_name* cannot be specified for DDL or logon triggers.  
   
@@ -62,7 +57,7 @@ ON { object_name | DATABASE | ALL SERVER } [ ; ]
  For a DDL trigger, indicates that *trigger_name* was created or modified to execute with database scope.  
   
  ALL SERVER  
- **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ **Applies to**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] and later.  
   
  For a DDL trigger, indicates that *trigger_name* was created or modified to execute with server scope. ALL SERVER also applies to logon triggers.  
   
@@ -83,9 +78,9 @@ ON { object_name | DATABASE | ALL SERVER } [ ; ]
 The following examples are described in the AdventureWorks2012 database.
   
 ### A. Disabling a DML trigger on a table  
- The following example disables trigger `uAddress` that was created on table `Address`.  
+ The following example disables trigger `uAddress` that was created on table `Person`.  
   
-```  
+```sql  
 DISABLE TRIGGER Person.uAddress ON Person.Address;  
 GO  
 ```  
@@ -93,7 +88,7 @@ GO
 ### B. Disabling a DDL trigger  
  The following example creates a DDL trigger `safety` with database scope, and then disables it.  
   
-```  
+```sql  
 CREATE TRIGGER safety   
 ON DATABASE   
 FOR DROP_TABLE, ALTER_TABLE   
@@ -108,7 +103,7 @@ GO
 ### C. Disabling all triggers that were defined with the same scope  
  The following example disables all DDL triggers that were created at the server scope.  
   
-```  
+```sql  
 DISABLE Trigger ALL ON ALL SERVER;  
 GO  
 ```  

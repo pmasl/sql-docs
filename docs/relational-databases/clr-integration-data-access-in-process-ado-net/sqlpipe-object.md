@@ -1,25 +1,20 @@
 ---
-title: "SqlPipe Object | Microsoft Docs"
-ms.custom: ""
+title: "SqlPipe Object"
+description: For CLR database objects running in SQL Server, you can send results to the connected pipe using the Send methods of the SqlPipe object.
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: clr
 ms.topic: "reference"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "custom result sets [CLR integration]"
   - "SqlPipe object"
   - "tabular results"
 ms.assetid: 3e090faf-085f-4c01-a565-79e3f1c36e3b
-caps.latest.revision: 54
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # SqlPipe Object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   In previous versions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], it is very common to write a stored procedure (or an extended stored procedure) that sends results or output parameters to the calling client.  
   
  In a [!INCLUDE[tsql](../../includes/tsql-md.md)] stored procedure, any **SELECT** statement that returns zero or more rows sends the results to the connected caller's "pipe."  
@@ -138,7 +133,6 @@ EXEC uspGetProductLineVB 'T';
   
 ## See Also  
  [SqlDataRecord Object](../../relational-databases/clr-integration-data-access-in-process-ado-net/sqldatarecord-object.md)   
- [CLR Stored Procedures](http://msdn.microsoft.com/library/bbdd51b2-a9b4-4916-ba6f-7957ac6c3f33)   
+ [CLR Stored Procedures](/dotnet/framework/data/adonet/sql/clr-stored-procedures)   
  [SQL Server In-Process Specific Extensions to ADO.NET](../../relational-databases/clr-integration-data-access-in-process-ado-net/sql-server-in-process-specific-extensions-to-ado-net.md)  
-  
   

@@ -1,26 +1,21 @@
 ---
-title: "Example: Setting Up Database Mirroring Using Certificates (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "Example: Database mirroring with certificates (T-SQL)"
+description: This article contains an example of configuring SQL Server database mirroring with certificate-based authentication by using Transact-SQL in SQL Server.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "05/17/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-high-availability"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: database-mirroring
+ms.topic: conceptual
+ms.custom: seo-lt-2019
+helpviewer_keywords:
   - "database mirroring [SQL Server], deployment"
   - "certificates [SQL Server], database mirroring"
   - "authentication [SQL Server], database mirroring"
   - "database mirroring [SQL Server], security"
-ms.assetid: df489ecd-deee-465c-a26a-6d1bef6d7b66
-caps.latest.revision: 50
-author: "MikeRayMSFT"
-ms.author: "mikeray"
-manager: "jhubbard"
 ---
 # Example: Setting Up Database Mirroring Using Certificates (Transact-SQL)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   This example shows all the stages required to create a database mirroring session using certificate-based authentication. The examples in this topic use [!INCLUDE[tsql](../../includes/tsql-md.md)]. Unless you can guarantee that your network is secure, we recommend that you use encryption for database mirroring connections.  
   
  When copying a certificate to another system, use a secure copy method. Be extremely careful to keep all of your certificates secure.  
@@ -30,7 +25,7 @@ manager: "jhubbard"
   
  The initial principal role is taken by HOST_A, and the mirror role is taken by HOST_B.  
   
- Setting up database mirroring using certificates involves four general stages, of which three stages—1, 2, and 4—are demonstrated by this example. These stages are as follows:  
+ Setting up database mirroring using certificates involves four general stages, of which three stages-1, 2, and 4-are demonstrated by this example. These stages are as follows:  
   
 1.  [Configuring Outbound Connections](#ConfiguringOutboundConnections)  
   
@@ -259,7 +254,7 @@ manager: "jhubbard"
     ```  
   
     > [!NOTE]  
-    >  If you intend to run in high-safety mode with automatic failover, leave transaction safety set to FULL (the default setting) and add the witness as soon as possible after executing the second SET PARTNER **'***partner_server***'** statement. Note that the witness must first be configured for outbound and inbound connections.  
+    >  If you intend to run in high-safety mode with automatic failover, leave transaction safety set to FULL (the default setting) and add the witness as soon as possible after executing the second SET PARTNER **'**_partner_server_**'** statement. Note that the witness must first be configured for outbound and inbound connections.  
   
  [&#91;Top of Example&#93;](#ExampleH2)  
   

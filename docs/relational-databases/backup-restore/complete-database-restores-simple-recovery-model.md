@@ -1,14 +1,12 @@
 ---
-title: "Complete Database Restores (Simple Recovery Model) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+title: "Restore database - simple recovery model"
+description: Learn about a complete database restore in SQL Server that restores all data to the point in time that the backup was made.
+ms.custom: seo-lt-2019
+ms.date: "12/17/2019"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-backup-restore"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: backup-restore
+ms.topic: conceptual
 helpviewer_keywords: 
   - "complete database restores"
   - "database restores [SQL Server], complete database"
@@ -16,13 +14,11 @@ helpviewer_keywords:
   - "simple recovery model [SQL Server]"
   - "restoring [SQL Server], database"
 ms.assetid: 49828927-1727-4d1d-9ef5-3de43f68c026
-caps.latest.revision: 58
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: MashaMSFT
+ms.author: mathoma
 ---
 # Complete Database Restores (Simple Recovery Model)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   In a complete database restore, the goal is to restore the whole database. The whole database is offline for the duration of the restore. Before any part of the database can come online, all data is recovered to a consistent point in which all parts of the database are at the same point in time and no uncommitted transactions exist.  
   
@@ -43,11 +39,11 @@ manager: "jhubbard"
 ##  <a name="Overview"></a> Overview of Database Restore Under the Simple Recovery Model  
  A full database restore under the simple recovery model involves one or two [RESTORE](../../t-sql/statements/restore-statements-transact-sql.md) statements, depending on whether you want to restore a differential database backup. If you are using only a full database backup, just restore the most recent backup, as shown in the following illustration.  
   
- ![Restoring only a full database backup](../../relational-databases/backup-restore/media/bnrr-rmsimple1-fulldbbu.gif "Restoring only a full database backup")  
+ ![Restoring only a full database backup](../../relational-databases/backup-restore/media/bnrr-rmsimple1-fulldbbu.png "Restoring only a full database backup")  
   
  If you are also using a differential database backup, restore the most recent full database backup without recovering the database, and then restore the most recent differential database backup and recover the database. The following illustration shows this process.  
   
- ![Restoring full and differential database backups](../../relational-databases/backup-restore/media/bnrr-rmsimple2-diffdbbu.gif "Restoring full and differential database backups")  
+ ![Restoring full and differential database backups](../../relational-databases/backup-restore/media/bnrr-rmsimple2-diffdbbu.png "Restoring full and differential database backups")  
   
 > [!NOTE]  
 >  If you plan to restore a database backup onto a different server instance, see [Copy Databases with Backup and Restore](../../relational-databases/databases/copy-databases-with-backup-and-restore.md).  

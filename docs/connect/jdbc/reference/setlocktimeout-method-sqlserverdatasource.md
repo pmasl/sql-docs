@@ -1,24 +1,15 @@
 ---
-title: "setLockTimeout Method (SQLServerDataSource) | Microsoft Docs"
-ms.custom: ""
+title: "setLockTimeout Method (SQLServerDataSource)"
+description: "setLockTimeout Method (SQLServerDataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDataSource.setLockTimeout"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDataSource.setLockTimeout"
 apitype: "Assembly"
-ms.assetid: 10dca5aa-1851-4326-9ae9-7a8430d12d11
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setLockTimeout Method (SQLServerDataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

@@ -1,29 +1,26 @@
 ---
+description: "Modify Check Constraints"
 title: "Modify Check Constraints | Microsoft Docs"
 ms.custom: ""
 ms.date: "06/28/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-tables"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: table-view-index
+ms.topic: conceptual
 helpviewer_keywords: 
   - "CHECK constraints, modifying"
   - "modifying constraints"
   - "constraints [SQL Server], check"
   - "constraints [SQL Server], modifying"
 ms.assetid: f22daef8-e350-40ef-8ff0-b5f87d1d9e56
-caps.latest.revision: 18
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Modify Check Constraints
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  You can modify a check constraint in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)] when you want to change the constraint expression or the options that enable or disable the constraint for specific conditions.  
+  You can modify a check constraint in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or [!INCLUDE[tsql](../../includes/tsql-md.md)] when you want to change the constraint expression or the options that enable or disable the constraint for specific conditions.  
   
  **In This Topic**  
   
@@ -50,7 +47,7 @@ manager: "jhubbard"
   
 1.  In the **Object Explorer**, right-click the table containing the check constraint and select **Design**.  
   
-2.  On the **Table Designer** menu, click **Check Constraints…**.  
+2.  On the **Table Designer** menu, click **Check Constraints...**.  
   
 3.  In the **Check Constraints** dialog box, under **Selected Check Constraint**, select the constraint you wish to edit.  
   
@@ -69,8 +66,8 @@ manager: "jhubbard"
   
 5.  Click **Close**.  
   
-6.  On the **File** menu, click **Save***table name*.  
-  
+6.  On the **File** menu, click **Save**_table name_.  
+
 ##  <a name="TsqlProcedure"></a> Using Transact-SQL  
  **To modify a check constraint**  
   

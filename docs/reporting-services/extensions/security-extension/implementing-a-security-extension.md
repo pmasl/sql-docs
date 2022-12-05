@@ -1,32 +1,25 @@
 ---
 title: "Implementing a Security Extension | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "docset-sql-devref"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-applies_to: 
-  - "SQL Server 2016 Preview"
+description: Accommodate custom security by using the Reporting Services API development platform to extend the Reporting Services security system.
+ms.date: 05/25/2022
+ms.prod: reporting-services
+ms.technology: extensions
+
+
+ms.topic: reference
 helpviewer_keywords: 
   - "security [Reporting Services], extensions"
   - "forms-based authentication [Reporting Services]"
   - "custom authentication [Reporting Services]"
   - "extensions [Reporting Services], custom security"
 ms.assetid: d2327e7c-0d48-49e3-bcd9-3bba4e67a68b
-caps.latest.revision: 40
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Implementing a Security Extension
   [!INCLUDE[msCoName](../../../includes/msconame-md.md)] Windows Authentication is the primary system for securing reports in [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)]. In certain cases, however, you may need to extend the [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] security system to accommodate custom security in your enterprise. You can do this using the development platform provided by the [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] API. This section will present an overview of security extensions in [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)].  
   
- For complete details about implementing, deploying, and removing a [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] security extension, please see [SQL Server Reporting Services Product Samples](http://go.microsoft.com/fwlink/?LinkId=177889).  
+ For complete details about implementing, deploying, and removing a [!INCLUDE[ssRSnoversion](../../../includes/ssrsnoversion-md.md)] security extension, please see the [Reporting Services Custom Security Samples on GitHub](https://github.com/microsoft/Reporting-Services).  
   
 ## In This Section  
  [Security Extensions Overview](../../../reporting-services/extensions/security-extension/security-extensions-overview.md)  

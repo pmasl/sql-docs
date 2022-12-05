@@ -1,20 +1,16 @@
 ---
-title: "SET STATISTICS TIME (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "SET STATISTICS TIME (Transact-SQL)"
+description: SET STATISTICS TIME (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "SET_STATISTICS_TIME_TSQL"
   - "SET STATISTICS TIME"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "statistical information [SQL Server], statement processing"
   - "time [SQL Server], statement processing statistics"
   - "SET STATISTICS TIME statement"
@@ -23,14 +19,11 @@ helpviewer_keywords:
   - "parsing [SQL Server], SET STATISTICS TIME statement"
   - "compile times [SQL Server]"
   - "execution processing time [SQL Server]"
-ms.assetid: eec2e1cd-a29d-4cf3-a271-be9d61506f15
-caps.latest.revision: 31
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # SET STATISTICS TIME (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]	
 
   Displays the number of milliseconds required to parse, compile, and execute each statement.  
   
@@ -38,12 +31,14 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 SET STATISTICS TIME { ON | OFF }  
 ```  
   
-## Remarks  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Remarks
  When SET STATISTICS TIME is ON, the time statistics for a statement are displayed. When OFF, the time statistics are not displayed.  
   
  The setting of SET STATISTICS TIME is set at execute or run time and not at parse time.  
@@ -60,7 +55,7 @@ SET STATISTICS TIME { ON | OFF }
 ## Examples  
  This example shows the server execution, parse, and compile times.  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO         
 SET STATISTICS TIME ON;  

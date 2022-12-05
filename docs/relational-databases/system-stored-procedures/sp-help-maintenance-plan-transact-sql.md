@@ -1,14 +1,12 @@
 ---
+description: "sp_help_maintenance_plan (Transact-SQL)"
 title: "sp_help_maintenance_plan (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_help_maintenance_plan_TSQL"
   - "sp_help_maintenance_plan"
@@ -17,17 +15,16 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_help_maintenance_plan"
 ms.assetid: e972a510-960e-41d6-93c5-c71cd581a585
-caps.latest.revision: 23
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_help_maintenance_plan (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Returns information about the specified maintenance plan. If a plan is not specified, this stored procedure returns information about all maintenance plans.  
   
-> **NOTE:** This stored procedure is used with database maintenance plans. This feature has been replaced with maintenance plans which do not use this stored procedure. Use this procedure to maintain database maintenance plans on installations that were upgraded from a previous version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+> [!NOTE]  
+> This stored procedure is used with database maintenance plans. This feature has been replaced with maintenance plans which do not use this stored procedure. Use this procedure to maintain database maintenance plans on installations that were upgraded from a previous version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
  [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]  
   
@@ -42,7 +39,7 @@ sp_help_maintenance_plan [ [ @plan_id = ] 'plan_id' ]
 ```  
   
 ## Arguments  
- [ **@plan_id =**] **'***plan_id***'**  
+`[ @plan_id = ] 'plan\_id'`
  Specifies the plan ID of the maintenance plan. *plan_id* is **UNIQUEIDENTIFIER**. The default is NULL.  
   
 ## Return Code Values  

@@ -1,22 +1,18 @@
 ---
 title: "Prepare Excel data for Reporting Services mobile reports | Microsoft Docs"
-ms.custom: 
-  - "SQL2016_New_Updated"
-ms.date: "02/08/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Reporting Services mobile reports can use data from Excel files. Follow these tips to prepare Excel files and worksheets for easy import.
+ms.date: 07/21/2022
+ms.service: reporting-services
+ms.subservice: mobile-reports
+
+ms.topic: conceptual
 ms.assetid: 16698f8d-bfc7-4eca-9e97-82c99d8bc08e
-caps.latest.revision: 14
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Prepare Excel data for Reporting Services mobile reports
+
+[!INCLUDE [ssrs-mobile-report-deprecated](../../includes/ssrs-mobile-report-deprecated.md)]
   
 Here are some things to keep in mind when preparing an Excel file and worksheets for use with a mobile report:  
   
@@ -49,7 +45,7 @@ When preparing an Excel file as a dataset for a mobile report, make sure you hav
   
 As you can see in the example above, the first row contains the name of the metric in that column. [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] preserves these column headers for easy reference in gallery element settings. Column headers aren't required, however. If missing, [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] generates headings using the Excel A,B,C,...,AA,BB,... convention.  
   
-[!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)]automatically detects first-row headers when importing Excel worksheets by comparing the data types of the first two cells in each column. If the data types of the first two cells in any column don't match, the first row is determined to contain column headers. Thus, if a table has numeric column headers, prefix the header names with a string so they're detected as headers in the import process.  
+[!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] automatically detects first-row headers when importing Excel worksheets by comparing the data types of the first two cells in each column. If the data types of the first two cells in any column don't match, the first row is determined to contain column headers. Thus, if a table has numeric column headers, prefix the header names with a string so they're detected as headers in the import process.  
   
 ## Cells  
   
@@ -64,17 +60,18 @@ If a worksheet contains calculated cells or formulas, only the resulting display
   
 There are no restrictions on where you store Excel files you import into the [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)]. However, if you move or rename the file after importing, you won't be able to refresh that data through the **refresh all data** command found in the Data View.   
   
->**Note**: [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] doesn't automatically refresh Excel data. You can refresh the data through the [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] **refresh** command, but only if the file hasn't moved.  
+> [!NOTE]  
+> [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] doesn't automatically refresh Excel data. You can refresh the data through the [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] **refresh** command, but only if the file hasn't moved.  
   
 ## Dates  
   
 Date fields are essential to many mobile reports, so make cells are properly formatted as dates in Excel. In some cases this means a conversion is necessary. Here are examples of formulas for converting cells from text to dates in Excel.  
   
-    Week 24-2013=DATE(MID(A2,9,4),1,-2)-WEEKDAY(DATE(MID(A2,9,4),1,3))+MID(A2,6,2)*7  
-  
-    2013/03/21=DATEVALUE(A1)  
-  
-    2013-mar-12=DATEVALUE(RIGHT(A1,2)&"-"&MID(A1,6,3)&"-"&LEFT(A1,4))  
+`Week 24-2013=DATE(MID(A2,9,4),1,-2)-WEEKDAY(DATE(MID(A2,9,4),1,3))+MID(A2,6,2)*7`  
+
+`2013/03/21=DATEVALUE(A1)`  
+
+`2013-mar-12=DATEVALUE(RIGHT(A1,2)&"-"&MID(A1,6,3)&"-"&LEFT(A1,4))`  
   
 After you've converted the cells, you have to format them as dates by selecting them, or the entire column > **Context** menu > **Format Cells** > **Date** from the **Category** list. You can also use the Excel text-to-columns wizard to convert text cells to properly formatted dates.  
   
@@ -87,8 +84,8 @@ Custom objects in Excel worksheets, including PivotTables, visualizations, and i
 ### See also  
 - [Prepare data for Reporting Services mobile reports](../../reporting-services/mobile-reports/prepare-data-for-reporting-services-mobile-reports.md)  
 - [Create and publish mobile reports with SQL Server Mobile Report Publisher](../../reporting-services/mobile-reports/create-mobile-reports-with-sql-server-mobile-report-publisher.md)  
--  View [SQL Server mobile reports and KPIs in the iPad app](https://pbiwebprod-docs.azurewebsites.net/en-us/documentation/powerbi-mobile-ipad-kpis-mobile-reports)  (Power BI for iOS)  
--  View [SQL Server mobile reports and KPIs in the iPhone app](https://pbiwebprod-docs.azurewebsites.net/en-us/documentation/powerbi-mobile-iphone-kpis-mobile-reports) (Power BI for iOS)  
+-  View [SQL Server mobile reports and KPIs in the iPad app](https://pbiwebprod-docs.azurewebsites.net/documentation/powerbi-mobile-ipad-kpis-mobile-reports)  (Power BI for iOS)  
+-  View [SQL Server mobile reports and KPIs in the iPhone app](https://pbiwebprod-docs.azurewebsites.net/documentation/powerbi-mobile-iphone-kpis-mobile-reports) (Power BI for iOS)  
   
   
   

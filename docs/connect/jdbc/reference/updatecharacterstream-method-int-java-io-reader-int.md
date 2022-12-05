@@ -1,24 +1,15 @@
 ---
-title: "updateCharacterStream Method (java.io.Reader, int) | Microsoft Docs"
-ms.custom: ""
+title: updateCharacterStream method (int, java.io.Reader, int)
+description: "updateCharacterStream Method (int, java.io.Reader, int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.updateCharacterStream (int, java.io.Reader, int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.updateCharacterStream (int, java.io.Reader, int)"
 apitype: "Assembly"
-ms.assetid: b692c372-f6d7-4528-9c5d-cd8421bdb12e
-caps.latest.revision: 22
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # updateCharacterStream Method (int, java.io.Reader, int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

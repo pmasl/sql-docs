@@ -1,31 +1,24 @@
 ---
-title: "DENY Symmetric Key Permissions (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DENY Symmetric Key Permissions (Transact-SQL)"
+description: DENY Symmetric Key Permissions (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "06/09/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+helpviewer_keywords:
   - "denying permissions [SQL Server], symmetric keys"
   - "symmetric keys [SQL Server], permissions"
   - "permissions [SQL Server], symmetric keys"
   - "DENY statement, symmetric keys"
   - "encryption [SQL Server], symmetric keys"
   - "cryptography [SQL Server], symmetric keys"
-ms.assetid: 52d4b12d-17be-4cbd-aa78-65332a4883b0
-caps.latest.revision: 28
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DENY Symmetric Key Permissions (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Denies permissions on a symmetric key.  
   
@@ -33,7 +26,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
 DENY permission [ ,...n ]    
     ON SYMMETRIC KEY :: symmetric_key_name   
         TO <database_principal> [ ,...n ] [ CASCADE ]  
@@ -50,7 +43,9 @@ DENY permission [ ,...n ]
     | Database_user_with_no_login   
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *permission*  
  Specifies a permission that can be denied on a symmetric key. For a list of the permissions, see the Remarks section later in this topic.  
   
@@ -109,7 +104,7 @@ DENY permission [ ,...n ]
 ## Examples  
  The following example denies `ALTER` permission on the symmetric key `SamInventory42` to the database user `HamidS`.  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 DENY ALTER ON SYMMETRIC KEY::SamInventory42 TO HamidS;  
 GO  

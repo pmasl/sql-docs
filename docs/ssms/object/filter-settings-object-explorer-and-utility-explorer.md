@@ -1,27 +1,24 @@
 ---
-title: "Filter Settings (Object Explorer and Utility Explorer) | Microsoft Docs"
-ms.custom: ""
+description: "Filter Settings (Object Explorer and Utility Explorer)"
+title: "Filter Settings (Object Explorer and Utility Explorer)"
+ms.custom: seo-lt-2019
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: ssms
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.common.filtersettings.f1"
   - "sql13.ag.job.filtersettings.f1"
 ms.assetid: 4aab04bc-e1ab-4d4b-ab74-b287fc805bc2
-caps.latest.revision: 4
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: "markingmyname"
+ms.author: "maghan"
 ---
 # Filter Settings (Object Explorer and Utility Explorer)
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 Use this dialog box to specify a filter. A filter allows you to configure Object Explorer and Utility Explorer to display only items that meet specific criteria. For example, you can use a filter to show only jobs with names that contain the word "Maintenance." The header for the **Filter Settings** dialog box contains the name of the server, and it may contain the name of the database.  
   
-## UIElement List  
+## UI element list  
 **Property**  
 Displays the property to filter on.  
   
@@ -71,6 +68,5 @@ Type the value to compare to the property. For dates, click the down arrow to sh
 Removes all current filter settings.  
   
 ## See Also  
-[Use SQL Server Management Studio](../../ssms/use-sql-server-management-studio.md)  
-[Overview of SQL Server Utility](http://msdn.microsoft.com/en-us/6e6cbd25-6b1c-4e21-9ade-4584e243fd8f)  
-  
+[Use SQL Server Management Studio](../sql-server-management-studio-ssms.md)  
+[Overview of SQL Server Utility](../../relational-databases/manage/sql-server-utility-features-and-tasks.md)  

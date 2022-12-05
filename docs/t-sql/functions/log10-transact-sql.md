@@ -1,32 +1,26 @@
 ---
-title: "LOG10 (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "LOG10 (Transact-SQL)"
+description: "LOG10 (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "LOG10"
   - "LOG10_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "float expressions"
   - "LOG10 function"
   - "base-10 logarithms"
   - "logarithm of expression"
-ms.assetid: 1eb7fb34-1937-4a39-a936-f5c0c7c7e06f
-caps.latest.revision: 23
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # LOG10 (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Returns the base-10 logarithm of the specified **float** expression.  
   
@@ -34,13 +28,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql  
 LOG10 ( float_expression )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *float_expression*  
  Is an [expression](../../t-sql/language-elements/expressions-transact-sql.md) of type **float** or of a type that can be implicitly converted to **float**.  
   
@@ -55,10 +49,10 @@ LOG10 ( float_expression )
 ### A. Calculating the base 10 logarithm for a variable.  
  The following example calculates the `LOG10` of the specified variable.  
   
-```  
-DECLARE @var float;  
+```sql  
+DECLARE @var FLOAT;  
 SET @var = 145.175643;  
-SELECT 'The LOG10 of the variable is: ' + CONVERT(varchar,LOG10(@var));  
+SELECT 'The LOG10 of the variable is: ' + CONVERT(VARCHAR,LOG10(@var));  
 GO  
 ```  
   
@@ -73,7 +67,7 @@ The LOG10 of the variable is: 2.16189
 ### B. Calculating the result of raising a base-10 logarithm to a specified power.  
  The following example returns the result of raising a base-10 logarithm to a specified power.  
   
-```  
+```sql  
 SELECT POWER (10, LOG10(5));   
 ```  
   
@@ -91,15 +85,16 @@ SELECT POWER (10, LOG10(5));
 ### C: Calculating the base 10 logarithm for a value.  
  The following example calculates the `LOG10` of the specified value.  
   
-```  
+```sql  
 SELECT LOG10(145.175642);  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
- `-------------------`  
-  
- `2.16`  
+ ```
+-------------------  
+2.16
+```  
   
 ## See Also  
  [Mathematical Functions &#40;Transact-SQL&#41;](../../t-sql/functions/mathematical-functions-transact-sql.md)   

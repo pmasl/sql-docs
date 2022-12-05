@@ -1,16 +1,12 @@
 ---
 title: "Type System (XQuery) | Microsoft Docs"
+description: Learn about the XQuery type system that includes built-in types of XML schema and types defined in the xpath-datatypes namespace.
 ms.custom: ""
 ms.date: "08/10/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: xml
 ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
 dev_langs: 
   - "XML"
 helpviewer_keywords: 
@@ -25,13 +21,11 @@ helpviewer_keywords:
   - "built-in XML schema types [SQL Server]"
   - "xs prefix [XML in SQL Server]"
 ms.assetid: 22d6f861-d058-47ee-b550-cbe9092dcb12
-caps.latest.revision: 28
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "rothja"
+ms.author: "jroth"
 ---
 # Type System (XQuery)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
 
   XQuery is a strongly-typed language for schema types and a weakly-typed language for untyped data. The predefined types of XQuery include the following:  
   
@@ -54,7 +48,7 @@ manager: "jhubbard"
   
 ```  
 SELECT Instructions.query('  
-   DECLARE namespace AWMI="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
+   DECLARE namespace AWMI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
    data(/AWMI:root[1]/AWMI:Location[@LocationID=10][1]/@LotSize)[1] instance of xs:decimal  
 ') AS Result  
 FROM Production.ProductModel  
@@ -136,7 +130,7 @@ SELECT @x.query('string(/root[1]) + 3')
   
 ```  
 SELECT Instructions.query('   
-DECLARE namespace AWMI="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";   
+DECLARE namespace AWMI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";   
              sum(data(//AWMI:Location/@LaborHours))   
 ') AS Result   
 FROM Production.ProductModel   

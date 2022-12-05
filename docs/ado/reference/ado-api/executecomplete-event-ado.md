@@ -1,33 +1,26 @@
 ---
-title: "ExecuteComplete Event (ADO) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ExecuteComplete Event (ADO)"
+description: "ExecuteComplete Event (ADO)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Connection::ExecuteComplete"
   - "ExecuteComplete"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ExecuteComplete event [ADO]"
-ms.assetid: 62470d42-e511-494c-bec4-ad4591734b7b
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ExecuteComplete Event (ADO)
+
 The **ExecuteComplete** event is called after a command has finished executing.  
   
 ## Syntax  
   
 ```  
-  
 ExecuteComplete RecordsAffected, pError, adStatus, pCommand, pRecordset, pConnection  
 ```  
   

@@ -1,14 +1,12 @@
 ---
+description: "Role of the Driver Manager"
 title: "Role of the Driver Manager | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "diagnostic information [ODBC], SqlGetDiagField"
   - "diagnostic information [ODBC], driver manager error checking"
@@ -18,10 +16,8 @@ helpviewer_keywords:
   - "diagnostic information [ODBC], SqlGetDiagRec"
   - "driver manager [ODBC], error checking"
 ms.assetid: 7b861c82-357e-4590-8074-45136e9ed15e
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Role of the Driver Manager
 The Driver Manager determines the final order in which to return status records that it generates. In particular, it determines which record has the highest rank and is to be returned first. The driver is responsible for ordering status records that it generates. If status records are posted by both the Driver Manager and the driver, the Driver Manager is responsible for ordering them. For more information, see [Sequence of Status Records](../../../odbc/reference/develop-app/sequence-of-status-records.md).  

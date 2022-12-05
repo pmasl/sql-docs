@@ -1,24 +1,22 @@
 ---
-title: "Summarize or Aggregate Values for All Rows in a Table | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "tools-ssms"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: "Summarize or Aggregate Values for All Rows in a Table (Visual Database Tools)"
+title: Summarize or Aggregate Values for All Rows in a Table
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+ms.service: sql
+ms.subservice: ssms
+ms.topic: conceptual
 helpviewer_keywords: 
   - "summarizing query results"
   - "aggregate functions [SQL Server], summarizing query results"
 ms.assetid: f5af876e-f937-4110-ba09-07999c35a699
-caps.latest.revision: 5
-author: "stevestein"
-ms.author: "sstein"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+ms.reviewer: 
+
 ---
 # Summarize or Aggregate Values for All Rows in a Table (Visual Database Tools)
+[!INCLUDE[SQL Server](../../includes/applies-to-version/sqlserver.md)]
 ## Aggregate function
 Using an aggregate function, you can create a summary for all the values in a table. For example, you can create a query such as the following to display the total price for all books in the `titles` table:  
   
@@ -38,12 +36,13 @@ FROM titles
   
 If you add a search condition, you can aggregate the subset of rows that meet that condition.  
 
-**Note!** You can also count all the rows in the table or the ones that meet a specific condition. For details, see [Count Rows in a Table &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/count-rows-in-a-table-visual-database-tools.md).  
+> [!NOTE]  
+> You can also count all the rows in the table or the ones that meet a specific condition. For details, see [Count Rows in a Table &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/count-rows-in-a-table-visual-database-tools.md).  
   
   
 When you create a single aggregation value for all rows in a table, you display only the aggregate values themselves. For example, if you are totaling the value of the `price` column of the `titles` table, you would not also display individual titles, publisher names, and so on.  
  
- **!** If you are subtotaling — that is, creating groups — you can display column values for each group. For details, see [Group Rows in Query Results &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/group-rows-in-query-results-visual-database-tools.md).  
+ **!** If you are subtotaling - that is, creating groups - you can display column values for each group. For details, see [Group Rows in Query Results &#40;Visual Database Tools&#41;](../../ssms/visual-db-tools/group-rows-in-query-results-visual-database-tools.md).  
 
 ## Aggregate values for all rows  
   

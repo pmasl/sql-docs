@@ -1,19 +1,12 @@
 ---
-title: "getBinaryStream Method (long, long) | Microsoft Docs"
-ms.custom: ""
+title: "getBinaryStream Method (long, long)"
+description: "getBinaryStream Method (long, long)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 30bc8882-04b4-4efd-95e4-7d3a2a8c1d47
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # getBinaryStream Method (long, long)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

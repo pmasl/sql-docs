@@ -1,29 +1,17 @@
 ---
-title: "PredictAssociation (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "09/14/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "PredictAssociation"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "PredictAssociation function"
-ms.assetid: 33eb66b5-84c6-449f-aaae-316345bc4ad5
-caps.latest.revision: 33
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "PredictAssociation (DMX)"
+description: "PredictAssociation (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # PredictAssociation (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Predicts associative membership.  
   
@@ -67,7 +55,7 @@ SELECT
 From  
   [Association]  
 ```  
-The following example demonstrates how you can use a nested table as input to the prediction function, useing the SHAPE clause. The SHAPE query creates a rowset with customerId as one column and a nested table as a second column, which contains the list of products a customer has already brought. 
+The following example demonstrates how you can use a nested table as input to the prediction function, using the SHAPE clause. The SHAPE query creates a rowset with customerId as one column and a nested table as a second column, which contains the list of products a customer has already brought. 
 
 ~~~~
 SELECT T.[CustomerId], PredictAssociation(MyNestedTable, 5) // returns top 5 associated items

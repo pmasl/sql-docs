@@ -1,24 +1,15 @@
 ---
-title: "getDate Method (int) | Microsoft Docs"
-ms.custom: ""
+title: "getDate Method (int)"
+description: "getDate Method (int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerCallableStatement.getDate (int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerCallableStatement.getDate (int)"
 apitype: "Assembly"
-ms.assetid: aa9f08af-df24-4c80-8298-c4007339b20a
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getDate Method (int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
@@ -46,7 +37,7 @@ public java.sql.Date getDate(int index)
 ## Remarks  
  This getDate method is specified by the getDate method in the java.sql.CallableStatement interface.  
   
- This method returns a valid date part of a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion_md.md)] **datetime** or **smalldatetime** data type, with the time part set to the Java time baseline of 00:00 (midnight).  
+ This method returns a valid date part of a [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **datetime** or **smalldatetime** data type, with the time part set to the Java time baseline of 00:00 (midnight).  
   
 ## See Also  
  [getDate Method &#40;SQLServerCallableStatement&#41;](../../../connect/jdbc/reference/getdate-method-sqlservercallablestatement.md)   

@@ -1,19 +1,12 @@
 ---
-title: "SQLServerBlob Constructors | Microsoft Docs"
-ms.custom: ""
+title: "SQLServerBlob Constructors"
+description: "SQLServerBlob Constructors"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 77c1378c-d68b-4ff7-90bf-2582f44e6a1e
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # SQLServerBlob Constructors
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

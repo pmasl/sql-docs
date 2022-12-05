@@ -1,14 +1,12 @@
 ---
+description: "sp_syspolicy_rename_policy (Transact-SQL)"
 title: "sp_syspolicy_rename_policy (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "08/09/2016"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_syspolicy_rename_policy_TSQL"
   - "sp_syspolicy_rename_policy"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_syspolicy_rename_policy"
 ms.assetid: ce2b07f5-23b1-4f49-8e7b-c18cf3f3d45b
-caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # sp_syspolicy_rename_policy (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Renames an existing policy in Policy-Based Management.  
   
@@ -39,13 +35,13 @@ sp_syspolicy_rename_policy { [ @name = ] 'name' | [ @policy_id = ] policy_id }
 ```  
   
 ## Arguments  
- [ **@name=** ] **'***name***'**  
+`[ @name = ] 'name'`
  Is the name of the policy that you want to rename. *name* is **sysname**, and must be specified if *policy_id* is NULL.  
   
- [ **@policy_id=** ] *policy_id*  
+`[ @policy_id = ] policy_id`
  Is the identifier for the policy that you want to rename. *policy_id* is **int**, and must be specified if *name* is NULL.  
   
- [ **@new_name=** ] **'***new_name***'**  
+`[ @new_name = ] 'new_name'`
  Is the new name for the policy. *new_name* is **sysname**, and is required. Cannot be NULL or an empty string.  
   
 ## Return Code Values  

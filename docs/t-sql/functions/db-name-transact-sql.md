@@ -1,63 +1,59 @@
 ---
-title: "DB_NAME (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DB_NAME (Transact-SQL)"
+description: "DB_NAME (Transact-SQL)"
+author: VanMSFT
+ms.author: vanto
 ms.date: "07/30/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DB_NAME"
   - "DB_NAME_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "database names [SQL Server], DB_NAME"
   - "names [SQL Server], databases"
   - "viewing database names"
   - "displaying database names"
   - "DB_NAME function"
-ms.assetid: e21fb33a-a3ea-49b0-bb6b-8f789a675a0e
-caps.latest.revision: 37
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
+monikerRange: ">= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = azuresqldb-mi-current"
 ---
 # DB_NAME (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-all_md](../../includes/tsql-appliesto-ss2008-all-md.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-Returns the database name.
+This function returns the name of a specified database.
   
 ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
 ## Syntax  
   
-```sql
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
-  
+```syntaxsql
 DB_NAME ( [ database_id ] )  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
 *database_id*  
-Is the identification number (ID) of the database to be returned. *database_id* is **int**, with no default. If no ID is specified, the current database name is returned.
+
+The identification number (ID) of the database whose name `DB_NAME` will return. If the call to `DB_NAME` omits *database_id*, `DB_NAME` returns the name of the current database.
   
 ## Return types
 **nvarchar(128)**
   
 ## Permissions  
-If the caller of **DB_NAME** is not the owner of the database and the database is not **master** or **tempdb**, the minimum permissions required to see the corresponding row are ALTER ANY DATABASE or VIEW ANY DATABASE server-level permission, or CREATE DATABASE permission in the **master** database. The database to which the caller is connected can always be viewed in **sys.databases**.
+
+If the caller of `DB_NAME` does not own a specific non-**master** or non-**tempdb** database, `ALTER ANY DATABASE` or `VIEW ANY DATABASE` server-level permissions at minimum are required to see the corresponding `DB_ID` row. For the **master** database, `DB_ID` needs `CREATE DATABASE` permission at minimum. The database to which the caller connects will always appear in **sys.databases**.
   
 > [!IMPORTANT]  
->  By default, the public role has the VIEW ANY DATABASE permission, allowing all logins to see database information. To block a login from the ability to detect a database, REVOKE the VIEW ANY DATABASE permission from public, or DENY the VIEW ANY DATABASE permission for individual logins.  
+>  By default, the public role has the `VIEW ANY DATABASE` permission, which allows all logins to see database information. To prevent a login from detecting a database, `REVOKE` the `VIEW ANY DATABASE` permission from public, or `DENY` the `VIEW ANY DATABASE` permission for individual logins.
   
 ## Examples  
   
 ### A. Returning the current database name  
-The following example returns the name of the current database.
+This example returns the name of the current database.
   
 ```sql
 SELECT DB_NAME() AS [Current Database];  
@@ -65,12 +61,12 @@ GO
 ```  
   
 ### B. Returning the database name of a specified database ID  
-The following example returns the database name for database ID `3`.
+This example returns the database name for database ID `3`.
   
 ```sql
 USE master;  
 GO  
-SELECT DB_NAME(3)AS [Database Name];  
+SELECT DB_NAME(3) AS [Database Name];  
 GO  
 ```  
   
@@ -83,7 +79,7 @@ SELECT DB_NAME() AS [Current Database];
 ```  
   
 ### D. Return the name of a database by using the database ID  
-The following example returns the database name and database_id for each database.
+This example returns the database name and database_id for each database.
   
 ```sql
 SELECT DB_NAME(database_id) AS [Database], database_id  

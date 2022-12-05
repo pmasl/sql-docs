@@ -1,27 +1,20 @@
 ---
-title: "LineSeparatorsEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "LineSeparatorsEnum"
+description: "LineSeparatorsEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "LineSeparatorsEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "LineSeparatorsEnum enumeration [ADO]"
-ms.assetid: 0440b793-99c7-49a2-b3e2-ec5b1a7e3e60
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # LineSeparatorsEnum
-Specifies the character used as a line separator in text [Stream](../../../ado/reference/ado-api/stream-object-ado.md) objects.  
+Specifies the character used as a line separator in text [Stream](./stream-object-ado.md) objects.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -33,4 +26,4 @@ Specifies the character used as a line separator in text [Stream](../../../ado/r
  These constants do not have ADO/WFC equivalents.  
   
 ## Applies To  
- [LineSeparator Property (ADO)](../../../ado/reference/ado-api/lineseparator-property-ado.md)
+ [LineSeparator Property (ADO)](./lineseparator-property-ado.md)

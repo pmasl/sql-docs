@@ -1,39 +1,21 @@
 ---
-title: "Explicit Mapping XSD Elements and Attributes to Tables and Columns | Microsoft Docs"
-ms.custom: ""
+title: "Custom XSD mappings to tables/columns (SQLXML)"
+description: Learn how to create a custom mapping in an SQLXML XPath query between the elements and attributes of an XSD schema and the tables and columns of a relational database.
+author: MikeRayMSFT
+ms.author: mikeray
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-xml"
-ms.tgt_pltfrm: ""
+ms.service: sql
+ms.subservice: xml
 ms.topic: "reference"
-helpviewer_keywords: 
+ms.custom: "seo-lt-2019"
+helpviewer_keywords:
   - "explicit schema mapping [SQLXML]"
   - "XPath queries [SQLXML], annotated XSD schemas in queries"
-  - "sql:field"
-  - "row mapping [SQLXML]"
-  - "attribute mapping [SQLXML], explicit mapping"
-  - "field annotation"
-  - "XSD schemas [SQLXML], mapping attributes and elements"
-  - "names [SQLXML]"
-  - "relation annotation"
-  - "table/view mapping [SQLXML], explicit mapping"
-  - "sql:relation"
-  - "mapping schema [SQLXML], explicit mapping"
-  - "annotated XSD schemas, mapping attributes and elements"
-  - "column mapping [SQLXML]"
-  - "element mapping [SQLXML], explicit mapping"
-  - "table mapping [SQLXML], explicit mapping"
-  - "element/attribute mapping [SQLXML]"
 ms.assetid: 7a5ebeb6-7322-4141-a307-ebcf95976146
-caps.latest.revision: 28
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
-# Explicit Mapping XSD Elements and Attributes to Tables and Columns
+# Custom XSD mappings to tables/columns (SQLXML)
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   When using an XSD schema to provide an XML view of the relational database , the elements and attributes of the schema must be mapped to tables and columns of the database. The rows in the database table/view will map to elements in the XML document. The column values in the database map to attributes or elements.  
   
  When XPath queries are specified against the annotated XSD schema, the data for the elements and attributes in the schema is retrieved from the tables and columns to which they map. To obtain a single value from the database, the mapping specified in the XSD schema must have both relation and field specification. If the name of an element/attribute is not the same name as the table/view or column name to which it maps, the **sql:relation** and **sql:field** annotations are used to specify the mapping between an element or attribute in an XML document and the table (view) or column in a database.  

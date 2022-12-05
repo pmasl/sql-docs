@@ -1,33 +1,26 @@
 ---
-title: "DROP PARTITION SCHEME (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "DROP PARTITION SCHEME (Transact-SQL)"
+description: DROP PARTITION SCHEME (Transact-SQL)
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "03/06/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "DROP PARTITION SCHEME"
   - "DROP_PARTITION_SCHEME_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "DROP PARTITION SCHEME statement"
   - "deleting partition schemes"
   - "dropping partition schemes"
   - "removing partition schemes"
   - "partition schemes [SQL Server], removing"
-ms.assetid: 6efbc87c-1c92-4e43-96a7-e0f30f1db185
-caps.latest.revision: 17
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DROP PARTITION SCHEME (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/applies-to-version/sqlserver.md)]
 
   Removes a partition scheme from the current database. Partition schemes are created by using [CREATE PARTITION SCHEME](../../t-sql/statements/create-partition-scheme-transact-sql.md) and modified by using [ALTER PARTITION SCHEME](../../t-sql/statements/alter-partition-scheme-transact-sql.md).  
   
@@ -35,12 +28,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 DROP PARTITION SCHEME partition_scheme_name [ ; ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *partition_scheme_name*  
  Is the name of the partition scheme to be dropped.  
   
@@ -59,7 +53,7 @@ DROP PARTITION SCHEME partition_scheme_name [ ; ]
 ## Examples  
  The following example drops the partition scheme `myRangePS1` from the current database:  
   
-```  
+```sql  
 DROP PARTITION SCHEME myRangePS1;  
 ```  
   

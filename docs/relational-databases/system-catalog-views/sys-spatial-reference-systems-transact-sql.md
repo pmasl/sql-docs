@@ -1,32 +1,27 @@
 ---
-title: "sys.spatial_reference_systems (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.spatial_reference_systems (Transact-SQL)"
+description: sys.spatial_reference_systems (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "spatial_reference_systems_TSQL"
   - "sys.spatial_reference_systems_TSQL"
   - "sys.spatial_reference_systems"
   - "spatial_reference_systems"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "sys.spatial_reference_systems catalog view"
   - "spatial_reference_systems"
+dev_langs:
+  - "TSQL"
 ms.assetid: 3c9bc120-67c3-463f-9e24-29fd623f25a0
-caps.latest.revision: 11
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.spatial_reference_systems (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Lists the spatial reference systems (SRIDs) supported by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
 

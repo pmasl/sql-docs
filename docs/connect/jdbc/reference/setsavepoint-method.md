@@ -1,24 +1,15 @@
 ---
-title: "setSavepoint Method () | Microsoft Docs"
-ms.custom: ""
+title: "setSavepoint Method ()"
+description: "setSavepoint Method ()"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerConnection.setSavepoint ()"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerConnection.setSavepoint ()"
 apitype: "Assembly"
-ms.assetid: 11013055-4fd3-45a9-b2da-28b2908dad52
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setSavepoint Method ()
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

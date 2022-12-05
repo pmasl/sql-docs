@@ -1,21 +1,18 @@
 ---
 title: "Monitor Instances of SQL Server in the SQL Server Utility | Microsoft Docs"
+description: Get acquainted with the SQL Server Utility, which you can use to monitor instances of SQL Server. See how to view the dashboard and reduce reporting noise.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: configuration
+ms.topic: conceptual
 ms.assetid: ca851a07-e4e5-439c-8da5-d8e97aaf4873
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: MikeRayMSFT
+ms.author: mikeray
 ---
 # Monitor Instances of SQL Server in the SQL Server Utility
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
   
 |Topic|Information|  

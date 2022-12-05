@@ -1,13 +1,11 @@
 ---
-title: "InstanceName Property (ClientSettings Class) | Microsoft Docs"
-ms.custom: ""
+description: "ClientSettings Class - InstanceName Property"
+title: "InstanceName Property (ClientSettings)"
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "InstanceName Property (ClientSettings Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "InstanceName property"
 ms.assetid: 58dacb4a-751a-491f-9adb-88ec6afc797c
-caps.latest.revision: 27
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # ClientSettings Class - InstanceName Property
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Gets the name of the instance of the [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] client.  
   
 ## Syntax  

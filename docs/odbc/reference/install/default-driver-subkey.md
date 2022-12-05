@@ -1,24 +1,20 @@
 ---
+description: "Default Driver Subkey"
 title: "Default Driver Subkey | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "default subkey [ODBC]"
   - "registry entries for components [ODBC], default subkey"
   - "subkeys [ODBC], default subkey"
   - "drivers subkey [ODBC]"
 ms.assetid: 9e58b24f-ebfc-4286-a272-0843b4d6f2d5
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # Default Driver Subkey
 The Default subkey contains a single value that describes the driver used by the default data source. The format of this value is shown in the following table.  

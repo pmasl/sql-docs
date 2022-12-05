@@ -1,24 +1,20 @@
 ---
+description: "ODBC Functions Executed by the Cursor Library"
 title: "ODBC Functions Executed by the Cursor Library | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: reference
 helpviewer_keywords: 
   - "cursor library [ODBC], functions"
   - "functions [ODBC], cursor library"
   - "ODBC functions [ODBC], cursor library"
   - "ODBC cursor library [ODBC], functions"
 ms.assetid: 2f1d3386-7e59-4d55-a5b4-3440b61343a3
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # ODBC Functions Executed by the Cursor Library
 > [!IMPORTANT]  
@@ -26,20 +22,11 @@ manager: "jhubbard"
   
  The cursor library executes the following functions. When an application calls a function in this list, the Driver Manager invokes the cursor library, not the driver. Note that the cursor library may call the driver when executing the function.  
   
-|||  
-|-|-|  
-|**SQLBindCol**|**SQLGetStmtOption**|  
-|**SQLBindParam**|**SQLNativeSql**|  
-|**SQLBindParameter**|**SQLNumParams**|  
-|**SQLCloseCursor**|**SQLParamOptions**|  
-|**SQLEndTran**|**SQLRowCount**|  
-|**SQLExtendedFetch**|**SQLSetConnectAttr**|  
-|**SQLFetchScroll**|**SQLSetConnectOption**|  
-|**SQLFreeHandle**|**SQLSetDescField**|  
-|**SQLFreeStmt**|**SQLSetDescRec**|  
-|**SQLGetData**|**SQLSetPos**|  
-|**SQLGetDescField**|**SQLSetScrollOptions**|  
-|**SQLGetDescRec**|**SQLSetStmtAttr**|  
-|**SQLGetFunctions**|**SQLSetStmtOption**|  
-|**SQLGetInfo**|**SQLTransact**|  
-|**SQLGetStmtAttr**||
+:::row:::
+   :::column span="":::
+      **SQLBindCol**<br>      **SQLBindParam**<br>      **SQLBindParameter**<br>      **SQLCloseCursor**<br>      **SQLEndTran**<br>      **SQLExtendedFetch**<br>      **SQLFetchScroll**<br>      **SQLFreeHandle**<br>      **SQLFreeStmt**<br>      **SQLGetData**<br>      **SQLGetDescField**<br>      **SQLGetDescRec**<br>      **SQLGetFunctions**<br>      **SQLGetInfo**<br>      **SQLGetStmtAttr**
+   :::column-end:::
+   :::column span="":::
+      **SQLGetStmtOption**<br>      **SQLNativeSql**<br>      **SQLNumParams**<br>      **SQLParamOptions**<br>      **SQLRowCount**<br>      **SQLSetConnectAttr**<br>      **SQLSetConnectOption**<br>      **SQLSetDescField**<br>      **SQLSetDescRec**<br>      **SQLSetPos**<br>      **SQLSetScrollOptions**<br>      **SQLSetStmtAttr**<br>      **SQLSetStmtOption**<br>      **SQLTransact**
+   :::column-end:::
+:::row-end:::

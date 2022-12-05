@@ -1,35 +1,17 @@
 ---
+description: "MDX Data Definition - CREATE SESSION CUBE"
 title: "CREATE SESSION CUBE Statement  (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "CREATE_SESSION_CUBE"
-  - "SESSION"
-  - "CUBE"
-  - "SESSION CUBE"
-  - "CREATE SESSION CUBE"
-  - "CREATE SESSION"
-  - "CREATE"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "CREATE SESSION CUBE"
-  - "statements [MDX], CREATE SESSION CUBE"
-ms.assetid: 06b90f44-d943-4a52-b0d8-4bcbc57ed6ec
-caps.latest.revision: 17
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # MDX Data Definition - CREATE SESSION CUBE
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+
 
   Creates and populates a session cube from an existing server cube. The session cube is only visible within the current session; it cannot be browsed or queried from any other session. The session cube is implicitly deleted when the session is closed.  
   
@@ -169,7 +151,7 @@ CREATE SESSION CUBE session_cube_name FROM <cube list> (<param list>)
 -   When performing grouping on a cube dimension in a server cube, the grouping affects all cube dimensions based on the same dimension.  
   
 ## Example  
- The following example demonstrates creating a session-scoped version of the Adventure Works cube that contains the Reseller Sales Amount measure, the Reseller dimension, the Product dimension, the Geography dimension, and the Date dimension. Within this session cube, two groups are created; one group contains countries in Europe and one group contains groups in North America. This sample is a simplified version of a CREATE SESSION CUBE statement issued by Microsoft Excel when a user creates a custom grouping of members.  
+ The following example demonstrates creating a session-scoped version of the Adventure Works cube that contains the Reseller Sales Amount measure, the Reseller dimension, the Product dimension, the Geography dimension, and the Date dimension. Within this session cube, two groups are created; one group contains countries/regions in Europe and one group contains groups in North America. This sample is a simplified version of a CREATE SESSION CUBE statement issued by Microsoft Excel when a user creates a custom grouping of members.  
   
 ```  
 CREATE SESSION CUBE [Adventure Works_XL_GROUPING1]   

@@ -1,23 +1,16 @@
 ---
-title: "Retrieving Resultsets into Streams | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "Retrieving Resultsets into Streams"
+description: "Retrieving Resultsets into Streams"
+author: rothja
+ms.author: jroth
+ms.date: "01/20/2017"
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "streams [ADO], retrieving query results"
   - "query results into stream [ADO]"
   - "retrieving results into stream [ADO]"
-ms.assetid: 996c1321-c926-4f57-8297-85c8c20de974
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Retrieving Resultsets into Streams
 Instead of receiving results in the traditional **Recordset** object, ADO can instead retrieve query results into a stream. The ADO **Stream** object (or other objects that support the COM **IStream** interface, such as the ASP **Request** and **Response** objects) can be used to contain these results. One use for this feature is to retrieve results in XML format. With SQL Server, for example, XML results can be returned in multiple ways, such as using the FOR XML clause with a SQL SELECT query or using an XPath query.  
@@ -27,7 +20,7 @@ Instead of receiving results in the traditional **Recordset** object, ADO can in
 ## FOR XML Query Example  
  The following example is written in VBScript to the Northwind database:  
   
-```  
+```html
 <!-- BeginRecordAndStreamVBS -->  
 <%@ LANGUAGE = VBScript %>  
 <%  Option Explicit      %>  
@@ -142,7 +135,7 @@ Instead of receiving results in the traditional **Recordset** object, ADO can in
   
 ### FOR XML Syntax  
   
-```  
+```syntax
 FOR XML [RAW|AUTO|EXPLICIT]  
 ```  
   
@@ -150,7 +143,7 @@ FOR XML [RAW|AUTO|EXPLICIT]
   
  An example SQL SELECT FOR XML statement follows:  
   
-```  
+```sql
 SELECT * FROM PRODUCTS ORDER BY PRODUCTNAME FOR XML AUTO  
 ```  
   
@@ -158,19 +151,19 @@ SELECT * FROM PRODUCTS ORDER BY PRODUCTNAME FOR XML AUTO
   
  As an XML template query, the FOR XML query appears as follows:  
   
-```  
+```xml
 <sql:query> SELECT * FROM PRODUCTS ORDER BY PRODUCTNAME FOR XML AUTO </sql:query>  
 ```  
   
  This example specifies the ASP **Response** object for the **Output Stream** property:  
   
-```  
+```vb
 adoCmd.Properties("Output Stream") = Response  
 ```  
   
  Next, specify **adExecuteStream** parameter of **Execute**. This example wraps the stream in XML tags to create an XML data island:  
   
-```  
+```vb
 Response.write "<XML ID=MyDataIsle>"  
 adoCmd.Execute , , adExecuteStream  
 Response.write "</XML>"  

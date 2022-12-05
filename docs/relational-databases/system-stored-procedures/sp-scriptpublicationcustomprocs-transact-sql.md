@@ -1,29 +1,25 @@
 ---
+description: "sp_scriptpublicationcustomprocs (Transact-SQL)"
 title: "sp_scriptpublicationcustomprocs (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
+ms.subservice: replication
+ms.topic: "reference"
+dev_langs: 
+  - "TSQL"
 f1_keywords: 
   - "sp_scriptpublicationcustomprocs"
   - "sp_scriptpublicationcustomprocs_TSQL"
 helpviewer_keywords: 
   - "sp_scriptpublicationcustomprocs"
 ms.assetid: b06102d5-4284-4834-b126-bc0baea49be5
-caps.latest.revision: 20
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sp_scriptpublicationcustomprocs (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
   Scripts the custom INSERT, UPDATE, and DELETE procedures for all table articles in a publication in which the auto-generate custom procedure schema option is enabled. **sp_scriptpublicationcustomprocs** is particularly useful for setting up subscriptions for which the snapshot is applied manually.  
   
@@ -37,7 +33,7 @@ sp_scriptpublicationcustomprocs [ @publication = ] 'publication_name'
 ```  
   
 ## Arguments  
- [ **@publication**=] **'***publication_name***'**  
+`[ @publication = ] 'publication_name'`
  Is the name of the publication. *publication_name* is **sysname** with no default.  
   
 ## Return Code Values  

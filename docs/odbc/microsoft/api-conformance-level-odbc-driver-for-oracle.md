@@ -1,23 +1,19 @@
 ---
+description: "API Conformance Level (ODBC Driver for Oracle)"
 title: "API Conformance Level (ODBC Driver for Oracle) | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "conformance levels [ODBC], API"
   - "API conformance level [ODBC]"
   - "ODBC driver for Oracle [ODBC], conformance levels"
 ms.assetid: 3d96e8ff-a310-44d7-ae3f-7d2851b3d8ce
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # API Conformance Level (ODBC Driver for Oracle)
 > [!IMPORTANT]  

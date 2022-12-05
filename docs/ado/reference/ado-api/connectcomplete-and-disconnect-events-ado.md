@@ -1,28 +1,21 @@
 ---
-title: "ConnectComplete and Disconnect Events (ADO) | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ConnectComplete and Disconnect Events (ADO)"
+description: "ConnectComplete and Disconnect Events (ADO)"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "Disconnect"
   - "Connection::ConnectComplete"
   - "ConnectComplete"
   - "Connection::Disconnect"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "Disconnect event [ADO]"
   - "ConnectComplete event [ADO]"
-ms.assetid: 568f5252-d069-4d99-a01b-2ada87ad1304
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ConnectComplete and Disconnect Events (ADO)
 The **ConnectComplete** event is called after a connection starts. The **Disconnect** event is called after a connection ends.  
@@ -37,18 +30,18 @@ Disconnect adStatus, pConnection
   
 #### Parameters  
  *pError*  
- An [Error](../../../ado/reference/ado-api/error-object.md) object. It describes the error that occurred if the value of *adStatus* is **adStatusErrorsOccurred**; otherwise it is not set.  
+ An [Error](./error-object.md) object. It describes the error that occurred if the value of *adStatus* is **adStatusErrorsOccurred**; otherwise it is not set.  
   
  *adStatus*  
- An [EventStatusEnum](../../../ado/reference/ado-api/eventstatusenum.md) value that always returns **adStatusOK**.  
+ An [EventStatusEnum](./eventstatusenum.md) value that always returns **adStatusOK**.  
   
  When **ConnectComplete** is called, this parameter is set to **adStatusCancel** if a **WillConnect** event has requested cancellation of the pending connection.  
   
- Before either event returns, set this parameter to **adStatusUnwantedEvent** to prevent subsequent notifications. However, closing and reopening the [Connection](../../../ado/reference/ado-api/connection-object-ado.md) causes these events to occur again.  
+ Before either event returns, set this parameter to **adStatusUnwantedEvent** to prevent subsequent notifications. However, closing and reopening the [Connection](./connection-object-ado.md) causes these events to occur again.  
   
  *pConnection*  
  The **Connection** object for which this event applies.  
   
 ## See Also  
- [ADO Events Model Example (VC++)](../../../ado/reference/ado-api/ado-events-model-example-vc.md)   
- [ADO Event Handler Summary](../../../ado/guide/data/ado-event-handler-summary.md)
+ [ADO Events Model Example (VC++)](./ado-events-model-example-vc.md)   
+ [ADO Event Handler Summary](../../guide/data/ado-event-handler-summary.md)

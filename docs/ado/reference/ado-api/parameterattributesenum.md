@@ -1,27 +1,20 @@
 ---
-title: "ParameterAttributesEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "ParameterAttributesEnum"
+description: "ParameterAttributesEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "ParameterAttributesEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "ParameterAttributesEnum enumeration [ADO]"
-ms.assetid: 7ef6c728-5eda-4bde-8052-02d2db1d2cfe
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # ParameterAttributesEnum
-Specifies the attributes of a [Parameter](../../../ado/reference/ado-api/parameter-object.md) object.  
+Specifies the attributes of a [Parameter](./parameter-object.md) object.  
   
 |Constant|Value|Description|  
 |--------------|-----------|-----------------|  
@@ -39,4 +32,4 @@ Specifies the attributes of a [Parameter](../../../ado/reference/ado-api/paramet
 |AdoEnums.ParameterAttributes.LONG|  
   
 ## Applies To  
- [Attributes Property (ADO)](../../../ado/reference/ado-api/attributes-property-ado.md)
+ [Attributes Property (ADO)](./attributes-property-ado.md)

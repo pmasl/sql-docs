@@ -1,14 +1,12 @@
 ---
 title: "Strategies for Backing Up and Restoring Snapshot and Transactional Replication | Microsoft Docs"
+description: Learn about considerations for designing a backup and restore strategy for snapshot and transactional replication in SQL Server.
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "backups [SQL Server replication], snapshot replication"
   - "restoring [SQL Server replication], transactional replication"
@@ -20,21 +18,21 @@ helpviewer_keywords:
   - "sync with backup [SQL Server replication]"
   - "backups [SQL Server replication], transactional replication"
 ms.assetid: a8afcdbc-55db-4916-a219-19454f561f9e
-caps.latest.revision: 59
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-current||>=sql-server-2016"
 ---
 # Strategies for Backing Up and Restoring Snapshot and Transactional Replication
+[!INCLUDE[sql-asdb](../../../includes/applies-to-version/sql-asdb.md)]
   When you design a backup and restore strategy for snapshot and transactional replication, there are three areas to consider:  
   
--   Which databases to back up.  
-  
--   Backup settings for transactional replication.  
-  
+-   Which databases to back up.
+-   Backup settings for transactional replication.
 -   The steps that are required to restore a database. These depend on the type of replication and options chosen.  
   
  This topic covers each of these areas in the next three sections. For information about backup and restore for Oracle publishing, see [Backup and Restore for Oracle Publishers](../../../relational-databases/replication/non-sql/backup-and-restore-for-oracle-publishers.md).  
+
+[!INCLUDE[azure-sql-db-replication-supportability-note](../../../includes/azure-sql-db-replication-supportability-note.md)]
   
 ## Backing up Databases  
  For snapshot and transactional replication, you should regularly back up the following databases:  
@@ -50,7 +48,8 @@ manager: "jhubbard"
  If you perform regular log backups, any replication-related changes should be captured in the log backups. If you do not perform log backups, a backup should be performed whenever a setting relevant to replication is changed. For more information, see [Common Actions Requiring an Updated Backup](../../../relational-databases/replication/administration/common-actions-requiring-an-updated-backup.md).  
   
 ## Backup Settings for Transactional Replication  
- Transactional replication includes using the **sync with backup** option, which can be set on the distribution database and the publication database:  
+
+Transactional replication includes using the **sync with backup** option, which can be set on the distribution database and the publication database:  
   
 -   We recommend that you always set this option on the distribution database.  
   
@@ -65,7 +64,15 @@ manager: "jhubbard"
      Latency and throughput are affected because transactions cannot be delivered to the distribution database until they have been backed up at the Publisher. For example, if the transaction log is backed up every five minutes, there is an additional five minutes of latency between when a transaction is committed at the Publisher and when the transaction is delivered to the distribution database, and subsequently the Subscriber.  
   
     > [!NOTE]  
-    >  The **sync with backup** option ensures consistency between the publication database and the distribution database, but the option does not guarantee against data loss. For example, if the transaction log is lost, transactions that have been committed since the last transaction log backup will not be available in the publication database or the distribution database. This is the same behavior as a nonreplicated database.  
+    >  The **sync with backup** option ensures consistency between the publication database and the distribution database, but the option does not guarantee against data loss. For example, if the transaction log is lost, transactions that have been committed since the last transaction log backup will not be available in the publication database or the distribution database. This is the same behavior as a nonreplicated database.
+    >
+    > Setting the sync with backup option on distribution database is not compatible when publisher database is part of availability group. This could lead to following error when log reader agent runs after failover.
+    >
+    >   *The process could not execute 'sp_repldone/sp_replcounters' on 'machinename\instance'. (Source: MSSQL_REPL, Error number: MSSQL_REPL20011)
+    >   Get help: [http://help/MSSQL_REPL20011](../mssql-repl020011.md)
+    >   Possible inconsistent state in the distribution database: dist_backup_lsn {nnnnnnnn:nnnnnnnn:nnnn}, dist_last_lsn {nnnnnnnn:nnnnnnnn:nnnn}. Execute "sp_repldone NULL, NULL, 0, 0, 1", and then execute sp_replflush. Reinitialize all subscriptions to the publication. (Source: MSSQLServer, Error number: 18846)*
+
+ 
   
  **To set the sync with backup option**  
   
@@ -115,7 +122,7 @@ manager: "jhubbard"
   
          For more information about how to run the Distribution Agent, see [Start and Stop a Replication Agent &#40;SQL Server Management Studio&#41;](../../../relational-databases/replication/agents/start-and-stop-a-replication-agent-sql-server-management-studio.md) and [Replication Agent Executables Concepts](../../../relational-databases/replication/concepts/replication-agent-executables-concepts.md).  
   
-         For more information about how to verify commands, see [View Replicated Commands and Other Information in the Distribution Database &#40;Replication Transact-SQL Programming&#41;](../../../relational-databases/replication/monitor/view-replicated-commands-and-information-in-distribution-database.md) and [View Information and Perform Tasks for the Agents Associated With a Subscription &#40;Replication Monitor&#41;](../../../relational-databases/replication/monitor/view-information-and-perform-tasks-for-subscription-agents.md).  
+         For more information about how to verify commands, see [View Replicated Commands and Other Information in the Distribution Database &#40;Replication Transact-SQL Programming&#41;](../../../relational-databases/replication/monitor/view-replicated-commands-and-information-in-distribution-database.md) and [View information and perform tasks using Replication Monitor](../../../relational-databases/replication/monitor/view-information-and-perform-tasks-replication-monitor.md).  
   
     2.  Remove the replication configuration from the Publisher, Distributor and Subscribers, and then re-create the configuration. When you re-create subscriptions, specify that the Subscriber already has the data. The restore is completed.  
   
@@ -132,7 +139,7 @@ manager: "jhubbard"
   
          For more information about how to run the Distribution Agent, see [Start and Stop a Replication Agent &#40;SQL Server Management Studio&#41;](../../../relational-databases/replication/agents/start-and-stop-a-replication-agent-sql-server-management-studio.md) and [Replication Agent Executables Concepts](../../../relational-databases/replication/concepts/replication-agent-executables-concepts.md).  
   
-         For more information about how to verify commands, see [View Replicated Commands and Other Information in the Distribution Database &#40;Replication Transact-SQL Programming&#41;](../../../relational-databases/replication/monitor/view-replicated-commands-and-information-in-distribution-database.md) and [View Information and Perform Tasks for the Agents Associated With a Subscription &#40;Replication Monitor&#41;](../../../relational-databases/replication/monitor/view-information-and-perform-tasks-for-subscription-agents.md).  
+         For more information about how to verify commands, see [View Replicated Commands and Other Information in the Distribution Database &#40;Replication Transact-SQL Programming&#41;](../../../relational-databases/replication/monitor/view-replicated-commands-and-information-in-distribution-database.md) and [View information and perform tasks using Replication Monitor](../../../relational-databases/replication/monitor/view-information-and-perform-tasks-replication-monitor.md).  
   
     2.  Use the [tablediff utility](../../../tools/tablediff-utility.md) or another tool to manually synchronize the Publisher with the Subscriber. This enables you to recover data from the subscription database that was not contained in the publication database backup. Go to step c.  
   
@@ -154,7 +161,7 @@ manager: "jhubbard"
   
      For more information about how to run the Distribution Agent, see [Start and Stop a Replication Agent &#40;SQL Server Management Studio&#41;](../../../relational-databases/replication/agents/start-and-stop-a-replication-agent-sql-server-management-studio.md) and [Replication Agent Executables Concepts](../../../relational-databases/replication/concepts/replication-agent-executables-concepts.md).  
   
-     For more information about how to verify commands, see [View Replicated Commands and Other Information in the Distribution Database &#40;Replication Transact-SQL Programming&#41;](../../../relational-databases/replication/monitor/view-replicated-commands-and-information-in-distribution-database.md) and [View Information and Perform Tasks for the Agents Associated With a Subscription &#40;Replication Monitor&#41;](../../../relational-databases/replication/monitor/view-information-and-perform-tasks-for-subscription-agents.md).  
+     For more information about how to verify commands, see [View Replicated Commands and Other Information in the Distribution Database &#40;Replication Transact-SQL Programming&#41;](../../../relational-databases/replication/monitor/view-replicated-commands-and-information-in-distribution-database.md) and [View information and perform tasks using Replication Monitor](../../../relational-databases/replication/monitor/view-information-and-perform-tasks-replication-monitor.md).  
   
 3.  If you are using queued updating subscriptions, connect to each Subscriber and delete all rows from the [MSreplication_queue &#40;Transact-SQL&#41;](../../../relational-databases/system-tables/msreplication-queue-transact-sql.md) table in the subscription database. Go to step 4.  
   
@@ -203,19 +210,19 @@ manager: "jhubbard"
   
     1.  Re-create the publication at database **B**. Go to step b.  
   
-    2.  Re-create the subscription at database **B** to the publication at database **A**, specifying that the subscription should be initialized with a backup (a value of **initialize with backup** for the **@sync_type** parameter of [sp_addsubscription](../../../relational-databases/system-stored-procedures/sp-addsubscription-transact-sql.md)). Go to step c.  
+    2.  Re-create the subscription at database **B** to the publication at database **A**, specifying that the subscription should be initialized with a backup (a value of **initialize with backup** for the `@sync_type` parameter of [sp_addsubscription](../../../relational-databases/system-stored-procedures/sp-addsubscription-transact-sql.md)). Go to step c.  
   
-    3.  Re-create the subscription at database **A** to the publication at database **B**, specifying that the Subscriber already has the data (a value of **replication support only** for the **@sync_type** parameter of [sp_addsubscription](../../../relational-databases/system-stored-procedures/sp-addsubscription-transact-sql.md)). Go to step 8.  
+    3.  Re-create the subscription at database **A** to the publication at database **B**, specifying that the Subscriber already has the data (a value of **replication support only** for the `@sync_type` parameter of [sp_addsubscription](../../../relational-databases/system-stored-procedures/sp-addsubscription-transact-sql.md)). Go to step 8.  
   
 8.  Run the Distribution Agents to synchronize the subscriptions at databases **A** and **B**. If there are any identity columns in published tables, go to step 9. If not, go to step 10.  
   
 9. After the restore, the identity range that you assigned for each table in database **A** would also be used in database **B**. Make sure that the restored database **B** has received all changes from the failed database **B** that were propagated to database **A** and database **C**; and then reseed the identity range for each table.  
   
-    1.  Execute [sp_requestpeerresponse](../../../relational-databases/system-stored-procedures/sp-requestpeerresponse-transact-sql.md) at database **B** and retrieve the output parameter **@request_id**. Go to step b.  
+    1.  Execute [sp_requestpeerresponse](../../../relational-databases/system-stored-procedures/sp-requestpeerresponse-transact-sql.md) at database **B** and retrieve the output parameter `@request_id`. Go to step b.  
   
     2.  By default, the Distribution Agent is set to run continuously; therefore, tokens should be sent to all nodes automatically. If the Distribution Agent is not running in continuous mode, run the agent. For more information, see [Replication Agent Executables Concepts](../../../relational-databases/replication/concepts/replication-agent-executables-concepts.md) or [Start and Stop a Replication Agent &#40;SQL Server Management Studio&#41;](../../../relational-databases/replication/agents/start-and-stop-a-replication-agent-sql-server-management-studio.md). Go to step c.  
   
-    3.  Execute [sp_helppeerresponses](../../../relational-databases/system-stored-procedures/sp-helppeerresponses-transact-sql.md), providing the **@request_id** value retrieved in step b. Wait until all nodes indicate they have received the peer request. Go to step d.  
+    3.  Execute [sp_helppeerresponses](../../../relational-databases/system-stored-procedures/sp-helppeerresponses-transact-sql.md), providing the `@request_id` value retrieved in step b. Wait until all nodes indicate they have received the peer request. Go to step d.  
   
     4.  Use [DBCC CHECKIDENT](../../../t-sql/database-console-commands/dbcc-checkident-transact-sql.md) to reseed each table in database **B** to make sure that an appropriate range is used. Go to step 10.  
   
@@ -227,11 +234,11 @@ manager: "jhubbard"
   
     1.  Stop all activity on published tables in the peer-to-peer topology. Go to step b.  
   
-    2.  Execute [sp_requestpeerresponse](../../../relational-databases/system-stored-procedures/sp-requestpeerresponse-transact-sql.md) at database **B** and retrieve the output parameter **@request_id**. Go to step c.  
+    2.  Execute [sp_requestpeerresponse](../../../relational-databases/system-stored-procedures/sp-requestpeerresponse-transact-sql.md) at database **B** and retrieve the output parameter `@request_id`. Go to step c.  
   
     3.  By default, the Distribution Agent is set to run continuously; therefore, tokens should be sent to all nodes automatically. If the Distribution Agent is not running in continuous mode, run the agent. Go to step d.  
   
-    4.  Execute [sp_helppeerresponses](../../../relational-databases/system-stored-procedures/sp-helppeerresponses-transact-sql.md), providing the **@request_id** value retrieved in step b. Wait until all nodes indicate they have received the peer request. Go to step e.  
+    4.  Execute [sp_helppeerresponses](../../../relational-databases/system-stored-procedures/sp-helppeerresponses-transact-sql.md), providing the `@request_id` value retrieved in step b. Wait until all nodes indicate they have received the peer request. Go to step e.  
   
     5.  Re-create the subscription at database **B** to the publication at database **C**, specifying that the Subscriber already has the data. Go to step b.  
   
@@ -241,7 +248,7 @@ manager: "jhubbard"
   
     1.  At database **B**, query the [MSpeer_lsns](../../../relational-databases/system-tables/mspeer-lsns-transact-sql.md) table to retrieve the log sequence number (LSN) of the most recent transaction that database **B** has received from database **C**.  
   
-    2.  Re-create the subscription at database **B** to the publication at database **C**, specifying that the subscription should be initialized based on LSN (a value of **initialize from lsn** for the **@sync_type** parameter of [sp_addsubscription](../../../relational-databases/system-stored-procedures/sp-addsubscription-transact-sql.md)). Go to step b.  
+    2.  Re-create the subscription at database **B** to the publication at database **C**, specifying that the subscription should be initialized based on LSN (a value of **initialize from lsn** for the `@sync_type` parameter of [sp_addsubscription](../../../relational-databases/system-stored-procedures/sp-addsubscription-transact-sql.md)). Go to step b.  
   
     3.  Re-create the subscription at database **C** to the publication at database **B**, specifying that the Subscriber already has the data. Go to step 13.  
   
@@ -283,7 +290,7 @@ manager: "jhubbard"
   
     2.  Mark all publications for validation. Reinitialize any subscriptions that fail validation. Recovery is completed.  
   
-         For more information about validation, see [Validate Replicated Data](../../../relational-databases/replication/validate-replicated-data.md). For more information about reinitialization, see [Reinitialize Subscriptions](../../../relational-databases/replication/reinitialize-subscriptions.md).  
+         For more information about validation, see [Validate Replicated Data](../../../relational-databases/replication/validate-data-at-the-subscriber.md). For more information about reinitialization, see [Reinitialize Subscriptions](../../../relational-databases/replication/reinitialize-subscriptions.md).  
   
 #### msdb Database (Distributor)  
   
@@ -299,7 +306,7 @@ manager: "jhubbard"
   
 4.  Mark all publications for validation. Reinitialize any subscriptions that fail validation. Recovery is completed.  
   
-     For more information about validation, see [Validate Replicated Data](../../../relational-databases/replication/validate-replicated-data.md). For more information about reinitialization, see [Reinitialize Subscriptions](../../../relational-databases/replication/reinitialize-subscriptions.md).  
+     For more information about validation, see [Validate Replicated Data](../../../relational-databases/replication/validate-data-at-the-subscriber.md). For more information about reinitialization, see [Reinitialize Subscriptions](../../../relational-databases/replication/reinitialize-subscriptions.md).  
   
 #### master Database (Distributor)  
   

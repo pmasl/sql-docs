@@ -1,14 +1,11 @@
 ---
-title: "Move a Database Using Detach and Attach (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+description: "Move a database using detach and attach (Transact-SQL)"
+title: "Move Database using detach & attach (Transact-SQL)"
+ms.date: 06/03/2020
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: 
+ms.topic: conceptual
 helpviewer_keywords: 
   - "database attaching [SQL Server]"
   - "moving databases [SQL Server]"
@@ -17,13 +14,13 @@ helpviewer_keywords:
   - "detaching databases [SQL Server]"
   - "attaching databases [SQL Server]"
 ms.assetid: 6732a431-cdef-4f1e-9262-4ac3b77c275e
-caps.latest.revision: 47
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.custom: seo-dt-2019
 ---
-# Move a Database Using Detach and Attach (Transact-SQL)
-  This topic describes how to move a detached database to another location and re-attach it to the same or a different server instance in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. However, we recommend that you move databases by using the ALTER DATABASE planned relocation procedure, instead of using detach and attach. For more information, see [Move User Databases](../../relational-databases/databases/move-user-databases.md).  
+# Move a database using detach and attach (Transact-SQL)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+  This topic describes how to move a detached database to another location and re-attach it to the same or a different server instance in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. However, we recommend that you move databases by using the ALTER DATABASE planned relocation procedure, instead of using detach and attach. For more information, see [Move User Databases](../../relational-databases/databases/move-user-databases.md).  
   
 > [!IMPORTANT]  
 >  We recommend that you do not attach or restore databases from unknown or untrusted sources. Such databases could contain malicious code that might execute unintended [!INCLUDE[tsql](../../includes/tsql-md.md)] code or cause errors by modifying the schema or the physical database structure. Before you use a database from an unknown or untrusted source, run [DBCC CHECKDB](../../t-sql/database-console-commands/dbcc-checkdb-transact-sql.md) on the database on a nonproduction server and also examine the code, such as stored procedures or other user-defined code, in the database.  
@@ -35,9 +32,6 @@ manager: "jhubbard"
 1.  Detach the database. For more information, see [Detach a Database](../../relational-databases/databases/detach-a-database.md).  
   
 2.  In a Windows Explorer or Windows Command Prompt window, move the detached database file or files and log file or files to the new location.  
-  
-    > [!NOTE]  
-    >  To move a single-file database, you can use email if the file size is small enough for email to accommodate.  
   
      You should move the log files even if you intend to create new log files. In some cases, reattaching a database requires its existing log files. Therefore, always keep all the detached log files until the database has been successfully attached without them.  
   
@@ -51,7 +45,7 @@ manager: "jhubbard"
   
 1.  Detach the [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] database by executing the following [!INCLUDE[tsql](../../includes/tsql-md.md)] statements:  
   
-    ```  
+    ```sql
     USE master;  
     GO  
     EXEC sp_detach_db @dbname = N'AdventureWorks2012';  
@@ -63,11 +57,11 @@ manager: "jhubbard"
     > [!IMPORTANT]  
     >  For a production database, place the database and transaction log on separate disks.  
   
-     To copy files over the network to a disk on a remote computer, use the universal naming convention (UNC) name of the remote location. A UNC name takes the form **\\\\***Servername***\\***Sharename***\\***Path***\\***Filename*. As with writing files to the local hard disk, the appropriate permissions that are required to read or write to a file on the remote disk must be granted to the user account used by the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+     To copy files over the network to a disk on a remote computer, use the universal naming convention (UNC) name of the remote location. A UNC name takes the form **\\\\**_Servername_**\\**_Sharename_**\\**_Path_**\\**_Filename_. As with writing files to the local hard disk, the appropriate permissions that are required to read or write to a file on the remote disk must be granted to the user account used by the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
 3.  Attach the moved database and, optionally, its log by executing the following [!INCLUDE[tsql](../../includes/tsql-md.md)] statements:  
   
-    ```  
+    ```sql
     USE master;  
     GO  
     CREATE DATABASE MyAdventureWorks   

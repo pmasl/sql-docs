@@ -1,24 +1,15 @@
 ---
-title: "getAsciiStream Method (int) | Microsoft Docs"
-ms.custom: ""
+title: "getAsciiStream Method (int)"
+description: "getAsciiStream Method (int)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerResultSet.getAsciiStream (int)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerResultSet.getAsciiStream (int)"
 apitype: "Assembly"
-ms.assetid: 1ec7e246-4b91-4420-9a4c-0ebd98e2e38b
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getAsciiStream Method (int)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

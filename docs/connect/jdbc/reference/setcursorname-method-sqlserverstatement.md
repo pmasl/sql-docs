@@ -1,24 +1,15 @@
 ---
-title: "setCursorName Method (SQLServerStatement) | Microsoft Docs"
-ms.custom: ""
+title: "setCursorName Method (SQLServerStatement)"
+description: "setCursorName Method (SQLServerStatement)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.setCursorName"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.setCursorName"
 apitype: "Assembly"
-ms.assetid: 3f3ec4f2-103a-4e16-9206-c5bd8639f946
-caps.latest.revision: 13
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # setCursorName Method (SQLServerStatement)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

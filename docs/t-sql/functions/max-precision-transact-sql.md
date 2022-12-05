@@ -1,33 +1,26 @@
 ---
-title: "@@MAX_PRECISION (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+title: "@@MAX_PRECISION (Transact-SQL)"
+description: "@@MAX_PRECISION (Transact-SQL)"
+author: markingmyname
+ms.author: maghan
+ms.date: "09/18/2017"
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "@@MAX_PRECISION_TSQL"
   - "@@MAX_PRECISION"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "precision [SQL Server], @@MAX_PRECISION"
   - "numeric data type, precision level"
   - "decimal data type, precision level"
   - "@@MAX_PRECISION function"
   - "data types [SQL Server], precision"
-ms.assetid: 9e7158a1-e503-422a-b326-3c9b06e181b2
-caps.latest.revision: 30
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
-# @@MAX_PRECISION (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+# &#x40;&#x40;MAX_PRECISION (Transact-SQL)
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns the precision level used by **decimal** and **numeric** data types as currently set in the server.  
   
@@ -35,12 +28,13 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 @@MAX_PRECISION  
 ```  
   
-## Return Types  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Return Types
  **tinyint**  
   
 ## Remarks  
@@ -48,7 +42,7 @@ manager: "jhubbard"
   
 ## Examples  
   
-```  
+```sql  
 SELECT @@MAX_PRECISION AS 'Max Precision'  
 ```  
   

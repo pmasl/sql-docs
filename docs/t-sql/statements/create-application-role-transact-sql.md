@@ -1,15 +1,13 @@
 ---
-title: "CREATE APPLICATION ROLE (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "CREATE APPLICATION ROLE (Transact-SQL)"
+description: CREATE APPLICATION ROLE (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: t-sql
+ms.topic: reference
+f1_keywords:
   - "APPLICATION_ROLE_TSQL"
   - "CREATE APPLICATION ROLE"
   - "sql13.swb.applicationrole.permissions.f1"
@@ -17,19 +15,14 @@ f1_keywords:
   - "APPLICATION ROLE"
   - "CREATE_APPLICATION_ROLE_TSQL"
   - "APPLICATION_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "CREATE APPLICATION ROLE statement"
   - "application roles [SQL Server], creating"
-ms.assetid: 647386da-ee80-41cf-86c9-dd590f9d66b6
-caps.latest.revision: 37
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # CREATE APPLICATION ROLE (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Adds an application role to the current database.  
   
@@ -37,20 +30,22 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
+```syntaxsql
   
 CREATE APPLICATION ROLE application_role_name   
     WITH PASSWORD = 'password' [ , DEFAULT_SCHEMA = schema_name ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
  *application_role_name*  
  Specifies the name of the application role. This name must not already be used to refer to any principal in the database.  
   
- PASSWORD **='***password***'**  
+ PASSWORD **='**_password_**'**  
  Specifies the password that database users will use to activate the application role. You should always use strong passwords. *password* must meet the Windows password policy requirements of the computer that is running the instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
- DEFAULT_SCHEMA **=***schema_name*  
+ DEFAULT_SCHEMA **=**_schema\_name_  
  Specifies the first schema that will be searched by the server when it resolves the names of objects for this role. If DEFAULT_SCHEMA is left undefined, the application role will use DBO as its default schema. *schema_name* can be a schema that does not exist in the database.  
   
 ## Remarks  
@@ -71,7 +66,7 @@ CREATE APPLICATION ROLE application_role_name
 ## Examples  
  The following example creates an application role called `weekly_receipts` that has the password `987Gbv876sPYY5m23` and `Sales` as its default schema.  
   
-```  
+```sql  
 CREATE APPLICATION ROLE weekly_receipts   
     WITH PASSWORD = '987G^bv876sPY)Y5m23'   
     , DEFAULT_SCHEMA = Sales;  

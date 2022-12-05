@@ -1,24 +1,15 @@
 ---
-title: "position Method (java.sql.Clob, long) | Microsoft Docs"
-ms.custom: ""
+title: "position Method (java.sql.Clob, long)"
+description: "position Method (java.sql.Clob, long)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerClob.position (java.sql.Clob, long)"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerClob.position (java.sql.Clob, long)"
 apitype: "Assembly"
-ms.assetid: b2fb34d5-1d34-4764-a795-712d9c6aa313
-caps.latest.revision: 9
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # position Method (java.sql.Clob, long)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

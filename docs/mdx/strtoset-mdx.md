@@ -1,30 +1,19 @@
 ---
+description: "StrToSet (MDX)"
 title: "StrToSet (MDX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "STRTOSET"
-dev_langs: 
-  - "kbMDX"
-helpviewer_keywords: 
-  - "StrToSet function"
-ms.assetid: 1700a563-6527-450a-8d3b-975c65bb6e51
-caps.latest.revision: 31
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.custom: mdx
+ms.topic: reference
+ms.author: owend
+ms.reviewer: owend
+author: minewiskan
 ---
 # StrToSet (MDX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  Returns the set specified by a Multidimensional Expressions (MDX)–formatted string.  
+
+  Returns the set specified by a Multidimensional Expressions (MDX)-formatted string.  
   
 ## Syntax  
   
@@ -65,7 +54,7 @@ FROM [Adventure Works]
   
 ```  
   
- The following example returns the Reseller Sales Amount measure for the countries of Germany and Canada. The set specification provided in the specified string contains qualified member names, as required by the CONSTRAINED flag.  
+ The following example returns the Reseller Sales Amount measure for Germany and Canada. The set specification provided in the specified string contains qualified member names, as required by the CONSTRAINED flag.  
   
 ```  
 SELECT StrToSet ('{[Geography].[Geography].[Country].[Germany],[Geography].[Geography].[Country].[Canada]}', CONSTRAINED)  

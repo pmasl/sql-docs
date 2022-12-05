@@ -1,24 +1,15 @@
 ---
-title: "supportsCatalogsInProcedureCalls Method | Microsoft Docs"
-ms.custom: ""
+title: "supportsCatalogsInProcedureCalls Method"
+description: "supportsCatalogsInProcedureCalls Method (SQLServerDatabaseMetaData)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerDatabaseMetaData.supportsCatalogsInProcedureCalls"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerDatabaseMetaData.supportsCatalogsInProcedureCalls"
 apitype: "Assembly"
-ms.assetid: 5ec3571a-c7c6-4b94-a9ea-ac08adc7f978
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # supportsCatalogsInProcedureCalls Method (SQLServerDatabaseMetaData)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

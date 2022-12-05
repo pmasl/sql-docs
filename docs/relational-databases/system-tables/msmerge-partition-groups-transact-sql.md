@@ -1,31 +1,23 @@
 ---
-title: "MSmerge_partition_groups (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSmerge_partition_groups (Transact-SQL)"
+description: MSmerge_partition_groups (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSmerge_partition_groups_TSQL"
   - "MSmerge_partition_groups"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSmerge_partition_groups system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 5d56d780-ee40-4afc-9c2a-d1723d86e430
-caps.latest.revision: 13
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSmerge_partition_groups (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSmerge_partition_groups** table stores one row for each precomputed partition in a given database. In addition to the columns listed, one column is added to this table for each function used in a parameterized row filter. For example, a column named **HOST_NAME_FN** is added to the table if a filter uses the [HOST_NAME](../../t-sql/functions/host-name-transact-sql.md) function. One row is stored for each unique set of function values that have synchronized with this Publisher. Two or more Subscribers synchronizing with exactly the same value for all of these functions will share the same row in this table and will therefore all share the same partition id. This table is stored in the publication database.  
   

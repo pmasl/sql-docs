@@ -1,25 +1,18 @@
 ---
-title: "SetEOS Method | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "SetEOS Method"
+description: "SetEOS Method"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "_Stream::raw_SetEOS"
   - "_Stream::SetEOS"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "SetEOS method [ADO]"
-ms.assetid: 707c18ca-6a56-4970-bbd6-ae1fb86a0b8a
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # SetEOS Method
 Sets the position that is the end of the stream.  
@@ -32,12 +25,12 @@ Stream.SetEOS
 ```  
   
 ## Remarks  
- **SetEOS** updates the value of the [EOS](../../../ado/reference/ado-api/eos-property.md) property, by making the current [Position](../../../ado/reference/ado-api/position-property-ado.md) the end of the stream. Any bytes or characters following the current position are truncated.  
+ **SetEOS** updates the value of the [EOS](./eos-property.md) property, by making the current [Position](./position-property-ado.md) the end of the stream. Any bytes or characters following the current position are truncated.  
   
- Because [Write](../../../ado/reference/ado-api/write-method.md), [WriteText](../../../ado/reference/ado-api/writetext-method.md), and [CopyTo](../../../ado/reference/ado-api/copyto-method-ado.md) do not truncate any extra values in existing **Stream** objects, you can truncate these bytes or characters by setting the new end-of-stream position with **SetEOS**.  
+ Because [Write](./write-method.md), [WriteText](./writetext-method.md), and [CopyTo](./copyto-method-ado.md) do not truncate any extra values in existing **Stream** objects, you can truncate these bytes or characters by setting the new end-of-stream position with **SetEOS**.  
   
 > [!CAUTION]
 >  If you set **EOS** to a position before the actual end of the stream, you will lose all data after the new **EOS** position.  
   
 ## Applies To  
- [Stream Object (ADO)](../../../ado/reference/ado-api/stream-object-ado.md)
+ [Stream Object (ADO)](./stream-object-ado.md)

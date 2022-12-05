@@ -1,14 +1,12 @@
 ---
+description: "sys.sysservers (Transact-SQL)"
 title: "sys.sysservers (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/15/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sys.sysservers"
   - "sysservers_TSQL"
@@ -20,22 +18,16 @@ helpviewer_keywords:
   - "sysservers system table"
   - "sys.sysservers compatibility view"
 ms.assetid: d02f186f-c00f-44a6-b38d-dc78a3d2145b
-caps.latest.revision: 27
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
 ---
 # sys.sysservers (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Contains one row for each server that an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] can access as an OLE DB data source.  
   
 > [!IMPORTANT]  
 >  [!INCLUDE[ssnoteCompView](../../includes/ssnotecompview-md.md)]  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)).|  
   
 |Column name|Data type|Description|  
 |-----------------|---------------|-----------------|  
@@ -56,18 +48,18 @@ manager: "jhubbard"
 |**querytimeout**|**int**|Time-out setting for queries against the server.|  
 |**srvnetname**|**char(30)**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
 |**isremote**|**bit**|1 = Server is a remote server.<br /><br /> 0 = Server is a linked server.|  
-|**rpc**|**bit**|1 = **sp_serveroption@rpc** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@rpc** set to **false** or **off**.|  
-|**pub**|**bit**|1 = **sp_serveroption@pub** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@pub** set to **false** or **off**.|  
-|**sub**|**bit**|1 = **sp_serveroption@sub** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@sub** set to **false** or **off**.|  
-|**dist**|**bit**|1 = **sp_serveroption@dist** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@dist** set to **false** or **off**.|  
-|**dpub**|**bit**|1 = **sp_serveroption@dpub** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@dpub** set to **false** or **off**.|  
-|**rpcout**|**bit**|1 = **sp_serveroption@rpc out** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@rpc out** set to **false** or **off**.|  
-|**dataaccess**|**bit**|1 = **sp_serveroption@data access** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@data access** set to **false** or **off**.|  
-|**collationcompatible**|**bit**|1 = **sp_serveroption@collation compatible** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@collation compatible** set to **false** or **off**.|  
-|**system**|**bit**|1 = **sp_serveroption@system** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@system** set to **false** or **off**.|  
-|**useremotecollation**|**bit**|1 = **sp_serveroption@remote collation** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@remote collation** set to **false** or **off**.|  
-|**lazyschemavalidation**|**bit**|1 = **sp_serveroption@lazy schema validation** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption@lazy schema validation** set to **false** or **off**.|  
-|**collation**|**sysname**|Server collation as set by **sp_serveroption@collation name**.|  
+|**rpc**|**bit**|1 = **sp_serveroption\@rpc** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@rpc** set to **false** or **off**.|  
+|**pub**|**bit**|1 = **sp_serveroption\@pub** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@pub** set to **false** or **off**.|  
+|**sub**|**bit**|1 = **sp_serveroption\@sub** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@sub** set to **false** or **off**.|  
+|**dist**|**bit**|1 = **sp_serveroption\@dist** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@dist** set to **false** or **off**.|  
+|**dpub**|**bit**|1 = **sp_serveroption\@dpub** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@dpub** set to **false** or **off**.|  
+|**rpcout**|**bit**|1 = **sp_serveroption\@rpc out** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@rpc out** set to **false** or **off**.|  
+|**dataaccess**|**bit**|1 = **sp_serveroption\@data access** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@data access** set to **false** or **off**.|  
+|**collationcompatible**|**bit**|1 = **sp_serveroption\@collation compatible** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@collation compatible** set to **false** or **off**.|  
+|**system**|**bit**|1 = **sp_serveroption\@system** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@system** set to **false** or **off**.|  
+|**useremotecollation**|**bit**|1 = **sp_serveroption\@remote collation** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@remote collation** set to **false** or **off**.|  
+|**lazyschemavalidation**|**bit**|1 = **sp_serveroption\@lazy schema validation** set to **true** or **on**.<br /><br /> 0 = **sp_serveroption\@lazy schema validation** set to **false** or **off**.|  
+|**collation**|**sysname**|Server collation as set by **sp_serveroption\@collation name**.|  
 |**nonsqlsub**|bit|0 = server is an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> 1 = server is not an instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
   
 ## See Also  

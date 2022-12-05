@@ -1,14 +1,12 @@
 ---
+description: "OUTPUT Clause (Transact-SQL)"
 title: "OUTPUT Clause (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
-ms.date: "03/16/2017"
-ms.prod: "sql-non-specified"
+ms.date: "01/14/2020"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: t-sql
+ms.topic: reference
 f1_keywords: 
   - "OUTPUT_TSQL"
   - "OUTPUT"
@@ -30,13 +28,11 @@ helpviewer_keywords:
   - "displaying deleted rows"
   - "UPDATE statement [SQL Server], OUTPUT clause"
 ms.assetid: 41b9962c-0c71-4227-80a0-08fdc19f5fe4
-caps.latest.revision: 94
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: VanMSFT
+ms.author: vanto
 ---
 # OUTPUT Clause (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   Returns information from, or expressions based on, each row affected by an INSERT, UPDATE, DELETE, or MERGE statement. These results can be returned to the processing application for use in such things as confirmation messages, archiving, and other such application requirements. The results can also be inserted into a table or table variable. Additionally, you can capture the results of an OUTPUT clause in a nested INSERT, UPDATE, DELETE, or MERGE statement, and insert those results into a target table or view.  
   
@@ -57,8 +53,7 @@ manager: "jhubbard"
   
 ## Syntax  
   
-```  
-  
+```syntaxsql
 <OUTPUT_CLAUSE> ::=  
 {  
     [ OUTPUT <dml_select_list> INTO { @table_variable | output_table } [ ( column_list ) ] ]  
@@ -70,12 +65,14 @@ manager: "jhubbard"
   
 <column_name> ::=  
 { DELETED | INSERTED | from_table_name } . { * | column_name }  
-    | $action  
-```  
+    | $action
+```
   
-## Arguments  
- @*table_variable*  
- Specifies a **table** variable that the returned rows are inserted into instead of being returned to the caller. @*table_variable* must be declared before the INSERT, UPDATE, DELETE, or MERGE statement.  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
+ \@*table_variable*  
+ Specifies a **table** variable that the returned rows are inserted into instead of being returned to the caller. \@*table_variable* must be declared before the INSERT, UPDATE, DELETE, or MERGE statement.  
   
  If *column_list* is not specified, the **table** variable must have the same number of columns as the OUTPUT result set. The exceptions are identity and computed columns, which must be skipped. If *column_list* is specified, any omitted columns must either allow null values or have default values assigned to them.  
   
@@ -94,7 +91,7 @@ manager: "jhubbard"
   
 -   Have CHECK constraints or enabled rules.  
   
- *column_list*  
+*column_list*  
  Is an optional list of column names on the target table of the INTO clause. It is analogous to the column list allowed in the [INSERT](../../t-sql/statements/insert-transact-sql.md) statement.  
   
  *scalar_expression*  
@@ -125,26 +122,26 @@ manager: "jhubbard"
   
  For example, `OUTPUT DELETED.*` in the following DELETE statement returns all columns deleted from the `ShoppingCartItem` table:  
   
-```  
-DELETE Sales.ShoppingCartItem  
-    OUTPUT DELETED.*;  
-```  
+```sql
+DELETE Sales.ShoppingCartItem
+    OUTPUT DELETED.*;
+```
   
  *column_name*  
- Is an explicit column reference. Any reference to the table being modified must be correctly qualified by either the INSERTED or the DELETED prefix as appropriate, for example: INSERTED**.***column_name*.  
+ Is an explicit column reference. Any reference to the table being modified must be correctly qualified by either the INSERTED or the DELETED prefix as appropriate, for example: INSERTED._column\_name_.  
   
  $action  
  Is available only for the MERGE statement. Specifies a column of type **nvarchar(10)** in the OUTPUT clause in a MERGE statement that returns one of three values for each row: 'INSERT', 'UPDATE', or 'DELETE', according to the action that was performed on that row.  
   
 ## Remarks  
- The OUTPUT <dml_select_list> clause and the OUTPUT <dml_select_list> INTO { **@***table_variable* | *output_table* } clause can be defined in a single INSERT, UPDATE, DELETE, or MERGE statement.  
+ The OUTPUT \<dml_select_list> clause and the OUTPUT \<dml_select_list> INTO { **\@**_table\_variable_ | _output\_table_ } clause can be defined in a single INSERT, UPDATE, DELETE, or MERGE statement.  
   
 > [!NOTE]  
 >  Unless specified otherwise, references to the OUTPUT clause refer to both the OUTPUT clause and the OUTPUT INTO clause.  
   
  The OUTPUT clause may be useful to retrieve the value of identity or computed columns after an INSERT or UPDATE operation.  
   
- When a computed column is included in the <dml_select_list>, the corresponding column in the output table or table variable is not a computed column. The values in the new column are the values that were computed at the time the statement was executed.  
+ When a computed column is included in the \<dml_select_list>, the corresponding column in the output table or table variable is not a computed column. The values in the new column are the values that were computed at the time the statement was executed.  
   
  There is no guarantee that the order in which the changes are applied to the table and the order in which the rows are inserted into the output table or table variable will correspond.  
   
@@ -197,22 +194,22 @@ DELETE Sales.ShoppingCartItem
   
     -   The target cannot be a remote table or partitioned view.  
   
-    -   The source itself cannot contain a <dml_table_source> clause.  
+    -   The source itself cannot contain a \<dml_table_source> clause.  
   
--   The OUTPUT INTO clause is not supported in INSERT statements that contain a <dml_table_source> clause.  
+-   The OUTPUT INTO clause is not supported in INSERT statements that contain a \<dml_table_source> clause.  
   
--   @@ROWCOUNT returns the rows inserted only by the outer INSERT statement.  
+-   \@\@ROWCOUNT returns the rows inserted only by the outer INSERT statement.  
   
--   @@IDENTITY, SCOPE_IDENTITY, and IDENT_CURRENT return identity values generated only by the nested DML statement, and not those generated by the outer INSERT statement.  
+-   \@\@IDENTITY, SCOPE_IDENTITY, and IDENT_CURRENT return identity values generated only by the nested DML statement, and not those generated by the outer INSERT statement.  
   
 -   Query notifications treat the statement as a single entity, and the type of any message that is created will be the type of the nested DML, even if the significant change is from the outer INSERT statement itself.  
   
--   In the <dml_table_source> clause, the SELECT and WHERE clauses cannot include subqueries, aggregate functions, ranking functions, full-text predicates, user-defined functions that perform data access, or the TEXTPTR function.  
+-   In the \<dml_table_source> clause, the SELECT and WHERE clauses cannot include subqueries, aggregate functions, ranking functions, full-text predicates, user-defined functions that perform data access, or the TEXTPTR function.  
 
 ## Parallelism
  An OUTPUT clause that returns results to the client will always use a serial plan.
 
-In the context of a database set to compatibility level 130 or higher, if an INSERT...SELECT operation uses a WITH (TABLOCK) hint for the SELECT statement and also uses OUTPUT…INTO to insert into a temporary or user table, then the target table for the INSERT…SELECT will be eligible for parallelism depending on the subtree cost.  The target table referenced in the OUTPUT INTO clause will not be eligible for parallelism. 
+In the context of a database set to compatibility level 130 or higher, if an INSERT...SELECT operation uses a WITH (TABLOCK) hint for the SELECT statement and also uses OUTPUT...INTO to insert into a temporary or user table, then the target table for the INSERT...SELECT will be eligible for parallelism depending on the subtree cost.  The target table referenced in the OUTPUT INTO clause will not be eligible for parallelism. 
  
 ## Triggers  
  Columns returned from OUTPUT reflect the data as it is after the INSERT, UPDATE, or DELETE statement has completed but before triggers are executed.  
@@ -229,21 +226,22 @@ In the context of a database set to compatibility level 130 or higher, if an INS
 ## Queues  
  You can use OUTPUT in applications that use tables as queues, or to hold intermediate result sets. That is, the application is constantly adding or removing rows from the table. The following example uses the OUTPUT clause in a DELETE statement to return the deleted row to the calling application.  
   
-```  
-USE AdventureWorks2012;  
-GO  
+```sql
+USE AdventureWorks2012;
+GO
+
 DELETE TOP(1) dbo.DatabaseLog WITH (READPAST)  
 OUTPUT deleted.*  
 WHERE DatabaseLogID = 7;  
-GO  
-  
-```  
+GO
+```
   
  This example removes a row from a table used as a queue and returns the deleted values to the processing application in a single action. Other semantics may also be implemented, such as using a table to implement a stack. However, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] does not guarantee the order in which rows are processed and returned by DML statements using the OUTPUT clause. It is up to the application to include an appropriate WHERE clause that can guarantee the desired semantics, or understand that when multiple rows may qualify for the DML operation, there is no guaranteed order. The following example uses a subquery and assumes uniqueness is a characteristic of the `DatabaseLogID` column in order to implement the desired ordering semantics.  
   
-```  
-USE tempdb;  
-GO  
+```sql
+USE tempdb;
+GO
+
 CREATE TABLE dbo.table1  
 (  
     id INT,  
@@ -264,21 +262,23 @@ DECLARE @MyTableVar TABLE
     employee VARCHAR(32)  
 );  
   
-PRINT 'table1, before delete'   
+PRINT 'table1, before delete';  
 SELECT * FROM dbo.table1;  
   
 DELETE FROM dbo.table1  
 OUTPUT DELETED.* INTO @MyTableVar  
 WHERE id = 4 OR id = 2;  
   
-PRINT 'table1, after delete'  
+PRINT 'table1, after delete';  
 SELECT * FROM dbo.table1;  
   
-PRINT '@MyTableVar, after delete'  
+PRINT '@MyTableVar, after delete';  
 SELECT * FROM @MyTableVar;  
   
 DROP TABLE dbo.table1;  
-  
+```
+
+```
 --Results  
 --table1, before delete  
 --id          employee  
@@ -297,29 +297,32 @@ DROP TABLE dbo.table1;
 --id          employee  
 ------------- ------------------------------  
 --2           Tom  
---4           Alice  
-  
-```  
+--4           Alice
+```
   
 > [!NOTE]  
 >  Use the READPAST table hint in UPDATE and DELETE statements if your scenario allows for multiple applications to perform a destructive read from one table. This prevents locking issues that can come up if another application is already reading the first qualifying record in the table.  
   
 ## Permissions  
- SELECT permissions are required on any columns retrieved through <dml_select_list> or used in <scalar_expression>.  
+ SELECT permissions are required on any columns retrieved through \<dml_select_list> or used in \<scalar_expression>.  
   
- INSERT permissions are required on any tables specified in <output_table>.  
+ INSERT permissions are required on any tables specified in \<output_table>.  
   
 ## Examples  
   
 ### A. Using OUTPUT INTO with a simple INSERT statement  
- The following example inserts a row into the `ScrapReason` table and uses the `OUTPUT` clause to return the results of the statement to the `@MyTableVar``table` variable. Because the `ScrapReasonID` column is defined with an IDENTITY property, a value is not specified in the `INSERT` statement for that column. However, note that the value generated by the [!INCLUDE[ssDE](../../includes/ssde-md.md)] for that column is returned in the `OUTPUT` clause in the column `inserted.ScrapReasonID`.  
+ The following example inserts a row into the `ScrapReason` table and uses the `OUTPUT` clause to return the results of the statement to the `@MyTableVar` table variable. Because the `ScrapReasonID` column is defined with an IDENTITY property, a value is not specified in the `INSERT` statement for that column. However, note that the value generated by the [!INCLUDE[ssDE](../../includes/ssde-md.md)] for that column is returned in the `OUTPUT` clause in the column `inserted.ScrapReasonID`.  
+
   
-```  
-USE AdventureWorks2012;  
-GO  
-DECLARE @MyTableVar table( NewScrapReasonID smallint,  
-                           Name varchar(50),  
-                           ModifiedDate datetime);  
+```sql
+USE AdventureWorks2012;
+GO
+
+DECLARE @MyTableVar TABLE (
+    NewScrapReasonID SMALLINT,  
+    Name VARCHAR(50),  
+    ModifiedDate DATETIME); 
+    
 INSERT Production.ScrapReason  
     OUTPUT INSERTED.ScrapReasonID, INSERTED.Name, INSERTED.ModifiedDate  
         INTO @MyTableVar  
@@ -330,40 +333,39 @@ SELECT NewScrapReasonID, Name, ModifiedDate FROM @MyTableVar;
 --Display the result set of the table.  
 SELECT ScrapReasonID, Name, ModifiedDate   
 FROM Production.ScrapReason;  
-GO  
-  
-```  
+GO
+```
   
 ### B. Using OUTPUT with a DELETE statement  
  The following example deletes all rows in the `ShoppingCartItem` table. The clause `OUTPUT deleted.*` specifies that the results of the `DELETE` statement, that is all columns in the deleted rows, be returned to the calling application. The `SELECT` statement that follows verifies the results of the delete operation on the `ShoppingCartItem` table.  
   
-```  
-USE AdventureWorks2012;  
-GO  
+```sql
+USE AdventureWorks2012;
+GO
+
 DELETE Sales.ShoppingCartItem  
 OUTPUT DELETED.*   
 WHERE ShoppingCartID = 20621;  
   
 --Verify the rows in the table matching the WHERE clause have been deleted.  
 SELECT COUNT(*) AS [Rows in Table] FROM Sales.ShoppingCartItem WHERE ShoppingCartID = 20621;  
-GO  
-  
-```  
+GO
+```
   
 ### C. Using OUTPUT INTO with an UPDATE statement  
- The following example updates the `VacationHours` column in the `Employee` table by 25 percent for the first 10 rows. The `OUTPUT` clause returns the `VacationHours` value that exists before applying the `UPDATE` statement in the column `deleted.VacationHours`, and the updated value in the column `inserted.VacationHours` to the `@MyTableVar``table` variable.  
+ The following example updates the `VacationHours` column in the `Employee` table by 25 percent for the first 10 rows. The `OUTPUT` clause returns the `VacationHours` value that exists before applying the `UPDATE` statement in the column `deleted.VacationHours`, and the updated value in the column `inserted.VacationHours` to the `@MyTableVar` table variable.  
   
  Two `SELECT` statements follow that return the values in `@MyTableVar` and the results of the update operation in the `Employee` table.  
   
-```  
-USE AdventureWorks2012;  
-GO  
+```sql
+USE AdventureWorks2012;
+GO
   
-DECLARE @MyTableVar table(  
-    EmpID int NOT NULL,  
-    OldVacationHours int,  
-    NewVacationHours int,  
-    ModifiedDate datetime);  
+DECLARE @MyTableVar TABLE (  
+    EmpID INT NOT NULL,  
+    OldVacationHours INT,  
+    NewVacationHours INT,  
+    ModifiedDate DATETIME);  
   
 UPDATE TOP (10) HumanResources.Employee  
 SET VacationHours = VacationHours * 1.25,  
@@ -382,21 +384,22 @@ GO
 SELECT TOP (10) BusinessEntityID, VacationHours, ModifiedDate  
 FROM HumanResources.Employee;  
 GO  
-  
-```  
-  
+```
+
 ### D. Using OUTPUT INTO to return an expression  
- The following example builds on example C by defining an expression in the `OUTPUT` clause as the difference between the updated `VacationHours` value and the `VacationHours` value before the update was applied. The value of this expression is returned to the `@MyTableVar``table` variable in the column `VacationHoursDifference`.  
+ The following example builds on example C by defining an expression in the `OUTPUT` clause as the difference between the updated `VacationHours` value and the `VacationHours` value before the update was applied. The value of this expression is returned to the `@MyTableVar` table variable in the column `VacationHoursDifference`.  
+
   
-```  
+```sql
 USE AdventureWorks2012;  
-GO  
-DECLARE @MyTableVar table(  
-    EmpID int NOT NULL,  
-    OldVacationHours int,  
-    NewVacationHours int,  
-    VacationHoursDifference int,  
-    ModifiedDate datetime);  
+GO
+
+DECLARE @MyTableVar TABLE (  
+    EmpID INT NOT NULL,  
+    OldVacationHours INT,  
+    NewVacationHours INT,  
+    VacationHoursDifference INT,  
+    ModifiedDate DATETIME);  
   
 UPDATE TOP (10) HumanResources.Employee  
 SET VacationHours = VacationHours * 1.25,  
@@ -415,22 +418,22 @@ FROM @MyTableVar;
 GO  
 SELECT TOP (10) BusinessEntityID, VacationHours, ModifiedDate  
 FROM HumanResources.Employee;  
-GO  
-  
-```  
-  
+GO
+```
+
 ### E. Using OUTPUT INTO with from_table_name in an UPDATE statement  
  The following example updates the `ScrapReasonID` column in the `WorkOrder` table for all work orders with a specified `ProductID` and `ScrapReasonID`. The `OUTPUT INTO` clause returns values from the table being updated (`WorkOrder`) and also from the `Product` table. The `Product` table is used in the `FROM` clause to specify the rows to update. Because the `WorkOrder` table has an `AFTER UPDATE` trigger defined on it, the `INTO` keyword is required.  
   
-```  
-USE AdventureWorks2012;  
-GO  
-DECLARE @MyTestVar table (  
-    OldScrapReasonID int NOT NULL,   
-    NewScrapReasonID int NOT NULL,   
-    WorkOrderID int NOT NULL,  
-    ProductID int NOT NULL,  
-    ProductName nvarchar(50)NOT NULL);  
+```sql
+USE AdventureWorks2012;
+GO
+
+DECLARE @MyTestVar TABLE (  
+    OldScrapReasonID INT NOT NULL,   
+    NewScrapReasonID INT NOT NULL,   
+    WorkOrderID INT NOT NULL,  
+    ProductID INT NOT NULL,  
+    ProductName NVARCHAR(50)NOT NULL);  
   
 UPDATE Production.WorkOrder  
 SET ScrapReasonID = 4  
@@ -449,21 +452,21 @@ FROM Production.WorkOrder AS wo
 SELECT OldScrapReasonID, NewScrapReasonID, WorkOrderID,   
     ProductID, ProductName   
 FROM @MyTestVar;  
-GO  
-  
-```  
-  
+GO
+```
+
 ### F. Using OUTPUT INTO with from_table_name in a DELETE statement  
  The following example deletes rows in the `ProductProductPhoto` table based on search criteria defined in the `FROM` clause of `DELETE` statement. The `OUTPUT` clause returns columns from the table being deleted (`deleted.ProductID`, `deleted.ProductPhotoID`) and columns from the `Product` table. This table is used in the `FROM` clause to specify the rows to delete.  
   
-```  
-USE AdventureWorks2012;  
-GO  
-DECLARE @MyTableVar table (  
-    ProductID int NOT NULL,   
-    ProductName nvarchar(50)NOT NULL,  
-    ProductModelID int NOT NULL,   
-    PhotoID int NOT NULL);  
+```sql
+USE AdventureWorks2012;
+GO
+
+DECLARE @MyTableVar TABLE (  
+    ProductID INT NOT NULL,   
+    ProductName NVARCHAR(50)NOT NULL,  
+    ProductModelID INT NOT NULL,   
+    PhotoID INT NOT NULL);  
   
 DELETE Production.ProductProductPhoto  
 OUTPUT DELETED.ProductID,  
@@ -480,19 +483,20 @@ JOIN Production.Product as p
 SELECT ProductID, ProductName, ProductModelID, PhotoID   
 FROM @MyTableVar  
 ORDER BY ProductModelID;  
-GO  
-  
-```  
+GO
+```
   
 ### G. Using OUTPUT INTO with a large object data type  
- The following example updates a partial value in `DocumentSummary`, an `nvarchar(max)` column in the `Production.Document` table, by using the `.WRITE` clause. The word `components` is replaced by the word `features` by specifying the replacement word, the beginning location (offset) of the word to be replaced in the existing data, and the number of characters to be replaced (length). The example uses the `OUTPUT` clause to return the before and after images of the `DocumentSummary` column to the `@MyTableVar``table` variable. Note that the full before and after images of the `DocumentSummary` column are returned.  
+ The following example updates a partial value in `DocumentSummary`, an `nvarchar(max)` column in the `Production.Document` table, by using the `.WRITE` clause. The word `components` is replaced by the word `features` by specifying the replacement word, the beginning location (offset) of the word to be replaced in the existing data, and the number of characters to be replaced (length). The example uses the `OUTPUT` clause to return the before and after images of the `DocumentSummary` column to the `@MyTableVar` table variable. Note that the full before and after images of the `DocumentSummary` column are returned.  
+
   
-```  
-USE AdventureWorks2012;  
-GO  
-DECLARE @MyTableVar table (  
-    SummaryBefore nvarchar(max),  
-    SummaryAfter nvarchar(max));  
+```sql
+USE AdventureWorks2012;
+GO
+
+DECLARE @MyTableVar TABLE (  
+    SummaryBefore NVARCHAR(max),  
+    SummaryAfter NVARCHAR(max));  
   
 UPDATE Production.Document  
 SET DocumentSummary .WRITE (N'features',28,10)  
@@ -503,16 +507,16 @@ WHERE Title = N'Front Reflector Bracket Installation';
   
 SELECT SummaryBefore, SummaryAfter   
 FROM @MyTableVar;  
-GO  
-  
-```  
+GO
+```
   
 ### H. Using OUTPUT in an INSTEAD OF trigger  
  The following example uses the `OUTPUT` clause in a trigger to return the results of the trigger operation. First, a view is created on the `ScrapReason` table, and then an `INSTEAD OF INSERT` trigger is defined on the view that lets only the `Name` column of the base table to be modified by the user. Because the column `ScrapReasonID` is an `IDENTITY` column in the base table, the trigger ignores the user-supplied value. This allows the [!INCLUDE[ssDE](../../includes/ssde-md.md)] to automatically generate the correct value. Also, the value supplied by the user for `ModifiedDate` is ignored and is set to the current date. The `OUTPUT` clause returns the values actually inserted into the `ScrapReason` table.  
   
-```  
-USE AdventureWorks2012;  
-GO  
+```sql
+USE AdventureWorks2012;
+GO
+
 IF OBJECT_ID('dbo.vw_ScrapReason','V') IS NOT NULL  
     DROP VIEW dbo.vw_ScrapReason;  
 GO  
@@ -536,47 +540,49 @@ END
 GO  
 INSERT vw_ScrapReason (ScrapReasonID, Name, ModifiedDate)  
 VALUES (99, N'My scrap reason','20030404');  
-GO  
-  
-```  
+GO
+```
   
  Here is the result set generated on April 12, 2004 ('`2004-04-12'`). Notice that the `ScrapReasonIDActual` and `ModifiedDate` columns reflect the values generated by the trigger operation instead of the values provided in the `INSERT` statement.  
   
- `ScrapReasonID  Name             ModifiedDate`  
-  
- `-------------  ---------------- -----------------------`  
-  
- `17             My scrap reason  2004-04-12 16:23:33.050`  
+ ```
+ ScrapReasonID  Name             ModifiedDate  
+ -------------  ---------------- -----------------------  
+ 17             My scrap reason  2004-04-12 16:23:33.050
+ ```  
   
 ### I. Using OUTPUT INTO with identity and computed columns  
  The following example creates the `EmployeeSales` table and then inserts several rows into it using an `INSERT` statement with a `SELECT` statement to retrieve data from source tables. The `EmployeeSales` table contains an identity column (`EmployeeID`) and a computed column (`ProjectedSales`).  
   
-```  
-USE AdventureWorks2012 ;  
-GO  
+```sql
+USE AdventureWorks2012;
+GO
+
 IF OBJECT_ID ('dbo.EmployeeSales', 'U') IS NOT NULL  
     DROP TABLE dbo.EmployeeSales;  
 GO  
 CREATE TABLE dbo.EmployeeSales  
-( EmployeeID   int IDENTITY (1,5)NOT NULL,  
-  LastName     nvarchar(20) NOT NULL,  
-  FirstName    nvarchar(20) NOT NULL,  
-  CurrentSales money NOT NULL,  
+( EmployeeID   INT IDENTITY (1,5) NOT NULL,  
+  LastName     NVARCHAR(20) NOT NULL,  
+  FirstName    NVARCHAR(20) NOT NULL,  
+  CurrentSales MONEY NOT NULL,  
   ProjectedSales AS CurrentSales * 1.10   
 );  
 GO  
-DECLARE @MyTableVar table(  
-  EmployeeID   int NOT NULL,  
-  LastName     nvarchar(20) NOT NULL,  
-  FirstName    nvarchar(20) NOT NULL,  
-  CurrentSales money NOT NULL,  
-  ProjectedSales money NOT NULL  
+DECLARE @MyTableVar TABLE (  
+  EmployeeID   INT NOT NULL,  
+  LastName     NVARCHAR(20) NOT NULL,  
+  FirstName    NVARCHAR(20) NOT NULL,  
+  CurrentSales MONEY NOT NULL,  
+  ProjectedSales MONEY NOT NULL  
   );  
   
 INSERT INTO dbo.EmployeeSales (LastName, FirstName, CurrentSales)  
-  OUTPUT INSERTED.LastName,   
+  OUTPUT INSERTED.EmployeeID,
+         INSERTED.LastName,   
          INSERTED.FirstName,   
-         INSERTED.CurrentSales  
+         INSERTED.CurrentSales,
+         INSERTED.ProjectedSales
   INTO @MyTableVar  
     SELECT c.LastName, c.FirstName, sp.SalesYTD  
     FROM Sales.SalesPerson AS sp  
@@ -590,21 +596,22 @@ FROM @MyTableVar;
 GO  
 SELECT EmployeeID, LastName, FirstName, CurrentSales, ProjectedSales  
 FROM dbo.EmployeeSales;  
-GO  
-  
-```  
+GO
+```
   
 ### J. Using OUTPUT and OUTPUT INTO in a single statement  
- The following example deletes rows in the `ProductProductPhoto` table based on search criteria defined in the `FROM` clause of `DELETE` statement. The `OUTPUT INTO` clause returns columns from the table being deleted (`deleted.ProductID`, `deleted.ProductPhotoID`) and columns from the `Product` table to the `@MyTableVar``table` variable. The `Product` table is used in the `FROM` clause to specify the rows to delete. The `OUTPUT` clause returns the `deleted.ProductID`, `deleted.ProductPhotoID` columns and the date and time the row was deleted from the `ProductProductPhoto` table to the calling application.  
+ The following example deletes rows in the `ProductProductPhoto` table based on search criteria defined in the `FROM` clause of `DELETE` statement. The `OUTPUT INTO` clause returns columns from the table being deleted (`deleted.ProductID`, `deleted.ProductPhotoID`) and columns from the `Product` table to the `@MyTableVar` table variable. The `Product` table is used in the `FROM` clause to specify the rows to delete. The `OUTPUT` clause returns the `deleted.ProductID`, `deleted.ProductPhotoID` columns and the date and time the row was deleted from the `ProductProductPhoto` table to the calling application.  
+
   
-```  
-USE AdventureWorks2012;  
-GO  
-DECLARE @MyTableVar table (  
-    ProductID int NOT NULL,   
-    ProductName nvarchar(50)NOT NULL,  
-    ProductModelID int NOT NULL,   
-    PhotoID int NOT NULL);  
+```sql
+USE AdventureWorks2012;
+GO
+
+DECLARE @MyTableVar TABLE (  
+    ProductID INT NOT NULL,   
+    ProductName NVARCHAR(50)NOT NULL,  
+    ProductModelID INT NOT NULL,   
+    PhotoID INT NOT NULL);  
   
 DELETE Production.ProductProductPhoto  
 OUTPUT DELETED.ProductID,  
@@ -621,16 +628,16 @@ WHERE p.ProductID BETWEEN 800 and 810;
 --Display the results of the table variable.  
 SELECT ProductID, ProductName, PhotoID, ProductModelID   
 FROM @MyTableVar;  
-GO  
-  
-```  
+GO
+```
   
 ### K. Inserting data returned from an OUTPUT clause  
  The following example captures data returned from the `OUTPUT` clause of a `MERGE` statement, and inserts that data into another table. The `MERGE` statement updates the `Quantity` column of the `ProductInventory` table daily, based on orders that are processed in the `SalesOrderDetail` table. It also deletes rows for products whose inventories drop to `0` or below. The example captures the rows that are deleted and inserts them into another table, `ZeroInventory`, which tracks products with no inventory.  
   
-```  
-USE AdventureWorks2012;  
-GO  
+```sql
+USE AdventureWorks2012;
+GO
+
 IF OBJECT_ID(N'Production.ZeroInventory', N'U') IS NOT NULL  
     DROP TABLE Production.ZeroInventory;  
 GO  
@@ -657,9 +664,10 @@ WHERE Action = 'DELETE';
 IF @@ROWCOUNT = 0  
 PRINT 'Warning: No rows were inserted';  
 GO  
-SELECT DeletedProductID, RemovedOnDate FROM Production.ZeroInventory;  
-  
-```  
+SELECT DeletedProductID, RemovedOnDate
+FROM Production.ZeroInventory;
+GO
+```
   
 ## See Also  
  [DELETE &#40;Transact-SQL&#41;](../../t-sql/statements/delete-transact-sql.md)   
@@ -667,6 +675,4 @@ SELECT DeletedProductID, RemovedOnDate FROM Production.ZeroInventory;
  [UPDATE &#40;Transact-SQL&#41;](../../t-sql/queries/update-transact-sql.md)   
  [table &#40;Transact-SQL&#41;](../../t-sql/data-types/table-transact-sql.md)   
  [CREATE TRIGGER &#40;Transact-SQL&#41;](../../t-sql/statements/create-trigger-transact-sql.md)   
- [sp_configure &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md)  
-  
-  
+ [sp_configure &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md)

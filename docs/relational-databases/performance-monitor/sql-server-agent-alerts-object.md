@@ -1,24 +1,21 @@
 ---
-title: "SQL Server Agent, Alerts Object | Microsoft Docs"
+title: "SQL Server Agent, Alerts object"
+description: Learn about the SQL Server Agent Alerts performance object, which contains performance counters that report information about SQL Server Agent alerts.
 ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
+ms.date: "07/12/2021"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: performance
+ms.topic: conceptual
 helpviewer_keywords: 
   - "Alerts object"
   - "SQLAgent:Alerts"
-ms.assetid: e5e37f74-ee88-46d0-ad8f-71fd1b1fa64a
-caps.latest.revision: 24
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
-# SQL Server Agent, Alerts Object
+# SQL Server Agent, Alerts object
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+
   The SQL Server Agent **Alerts** performance object contains performance counters that report information about SQL Server Agent alerts. The table below lists the counters that this object contains.  
   
  The table below contains the **SQLAgent:Alerts** counters.  
@@ -31,9 +28,9 @@ manager: "jhubbard"
 > [!NOTE]  
 >  To use this SQL Server Agent object, users must be a member of the **sysadmin** fixed server role.  
   
-## See Also  
- [Alerts](http://msdn.microsoft.com/library/3f57d0f0-4781-46ec-82cd-b751dc5affef)   
- [Use Performance Objects](http://msdn.microsoft.com/library/830b843a-6b2a-4620-a51b-98358e9fc54b)   
+## See also  
+ [Alerts](../../ssms/agent/alerts.md)   
+ [Use Performance Objects](../../ssms/agent/use-performance-objects.md)   
  [Monitor Resource Usage &#40;System Monitor&#41;](../../relational-databases/performance-monitor/monitor-resource-usage-system-monitor.md)  
   
   

@@ -1,34 +1,30 @@
 ---
-title: "sys.fulltext_index_fragments (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.fulltext_index_fragments (Transact-SQL)"
+description: sys.fulltext_index_fragments (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "fulltext_index_fragments"
   - "sys.fulltext_index_fragments_TSQL"
   - "fulltext_index_fragments_TSQL"
   - "sys.fulltext_index_fragments"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "full-text indexes [SQL Server], fragments"
   - "full-text indexes [SQL Server], metadata"
   - "troubleshooting [SQL Server], full-text search"
   - "sys.fulltext_index_fragments catalog view"
+dev_langs:
+  - "TSQL"
 ms.assetid: a82e5018-5d88-45c0-9a47-c251e17a6cdb
-caps.latest.revision: 18
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sys.fulltext_index_fragments (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   A fulltext index uses internal tables called *full-text index fragments* to store the inverted index data. This view can be used to query the metadata about these fragments. This view contains a row for each full-text index fragment in every table that contains a full-text index.  
  

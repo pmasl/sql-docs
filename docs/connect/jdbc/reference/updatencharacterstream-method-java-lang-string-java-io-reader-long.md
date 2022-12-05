@@ -1,19 +1,12 @@
 ---
-title: "updateNCharacterStream Method String - Reader - long) | Microsoft Docs"
-ms.custom: ""
+title: "updateNCharacterStream Method String - Reader - long)"
+description: "updateNCharacterStream Method (java.lang.String, java.io.Reader, long)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: db0a96a8-248f-4664-9c13-f480f309ab91
-caps.latest.revision: 20
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # updateNCharacterStream Method (java.lang.String, java.io.Reader, long)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

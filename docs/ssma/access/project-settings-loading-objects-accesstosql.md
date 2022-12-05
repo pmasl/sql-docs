@@ -1,22 +1,18 @@
 ---
+description: "Project Settings (Loading Objects) (AccessToSQL)"
 title: "Project Settings (Loading Objects) (AccessToSQL) | Microsoft Docs"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.custom: ""
 ms.date: "01/19/2017"
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "sql-ssma"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-applies_to: 
-  - "Azure SQL Database"
-  - "SQL Server"
+ms.subservice: ssma
+ms.topic: conceptual
 ms.assetid: 9ec1c1e8-a3e1-4e81-bf49-631f87daa209
-caps.latest.revision: 4
-author: "sabotta"
-ms.author: "carlasab"
-manager: "lonnyb"
+author: cpichuka 
+ms.author: cpichuka 
+f1_keywords: 
+  - "ssma.access.projectsettingsloadingobjects.f1"
+
 ---
 # Project Settings (Loading Objects) (AccessToSQL)
 The Loading Objects project settings let you configure how Access database objects are synchronized with SQL Server database objects.  

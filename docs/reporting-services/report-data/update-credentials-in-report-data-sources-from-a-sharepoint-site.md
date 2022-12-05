@@ -1,20 +1,15 @@
 ---
 title: "Update Credentials in Report Data Sources from a SharePoint Site | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/01/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-sharepoint"
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+description: Learn how to update data sources embedded in reports and shared data sources that are saved in a SharePoint document library.
+ms.date: 03/01/2017
+ms.service: reporting-services
+ms.subservice: report-data
+
+
+ms.topic: conceptual
 ms.assetid: e0c50b6e-89e7-4b4d-8fe5-c90682c5d1b1
-caps.latest.revision: 12
-author: "guyinacube"
-ms.author: "asaxton"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Update Credentials in Report Data Sources from a SharePoint Site
   This topic describes how to update data sources embedded in reports and shared data sources that are saved in a SharePoint document library.  
@@ -43,7 +38,7 @@ manager: "erikre"
   
      The **Credentials are not required** option can also be used under some circumstances.  
   
-     From some data source types, the unattended execution account must be configured on the report server. For more information, see the topic for the corresponding data source type in [Add Data from External Data Sources &#40;SSRS&#41;](../../reporting-services/report-data/add-data-from-external-data-sources-ssrs.md) and [Configure the Unattended Execution Account &#40;SSRS Configuration Manager&#41;](../../reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager.md).  
+     From some data source types, the unattended execution account must be configured on the report server. For more information, see the topic for the corresponding data source type in [Add Data from External Data Sources &#40;SSRS&#41;](../../reporting-services/report-data/add-data-from-external-data-sources-ssrs.md) and [Configure the Unattended Execution Account &#40;Report Server Configuration Manager&#41;](../../reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager.md).  
   
 7.  Type a user name and password.  
   
@@ -53,7 +48,7 @@ manager: "erikre"
   
 8.  To verify the data source can connect by using the updated credentials, click **Test connection**.  
   
-9. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+9.  Select **OK**.
   
 ### To update a shared data source to use stored credentials  
   
@@ -69,7 +64,7 @@ manager: "erikre"
   
      The **Credentials are not required** option can also be used under some circumstances. This option works only if the data source does not accept credentials or if you are passing credentials some other way.  
   
-     From some data source types, the unattended execution account must be configured on the report server. For more information, see the topic for the corresponding data source type in [Add Data from External Data Sources &#40;SSRS&#41;](../../reporting-services/report-data/add-data-from-external-data-sources-ssrs.md) and [Configure the Unattended Execution Account &#40;SSRS Configuration Manager&#41;](../../reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager.md).  
+     From some data source types, the unattended execution account must be configured on the report server. For more information, see the topic for the corresponding data source type in [Add Data from External Data Sources &#40;SSRS&#41;](../../reporting-services/report-data/add-data-from-external-data-sources-ssrs.md) and [Configure the Unattended Execution Account &#40;Report Server Configuration Manager&#41;](../../reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager.md).  
   
 5.  Type a user name and password.  
   
@@ -81,7 +76,7 @@ manager: "erikre"
   
 7.  Verify that Enable this data source is selected.  
   
-8.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+8.  Select **OK**.
   
 ## See Also  
  [Upload Documents to a SharePoint Library &#40;Reporting Services in SharePoint Mode&#41;](../../reporting-services/report-server-sharepoint/upload-documents-to-a-sharepoint-library-reporting-services-in-sharepoint-mode.md)  

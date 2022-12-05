@@ -1,24 +1,15 @@
 ---
-title: "getReference Method (SQLServerXADataSource) | Microsoft Docs"
-ms.custom: ""
+title: "getReference Method (SQLServerXADataSource)"
+description: "getReference Method (SQLServerXADataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerXADataSource.getReference"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerXADataSource.getReference"
 apitype: "Assembly"
-ms.assetid: c9e7b904-2e98-459f-9173-382919d741e2
-caps.latest.revision: 8
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getReference Method (SQLServerXADataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

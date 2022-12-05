@@ -1,13 +1,11 @@
 ---
-title: "SetNumericalValue Method (SqlServiceAdvancedProperty Class) | Microsoft Docs"
-ms.custom: ""
+description: "SetNumericalValue Method (SqlServiceAdvancedProperty Class)"
+title: "SetNumericalValue Method (SqlServiceAdvancedProperty)"
+ms.custom: seo-lt-2019
 ms.date: "03/04/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "SetNumericalValue Method (SqlServiceAdvancedProperty Class)"
@@ -17,12 +15,11 @@ apitype: "MOFDef"
 helpviewer_keywords: 
   - "SetNumericalValue method"
 ms.assetid: 950ed1e8-0538-4db4-807c-a2c36f43cf6b
-caps.latest.revision: 15
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SetNumericalValue Method (SqlServiceAdvancedProperty Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Sets the numeric value of a property.  
   
 ## Syntax  
@@ -49,6 +46,6 @@ object.SetNumericalValue(NumValue)
  The property value type must be numeric to be able to set the property to a numeric value.  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

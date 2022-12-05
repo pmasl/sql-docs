@@ -1,32 +1,28 @@
 ---
+description: "Unpack a DAC Package"
 title: "Unpack a DAC Package | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-data-tier-apps"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice:
+ms.topic: conceptual
 helpviewer_keywords: 
   - "wizard [DAC], unpack"
   - "data-tier application [SQL Server], unpack"
   - "How to [DAC], unpack"
   - "unpack DAC"
 ms.assetid: 697b69b3-f157-4e22-ac4e-f65c5fc2d0ad
-caps.latest.revision: 11
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # Unpack a DAC Package
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
   Use the Unpack Data-tier Application dialog box to unzip the scripts and files from a data-tier application (DAC) package. The scripts and files are placed in a folder where they can be reviewed before the package is used to deploy the DAC into a production system. The contents of one DAC can also be compared with the contents of another package unpacked to another folder.  
   
 1.  **Before you begin:**  [Security](#Security)  
   
 2.  **To unpack a DAC, using:**  [Unpack Data-tier Application Dialog](#UnpackDACDial), [Examine the Contents of a DAC Package](#ExamDACPack)  
-  
+
 ##  <a name="Security"></a> Security  
  We recommend that you do not deploy a DAC package from unknown or untrusted sources. Such DACs could contain malicious code that might execute unintended [!INCLUDE[tsql](../../includes/tsql-md.md)] code or cause errors by modifying the schema. Before you use a DAC from an unknown or untrusted source, deploy it on an isolated test instance of the [!INCLUDE[ssDE](../../includes/ssde-md.md)], unpack the DAC and examine the code, such as stored procedures or other user-defined code.  
   
@@ -61,7 +57,8 @@ manager: "jhubbard"
 ###  <a name="Browse"></a> Browse for Folder  
  Use this page to choose the destination folder for the unpack operation. Optionally, you can also create a new folder.  
   
- **Folder list** - Displays the file hierarchy for your computer. Expand the nodes to navigate to the folder in which to unpack the DAC package. Click on the folder and then click **OK**.  
+ **Folder list** - Displays the file hierarchy for your computer. Expand the nodes to navigate to the folder in which to unpack the DAC package. Select the folder and then select **OK**.  
+
   
  **Make New Folder** - Opens a dialog in which you can specify the name for a new folder to be created in the folder you have currently selected in the folder hierarchy.  
   

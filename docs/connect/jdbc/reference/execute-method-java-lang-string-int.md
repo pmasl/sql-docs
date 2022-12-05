@@ -1,28 +1,19 @@
 ---
-title: "execute Method (java.lang.String, int[]) | Microsoft Docs"
-ms.custom: ""
+title: "execute Method (java.lang.String, int[])"
+description: "execute Method (java.lang.String, int[])"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "02/07/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerStatement.execute (javal.lang.String.int[])"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerStatement.execute (javal.lang.String.int[])"
 apitype: "Assembly"
-ms.assetid: dc73d1c3-e756-43af-b1fc-ac438cbd0965
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # execute Method (java.lang.String, int[])
 
-  Runs the given SQL statement, which can return multiple results, and signals [!INCLUDE[jdbcNoVersion](../../../includes/jdbcnoversion-md.md)] that the auto-generated keys that are indicated in the given array should be made available for retrieval.
+  Runs the given SQL statement, which can return multiple results, and signals [!INCLUDE[jdbcNoVersion](../../../includes/jdbcnoversion_md.md)] that the auto-generated keys that are indicated in the given array should be made available for retrieval.
 
 ## Syntax
 

@@ -1,24 +1,22 @@
 ---
-title: "Synchronize a Subscription Using Windows Synchronization Manager | Microsoft Docs"
-ms.custom: ""
+title: "Synchronize subscription (Windows Synchronization Manager)"
+description: Learn how to synchronize subscriptions using the Windows Synchronization Manager. 
+ms.custom: seo-lt-2019
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "synchronization [SQL Server replication], Windows Synchronization Manager"
   - "Windows Synchronization Manager"
 ms.assetid: 80f15dd6-e84d-4f96-9866-5b34ea531f1e
-caps.latest.revision: 44
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # Synchronize a Subscription Using Windows Synchronization Manager
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
   [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows Synchronization Manager can only be used to synchronize subscriptions to Microsoft [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] publications if [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] is running on the same computer as Synchronization Manager (it can also be used to synchronize offline files and Web pages). To use Synchronization Manager:  
   
 1.  Enable the synchronization of pull subscriptions with Windows Synchronization Manager in the **Subscription Properties - \<Subscriber>: \<SubscriptionDatabase>** dialog box. For more information about accessing this dialog box, see [View and Modify Pull Subscription Properties](../../relational-databases/replication/view-and-modify-pull-subscription-properties.md).  
@@ -28,13 +26,13 @@ manager: "jhubbard"
  Synchronization Manager allows you to use the Interactive Resolver for merge subscriptions. Typically, conflicts detected during synchronization are resolved automatically, but if interactive resolution is enabled, conflicts can be resolved by a user during synchronization. If a synchronization is performed outside of Windows Synchronization Manager (as a scheduled synchronization or an on demand synchronization in [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] or Replication Monitor), conflicts are resolved automatically without user intervention, according to the resolver specified for the article.  
   
 > [!NOTE]  
->  Beginning with [!INCLUDE[firstref_longhorn](../../includes/firstref-longhorn-md.md)] and [!INCLUDE[wiprlhlong](../../includes/wiprlhlong-md.md)], 64-bit versions of the Windows Synchronization Manager cannot detect 32-bit subscriptions.  
+>  Beginning with [!INCLUDE[winserver2008](../../includes/winserver2008-md.md)] and [!INCLUDE[winvista](../../includes/winvista-md.md)], 64-bit versions of the Windows Synchronization Manager cannot detect 32-bit subscriptions.  
   
 ### To enable the synchronization of pull subscriptions with Windows Synchronization Manager  
   
 1.  On the **General** page of the **Subscription Properties - \<Subscriber>: \<SubscriptionDatabase>** dialog box, select a value of **Enable** for the **Use Windows Synchronization Manager** option.  
   
-2.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+2.  Select **OK**.
   
 ### To synchronize a pull subscription with Synchronization Manager  
   
@@ -58,7 +56,7 @@ manager: "jhubbard"
   
 3.  Click **Yes**.  
   
-4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+4.  Select **OK**.
   
      The next time the subscription is synchronized, by default a new snapshot is applied to the subscription database. For more information, see [Reinitialize Subscriptions](../../relational-databases/replication/reinitialize-subscriptions.md).  
   
@@ -81,7 +79,7 @@ manager: "jhubbard"
   
      It is recommended to use Windows Authentication for all connections. For information about the permissions required by the Distribution Agent and the Merge Agent, see [Replication Agent Security Model](../../relational-databases/replication/security/replication-agent-security-model.md).  
   
-3.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+3.  Select **OK**.
   
 ### To remove a pull subscription from Synchronization Manager  
   
@@ -91,11 +89,11 @@ manager: "jhubbard"
   
 3.  Select an option in the **Remove Subscription** dialog box.  
   
-4.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
+4.  Select **OK**.
   
 ### To use the Interactive Resolver  
   
-1.  Enable the article and subscription to use interactive resolution. For more information, see [Specify Interactive Conflict Resolution for Merge Articles](../../relational-databases/replication/publish/specify-interactive-conflict-resolution-for-merge-articles.md).  
+1.  Enable the article and subscription to use interactive resolution. For more information, see [Specify Merge Replication properties](../../relational-databases/replication/merge/specify-merge-replication-properties.md).  
   
 2.  After the subscription begins synchronizing in Synchronization Manager, the Interactive Resolver launches automatically if interactive conflict resolution is enabled and there are conflicts for one or more articles. The Interactive Resolver displays conflicts one at a time, with a suggested resolution for each conflict (based on the resolver specified when the publication and subscription were created).  
   

@@ -1,28 +1,24 @@
 ---
-title: "Demonstration: Performance Improvement of In-Memory OLTP | Microsoft Docs"
-ms.custom: ""
+title: "Performance improvement - in-memory OLTP"
+description: This code sample demonstrates the fast performance of memory-optimized tables with interpreted Transact-SQL and a natively compiled stored procedure.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: "08/19/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine-imoltp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: in-memory-oltp
+ms.topic: conceptual
+ms.custom: seo-dt-2019
 ms.assetid: c6def45d-d2d4-4d24-8068-fab4cd94d8cc
-caps.latest.revision: 16
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # Demonstration: Performance Improvement of In-Memory OLTP
-[!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   The code sample in this topic demonstrates the fast performance of memory-optimized tables. The performance improvement is evident when data in a memory-optimized table is accessed from traditional, interpreted [!INCLUDE[tsql](../../includes/tsql-md.md)]. This performance improvement is even greater when data in a memory-optimized table is accessed from a natively compiled stored procedure (NCSProc).  
  
 To see a more comprehensive demonstration of the potential performance improvements of In-Memory OLTP see [In-Memory OLTP Performance Demo v1.0](https://github.com/Microsoft/sql-server-samples/releases/tag/in-memory-oltp-demo-v1.0). 
   
- The code example in the present article is single-threaded, and it does not take advantage of the concurrency benefits of In-Memory OLTP. A workload that uses concurrency will see a greater performance gain. The code example shows only one aspect of performance improvement, namely data access efficiency for INSERT.  
+ The code example in the present article is single-threaded, and it doesn't take advantage of the concurrency benefits of In-Memory OLTP. A workload that uses concurrency will see a greater performance gain. The code example shows only one aspect of performance improvement, namely data access efficiency for INSERT.  
   
  The performance improvement offered by memory-optimized tables is fully realized when data in a memory-optimized table is accessed from a NCSProc.  
   
@@ -30,7 +26,7 @@ To see a more comprehensive demonstration of the potential performance improveme
  The following subsections describe each step.  
   
 ### Step 1a: Prerequisite If Using [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]  
- The steps in this first subsection applies only if you are running in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], and does not apply if you are running in [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]. Do the following:  
+ The steps in this first subsection apply only if you're running in [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], and doesn't apply if you're running in [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]. Do the following:  
   
 1.  Use SQL Server Management Studio (SSMS.exe) to connect to your [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Or any tool similar to SSMS.exe is fine.  
   
@@ -38,7 +34,7 @@ To see a more comprehensive demonstration of the potential performance improveme
   
 3.  Run the short T-SQL to create the database and its memory-optimized filegroup.  
   
-```tsql  
+```sql  
 go  
 CREATE DATABASE imoltp;    --  Transact-SQL  
 go  
@@ -56,13 +52,13 @@ go
 ```  
   
 ### Step 1b: Prerequisite If Using [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]  
- This subsection applies only if you are using [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]. Do the following:  
+ This subsection applies only if you're using [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]. Do the following:  
   
-1.  Decide which existing test database you will use for the code example.  
+1.  Decide which existing test database you'll use for the code example.  
   
-2.  If you decide to create a new test database, use the [Azure portal](http://portal.azure.com) to create a database named **imoltp**.  
+2.  If you decide to create a new test database, use the [Azure portal](https://portal.azure.com) to create a database named **imoltp**.  
   
- If you would like instructions for using the Azure portal for this, see [Get Started with Azure SQL Database](http://azure.microsoft.com/documentation/articles/sql-database-get-started).  
+ If you would like instructions for using the Azure portal for this, see [Get Started with Azure SQL Database](/azure/azure-sql/database/single-database-create-quickstart).  
   
 ### Step 2: Create Memory-Optimized Tables, and NCSProc  
  This step creates memory-optimized tables, and a natively compiled stored procedure (NCSProc). Do the following:  
@@ -71,7 +67,7 @@ go
   
 2.  Run the following T-SQL in your database.  
   
-```tsql  
+```sql  
 go  
 DROP PROCEDURE IF EXISTS ncsp;  
 DROP TABLE IF EXISTS sql;  
@@ -123,7 +119,7 @@ go
   
 2.  Again, use SSMS.exe to rerun the following T-SQL in your database.  
   
-```tsql  
+```sql  
 go  
 SET STATISTICS TIME OFF;  
 SET NOCOUNT ON;  
@@ -186,13 +182,11 @@ go
   
  Next are the output time statistics generated by our second test run.  
   
-```tsql  
+```sql  
 10453 ms , A: Disk-based table and interpreted Transact-SQL.  
 5626 ms , B: memory-optimized table with hash index and interpreted Transact-SQL.  
 3937 ms , C: memory-optimized table with hash index and native SP.  
 ```  
   
 ## See Also  
- [In-Memory OLTP &#40;In-Memory Optimization&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)  
-  
-  
+ [In-Memory OLTP &#40;In-Memory Optimization&#41;](./overview-and-usage-scenarios.md)  

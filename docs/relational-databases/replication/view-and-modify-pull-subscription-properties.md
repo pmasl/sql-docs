@@ -1,14 +1,12 @@
 ---
+description: "View and Modify Pull Subscription Properties"
 title: "View and Modify Pull Subscription Properties | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/16/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: replication
+ms.topic: conceptual
 helpviewer_keywords: 
   - "modifying subscriptions"
   - "viewing replication properties"
@@ -18,13 +16,13 @@ helpviewer_keywords:
   - "pull subscriptions [SQL Server replication], properties"
   - "modifying subscriptions, SQL Server Management Studio"
 ms.assetid: 1601e54f-86f0-49e8-b023-87a5d1def033
-caps.latest.revision: 37
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: "MashaMSFT"
+ms.author: "mathoma"
+monikerRange: "=azuresqldb-mi-current||>=sql-server-2016"
 ---
 # View and Modify Pull Subscription Properties
-  This topic describes how to view and modify pull subscription properties in [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)], [!INCLUDE[tsql](../../includes/tsql-md.md)], or Replication Management Objects (RMO).  
+[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+  This topic describes how to view and modify pull subscription properties in [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] by using [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)], [!INCLUDE[tsql](../../includes/tsql-md.md)], or Replication Management Objects (RMO).  
   
  **In This Topic**  
   
@@ -48,7 +46,7 @@ manager: "jhubbard"
 3.  Expand the appropriate publication, right-click a subscription, and then click **Properties**.  
   
 4.  View properties, and then click **OK**.  
-  
+
 #### To view and modify pull subscription properties from the Subscriber in Management Studio  
   
 1.  Connect to the Subscriber in [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)], and then expand the server node.  
@@ -74,29 +72,29 @@ manager: "jhubbard"
   
 #### To view the properties of a pull subscription to a snapshot or transactional publication  
   
-1.  At the Subscriber, execute [sp_helppullsubscription](../../relational-databases/system-stored-procedures/sp-helppullsubscription-transact-sql.md). Specify **@publisher**, **@publisher_db**, and **@publication**. This returns information about the subscription that is stored in system tables at the Subscriber.  
+1.  At the Subscriber, execute [sp_helppullsubscription](../../relational-databases/system-stored-procedures/sp-helppullsubscription-transact-sql.md). Specify `@publisher`, `@publisher_db`, and `@publication`. This returns information about the subscription that is stored in system tables at the Subscriber.  
   
-2.  At the Subscriber, execute [sp_helpsubscription_properties](../../relational-databases/system-stored-procedures/sp-helpsubscription-properties-transact-sql.md). Specify **@publisher**, **@publisher_db**, **@publication**, and one of the following values for **@publication_type**:  
+2.  At the Subscriber, execute [sp_helpsubscription_properties](../../relational-databases/system-stored-procedures/sp-helpsubscription-properties-transact-sql.md). Specify `@publisher`, `@publisher_db`, `@publication`, and one of the following values for `@publication_type`:  
   
     -   **0** - Subscription belongs to a transactional publication.  
   
     -   **1** - Subscription belongs to a snapshot publication.  
   
-3.  At the Publisher, execute [sp_helpsubscription](../../relational-databases/system-stored-procedures/sp-helpsubscription-transact-sql.md). Specify **@publication** and **@subscriber**.  
+3.  At the Publisher, execute [sp_helpsubscription](../../relational-databases/system-stored-procedures/sp-helpsubscription-transact-sql.md). Specify `@publication` and `@subscriber`.  
   
-4.  At the Publisher, execute [sp_helpsubscriberinfo](../../relational-databases/system-stored-procedures/sp-helpsubscriberinfo-transact-sql.md), specifying **@subscriber**. This displays information about the Subscriber.  
+4.  At the Publisher, execute [sp_helpsubscriberinfo](../../relational-databases/system-stored-procedures/sp-helpsubscriberinfo-transact-sql.md), specifying `@subscriber`. This displays information about the Subscriber.  
   
 #### To change the properties of a pull subscription to a snapshot or transactional publication  
   
-1.  At the Subscriber, execute [sp_change_subscription_properties](../../relational-databases/system-stored-procedures/sp-change-subscription-properties-transact-sql.md), specifying **@publisher**, **@publisher_db**, **@publication**, a value of either **0** (transactional) or **1** (snapshot) for **@publication_type**, the subscription property being changed as **@property**, and the new value as **@value**.  
+1.  At the Subscriber, execute [sp_change_subscription_properties](../../relational-databases/system-stored-procedures/sp-change-subscription-properties-transact-sql.md), specifying `@publisher`, `@publisher_db`, `@publication`, a value of either **0** (transactional) or **1** (snapshot) for `@publication_type`, the subscription property being changed as `@property`, and the new value as `@value`.  
   
-2.  (Optional) At the Subscriber on the subscription database, execute [sp_changesubscriptiondtsinfo](../../relational-databases/system-stored-procedures/sp-changesubscriptiondtsinfo-transact-sql.md). Specify the ID of the Distribution Agent job for **@jobid**, and the following Data Transformation Services (DTS) package properties:  
+2.  (Optional) At the Subscriber on the subscription database, execute [sp_changesubscriptiondtsinfo](../../relational-databases/system-stored-procedures/sp-changesubscriptiondtsinfo-transact-sql.md). Specify the ID of the Distribution Agent job for `@jobid`, and the following Data Transformation Services (DTS) package properties:  
   
-    -   **@dts_package_name**  
+    -   `@dts_package_name`  
   
-    -   **@dts_package_password**  
+    -   `dts_package_password`  
   
-    -   **@dts_package_location**  
+    -   `@dts_package_location`  
   
      This changes the DTS package properties of a subscription.  
   
@@ -105,17 +103,17 @@ manager: "jhubbard"
   
 #### To view the properties of a pull subscription to a merge publication  
   
-1.  At the Subscriber, execute [sp_helpmergepullsubscription](../../relational-databases/system-stored-procedures/sp-helpmergepullsubscription-transact-sql.md). Specify **@publisher**, **@publisher_db**, and **@publication**.  
+1.  At the Subscriber, execute [sp_helpmergepullsubscription](../../relational-databases/system-stored-procedures/sp-helpmergepullsubscription-transact-sql.md). Specify `@publisher`, `@publisher_db`, and `@publication`.  
   
-2.  At the Subscriber, execute [sp_helpsubscription_properties](../../relational-databases/system-stored-procedures/sp-helpsubscription-properties-transact-sql.md). Specify **@publisher**, **@publisher_db**, **@publication**, and a value of 2 for **@publication_type**.  
+2.  At the Subscriber, execute [sp_helpsubscription_properties](../../relational-databases/system-stored-procedures/sp-helpsubscription-properties-transact-sql.md). Specify `@publisher`, `@publisher_db`, `@publication`, and a value of 2 for `@publication_type`.  
   
-3.  At the Publisher, execute [sp_helpmergesubscription](../../relational-databases/system-stored-procedures/sp-helpmergesubscription-transact-sql.md) to display subscription information. To return information on a specific subscription, you must specify **@publication**, **@subscriber**, and a value of **pull** for **@subscription_type**.  
+3.  At the Publisher, execute [sp_helpmergesubscription](../../relational-databases/system-stored-procedures/sp-helpmergesubscription-transact-sql.md) to display subscription information. To return information on a specific subscription, you must specify `@publication`, `@subscriber`, and a value of **pull** for @subscription_type.  
   
-4.  At the Publisher, execute [sp_helpsubscriberinfo](../../relational-databases/system-stored-procedures/sp-helpsubscriberinfo-transact-sql.md), specifying **@subscriber**. This displays information about the Subscriber.  
+4.  At the Publisher, execute [sp_helpsubscriberinfo](../../relational-databases/system-stored-procedures/sp-helpsubscriberinfo-transact-sql.md), specifying `@subscriber`. This displays information about the Subscriber.  
   
 #### To change the properties of a pull subscription to a merge publication  
   
-1.  At the Subscriber, execute [sp_changemergepullsubscription](../../relational-databases/system-stored-procedures/sp-changemergepullsubscription-transact-sql.md). Specify **@publication**, **@publisher**, **@publisher_db**, the subscription property being changed as **@property**, and the new value as **@value**.  
+1.  At the Subscriber, execute [sp_changemergepullsubscription](../../relational-databases/system-stored-procedures/sp-changemergepullsubscription-transact-sql.md). Specify `@publication`, `@publisher`, `@publisher_db`, the subscription property being changed as `@property`, and the new value as `@value`.  
   
 ##  <a name="RMOProcedure"></a> Using Replication Management Objects (RMO)  
  The RMO classes you use to view or modify pull subscription properties depend on the type of publication to which the pull subscription is subscribed.  
@@ -157,7 +155,7 @@ manager: "jhubbard"
 8.  Close all connections.  
   
 ## See Also  
- [View Information and Perform Tasks for a Subscription &#40;Replication Monitor&#41;](../../relational-databases/replication/monitor/view-information-and-perform-tasks-for-a-subscription-replication-monitor.md)   
+ [View information and perform tasks using Replication Monitor](../../relational-databases/replication/monitor/view-information-and-perform-tasks-replication-monitor.md)   
  [Replication Security Best Practices](../../relational-databases/replication/security/replication-security-best-practices.md)   
  [Subscribe to Publications](../../relational-databases/replication/subscribe-to-publications.md)  
   

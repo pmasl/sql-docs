@@ -1,26 +1,24 @@
 ---
 title: "Database Properties (Mirroring Page) | Microsoft Docs"
+description: "Learn how to configure mirroring properties and view a mirroring session's status. See how to start, pause, or remove a mirroring session."
 ms.custom: ""
 ms.date: "08/25/2016"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: configuration
+ms.topic: conceptual
 f1_keywords: 
   - "sql13.swb.databaseproperties.mirroring.f1"
 ms.assetid: 5bdcd20f-532d-4ee6-b2c7-18dbb7584a87
-caps.latest.revision: 86
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ---
 # Database Properties (Mirroring Page)
+ [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   Access this page from the principal database, and use it to configure and to modify the properties of database mirroring for a database. Also use it to launch the Configure Database Mirroring Security Wizard, to view the status of a mirroring session, and to pause or remove the database mirroring session.  
   
-> **IMPORTANT!!!** Security must be configured before you can start mirroring. If mirroring has not been started, you must begin by using the wizard. The **Mirroring** page textboxes are disabled until the wizard has been finished.  
+> [!IMPORTANT]  
+> Security must be configured before you can start mirroring. If mirroring has not been started, you must begin by using the wizard. The **Mirroring** page textboxes are disabled until the wizard has been finished.  
   
  **Configure database mirroring by using SQL Server Management Studio**  
   
@@ -32,7 +30,7 @@ manager: "jhubbard"
   
  If the wizard completes successfully, the action taken depends on whether mirroring has already begun, as follows:  
   
-|||  
+|Mirroring state|Action taken|  
 |-|-|  
 |If mirroring has not begun.|The property page caches that connection information and, also, caches a value that indicates whether the mirror database has the partner property set.<br /><br /> At the end of the wizard, you are prompted to start database mirroring using the default server network addresses and operating mode. If you need to change the addresses or operating mode, click **Do Not Start Mirroring**.|  
 |If mirroring has begun.|If the witness server was changed in the wizard, it is set accordingly.|  
@@ -44,7 +42,7 @@ manager: "jhubbard"
   
  The server network address has the following basic syntax:  
   
- TCP**://***fully_qualified_domain_name***:***port*  
+ TCP**://**_fully_qualified_domain_name_**:**_port_  
   
  where  
   
@@ -54,7 +52,8 @@ manager: "jhubbard"
   
      To participate in database mirroring, a server requires a database mirroring endpoint. When you use the Configure Database Mirroring Security Wizard to establish the first mirroring session for a server instance, the wizard automatically creates the endpoint and configures it to use Windows Authentication. For information about how to use the wizard with certificate-based authentication, see [Establish a Database Mirroring Session Using Windows Authentication &#40;SQL Server Management Studio&#41;](../../database-engine/database-mirroring/establish-database-mirroring-session-windows-authentication.md).  
   
-    >**IMPORTANT!!**  Each server instance requires one and only one database mirroring endpoint, regardless of the number of mirroring session to be supported.  
+     > [!IMPORTANT]  
+     > Each server instance requires one and only one database mirroring endpoint, regardless of the number of mirroring session to be supported.  
   
  For example, for a server instance on a computer system named `DBSERVER9` whose endpoint uses port `7022`, the network address might be:  
   
@@ -64,7 +63,8 @@ TCP://DBSERVER9.COMPANYINFO.ADVENTURE-WORKS.COM:7022
   
  For more information, see [Specify a Server Network Address &#40;Database Mirroring&#41;](../../database-engine/database-mirroring/specify-a-server-network-address-database-mirroring.md).  
   
-> **NOTE:** During a database mirroring session the principal and mirror server instances cannot be changed; the witness server instance, however, can be changed during a session. For more information, see "Remarks," later in this topic.  
+> [!NOTE]  
+> During a database mirroring session the principal and mirror server instances cannot be changed; the witness server instance, however, can be changed during a session. For more information, see "Remarks," later in this topic.  
   
  **Start Mirroring**  
  Click to begin mirroring, when all of the following conditions exist:  
@@ -86,17 +86,20 @@ TCP://DBSERVER9.COMPANYINFO.ADVENTURE-WORKS.COM:7022
   
  For information about the impact of pausing a session, see [Pausing and Resuming Database Mirroring &#40;SQL Server&#41;](../../database-engine/database-mirroring/pausing-and-resuming-database-mirroring-sql-server.md).  
   
-> **IMPORTANT!!** Following a forced service, when the original principal server reconnects, mirroring is suspended. Resuming mirroring in this situation could possibly cause data loss on the original principal server. For information about how to manage the potential data loss, see [Role Switching During a Database Mirroring Session &#40;SQL Server&#41;](../../database-engine/database-mirroring/role-switching-during-a-database-mirroring-session-sql-server.md).  
+> [!IMPORTANT]  
+> Following a forced service, when the original principal server reconnects, mirroring is suspended. Resuming mirroring in this situation could possibly cause data loss on the original principal server. For information about how to manage the potential data loss, see [Role Switching During a Database Mirroring Session &#40;SQL Server&#41;](../../database-engine/database-mirroring/role-switching-during-a-database-mirroring-session-sql-server.md).  
   
  **Remove Mirroring**  
  On the principal server instance, click to stop the session and remove the mirroring configuration from the databases. A prompt asks for confirmation; if you click **Yes**, the session is stopped and mirroring is removed. For information about the impact of removing database mirroring, see [Removing Database Mirroring &#40;SQL Server&#41;](../../database-engine/database-mirroring/removing-database-mirroring-sql-server.md).  
   
-> **NOTE:** If this is the only mirrored database on the server instance, the monitor job is removed.  
+> [!NOTE]  
+> If this is the only mirrored database on the server instance, the monitor job is removed.  
   
  **Failover**  
  Click to fail over the principal database to the mirror database manually.  
   
-> **NOTE:** If the mirroring session is running in high-performance mode, manual failover is not supported. To fail over manually, you must first change the operating mode to **High safety without automatic failover (synchronous)**. After failover completes, you can change the mode back to **High performance (asynchronous)** on the new principal server instance.  
+> [!NOTE]  
+> If the mirroring session is running in high-performance mode, manual failover is not supported. To fail over manually, you must first change the operating mode to **High safety without automatic failover (synchronous)**. After failover completes, you can change the mode back to **High performance (asynchronous)** on the new principal server instance.  
   
  A prompt asks for confirmation. If you click **Yes**, failover is attempted. The principal server begins by trying to connect to the mirror server by using Windows Authentication. If Windows Authentication does not work, the principal server displays the **Connect to Server** dialog box. If the mirror server uses [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Authentication, select **SQL Server Authentication** in the **Authentication** box. In the **Login** text box, specify the login account to connect with on the mirror server, and in the **Password** text box, specify the password for that account.  
   
@@ -104,7 +107,8 @@ TCP://DBSERVER9.COMPANYINFO.ADVENTURE-WORKS.COM:7022
   
  If failover fails, an error message is displayed, and the dialog box remains open.  
   
-> **IMPORTANT!!** If you click **Failover** after modifying properties in the **Database Properties** dialog box, those changes are lost. To save your current changes, answer **No** to the confirmation prompt, and click **OK** to save your changes. Then, reopen the database properties dialog box and click **Failover**.  
+> [!IMPORTANT]  
+> If you click **Failover** after modifying properties in the **Database Properties** dialog box, those changes are lost. To save your current changes, answer **No** to the confirmation prompt, and click **OK** to save your changes. Then, reopen the database properties dialog box and click **Failover**.  
   
  **Operating mode**  
  Optionally, change the operating mode. The availability of certain operating modes depends on whether you have specified a TCP address for a witness. The options are as follows:  
@@ -113,7 +117,7 @@ TCP://DBSERVER9.COMPANYINFO.ADVENTURE-WORKS.COM:7022
 |------------|--------------|-----------------|  
 |**High performance (asynchronous)**|Null (if exists, not used but the session requires a quorum)|To maximize performance, the mirror database always lags somewhat behind the principal database, never quite catching up. However, the gap between the databases is typically small. The loss of a partner has the following effect:<br /><br /> If the mirror server instance becomes unavailable, the principal continues.<br /><br /> If the principal server instance becomes unavailable, the mirror stops. But if the session has no witness (as recommended) or the witness is connected to the mirror server, the mirror server remains accessible as a warm standby; the database owner can force service to the mirror server instance (with possible data loss).|  
 |**High safety without automatic failover (synchronous)**|No|All committed transactions are guaranteed to be written to disk on the mirror server.<br /><br /> Manual failover is possible if the partners are connected to each other.<br /><br /> The loss of a partner has the following effect:<br /><br /> If the mirror server instance becomes unavailable, the principal continues.<br /><br /> If the principal server instance becomes unavailable, the mirror stops but is available as a warm standby; the database owner can force service to the mirror server instance (with possible data loss).|  
-|**High safety with automatic failover (synchronous)**|Yes (required)|Maximized availability by including a witness server instance to support automatic failover. Note that you can select the **High safety with automatic failover (synchronous)** option only if you have first specified a witness server address.<br /><br /> Manual failover is possible whenever the partners are connected to each other.<br /><br /> **\*\* Important \*\*** If the witness becomes disconnected, the partners must be connected to each other for the database to be available. For more information, see [Quorum: How a Witness Affects Database Availability &#40;Database Mirroring&#41;](../../database-engine/database-mirroring/quorum-how-a-witness-affects-database-availability-database-mirroring.md).<br /><br /> In the synchronous operating modes, all committed transactions are guaranteed to be written to disk on the mirror server. n the presence of a witness, the loss of a partner has the following effect:<br /><br /> If the principal server instance becomes unavailable, automatic failover occurs. The mirror server instance switches to the role of principal, and it offers its database as the principal database.<br /><br /> If the mirror server instance becomes unavailable, the principal continues.<br /><br /> <br /><br /> For more information, see [Database Mirroring Operating Modes](../../database-engine/database-mirroring/database-mirroring-operating-modes.md).|  
+|**High safety with automatic failover (synchronous)**|Yes (required)|Maximized availability by including a witness server instance to support automatic failover. Note that you can select the **High safety with automatic failover (synchronous)** option only if you have first specified a witness server address.<br /><br /> Manual failover is possible whenever the partners are connected to each other.<br /><br /> **&#42;&#42; Important &#42;&#42;** If the witness becomes disconnected, the partners must be connected to each other for the database to be available. For more information, see [Quorum: How a Witness Affects Database Availability &#40;Database Mirroring&#41;](../../database-engine/database-mirroring/quorum-how-a-witness-affects-database-availability-database-mirroring.md).<br /><br /> In the synchronous operating modes, all committed transactions are guaranteed to be written to disk on the mirror server. n the presence of a witness, the loss of a partner has the following effect:<br /><br /> If the principal server instance becomes unavailable, automatic failover occurs. The mirror server instance switches to the role of principal, and it offers its database as the principal database.<br /><br /> If the mirror server instance becomes unavailable, the principal continues.<br /><br /> <br /><br /> For more information, see [Database Mirroring Operating Modes](../../database-engine/database-mirroring/database-mirroring-operating-modes.md).|  
   
  After mirroring begins, you can change the operating mode and save the change by clicking **OK**.  
   

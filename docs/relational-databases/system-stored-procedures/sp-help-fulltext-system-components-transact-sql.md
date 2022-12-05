@@ -1,14 +1,12 @@
 ---
+description: "sp_help_fulltext_system_components (Transact-SQL)"
 title: "sp_help_fulltext_system_components (Transact-SQL) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/14/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.subservice: system-objects
+ms.topic: "reference"
 f1_keywords: 
   - "sp_help_fulltext_components_TSQL"
   - "sp_help_fulltext_components"
@@ -17,19 +15,14 @@ dev_langs:
 helpviewer_keywords: 
   - "sp_help_fulltext_system_components"
 ms.assetid: ac1fc7a0-7f46-4a12-8c5c-8d378226a8ce
-caps.latest.revision: 52
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
+monikerRange: "=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
 ---
 # sp_help_fulltext_system_components (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-xxx-md.md)]
+[!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-xxx-md.md)]
 
   Returns information for the registered word-breakers, filter, and protocol handlers. **sp_help_fulltext_system_components** also returns a list of identifiers of databases and full-text catalogs that have used the specified component.  
-  
-||  
-|-|  
-|**Applies to**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] through [current version](http://go.microsoft.com/fwlink/p/?LinkId=299658)), [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)].|  
   
  ![Topic link icon](../../database-engine/configure-windows/media/topic-link.gif "Topic link icon") [Transact-SQL Syntax Conventions](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -46,7 +39,7 @@ sp_help_fulltext_system_components
  'all'  
  Returns information for all full-text components.  
   
- [ **@component_type=** ] *component_type*  
+`[ @component_type = ] component_type`
  Specifies the type of component. *component_type* can be one of the following:  
   
 -   **wordbreaker**  
@@ -59,7 +52,7 @@ sp_help_fulltext_system_components
   
  If a full path is specified, *param* must also be specified with the full path to the component DLL, or an error message is returned.  
   
- [ **@param=** ] *param*  
+`[ @param = ] param`
  Depending on component type, this is one of the following: a locale identifier (LCID), the file extension with "." prefix, the full component name of the protocol handler, or the full path to the component DLL.  
   
 ## Return Code Values  
@@ -109,7 +102,7 @@ GO
 ```  
   
 ### C. Determining whether a specific word breaker is registered  
- The following example will list the word breaker for the Turkish language (LCID = 1055) if it has been installed on the system and registered on the service instance. This example specifies the parameter names, **@component_type** and **@param**.  
+ The following example will list the word breaker for the Turkish language (LCID = 1055) if it has been installed on the system and registered on the service instance. This example specifies the parameter names, **\@component_type** and **\@param**.  
   
 ```  
 EXEC sp_help_fulltext_system_components @component_type = 'wordbreaker', @param = 1055;  

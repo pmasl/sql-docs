@@ -1,14 +1,12 @@
 ---
-title: "SQLdiag Utility | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
+title: "SQLdiag Utility"
+description: Use the SQLdiag utility to collect logs and data files from SQL Server and other types of servers, and monitor servers over time or troubleshoot problems.
+ms.custom: seo-lt-2019
+ms.date: 10/05/2021
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: tools-other
+ms.topic: conceptual
 helpviewer_keywords: 
   - "command prompt utilities [SQL Server], SQLdiag"
   - "stopping diagnostic collection"
@@ -29,12 +27,11 @@ helpviewer_keywords:
   - "automatic diagnostic collection"
   - "clusters [SQL Server], diagnostic collection"
 ms.assetid: 45ba1307-33d1-431e-872c-a6e4556f5ff2
-caps.latest.revision: 58
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # SQLdiag Utility
+[!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
   The **SQLdiag** utility is a general purpose diagnostics collection utility that can be run as a console application or as a service. You can use **SQLdiag** to collect logs and data files from [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] and other types of servers, and use it to monitor your servers over time or troubleshoot specific problems with your servers. **SQLdiag** is intended to expedite and simplify diagnostic information gathering for [!INCLUDE[msCoName](../includes/msconame-md.md)] Customer Support Services.  
   
 > [!NOTE]  
@@ -82,16 +79,16 @@ sqldiag
  **/?**  
  Displays usage information.  
   
- **/I** *configuration_file*  
+ **/I** _configuration_file_  
  Sets the configuration file for **SQLdiag** to use. By default, **/I** is set to SQLDiag.Xml.  
   
- **/O** *output_folder_path*  
+ **/O** _output_folder_path_  
  Redirects **SQLdiag** output to the specified folder. If the **/O** option is not specified, **SQLdiag** output is written to a subfolder named SQLDIAG under the **SQLdiag** startup folder. If the SQLDIAG folder does not exist, **SQLdiag** attempts to create it.  
   
 > [!NOTE]  
 >  The output folder location is relative to the support folder location that can be specified with **/P**. To set an entirely different location for the output folder, specify the full directory path for **/O**.  
   
- **/P** *support_folder_path*  
+ **/P** _support_folder_path_  
  Sets the support folder path. By default, **/P** is set to the folder where the **SQLdiag** executable resides. The support folder contains **SQLdiag** support files, such as the XML configuration file, Transact-SQL scripts, and other files that the utility uses during diagnostics collection. If you use this option to specify an alternate support files path, **SQLdiag** will automatically copy the support files it requires to the specified folder if they do not already exist.  
   
 > [!NOTE]  
@@ -99,7 +96,7 @@ sqldiag
 >   
 >  **SQLDIAG /P %cd%**  
   
- **/N** *output_folder_management_option*  
+ **/N** _output_folder_management_option_  
  Sets whether **SQLdiag** overwrites or renames the output folder when it starts up. Available options:  
   
  1 = Overwrites the output folder (default)  
@@ -109,12 +106,12 @@ sqldiag
 > [!NOTE]  
 >  **SQLdiag** does not append output to the current output folder when it starts up. It can only overwrite the default output folder (option 1) or rename the folder (option 2), and then it writes output to the new default output folder named SQLDIAG.  
   
- **/M** *machine1* [ *machine2**machineN*] | *@machinelistfile*  
+ **/M** _machine1_ [ *machine2* *machineN*] | *\@machinelistfile*  
  Overrides the machines specified in the configuration file. By default the configuration file is SQLDiag.Xml, or is set with the **/I** parameter. When specifying more than one machine, separate each machine name with a space.  
   
- Using *@machinelistfile* specifies a machine list filename to be stored in the configuration file.  
+ Using *\@machinelistfile* specifies a machine list filename to be stored in the configuration file.  
   
- **/C** *file_compression_type*  
+ **/C** _file_compression_type_  
  Sets the type of file compression used on the **SQLdiag** output folder files. Available options:  
   
  0 = none (default)  
@@ -143,13 +140,13 @@ sqldiag
   
  The time is specified using 24-hour notation. For example, 2:00 P.M. should be specified as **14:00:00**.  
   
- Use **+** without the date (HH:MM:SS only) to specify a time that is relative to the current date and time. For example, if you specify a start time and end time by using **/B +02:00:00 /E +03:00:00**, **SQLdiag** waits 2 hours before it starts collecting information, then collects information for 3 hours before it stops and exits. If **/B** is not specified, **SQLdiag** starts collecting diagnostics immediately and ends at the date and time specified by **/E**.  
+ Use **+** without the date (HH:MM:SS only) to specify a time that is relative to the *start* date and time. For example, if you specify a start time and end time by using **/B +02:00:00 /E +03:00:00**, **SQLdiag** waits 2 hours before it starts collecting information, then collects information for 3 hours before it stops and exits. If **/B** is not specified, **SQLdiag** starts collecting diagnostics immediately and ends at the date and time specified by **/E**.  
   
  Do not insert a space between **+** and the specified *start_time* or *end_time*.  
   
  Note that **SQLdiag** uses the local time on the computer where the utility is running.  
   
- **/A**  *SQLdiag_application_name*  
+ **/A**  _SQLdiag_application_name_  
  Enables running multiple instances of the **SQLdiag** utility against the same [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instance.  
   
  Each *SQLdiag_application_name* identifies a different instance of **SQLdiag**. No relationship exists between a *SQLdiag_application_name* instance and a [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instance name.  
@@ -158,11 +155,11 @@ sqldiag
   
  For example:  
   
- **SQLDIAG START /A**  *SQLdiag_application_name*  
+ **SQLDIAG START /A**  _SQLdiag_application_name_  
   
  It can also be used with the **/R** option to register a specific instance of **SQLdiag** as a service. For example:  
   
- **SQLDIAG /R /A** *SQLdiag_application_name*  
+ **SQLDIAG /R /A** _SQLdiag_application_name_  
   
 > [!NOTE]  
 >  **SQLdiag** automatically prefixes DIAG$ to the instance name specified for *SQLdiag_application_name*. This provides a sensible service name if you register **SQLdiag** as a service.  
@@ -198,7 +195,7 @@ sqldiag
   
  You can also use the **net start** command to start the service:  
   
- **net**  **start SQLDIAG**  
+ **net  start SQLDIAG**  
   
  **/U**  
  Unregisters **SQLdiag** as a service.  
@@ -225,7 +222,7 @@ sqldiag
   
  Only the **/A** argument, which specifies a named instance of **SQLdiag**, can be used with **START**, **STOP**, or **STOP_ABORT** to control a specific instance of the **SQLdiag** service. For example:  
   
- **SQLDIAG START /A** *SQLdiag_application_name*  
+ **SQLDIAG START /A** _SQLdiag_application_name_  
   
 ## Security Requirements  
  Unless **SQLdiag** is run in generic mode (by specifying the **/G** command line argument), the user who runs **SQLdiag** must be a member of the Windows **Administrators** group and a member of the [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] **sysadmin** fixed server role. By default, **SQLdiag** connects to [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] by using Windows Authentication, but it also supports [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Authentication.  
@@ -292,10 +289,16 @@ SQLDIAG STOP /A Instance1
 >  Use **SQLDiag STOP** or **SQLDIAG STOP_ABORT** to stop the **SQLdiag** service. Do not use the Windows Services Console to stop **SQLdiag** or other [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] services.  
   
 ## Automatically Starting and Stopping SQLdiag  
- To automatically start and stop diagnostic data collection at a specified time, use the **/B***start_time* and **/E***stop_time* arguments, using 24-hour notation. For example, if you are troubleshooting a problem that consistently appears at approximately 02:00:00, you can configure **SQLdiag** to automatically start collecting diagnostic data at 01:00 and automatically stop at 03:00:00. Use the **/B** and **/E** arguments to specify the start and stop time. Use 24-hour notation to specify an exact start and stop date and time with the format YYYYMMDD_HH:MM:SS. To specify a relative start or stop time, prefix the start and stop time with **+** and omit the date portion (YYYYMMDD_) as shown in the following example, which causes **SQLdiag** to wait 1 hour before it starts collecting information, then it collects information for 3 hours before it stops and exits:  
+ To automatically start and stop diagnostic data collection at a specified time, use the **/B**_start\_time_ and **/E**_stop\_time_ arguments, using 24-hour notation. For example, if you are troubleshooting a problem that consistently appears at approximately 02:00:00, you can configure **SQLdiag** to automatically start collecting diagnostic data at 01:45 and automatically stop at 03:00:00. Use the **/B** and **/E** arguments to specify the start and stop time. Use 24-hour notation to specify an exact start and stop date and time with the general format YYYYMMDD_HH:MM:SS. The following will start data collection at 01:45 and stop it at 3:00.
   
 ```  
-sqldiag /B +01:00:00 /E +03:00:00  
+sqldiag /B 01:45:00 /E 03:00:00  
+```  
+
+To specify a relative start or stop time, prefix the start and stop time with **+** and omit the date portion (YYYYMMDD_) as shown in the following example. This causes **SQLdiag** to wait 1 hour before it starts collecting information, then it collects information for 2.5 hours before it stops and exits:  
+  
+```  
+sqldiag /B +01:00:00 /E +02:30:00  
 ```  
   
  When a relative *start_time* is specified, **SQLdiag** starts at a time that is relative to the current date and time. When a relative *end_time* is specified, **SQLdiag** ends at a time that is relative to the specified *start_time*. If the start or end date and time that you have specified is in the past, **SQLdiag** forcibly changes the start date so that the start date and time are in the future.  
@@ -306,7 +309,7 @@ sqldiag /B +01:00:00 /E +03:00:00
 sqldiag /B +01:00:00 /E 08:30:00  
 ```  
   
- If the current time is 08:00, the end time passes before diagnostic collection actually begins. Because **SQLDiag** automatically adjusts start and end dates to the next day when they occur in the past, in this example diagnostic collection starts at 09:00 today (a relative start time has been specified with **+**) and continues collecting until 08:30 the following morning.  
+ If the current time is 08:00, the end time passes before diagnostic collection actually begins. Because **SQLDiag** automatically adjusts start and end dates to the next day when they occur in the past, in this example diagnostic collection starts at 09:00 today (a relative start time has been specified at 1 hour from now using **+**) and continues collecting until 08:30 the following morning.  
   
 ### Stopping and Restarting SQLdiag to Collect Daily Diagnostics  
  To collect a specified set of diagnostics on a daily basis without having to manually start and stop **SQLdiag**, use the **/L** argument. The **/L** argument causes **SQLdiag** to run continuously by automatically restarting itself after a scheduled shutdown. When **/L** is specified, and **SQLdiag** stops because it has reached the end time specified with the **/E** argument, or it stops because it is being run in snapshot mode by using the **/X** argument, **SQLdiag** restarts instead of exiting.  
@@ -353,7 +356,7 @@ SQLDIAG START /A Instance1
  Pausing the **SQLdiag** service is not supported.  
   
 ## Running Multiple Instances of SQLdiag  
- Run multiple instances of **SQLdiag** on the same computer by specifying **/A***SQLdiag_application_name* on the command line. This is useful for collecting different sets of diagnostics simultaneously from the same [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instance. For example, you can configure a named instance of **SQLdiag** to continuously perform lightweight data collection. Then, if a specific problem occurs on [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)], you can run the default **SQLdiag** instance to collect diagnostics for that problem, or to gather a set of diagnostics that [!INCLUDE[msCoName](../includes/msconame-md.md)] Customer Support Services has asked you to gather to diagnose a problem.  
+ Run multiple instances of **SQLdiag** on the same computer by specifying **/A**_SQLdiag\_application\_name_ on the command line. This is useful for collecting different sets of diagnostics simultaneously from the same [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instance. For example, you can configure a named instance of **SQLdiag** to continuously perform lightweight data collection. Then, if a specific problem occurs on [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)], you can run the default **SQLdiag** instance to collect diagnostics for that problem, or to gather a set of diagnostics that [!INCLUDE[msCoName](../includes/msconame-md.md)] Customer Support Services has asked you to gather to diagnose a problem.  
   
 ## Collecting Diagnostic Data from Clustered SQL Server Instances  
  **SQLdiag** supports collecting diagnostic data from clustered [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instances. To gather diagnostics from clustered [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instances, make sure that **"."** is specified for the **name** attribute of the **\<Machine>** element in the configuration file SQLDiag.Xml and do not specify the **/G** argument on the command line. By default, **"."** is specified for the **name** attribute in the configuration file and the **/G** argument is turned off. Typically, you do not need to edit the configuration file or change the command line arguments when collecting from a clustered [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instance.  

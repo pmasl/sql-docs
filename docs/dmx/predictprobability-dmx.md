@@ -1,29 +1,17 @@
 ---
-title: "PredictProbability (DMX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/02/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "analysis-services"
-  - "analysis-services/data-mining"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "PredictProbability"
-dev_langs: 
-  - "DMX"
-helpviewer_keywords: 
-  - "PredictProbability function"
-ms.assetid: 7bb7e74f-e33b-4f7b-ade8-be21ace0dbd0
-caps.latest.revision: 36
-author: "Minewiskan"
-ms.author: "owend"
-manager: "erikre"
+title: "PredictProbability (DMX)"
+description: "PredictProbability (DMX)"
+author: minewiskan
+ms.author: owend
+ms.reviewer: owend
+ms.date: 02/17/2022
+ms.service: sql
+ms.subservice: analysis-services
+ms.topic: reference
+ms.custom: dmx
 ---
 # PredictProbability (DMX)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[ssas](../includes/applies-to-version/ssas.md)]
 
   Returns the probability for a specified state.  
   
@@ -44,7 +32,7 @@ PredictProbability(<scalar column reference>, [<predicted state>])
  If the predicted state is omitted, the state that has the highest probability is used, excluding the missing states bucket. To include the missing states bucket, set the \<predicted state> to **INCLUDE_NULL**. To return the probability for the missing states, set the \<predicted state> to NULL.  
   
 > [!NOTE]  
->  Some mining models do not provide probability values and therefore cannot use this function. In addition, the probability values for any particular target value are calculated differently or might have a different interpretation depending on the model type that you are querying. For more information about how probability is calculated for a particular model type, see the individual algorithm topic in [Mining Model Content &#40;Analysis Services - Data Mining&#41;](../analysis-services/data-mining/mining-model-content-analysis-services-data-mining.md).  
+>  Some mining models do not provide probability values and therefore cannot use this function. In addition, the probability values for any particular target value are calculated differently or might have a different interpretation depending on the model type that you are querying. For more information about how probability is calculated for a particular model type, see the individual algorithm topic in [Mining Model Content &#40;Analysis Services - Data Mining&#41;](/analysis-services/data-mining/mining-model-content-analysis-services-data-mining).  
   
 ## Examples  
  The following example uses a natural prediction join to determine whether an individual is likely to be a bike buyer based on the TM Decision Tree mining model, and also determines the probability for the prediction. In this example, there are two PredictProbability functions, one for each possible value. If you omit this argument, the function returns the probability for the most likely value.  
@@ -73,5 +61,4 @@ NATURAL PREDICTION JOIN
  [Data Mining Extensions &#40;DMX&#41; Function Reference](../dmx/data-mining-extensions-dmx-function-reference.md)   
  [Functions &#40;DMX&#41;](../dmx/functions-dmx.md)   
  [General Prediction Functions &#40;DMX&#41;](../dmx/general-prediction-functions-dmx.md)  
-  
   

@@ -1,33 +1,26 @@
 ---
-title: "DBCC TRACEOFF (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "7/17/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+title: "DBCC TRACEOFF (Transact-SQL)"
+description: "DBCC TRACEOFF (Transact-SQL)"
+author: rwestMSFT
+ms.author: randolphwest
+ms.date: "07/17/2017"
+ms.service: sql
+ms.subservice: t-sql
 ms.topic: "language-reference"
-f1_keywords: 
+f1_keywords:
   - "TRACEOFF_TSQL"
   - "TRACEOFF"
   - "DBCC TRACEOFF"
   - "DBCC_TRACEOFF_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "trace flags [SQL Server], disabling"
   - "DBCC TRACEOFF statement"
   - "disabling trace flags"
-ms.assetid: 1379afba-6480-454b-9c65-5e64cb4f3415
-caps.latest.revision: 34
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+dev_langs:
+  - "TSQL"
 ---
 # DBCC TRACEOFF (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
 
 Disables the specified trace flags.
   
@@ -35,11 +28,13 @@ Disables the specified trace flags.
   
 ## Syntax  
   
-```sql
+```syntaxsql
 DBCC TRACEOFF ( trace# [ ,...n ] [ , -1 ] ) [ WITH NO_INFOMSGS ]  
 ```  
   
-## Arguments  
+[!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+## Arguments
 *trace#*  
 Is the number of the trace flag to disable.  
   

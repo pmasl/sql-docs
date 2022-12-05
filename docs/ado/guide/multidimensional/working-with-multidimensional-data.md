@@ -1,21 +1,14 @@
 ---
-title: "Working with Multidimensional Data | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
-ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
+title: "Working with Multidimensional Data"
+description: "Working with Multidimensional Data"
+author: rothja
+ms.author: jroth
+ms.date: 11/08/2018
+ms.service: sql
+ms.subservice: ado
+ms.topic: conceptual
+helpviewer_keywords:
   - "multidimensional data [ADO]"
-ms.assetid: 84387746-aa3e-44fd-ad6c-a8214a6966dc
-caps.latest.revision: 10
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # Working with Multidimensional Data
 A *cellset* is the result of a query on multidimensional data. It consists of a collection of axes, usually no more than four axes and typically only two or three. An *axis* is a collection of members from one or more dimensions, which is used to locate or filter specific values in a cube.  
@@ -26,17 +19,17 @@ A *cellset* is the result of a query on multidimensional data. It consists of a 
   
  A *cell* is an object positioned at the intersection of axis coordinates. Each cell has multiple pieces of information associated with it, including the data itself, a formatted string (the displayable form of cell data), and the cell ordinal value. (Each cell is a unique ordinal value in the cellset. The ordinal value of the first cell in the cellset is zero, while the leftmost cell in the second row of a cellset with eight columns would have an ordinal value of eight.)  
   
- For example, a cube has the following six dimensions (note that this cube schema differs slightly from the example given in [Overview of Multidimensional Schemas and Data](../../../ado/guide/multidimensional/overview-of-multidimensional-schemas-and-data.md)):  
+ For example, a cube has the following six dimensions (note that this cube schema differs slightly from the example given in [Overview of Multidimensional Schemas and Data](./overview-of-multidimensional-schemas-and-data.md)):  
   
 -   Salesperson  
   
--   Geography (natural hierarchy) — Continents, Countries, States, and so on  
+-   Geography (natural hierarchy) - Continents, Countries/Regions, States, and so on  
   
--   Quarters — Quarters, Months, Days  
+-   Quarters - Quarters, Months, Days  
   
 -   Years  
   
--   Measures — Sales, PercentChange, BudgetedSales  
+-   Measures - Sales, PercentChange, BudgetedSales  
   
 -   Products  
   
@@ -59,9 +52,9 @@ A *cellset* is the result of a query on multidimensional data. It consists of a 
   
  The x-axis has two nested dimensions: Salesperson and Geography. From Geography, four members are selected: Seattle, Boston, USA-South, and Japan. Two members are selected from Salesperson: Valentine and Nash. This yields a total of eight positions on this axis (8 = 4*2).  
   
- Each coordinate is represented as a position with two members — one from the Salesperson dimension and another from the Geography dimension:  
+ Each coordinate is represented as a position with two members - one from the Salesperson dimension and another from the Geography dimension:  
   
-```  
+```console
 (Valentine, Seattle), (Valentine, Boston), (Valentine, USA_North),  
 (Valentine, Japan), (Nash, Seattle), (Nash, Boston), (Nash, USA_North),  
 (Nash, Japan)  
@@ -69,15 +62,15 @@ A *cellset* is the result of a query on multidimensional data. It consists of a 
   
  The y-axis has only one dimension, containing the following eight positions:  
   
-```  
+```console
 Jan, Feb, Mar, Qtr2, Qtr3, Oct, Nov, Dec  
 ```  
   
- Cellsets, cells, axes, and positions are all represented in ADO MD by corresponding objects: [Cellset](../../../ado/reference/ado-md-api/cellset-object-ado-md.md), [Cell](../../../ado/reference/ado-md-api/cell-object-ado-md.md), [Axis](../../../ado/reference/ado-md-api/axis-object-ado-md.md), and [Position](../../../ado/reference/ado-md-api/position-object-ado-md.md).  
+ Cellsets, cells, axes, and positions are all represented in ADO MD by corresponding objects: [Cellset](../../reference/ado-md-api/cellset-object-ado-md.md), [Cell](../../reference/ado-md-api/cell-object-ado-md.md), [Axis](../../reference/ado-md-api/axis-object-ado-md.md), and [Position](../../reference/ado-md-api/position-object-ado-md.md).  
   
 ## See Also  
- [ADO MD Object Model](../../../ado/reference/ado-md-api/ado-md-object-model.md)   
- [ADO (Multidimensional) (ADO MD)](../../../ado/guide/multidimensional/ado-multidimensional-ado-md.md)   
- [Overview of Multidimensional Schemas and Data](../../../ado/guide/multidimensional/overview-of-multidimensional-schemas-and-data.md)   
- [Programming with ADO MD](../../../ado/guide/multidimensional/programming-with-ado-md.md)   
- [Using ADO with ADO MD](../../../ado/guide/multidimensional/using-ado-with-ado-md.md)
+ [ADO MD Object Model](../../reference/ado-md-api/ado-md-object-model.md)   
+ [ADO (Multidimensional) (ADO MD)](./ado-multidimensional-ado-md.md)   
+ [Overview of Multidimensional Schemas and Data](./overview-of-multidimensional-schemas-and-data.md)   
+ [Programming with ADO MD](./programming-with-ado-md.md)   
+ [Using ADO with ADO MD](./using-ado-with-ado-md.md)

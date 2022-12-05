@@ -1,13 +1,11 @@
 ---
-title: "AcceptStop Property (SqlService Class) | Microsoft Docs"
-ms.custom: ""
+description: "AcceptStop Property (SqlService Class)"
+title: "AcceptStop Property (SqlService)"
+ms.custom: seo-lt-2019
 ms.date: "03/06/2017"
-ms.prod: "sql-server-2016"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
+ms.subservice: wmi
 ms.topic: "reference"
 apiname: 
   - "AcceptStop Property (SqlService Class)"
@@ -16,12 +14,11 @@ apilocation:
 helpviewer_keywords: 
   - "AcceptStop property"
 ms.assetid: bf8ffe79-4f4c-4a2d-82e5-2ae8f5d466c5
-caps.latest.revision: 35
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # AcceptStop Property (SqlService Class)
+[!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
   Gets the Boolean property value that specifies whether the service can be stopped.  
   
 ## Syntax  
@@ -41,6 +38,6 @@ object.AcceptStop [= value]
 ## Remarks  
   
 ## See Also  
- [Starting and Stopping Services](http://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
+ [Starting and Stopping Services](https://technet.microsoft.com/library/ms174886\(v=sql.105\).aspx)  
   
   

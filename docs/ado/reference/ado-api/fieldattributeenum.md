@@ -1,24 +1,17 @@
 ---
-title: "FieldAttributeEnum | Microsoft Docs"
-ms.prod: "sql-non-specified"
-ms.technology:
-  - "drivers"
-ms.custom: ""
+title: "FieldAttributeEnum"
+description: "FieldAttributeEnum"
+author: rothja
+ms.author: jroth
 ms.date: "01/19/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apitype: "COM"
-f1_keywords: 
+ms.service: sql
+ms.subservice: ado
+ms.topic: reference
+f1_keywords:
   - "FieldAttributeEnum"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "FieldAttributeEnum enumeration [ADO]"
-ms.assetid: 6e34d886-005a-40dc-bd5c-6adcbf81e5cd
-caps.latest.revision: 12
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+apitype: "COM"
 ---
 # FieldAttributeEnum
 Specifies one or more attributes of a [Field](../../../ado/reference/ado-api/field-object.md) object.  
@@ -35,7 +28,7 @@ Specifies one or more attributes of a [Field](../../../ado/reference/ado-api/fie
 |**adFldIsRowURL**|0x10000|Indicates that the field contains the URL that names the resource from the data store represented by the record.|  
 |**adFldLong**|0x80|Indicates that the field is a long binary field. Also indicates that you can use the [AppendChunk](../../../ado/reference/ado-api/appendchunk-method-ado.md) and [GetChunk](../../../ado/reference/ado-api/getchunk-method-ado.md) methods.|  
 |**adFldMayBeNull**|0x40|Indicates that you can read null values from the field.|  
-|**adFldMayDefer**|0x2|Indicates that the field is deferred—that is, the field values are not retrieved from the data source with the whole record, but only when you explicitly access them.|  
+|**adFldMayDefer**|0x2|Indicates that the field is deferred-that is, the field values are not retrieved from the data source with the whole record, but only when you explicitly access them.|  
 |**adFldNegativeScale**|0x4000|Indicates that the field represents a numeric value from a column that supports negative scale values. The scale is specified by the [NumericScale](../../../ado/reference/ado-api/numericscale-property-ado.md) property.|  
 |**adFldRowID**|0x100|Indicates that the field contains a persistent row identifier that cannot be written to and has no meaningful value except to identify the row (such as a record number, unique identifier, and so forth).|  
 |**adFldRowVersion**|0x200|Indicates that the field contains some kind of time or date stamp used to track updates.|  
@@ -62,7 +55,12 @@ Specifies one or more attributes of a [Field](../../../ado/reference/ado-api/fie
 |AdoEnums.FieldAttribute.UPDATABLE|  
   
 ## Applies To  
-  
-|||  
-|-|-|  
-|[Append Method (ADO)](../../../ado/reference/ado-api/append-method-ado.md)|[Attributes Property (ADO)](../../../ado/reference/ado-api/attributes-property-ado.md)|
+
+:::row:::
+    :::column:::
+        [Append Method (ADO)](../../../ado/reference/ado-api/append-method-ado.md)  
+    :::column-end:::
+    :::column:::
+        [Attributes Property (ADO)](../../../ado/reference/ado-api/attributes-property-ado.md)  
+    :::column-end:::
+:::row-end:::

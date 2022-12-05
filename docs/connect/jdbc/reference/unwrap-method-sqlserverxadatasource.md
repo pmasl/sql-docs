@@ -1,19 +1,12 @@
 ---
-title: "unwrap Method (SQLServerXADataSource) | Microsoft Docs"
-ms.custom: ""
+title: "unwrap Method (SQLServerXADataSource)"
+description: "unwrap Method (SQLServerXADataSource)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: d97c99b3-2224-4abb-8b32-40aff49fe759
-caps.latest.revision: 11
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
 ---
 # unwrap Method (SQLServerXADataSource)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

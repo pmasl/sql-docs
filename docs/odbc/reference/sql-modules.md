@@ -1,14 +1,12 @@
 ---
+description: "SQL Modules"
 title: "SQL Modules | Microsoft Docs"
 ms.custom: ""
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
+ms.service: sql
 ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.subservice: connectivity
+ms.topic: conceptual
 helpviewer_keywords: 
   - "SQL modules [ODBC]"
   - "sending SQL statements to DBMS [ODBC]"
@@ -16,10 +14,8 @@ helpviewer_keywords:
   - "modules [ODBC]"
   - "SQL statements [ODBC], modules"
 ms.assetid: 07551472-87ee-4765-951f-1364ed32f0c0
-caps.latest.revision: 5
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
+author: David-Engel
+ms.author: v-davidengel
 ---
 # SQL Modules
 The second technique for sending SQL statements to the DBMS is through modules. Briefly, a module consists of a group of procedures, which are called from the host programming language. Each procedure contains a single SQL statement, and data is passed to and from the procedure through parameters.  

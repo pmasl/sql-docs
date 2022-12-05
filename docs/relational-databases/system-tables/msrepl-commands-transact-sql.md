@@ -1,31 +1,23 @@
 ---
-title: "MSrepl_commands (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "MSrepl_commands (Transact-SQL)"
+description: MSrepl_commands (Transact-SQL)
+author: VanMSFT
+ms.author: vanto
 ms.date: "03/03/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "replication"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-applies_to: 
-  - "SQL Server"
-f1_keywords: 
+ms.service: sql
+ms.subservice: replication
+ms.topic: "reference"
+f1_keywords:
   - "MSrepl_commands"
   - "MSrepl_commands_TSQL"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "MSrepl_commands system table"
+dev_langs:
+  - "TSQL"
 ms.assetid: 53b9f9cd-9429-47a0-aba2-908fc60e7036
-caps.latest.revision: 24
-author: "BYHAM"
-ms.author: "rickbyh"
-manager: "jhubbard"
 ---
 # MSrepl_commands (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   The **MSrepl_commands** table contains rows of replicated commands. This table is stored in the distribution database.  
   

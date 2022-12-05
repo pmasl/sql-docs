@@ -1,28 +1,21 @@
 ---
 title: "Tutorial: Creating a Matrix Report (Report Builder) | Microsoft Docs"
-ms.custom: ""
-ms.date: "06/23/2016"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "reporting-services-native"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-applies_to: 
-  - "SQL Server 2016"
+description: Learn how to create a Reporting Services paginated report with a matrix of sample sales data in nested row and column groups.
+ms.date: 06/23/2016
+ms.service: reporting-services
+ms.subservice: reporting-services
+
+ms.topic: conceptual
 ms.assetid: 9ee19c2e-2a8c-4bb0-9274-04a5812c2e96
-caps.latest.revision: 15
-author: "maggiesMSFT"
-ms.author: "maggies"
-manager: "erikre"
+author: maggiesMSFT
+ms.author: maggies
 ---
 # Tutorial: Creating a Matrix Report (Report Builder)
 This tutorial teaches you to create a [!INCLUDE[ssRSnoversion_md](../includes/ssrsnoversion-md.md)] paginated report with a matrix of sample sales data in nested row and column groups. 
 
 You also create an adjacent column group, format columns, and rotate text. The following illustration shows a report similar to the one you will create.  
   
-![report-builder-matrix-tutorial](../reporting-services/media/report-builder-matrix-tutorial.png)
+![Screenshot of a report builder matrix report.](../reporting-services/media/report-builder-matrix-tutorial.png)
    
 Estimated time to complete this tutorial: 20 minutes.  
   
@@ -121,7 +114,7 @@ Use the wizard to provide a starting design on which to display data. The previe
   
     Steps 5 and 6 specify the data to display in the matrix data cells.
     
-    ![report-builder-arrange-fields-report-wizard](../reporting-services/media/report-builder-arrange-fields-report-wizard.png)  
+    ![Screenshot showing the report builder arrange fields report wizard.](../reporting-services/media/report-builder-arrange-fields-report-wizard.png)  
   
 7.  Click **Next**.  
   
@@ -137,7 +130,7 @@ Use the wizard to provide a starting design on which to display data. The previe
   
     The matrix is added to the design surface. The Row Groups pane shows two row groups: Territory and SalesDate. The Column Groups pane shows two column groups: Subcategory and Product. Detail data is all the data that is retrieved by the dataset query.  
     
-    ![report-builder-row-and-column-groups](../reporting-services/media/report-builder-row-and-column-groups.png)
+    ![Screenshot showing the report builder Row Groups and Column Groups.](../reporting-services/media/report-builder-row-and-column-groups.png)
   
 14. Click **Run** to preview the report.  
   
@@ -145,7 +138,7 @@ Use the wizard to provide a starting design on which to display data. The previe
 
 14. Expand a subcategory. You can see the report quickly gets quite wide.
 
-![report-builder-expand-matrix](../reporting-services/media/report-builder-expand-matrix.png)
+![Screenshot that shows an expanded report builder matrix report.](../reporting-services/media/report-builder-expand-matrix.png)
   
 ## <a name="FormatData"></a>3. Format Data  
 By default, the summary data for the Sales field displays a general number and the SalesDate field displays both date and time information. In this section, you format the Sales field to display the number as currency and the SalesDate field to display only the date. Toggle **Placeholder Styles** to display formatted text boxes and placeholder text as sample values.  
@@ -160,7 +153,7 @@ By default, the summary data for the Sales field displays a general number and t
   
     If your regional setting is English (United States), the default sample text is [**$12,345.00**]. If you do not see an example currency value, in the **Numbers** group, click **Placeholder Styles** > **Sample Values**.  
     
-    ![report-builder-placeholder-value](../reporting-services/media/report-builder-placeholder-value.png)
+    ![Screenshot of the report builder Sample Values option.](../reporting-services/media/report-builder-placeholder-value.png)
   
 4.  Click the cell that contains `[SalesDate]`.  
   
@@ -213,7 +206,7 @@ In this section, you add a column group adjacent to the Subcategory column group
   
 The report includes columns named Monday and Tuesday. The dataset contains only data for these two days.  
 
-![report-builder-matrix-weekdays](../reporting-services/media/report-builder-matrix-weekdays.png)
+![Screenshot showing weekdays displayed in the report builder matrix report.](../reporting-services/media/report-builder-matrix-weekdays.png)
   
 > [!NOTE]  
 > If the data included other days, the report would include columns for them as well. Each column has the column header, **Sales**, and sales totals by territory.  
@@ -235,7 +228,7 @@ A report that includes a matrix typically expands horizontally as well as vertic
   
     The gray bars along the top and side of the table are the column and row handles.  
     
-    ![report-builder-column-handles](../reporting-services/media/report-builder-column-handles.png)
+    ![Screenshot fo the column and row handles in the report builder matrix report.](../reporting-services/media/report-builder-column-handles.png)
   
 5.  To resize the QTY column farthest to the left, point to the line between column handles so that the cursor changes into a double arrow. Drag the column towards the left until it is 1/2 inch wide.  
   
@@ -264,7 +257,7 @@ The corner area is in the upper left corner of the matrix. Depending on the numb
   
 6.  On the **Border** tab > **Presets** > **None**.
   
-9. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
+9. Select **OK**.
   
 10. Click **Run** to preview your report.  
   
@@ -337,9 +330,10 @@ A text box can also display text as horizontal, vertical (top to bottom). For mo
   
 2.  Select the cell that contains `[Territory].` 
 
-    >**Note**: Select the cell, not the text. The WritingMode property is only available for the cell.
-    
-     ![report-builder-select-territory-cell](../reporting-services/media/report-builder-select-territory-cell.png)
+    > [!NOTE]  
+    > Select the cell, not the text. The WritingMode property is only available for the cell.
+
+    ![Screenshot showing the Territory cell in the report builder matrix report.](../reporting-services/media/report-builder-select-territory-cell.png)
   
 3.  In the Properties pane, locate the WritingMode property and change it from **Default** to **Rotate270**.  
   
@@ -363,6 +357,6 @@ This concludes the tutorial for how to create a matrix report. For more informat
   
 ## See Also  
 [Report Builder Tutorials](../reporting-services/report-builder-tutorials.md)  
-[Report Builder in SQL Server 2016](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
+[Report Builder in SQL Server](../reporting-services/report-builder/report-builder-in-sql-server-2016.md)  
   
 

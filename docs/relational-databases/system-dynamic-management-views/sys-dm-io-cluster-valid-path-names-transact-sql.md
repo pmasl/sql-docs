@@ -1,35 +1,29 @@
 ---
-title: "sys.dm_io_cluster_valid_path_names (Transact-SQL) | Microsoft Docs"
-ms.custom: ""
+title: "sys.dm_io_cluster_valid_path_names (Transact-SQL)"
+description: sys.dm_io_cluster_valid_path_names (Transact-SQL)
+author: rwestMSFT
+ms.author: randolphwest
 ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "database-engine"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
+ms.service: sql
+ms.subservice: system-objects
+ms.topic: "reference"
+f1_keywords:
   - "sys.dm_io_cluster_valid_path_names"
   - "dm_io_cluster_valid_path_names_TSQL"
   - "sys.dm_io_cluster_valid_path_names_TSQL"
   - "dm_io_cluster_valid_path_names"
-dev_langs: 
-  - "TSQL"
-helpviewer_keywords: 
+helpviewer_keywords:
   - "dm_io_cluster_valid_path_names"
   - "sys.dm_io_cluster_valid_path_names"
   - "cluster valid path names"
   - "csv name"
   - "cluster shared volume names"
+dev_langs:
+  - "TSQL"
 ms.assetid: 5bc8a0e5-6c72-425b-8c58-f276eb9add2c
-caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
 ---
 # sys.dm_io_cluster_valid_path_names (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2014-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2014-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
 
   Returns information on all valid shared disks, including clustered shared volumes, for a SQL Server failover cluster instance. If the instance is not clustered, an empty rowset is returned.  
   

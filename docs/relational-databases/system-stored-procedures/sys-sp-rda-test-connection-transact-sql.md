@@ -1,14 +1,12 @@
 ---
 title: "sys.sp_rda_test_connection (Transact-SQL) | Microsoft Docs"
+description: Learn to use sys.sp_rda_test_connection to test the connection from SQL Server to the remote Azure server and reports problems that may prevent data migration.
 ms.custom: ""
-ms.date: "06/10/2016"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-stretch"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
+ms.date: 07/25/2022
+ms.service: sql
+ms.reviewer: randolphwest
+ms.subservice: stored-procedures
+ms.topic: "reference"
 f1_keywords: 
   - "sys.sp_rda_test_connection"
   - "sys.sp_rda_test_connection_TSQL"
@@ -17,13 +15,11 @@ dev_langs:
 helpviewer_keywords: 
   - "sys.sp_rda_test_connection stored procedure"
 ms.assetid: e2ba050c-d7e3-4f33-8281-c9b525b4edb4
-caps.latest.revision: 7
-author: "douglaslMS"
-ms.author: "douglasl"
-manager: "jhubbard"
+author: markingmyname
+ms.author: maghan
 ---
 # sys.sp_rda_test_connection (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2016-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2016-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
 
   Tests the connection from SQL Server to the remote Azure server and reports problems that may prevent data migration.  
   
@@ -43,13 +39,16 @@ EXECUTE sys.sp_rda_test_connection
 ## Arguments  
  @database_name = N'*db_name*'  
  The name of the Stretch-enabled SQL Server database. This parameter is optional.  
+
+> [!IMPORTANT]  
+> Stretch Database is deprecated in [!INCLUDE [sssql22-md](../../includes/sssql22-md.md)]. [!INCLUDE [ssNoteDepFutureAvoid-md](../../includes/ssnotedepfutureavoid-md.md)]
   
  @server_address = N'*azure_server_fully_qualified_address*'  
  The fully qualified address of the Azure server.  
   
--   If you provide a value for **@database_name**, but the specified database is not Stretch-enabled, then you have to provide a value for **@server_address**.  
+-   If you provide a value for **\@database_name**, but the specified database is not Stretch-enabled, then you have to provide a value for **\@server_address**.  
   
--   If you provide a value for **@database_name**, and the specified database is Stretch-enabled, then you don't have to provide a value for **@server_address**. If you provide a value for **@server_address**, the stored procedure ignores it and uses existing Azure server already associated with the Stretch-enabled database.  
+-   If you provide a value for **\@database_name**, and the specified database is Stretch-enabled, then you don't have to provide a value for **\@server_address**. If you provide a value for **\@server_address**, the stored procedure ignores it and uses existing Azure server already associated with the Stretch-enabled database.  
   
  @azure_username = N'*azure_username*  
  The user name for the remote Azure server.  
@@ -81,7 +80,7 @@ EXECUTE sys.sp_rda_test_connection
   
 ### Check the connection from SQL Server to the remote Azure server  
   
-```tsql  
+```sql  
 EXECUTE sys.sp_rda_test_connection @database_name = N'<Stretch-enabled database>'  
 GO  
   
@@ -95,7 +94,7 @@ GO
   
 ### Check the Azure firewall  
   
-```tsql  
+```sql  
 USE <Stretch-enabled database>  
 GO  
 EXECUTE sys.sp_rda_test_connection  
@@ -111,7 +110,7 @@ GO
   
 ### Check authentication credentials  
   
-```tsql  
+```sql  
 USE <Stretch-enabled database>  
 GO  
 EXECUTE sys.sp_rda_test_connection  
@@ -127,7 +126,7 @@ GO
   
 ### Check the status of the remote Azure server  
   
-```tsql  
+```sql  
 USE <SQL Server database>  
 GO  
 EXECUTE sys.sp_rda_test_connection   

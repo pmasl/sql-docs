@@ -1,24 +1,15 @@
 ---
-title: "getSavepointName Method (SQLServerSavepoint) | Microsoft Docs"
-ms.custom: ""
+title: "getSavepointName Method (SQLServerSavepoint)"
+description: "getSavepointName Method (SQLServerSavepoint)"
+author: David-Engel
+ms.author: v-davidengel
 ms.date: "01/19/2017"
-ms.prod: "sql-non-specified"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "drivers"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "SQLServerSavepoint.getSavepointName"
-apilocation: 
-  - "sqljdbc.jar"
+ms.service: sql
+ms.subservice: connectivity
+ms.topic: reference
+apilocation: "sqljdbc.jar"
+apiname: "SQLServerSavepoint.getSavepointName"
 apitype: "Assembly"
-ms.assetid: 6affbe5c-e836-4195-a3ba-1892cbf81907
-caps.latest.revision: 7
-author: "MightyPen"
-ms.author: "genemi"
-manager: "jhubbard"
 ---
 # getSavepointName Method (SQLServerSavepoint)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]

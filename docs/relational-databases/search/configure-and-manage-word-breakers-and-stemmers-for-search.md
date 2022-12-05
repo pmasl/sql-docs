@@ -1,14 +1,10 @@
 ---
-title: "Configure and Manage Word Breakers and Stemmers for Search | Microsoft Docs"
-ms.custom: ""
+description: "Configure & manage word breakers & stemmers for search (SQL Server)"
+title: "Configure & manage word breakers & stemmers for search"
 ms.date: "03/14/2017"
-ms.prod: "sql-server-2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "dbe-search"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+ms.service: sql
+ms.subservice: search
+ms.topic: conceptual
 helpviewer_keywords: 
   - "languages [full-text search]"
   - "full-text search [SQL Server], stemmers"
@@ -20,13 +16,14 @@ helpviewer_keywords:
   - "conjugating verbs [full-text search]"
   - "word breakers [full-text search]"
 ms.assetid: d4bdd16b-a2db-4101-a946-583d1c674229
-caps.latest.revision: 89
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: rwestMSFT
+ms.author: randolphwest
+ms.reviewer: mikeray
+monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current"
+ms.custom: "seo-lt-2019"
 ---
-# Configure and Manage Word Breakers and Stemmers for Search
-
+# Configure & manage word breakers & stemmers for search (SQL Server)
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 Word breakers and stemmers perform linguistic analysis on all full-text indexed data. Linguistic analysis does the following two things:
 
 -   **Find word boundaries (word-breaking)**. The *word breaker* identifies individual words by determining where word boundaries exist based on the lexical rules of the language. Each word (also known as a *token*) is inserted into the full-text index using a compressed representation to reduce its size.
@@ -46,7 +43,7 @@ To use the word breakers and stemmers provided for all the languages supported b
 
 To see the list of languages supported by [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Full-Text Search, use the following [!INCLUDE[tsql](../../includes/tsql-md.md)] statement. The presence of a language in this list indicates that word breakers are registered for the language. 
   
-```tsql
+```sql
 SELECT * FROM sys.fulltext_languages
 ```
 
@@ -56,7 +53,7 @@ For Full-Text Search to use the word breakers for a language, they must be regis
 
 To see the list of registered word breaker components, use the following statement.
 
-```tsql
+```sql
 EXEC sp_help_fulltext_system_components 'wordbreaker';  
 GO  
 ```
@@ -81,14 +78,14 @@ If you add, remove, or alter a word breaker, you need to refresh the list of Mic
   
 To view the word breaker language of specific columns, run the following statement.
    
-```tsql 
-SELECT 'language_id' AS "LCID" FROM sys.fulltext_index_columns;
+```sql 
+SELECT language_id AS 'LCID' FROM sys.fulltext_index_columns;
 ```  
 
 For additional options and more info, see [sys.fulltext_index_columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-fulltext-index-columns-transact-sql.md).
 
 ##  <a name="tshoot"></a> Troubleshoot word-breaking time-out errors  
- A word-breaking time-out error may occur in a variety of situations. or information about these situations and how to respond in each situation, see [MSSQLSERVER_30053](https://msdn.microsoft.com/en-us/library/cc879279.aspx).
+ A word-breaking time-out error may occur in a variety of situations. or information about these situations and how to respond in each situation, see [MSSQLSERVER_30053](../errors-events/mssqlserver-30053-database-engine-error.md).
 
 ### Info about the MSSQLSERVER_30053 error
   
@@ -131,11 +128,9 @@ For additional options and more info, see [sys.fulltext_index_columns &#40;Trans
  Each version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] typically includes new word breakers that have better linguistic rules and are more accurate than earlier word breakers. Potentially, the new word breakers might behave slightly differently from the word breakers in full-text indexes that were imported from previous versions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
  
 This is significant if a full-text catalog was imported when a database was upgraded to the current version of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. One or more languages used by the full-text indexes in the full-text catalog might now be associated with new word breakers. For more information, see [Upgrade Full-Text Search](../../relational-databases/search/upgrade-full-text-search.md).  
-  
-
+ 
 ## See Also  
  [CREATE FULLTEXT INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-fulltext-index-transact-sql.md)    
  [ALTER FULLTEXT INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-fulltext-index-transact-sql.md)   
  [Configure and Manage Stopwords and Stoplists for Full-Text Search](../../relational-databases/search/configure-and-manage-stopwords-and-stoplists-for-full-text-search.md)   
- 
-  
+
